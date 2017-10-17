@@ -1,6 +1,21 @@
 [package]
 name = "xmc4800"
 version = "0.1.0"
+description = "XMC peripheral library for XMC4800 generated from SVD"
+readme = "README.md"
 authors = ["Lucas Brendel <lucasbrendel@gmail.com>"]
+repository = "https://github.com/lucasbrendel/xmc4800"
+license = "MIT"
 
 [dependencies]
+cortex-m = "0.3.0"
+bare-metal = "0.1.1"
+vcell = "0.1.0"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.3.0"
+
+[features]
+rt = ["cortex-m-rt"]
+
