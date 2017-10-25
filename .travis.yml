@@ -11,7 +11,7 @@ sudo: required
 
 env:
   global:
-    - CRATE_NAME=xmc4200
+    - CRATE_NAME=xmc4800
 
 matrix:
   # TODO These are all the build jobs. Adjust as necessary. Comment out what you
