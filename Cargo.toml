@@ -9,7 +9,7 @@ license = "MIT"
 documentation = "https://docs.rs/xmc4800"
 
 [dependencies]
-cortex-m = "0.5.8"
+cortex-m = "0.6.1"
 bare-metal = "0.2.4"
 vcell = "0.1.0"
 
