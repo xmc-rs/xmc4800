@@ -1,634 +1,488 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::CGATSTAT0 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `VADC`"]
+#[doc = "Reader of register CGATSTAT0"]
+pub type R = crate::R<u32, super::CGATSTAT0>;
+#[doc = "VADC Gating Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VADCR {
-    #[doc = "Gating de-asserted"]
+pub enum VADC_A {
+    #[doc = "0: Gating de-asserted"]
     VALUE1,
-    #[doc = "Gating asserted"]
+    #[doc = "1: Gating asserted"]
     VALUE2,
 }
-impl VADCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VADCR::VALUE1 => false,
-            VADCR::VALUE2 => true,
+impl From<VADC_A> for bool {
+    #[inline(always)]
+    fn from(variant: VADC_A) -> Self {
+        match variant {
+            VADC_A::VALUE1 => false,
+            VADC_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VADCR {
-        match value {
-            false => VADCR::VALUE1,
-            true => VADCR::VALUE2,
+}
+#[doc = "Reader of field `VADC`"]
+pub type VADC_R = crate::R<bool, VADC_A>;
+impl VADC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VADC_A {
+        match self.bits {
+            false => VADC_A::VALUE1,
+            true => VADC_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VADCR::VALUE1
+        *self == VADC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VADCR::VALUE2
+        *self == VADC_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `DSD`"]
+#[doc = "DSD Gating Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DSDR {
-    #[doc = "Gating de-asserted"]
+pub enum DSD_A {
+    #[doc = "0: Gating de-asserted"]
     VALUE1,
-    #[doc = "Gating asserted"]
+    #[doc = "1: Gating asserted"]
     VALUE2,
 }
-impl DSDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DSDR::VALUE1 => false,
-            DSDR::VALUE2 => true,
+impl From<DSD_A> for bool {
+    #[inline(always)]
+    fn from(variant: DSD_A) -> Self {
+        match variant {
+            DSD_A::VALUE1 => false,
+            DSD_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DSDR {
-        match value {
-            false => DSDR::VALUE1,
-            true => DSDR::VALUE2,
+}
+#[doc = "Reader of field `DSD`"]
+pub type DSD_R = crate::R<bool, DSD_A>;
+impl DSD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DSD_A {
+        match self.bits {
+            false => DSD_A::VALUE1,
+            true => DSD_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DSDR::VALUE1
+        *self == DSD_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DSDR::VALUE2
+        *self == DSD_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `CCU40`"]
+#[doc = "CCU40 Gating Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CCU40R {
-    #[doc = "Gating de-asserted"]
+pub enum CCU40_A {
+    #[doc = "0: Gating de-asserted"]
     VALUE1,
-    #[doc = "Gating asserted"]
+    #[doc = "1: Gating asserted"]
     VALUE2,
 }
-impl CCU40R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CCU40R::VALUE1 => false,
-            CCU40R::VALUE2 => true,
+impl From<CCU40_A> for bool {
+    #[inline(always)]
+    fn from(variant: CCU40_A) -> Self {
+        match variant {
+            CCU40_A::VALUE1 => false,
+            CCU40_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CCU40R {
-        match value {
-            false => CCU40R::VALUE1,
-            true => CCU40R::VALUE2,
+}
+#[doc = "Reader of field `CCU40`"]
+pub type CCU40_R = crate::R<bool, CCU40_A>;
+impl CCU40_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CCU40_A {
+        match self.bits {
+            false => CCU40_A::VALUE1,
+            true => CCU40_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CCU40R::VALUE1
+        *self == CCU40_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CCU40R::VALUE2
+        *self == CCU40_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `CCU41`"]
+#[doc = "CCU41 Gating Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CCU41R {
-    #[doc = "Gating de-asserted"]
+pub enum CCU41_A {
+    #[doc = "0: Gating de-asserted"]
     VALUE1,
-    #[doc = "Gating asserted"]
+    #[doc = "1: Gating asserted"]
     VALUE2,
 }
-impl CCU41R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CCU41R::VALUE1 => false,
-            CCU41R::VALUE2 => true,
+impl From<CCU41_A> for bool {
+    #[inline(always)]
+    fn from(variant: CCU41_A) -> Self {
+        match variant {
+            CCU41_A::VALUE1 => false,
+            CCU41_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CCU41R {
-        match value {
-            false => CCU41R::VALUE1,
-            true => CCU41R::VALUE2,
+}
+#[doc = "Reader of field `CCU41`"]
+pub type CCU41_R = crate::R<bool, CCU41_A>;
+impl CCU41_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CCU41_A {
+        match self.bits {
+            false => CCU41_A::VALUE1,
+            true => CCU41_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CCU41R::VALUE1
+        *self == CCU41_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CCU41R::VALUE2
+        *self == CCU41_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `CCU42`"]
+#[doc = "CCU42 Gating Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CCU42R {
-    #[doc = "Gating de-asserted"]
+pub enum CCU42_A {
+    #[doc = "0: Gating de-asserted"]
     VALUE1,
-    #[doc = "Gating asserted"]
+    #[doc = "1: Gating asserted"]
     VALUE2,
 }
-impl CCU42R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CCU42R::VALUE1 => false,
-            CCU42R::VALUE2 => true,
+impl From<CCU42_A> for bool {
+    #[inline(always)]
+    fn from(variant: CCU42_A) -> Self {
+        match variant {
+            CCU42_A::VALUE1 => false,
+            CCU42_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CCU42R {
-        match value {
-            false => CCU42R::VALUE1,
-            true => CCU42R::VALUE2,
+}
+#[doc = "Reader of field `CCU42`"]
+pub type CCU42_R = crate::R<bool, CCU42_A>;
+impl CCU42_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CCU42_A {
+        match self.bits {
+            false => CCU42_A::VALUE1,
+            true => CCU42_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CCU42R::VALUE1
+        *self == CCU42_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CCU42R::VALUE2
+        *self == CCU42_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `CCU80`"]
+#[doc = "CCU80 Gating Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CCU80R {
-    #[doc = "Gating de-asserted"]
+pub enum CCU80_A {
+    #[doc = "0: Gating de-asserted"]
     VALUE1,
-    #[doc = "Gating asserted"]
+    #[doc = "1: Gating asserted"]
     VALUE2,
 }
-impl CCU80R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CCU80R::VALUE1 => false,
-            CCU80R::VALUE2 => true,
+impl From<CCU80_A> for bool {
+    #[inline(always)]
+    fn from(variant: CCU80_A) -> Self {
+        match variant {
+            CCU80_A::VALUE1 => false,
+            CCU80_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CCU80R {
-        match value {
-            false => CCU80R::VALUE1,
-            true => CCU80R::VALUE2,
+}
+#[doc = "Reader of field `CCU80`"]
+pub type CCU80_R = crate::R<bool, CCU80_A>;
+impl CCU80_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CCU80_A {
+        match self.bits {
+            false => CCU80_A::VALUE1,
+            true => CCU80_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CCU80R::VALUE1
+        *self == CCU80_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CCU80R::VALUE2
+        *self == CCU80_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `CCU81`"]
+#[doc = "CCU81 Gating Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CCU81R {
-    #[doc = "Gating de-asserted"]
+pub enum CCU81_A {
+    #[doc = "0: Gating de-asserted"]
     VALUE1,
-    #[doc = "Gating asserted"]
+    #[doc = "1: Gating asserted"]
     VALUE2,
 }
-impl CCU81R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CCU81R::VALUE1 => false,
-            CCU81R::VALUE2 => true,
+impl From<CCU81_A> for bool {
+    #[inline(always)]
+    fn from(variant: CCU81_A) -> Self {
+        match variant {
+            CCU81_A::VALUE1 => false,
+            CCU81_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CCU81R {
-        match value {
-            false => CCU81R::VALUE1,
-            true => CCU81R::VALUE2,
+}
+#[doc = "Reader of field `CCU81`"]
+pub type CCU81_R = crate::R<bool, CCU81_A>;
+impl CCU81_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CCU81_A {
+        match self.bits {
+            false => CCU81_A::VALUE1,
+            true => CCU81_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CCU81R::VALUE1
+        *self == CCU81_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CCU81R::VALUE2
+        *self == CCU81_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `POSIF0`"]
+#[doc = "POSIF0 Gating Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum POSIF0R {
-    #[doc = "Gating de-asserted"]
+pub enum POSIF0_A {
+    #[doc = "0: Gating de-asserted"]
     VALUE1,
-    #[doc = "Gating asserted"]
+    #[doc = "1: Gating asserted"]
     VALUE2,
 }
-impl POSIF0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            POSIF0R::VALUE1 => false,
-            POSIF0R::VALUE2 => true,
+impl From<POSIF0_A> for bool {
+    #[inline(always)]
+    fn from(variant: POSIF0_A) -> Self {
+        match variant {
+            POSIF0_A::VALUE1 => false,
+            POSIF0_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> POSIF0R {
-        match value {
-            false => POSIF0R::VALUE1,
-            true => POSIF0R::VALUE2,
+}
+#[doc = "Reader of field `POSIF0`"]
+pub type POSIF0_R = crate::R<bool, POSIF0_A>;
+impl POSIF0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> POSIF0_A {
+        match self.bits {
+            false => POSIF0_A::VALUE1,
+            true => POSIF0_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == POSIF0R::VALUE1
+        *self == POSIF0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == POSIF0R::VALUE2
+        *self == POSIF0_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `POSIF1`"]
+#[doc = "POSIF1 Gating Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum POSIF1R {
-    #[doc = "Gating de-asserted"]
+pub enum POSIF1_A {
+    #[doc = "0: Gating de-asserted"]
     VALUE1,
-    #[doc = "Gating asserted"]
+    #[doc = "1: Gating asserted"]
     VALUE2,
 }
-impl POSIF1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            POSIF1R::VALUE1 => false,
-            POSIF1R::VALUE2 => true,
+impl From<POSIF1_A> for bool {
+    #[inline(always)]
+    fn from(variant: POSIF1_A) -> Self {
+        match variant {
+            POSIF1_A::VALUE1 => false,
+            POSIF1_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> POSIF1R {
-        match value {
-            false => POSIF1R::VALUE1,
-            true => POSIF1R::VALUE2,
+}
+#[doc = "Reader of field `POSIF1`"]
+pub type POSIF1_R = crate::R<bool, POSIF1_A>;
+impl POSIF1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> POSIF1_A {
+        match self.bits {
+            false => POSIF1_A::VALUE1,
+            true => POSIF1_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == POSIF1R::VALUE1
+        *self == POSIF1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == POSIF1R::VALUE2
+        *self == POSIF1_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `USIC0`"]
+#[doc = "USIC0 Gating Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum USIC0R {
-    #[doc = "Gating de-asserted"]
+pub enum USIC0_A {
+    #[doc = "0: Gating de-asserted"]
     VALUE1,
-    #[doc = "Gating asserted"]
+    #[doc = "1: Gating asserted"]
     VALUE2,
 }
-impl USIC0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            USIC0R::VALUE1 => false,
-            USIC0R::VALUE2 => true,
+impl From<USIC0_A> for bool {
+    #[inline(always)]
+    fn from(variant: USIC0_A) -> Self {
+        match variant {
+            USIC0_A::VALUE1 => false,
+            USIC0_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> USIC0R {
-        match value {
-            false => USIC0R::VALUE1,
-            true => USIC0R::VALUE2,
+}
+#[doc = "Reader of field `USIC0`"]
+pub type USIC0_R = crate::R<bool, USIC0_A>;
+impl USIC0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> USIC0_A {
+        match self.bits {
+            false => USIC0_A::VALUE1,
+            true => USIC0_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == USIC0R::VALUE1
+        *self == USIC0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == USIC0R::VALUE2
+        *self == USIC0_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `ERU1`"]
+#[doc = "ERU1 Gating Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ERU1R {
-    #[doc = "Gating de-asserted"]
+pub enum ERU1_A {
+    #[doc = "0: Gating de-asserted"]
     VALUE1,
-    #[doc = "Gating asserted"]
+    #[doc = "1: Gating asserted"]
     VALUE2,
 }
-impl ERU1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ERU1R::VALUE1 => false,
-            ERU1R::VALUE2 => true,
+impl From<ERU1_A> for bool {
+    #[inline(always)]
+    fn from(variant: ERU1_A) -> Self {
+        match variant {
+            ERU1_A::VALUE1 => false,
+            ERU1_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ERU1R {
-        match value {
-            false => ERU1R::VALUE1,
-            true => ERU1R::VALUE2,
+}
+#[doc = "Reader of field `ERU1`"]
+pub type ERU1_R = crate::R<bool, ERU1_A>;
+impl ERU1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ERU1_A {
+        match self.bits {
+            false => ERU1_A::VALUE1,
+            true => ERU1_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ERU1R::VALUE1
+        *self == ERU1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ERU1R::VALUE2
+        *self == ERU1_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - VADC Gating Status"]
-    #[inline]
-    pub fn vadc(&self) -> VADCR {
-        VADCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn vadc(&self) -> VADC_R {
+        VADC_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - DSD Gating Status"]
-    #[inline]
-    pub fn dsd(&self) -> DSDR {
-        DSDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dsd(&self) -> DSD_R {
+        DSD_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - CCU40 Gating Status"]
-    #[inline]
-    pub fn ccu40(&self) -> CCU40R {
-        CCU40R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ccu40(&self) -> CCU40_R {
+        CCU40_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - CCU41 Gating Status"]
-    #[inline]
-    pub fn ccu41(&self) -> CCU41R {
-        CCU41R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ccu41(&self) -> CCU41_R {
+        CCU41_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - CCU42 Gating Status"]
-    #[inline]
-    pub fn ccu42(&self) -> CCU42R {
-        CCU42R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ccu42(&self) -> CCU42_R {
+        CCU42_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 7 - CCU80 Gating Status"]
-    #[inline]
-    pub fn ccu80(&self) -> CCU80R {
-        CCU80R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ccu80(&self) -> CCU80_R {
+        CCU80_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - CCU81 Gating Status"]
-    #[inline]
-    pub fn ccu81(&self) -> CCU81R {
-        CCU81R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ccu81(&self) -> CCU81_R {
+        CCU81_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - POSIF0 Gating Status"]
-    #[inline]
-    pub fn posif0(&self) -> POSIF0R {
-        POSIF0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn posif0(&self) -> POSIF0_R {
+        POSIF0_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - POSIF1 Gating Status"]
-    #[inline]
-    pub fn posif1(&self) -> POSIF1R {
-        POSIF1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn posif1(&self) -> POSIF1_R {
+        POSIF1_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - USIC0 Gating Status"]
-    #[inline]
-    pub fn usic0(&self) -> USIC0R {
-        USIC0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn usic0(&self) -> USIC0_R {
+        USIC0_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 16 - ERU1 Gating Status"]
-    #[inline]
-    pub fn eru1(&self) -> ERU1R {
-        ERU1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn eru1(&self) -> ERU1_R {
+        ERU1_R::new(((self.bits >> 16) & 0x01) != 0)
     }
 }

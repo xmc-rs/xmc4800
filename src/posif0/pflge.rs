@@ -1,2204 +1,1600 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PFLGE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PFLGE"]
+pub type R = crate::R<u32, super::PFLGE>;
+#[doc = "Writer for register PFLGE"]
+pub type W = crate::W<u32, super::PFLGE>;
+#[doc = "Register PFLGE `reset()`'s with value 0"]
+impl crate::ResetValue for super::PFLGE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ECHE`"]
+#[doc = "Correct Hall Event Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ECHER {
-    #[doc = "Correct Hall Event interrupt disabled"]
+pub enum ECHE_A {
+    #[doc = "0: Correct Hall Event interrupt disabled"]
     VALUE1,
-    #[doc = "Correct Hall Event interrupt enabled"]
+    #[doc = "1: Correct Hall Event interrupt enabled"]
     VALUE2,
 }
-impl ECHER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ECHER::VALUE1 => false,
-            ECHER::VALUE2 => true,
+impl From<ECHE_A> for bool {
+    #[inline(always)]
+    fn from(variant: ECHE_A) -> Self {
+        match variant {
+            ECHE_A::VALUE1 => false,
+            ECHE_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ECHER {
-        match value {
-            false => ECHER::VALUE1,
-            true => ECHER::VALUE2,
+}
+#[doc = "Reader of field `ECHE`"]
+pub type ECHE_R = crate::R<bool, ECHE_A>;
+impl ECHE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ECHE_A {
+        match self.bits {
+            false => ECHE_A::VALUE1,
+            true => ECHE_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ECHER::VALUE1
+        *self == ECHE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ECHER::VALUE2
+        *self == ECHE_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `EWHE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EWHER {
-    #[doc = "Wrong Hall Event interrupt disabled"]
-    VALUE1,
-    #[doc = "Wrong Hall Event interrupt enabled"]
-    VALUE2,
-}
-impl EWHER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EWHER::VALUE1 => false,
-            EWHER::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EWHER {
-        match value {
-            false => EWHER::VALUE1,
-            true => EWHER::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EWHER::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EWHER::VALUE2
-    }
-}
-#[doc = "Possible values of the field `EHIE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EHIER {
-    #[doc = "Update of the Hall Inputs interrupt is disabled"]
-    VALUE1,
-    #[doc = "Update of the Hall Inputs interrupt is enabled"]
-    VALUE2,
-}
-impl EHIER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EHIER::VALUE1 => false,
-            EHIER::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EHIER {
-        match value {
-            false => EHIER::VALUE1,
-            true => EHIER::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EHIER::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EHIER::VALUE2
-    }
-}
-#[doc = "Possible values of the field `EMST`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EMSTR {
-    #[doc = "Shadow transfer event interrupt disabled"]
-    VALUE1,
-    #[doc = "Shadow transfer event interrupt enabled"]
-    VALUE2,
-}
-impl EMSTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EMSTR::VALUE1 => false,
-            EMSTR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EMSTR {
-        match value {
-            false => EMSTR::VALUE1,
-            true => EMSTR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EMSTR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EMSTR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `EINDX`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EINDXR {
-    #[doc = "Index event interrupt disabled"]
-    VALUE1,
-    #[doc = "Index event interrupt enabled"]
-    VALUE2,
-}
-impl EINDXR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EINDXR::VALUE1 => false,
-            EINDXR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EINDXR {
-        match value {
-            false => EINDXR::VALUE1,
-            true => EINDXR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EINDXR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EINDXR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `EERR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EERRR {
-    #[doc = "Phase error event interrupt disabled"]
-    VALUE1,
-    #[doc = "Phase error event interrupt enabled"]
-    VALUE2,
-}
-impl EERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EERRR::VALUE1 => false,
-            EERRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EERRR {
-        match value {
-            false => EERRR::VALUE1,
-            true => EERRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EERRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EERRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `ECNT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ECNTR {
-    #[doc = "Quadrature CLK event interrupt disabled"]
-    VALUE1,
-    #[doc = "Quadrature CLK event interrupt enabled"]
-    VALUE2,
-}
-impl ECNTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ECNTR::VALUE1 => false,
-            ECNTR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ECNTR {
-        match value {
-            false => ECNTR::VALUE1,
-            true => ECNTR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ECNTR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ECNTR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `EDIR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EDIRR {
-    #[doc = "Direction change event interrupt disabled"]
-    VALUE1,
-    #[doc = "Direction change event interrupt enabled"]
-    VALUE2,
-}
-impl EDIRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EDIRR::VALUE1 => false,
-            EDIRR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EDIRR {
-        match value {
-            false => EDIRR::VALUE1,
-            true => EDIRR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EDIRR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EDIRR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `EPCLK`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPCLKR {
-    #[doc = "Quadrature Period CLK event interrupt disabled"]
-    VALUE1,
-    #[doc = "Quadrature Period CLK event interrupt enabled"]
-    VALUE2,
-}
-impl EPCLKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            EPCLKR::VALUE1 => false,
-            EPCLKR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> EPCLKR {
-        match value {
-            false => EPCLKR::VALUE1,
-            true => EPCLKR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EPCLKR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EPCLKR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CHESEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CHESELR {
-    #[doc = "Correct Hall Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
-    #[doc = "Correct Hall Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
-}
-impl CHESELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CHESELR::VALUE1 => false,
-            CHESELR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CHESELR {
-        match value {
-            false => CHESELR::VALUE1,
-            true => CHESELR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CHESELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CHESELR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `WHESEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WHESELR {
-    #[doc = "Wrong Hall Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
-    #[doc = "Wrong Hall Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
-}
-impl WHESELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WHESELR::VALUE1 => false,
-            WHESELR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WHESELR {
-        match value {
-            false => WHESELR::VALUE1,
-            true => WHESELR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == WHESELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == WHESELR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `HIESEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HIESELR {
-    #[doc = "Hall Inputs Update Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
-    #[doc = "Hall Inputs Update Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
-}
-impl HIESELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HIESELR::VALUE1 => false,
-            HIESELR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HIESELR {
-        match value {
-            false => HIESELR::VALUE1,
-            true => HIESELR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == HIESELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == HIESELR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `MSTSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSTSELR {
-    #[doc = "Multi-Channel pattern Update Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
-    #[doc = "Multi-Channel pattern Update Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
-}
-impl MSTSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MSTSELR::VALUE1 => false,
-            MSTSELR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MSTSELR {
-        match value {
-            false => MSTSELR::VALUE1,
-            true => MSTSELR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == MSTSELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == MSTSELR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `INDSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INDSELR {
-    #[doc = "Quadrature Index Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
-    #[doc = "Quadrature Index Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
-}
-impl INDSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INDSELR::VALUE1 => false,
-            INDSELR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INDSELR {
-        match value {
-            false => INDSELR::VALUE1,
-            true => INDSELR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == INDSELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == INDSELR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `ERRSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ERRSELR {
-    #[doc = "Quadrature Phase error Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
-    #[doc = "Quadrature Phase error Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
-}
-impl ERRSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ERRSELR::VALUE1 => false,
-            ERRSELR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ERRSELR {
-        match value {
-            false => ERRSELR::VALUE1,
-            true => ERRSELR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ERRSELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ERRSELR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `CNTSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CNTSELR {
-    #[doc = "Quadrature Clock Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
-    #[doc = "Quadrature Clock Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
-}
-impl CNTSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CNTSELR::VALUE1 => false,
-            CNTSELR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CNTSELR {
-        match value {
-            false => CNTSELR::VALUE1,
-            true => CNTSELR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CNTSELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CNTSELR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `DIRSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIRSELR {
-    #[doc = "Quadrature Direction Update Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
-    #[doc = "Quadrature Direction Update Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
-}
-impl DIRSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DIRSELR::VALUE1 => false,
-            DIRSELR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DIRSELR {
-        match value {
-            false => DIRSELR::VALUE1,
-            true => DIRSELR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == DIRSELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == DIRSELR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `PCLSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PCLSELR {
-    #[doc = "Quadrature Period clock Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
-    #[doc = "Quadrature Period clock Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
-}
-impl PCLSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PCLSELR::VALUE1 => false,
-            PCLSELR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PCLSELR {
-        match value {
-            false => PCLSELR::VALUE1,
-            true => PCLSELR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == PCLSELR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == PCLSELR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `ECHE`"]
-pub enum ECHEW {
-    #[doc = "Correct Hall Event interrupt disabled"]
-    VALUE1,
-    #[doc = "Correct Hall Event interrupt enabled"]
-    VALUE2,
-}
-impl ECHEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ECHEW::VALUE1 => false,
-            ECHEW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ECHEW<'a> {
+#[doc = "Write proxy for field `ECHE`"]
+pub struct ECHE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ECHEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ECHEW) -> &'a mut W {
+impl<'a> ECHE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ECHE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Correct Hall Event interrupt disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ECHEW::VALUE1)
+        self.variant(ECHE_A::VALUE1)
     }
     #[doc = "Correct Hall Event interrupt enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ECHEW::VALUE2)
+        self.variant(ECHE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EWHE`"]
-pub enum EWHEW {
+#[doc = "Wrong Hall Event Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EWHE_A {
+    #[doc = "0: Wrong Hall Event interrupt disabled"]
+    VALUE1,
+    #[doc = "1: Wrong Hall Event interrupt enabled"]
+    VALUE2,
+}
+impl From<EWHE_A> for bool {
+    #[inline(always)]
+    fn from(variant: EWHE_A) -> Self {
+        match variant {
+            EWHE_A::VALUE1 => false,
+            EWHE_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `EWHE`"]
+pub type EWHE_R = crate::R<bool, EWHE_A>;
+impl EWHE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EWHE_A {
+        match self.bits {
+            false => EWHE_A::VALUE1,
+            true => EWHE_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EWHE_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EWHE_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EWHE`"]
+pub struct EWHE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EWHE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EWHE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Wrong Hall Event interrupt disabled"]
-    VALUE1,
-    #[doc = "Wrong Hall Event interrupt enabled"]
-    VALUE2,
-}
-impl EWHEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EWHEW::VALUE1 => false,
-            EWHEW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EWHEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EWHEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EWHEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Wrong Hall Event interrupt disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EWHEW::VALUE1)
+        self.variant(EWHE_A::VALUE1)
     }
     #[doc = "Wrong Hall Event interrupt enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EWHEW::VALUE2)
+        self.variant(EWHE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EHIE`"]
-pub enum EHIEW {
-    #[doc = "Update of the Hall Inputs interrupt is disabled"]
+#[doc = "Hall Input Update Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EHIE_A {
+    #[doc = "0: Update of the Hall Inputs interrupt is disabled"]
     VALUE1,
-    #[doc = "Update of the Hall Inputs interrupt is enabled"]
+    #[doc = "1: Update of the Hall Inputs interrupt is enabled"]
     VALUE2,
 }
-impl EHIEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EHIEW::VALUE1 => false,
-            EHIEW::VALUE2 => true,
+impl From<EHIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: EHIE_A) -> Self {
+        match variant {
+            EHIE_A::VALUE1 => false,
+            EHIE_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EHIEW<'a> {
+#[doc = "Reader of field `EHIE`"]
+pub type EHIE_R = crate::R<bool, EHIE_A>;
+impl EHIE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EHIE_A {
+        match self.bits {
+            false => EHIE_A::VALUE1,
+            true => EHIE_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EHIE_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EHIE_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EHIE`"]
+pub struct EHIE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EHIEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EHIEW) -> &'a mut W {
+impl<'a> EHIE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EHIE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Update of the Hall Inputs interrupt is disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EHIEW::VALUE1)
+        self.variant(EHIE_A::VALUE1)
     }
     #[doc = "Update of the Hall Inputs interrupt is enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EHIEW::VALUE2)
+        self.variant(EHIE_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EMST`"]
-pub enum EMSTW {
+#[doc = "Multi-Channel pattern shadow transfer enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EMST_A {
+    #[doc = "0: Shadow transfer event interrupt disabled"]
+    VALUE1,
+    #[doc = "1: Shadow transfer event interrupt enabled"]
+    VALUE2,
+}
+impl From<EMST_A> for bool {
+    #[inline(always)]
+    fn from(variant: EMST_A) -> Self {
+        match variant {
+            EMST_A::VALUE1 => false,
+            EMST_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `EMST`"]
+pub type EMST_R = crate::R<bool, EMST_A>;
+impl EMST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EMST_A {
+        match self.bits {
+            false => EMST_A::VALUE1,
+            true => EMST_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EMST_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EMST_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EMST`"]
+pub struct EMST_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EMST_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EMST_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Shadow transfer event interrupt disabled"]
-    VALUE1,
-    #[doc = "Shadow transfer event interrupt enabled"]
-    VALUE2,
-}
-impl EMSTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EMSTW::VALUE1 => false,
-            EMSTW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EMSTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EMSTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EMSTW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Shadow transfer event interrupt disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EMSTW::VALUE1)
+        self.variant(EMST_A::VALUE1)
     }
     #[doc = "Shadow transfer event interrupt enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EMSTW::VALUE2)
+        self.variant(EMST_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EINDX`"]
-pub enum EINDXW {
-    #[doc = "Index event interrupt disabled"]
+#[doc = "Quadrature Index Event Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EINDX_A {
+    #[doc = "0: Index event interrupt disabled"]
     VALUE1,
-    #[doc = "Index event interrupt enabled"]
+    #[doc = "1: Index event interrupt enabled"]
     VALUE2,
 }
-impl EINDXW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EINDXW::VALUE1 => false,
-            EINDXW::VALUE2 => true,
+impl From<EINDX_A> for bool {
+    #[inline(always)]
+    fn from(variant: EINDX_A) -> Self {
+        match variant {
+            EINDX_A::VALUE1 => false,
+            EINDX_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EINDXW<'a> {
+#[doc = "Reader of field `EINDX`"]
+pub type EINDX_R = crate::R<bool, EINDX_A>;
+impl EINDX_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EINDX_A {
+        match self.bits {
+            false => EINDX_A::VALUE1,
+            true => EINDX_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EINDX_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EINDX_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EINDX`"]
+pub struct EINDX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EINDXW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EINDXW) -> &'a mut W {
+impl<'a> EINDX_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EINDX_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Index event interrupt disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EINDXW::VALUE1)
+        self.variant(EINDX_A::VALUE1)
     }
     #[doc = "Index event interrupt enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EINDXW::VALUE2)
+        self.variant(EINDX_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EERR`"]
-pub enum EERRW {
+#[doc = "Quadrature Phase Error Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EERR_A {
+    #[doc = "0: Phase error event interrupt disabled"]
+    VALUE1,
+    #[doc = "1: Phase error event interrupt enabled"]
+    VALUE2,
+}
+impl From<EERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: EERR_A) -> Self {
+        match variant {
+            EERR_A::VALUE1 => false,
+            EERR_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `EERR`"]
+pub type EERR_R = crate::R<bool, EERR_A>;
+impl EERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EERR_A {
+        match self.bits {
+            false => EERR_A::VALUE1,
+            true => EERR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EERR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EERR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EERR`"]
+pub struct EERR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EERR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Phase error event interrupt disabled"]
-    VALUE1,
-    #[doc = "Phase error event interrupt enabled"]
-    VALUE2,
-}
-impl EERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EERRW::VALUE1 => false,
-            EERRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EERRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EERRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Phase error event interrupt disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EERRW::VALUE1)
+        self.variant(EERR_A::VALUE1)
     }
     #[doc = "Phase error event interrupt enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EERRW::VALUE2)
+        self.variant(EERR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ECNT`"]
-pub enum ECNTW {
-    #[doc = "Quadrature CLK event interrupt disabled"]
+#[doc = "Quadrature CLK interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ECNT_A {
+    #[doc = "0: Quadrature CLK event interrupt disabled"]
     VALUE1,
-    #[doc = "Quadrature CLK event interrupt enabled"]
+    #[doc = "1: Quadrature CLK event interrupt enabled"]
     VALUE2,
 }
-impl ECNTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ECNTW::VALUE1 => false,
-            ECNTW::VALUE2 => true,
+impl From<ECNT_A> for bool {
+    #[inline(always)]
+    fn from(variant: ECNT_A) -> Self {
+        match variant {
+            ECNT_A::VALUE1 => false,
+            ECNT_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ECNTW<'a> {
+#[doc = "Reader of field `ECNT`"]
+pub type ECNT_R = crate::R<bool, ECNT_A>;
+impl ECNT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ECNT_A {
+        match self.bits {
+            false => ECNT_A::VALUE1,
+            true => ECNT_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ECNT_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ECNT_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ECNT`"]
+pub struct ECNT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ECNTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ECNTW) -> &'a mut W {
+impl<'a> ECNT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ECNT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Quadrature CLK event interrupt disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ECNTW::VALUE1)
+        self.variant(ECNT_A::VALUE1)
     }
     #[doc = "Quadrature CLK event interrupt enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ECNTW::VALUE2)
+        self.variant(ECNT_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EDIR`"]
-pub enum EDIRW {
+#[doc = "Quadrature direction change interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EDIR_A {
+    #[doc = "0: Direction change event interrupt disabled"]
+    VALUE1,
+    #[doc = "1: Direction change event interrupt enabled"]
+    VALUE2,
+}
+impl From<EDIR_A> for bool {
+    #[inline(always)]
+    fn from(variant: EDIR_A) -> Self {
+        match variant {
+            EDIR_A::VALUE1 => false,
+            EDIR_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `EDIR`"]
+pub type EDIR_R = crate::R<bool, EDIR_A>;
+impl EDIR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EDIR_A {
+        match self.bits {
+            false => EDIR_A::VALUE1,
+            true => EDIR_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EDIR_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EDIR_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EDIR`"]
+pub struct EDIR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EDIR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EDIR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Direction change event interrupt disabled"]
-    VALUE1,
-    #[doc = "Direction change event interrupt enabled"]
-    VALUE2,
-}
-impl EDIRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EDIRW::VALUE1 => false,
-            EDIRW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _EDIRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _EDIRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EDIRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Direction change event interrupt disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EDIRW::VALUE1)
+        self.variant(EDIR_A::VALUE1)
     }
     #[doc = "Direction change event interrupt enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EDIRW::VALUE2)
+        self.variant(EDIR_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EPCLK`"]
-pub enum EPCLKW {
-    #[doc = "Quadrature Period CLK event interrupt disabled"]
+#[doc = "Quadrature Period CLK interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EPCLK_A {
+    #[doc = "0: Quadrature Period CLK event interrupt disabled"]
     VALUE1,
-    #[doc = "Quadrature Period CLK event interrupt enabled"]
+    #[doc = "1: Quadrature Period CLK event interrupt enabled"]
     VALUE2,
 }
-impl EPCLKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            EPCLKW::VALUE1 => false,
-            EPCLKW::VALUE2 => true,
+impl From<EPCLK_A> for bool {
+    #[inline(always)]
+    fn from(variant: EPCLK_A) -> Self {
+        match variant {
+            EPCLK_A::VALUE1 => false,
+            EPCLK_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EPCLKW<'a> {
+#[doc = "Reader of field `EPCLK`"]
+pub type EPCLK_R = crate::R<bool, EPCLK_A>;
+impl EPCLK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EPCLK_A {
+        match self.bits {
+            false => EPCLK_A::VALUE1,
+            true => EPCLK_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EPCLK_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EPCLK_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `EPCLK`"]
+pub struct EPCLK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EPCLKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EPCLKW) -> &'a mut W {
+impl<'a> EPCLK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EPCLK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Quadrature Period CLK event interrupt disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EPCLKW::VALUE1)
+        self.variant(EPCLK_A::VALUE1)
     }
     #[doc = "Quadrature Period CLK event interrupt enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EPCLKW::VALUE2)
+        self.variant(EPCLK_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CHESEL`"]
-pub enum CHESELW {
+#[doc = "Correct Hall Event Service Request Selector\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CHESEL_A {
+    #[doc = "0: Correct Hall Event interrupt forward to POSIFx.SR0"]
+    VALUE1,
+    #[doc = "1: Correct Hall Event interrupt forward to POSIFx.SR1"]
+    VALUE2,
+}
+impl From<CHESEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: CHESEL_A) -> Self {
+        match variant {
+            CHESEL_A::VALUE1 => false,
+            CHESEL_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `CHESEL`"]
+pub type CHESEL_R = crate::R<bool, CHESEL_A>;
+impl CHESEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CHESEL_A {
+        match self.bits {
+            false => CHESEL_A::VALUE1,
+            true => CHESEL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CHESEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CHESEL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CHESEL`"]
+pub struct CHESEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CHESEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CHESEL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Correct Hall Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
-    #[doc = "Correct Hall Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
-}
-impl CHESELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CHESELW::VALUE1 => false,
-            CHESELW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CHESELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CHESELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CHESELW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Correct Hall Event interrupt forward to POSIFx.SR0"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CHESELW::VALUE1)
+        self.variant(CHESEL_A::VALUE1)
     }
     #[doc = "Correct Hall Event interrupt forward to POSIFx.SR1"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CHESELW::VALUE2)
+        self.variant(CHESEL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `WHESEL`"]
-pub enum WHESELW {
-    #[doc = "Wrong Hall Event interrupt forward to POSIFx.SR0"]
+#[doc = "Wrong Hall Event Service Request Selector\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WHESEL_A {
+    #[doc = "0: Wrong Hall Event interrupt forward to POSIFx.SR0"]
     VALUE1,
-    #[doc = "Wrong Hall Event interrupt forward to POSIFx.SR1"]
+    #[doc = "1: Wrong Hall Event interrupt forward to POSIFx.SR1"]
     VALUE2,
 }
-impl WHESELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WHESELW::VALUE1 => false,
-            WHESELW::VALUE2 => true,
+impl From<WHESEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: WHESEL_A) -> Self {
+        match variant {
+            WHESEL_A::VALUE1 => false,
+            WHESEL_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _WHESELW<'a> {
+#[doc = "Reader of field `WHESEL`"]
+pub type WHESEL_R = crate::R<bool, WHESEL_A>;
+impl WHESEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WHESEL_A {
+        match self.bits {
+            false => WHESEL_A::VALUE1,
+            true => WHESEL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == WHESEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == WHESEL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `WHESEL`"]
+pub struct WHESEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WHESELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WHESELW) -> &'a mut W {
+impl<'a> WHESEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WHESEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Wrong Hall Event interrupt forward to POSIFx.SR0"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(WHESELW::VALUE1)
+        self.variant(WHESEL_A::VALUE1)
     }
     #[doc = "Wrong Hall Event interrupt forward to POSIFx.SR1"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(WHESELW::VALUE2)
+        self.variant(WHESEL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `HIESEL`"]
-pub enum HIESELW {
+#[doc = "Hall Inputs Update Event Service Request Selector\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HIESEL_A {
+    #[doc = "0: Hall Inputs Update Event interrupt forward to POSIFx.SR0"]
+    VALUE1,
+    #[doc = "1: Hall Inputs Update Event interrupt forward to POSIFx.SR1"]
+    VALUE2,
+}
+impl From<HIESEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: HIESEL_A) -> Self {
+        match variant {
+            HIESEL_A::VALUE1 => false,
+            HIESEL_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `HIESEL`"]
+pub type HIESEL_R = crate::R<bool, HIESEL_A>;
+impl HIESEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HIESEL_A {
+        match self.bits {
+            false => HIESEL_A::VALUE1,
+            true => HIESEL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == HIESEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == HIESEL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `HIESEL`"]
+pub struct HIESEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> HIESEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HIESEL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Hall Inputs Update Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
-    #[doc = "Hall Inputs Update Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
-}
-impl HIESELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HIESELW::VALUE1 => false,
-            HIESELW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HIESELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HIESELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HIESELW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Hall Inputs Update Event interrupt forward to POSIFx.SR0"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(HIESELW::VALUE1)
+        self.variant(HIESEL_A::VALUE1)
     }
     #[doc = "Hall Inputs Update Event interrupt forward to POSIFx.SR1"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(HIESELW::VALUE2)
+        self.variant(HIESEL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MSTSEL`"]
-pub enum MSTSELW {
-    #[doc = "Multi-Channel pattern Update Event interrupt forward to POSIFx.SR0"]
+#[doc = "Multi-Channel pattern Update Event Service Request Selector\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MSTSEL_A {
+    #[doc = "0: Multi-Channel pattern Update Event interrupt forward to POSIFx.SR0"]
     VALUE1,
-    #[doc = "Multi-Channel pattern Update Event interrupt forward to POSIFx.SR1"]
+    #[doc = "1: Multi-Channel pattern Update Event interrupt forward to POSIFx.SR1"]
     VALUE2,
 }
-impl MSTSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MSTSELW::VALUE1 => false,
-            MSTSELW::VALUE2 => true,
+impl From<MSTSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: MSTSEL_A) -> Self {
+        match variant {
+            MSTSEL_A::VALUE1 => false,
+            MSTSEL_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MSTSELW<'a> {
+#[doc = "Reader of field `MSTSEL`"]
+pub type MSTSEL_R = crate::R<bool, MSTSEL_A>;
+impl MSTSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MSTSEL_A {
+        match self.bits {
+            false => MSTSEL_A::VALUE1,
+            true => MSTSEL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == MSTSEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == MSTSEL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `MSTSEL`"]
+pub struct MSTSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MSTSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MSTSELW) -> &'a mut W {
+impl<'a> MSTSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MSTSEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Multi-Channel pattern Update Event interrupt forward to POSIFx.SR0"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MSTSELW::VALUE1)
+        self.variant(MSTSEL_A::VALUE1)
     }
     #[doc = "Multi-Channel pattern Update Event interrupt forward to POSIFx.SR1"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MSTSELW::VALUE2)
+        self.variant(MSTSEL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `INDSEL`"]
-pub enum INDSELW {
+#[doc = "Quadrature Index Event Service Request Selector\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum INDSEL_A {
+    #[doc = "0: Quadrature Index Event interrupt forward to POSIFx.SR0"]
+    VALUE1,
+    #[doc = "1: Quadrature Index Event interrupt forward to POSIFx.SR1"]
+    VALUE2,
+}
+impl From<INDSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: INDSEL_A) -> Self {
+        match variant {
+            INDSEL_A::VALUE1 => false,
+            INDSEL_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `INDSEL`"]
+pub type INDSEL_R = crate::R<bool, INDSEL_A>;
+impl INDSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INDSEL_A {
+        match self.bits {
+            false => INDSEL_A::VALUE1,
+            true => INDSEL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == INDSEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == INDSEL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `INDSEL`"]
+pub struct INDSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> INDSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INDSEL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Quadrature Index Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
-    #[doc = "Quadrature Index Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
-}
-impl INDSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INDSELW::VALUE1 => false,
-            INDSELW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INDSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INDSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INDSELW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Quadrature Index Event interrupt forward to POSIFx.SR0"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(INDSELW::VALUE1)
+        self.variant(INDSEL_A::VALUE1)
     }
     #[doc = "Quadrature Index Event interrupt forward to POSIFx.SR1"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(INDSELW::VALUE2)
+        self.variant(INDSEL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ERRSEL`"]
-pub enum ERRSELW {
-    #[doc = "Quadrature Phase error Event interrupt forward to POSIFx.SR0"]
+#[doc = "Quadrature Phase Error Event Service Request Selector\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ERRSEL_A {
+    #[doc = "0: Quadrature Phase error Event interrupt forward to POSIFx.SR0"]
     VALUE1,
-    #[doc = "Quadrature Phase error Event interrupt forward to POSIFx.SR1"]
+    #[doc = "1: Quadrature Phase error Event interrupt forward to POSIFx.SR1"]
     VALUE2,
 }
-impl ERRSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ERRSELW::VALUE1 => false,
-            ERRSELW::VALUE2 => true,
+impl From<ERRSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: ERRSEL_A) -> Self {
+        match variant {
+            ERRSEL_A::VALUE1 => false,
+            ERRSEL_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERRSELW<'a> {
+#[doc = "Reader of field `ERRSEL`"]
+pub type ERRSEL_R = crate::R<bool, ERRSEL_A>;
+impl ERRSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ERRSEL_A {
+        match self.bits {
+            false => ERRSEL_A::VALUE1,
+            true => ERRSEL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ERRSEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ERRSEL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ERRSEL`"]
+pub struct ERRSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERRSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ERRSELW) -> &'a mut W {
+impl<'a> ERRSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ERRSEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Quadrature Phase error Event interrupt forward to POSIFx.SR0"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ERRSELW::VALUE1)
+        self.variant(ERRSEL_A::VALUE1)
     }
     #[doc = "Quadrature Phase error Event interrupt forward to POSIFx.SR1"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ERRSELW::VALUE2)
+        self.variant(ERRSEL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CNTSEL`"]
-pub enum CNTSELW {
+#[doc = "Quadrature Clock Event Service Request Selector\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CNTSEL_A {
+    #[doc = "0: Quadrature Clock Event interrupt forward to POSIFx.SR0"]
+    VALUE1,
+    #[doc = "1: Quadrature Clock Event interrupt forward to POSIFx.SR1"]
+    VALUE2,
+}
+impl From<CNTSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: CNTSEL_A) -> Self {
+        match variant {
+            CNTSEL_A::VALUE1 => false,
+            CNTSEL_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `CNTSEL`"]
+pub type CNTSEL_R = crate::R<bool, CNTSEL_A>;
+impl CNTSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CNTSEL_A {
+        match self.bits {
+            false => CNTSEL_A::VALUE1,
+            true => CNTSEL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CNTSEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CNTSEL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `CNTSEL`"]
+pub struct CNTSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CNTSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CNTSEL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Quadrature Clock Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
-    #[doc = "Quadrature Clock Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
-}
-impl CNTSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CNTSELW::VALUE1 => false,
-            CNTSELW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CNTSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CNTSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CNTSELW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Quadrature Clock Event interrupt forward to POSIFx.SR0"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CNTSELW::VALUE1)
+        self.variant(CNTSEL_A::VALUE1)
     }
     #[doc = "Quadrature Clock Event interrupt forward to POSIFx.SR1"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CNTSELW::VALUE2)
+        self.variant(CNTSEL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DIRSEL`"]
-pub enum DIRSELW {
-    #[doc = "Quadrature Direction Update Event interrupt forward to POSIFx.SR0"]
+#[doc = "Quadrature Direction Update Event Service Request Selector\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DIRSEL_A {
+    #[doc = "0: Quadrature Direction Update Event interrupt forward to POSIFx.SR0"]
     VALUE1,
-    #[doc = "Quadrature Direction Update Event interrupt forward to POSIFx.SR1"]
+    #[doc = "1: Quadrature Direction Update Event interrupt forward to POSIFx.SR1"]
     VALUE2,
 }
-impl DIRSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DIRSELW::VALUE1 => false,
-            DIRSELW::VALUE2 => true,
+impl From<DIRSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: DIRSEL_A) -> Self {
+        match variant {
+            DIRSEL_A::VALUE1 => false,
+            DIRSEL_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _DIRSELW<'a> {
+#[doc = "Reader of field `DIRSEL`"]
+pub type DIRSEL_R = crate::R<bool, DIRSEL_A>;
+impl DIRSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DIRSEL_A {
+        match self.bits {
+            false => DIRSEL_A::VALUE1,
+            true => DIRSEL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == DIRSEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == DIRSEL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `DIRSEL`"]
+pub struct DIRSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DIRSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DIRSELW) -> &'a mut W {
+impl<'a> DIRSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DIRSEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Quadrature Direction Update Event interrupt forward to POSIFx.SR0"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(DIRSELW::VALUE1)
+        self.variant(DIRSEL_A::VALUE1)
     }
     #[doc = "Quadrature Direction Update Event interrupt forward to POSIFx.SR1"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(DIRSELW::VALUE2)
+        self.variant(DIRSEL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `PCLSEL`"]
-pub enum PCLSELW {
-    #[doc = "Quadrature Period clock Event interrupt forward to POSIFx.SR0"]
+#[doc = "Quadrature Period clock Event Service Request Selector\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PCLSEL_A {
+    #[doc = "0: Quadrature Period clock Event interrupt forward to POSIFx.SR0"]
     VALUE1,
-    #[doc = "Quadrature Period clock Event interrupt forward to POSIFx.SR1"]
+    #[doc = "1: Quadrature Period clock Event interrupt forward to POSIFx.SR1"]
     VALUE2,
 }
-impl PCLSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PCLSELW::VALUE1 => false,
-            PCLSELW::VALUE2 => true,
+impl From<PCLSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: PCLSEL_A) -> Self {
+        match variant {
+            PCLSEL_A::VALUE1 => false,
+            PCLSEL_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _PCLSELW<'a> {
+#[doc = "Reader of field `PCLSEL`"]
+pub type PCLSEL_R = crate::R<bool, PCLSEL_A>;
+impl PCLSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PCLSEL_A {
+        match self.bits {
+            false => PCLSEL_A::VALUE1,
+            true => PCLSEL_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == PCLSEL_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == PCLSEL_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `PCLSEL`"]
+pub struct PCLSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PCLSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PCLSELW) -> &'a mut W {
+impl<'a> PCLSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PCLSEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Quadrature Period clock Event interrupt forward to POSIFx.SR0"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(PCLSELW::VALUE1)
+        self.variant(PCLSEL_A::VALUE1)
     }
     #[doc = "Quadrature Period clock Event interrupt forward to POSIFx.SR1"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(PCLSELW::VALUE2)
+        self.variant(PCLSEL_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Correct Hall Event Enable"]
-    #[inline]
-    pub fn eche(&self) -> ECHER {
-        ECHER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn eche(&self) -> ECHE_R {
+        ECHE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Wrong Hall Event Enable"]
-    #[inline]
-    pub fn ewhe(&self) -> EWHER {
-        EWHER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ewhe(&self) -> EWHE_R {
+        EWHE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Hall Input Update Enable"]
-    #[inline]
-    pub fn ehie(&self) -> EHIER {
-        EHIER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ehie(&self) -> EHIE_R {
+        EHIE_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Multi-Channel pattern shadow transfer enable"]
-    #[inline]
-    pub fn emst(&self) -> EMSTR {
-        EMSTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn emst(&self) -> EMST_R {
+        EMST_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Quadrature Index Event Enable"]
-    #[inline]
-    pub fn eindx(&self) -> EINDXR {
-        EINDXR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn eindx(&self) -> EINDX_R {
+        EINDX_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Quadrature Phase Error Enable"]
-    #[inline]
-    pub fn eerr(&self) -> EERRR {
-        EERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn eerr(&self) -> EERR_R {
+        EERR_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Quadrature CLK interrupt Enable"]
-    #[inline]
-    pub fn ecnt(&self) -> ECNTR {
-        ECNTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ecnt(&self) -> ECNT_R {
+        ECNT_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Quadrature direction change interrupt Enable"]
-    #[inline]
-    pub fn edir(&self) -> EDIRR {
-        EDIRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn edir(&self) -> EDIR_R {
+        EDIR_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Quadrature Period CLK interrupt Enable"]
-    #[inline]
-    pub fn epclk(&self) -> EPCLKR {
-        EPCLKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn epclk(&self) -> EPCLK_R {
+        EPCLK_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Correct Hall Event Service Request Selector"]
-    #[inline]
-    pub fn chesel(&self) -> CHESELR {
-        CHESELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn chesel(&self) -> CHESEL_R {
+        CHESEL_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Wrong Hall Event Service Request Selector"]
-    #[inline]
-    pub fn whesel(&self) -> WHESELR {
-        WHESELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn whesel(&self) -> WHESEL_R {
+        WHESEL_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - Hall Inputs Update Event Service Request Selector"]
-    #[inline]
-    pub fn hiesel(&self) -> HIESELR {
-        HIESELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hiesel(&self) -> HIESEL_R {
+        HIESEL_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 20 - Multi-Channel pattern Update Event Service Request Selector"]
-    #[inline]
-    pub fn mstsel(&self) -> MSTSELR {
-        MSTSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mstsel(&self) -> MSTSEL_R {
+        MSTSEL_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Quadrature Index Event Service Request Selector"]
-    #[inline]
-    pub fn indsel(&self) -> INDSELR {
-        INDSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn indsel(&self) -> INDSEL_R {
+        INDSEL_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Quadrature Phase Error Event Service Request Selector"]
-    #[inline]
-    pub fn errsel(&self) -> ERRSELR {
-        ERRSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn errsel(&self) -> ERRSEL_R {
+        ERRSEL_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - Quadrature Clock Event Service Request Selector"]
-    #[inline]
-    pub fn cntsel(&self) -> CNTSELR {
-        CNTSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cntsel(&self) -> CNTSEL_R {
+        CNTSEL_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - Quadrature Direction Update Event Service Request Selector"]
-    #[inline]
-    pub fn dirsel(&self) -> DIRSELR {
-        DIRSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dirsel(&self) -> DIRSEL_R {
+        DIRSEL_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 28 - Quadrature Period clock Event Service Request Selector"]
-    #[inline]
-    pub fn pclsel(&self) -> PCLSELR {
-        PCLSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pclsel(&self) -> PCLSEL_R {
+        PCLSEL_R::new(((self.bits >> 28) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Correct Hall Event Enable"]
-    #[inline]
-    pub fn eche(&mut self) -> _ECHEW {
-        _ECHEW { w: self }
+    #[inline(always)]
+    pub fn eche(&mut self) -> ECHE_W {
+        ECHE_W { w: self }
     }
     #[doc = "Bit 1 - Wrong Hall Event Enable"]
-    #[inline]
-    pub fn ewhe(&mut self) -> _EWHEW {
-        _EWHEW { w: self }
+    #[inline(always)]
+    pub fn ewhe(&mut self) -> EWHE_W {
+        EWHE_W { w: self }
     }
     #[doc = "Bit 2 - Hall Input Update Enable"]
-    #[inline]
-    pub fn ehie(&mut self) -> _EHIEW {
-        _EHIEW { w: self }
+    #[inline(always)]
+    pub fn ehie(&mut self) -> EHIE_W {
+        EHIE_W { w: self }
     }
     #[doc = "Bit 4 - Multi-Channel pattern shadow transfer enable"]
-    #[inline]
-    pub fn emst(&mut self) -> _EMSTW {
-        _EMSTW { w: self }
+    #[inline(always)]
+    pub fn emst(&mut self) -> EMST_W {
+        EMST_W { w: self }
     }
     #[doc = "Bit 8 - Quadrature Index Event Enable"]
-    #[inline]
-    pub fn eindx(&mut self) -> _EINDXW {
-        _EINDXW { w: self }
+    #[inline(always)]
+    pub fn eindx(&mut self) -> EINDX_W {
+        EINDX_W { w: self }
     }
     #[doc = "Bit 9 - Quadrature Phase Error Enable"]
-    #[inline]
-    pub fn eerr(&mut self) -> _EERRW {
-        _EERRW { w: self }
+    #[inline(always)]
+    pub fn eerr(&mut self) -> EERR_W {
+        EERR_W { w: self }
     }
     #[doc = "Bit 10 - Quadrature CLK interrupt Enable"]
-    #[inline]
-    pub fn ecnt(&mut self) -> _ECNTW {
-        _ECNTW { w: self }
+    #[inline(always)]
+    pub fn ecnt(&mut self) -> ECNT_W {
+        ECNT_W { w: self }
     }
     #[doc = "Bit 11 - Quadrature direction change interrupt Enable"]
-    #[inline]
-    pub fn edir(&mut self) -> _EDIRW {
-        _EDIRW { w: self }
+    #[inline(always)]
+    pub fn edir(&mut self) -> EDIR_W {
+        EDIR_W { w: self }
     }
     #[doc = "Bit 12 - Quadrature Period CLK interrupt Enable"]
-    #[inline]
-    pub fn epclk(&mut self) -> _EPCLKW {
-        _EPCLKW { w: self }
+    #[inline(always)]
+    pub fn epclk(&mut self) -> EPCLK_W {
+        EPCLK_W { w: self }
     }
     #[doc = "Bit 16 - Correct Hall Event Service Request Selector"]
-    #[inline]
-    pub fn chesel(&mut self) -> _CHESELW {
-        _CHESELW { w: self }
+    #[inline(always)]
+    pub fn chesel(&mut self) -> CHESEL_W {
+        CHESEL_W { w: self }
     }
     #[doc = "Bit 17 - Wrong Hall Event Service Request Selector"]
-    #[inline]
-    pub fn whesel(&mut self) -> _WHESELW {
-        _WHESELW { w: self }
+    #[inline(always)]
+    pub fn whesel(&mut self) -> WHESEL_W {
+        WHESEL_W { w: self }
     }
     #[doc = "Bit 18 - Hall Inputs Update Event Service Request Selector"]
-    #[inline]
-    pub fn hiesel(&mut self) -> _HIESELW {
-        _HIESELW { w: self }
+    #[inline(always)]
+    pub fn hiesel(&mut self) -> HIESEL_W {
+        HIESEL_W { w: self }
     }
     #[doc = "Bit 20 - Multi-Channel pattern Update Event Service Request Selector"]
-    #[inline]
-    pub fn mstsel(&mut self) -> _MSTSELW {
-        _MSTSELW { w: self }
+    #[inline(always)]
+    pub fn mstsel(&mut self) -> MSTSEL_W {
+        MSTSEL_W { w: self }
     }
     #[doc = "Bit 24 - Quadrature Index Event Service Request Selector"]
-    #[inline]
-    pub fn indsel(&mut self) -> _INDSELW {
-        _INDSELW { w: self }
+    #[inline(always)]
+    pub fn indsel(&mut self) -> INDSEL_W {
+        INDSEL_W { w: self }
     }
     #[doc = "Bit 25 - Quadrature Phase Error Event Service Request Selector"]
-    #[inline]
-    pub fn errsel(&mut self) -> _ERRSELW {
-        _ERRSELW { w: self }
+    #[inline(always)]
+    pub fn errsel(&mut self) -> ERRSEL_W {
+        ERRSEL_W { w: self }
     }
     #[doc = "Bit 26 - Quadrature Clock Event Service Request Selector"]
-    #[inline]
-    pub fn cntsel(&mut self) -> _CNTSELW {
-        _CNTSELW { w: self }
+    #[inline(always)]
+    pub fn cntsel(&mut self) -> CNTSEL_W {
+        CNTSEL_W { w: self }
     }
     #[doc = "Bit 27 - Quadrature Direction Update Event Service Request Selector"]
-    #[inline]
-    pub fn dirsel(&mut self) -> _DIRSELW {
-        _DIRSELW { w: self }
+    #[inline(always)]
+    pub fn dirsel(&mut self) -> DIRSEL_W {
+        DIRSEL_W { w: self }
     }
     #[doc = "Bit 28 - Quadrature Period clock Event Service Request Selector"]
-    #[inline]
-    pub fn pclsel(&mut self) -> _PCLSELW {
-        _PCLSELW { w: self }
+    #[inline(always)]
+    pub fn pclsel(&mut self) -> PCLSEL_W {
+        PCLSEL_W { w: self }
     }
 }

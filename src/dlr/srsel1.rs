@@ -1,226 +1,112 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SRSEL1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SRSEL1"]
+pub type R = crate::R<u32, super::SRSEL1>;
+#[doc = "Writer for register SRSEL1"]
+pub type W = crate::W<u32, super::SRSEL1>;
+#[doc = "Register SRSEL1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::SRSEL1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct RS8R {
-    bits: u8,
-}
-impl RS8R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RS9R {
-    bits: u8,
-}
-impl RS9R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RS10R {
-    bits: u8,
-}
-impl RS10R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RS11R {
-    bits: u8,
-}
-impl RS11R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RS8W<'a> {
+#[doc = "Reader of field `RS8`"]
+pub type RS8_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RS8`"]
+pub struct RS8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RS8W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RS8_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RS9W<'a> {
+#[doc = "Reader of field `RS9`"]
+pub type RS9_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RS9`"]
+pub struct RS9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RS9W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RS9_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RS10W<'a> {
+#[doc = "Reader of field `RS10`"]
+pub type RS10_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RS10`"]
+pub struct RS10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RS10W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RS10_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _RS11W<'a> {
+#[doc = "Reader of field `RS11`"]
+pub type RS11_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RS11`"]
+pub struct RS11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RS11W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RS11_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Request Source for Line 8"]
-    #[inline]
-    pub fn rs8(&self) -> RS8R {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RS8R { bits }
+    #[inline(always)]
+    pub fn rs8(&self) -> RS8_R {
+        RS8_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - Request Source for Line 9"]
-    #[inline]
-    pub fn rs9(&self) -> RS9R {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RS9R { bits }
+    #[inline(always)]
+    pub fn rs9(&self) -> RS9_R {
+        RS9_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - Request Source for Line 10"]
-    #[inline]
-    pub fn rs10(&self) -> RS10R {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RS10R { bits }
+    #[inline(always)]
+    pub fn rs10(&self) -> RS10_R {
+        RS10_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:15 - Request Source for Line 11"]
-    #[inline]
-    pub fn rs11(&self) -> RS11R {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RS11R { bits }
+    #[inline(always)]
+    pub fn rs11(&self) -> RS11_R {
+        RS11_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Request Source for Line 8"]
-    #[inline]
-    pub fn rs8(&mut self) -> _RS8W {
-        _RS8W { w: self }
+    #[inline(always)]
+    pub fn rs8(&mut self) -> RS8_W {
+        RS8_W { w: self }
     }
     #[doc = "Bits 4:7 - Request Source for Line 9"]
-    #[inline]
-    pub fn rs9(&mut self) -> _RS9W {
-        _RS9W { w: self }
+    #[inline(always)]
+    pub fn rs9(&mut self) -> RS9_W {
+        RS9_W { w: self }
     }
     #[doc = "Bits 8:11 - Request Source for Line 10"]
-    #[inline]
-    pub fn rs10(&mut self) -> _RS10W {
-        _RS10W { w: self }
+    #[inline(always)]
+    pub fn rs10(&mut self) -> RS10_W {
+        RS10_W { w: self }
     }
     #[doc = "Bits 12:15 - Request Source for Line 11"]
-    #[inline]
-    pub fn rs11(&mut self) -> _RS11W {
-        _RS11W { w: self }
+    #[inline(always)]
+    pub fn rs11(&mut self) -> RS11_W {
+        RS11_W { w: self }
     }
 }

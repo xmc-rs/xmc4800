@@ -1,298 +1,224 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::USBPLLSTAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `VCOBYST`"]
+#[doc = "Reader of register USBPLLSTAT"]
+pub type R = crate::R<u32, super::USBPLLSTAT>;
+#[doc = "VCO Bypass Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VCOBYSTR {
-    #[doc = "Normal Mode is entered"]
+pub enum VCOBYST_A {
+    #[doc = "0: Normal Mode is entered"]
     VALUE1,
-    #[doc = "Prescaler Mode is entered"]
+    #[doc = "1: Prescaler Mode is entered"]
     VALUE2,
 }
-impl VCOBYSTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VCOBYSTR::VALUE1 => false,
-            VCOBYSTR::VALUE2 => true,
+impl From<VCOBYST_A> for bool {
+    #[inline(always)]
+    fn from(variant: VCOBYST_A) -> Self {
+        match variant {
+            VCOBYST_A::VALUE1 => false,
+            VCOBYST_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VCOBYSTR {
-        match value {
-            false => VCOBYSTR::VALUE1,
-            true => VCOBYSTR::VALUE2,
+}
+#[doc = "Reader of field `VCOBYST`"]
+pub type VCOBYST_R = crate::R<bool, VCOBYST_A>;
+impl VCOBYST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VCOBYST_A {
+        match self.bits {
+            false => VCOBYST_A::VALUE1,
+            true => VCOBYST_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VCOBYSTR::VALUE1
+        *self == VCOBYST_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VCOBYSTR::VALUE2
+        *self == VCOBYST_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `PWDSTAT`"]
+#[doc = "PLL Power-saving Mode Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PWDSTATR {
-    #[doc = "PLL Power-saving Mode was not entered"]
+pub enum PWDSTAT_A {
+    #[doc = "0: PLL Power-saving Mode was not entered"]
     VALUE1,
-    #[doc = "PLL Power-saving Mode was entered"]
+    #[doc = "1: PLL Power-saving Mode was entered"]
     VALUE2,
 }
-impl PWDSTATR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PWDSTATR::VALUE1 => false,
-            PWDSTATR::VALUE2 => true,
+impl From<PWDSTAT_A> for bool {
+    #[inline(always)]
+    fn from(variant: PWDSTAT_A) -> Self {
+        match variant {
+            PWDSTAT_A::VALUE1 => false,
+            PWDSTAT_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PWDSTATR {
-        match value {
-            false => PWDSTATR::VALUE1,
-            true => PWDSTATR::VALUE2,
+}
+#[doc = "Reader of field `PWDSTAT`"]
+pub type PWDSTAT_R = crate::R<bool, PWDSTAT_A>;
+impl PWDSTAT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PWDSTAT_A {
+        match self.bits {
+            false => PWDSTAT_A::VALUE1,
+            true => PWDSTAT_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PWDSTATR::VALUE1
+        *self == PWDSTAT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PWDSTATR::VALUE2
+        *self == PWDSTAT_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `VCOLOCK`"]
+#[doc = "PLL VCO Lock Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VCOLOCKR {
-    #[doc = "The frequency difference of fREF and fDIV is greater than allowed. The VCO part of the PLL can not lock on a target frequency."]
+pub enum VCOLOCK_A {
+    #[doc = "0: The frequency difference of fREF and fDIV is greater than allowed. The VCO part of the PLL can not lock on a target frequency."]
     VALUE1,
-    #[doc = "The frequency difference of fREF and fDIV is small enough to enable a stable VCO operation"]
+    #[doc = "1: The frequency difference of fREF and fDIV is small enough to enable a stable VCO operation"]
     VALUE2,
 }
-impl VCOLOCKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VCOLOCKR::VALUE1 => false,
-            VCOLOCKR::VALUE2 => true,
+impl From<VCOLOCK_A> for bool {
+    #[inline(always)]
+    fn from(variant: VCOLOCK_A) -> Self {
+        match variant {
+            VCOLOCK_A::VALUE1 => false,
+            VCOLOCK_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VCOLOCKR {
-        match value {
-            false => VCOLOCKR::VALUE1,
-            true => VCOLOCKR::VALUE2,
+}
+#[doc = "Reader of field `VCOLOCK`"]
+pub type VCOLOCK_R = crate::R<bool, VCOLOCK_A>;
+impl VCOLOCK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VCOLOCK_A {
+        match self.bits {
+            false => VCOLOCK_A::VALUE1,
+            true => VCOLOCK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VCOLOCKR::VALUE1
+        *self == VCOLOCK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VCOLOCKR::VALUE2
+        *self == VCOLOCK_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `BY`"]
+#[doc = "Bypass Mode Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BYR {
-    #[doc = "Bypass Mode is not entered"]
+pub enum BY_A {
+    #[doc = "0: Bypass Mode is not entered"]
     VALUE1,
-    #[doc = "Bypass Mode is entered. Input fOSC is selected as output fPLL."]
+    #[doc = "1: Bypass Mode is entered. Input fOSC is selected as output fPLL."]
     VALUE2,
 }
-impl BYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BYR::VALUE1 => false,
-            BYR::VALUE2 => true,
+impl From<BY_A> for bool {
+    #[inline(always)]
+    fn from(variant: BY_A) -> Self {
+        match variant {
+            BY_A::VALUE1 => false,
+            BY_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BYR {
-        match value {
-            false => BYR::VALUE1,
-            true => BYR::VALUE2,
+}
+#[doc = "Reader of field `BY`"]
+pub type BY_R = crate::R<bool, BY_A>;
+impl BY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BY_A {
+        match self.bits {
+            false => BY_A::VALUE1,
+            true => BY_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BYR::VALUE1
+        *self == BY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BYR::VALUE2
+        *self == BY_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `VCOLOCKED`"]
+#[doc = "PLL LOCK Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VCOLOCKEDR {
-    #[doc = "PLL not locked"]
+pub enum VCOLOCKED_A {
+    #[doc = "0: PLL not locked"]
     VALUE1,
-    #[doc = "PLL locked"]
+    #[doc = "1: PLL locked"]
     VALUE2,
 }
-impl VCOLOCKEDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VCOLOCKEDR::VALUE1 => false,
-            VCOLOCKEDR::VALUE2 => true,
+impl From<VCOLOCKED_A> for bool {
+    #[inline(always)]
+    fn from(variant: VCOLOCKED_A) -> Self {
+        match variant {
+            VCOLOCKED_A::VALUE1 => false,
+            VCOLOCKED_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VCOLOCKEDR {
-        match value {
-            false => VCOLOCKEDR::VALUE1,
-            true => VCOLOCKEDR::VALUE2,
+}
+#[doc = "Reader of field `VCOLOCKED`"]
+pub type VCOLOCKED_R = crate::R<bool, VCOLOCKED_A>;
+impl VCOLOCKED_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VCOLOCKED_A {
+        match self.bits {
+            false => VCOLOCKED_A::VALUE1,
+            true => VCOLOCKED_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VCOLOCKEDR::VALUE1
+        *self == VCOLOCKED_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VCOLOCKEDR::VALUE2
+        *self == VCOLOCKED_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - VCO Bypass Status"]
-    #[inline]
-    pub fn vcobyst(&self) -> VCOBYSTR {
-        VCOBYSTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn vcobyst(&self) -> VCOBYST_R {
+        VCOBYST_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - PLL Power-saving Mode Status"]
-    #[inline]
-    pub fn pwdstat(&self) -> PWDSTATR {
-        PWDSTATR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pwdstat(&self) -> PWDSTAT_R {
+        PWDSTAT_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - PLL VCO Lock Status"]
-    #[inline]
-    pub fn vcolock(&self) -> VCOLOCKR {
-        VCOLOCKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn vcolock(&self) -> VCOLOCK_R {
+        VCOLOCK_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Bypass Mode Status"]
-    #[inline]
-    pub fn by(&self) -> BYR {
-        BYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn by(&self) -> BY_R {
+        BY_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - PLL LOCK Status"]
-    #[inline]
-    pub fn vcolocked(&self) -> VCOLOCKEDR {
-        VCOLOCKEDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn vcolocked(&self) -> VCOLOCKED_R {
+        VCOLOCKED_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }

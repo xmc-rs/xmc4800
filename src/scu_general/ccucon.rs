@@ -1,776 +1,544 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CCUCON {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CCUCON"]
+pub type R = crate::R<u32, super::CCUCON>;
+#[doc = "Writer for register CCUCON"]
+pub type W = crate::W<u32, super::CCUCON>;
+#[doc = "Register CCUCON `reset()`'s with value 0"]
+impl crate::ResetValue for super::CCUCON {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `GSC40`"]
+#[doc = "Global Start Control CCU40\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GSC40R {
-    #[doc = "Disable"]
+pub enum GSC40_A {
+    #[doc = "0: Disable"]
     VALUE1,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     VALUE2,
 }
-impl GSC40R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            GSC40R::VALUE1 => false,
-            GSC40R::VALUE2 => true,
+impl From<GSC40_A> for bool {
+    #[inline(always)]
+    fn from(variant: GSC40_A) -> Self {
+        match variant {
+            GSC40_A::VALUE1 => false,
+            GSC40_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> GSC40R {
-        match value {
-            false => GSC40R::VALUE1,
-            true => GSC40R::VALUE2,
+}
+#[doc = "Reader of field `GSC40`"]
+pub type GSC40_R = crate::R<bool, GSC40_A>;
+impl GSC40_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GSC40_A {
+        match self.bits {
+            false => GSC40_A::VALUE1,
+            true => GSC40_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == GSC40R::VALUE1
+        *self == GSC40_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == GSC40R::VALUE2
+        *self == GSC40_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `GSC41`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GSC41R {
-    #[doc = "Disable"]
-    VALUE1,
-    #[doc = "Enable"]
-    VALUE2,
-}
-impl GSC41R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            GSC41R::VALUE1 => false,
-            GSC41R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> GSC41R {
-        match value {
-            false => GSC41R::VALUE1,
-            true => GSC41R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == GSC41R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == GSC41R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `GSC42`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GSC42R {
-    #[doc = "Disable"]
-    VALUE1,
-    #[doc = "Enable"]
-    VALUE2,
-}
-impl GSC42R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            GSC42R::VALUE1 => false,
-            GSC42R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> GSC42R {
-        match value {
-            false => GSC42R::VALUE1,
-            true => GSC42R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == GSC42R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == GSC42R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `GSC43`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GSC43R {
-    #[doc = "Disable"]
-    VALUE1,
-    #[doc = "Enable"]
-    VALUE2,
-}
-impl GSC43R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            GSC43R::VALUE1 => false,
-            GSC43R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> GSC43R {
-        match value {
-            false => GSC43R::VALUE1,
-            true => GSC43R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == GSC43R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == GSC43R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `GSC80`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GSC80R {
-    #[doc = "Disable"]
-    VALUE1,
-    #[doc = "Enable"]
-    VALUE2,
-}
-impl GSC80R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            GSC80R::VALUE1 => false,
-            GSC80R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> GSC80R {
-        match value {
-            false => GSC80R::VALUE1,
-            true => GSC80R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == GSC80R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == GSC80R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `GSC81`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GSC81R {
-    #[doc = "Disable"]
-    VALUE1,
-    #[doc = "Enable"]
-    VALUE2,
-}
-impl GSC81R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            GSC81R::VALUE1 => false,
-            GSC81R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> GSC81R {
-        match value {
-            false => GSC81R::VALUE1,
-            true => GSC81R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == GSC81R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == GSC81R::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `GSC40`"]
-pub enum GSC40W {
-    #[doc = "Disable"]
-    VALUE1,
-    #[doc = "Enable"]
-    VALUE2,
-}
-impl GSC40W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            GSC40W::VALUE1 => false,
-            GSC40W::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _GSC40W<'a> {
+#[doc = "Write proxy for field `GSC40`"]
+pub struct GSC40_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GSC40W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: GSC40W) -> &'a mut W {
+impl<'a> GSC40_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: GSC40_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(GSC40W::VALUE1)
+        self.variant(GSC40_A::VALUE1)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(GSC40W::VALUE2)
+        self.variant(GSC40_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `GSC41`"]
-pub enum GSC41W {
-    #[doc = "Disable"]
+#[doc = "Global Start Control CCU41\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum GSC41_A {
+    #[doc = "0: Disable"]
     VALUE1,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     VALUE2,
 }
-impl GSC41W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            GSC41W::VALUE1 => false,
-            GSC41W::VALUE2 => true,
+impl From<GSC41_A> for bool {
+    #[inline(always)]
+    fn from(variant: GSC41_A) -> Self {
+        match variant {
+            GSC41_A::VALUE1 => false,
+            GSC41_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _GSC41W<'a> {
+#[doc = "Reader of field `GSC41`"]
+pub type GSC41_R = crate::R<bool, GSC41_A>;
+impl GSC41_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GSC41_A {
+        match self.bits {
+            false => GSC41_A::VALUE1,
+            true => GSC41_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == GSC41_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == GSC41_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `GSC41`"]
+pub struct GSC41_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GSC41W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: GSC41W) -> &'a mut W {
+impl<'a> GSC41_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: GSC41_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(GSC41W::VALUE1)
+        self.variant(GSC41_A::VALUE1)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(GSC41W::VALUE2)
+        self.variant(GSC41_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `GSC42`"]
-pub enum GSC42W {
-    #[doc = "Disable"]
+#[doc = "Global Start Control CCU42\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum GSC42_A {
+    #[doc = "0: Disable"]
     VALUE1,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     VALUE2,
 }
-impl GSC42W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            GSC42W::VALUE1 => false,
-            GSC42W::VALUE2 => true,
+impl From<GSC42_A> for bool {
+    #[inline(always)]
+    fn from(variant: GSC42_A) -> Self {
+        match variant {
+            GSC42_A::VALUE1 => false,
+            GSC42_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _GSC42W<'a> {
+#[doc = "Reader of field `GSC42`"]
+pub type GSC42_R = crate::R<bool, GSC42_A>;
+impl GSC42_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GSC42_A {
+        match self.bits {
+            false => GSC42_A::VALUE1,
+            true => GSC42_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == GSC42_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == GSC42_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `GSC42`"]
+pub struct GSC42_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GSC42W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: GSC42W) -> &'a mut W {
+impl<'a> GSC42_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: GSC42_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(GSC42W::VALUE1)
+        self.variant(GSC42_A::VALUE1)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(GSC42W::VALUE2)
+        self.variant(GSC42_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `GSC43`"]
-pub enum GSC43W {
-    #[doc = "Disable"]
+#[doc = "Global Start Control CCU43\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum GSC43_A {
+    #[doc = "0: Disable"]
     VALUE1,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     VALUE2,
 }
-impl GSC43W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            GSC43W::VALUE1 => false,
-            GSC43W::VALUE2 => true,
+impl From<GSC43_A> for bool {
+    #[inline(always)]
+    fn from(variant: GSC43_A) -> Self {
+        match variant {
+            GSC43_A::VALUE1 => false,
+            GSC43_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _GSC43W<'a> {
+#[doc = "Reader of field `GSC43`"]
+pub type GSC43_R = crate::R<bool, GSC43_A>;
+impl GSC43_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GSC43_A {
+        match self.bits {
+            false => GSC43_A::VALUE1,
+            true => GSC43_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == GSC43_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == GSC43_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `GSC43`"]
+pub struct GSC43_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GSC43W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: GSC43W) -> &'a mut W {
+impl<'a> GSC43_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: GSC43_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(GSC43W::VALUE1)
+        self.variant(GSC43_A::VALUE1)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(GSC43W::VALUE2)
+        self.variant(GSC43_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `GSC80`"]
-pub enum GSC80W {
-    #[doc = "Disable"]
+#[doc = "Global Start Control CCU80\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum GSC80_A {
+    #[doc = "0: Disable"]
     VALUE1,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     VALUE2,
 }
-impl GSC80W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            GSC80W::VALUE1 => false,
-            GSC80W::VALUE2 => true,
+impl From<GSC80_A> for bool {
+    #[inline(always)]
+    fn from(variant: GSC80_A) -> Self {
+        match variant {
+            GSC80_A::VALUE1 => false,
+            GSC80_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _GSC80W<'a> {
+#[doc = "Reader of field `GSC80`"]
+pub type GSC80_R = crate::R<bool, GSC80_A>;
+impl GSC80_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GSC80_A {
+        match self.bits {
+            false => GSC80_A::VALUE1,
+            true => GSC80_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == GSC80_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == GSC80_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `GSC80`"]
+pub struct GSC80_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GSC80W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: GSC80W) -> &'a mut W {
+impl<'a> GSC80_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: GSC80_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(GSC80W::VALUE1)
+        self.variant(GSC80_A::VALUE1)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(GSC80W::VALUE2)
+        self.variant(GSC80_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `GSC81`"]
-pub enum GSC81W {
-    #[doc = "Disable"]
+#[doc = "Global Start Control CCU81\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum GSC81_A {
+    #[doc = "0: Disable"]
     VALUE1,
-    #[doc = "Enable"]
+    #[doc = "1: Enable"]
     VALUE2,
 }
-impl GSC81W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            GSC81W::VALUE1 => false,
-            GSC81W::VALUE2 => true,
+impl From<GSC81_A> for bool {
+    #[inline(always)]
+    fn from(variant: GSC81_A) -> Self {
+        match variant {
+            GSC81_A::VALUE1 => false,
+            GSC81_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _GSC81W<'a> {
+#[doc = "Reader of field `GSC81`"]
+pub type GSC81_R = crate::R<bool, GSC81_A>;
+impl GSC81_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GSC81_A {
+        match self.bits {
+            false => GSC81_A::VALUE1,
+            true => GSC81_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == GSC81_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == GSC81_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `GSC81`"]
+pub struct GSC81_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GSC81W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: GSC81W) -> &'a mut W {
+impl<'a> GSC81_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: GSC81_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(GSC81W::VALUE1)
+        self.variant(GSC81_A::VALUE1)
     }
     #[doc = "Enable"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(GSC81W::VALUE2)
+        self.variant(GSC81_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Global Start Control CCU40"]
-    #[inline]
-    pub fn gsc40(&self) -> GSC40R {
-        GSC40R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn gsc40(&self) -> GSC40_R {
+        GSC40_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Global Start Control CCU41"]
-    #[inline]
-    pub fn gsc41(&self) -> GSC41R {
-        GSC41R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn gsc41(&self) -> GSC41_R {
+        GSC41_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Global Start Control CCU42"]
-    #[inline]
-    pub fn gsc42(&self) -> GSC42R {
-        GSC42R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn gsc42(&self) -> GSC42_R {
+        GSC42_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Global Start Control CCU43"]
-    #[inline]
-    pub fn gsc43(&self) -> GSC43R {
-        GSC43R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn gsc43(&self) -> GSC43_R {
+        GSC43_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Global Start Control CCU80"]
-    #[inline]
-    pub fn gsc80(&self) -> GSC80R {
-        GSC80R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn gsc80(&self) -> GSC80_R {
+        GSC80_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Global Start Control CCU81"]
-    #[inline]
-    pub fn gsc81(&self) -> GSC81R {
-        GSC81R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn gsc81(&self) -> GSC81_R {
+        GSC81_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Global Start Control CCU40"]
-    #[inline]
-    pub fn gsc40(&mut self) -> _GSC40W {
-        _GSC40W { w: self }
+    #[inline(always)]
+    pub fn gsc40(&mut self) -> GSC40_W {
+        GSC40_W { w: self }
     }
     #[doc = "Bit 1 - Global Start Control CCU41"]
-    #[inline]
-    pub fn gsc41(&mut self) -> _GSC41W {
-        _GSC41W { w: self }
+    #[inline(always)]
+    pub fn gsc41(&mut self) -> GSC41_W {
+        GSC41_W { w: self }
     }
     #[doc = "Bit 2 - Global Start Control CCU42"]
-    #[inline]
-    pub fn gsc42(&mut self) -> _GSC42W {
-        _GSC42W { w: self }
+    #[inline(always)]
+    pub fn gsc42(&mut self) -> GSC42_W {
+        GSC42_W { w: self }
     }
     #[doc = "Bit 3 - Global Start Control CCU43"]
-    #[inline]
-    pub fn gsc43(&mut self) -> _GSC43W {
-        _GSC43W { w: self }
+    #[inline(always)]
+    pub fn gsc43(&mut self) -> GSC43_W {
+        GSC43_W { w: self }
     }
     #[doc = "Bit 8 - Global Start Control CCU80"]
-    #[inline]
-    pub fn gsc80(&mut self) -> _GSC80W {
-        _GSC80W { w: self }
+    #[inline(always)]
+    pub fn gsc80(&mut self) -> GSC80_W {
+        GSC80_W { w: self }
     }
     #[doc = "Bit 9 - Global Start Control CCU81"]
-    #[inline]
-    pub fn gsc81(&mut self) -> _GSC81W {
-        _GSC81W { w: self }
+    #[inline(always)]
+    pub fn gsc81(&mut self) -> GSC81_W {
+        GSC81_W { w: self }
     }
 }

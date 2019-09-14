@@ -1,1494 +1,1148 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PDR0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PDR0"]
+pub type R = crate::R<u32, super::PDR0>;
+#[doc = "Writer for register PDR0"]
+pub type W = crate::W<u32, super::PDR0>;
+#[doc = "Register PDR0 `reset()`'s with value 0x2222_2222"]
+impl crate::ResetValue for super::PDR0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x2222_2222
     }
 }
-#[doc = "Possible values of the field `PD0`"]
+#[doc = "Pad Driver Mode for Pn.0\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PD0R {
-    #[doc = "A1+ strong driver, soft edge"]
+pub enum PD0_A {
+    #[doc = "2: A1+ strong driver, soft edge"]
     SD_SOE,
-    #[doc = "A1+ strong driver, slow edge"]
+    #[doc = "3: A1+ strong driver, slow edge"]
     SD_SLE,
-    #[doc = "A1+ medium driver"]
+    #[doc = "4: A1+ medium driver"]
     MD,
-    #[doc = "A1+ weak driver"]
+    #[doc = "7: A1+ weak driver"]
     WD,
-    #[doc = "A1+ strong driver, soft edge (alternate value)"]
+    #[doc = "0: A1+ strong driver, soft edge (alternate value)"]
     SD_SOE_ALT,
-    #[doc = "A1+ strong driver, slow edge (alternate value)"]
+    #[doc = "1: A1+ strong driver, slow edge (alternate value)"]
     SD_SLE_ALT,
-    #[doc = "A1+ medium driver (alternate value)"]
+    #[doc = "6: A1+ medium driver (alternate value)"]
     MD_ALT,
-    #[doc = "A1+ weak driver (alternate value)"]
+    #[doc = "5: A1+ weak driver (alternate value)"]
     WD_ALT,
 }
-impl PD0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PD0R::SD_SOE => 2,
-            PD0R::SD_SLE => 3,
-            PD0R::MD => 4,
-            PD0R::WD => 7,
-            PD0R::SD_SOE_ALT => 0,
-            PD0R::SD_SLE_ALT => 1,
-            PD0R::MD_ALT => 6,
-            PD0R::WD_ALT => 5,
+impl From<PD0_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PD0_A) -> Self {
+        match variant {
+            PD0_A::SD_SOE => 2,
+            PD0_A::SD_SLE => 3,
+            PD0_A::MD => 4,
+            PD0_A::WD => 7,
+            PD0_A::SD_SOE_ALT => 0,
+            PD0_A::SD_SLE_ALT => 1,
+            PD0_A::MD_ALT => 6,
+            PD0_A::WD_ALT => 5,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PD0R {
-        match value {
-            2 => PD0R::SD_SOE,
-            3 => PD0R::SD_SLE,
-            4 => PD0R::MD,
-            7 => PD0R::WD,
-            0 => PD0R::SD_SOE_ALT,
-            1 => PD0R::SD_SLE_ALT,
-            6 => PD0R::MD_ALT,
-            5 => PD0R::WD_ALT,
+}
+#[doc = "Reader of field `PD0`"]
+pub type PD0_R = crate::R<u8, PD0_A>;
+impl PD0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PD0_A {
+        match self.bits {
+            2 => PD0_A::SD_SOE,
+            3 => PD0_A::SD_SLE,
+            4 => PD0_A::MD,
+            7 => PD0_A::WD,
+            0 => PD0_A::SD_SOE_ALT,
+            1 => PD0_A::SD_SLE_ALT,
+            6 => PD0_A::MD_ALT,
+            5 => PD0_A::WD_ALT,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == PD0R::SD_SOE
+        *self == PD0_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `SD_SLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
-        *self == PD0R::SD_SLE
+        *self == PD0_A::SD_SLE
     }
     #[doc = "Checks if the value of the field is `MD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == PD0R::MD
+        *self == PD0_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == PD0R::WD
+        *self == PD0_A::WD
     }
     #[doc = "Checks if the value of the field is `SD_SOE_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
-        *self == PD0R::SD_SOE_ALT
+        *self == PD0_A::SD_SOE_ALT
     }
     #[doc = "Checks if the value of the field is `SD_SLE_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
-        *self == PD0R::SD_SLE_ALT
+        *self == PD0_A::SD_SLE_ALT
     }
     #[doc = "Checks if the value of the field is `MD_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
-        *self == PD0R::MD_ALT
+        *self == PD0_A::MD_ALT
     }
     #[doc = "Checks if the value of the field is `WD_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
-        *self == PD0R::WD_ALT
+        *self == PD0_A::WD_ALT
     }
 }
-#[doc = "Possible values of the field `PD1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PD1R {
-    #[doc = "A1+ strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A1+ strong driver, slow edge"]
-    SD_SLE,
-    #[doc = "A1+ medium driver"]
-    MD,
-    #[doc = "A1+ weak driver"]
-    WD,
-    #[doc = "A1+ strong driver, soft edge (alternate value)"]
-    SD_SOE_ALT,
-    #[doc = "A1+ strong driver, slow edge (alternate value)"]
-    SD_SLE_ALT,
-    #[doc = "A1+ medium driver (alternate value)"]
-    MD_ALT,
-    #[doc = "A1+ weak driver (alternate value)"]
-    WD_ALT,
+#[doc = "Write proxy for field `PD0`"]
+pub struct PD0_W<'a> {
+    w: &'a mut W,
 }
-impl PD1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PD1R::SD_SOE => 2,
-            PD1R::SD_SLE => 3,
-            PD1R::MD => 4,
-            PD1R::WD => 7,
-            PD1R::SD_SOE_ALT => 0,
-            PD1R::SD_SLE_ALT => 1,
-            PD1R::MD_ALT => 6,
-            PD1R::WD_ALT => 5,
+impl<'a> PD0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PD0_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PD1R {
-        match value {
-            2 => PD1R::SD_SOE,
-            3 => PD1R::SD_SLE,
-            4 => PD1R::MD,
-            7 => PD1R::WD,
-            0 => PD1R::SD_SOE_ALT,
-            1 => PD1R::SD_SLE_ALT,
-            6 => PD1R::MD_ALT,
-            5 => PD1R::WD_ALT,
+    #[doc = "A1+ strong driver, soft edge"]
+    #[inline(always)]
+    pub fn sd_soe(self) -> &'a mut W {
+        self.variant(PD0_A::SD_SOE)
+    }
+    #[doc = "A1+ strong driver, slow edge"]
+    #[inline(always)]
+    pub fn sd_sle(self) -> &'a mut W {
+        self.variant(PD0_A::SD_SLE)
+    }
+    #[doc = "A1+ medium driver"]
+    #[inline(always)]
+    pub fn md(self) -> &'a mut W {
+        self.variant(PD0_A::MD)
+    }
+    #[doc = "A1+ weak driver"]
+    #[inline(always)]
+    pub fn wd(self) -> &'a mut W {
+        self.variant(PD0_A::WD)
+    }
+    #[doc = "A1+ strong driver, soft edge (alternate value)"]
+    #[inline(always)]
+    pub fn sd_soe_alt(self) -> &'a mut W {
+        self.variant(PD0_A::SD_SOE_ALT)
+    }
+    #[doc = "A1+ strong driver, slow edge (alternate value)"]
+    #[inline(always)]
+    pub fn sd_sle_alt(self) -> &'a mut W {
+        self.variant(PD0_A::SD_SLE_ALT)
+    }
+    #[doc = "A1+ medium driver (alternate value)"]
+    #[inline(always)]
+    pub fn md_alt(self) -> &'a mut W {
+        self.variant(PD0_A::MD_ALT)
+    }
+    #[doc = "A1+ weak driver (alternate value)"]
+    #[inline(always)]
+    pub fn wd_alt(self) -> &'a mut W {
+        self.variant(PD0_A::WD_ALT)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w
+    }
+}
+#[doc = "Pad Driver Mode for Pn.1\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PD1_A {
+    #[doc = "2: A1+ strong driver, soft edge"]
+    SD_SOE,
+    #[doc = "3: A1+ strong driver, slow edge"]
+    SD_SLE,
+    #[doc = "4: A1+ medium driver"]
+    MD,
+    #[doc = "7: A1+ weak driver"]
+    WD,
+    #[doc = "0: A1+ strong driver, soft edge (alternate value)"]
+    SD_SOE_ALT,
+    #[doc = "1: A1+ strong driver, slow edge (alternate value)"]
+    SD_SLE_ALT,
+    #[doc = "6: A1+ medium driver (alternate value)"]
+    MD_ALT,
+    #[doc = "5: A1+ weak driver (alternate value)"]
+    WD_ALT,
+}
+impl From<PD1_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PD1_A) -> Self {
+        match variant {
+            PD1_A::SD_SOE => 2,
+            PD1_A::SD_SLE => 3,
+            PD1_A::MD => 4,
+            PD1_A::WD => 7,
+            PD1_A::SD_SOE_ALT => 0,
+            PD1_A::SD_SLE_ALT => 1,
+            PD1_A::MD_ALT => 6,
+            PD1_A::WD_ALT => 5,
+        }
+    }
+}
+#[doc = "Reader of field `PD1`"]
+pub type PD1_R = crate::R<u8, PD1_A>;
+impl PD1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PD1_A {
+        match self.bits {
+            2 => PD1_A::SD_SOE,
+            3 => PD1_A::SD_SLE,
+            4 => PD1_A::MD,
+            7 => PD1_A::WD,
+            0 => PD1_A::SD_SOE_ALT,
+            1 => PD1_A::SD_SLE_ALT,
+            6 => PD1_A::MD_ALT,
+            5 => PD1_A::WD_ALT,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == PD1R::SD_SOE
+        *self == PD1_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `SD_SLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
-        *self == PD1R::SD_SLE
+        *self == PD1_A::SD_SLE
     }
     #[doc = "Checks if the value of the field is `MD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == PD1R::MD
+        *self == PD1_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == PD1R::WD
+        *self == PD1_A::WD
     }
     #[doc = "Checks if the value of the field is `SD_SOE_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
-        *self == PD1R::SD_SOE_ALT
+        *self == PD1_A::SD_SOE_ALT
     }
     #[doc = "Checks if the value of the field is `SD_SLE_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
-        *self == PD1R::SD_SLE_ALT
+        *self == PD1_A::SD_SLE_ALT
     }
     #[doc = "Checks if the value of the field is `MD_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
-        *self == PD1R::MD_ALT
+        *self == PD1_A::MD_ALT
     }
     #[doc = "Checks if the value of the field is `WD_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
-        *self == PD1R::WD_ALT
+        *self == PD1_A::WD_ALT
     }
 }
-#[doc = "Possible values of the field `PD2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PD2R {
-    #[doc = "A2 strong driver, sharp edge"]
-    SD_SHE,
-    #[doc = "A2 strong driver, medium edge"]
-    SD_MEE,
-    #[doc = "A2 strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A2 medium driver"]
-    MD,
-    #[doc = "A2 weak driver"]
-    WD,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[doc = "Write proxy for field `PD1`"]
+pub struct PD1_W<'a> {
+    w: &'a mut W,
 }
-impl PD2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PD2R::SD_SHE => 0,
-            PD2R::SD_MEE => 1,
-            PD2R::SD_SOE => 2,
-            PD2R::MD => 4,
-            PD2R::WD => 7,
-            PD2R::_Reserved(bits) => bits,
+impl<'a> PD1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PD1_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PD2R {
-        match value {
-            0 => PD2R::SD_SHE,
-            1 => PD2R::SD_MEE,
-            2 => PD2R::SD_SOE,
-            4 => PD2R::MD,
-            7 => PD2R::WD,
-            i => PD2R::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `SD_SHE`"]
-    #[inline]
-    pub fn is_sd_she(&self) -> bool {
-        *self == PD2R::SD_SHE
-    }
-    #[doc = "Checks if the value of the field is `SD_MEE`"]
-    #[inline]
-    pub fn is_sd_mee(&self) -> bool {
-        *self == PD2R::SD_MEE
-    }
-    #[doc = "Checks if the value of the field is `SD_SOE`"]
-    #[inline]
-    pub fn is_sd_soe(&self) -> bool {
-        *self == PD2R::SD_SOE
-    }
-    #[doc = "Checks if the value of the field is `MD`"]
-    #[inline]
-    pub fn is_md(&self) -> bool {
-        *self == PD2R::MD
-    }
-    #[doc = "Checks if the value of the field is `WD`"]
-    #[inline]
-    pub fn is_wd(&self) -> bool {
-        *self == PD2R::WD
-    }
-}
-#[doc = "Possible values of the field `PD3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PD3R {
-    #[doc = "A2 strong driver, sharp edge"]
-    SD_SHE,
-    #[doc = "A2 strong driver, medium edge"]
-    SD_MEE,
-    #[doc = "A2 strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A2 medium driver"]
-    MD,
-    #[doc = "A2 weak driver"]
-    WD,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl PD3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PD3R::SD_SHE => 0,
-            PD3R::SD_MEE => 1,
-            PD3R::SD_SOE => 2,
-            PD3R::MD => 4,
-            PD3R::WD => 7,
-            PD3R::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PD3R {
-        match value {
-            0 => PD3R::SD_SHE,
-            1 => PD3R::SD_MEE,
-            2 => PD3R::SD_SOE,
-            4 => PD3R::MD,
-            7 => PD3R::WD,
-            i => PD3R::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `SD_SHE`"]
-    #[inline]
-    pub fn is_sd_she(&self) -> bool {
-        *self == PD3R::SD_SHE
-    }
-    #[doc = "Checks if the value of the field is `SD_MEE`"]
-    #[inline]
-    pub fn is_sd_mee(&self) -> bool {
-        *self == PD3R::SD_MEE
-    }
-    #[doc = "Checks if the value of the field is `SD_SOE`"]
-    #[inline]
-    pub fn is_sd_soe(&self) -> bool {
-        *self == PD3R::SD_SOE
-    }
-    #[doc = "Checks if the value of the field is `MD`"]
-    #[inline]
-    pub fn is_md(&self) -> bool {
-        *self == PD3R::MD
-    }
-    #[doc = "Checks if the value of the field is `WD`"]
-    #[inline]
-    pub fn is_wd(&self) -> bool {
-        *self == PD3R::WD
-    }
-}
-#[doc = "Possible values of the field `PD4`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PD4R {
     #[doc = "A1+ strong driver, soft edge"]
-    SD_SOE,
+    #[inline(always)]
+    pub fn sd_soe(self) -> &'a mut W {
+        self.variant(PD1_A::SD_SOE)
+    }
     #[doc = "A1+ strong driver, slow edge"]
-    SD_SLE,
+    #[inline(always)]
+    pub fn sd_sle(self) -> &'a mut W {
+        self.variant(PD1_A::SD_SLE)
+    }
     #[doc = "A1+ medium driver"]
-    MD,
+    #[inline(always)]
+    pub fn md(self) -> &'a mut W {
+        self.variant(PD1_A::MD)
+    }
     #[doc = "A1+ weak driver"]
-    WD,
+    #[inline(always)]
+    pub fn wd(self) -> &'a mut W {
+        self.variant(PD1_A::WD)
+    }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
-    SD_SOE_ALT,
+    #[inline(always)]
+    pub fn sd_soe_alt(self) -> &'a mut W {
+        self.variant(PD1_A::SD_SOE_ALT)
+    }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
-    SD_SLE_ALT,
+    #[inline(always)]
+    pub fn sd_sle_alt(self) -> &'a mut W {
+        self.variant(PD1_A::SD_SLE_ALT)
+    }
     #[doc = "A1+ medium driver (alternate value)"]
-    MD_ALT,
+    #[inline(always)]
+    pub fn md_alt(self) -> &'a mut W {
+        self.variant(PD1_A::MD_ALT)
+    }
     #[doc = "A1+ weak driver (alternate value)"]
+    #[inline(always)]
+    pub fn wd_alt(self) -> &'a mut W {
+        self.variant(PD1_A::WD_ALT)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
+        self.w
+    }
+}
+#[doc = "Pad Driver Mode for Pn.2\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PD2_A {
+    #[doc = "0: A2 strong driver, sharp edge"]
+    SD_SHE,
+    #[doc = "1: A2 strong driver, medium edge"]
+    SD_MEE,
+    #[doc = "2: A2 strong driver, soft edge"]
+    SD_SOE,
+    #[doc = "4: A2 medium driver"]
+    MD,
+    #[doc = "7: A2 weak driver"]
+    WD,
+}
+impl From<PD2_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PD2_A) -> Self {
+        match variant {
+            PD2_A::SD_SHE => 0,
+            PD2_A::SD_MEE => 1,
+            PD2_A::SD_SOE => 2,
+            PD2_A::MD => 4,
+            PD2_A::WD => 7,
+        }
+    }
+}
+#[doc = "Reader of field `PD2`"]
+pub type PD2_R = crate::R<u8, PD2_A>;
+impl PD2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PD2_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PD2_A::SD_SHE),
+            1 => Val(PD2_A::SD_MEE),
+            2 => Val(PD2_A::SD_SOE),
+            4 => Val(PD2_A::MD),
+            7 => Val(PD2_A::WD),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `SD_SHE`"]
+    #[inline(always)]
+    pub fn is_sd_she(&self) -> bool {
+        *self == PD2_A::SD_SHE
+    }
+    #[doc = "Checks if the value of the field is `SD_MEE`"]
+    #[inline(always)]
+    pub fn is_sd_mee(&self) -> bool {
+        *self == PD2_A::SD_MEE
+    }
+    #[doc = "Checks if the value of the field is `SD_SOE`"]
+    #[inline(always)]
+    pub fn is_sd_soe(&self) -> bool {
+        *self == PD2_A::SD_SOE
+    }
+    #[doc = "Checks if the value of the field is `MD`"]
+    #[inline(always)]
+    pub fn is_md(&self) -> bool {
+        *self == PD2_A::MD
+    }
+    #[doc = "Checks if the value of the field is `WD`"]
+    #[inline(always)]
+    pub fn is_wd(&self) -> bool {
+        *self == PD2_A::WD
+    }
+}
+#[doc = "Write proxy for field `PD2`"]
+pub struct PD2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PD2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PD2_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "A2 strong driver, sharp edge"]
+    #[inline(always)]
+    pub fn sd_she(self) -> &'a mut W {
+        self.variant(PD2_A::SD_SHE)
+    }
+    #[doc = "A2 strong driver, medium edge"]
+    #[inline(always)]
+    pub fn sd_mee(self) -> &'a mut W {
+        self.variant(PD2_A::SD_MEE)
+    }
+    #[doc = "A2 strong driver, soft edge"]
+    #[inline(always)]
+    pub fn sd_soe(self) -> &'a mut W {
+        self.variant(PD2_A::SD_SOE)
+    }
+    #[doc = "A2 medium driver"]
+    #[inline(always)]
+    pub fn md(self) -> &'a mut W {
+        self.variant(PD2_A::MD)
+    }
+    #[doc = "A2 weak driver"]
+    #[inline(always)]
+    pub fn wd(self) -> &'a mut W {
+        self.variant(PD2_A::WD)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
+        self.w
+    }
+}
+#[doc = "Pad Driver Mode for Pn.3\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PD3_A {
+    #[doc = "0: A2 strong driver, sharp edge"]
+    SD_SHE,
+    #[doc = "1: A2 strong driver, medium edge"]
+    SD_MEE,
+    #[doc = "2: A2 strong driver, soft edge"]
+    SD_SOE,
+    #[doc = "4: A2 medium driver"]
+    MD,
+    #[doc = "7: A2 weak driver"]
+    WD,
+}
+impl From<PD3_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PD3_A) -> Self {
+        match variant {
+            PD3_A::SD_SHE => 0,
+            PD3_A::SD_MEE => 1,
+            PD3_A::SD_SOE => 2,
+            PD3_A::MD => 4,
+            PD3_A::WD => 7,
+        }
+    }
+}
+#[doc = "Reader of field `PD3`"]
+pub type PD3_R = crate::R<u8, PD3_A>;
+impl PD3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PD3_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PD3_A::SD_SHE),
+            1 => Val(PD3_A::SD_MEE),
+            2 => Val(PD3_A::SD_SOE),
+            4 => Val(PD3_A::MD),
+            7 => Val(PD3_A::WD),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `SD_SHE`"]
+    #[inline(always)]
+    pub fn is_sd_she(&self) -> bool {
+        *self == PD3_A::SD_SHE
+    }
+    #[doc = "Checks if the value of the field is `SD_MEE`"]
+    #[inline(always)]
+    pub fn is_sd_mee(&self) -> bool {
+        *self == PD3_A::SD_MEE
+    }
+    #[doc = "Checks if the value of the field is `SD_SOE`"]
+    #[inline(always)]
+    pub fn is_sd_soe(&self) -> bool {
+        *self == PD3_A::SD_SOE
+    }
+    #[doc = "Checks if the value of the field is `MD`"]
+    #[inline(always)]
+    pub fn is_md(&self) -> bool {
+        *self == PD3_A::MD
+    }
+    #[doc = "Checks if the value of the field is `WD`"]
+    #[inline(always)]
+    pub fn is_wd(&self) -> bool {
+        *self == PD3_A::WD
+    }
+}
+#[doc = "Write proxy for field `PD3`"]
+pub struct PD3_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PD3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PD3_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "A2 strong driver, sharp edge"]
+    #[inline(always)]
+    pub fn sd_she(self) -> &'a mut W {
+        self.variant(PD3_A::SD_SHE)
+    }
+    #[doc = "A2 strong driver, medium edge"]
+    #[inline(always)]
+    pub fn sd_mee(self) -> &'a mut W {
+        self.variant(PD3_A::SD_MEE)
+    }
+    #[doc = "A2 strong driver, soft edge"]
+    #[inline(always)]
+    pub fn sd_soe(self) -> &'a mut W {
+        self.variant(PD3_A::SD_SOE)
+    }
+    #[doc = "A2 medium driver"]
+    #[inline(always)]
+    pub fn md(self) -> &'a mut W {
+        self.variant(PD3_A::MD)
+    }
+    #[doc = "A2 weak driver"]
+    #[inline(always)]
+    pub fn wd(self) -> &'a mut W {
+        self.variant(PD3_A::WD)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u32) & 0x07) << 12);
+        self.w
+    }
+}
+#[doc = "Pad Driver Mode for Pn.4\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PD4_A {
+    #[doc = "2: A1+ strong driver, soft edge"]
+    SD_SOE,
+    #[doc = "3: A1+ strong driver, slow edge"]
+    SD_SLE,
+    #[doc = "4: A1+ medium driver"]
+    MD,
+    #[doc = "7: A1+ weak driver"]
+    WD,
+    #[doc = "0: A1+ strong driver, soft edge (alternate value)"]
+    SD_SOE_ALT,
+    #[doc = "1: A1+ strong driver, slow edge (alternate value)"]
+    SD_SLE_ALT,
+    #[doc = "6: A1+ medium driver (alternate value)"]
+    MD_ALT,
+    #[doc = "5: A1+ weak driver (alternate value)"]
     WD_ALT,
 }
-impl PD4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PD4R::SD_SOE => 2,
-            PD4R::SD_SLE => 3,
-            PD4R::MD => 4,
-            PD4R::WD => 7,
-            PD4R::SD_SOE_ALT => 0,
-            PD4R::SD_SLE_ALT => 1,
-            PD4R::MD_ALT => 6,
-            PD4R::WD_ALT => 5,
+impl From<PD4_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PD4_A) -> Self {
+        match variant {
+            PD4_A::SD_SOE => 2,
+            PD4_A::SD_SLE => 3,
+            PD4_A::MD => 4,
+            PD4_A::WD => 7,
+            PD4_A::SD_SOE_ALT => 0,
+            PD4_A::SD_SLE_ALT => 1,
+            PD4_A::MD_ALT => 6,
+            PD4_A::WD_ALT => 5,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PD4R {
-        match value {
-            2 => PD4R::SD_SOE,
-            3 => PD4R::SD_SLE,
-            4 => PD4R::MD,
-            7 => PD4R::WD,
-            0 => PD4R::SD_SOE_ALT,
-            1 => PD4R::SD_SLE_ALT,
-            6 => PD4R::MD_ALT,
-            5 => PD4R::WD_ALT,
+}
+#[doc = "Reader of field `PD4`"]
+pub type PD4_R = crate::R<u8, PD4_A>;
+impl PD4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PD4_A {
+        match self.bits {
+            2 => PD4_A::SD_SOE,
+            3 => PD4_A::SD_SLE,
+            4 => PD4_A::MD,
+            7 => PD4_A::WD,
+            0 => PD4_A::SD_SOE_ALT,
+            1 => PD4_A::SD_SLE_ALT,
+            6 => PD4_A::MD_ALT,
+            5 => PD4_A::WD_ALT,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == PD4R::SD_SOE
+        *self == PD4_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `SD_SLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
-        *self == PD4R::SD_SLE
+        *self == PD4_A::SD_SLE
     }
     #[doc = "Checks if the value of the field is `MD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == PD4R::MD
+        *self == PD4_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == PD4R::WD
+        *self == PD4_A::WD
     }
     #[doc = "Checks if the value of the field is `SD_SOE_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
-        *self == PD4R::SD_SOE_ALT
+        *self == PD4_A::SD_SOE_ALT
     }
     #[doc = "Checks if the value of the field is `SD_SLE_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
-        *self == PD4R::SD_SLE_ALT
+        *self == PD4_A::SD_SLE_ALT
     }
     #[doc = "Checks if the value of the field is `MD_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
-        *self == PD4R::MD_ALT
+        *self == PD4_A::MD_ALT
     }
     #[doc = "Checks if the value of the field is `WD_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
-        *self == PD4R::WD_ALT
+        *self == PD4_A::WD_ALT
     }
 }
-#[doc = "Possible values of the field `PD5`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PD5R {
-    #[doc = "A1+ strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A1+ strong driver, slow edge"]
-    SD_SLE,
-    #[doc = "A1+ medium driver"]
-    MD,
-    #[doc = "A1+ weak driver"]
-    WD,
-    #[doc = "A1+ strong driver, soft edge (alternate value)"]
-    SD_SOE_ALT,
-    #[doc = "A1+ strong driver, slow edge (alternate value)"]
-    SD_SLE_ALT,
-    #[doc = "A1+ medium driver (alternate value)"]
-    MD_ALT,
-    #[doc = "A1+ weak driver (alternate value)"]
-    WD_ALT,
+#[doc = "Write proxy for field `PD4`"]
+pub struct PD4_W<'a> {
+    w: &'a mut W,
 }
-impl PD5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PD5R::SD_SOE => 2,
-            PD5R::SD_SLE => 3,
-            PD5R::MD => 4,
-            PD5R::WD => 7,
-            PD5R::SD_SOE_ALT => 0,
-            PD5R::SD_SLE_ALT => 1,
-            PD5R::MD_ALT => 6,
-            PD5R::WD_ALT => 5,
+impl<'a> PD4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PD4_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PD5R {
-        match value {
-            2 => PD5R::SD_SOE,
-            3 => PD5R::SD_SLE,
-            4 => PD5R::MD,
-            7 => PD5R::WD,
-            0 => PD5R::SD_SOE_ALT,
-            1 => PD5R::SD_SLE_ALT,
-            6 => PD5R::MD_ALT,
-            5 => PD5R::WD_ALT,
+    #[doc = "A1+ strong driver, soft edge"]
+    #[inline(always)]
+    pub fn sd_soe(self) -> &'a mut W {
+        self.variant(PD4_A::SD_SOE)
+    }
+    #[doc = "A1+ strong driver, slow edge"]
+    #[inline(always)]
+    pub fn sd_sle(self) -> &'a mut W {
+        self.variant(PD4_A::SD_SLE)
+    }
+    #[doc = "A1+ medium driver"]
+    #[inline(always)]
+    pub fn md(self) -> &'a mut W {
+        self.variant(PD4_A::MD)
+    }
+    #[doc = "A1+ weak driver"]
+    #[inline(always)]
+    pub fn wd(self) -> &'a mut W {
+        self.variant(PD4_A::WD)
+    }
+    #[doc = "A1+ strong driver, soft edge (alternate value)"]
+    #[inline(always)]
+    pub fn sd_soe_alt(self) -> &'a mut W {
+        self.variant(PD4_A::SD_SOE_ALT)
+    }
+    #[doc = "A1+ strong driver, slow edge (alternate value)"]
+    #[inline(always)]
+    pub fn sd_sle_alt(self) -> &'a mut W {
+        self.variant(PD4_A::SD_SLE_ALT)
+    }
+    #[doc = "A1+ medium driver (alternate value)"]
+    #[inline(always)]
+    pub fn md_alt(self) -> &'a mut W {
+        self.variant(PD4_A::MD_ALT)
+    }
+    #[doc = "A1+ weak driver (alternate value)"]
+    #[inline(always)]
+    pub fn wd_alt(self) -> &'a mut W {
+        self.variant(PD4_A::WD_ALT)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
+        self.w
+    }
+}
+#[doc = "Pad Driver Mode for Pn.5\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PD5_A {
+    #[doc = "2: A1+ strong driver, soft edge"]
+    SD_SOE,
+    #[doc = "3: A1+ strong driver, slow edge"]
+    SD_SLE,
+    #[doc = "4: A1+ medium driver"]
+    MD,
+    #[doc = "7: A1+ weak driver"]
+    WD,
+    #[doc = "0: A1+ strong driver, soft edge (alternate value)"]
+    SD_SOE_ALT,
+    #[doc = "1: A1+ strong driver, slow edge (alternate value)"]
+    SD_SLE_ALT,
+    #[doc = "6: A1+ medium driver (alternate value)"]
+    MD_ALT,
+    #[doc = "5: A1+ weak driver (alternate value)"]
+    WD_ALT,
+}
+impl From<PD5_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PD5_A) -> Self {
+        match variant {
+            PD5_A::SD_SOE => 2,
+            PD5_A::SD_SLE => 3,
+            PD5_A::MD => 4,
+            PD5_A::WD => 7,
+            PD5_A::SD_SOE_ALT => 0,
+            PD5_A::SD_SLE_ALT => 1,
+            PD5_A::MD_ALT => 6,
+            PD5_A::WD_ALT => 5,
+        }
+    }
+}
+#[doc = "Reader of field `PD5`"]
+pub type PD5_R = crate::R<u8, PD5_A>;
+impl PD5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PD5_A {
+        match self.bits {
+            2 => PD5_A::SD_SOE,
+            3 => PD5_A::SD_SLE,
+            4 => PD5_A::MD,
+            7 => PD5_A::WD,
+            0 => PD5_A::SD_SOE_ALT,
+            1 => PD5_A::SD_SLE_ALT,
+            6 => PD5_A::MD_ALT,
+            5 => PD5_A::WD_ALT,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == PD5R::SD_SOE
+        *self == PD5_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `SD_SLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
-        *self == PD5R::SD_SLE
+        *self == PD5_A::SD_SLE
     }
     #[doc = "Checks if the value of the field is `MD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == PD5R::MD
+        *self == PD5_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == PD5R::WD
+        *self == PD5_A::WD
     }
     #[doc = "Checks if the value of the field is `SD_SOE_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
-        *self == PD5R::SD_SOE_ALT
+        *self == PD5_A::SD_SOE_ALT
     }
     #[doc = "Checks if the value of the field is `SD_SLE_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
-        *self == PD5R::SD_SLE_ALT
+        *self == PD5_A::SD_SLE_ALT
     }
     #[doc = "Checks if the value of the field is `MD_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
-        *self == PD5R::MD_ALT
+        *self == PD5_A::MD_ALT
     }
     #[doc = "Checks if the value of the field is `WD_ALT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
-        *self == PD5R::WD_ALT
+        *self == PD5_A::WD_ALT
     }
 }
-#[doc = "Possible values of the field `PD6`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PD6R {
-    #[doc = "A2 strong driver, sharp edge"]
-    SD_SHE,
-    #[doc = "A2 strong driver, medium edge"]
-    SD_MEE,
-    #[doc = "A2 strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A2 medium driver"]
-    MD,
-    #[doc = "A2 weak driver"]
-    WD,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[doc = "Write proxy for field `PD5`"]
+pub struct PD5_W<'a> {
+    w: &'a mut W,
 }
-impl PD6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PD6R::SD_SHE => 0,
-            PD6R::SD_MEE => 1,
-            PD6R::SD_SOE => 2,
-            PD6R::MD => 4,
-            PD6R::WD => 7,
-            PD6R::_Reserved(bits) => bits,
+impl<'a> PD5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PD5_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PD6R {
-        match value {
-            0 => PD6R::SD_SHE,
-            1 => PD6R::SD_MEE,
-            2 => PD6R::SD_SOE,
-            4 => PD6R::MD,
-            7 => PD6R::WD,
-            i => PD6R::_Reserved(i),
+    #[doc = "A1+ strong driver, soft edge"]
+    #[inline(always)]
+    pub fn sd_soe(self) -> &'a mut W {
+        self.variant(PD5_A::SD_SOE)
+    }
+    #[doc = "A1+ strong driver, slow edge"]
+    #[inline(always)]
+    pub fn sd_sle(self) -> &'a mut W {
+        self.variant(PD5_A::SD_SLE)
+    }
+    #[doc = "A1+ medium driver"]
+    #[inline(always)]
+    pub fn md(self) -> &'a mut W {
+        self.variant(PD5_A::MD)
+    }
+    #[doc = "A1+ weak driver"]
+    #[inline(always)]
+    pub fn wd(self) -> &'a mut W {
+        self.variant(PD5_A::WD)
+    }
+    #[doc = "A1+ strong driver, soft edge (alternate value)"]
+    #[inline(always)]
+    pub fn sd_soe_alt(self) -> &'a mut W {
+        self.variant(PD5_A::SD_SOE_ALT)
+    }
+    #[doc = "A1+ strong driver, slow edge (alternate value)"]
+    #[inline(always)]
+    pub fn sd_sle_alt(self) -> &'a mut W {
+        self.variant(PD5_A::SD_SLE_ALT)
+    }
+    #[doc = "A1+ medium driver (alternate value)"]
+    #[inline(always)]
+    pub fn md_alt(self) -> &'a mut W {
+        self.variant(PD5_A::MD_ALT)
+    }
+    #[doc = "A1+ weak driver (alternate value)"]
+    #[inline(always)]
+    pub fn wd_alt(self) -> &'a mut W {
+        self.variant(PD5_A::WD_ALT)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
+        self.w
+    }
+}
+#[doc = "Pad Driver Mode for Pn.6\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PD6_A {
+    #[doc = "0: A2 strong driver, sharp edge"]
+    SD_SHE,
+    #[doc = "1: A2 strong driver, medium edge"]
+    SD_MEE,
+    #[doc = "2: A2 strong driver, soft edge"]
+    SD_SOE,
+    #[doc = "4: A2 medium driver"]
+    MD,
+    #[doc = "7: A2 weak driver"]
+    WD,
+}
+impl From<PD6_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PD6_A) -> Self {
+        match variant {
+            PD6_A::SD_SHE => 0,
+            PD6_A::SD_MEE => 1,
+            PD6_A::SD_SOE => 2,
+            PD6_A::MD => 4,
+            PD6_A::WD => 7,
+        }
+    }
+}
+#[doc = "Reader of field `PD6`"]
+pub type PD6_R = crate::R<u8, PD6_A>;
+impl PD6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PD6_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PD6_A::SD_SHE),
+            1 => Val(PD6_A::SD_MEE),
+            2 => Val(PD6_A::SD_SOE),
+            4 => Val(PD6_A::MD),
+            7 => Val(PD6_A::WD),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `SD_SHE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        *self == PD6R::SD_SHE
+        *self == PD6_A::SD_SHE
     }
     #[doc = "Checks if the value of the field is `SD_MEE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        *self == PD6R::SD_MEE
+        *self == PD6_A::SD_MEE
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == PD6R::SD_SOE
+        *self == PD6_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `MD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == PD6R::MD
+        *self == PD6_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == PD6R::WD
+        *self == PD6_A::WD
     }
 }
-#[doc = "Possible values of the field `PD7`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PD7R {
-    #[doc = "A2 strong driver, sharp edge"]
-    SD_SHE,
-    #[doc = "A2 strong driver, medium edge"]
-    SD_MEE,
-    #[doc = "A2 strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A2 medium driver"]
-    MD,
-    #[doc = "A2 weak driver"]
-    WD,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[doc = "Write proxy for field `PD6`"]
+pub struct PD6_W<'a> {
+    w: &'a mut W,
 }
-impl PD7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PD7R::SD_SHE => 0,
-            PD7R::SD_MEE => 1,
-            PD7R::SD_SOE => 2,
-            PD7R::MD => 4,
-            PD7R::WD => 7,
-            PD7R::_Reserved(bits) => bits,
+impl<'a> PD6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PD6_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "A2 strong driver, sharp edge"]
+    #[inline(always)]
+    pub fn sd_she(self) -> &'a mut W {
+        self.variant(PD6_A::SD_SHE)
+    }
+    #[doc = "A2 strong driver, medium edge"]
+    #[inline(always)]
+    pub fn sd_mee(self) -> &'a mut W {
+        self.variant(PD6_A::SD_MEE)
+    }
+    #[doc = "A2 strong driver, soft edge"]
+    #[inline(always)]
+    pub fn sd_soe(self) -> &'a mut W {
+        self.variant(PD6_A::SD_SOE)
+    }
+    #[doc = "A2 medium driver"]
+    #[inline(always)]
+    pub fn md(self) -> &'a mut W {
+        self.variant(PD6_A::MD)
+    }
+    #[doc = "A2 weak driver"]
+    #[inline(always)]
+    pub fn wd(self) -> &'a mut W {
+        self.variant(PD6_A::WD)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 24)) | (((value as u32) & 0x07) << 24);
+        self.w
+    }
+}
+#[doc = "Pad Driver Mode for Pn.7\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PD7_A {
+    #[doc = "0: A2 strong driver, sharp edge"]
+    SD_SHE,
+    #[doc = "1: A2 strong driver, medium edge"]
+    SD_MEE,
+    #[doc = "2: A2 strong driver, soft edge"]
+    SD_SOE,
+    #[doc = "4: A2 medium driver"]
+    MD,
+    #[doc = "7: A2 weak driver"]
+    WD,
+}
+impl From<PD7_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PD7_A) -> Self {
+        match variant {
+            PD7_A::SD_SHE => 0,
+            PD7_A::SD_MEE => 1,
+            PD7_A::SD_SOE => 2,
+            PD7_A::MD => 4,
+            PD7_A::WD => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PD7R {
-        match value {
-            0 => PD7R::SD_SHE,
-            1 => PD7R::SD_MEE,
-            2 => PD7R::SD_SOE,
-            4 => PD7R::MD,
-            7 => PD7R::WD,
-            i => PD7R::_Reserved(i),
+}
+#[doc = "Reader of field `PD7`"]
+pub type PD7_R = crate::R<u8, PD7_A>;
+impl PD7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PD7_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PD7_A::SD_SHE),
+            1 => Val(PD7_A::SD_MEE),
+            2 => Val(PD7_A::SD_SOE),
+            4 => Val(PD7_A::MD),
+            7 => Val(PD7_A::WD),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `SD_SHE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        *self == PD7R::SD_SHE
+        *self == PD7_A::SD_SHE
     }
     #[doc = "Checks if the value of the field is `SD_MEE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        *self == PD7R::SD_MEE
+        *self == PD7_A::SD_MEE
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == PD7R::SD_SOE
+        *self == PD7_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `MD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == PD7R::MD
+        *self == PD7_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == PD7R::WD
+        *self == PD7_A::WD
     }
 }
-#[doc = "Values that can be written to the field `PD0`"]
-pub enum PD0W {
-    #[doc = "A1+ strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A1+ strong driver, slow edge"]
-    SD_SLE,
-    #[doc = "A1+ medium driver"]
-    MD,
-    #[doc = "A1+ weak driver"]
-    WD,
-    #[doc = "A1+ strong driver, soft edge (alternate value)"]
-    SD_SOE_ALT,
-    #[doc = "A1+ strong driver, slow edge (alternate value)"]
-    SD_SLE_ALT,
-    #[doc = "A1+ medium driver (alternate value)"]
-    MD_ALT,
-    #[doc = "A1+ weak driver (alternate value)"]
-    WD_ALT,
-}
-impl PD0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PD0W::SD_SOE => 2,
-            PD0W::SD_SLE => 3,
-            PD0W::MD => 4,
-            PD0W::WD => 7,
-            PD0W::SD_SOE_ALT => 0,
-            PD0W::SD_SLE_ALT => 1,
-            PD0W::MD_ALT => 6,
-            PD0W::WD_ALT => 5,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PD0W<'a> {
+#[doc = "Write proxy for field `PD7`"]
+pub struct PD7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PD0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PD0W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "A1+ strong driver, soft edge"]
-    #[inline]
-    pub fn sd_soe(self) -> &'a mut W {
-        self.variant(PD0W::SD_SOE)
-    }
-    #[doc = "A1+ strong driver, slow edge"]
-    #[inline]
-    pub fn sd_sle(self) -> &'a mut W {
-        self.variant(PD0W::SD_SLE)
-    }
-    #[doc = "A1+ medium driver"]
-    #[inline]
-    pub fn md(self) -> &'a mut W {
-        self.variant(PD0W::MD)
-    }
-    #[doc = "A1+ weak driver"]
-    #[inline]
-    pub fn wd(self) -> &'a mut W {
-        self.variant(PD0W::WD)
-    }
-    #[doc = "A1+ strong driver, soft edge (alternate value)"]
-    #[inline]
-    pub fn sd_soe_alt(self) -> &'a mut W {
-        self.variant(PD0W::SD_SOE_ALT)
-    }
-    #[doc = "A1+ strong driver, slow edge (alternate value)"]
-    #[inline]
-    pub fn sd_sle_alt(self) -> &'a mut W {
-        self.variant(PD0W::SD_SLE_ALT)
-    }
-    #[doc = "A1+ medium driver (alternate value)"]
-    #[inline]
-    pub fn md_alt(self) -> &'a mut W {
-        self.variant(PD0W::MD_ALT)
-    }
-    #[doc = "A1+ weak driver (alternate value)"]
-    #[inline]
-    pub fn wd_alt(self) -> &'a mut W {
-        self.variant(PD0W::WD_ALT)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PD1`"]
-pub enum PD1W {
-    #[doc = "A1+ strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A1+ strong driver, slow edge"]
-    SD_SLE,
-    #[doc = "A1+ medium driver"]
-    MD,
-    #[doc = "A1+ weak driver"]
-    WD,
-    #[doc = "A1+ strong driver, soft edge (alternate value)"]
-    SD_SOE_ALT,
-    #[doc = "A1+ strong driver, slow edge (alternate value)"]
-    SD_SLE_ALT,
-    #[doc = "A1+ medium driver (alternate value)"]
-    MD_ALT,
-    #[doc = "A1+ weak driver (alternate value)"]
-    WD_ALT,
-}
-impl PD1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PD1W::SD_SOE => 2,
-            PD1W::SD_SLE => 3,
-            PD1W::MD => 4,
-            PD1W::WD => 7,
-            PD1W::SD_SOE_ALT => 0,
-            PD1W::SD_SLE_ALT => 1,
-            PD1W::MD_ALT => 6,
-            PD1W::WD_ALT => 5,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PD1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PD1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PD1W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "A1+ strong driver, soft edge"]
-    #[inline]
-    pub fn sd_soe(self) -> &'a mut W {
-        self.variant(PD1W::SD_SOE)
-    }
-    #[doc = "A1+ strong driver, slow edge"]
-    #[inline]
-    pub fn sd_sle(self) -> &'a mut W {
-        self.variant(PD1W::SD_SLE)
-    }
-    #[doc = "A1+ medium driver"]
-    #[inline]
-    pub fn md(self) -> &'a mut W {
-        self.variant(PD1W::MD)
-    }
-    #[doc = "A1+ weak driver"]
-    #[inline]
-    pub fn wd(self) -> &'a mut W {
-        self.variant(PD1W::WD)
-    }
-    #[doc = "A1+ strong driver, soft edge (alternate value)"]
-    #[inline]
-    pub fn sd_soe_alt(self) -> &'a mut W {
-        self.variant(PD1W::SD_SOE_ALT)
-    }
-    #[doc = "A1+ strong driver, slow edge (alternate value)"]
-    #[inline]
-    pub fn sd_sle_alt(self) -> &'a mut W {
-        self.variant(PD1W::SD_SLE_ALT)
-    }
-    #[doc = "A1+ medium driver (alternate value)"]
-    #[inline]
-    pub fn md_alt(self) -> &'a mut W {
-        self.variant(PD1W::MD_ALT)
-    }
-    #[doc = "A1+ weak driver (alternate value)"]
-    #[inline]
-    pub fn wd_alt(self) -> &'a mut W {
-        self.variant(PD1W::WD_ALT)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PD2`"]
-pub enum PD2W {
-    #[doc = "A2 strong driver, sharp edge"]
-    SD_SHE,
-    #[doc = "A2 strong driver, medium edge"]
-    SD_MEE,
-    #[doc = "A2 strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A2 medium driver"]
-    MD,
-    #[doc = "A2 weak driver"]
-    WD,
-}
-impl PD2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PD2W::SD_SHE => 0,
-            PD2W::SD_MEE => 1,
-            PD2W::SD_SOE => 2,
-            PD2W::MD => 4,
-            PD2W::WD => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PD2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PD2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PD2W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> PD7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PD7_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "A2 strong driver, sharp edge"]
-    #[inline]
+    #[inline(always)]
     pub fn sd_she(self) -> &'a mut W {
-        self.variant(PD2W::SD_SHE)
+        self.variant(PD7_A::SD_SHE)
     }
     #[doc = "A2 strong driver, medium edge"]
-    #[inline]
+    #[inline(always)]
     pub fn sd_mee(self) -> &'a mut W {
-        self.variant(PD2W::SD_MEE)
+        self.variant(PD7_A::SD_MEE)
     }
     #[doc = "A2 strong driver, soft edge"]
-    #[inline]
+    #[inline(always)]
     pub fn sd_soe(self) -> &'a mut W {
-        self.variant(PD2W::SD_SOE)
+        self.variant(PD7_A::SD_SOE)
     }
     #[doc = "A2 medium driver"]
-    #[inline]
+    #[inline(always)]
     pub fn md(self) -> &'a mut W {
-        self.variant(PD2W::MD)
+        self.variant(PD7_A::MD)
     }
     #[doc = "A2 weak driver"]
-    #[inline]
+    #[inline(always)]
     pub fn wd(self) -> &'a mut W {
-        self.variant(PD2W::WD)
+        self.variant(PD7_A::WD)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PD3`"]
-pub enum PD3W {
-    #[doc = "A2 strong driver, sharp edge"]
-    SD_SHE,
-    #[doc = "A2 strong driver, medium edge"]
-    SD_MEE,
-    #[doc = "A2 strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A2 medium driver"]
-    MD,
-    #[doc = "A2 weak driver"]
-    WD,
-}
-impl PD3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PD3W::SD_SHE => 0,
-            PD3W::SD_MEE => 1,
-            PD3W::SD_SOE => 2,
-            PD3W::MD => 4,
-            PD3W::WD => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PD3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PD3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PD3W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "A2 strong driver, sharp edge"]
-    #[inline]
-    pub fn sd_she(self) -> &'a mut W {
-        self.variant(PD3W::SD_SHE)
-    }
-    #[doc = "A2 strong driver, medium edge"]
-    #[inline]
-    pub fn sd_mee(self) -> &'a mut W {
-        self.variant(PD3W::SD_MEE)
-    }
-    #[doc = "A2 strong driver, soft edge"]
-    #[inline]
-    pub fn sd_soe(self) -> &'a mut W {
-        self.variant(PD3W::SD_SOE)
-    }
-    #[doc = "A2 medium driver"]
-    #[inline]
-    pub fn md(self) -> &'a mut W {
-        self.variant(PD3W::MD)
-    }
-    #[doc = "A2 weak driver"]
-    #[inline]
-    pub fn wd(self) -> &'a mut W {
-        self.variant(PD3W::WD)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PD4`"]
-pub enum PD4W {
-    #[doc = "A1+ strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A1+ strong driver, slow edge"]
-    SD_SLE,
-    #[doc = "A1+ medium driver"]
-    MD,
-    #[doc = "A1+ weak driver"]
-    WD,
-    #[doc = "A1+ strong driver, soft edge (alternate value)"]
-    SD_SOE_ALT,
-    #[doc = "A1+ strong driver, slow edge (alternate value)"]
-    SD_SLE_ALT,
-    #[doc = "A1+ medium driver (alternate value)"]
-    MD_ALT,
-    #[doc = "A1+ weak driver (alternate value)"]
-    WD_ALT,
-}
-impl PD4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PD4W::SD_SOE => 2,
-            PD4W::SD_SLE => 3,
-            PD4W::MD => 4,
-            PD4W::WD => 7,
-            PD4W::SD_SOE_ALT => 0,
-            PD4W::SD_SLE_ALT => 1,
-            PD4W::MD_ALT => 6,
-            PD4W::WD_ALT => 5,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PD4W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PD4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PD4W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "A1+ strong driver, soft edge"]
-    #[inline]
-    pub fn sd_soe(self) -> &'a mut W {
-        self.variant(PD4W::SD_SOE)
-    }
-    #[doc = "A1+ strong driver, slow edge"]
-    #[inline]
-    pub fn sd_sle(self) -> &'a mut W {
-        self.variant(PD4W::SD_SLE)
-    }
-    #[doc = "A1+ medium driver"]
-    #[inline]
-    pub fn md(self) -> &'a mut W {
-        self.variant(PD4W::MD)
-    }
-    #[doc = "A1+ weak driver"]
-    #[inline]
-    pub fn wd(self) -> &'a mut W {
-        self.variant(PD4W::WD)
-    }
-    #[doc = "A1+ strong driver, soft edge (alternate value)"]
-    #[inline]
-    pub fn sd_soe_alt(self) -> &'a mut W {
-        self.variant(PD4W::SD_SOE_ALT)
-    }
-    #[doc = "A1+ strong driver, slow edge (alternate value)"]
-    #[inline]
-    pub fn sd_sle_alt(self) -> &'a mut W {
-        self.variant(PD4W::SD_SLE_ALT)
-    }
-    #[doc = "A1+ medium driver (alternate value)"]
-    #[inline]
-    pub fn md_alt(self) -> &'a mut W {
-        self.variant(PD4W::MD_ALT)
-    }
-    #[doc = "A1+ weak driver (alternate value)"]
-    #[inline]
-    pub fn wd_alt(self) -> &'a mut W {
-        self.variant(PD4W::WD_ALT)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PD5`"]
-pub enum PD5W {
-    #[doc = "A1+ strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A1+ strong driver, slow edge"]
-    SD_SLE,
-    #[doc = "A1+ medium driver"]
-    MD,
-    #[doc = "A1+ weak driver"]
-    WD,
-    #[doc = "A1+ strong driver, soft edge (alternate value)"]
-    SD_SOE_ALT,
-    #[doc = "A1+ strong driver, slow edge (alternate value)"]
-    SD_SLE_ALT,
-    #[doc = "A1+ medium driver (alternate value)"]
-    MD_ALT,
-    #[doc = "A1+ weak driver (alternate value)"]
-    WD_ALT,
-}
-impl PD5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PD5W::SD_SOE => 2,
-            PD5W::SD_SLE => 3,
-            PD5W::MD => 4,
-            PD5W::WD => 7,
-            PD5W::SD_SOE_ALT => 0,
-            PD5W::SD_SLE_ALT => 1,
-            PD5W::MD_ALT => 6,
-            PD5W::WD_ALT => 5,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PD5W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PD5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PD5W) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "A1+ strong driver, soft edge"]
-    #[inline]
-    pub fn sd_soe(self) -> &'a mut W {
-        self.variant(PD5W::SD_SOE)
-    }
-    #[doc = "A1+ strong driver, slow edge"]
-    #[inline]
-    pub fn sd_sle(self) -> &'a mut W {
-        self.variant(PD5W::SD_SLE)
-    }
-    #[doc = "A1+ medium driver"]
-    #[inline]
-    pub fn md(self) -> &'a mut W {
-        self.variant(PD5W::MD)
-    }
-    #[doc = "A1+ weak driver"]
-    #[inline]
-    pub fn wd(self) -> &'a mut W {
-        self.variant(PD5W::WD)
-    }
-    #[doc = "A1+ strong driver, soft edge (alternate value)"]
-    #[inline]
-    pub fn sd_soe_alt(self) -> &'a mut W {
-        self.variant(PD5W::SD_SOE_ALT)
-    }
-    #[doc = "A1+ strong driver, slow edge (alternate value)"]
-    #[inline]
-    pub fn sd_sle_alt(self) -> &'a mut W {
-        self.variant(PD5W::SD_SLE_ALT)
-    }
-    #[doc = "A1+ medium driver (alternate value)"]
-    #[inline]
-    pub fn md_alt(self) -> &'a mut W {
-        self.variant(PD5W::MD_ALT)
-    }
-    #[doc = "A1+ weak driver (alternate value)"]
-    #[inline]
-    pub fn wd_alt(self) -> &'a mut W {
-        self.variant(PD5W::WD_ALT)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PD6`"]
-pub enum PD6W {
-    #[doc = "A2 strong driver, sharp edge"]
-    SD_SHE,
-    #[doc = "A2 strong driver, medium edge"]
-    SD_MEE,
-    #[doc = "A2 strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A2 medium driver"]
-    MD,
-    #[doc = "A2 weak driver"]
-    WD,
-}
-impl PD6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PD6W::SD_SHE => 0,
-            PD6W::SD_MEE => 1,
-            PD6W::SD_SOE => 2,
-            PD6W::MD => 4,
-            PD6W::WD => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PD6W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PD6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PD6W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "A2 strong driver, sharp edge"]
-    #[inline]
-    pub fn sd_she(self) -> &'a mut W {
-        self.variant(PD6W::SD_SHE)
-    }
-    #[doc = "A2 strong driver, medium edge"]
-    #[inline]
-    pub fn sd_mee(self) -> &'a mut W {
-        self.variant(PD6W::SD_MEE)
-    }
-    #[doc = "A2 strong driver, soft edge"]
-    #[inline]
-    pub fn sd_soe(self) -> &'a mut W {
-        self.variant(PD6W::SD_SOE)
-    }
-    #[doc = "A2 medium driver"]
-    #[inline]
-    pub fn md(self) -> &'a mut W {
-        self.variant(PD6W::MD)
-    }
-    #[doc = "A2 weak driver"]
-    #[inline]
-    pub fn wd(self) -> &'a mut W {
-        self.variant(PD6W::WD)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PD7`"]
-pub enum PD7W {
-    #[doc = "A2 strong driver, sharp edge"]
-    SD_SHE,
-    #[doc = "A2 strong driver, medium edge"]
-    SD_MEE,
-    #[doc = "A2 strong driver, soft edge"]
-    SD_SOE,
-    #[doc = "A2 medium driver"]
-    MD,
-    #[doc = "A2 weak driver"]
-    WD,
-}
-impl PD7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PD7W::SD_SHE => 0,
-            PD7W::SD_MEE => 1,
-            PD7W::SD_SOE => 2,
-            PD7W::MD => 4,
-            PD7W::WD => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PD7W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PD7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PD7W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "A2 strong driver, sharp edge"]
-    #[inline]
-    pub fn sd_she(self) -> &'a mut W {
-        self.variant(PD7W::SD_SHE)
-    }
-    #[doc = "A2 strong driver, medium edge"]
-    #[inline]
-    pub fn sd_mee(self) -> &'a mut W {
-        self.variant(PD7W::SD_MEE)
-    }
-    #[doc = "A2 strong driver, soft edge"]
-    #[inline]
-    pub fn sd_soe(self) -> &'a mut W {
-        self.variant(PD7W::SD_SOE)
-    }
-    #[doc = "A2 medium driver"]
-    #[inline]
-    pub fn md(self) -> &'a mut W {
-        self.variant(PD7W::MD)
-    }
-    #[doc = "A2 weak driver"]
-    #[inline]
-    pub fn wd(self) -> &'a mut W {
-        self.variant(PD7W::WD)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 28)) | (((value as u32) & 0x07) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.0"]
-    #[inline]
-    pub fn pd0(&self) -> PD0R {
-        PD0R::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pd0(&self) -> PD0_R {
+        PD0_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 4:6 - Pad Driver Mode for Pn.1"]
-    #[inline]
-    pub fn pd1(&self) -> PD1R {
-        PD1R::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pd1(&self) -> PD1_R {
+        PD1_R::new(((self.bits >> 4) & 0x07) as u8)
     }
     #[doc = "Bits 8:10 - Pad Driver Mode for Pn.2"]
-    #[inline]
-    pub fn pd2(&self) -> PD2R {
-        PD2R::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pd2(&self) -> PD2_R {
+        PD2_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bits 12:14 - Pad Driver Mode for Pn.3"]
-    #[inline]
-    pub fn pd3(&self) -> PD3R {
-        PD3R::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pd3(&self) -> PD3_R {
+        PD3_R::new(((self.bits >> 12) & 0x07) as u8)
     }
     #[doc = "Bits 16:18 - Pad Driver Mode for Pn.4"]
-    #[inline]
-    pub fn pd4(&self) -> PD4R {
-        PD4R::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pd4(&self) -> PD4_R {
+        PD4_R::new(((self.bits >> 16) & 0x07) as u8)
     }
     #[doc = "Bits 20:22 - Pad Driver Mode for Pn.5"]
-    #[inline]
-    pub fn pd5(&self) -> PD5R {
-        PD5R::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pd5(&self) -> PD5_R {
+        PD5_R::new(((self.bits >> 20) & 0x07) as u8)
     }
     #[doc = "Bits 24:26 - Pad Driver Mode for Pn.6"]
-    #[inline]
-    pub fn pd6(&self) -> PD6R {
-        PD6R::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pd6(&self) -> PD6_R {
+        PD6_R::new(((self.bits >> 24) & 0x07) as u8)
     }
     #[doc = "Bits 28:30 - Pad Driver Mode for Pn.7"]
-    #[inline]
-    pub fn pd7(&self) -> PD7R {
-        PD7R::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pd7(&self) -> PD7_R {
+        PD7_R::new(((self.bits >> 28) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 572662306 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.0"]
-    #[inline]
-    pub fn pd0(&mut self) -> _PD0W {
-        _PD0W { w: self }
+    #[inline(always)]
+    pub fn pd0(&mut self) -> PD0_W {
+        PD0_W { w: self }
     }
     #[doc = "Bits 4:6 - Pad Driver Mode for Pn.1"]
-    #[inline]
-    pub fn pd1(&mut self) -> _PD1W {
-        _PD1W { w: self }
+    #[inline(always)]
+    pub fn pd1(&mut self) -> PD1_W {
+        PD1_W { w: self }
     }
     #[doc = "Bits 8:10 - Pad Driver Mode for Pn.2"]
-    #[inline]
-    pub fn pd2(&mut self) -> _PD2W {
-        _PD2W { w: self }
+    #[inline(always)]
+    pub fn pd2(&mut self) -> PD2_W {
+        PD2_W { w: self }
     }
     #[doc = "Bits 12:14 - Pad Driver Mode for Pn.3"]
-    #[inline]
-    pub fn pd3(&mut self) -> _PD3W {
-        _PD3W { w: self }
+    #[inline(always)]
+    pub fn pd3(&mut self) -> PD3_W {
+        PD3_W { w: self }
     }
     #[doc = "Bits 16:18 - Pad Driver Mode for Pn.4"]
-    #[inline]
-    pub fn pd4(&mut self) -> _PD4W {
-        _PD4W { w: self }
+    #[inline(always)]
+    pub fn pd4(&mut self) -> PD4_W {
+        PD4_W { w: self }
     }
     #[doc = "Bits 20:22 - Pad Driver Mode for Pn.5"]
-    #[inline]
-    pub fn pd5(&mut self) -> _PD5W {
-        _PD5W { w: self }
+    #[inline(always)]
+    pub fn pd5(&mut self) -> PD5_W {
+        PD5_W { w: self }
     }
     #[doc = "Bits 24:26 - Pad Driver Mode for Pn.6"]
-    #[inline]
-    pub fn pd6(&mut self) -> _PD6W {
-        _PD6W { w: self }
+    #[inline(always)]
+    pub fn pd6(&mut self) -> PD6_W {
+        PD6_W { w: self }
     }
     #[doc = "Bits 28:30 - Pad Driver Mode for Pn.7"]
-    #[inline]
-    pub fn pd7(&mut self) -> _PD7W {
-        _PD7W { w: self }
+    #[inline(always)]
+    pub fn pd7(&mut self) -> PD7_W {
+        PD7_W { w: self }
     }
 }

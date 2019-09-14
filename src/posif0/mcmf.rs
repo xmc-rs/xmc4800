@@ -1,74 +1,48 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::MCMF {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `MSS`"]
+#[doc = "Reader of register MCMF"]
+pub type R = crate::R<u32, super::MCMF>;
+#[doc = "Multi-Channel Pattern update status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSSR {
-    #[doc = "Update of the Multi-Channel pattern is set"]
+pub enum MSS_A {
+    #[doc = "0: Update of the Multi-Channel pattern is set"]
     VALUE1,
-    #[doc = "Update of the Multi-Channel pattern is not set"]
+    #[doc = "1: Update of the Multi-Channel pattern is not set"]
     VALUE2,
 }
-impl MSSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MSSR::VALUE1 => false,
-            MSSR::VALUE2 => true,
+impl From<MSS_A> for bool {
+    #[inline(always)]
+    fn from(variant: MSS_A) -> Self {
+        match variant {
+            MSS_A::VALUE1 => false,
+            MSS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MSSR {
-        match value {
-            false => MSSR::VALUE1,
-            true => MSSR::VALUE2,
+}
+#[doc = "Reader of field `MSS`"]
+pub type MSS_R = crate::R<bool, MSS_A>;
+impl MSS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MSS_A {
+        match self.bits {
+            false => MSS_A::VALUE1,
+            true => MSS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MSSR::VALUE1
+        *self == MSS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MSSR::VALUE2
+        *self == MSS_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Multi-Channel Pattern update status"]
-    #[inline]
-    pub fn mss(&self) -> MSSR {
-        MSSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mss(&self) -> MSS_R {
+        MSS_R::new((self.bits & 0x01) != 0)
     }
 }

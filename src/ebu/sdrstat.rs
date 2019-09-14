@@ -1,186 +1,136 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::SDRSTAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `SDERR`"]
+#[doc = "Reader of register SDRSTAT"]
+pub type R = crate::R<u32, super::SDRSTAT>;
+#[doc = "SDRAM read error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SDERRR {
-    #[doc = "Reads running successfully"]
+pub enum SDERR_A {
+    #[doc = "0: Reads running successfully"]
     VALUE1,
-    #[doc = "Read error condition has been detected"]
+    #[doc = "1: Read error condition has been detected"]
     VALUE2,
 }
-impl SDERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SDERRR::VALUE1 => false,
-            SDERRR::VALUE2 => true,
+impl From<SDERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: SDERR_A) -> Self {
+        match variant {
+            SDERR_A::VALUE1 => false,
+            SDERR_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SDERRR {
-        match value {
-            false => SDERRR::VALUE1,
-            true => SDERRR::VALUE2,
+}
+#[doc = "Reader of field `SDERR`"]
+pub type SDERR_R = crate::R<bool, SDERR_A>;
+impl SDERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SDERR_A {
+        match self.bits {
+            false => SDERR_A::VALUE1,
+            true => SDERR_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SDERRR::VALUE1
+        *self == SDERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SDERRR::VALUE2
+        *self == SDERR_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `SDRMBUSY`"]
+#[doc = "SDRAM Busy\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SDRMBUSYR {
-    #[doc = "Power-up initialization sequence is not running"]
+pub enum SDRMBUSY_A {
+    #[doc = "0: Power-up initialization sequence is not running"]
     VALUE1,
-    #[doc = "Power-up initialization sequence is running"]
+    #[doc = "1: Power-up initialization sequence is running"]
     VALUE2,
 }
-impl SDRMBUSYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SDRMBUSYR::VALUE1 => false,
-            SDRMBUSYR::VALUE2 => true,
+impl From<SDRMBUSY_A> for bool {
+    #[inline(always)]
+    fn from(variant: SDRMBUSY_A) -> Self {
+        match variant {
+            SDRMBUSY_A::VALUE1 => false,
+            SDRMBUSY_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SDRMBUSYR {
-        match value {
-            false => SDRMBUSYR::VALUE1,
-            true => SDRMBUSYR::VALUE2,
+}
+#[doc = "Reader of field `SDRMBUSY`"]
+pub type SDRMBUSY_R = crate::R<bool, SDRMBUSY_A>;
+impl SDRMBUSY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SDRMBUSY_A {
+        match self.bits {
+            false => SDRMBUSY_A::VALUE1,
+            true => SDRMBUSY_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SDRMBUSYR::VALUE1
+        *self == SDRMBUSY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SDRMBUSYR::VALUE2
+        *self == SDRMBUSY_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `REFERR`"]
+#[doc = "SDRAM Refresh Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REFERRR {
-    #[doc = "No refresh error."]
+pub enum REFERR_A {
+    #[doc = "0: No refresh error."]
     VALUE1,
-    #[doc = "Refresh error occurred."]
+    #[doc = "1: Refresh error occurred."]
     VALUE2,
 }
-impl REFERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            REFERRR::VALUE1 => false,
-            REFERRR::VALUE2 => true,
+impl From<REFERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: REFERR_A) -> Self {
+        match variant {
+            REFERR_A::VALUE1 => false,
+            REFERR_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> REFERRR {
-        match value {
-            false => REFERRR::VALUE1,
-            true => REFERRR::VALUE2,
+}
+#[doc = "Reader of field `REFERR`"]
+pub type REFERR_R = crate::R<bool, REFERR_A>;
+impl REFERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REFERR_A {
+        match self.bits {
+            false => REFERR_A::VALUE1,
+            true => REFERR_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == REFERRR::VALUE1
+        *self == REFERR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == REFERRR::VALUE2
+        *self == REFERR_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 2 - SDRAM read error"]
-    #[inline]
-    pub fn sderr(&self) -> SDERRR {
-        SDERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sderr(&self) -> SDERR_R {
+        SDERR_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 1 - SDRAM Busy"]
-    #[inline]
-    pub fn sdrmbusy(&self) -> SDRMBUSYR {
-        SDRMBUSYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sdrmbusy(&self) -> SDRMBUSY_R {
+        SDRMBUSY_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 0 - SDRAM Refresh Error"]
-    #[inline]
-    pub fn referr(&self) -> REFERRR {
-        REFERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn referr(&self) -> REFERR_R {
+        REFERR_R::new((self.bits & 0x01) != 0)
     }
 }

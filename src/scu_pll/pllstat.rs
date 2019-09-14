@@ -1,522 +1,400 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PLLSTAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `VCOBYST`"]
+#[doc = "Reader of register PLLSTAT"]
+pub type R = crate::R<u32, super::PLLSTAT>;
+#[doc = "VCO Bypass Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VCOBYSTR {
-    #[doc = "Free-running / Normal Mode is entered"]
+pub enum VCOBYST_A {
+    #[doc = "0: Free-running / Normal Mode is entered"]
     VALUE1,
-    #[doc = "Prescaler Mode is entered"]
+    #[doc = "1: Prescaler Mode is entered"]
     VALUE2,
 }
-impl VCOBYSTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VCOBYSTR::VALUE1 => false,
-            VCOBYSTR::VALUE2 => true,
+impl From<VCOBYST_A> for bool {
+    #[inline(always)]
+    fn from(variant: VCOBYST_A) -> Self {
+        match variant {
+            VCOBYST_A::VALUE1 => false,
+            VCOBYST_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VCOBYSTR {
-        match value {
-            false => VCOBYSTR::VALUE1,
-            true => VCOBYSTR::VALUE2,
+}
+#[doc = "Reader of field `VCOBYST`"]
+pub type VCOBYST_R = crate::R<bool, VCOBYST_A>;
+impl VCOBYST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VCOBYST_A {
+        match self.bits {
+            false => VCOBYST_A::VALUE1,
+            true => VCOBYST_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VCOBYSTR::VALUE1
+        *self == VCOBYST_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VCOBYSTR::VALUE2
+        *self == VCOBYST_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `PWDSTAT`"]
+#[doc = "PLL Power-saving Mode Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PWDSTATR {
-    #[doc = "PLL Power-saving Mode was not entered"]
+pub enum PWDSTAT_A {
+    #[doc = "0: PLL Power-saving Mode was not entered"]
     VALUE1,
-    #[doc = "PLL Power-saving Mode was entered"]
+    #[doc = "1: PLL Power-saving Mode was entered"]
     VALUE2,
 }
-impl PWDSTATR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PWDSTATR::VALUE1 => false,
-            PWDSTATR::VALUE2 => true,
+impl From<PWDSTAT_A> for bool {
+    #[inline(always)]
+    fn from(variant: PWDSTAT_A) -> Self {
+        match variant {
+            PWDSTAT_A::VALUE1 => false,
+            PWDSTAT_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PWDSTATR {
-        match value {
-            false => PWDSTATR::VALUE1,
-            true => PWDSTATR::VALUE2,
+}
+#[doc = "Reader of field `PWDSTAT`"]
+pub type PWDSTAT_R = crate::R<bool, PWDSTAT_A>;
+impl PWDSTAT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PWDSTAT_A {
+        match self.bits {
+            false => PWDSTAT_A::VALUE1,
+            true => PWDSTAT_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PWDSTATR::VALUE1
+        *self == PWDSTAT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PWDSTATR::VALUE2
+        *self == PWDSTAT_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `VCOLOCK`"]
+#[doc = "PLL LOCK Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VCOLOCKR {
-    #[doc = "PLL not locked"]
+pub enum VCOLOCK_A {
+    #[doc = "0: PLL not locked"]
     VALUE1,
-    #[doc = "PLL locked"]
+    #[doc = "1: PLL locked"]
     VALUE2,
 }
-impl VCOLOCKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VCOLOCKR::VALUE1 => false,
-            VCOLOCKR::VALUE2 => true,
+impl From<VCOLOCK_A> for bool {
+    #[inline(always)]
+    fn from(variant: VCOLOCK_A) -> Self {
+        match variant {
+            VCOLOCK_A::VALUE1 => false,
+            VCOLOCK_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VCOLOCKR {
-        match value {
-            false => VCOLOCKR::VALUE1,
-            true => VCOLOCKR::VALUE2,
+}
+#[doc = "Reader of field `VCOLOCK`"]
+pub type VCOLOCK_R = crate::R<bool, VCOLOCK_A>;
+impl VCOLOCK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VCOLOCK_A {
+        match self.bits {
+            false => VCOLOCK_A::VALUE1,
+            true => VCOLOCK_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VCOLOCKR::VALUE1
+        *self == VCOLOCK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VCOLOCKR::VALUE2
+        *self == VCOLOCK_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `K1RDY`"]
+#[doc = "K1 Divider Ready Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum K1RDYR {
-    #[doc = "K1-Divider does not operate with the new value"]
+pub enum K1RDY_A {
+    #[doc = "0: K1-Divider does not operate with the new value"]
     VALUE1,
-    #[doc = "K1-Divider operate with the new value"]
+    #[doc = "1: K1-Divider operate with the new value"]
     VALUE2,
 }
-impl K1RDYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            K1RDYR::VALUE1 => false,
-            K1RDYR::VALUE2 => true,
+impl From<K1RDY_A> for bool {
+    #[inline(always)]
+    fn from(variant: K1RDY_A) -> Self {
+        match variant {
+            K1RDY_A::VALUE1 => false,
+            K1RDY_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> K1RDYR {
-        match value {
-            false => K1RDYR::VALUE1,
-            true => K1RDYR::VALUE2,
+}
+#[doc = "Reader of field `K1RDY`"]
+pub type K1RDY_R = crate::R<bool, K1RDY_A>;
+impl K1RDY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> K1RDY_A {
+        match self.bits {
+            false => K1RDY_A::VALUE1,
+            true => K1RDY_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == K1RDYR::VALUE1
+        *self == K1RDY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == K1RDYR::VALUE2
+        *self == K1RDY_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `K2RDY`"]
+#[doc = "K2 Divider Ready Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum K2RDYR {
-    #[doc = "K2-Divider does not operate with the new value"]
+pub enum K2RDY_A {
+    #[doc = "0: K2-Divider does not operate with the new value"]
     VALUE1,
-    #[doc = "K2-Divider operate with the new value"]
+    #[doc = "1: K2-Divider operate with the new value"]
     VALUE2,
 }
-impl K2RDYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            K2RDYR::VALUE1 => false,
-            K2RDYR::VALUE2 => true,
+impl From<K2RDY_A> for bool {
+    #[inline(always)]
+    fn from(variant: K2RDY_A) -> Self {
+        match variant {
+            K2RDY_A::VALUE1 => false,
+            K2RDY_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> K2RDYR {
-        match value {
-            false => K2RDYR::VALUE1,
-            true => K2RDYR::VALUE2,
+}
+#[doc = "Reader of field `K2RDY`"]
+pub type K2RDY_R = crate::R<bool, K2RDY_A>;
+impl K2RDY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> K2RDY_A {
+        match self.bits {
+            false => K2RDY_A::VALUE1,
+            true => K2RDY_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == K2RDYR::VALUE1
+        *self == K2RDY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == K2RDYR::VALUE2
+        *self == K2RDY_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `BY`"]
+#[doc = "Bypass Mode Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BYR {
-    #[doc = "Bypass Mode is not entered"]
+pub enum BY_A {
+    #[doc = "0: Bypass Mode is not entered"]
     VALUE1,
-    #[doc = "Bypass Mode is entered. Input fOSC is selected as output fPLL."]
+    #[doc = "1: Bypass Mode is entered. Input fOSC is selected as output fPLL."]
     VALUE2,
 }
-impl BYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BYR::VALUE1 => false,
-            BYR::VALUE2 => true,
+impl From<BY_A> for bool {
+    #[inline(always)]
+    fn from(variant: BY_A) -> Self {
+        match variant {
+            BY_A::VALUE1 => false,
+            BY_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BYR {
-        match value {
-            false => BYR::VALUE1,
-            true => BYR::VALUE2,
+}
+#[doc = "Reader of field `BY`"]
+pub type BY_R = crate::R<bool, BY_A>;
+impl BY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BY_A {
+        match self.bits {
+            false => BY_A::VALUE1,
+            true => BY_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BYR::VALUE1
+        *self == BY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BYR::VALUE2
+        *self == BY_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `PLLLV`"]
+#[doc = "Oscillator for PLL Valid Low Status Bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PLLLVR {
-    #[doc = "The OSC frequency is not usable. Frequency fREF is too low."]
+pub enum PLLLV_A {
+    #[doc = "0: The OSC frequency is not usable. Frequency fREF is too low."]
     VALUE1,
-    #[doc = "The OSC frequency is usable"]
+    #[doc = "1: The OSC frequency is usable"]
     VALUE2,
 }
-impl PLLLVR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PLLLVR::VALUE1 => false,
-            PLLLVR::VALUE2 => true,
+impl From<PLLLV_A> for bool {
+    #[inline(always)]
+    fn from(variant: PLLLV_A) -> Self {
+        match variant {
+            PLLLV_A::VALUE1 => false,
+            PLLLV_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PLLLVR {
-        match value {
-            false => PLLLVR::VALUE1,
-            true => PLLLVR::VALUE2,
+}
+#[doc = "Reader of field `PLLLV`"]
+pub type PLLLV_R = crate::R<bool, PLLLV_A>;
+impl PLLLV_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PLLLV_A {
+        match self.bits {
+            false => PLLLV_A::VALUE1,
+            true => PLLLV_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PLLLVR::VALUE1
+        *self == PLLLV_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PLLLVR::VALUE2
+        *self == PLLLV_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `PLLHV`"]
+#[doc = "Oscillator for PLL Valid High Status Bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PLLHVR {
-    #[doc = "The OSC frequency is not usable. Frequency fOSC is too high."]
+pub enum PLLHV_A {
+    #[doc = "0: The OSC frequency is not usable. Frequency fOSC is too high."]
     VALUE1,
-    #[doc = "The OSC frequency is usable"]
+    #[doc = "1: The OSC frequency is usable"]
     VALUE2,
 }
-impl PLLHVR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PLLHVR::VALUE1 => false,
-            PLLHVR::VALUE2 => true,
+impl From<PLLHV_A> for bool {
+    #[inline(always)]
+    fn from(variant: PLLHV_A) -> Self {
+        match variant {
+            PLLHV_A::VALUE1 => false,
+            PLLHV_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PLLHVR {
-        match value {
-            false => PLLHVR::VALUE1,
-            true => PLLHVR::VALUE2,
+}
+#[doc = "Reader of field `PLLHV`"]
+pub type PLLHV_R = crate::R<bool, PLLHV_A>;
+impl PLLHV_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PLLHV_A {
+        match self.bits {
+            false => PLLHV_A::VALUE1,
+            true => PLLHV_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PLLHVR::VALUE1
+        *self == PLLHV_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PLLHVR::VALUE2
+        *self == PLLHV_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `PLLSP`"]
+#[doc = "Oscillator for PLL Valid Spike Status Bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PLLSPR {
-    #[doc = "The OSC frequency is not usable. Spikes are detected that disturb a locked operation"]
+pub enum PLLSP_A {
+    #[doc = "0: The OSC frequency is not usable. Spikes are detected that disturb a locked operation"]
     VALUE1,
-    #[doc = "The OSC frequency is usable"]
+    #[doc = "1: The OSC frequency is usable"]
     VALUE2,
 }
-impl PLLSPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PLLSPR::VALUE1 => false,
-            PLLSPR::VALUE2 => true,
+impl From<PLLSP_A> for bool {
+    #[inline(always)]
+    fn from(variant: PLLSP_A) -> Self {
+        match variant {
+            PLLSP_A::VALUE1 => false,
+            PLLSP_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PLLSPR {
-        match value {
-            false => PLLSPR::VALUE1,
-            true => PLLSPR::VALUE2,
+}
+#[doc = "Reader of field `PLLSP`"]
+pub type PLLSP_R = crate::R<bool, PLLSP_A>;
+impl PLLSP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PLLSP_A {
+        match self.bits {
+            false => PLLSP_A::VALUE1,
+            true => PLLSP_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PLLSPR::VALUE1
+        *self == PLLSP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PLLSPR::VALUE2
+        *self == PLLSP_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - VCO Bypass Status"]
-    #[inline]
-    pub fn vcobyst(&self) -> VCOBYSTR {
-        VCOBYSTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn vcobyst(&self) -> VCOBYST_R {
+        VCOBYST_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - PLL Power-saving Mode Status"]
-    #[inline]
-    pub fn pwdstat(&self) -> PWDSTATR {
-        PWDSTATR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pwdstat(&self) -> PWDSTAT_R {
+        PWDSTAT_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - PLL LOCK Status"]
-    #[inline]
-    pub fn vcolock(&self) -> VCOLOCKR {
-        VCOLOCKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn vcolock(&self) -> VCOLOCK_R {
+        VCOLOCK_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 4 - K1 Divider Ready Status"]
-    #[inline]
-    pub fn k1rdy(&self) -> K1RDYR {
-        K1RDYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn k1rdy(&self) -> K1RDY_R {
+        K1RDY_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - K2 Divider Ready Status"]
-    #[inline]
-    pub fn k2rdy(&self) -> K2RDYR {
-        K2RDYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn k2rdy(&self) -> K2RDY_R {
+        K2RDY_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Bypass Mode Status"]
-    #[inline]
-    pub fn by(&self) -> BYR {
-        BYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn by(&self) -> BY_R {
+        BY_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Oscillator for PLL Valid Low Status Bit"]
-    #[inline]
-    pub fn plllv(&self) -> PLLLVR {
-        PLLLVR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn plllv(&self) -> PLLLV_R {
+        PLLLV_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Oscillator for PLL Valid High Status Bit"]
-    #[inline]
-    pub fn pllhv(&self) -> PLLHVR {
-        PLLHVR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pllhv(&self) -> PLLHV_R {
+        PLLHV_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Oscillator for PLL Valid Spike Status Bit"]
-    #[inline]
-    pub fn pllsp(&self) -> PLLSPR {
-        PLLSPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pllsp(&self) -> PLLSP_R {
+        PLLSP_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }

@@ -1,1849 +1,1364 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::HDCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register HDCR"]
+pub type R = crate::R<u32, super::HDCR>;
+#[doc = "Writer for register HDCR"]
+pub type W = crate::W<u32, super::HDCR>;
+#[doc = "Register HDCR `reset()`'s with value 0x000c_2000"]
+impl crate::ResetValue for super::HDCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x000c_2000
     }
 }
-#[doc = "Possible values of the field `WKPEP`"]
+#[doc = "Wake-Up on Pin Event Positive Edge Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WKPEPR {
-    #[doc = "Wake-up event disabled"]
+pub enum WKPEP_A {
+    #[doc = "0: Wake-up event disabled"]
     VALUE1,
-    #[doc = "Wake-up event enabled"]
+    #[doc = "1: Wake-up event enabled"]
     VALUE2,
 }
-impl WKPEPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WKPEPR::VALUE1 => false,
-            WKPEPR::VALUE2 => true,
+impl From<WKPEP_A> for bool {
+    #[inline(always)]
+    fn from(variant: WKPEP_A) -> Self {
+        match variant {
+            WKPEP_A::VALUE1 => false,
+            WKPEP_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WKPEPR {
-        match value {
-            false => WKPEPR::VALUE1,
-            true => WKPEPR::VALUE2,
+}
+#[doc = "Reader of field `WKPEP`"]
+pub type WKPEP_R = crate::R<bool, WKPEP_A>;
+impl WKPEP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WKPEP_A {
+        match self.bits {
+            false => WKPEP_A::VALUE1,
+            true => WKPEP_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WKPEPR::VALUE1
+        *self == WKPEP_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WKPEPR::VALUE2
+        *self == WKPEP_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `WKPEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WKPENR {
-    #[doc = "Wake-up event disabled"]
-    VALUE1,
-    #[doc = "Wake-up event enabled"]
-    VALUE2,
+#[doc = "Write proxy for field `WKPEP`"]
+pub struct WKPEP_W<'a> {
+    w: &'a mut W,
 }
-impl WKPENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WKPENR::VALUE1 => false,
-            WKPENR::VALUE2 => true,
+impl<'a> WKPEP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WKPEP_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WKPENR {
-        match value {
-            false => WKPENR::VALUE1,
-            true => WKPENR::VALUE2,
+    #[doc = "Wake-up event disabled"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(WKPEP_A::VALUE1)
+    }
+    #[doc = "Wake-up event enabled"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(WKPEP_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "Wake-up on Pin Event Negative Edge Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WKPEN_A {
+    #[doc = "0: Wake-up event disabled"]
+    VALUE1,
+    #[doc = "1: Wake-up event enabled"]
+    VALUE2,
+}
+impl From<WKPEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: WKPEN_A) -> Self {
+        match variant {
+            WKPEN_A::VALUE1 => false,
+            WKPEN_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `WKPEN`"]
+pub type WKPEN_R = crate::R<bool, WKPEN_A>;
+impl WKPEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WKPEN_A {
+        match self.bits {
+            false => WKPEN_A::VALUE1,
+            true => WKPEN_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WKPENR::VALUE1
+        *self == WKPEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WKPENR::VALUE2
+        *self == WKPEN_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `RTCE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RTCER {
-    #[doc = "Wake-up event disabled"]
-    VALUE1,
-    #[doc = "Wake-up event enabled"]
-    VALUE2,
+#[doc = "Write proxy for field `WKPEN`"]
+pub struct WKPEN_W<'a> {
+    w: &'a mut W,
 }
-impl RTCER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RTCER::VALUE1 => false,
-            RTCER::VALUE2 => true,
+impl<'a> WKPEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WKPEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RTCER {
-        match value {
-            false => RTCER::VALUE1,
-            true => RTCER::VALUE2,
+    #[doc = "Wake-up event disabled"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(WKPEN_A::VALUE1)
+    }
+    #[doc = "Wake-up event enabled"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(WKPEN_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "Wake-up on RTC Event Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RTCE_A {
+    #[doc = "0: Wake-up event disabled"]
+    VALUE1,
+    #[doc = "1: Wake-up event enabled"]
+    VALUE2,
+}
+impl From<RTCE_A> for bool {
+    #[inline(always)]
+    fn from(variant: RTCE_A) -> Self {
+        match variant {
+            RTCE_A::VALUE1 => false,
+            RTCE_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `RTCE`"]
+pub type RTCE_R = crate::R<bool, RTCE_A>;
+impl RTCE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RTCE_A {
+        match self.bits {
+            false => RTCE_A::VALUE1,
+            true => RTCE_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RTCER::VALUE1
+        *self == RTCE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RTCER::VALUE2
+        *self == RTCE_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `ULPWDGEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ULPWDGENR {
-    #[doc = "Wake-up event disabled"]
-    VALUE1,
-    #[doc = "Wake-up event enabled"]
-    VALUE2,
+#[doc = "Write proxy for field `RTCE`"]
+pub struct RTCE_W<'a> {
+    w: &'a mut W,
 }
-impl ULPWDGENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ULPWDGENR::VALUE1 => false,
-            ULPWDGENR::VALUE2 => true,
+impl<'a> RTCE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RTCE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ULPWDGENR {
-        match value {
-            false => ULPWDGENR::VALUE1,
-            true => ULPWDGENR::VALUE2,
+    #[doc = "Wake-up event disabled"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(RTCE_A::VALUE1)
+    }
+    #[doc = "Wake-up event enabled"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(RTCE_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "ULP WDG Alarm Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ULPWDGEN_A {
+    #[doc = "0: Wake-up event disabled"]
+    VALUE1,
+    #[doc = "1: Wake-up event enabled"]
+    VALUE2,
+}
+impl From<ULPWDGEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ULPWDGEN_A) -> Self {
+        match variant {
+            ULPWDGEN_A::VALUE1 => false,
+            ULPWDGEN_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `ULPWDGEN`"]
+pub type ULPWDGEN_R = crate::R<bool, ULPWDGEN_A>;
+impl ULPWDGEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ULPWDGEN_A {
+        match self.bits {
+            false => ULPWDGEN_A::VALUE1,
+            true => ULPWDGEN_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ULPWDGENR::VALUE1
+        *self == ULPWDGEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ULPWDGENR::VALUE2
+        *self == ULPWDGEN_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `HIB`"]
+#[doc = "Write proxy for field `ULPWDGEN`"]
+pub struct ULPWDGEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ULPWDGEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ULPWDGEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Wake-up event disabled"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(ULPWDGEN_A::VALUE1)
+    }
+    #[doc = "Wake-up event enabled"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(ULPWDGEN_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
+    }
+}
+#[doc = "Hibernate Request Value Set\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HIBR {
+pub enum HIB_A {
+    #[doc = "0: External hibernate request inactive"]
+    VALUE1,
+    #[doc = "1: External hibernate request active"]
+    VALUE2,
+}
+impl From<HIB_A> for bool {
+    #[inline(always)]
+    fn from(variant: HIB_A) -> Self {
+        match variant {
+            HIB_A::VALUE1 => false,
+            HIB_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `HIB`"]
+pub type HIB_R = crate::R<bool, HIB_A>;
+impl HIB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HIB_A {
+        match self.bits {
+            false => HIB_A::VALUE1,
+            true => HIB_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == HIB_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == HIB_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `HIB`"]
+pub struct HIB_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> HIB_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HIB_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "External hibernate request inactive"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(HIB_A::VALUE1)
+    }
     #[doc = "External hibernate request active"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(HIB_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
+    }
+}
+#[doc = "fRTC Clock Selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RCS_A {
+    #[doc = "0: fOSI selected"]
+    VALUE1,
+    #[doc = "1: fULP selected"]
     VALUE2,
 }
-impl HIBR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HIBR::VALUE1 => false,
-            HIBR::VALUE2 => true,
+impl From<RCS_A> for bool {
+    #[inline(always)]
+    fn from(variant: RCS_A) -> Self {
+        match variant {
+            RCS_A::VALUE1 => false,
+            RCS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HIBR {
-        match value {
-            false => HIBR::VALUE1,
-            true => HIBR::VALUE2,
+}
+#[doc = "Reader of field `RCS`"]
+pub type RCS_R = crate::R<bool, RCS_A>;
+impl RCS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RCS_A {
+        match self.bits {
+            false => RCS_A::VALUE1,
+            true => RCS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == HIBR::VALUE1
+        *self == RCS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == HIBR::VALUE2
+        *self == RCS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `RCS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RCSR {
+#[doc = "Write proxy for field `RCS`"]
+pub struct RCS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RCS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RCS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "fOSI selected"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(RCS_A::VALUE1)
+    }
     #[doc = "fULP selected"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(RCS_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w
+    }
+}
+#[doc = "fSTDBY Clock Selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STDBYSEL_A {
+    #[doc = "0: fOSI selected"]
+    VALUE1,
+    #[doc = "1: fULP selected"]
     VALUE2,
 }
-impl RCSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RCSR::VALUE1 => false,
-            RCSR::VALUE2 => true,
+impl From<STDBYSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: STDBYSEL_A) -> Self {
+        match variant {
+            STDBYSEL_A::VALUE1 => false,
+            STDBYSEL_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RCSR {
-        match value {
-            false => RCSR::VALUE1,
-            true => RCSR::VALUE2,
+}
+#[doc = "Reader of field `STDBYSEL`"]
+pub type STDBYSEL_R = crate::R<bool, STDBYSEL_A>;
+impl STDBYSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> STDBYSEL_A {
+        match self.bits {
+            false => STDBYSEL_A::VALUE1,
+            true => STDBYSEL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RCSR::VALUE1
+        *self == STDBYSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RCSR::VALUE2
+        *self == STDBYSEL_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `STDBYSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STDBYSELR {
+#[doc = "Write proxy for field `STDBYSEL`"]
+pub struct STDBYSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> STDBYSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: STDBYSEL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "fOSI selected"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(STDBYSEL_A::VALUE1)
+    }
     #[doc = "fULP selected"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(STDBYSEL_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w
+    }
+}
+#[doc = "Wake-Up from Hibernate Trigger Input Selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WKUPSEL_A {
+    #[doc = "0: HIB_IO_1 pin selected"]
+    VALUE1,
+    #[doc = "1: HIB_IO_0 pin selected"]
     VALUE2,
 }
-impl STDBYSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            STDBYSELR::VALUE1 => false,
-            STDBYSELR::VALUE2 => true,
+impl From<WKUPSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: WKUPSEL_A) -> Self {
+        match variant {
+            WKUPSEL_A::VALUE1 => false,
+            WKUPSEL_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> STDBYSELR {
-        match value {
-            false => STDBYSELR::VALUE1,
-            true => STDBYSELR::VALUE2,
+}
+#[doc = "Reader of field `WKUPSEL`"]
+pub type WKUPSEL_R = crate::R<bool, WKUPSEL_A>;
+impl WKUPSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WKUPSEL_A {
+        match self.bits {
+            false => WKUPSEL_A::VALUE1,
+            true => WKUPSEL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == STDBYSELR::VALUE1
+        *self == WKUPSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == STDBYSELR::VALUE2
+        *self == WKUPSEL_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `WKUPSEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WKUPSELR {
+#[doc = "Write proxy for field `WKUPSEL`"]
+pub struct WKUPSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> WKUPSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WKUPSEL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "HIB_IO_1 pin selected"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(WKUPSEL_A::VALUE1)
+    }
     #[doc = "HIB_IO_0 pin selected"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(WKUPSEL_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
+    }
+}
+#[doc = "General Purpose Input 0 Selection\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum GPI0SEL_A {
+    #[doc = "0: HIB_IO_1 pin selected"]
+    VALUE1,
+    #[doc = "1: HIB_IO_0 pin selected"]
     VALUE2,
 }
-impl WKUPSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WKUPSELR::VALUE1 => false,
-            WKUPSELR::VALUE2 => true,
+impl From<GPI0SEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: GPI0SEL_A) -> Self {
+        match variant {
+            GPI0SEL_A::VALUE1 => false,
+            GPI0SEL_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WKUPSELR {
-        match value {
-            false => WKUPSELR::VALUE1,
-            true => WKUPSELR::VALUE2,
+}
+#[doc = "Reader of field `GPI0SEL`"]
+pub type GPI0SEL_R = crate::R<bool, GPI0SEL_A>;
+impl GPI0SEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GPI0SEL_A {
+        match self.bits {
+            false => GPI0SEL_A::VALUE1,
+            true => GPI0SEL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WKUPSELR::VALUE1
+        *self == GPI0SEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WKUPSELR::VALUE2
+        *self == GPI0SEL_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `GPI0SEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GPI0SELR {
+#[doc = "Write proxy for field `GPI0SEL`"]
+pub struct GPI0SEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> GPI0SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: GPI0SEL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "HIB_IO_1 pin selected"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(GPI0SEL_A::VALUE1)
+    }
     #[doc = "HIB_IO_0 pin selected"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(GPI0SEL_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w
+    }
+}
+#[doc = "HIBIO0 Polarity Set\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HIBIO0POL_A {
+    #[doc = "0: Direct value"]
+    VALUE1,
+    #[doc = "1: Inverted value"]
     VALUE2,
 }
-impl GPI0SELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            GPI0SELR::VALUE1 => false,
-            GPI0SELR::VALUE2 => true,
+impl From<HIBIO0POL_A> for bool {
+    #[inline(always)]
+    fn from(variant: HIBIO0POL_A) -> Self {
+        match variant {
+            HIBIO0POL_A::VALUE1 => false,
+            HIBIO0POL_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> GPI0SELR {
-        match value {
-            false => GPI0SELR::VALUE1,
-            true => GPI0SELR::VALUE2,
+}
+#[doc = "Reader of field `HIBIO0POL`"]
+pub type HIBIO0POL_R = crate::R<bool, HIBIO0POL_A>;
+impl HIBIO0POL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HIBIO0POL_A {
+        match self.bits {
+            false => HIBIO0POL_A::VALUE1,
+            true => HIBIO0POL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == GPI0SELR::VALUE1
+        *self == HIBIO0POL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == GPI0SELR::VALUE2
+        *self == HIBIO0POL_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `HIBIO0POL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HIBIO0POLR {
+#[doc = "Write proxy for field `HIBIO0POL`"]
+pub struct HIBIO0POL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> HIBIO0POL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HIBIO0POL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Direct value"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(HIBIO0POL_A::VALUE1)
+    }
     #[doc = "Inverted value"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(HIBIO0POL_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w
+    }
+}
+#[doc = "HIBIO1 Polarity Set\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HIBIO1POL_A {
+    #[doc = "0: Direct value"]
+    VALUE1,
+    #[doc = "1: Inverted value"]
     VALUE2,
 }
-impl HIBIO0POLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HIBIO0POLR::VALUE1 => false,
-            HIBIO0POLR::VALUE2 => true,
+impl From<HIBIO1POL_A> for bool {
+    #[inline(always)]
+    fn from(variant: HIBIO1POL_A) -> Self {
+        match variant {
+            HIBIO1POL_A::VALUE1 => false,
+            HIBIO1POL_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HIBIO0POLR {
-        match value {
-            false => HIBIO0POLR::VALUE1,
-            true => HIBIO0POLR::VALUE2,
+}
+#[doc = "Reader of field `HIBIO1POL`"]
+pub type HIBIO1POL_R = crate::R<bool, HIBIO1POL_A>;
+impl HIBIO1POL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HIBIO1POL_A {
+        match self.bits {
+            false => HIBIO1POL_A::VALUE1,
+            true => HIBIO1POL_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == HIBIO0POLR::VALUE1
+        *self == HIBIO1POL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == HIBIO0POLR::VALUE2
+        *self == HIBIO1POL_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `HIBIO1POL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HIBIO1POLR {
+#[doc = "Write proxy for field `HIBIO1POL`"]
+pub struct HIBIO1POL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> HIBIO1POL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HIBIO1POL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Direct value"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(HIBIO1POL_A::VALUE1)
+    }
     #[doc = "Inverted value"]
-    VALUE2,
-}
-impl HIBIO1POLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(HIBIO1POL_A::VALUE2)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HIBIO1POLR::VALUE1 => false,
-            HIBIO1POLR::VALUE2 => true,
-        }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HIBIO1POLR {
-        match value {
-            false => HIBIO1POLR::VALUE1,
-            true => HIBIO1POLR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == HIBIO1POLR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == HIBIO1POLR::VALUE2
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w
     }
 }
-#[doc = "Possible values of the field `HIBIO0SEL`"]
+#[doc = "HIB_IO_0 Pin I/O Control (default HIBOUT)\n\nValue on reset: 12"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HIBIO0SELR {
-    #[doc = "Direct input, No input pull device connected"]
+pub enum HIBIO0SEL_A {
+    #[doc = "0: Direct input, No input pull device connected"]
     VALUE1,
-    #[doc = "Direct input, Input pull-down device connected"]
+    #[doc = "1: Direct input, Input pull-down device connected"]
     VALUE2,
-    #[doc = "Direct input, Input pull-up device connected"]
+    #[doc = "2: Direct input, Input pull-up device connected"]
     VALUE3,
-    #[doc = "Push-pull HIB Control output"]
+    #[doc = "8: Push-pull HIB Control output"]
     VALUE4,
-    #[doc = "Push-pull WDT service output"]
+    #[doc = "9: Push-pull WDT service output"]
     VALUE5,
-    #[doc = "Push-pull GPIO output"]
+    #[doc = "10: Push-pull GPIO output"]
     VALUE6,
-    #[doc = "Open-drain HIB Control output"]
+    #[doc = "12: Open-drain HIB Control output"]
     VALUE7,
-    #[doc = "Open-drain WDT service output"]
+    #[doc = "13: Open-drain WDT service output"]
     VALUE8,
-    #[doc = "Open-drain GPIO output"]
+    #[doc = "14: Open-drain GPIO output"]
     VALUE9,
-    #[doc = "Analog input"]
+    #[doc = "15: Analog input"]
     VALUE10,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl HIBIO0SELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            HIBIO0SELR::VALUE1 => 0,
-            HIBIO0SELR::VALUE2 => 1,
-            HIBIO0SELR::VALUE3 => 2,
-            HIBIO0SELR::VALUE4 => 8,
-            HIBIO0SELR::VALUE5 => 9,
-            HIBIO0SELR::VALUE6 => 10,
-            HIBIO0SELR::VALUE7 => 12,
-            HIBIO0SELR::VALUE8 => 13,
-            HIBIO0SELR::VALUE9 => 14,
-            HIBIO0SELR::VALUE10 => 15,
-            HIBIO0SELR::_Reserved(bits) => bits,
+impl From<HIBIO0SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: HIBIO0SEL_A) -> Self {
+        match variant {
+            HIBIO0SEL_A::VALUE1 => 0,
+            HIBIO0SEL_A::VALUE2 => 1,
+            HIBIO0SEL_A::VALUE3 => 2,
+            HIBIO0SEL_A::VALUE4 => 8,
+            HIBIO0SEL_A::VALUE5 => 9,
+            HIBIO0SEL_A::VALUE6 => 10,
+            HIBIO0SEL_A::VALUE7 => 12,
+            HIBIO0SEL_A::VALUE8 => 13,
+            HIBIO0SEL_A::VALUE9 => 14,
+            HIBIO0SEL_A::VALUE10 => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> HIBIO0SELR {
-        match value {
-            0 => HIBIO0SELR::VALUE1,
-            1 => HIBIO0SELR::VALUE2,
-            2 => HIBIO0SELR::VALUE3,
-            8 => HIBIO0SELR::VALUE4,
-            9 => HIBIO0SELR::VALUE5,
-            10 => HIBIO0SELR::VALUE6,
-            12 => HIBIO0SELR::VALUE7,
-            13 => HIBIO0SELR::VALUE8,
-            14 => HIBIO0SELR::VALUE9,
-            15 => HIBIO0SELR::VALUE10,
-            i => HIBIO0SELR::_Reserved(i),
+}
+#[doc = "Reader of field `HIBIO0SEL`"]
+pub type HIBIO0SEL_R = crate::R<u8, HIBIO0SEL_A>;
+impl HIBIO0SEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, HIBIO0SEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(HIBIO0SEL_A::VALUE1),
+            1 => Val(HIBIO0SEL_A::VALUE2),
+            2 => Val(HIBIO0SEL_A::VALUE3),
+            8 => Val(HIBIO0SEL_A::VALUE4),
+            9 => Val(HIBIO0SEL_A::VALUE5),
+            10 => Val(HIBIO0SEL_A::VALUE6),
+            12 => Val(HIBIO0SEL_A::VALUE7),
+            13 => Val(HIBIO0SEL_A::VALUE8),
+            14 => Val(HIBIO0SEL_A::VALUE9),
+            15 => Val(HIBIO0SEL_A::VALUE10),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == HIBIO0SELR::VALUE1
+        *self == HIBIO0SEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == HIBIO0SELR::VALUE2
+        *self == HIBIO0SEL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == HIBIO0SELR::VALUE3
+        *self == HIBIO0SEL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == HIBIO0SELR::VALUE4
+        *self == HIBIO0SEL_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == HIBIO0SELR::VALUE5
+        *self == HIBIO0SEL_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == HIBIO0SELR::VALUE6
+        *self == HIBIO0SEL_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == HIBIO0SELR::VALUE7
+        *self == HIBIO0SEL_A::VALUE7
     }
     #[doc = "Checks if the value of the field is `VALUE8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        *self == HIBIO0SELR::VALUE8
+        *self == HIBIO0SEL_A::VALUE8
     }
     #[doc = "Checks if the value of the field is `VALUE9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value9(&self) -> bool {
-        *self == HIBIO0SELR::VALUE9
+        *self == HIBIO0SEL_A::VALUE9
     }
     #[doc = "Checks if the value of the field is `VALUE10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value10(&self) -> bool {
-        *self == HIBIO0SELR::VALUE10
+        *self == HIBIO0SEL_A::VALUE10
     }
 }
-#[doc = "Possible values of the field `HIBIO1SEL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HIBIO1SELR {
-    #[doc = "Direct input, No input pull device connected"]
-    VALUE1,
-    #[doc = "Direct input, Input pull-down device connected"]
-    VALUE2,
-    #[doc = "Direct input, Input pull-up device connected"]
-    VALUE3,
-    #[doc = "Push-pull HIB Control output"]
-    VALUE4,
-    #[doc = "Push-pull WDT service output"]
-    VALUE5,
-    #[doc = "Push-pull GPIO output"]
-    VALUE6,
-    #[doc = "Open-drain HIB Control output"]
-    VALUE7,
-    #[doc = "Open-drain WDT service output"]
-    VALUE8,
-    #[doc = "Open-drain GPIO output"]
-    VALUE9,
-    #[doc = "Analog input"]
-    VALUE10,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+#[doc = "Write proxy for field `HIBIO0SEL`"]
+pub struct HIBIO0SEL_W<'a> {
+    w: &'a mut W,
 }
-impl HIBIO1SELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            HIBIO1SELR::VALUE1 => 0,
-            HIBIO1SELR::VALUE2 => 1,
-            HIBIO1SELR::VALUE3 => 2,
-            HIBIO1SELR::VALUE4 => 8,
-            HIBIO1SELR::VALUE5 => 9,
-            HIBIO1SELR::VALUE6 => 10,
-            HIBIO1SELR::VALUE7 => 12,
-            HIBIO1SELR::VALUE8 => 13,
-            HIBIO1SELR::VALUE9 => 14,
-            HIBIO1SELR::VALUE10 => 15,
-            HIBIO1SELR::_Reserved(bits) => bits,
+impl<'a> HIBIO0SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HIBIO0SEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Direct input, No input pull device connected"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(HIBIO0SEL_A::VALUE1)
+    }
+    #[doc = "Direct input, Input pull-down device connected"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(HIBIO0SEL_A::VALUE2)
+    }
+    #[doc = "Direct input, Input pull-up device connected"]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(HIBIO0SEL_A::VALUE3)
+    }
+    #[doc = "Push-pull HIB Control output"]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(HIBIO0SEL_A::VALUE4)
+    }
+    #[doc = "Push-pull WDT service output"]
+    #[inline(always)]
+    pub fn value5(self) -> &'a mut W {
+        self.variant(HIBIO0SEL_A::VALUE5)
+    }
+    #[doc = "Push-pull GPIO output"]
+    #[inline(always)]
+    pub fn value6(self) -> &'a mut W {
+        self.variant(HIBIO0SEL_A::VALUE6)
+    }
+    #[doc = "Open-drain HIB Control output"]
+    #[inline(always)]
+    pub fn value7(self) -> &'a mut W {
+        self.variant(HIBIO0SEL_A::VALUE7)
+    }
+    #[doc = "Open-drain WDT service output"]
+    #[inline(always)]
+    pub fn value8(self) -> &'a mut W {
+        self.variant(HIBIO0SEL_A::VALUE8)
+    }
+    #[doc = "Open-drain GPIO output"]
+    #[inline(always)]
+    pub fn value9(self) -> &'a mut W {
+        self.variant(HIBIO0SEL_A::VALUE9)
+    }
+    #[doc = "Analog input"]
+    #[inline(always)]
+    pub fn value10(self) -> &'a mut W {
+        self.variant(HIBIO0SEL_A::VALUE10)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
+        self.w
+    }
+}
+#[doc = "HIB_IO_1 Pin I/O Control (Default WKUP)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HIBIO1SEL_A {
+    #[doc = "0: Direct input, No input pull device connected"]
+    VALUE1,
+    #[doc = "1: Direct input, Input pull-down device connected"]
+    VALUE2,
+    #[doc = "2: Direct input, Input pull-up device connected"]
+    VALUE3,
+    #[doc = "8: Push-pull HIB Control output"]
+    VALUE4,
+    #[doc = "9: Push-pull WDT service output"]
+    VALUE5,
+    #[doc = "10: Push-pull GPIO output"]
+    VALUE6,
+    #[doc = "12: Open-drain HIB Control output"]
+    VALUE7,
+    #[doc = "13: Open-drain WDT service output"]
+    VALUE8,
+    #[doc = "14: Open-drain GPIO output"]
+    VALUE9,
+    #[doc = "15: Analog input"]
+    VALUE10,
+}
+impl From<HIBIO1SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: HIBIO1SEL_A) -> Self {
+        match variant {
+            HIBIO1SEL_A::VALUE1 => 0,
+            HIBIO1SEL_A::VALUE2 => 1,
+            HIBIO1SEL_A::VALUE3 => 2,
+            HIBIO1SEL_A::VALUE4 => 8,
+            HIBIO1SEL_A::VALUE5 => 9,
+            HIBIO1SEL_A::VALUE6 => 10,
+            HIBIO1SEL_A::VALUE7 => 12,
+            HIBIO1SEL_A::VALUE8 => 13,
+            HIBIO1SEL_A::VALUE9 => 14,
+            HIBIO1SEL_A::VALUE10 => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> HIBIO1SELR {
-        match value {
-            0 => HIBIO1SELR::VALUE1,
-            1 => HIBIO1SELR::VALUE2,
-            2 => HIBIO1SELR::VALUE3,
-            8 => HIBIO1SELR::VALUE4,
-            9 => HIBIO1SELR::VALUE5,
-            10 => HIBIO1SELR::VALUE6,
-            12 => HIBIO1SELR::VALUE7,
-            13 => HIBIO1SELR::VALUE8,
-            14 => HIBIO1SELR::VALUE9,
-            15 => HIBIO1SELR::VALUE10,
-            i => HIBIO1SELR::_Reserved(i),
+}
+#[doc = "Reader of field `HIBIO1SEL`"]
+pub type HIBIO1SEL_R = crate::R<u8, HIBIO1SEL_A>;
+impl HIBIO1SEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, HIBIO1SEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(HIBIO1SEL_A::VALUE1),
+            1 => Val(HIBIO1SEL_A::VALUE2),
+            2 => Val(HIBIO1SEL_A::VALUE3),
+            8 => Val(HIBIO1SEL_A::VALUE4),
+            9 => Val(HIBIO1SEL_A::VALUE5),
+            10 => Val(HIBIO1SEL_A::VALUE6),
+            12 => Val(HIBIO1SEL_A::VALUE7),
+            13 => Val(HIBIO1SEL_A::VALUE8),
+            14 => Val(HIBIO1SEL_A::VALUE9),
+            15 => Val(HIBIO1SEL_A::VALUE10),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == HIBIO1SELR::VALUE1
+        *self == HIBIO1SEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == HIBIO1SELR::VALUE2
+        *self == HIBIO1SEL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == HIBIO1SELR::VALUE3
+        *self == HIBIO1SEL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == HIBIO1SELR::VALUE4
+        *self == HIBIO1SEL_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == HIBIO1SELR::VALUE5
+        *self == HIBIO1SEL_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == HIBIO1SELR::VALUE6
+        *self == HIBIO1SEL_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == HIBIO1SELR::VALUE7
+        *self == HIBIO1SEL_A::VALUE7
     }
     #[doc = "Checks if the value of the field is `VALUE8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        *self == HIBIO1SELR::VALUE8
+        *self == HIBIO1SEL_A::VALUE8
     }
     #[doc = "Checks if the value of the field is `VALUE9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value9(&self) -> bool {
-        *self == HIBIO1SELR::VALUE9
+        *self == HIBIO1SEL_A::VALUE9
     }
     #[doc = "Checks if the value of the field is `VALUE10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value10(&self) -> bool {
-        *self == HIBIO1SELR::VALUE10
+        *self == HIBIO1SEL_A::VALUE10
     }
 }
-#[doc = "Values that can be written to the field `WKPEP`"]
-pub enum WKPEPW {
-    #[doc = "Wake-up event disabled"]
-    VALUE1,
-    #[doc = "Wake-up event enabled"]
-    VALUE2,
-}
-impl WKPEPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WKPEPW::VALUE1 => false,
-            WKPEPW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WKPEPW<'a> {
+#[doc = "Write proxy for field `HIBIO1SEL`"]
+pub struct HIBIO1SEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WKPEPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WKPEPW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Wake-up event disabled"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(WKPEPW::VALUE1)
-    }
-    #[doc = "Wake-up event enabled"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(WKPEPW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `WKPEN`"]
-pub enum WKPENW {
-    #[doc = "Wake-up event disabled"]
-    VALUE1,
-    #[doc = "Wake-up event enabled"]
-    VALUE2,
-}
-impl WKPENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WKPENW::VALUE1 => false,
-            WKPENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WKPENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _WKPENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WKPENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Wake-up event disabled"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(WKPENW::VALUE1)
-    }
-    #[doc = "Wake-up event enabled"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(WKPENW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RTCE`"]
-pub enum RTCEW {
-    #[doc = "Wake-up event disabled"]
-    VALUE1,
-    #[doc = "Wake-up event enabled"]
-    VALUE2,
-}
-impl RTCEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RTCEW::VALUE1 => false,
-            RTCEW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RTCEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RTCEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RTCEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Wake-up event disabled"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(RTCEW::VALUE1)
-    }
-    #[doc = "Wake-up event enabled"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(RTCEW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ULPWDGEN`"]
-pub enum ULPWDGENW {
-    #[doc = "Wake-up event disabled"]
-    VALUE1,
-    #[doc = "Wake-up event enabled"]
-    VALUE2,
-}
-impl ULPWDGENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ULPWDGENW::VALUE1 => false,
-            ULPWDGENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ULPWDGENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ULPWDGENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ULPWDGENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Wake-up event disabled"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(ULPWDGENW::VALUE1)
-    }
-    #[doc = "Wake-up event enabled"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(ULPWDGENW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `HIB`"]
-pub enum HIBW {
-    #[doc = "External hibernate request inactive"]
-    VALUE1,
-    #[doc = "External hibernate request active"]
-    VALUE2,
-}
-impl HIBW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HIBW::VALUE1 => false,
-            HIBW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HIBW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HIBW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HIBW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "External hibernate request inactive"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(HIBW::VALUE1)
-    }
-    #[doc = "External hibernate request active"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(HIBW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RCS`"]
-pub enum RCSW {
-    #[doc = "fOSI selected"]
-    VALUE1,
-    #[doc = "fULP selected"]
-    VALUE2,
-}
-impl RCSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RCSW::VALUE1 => false,
-            RCSW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RCSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RCSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RCSW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "fOSI selected"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(RCSW::VALUE1)
-    }
-    #[doc = "fULP selected"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(RCSW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `STDBYSEL`"]
-pub enum STDBYSELW {
-    #[doc = "fOSI selected"]
-    VALUE1,
-    #[doc = "fULP selected"]
-    VALUE2,
-}
-impl STDBYSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            STDBYSELW::VALUE1 => false,
-            STDBYSELW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STDBYSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _STDBYSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: STDBYSELW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "fOSI selected"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(STDBYSELW::VALUE1)
-    }
-    #[doc = "fULP selected"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(STDBYSELW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `WKUPSEL`"]
-pub enum WKUPSELW {
-    #[doc = "HIB_IO_1 pin selected"]
-    VALUE1,
-    #[doc = "HIB_IO_0 pin selected"]
-    VALUE2,
-}
-impl WKUPSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WKUPSELW::VALUE1 => false,
-            WKUPSELW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WKUPSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _WKUPSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WKUPSELW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "HIB_IO_1 pin selected"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(WKUPSELW::VALUE1)
-    }
-    #[doc = "HIB_IO_0 pin selected"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(WKUPSELW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `GPI0SEL`"]
-pub enum GPI0SELW {
-    #[doc = "HIB_IO_1 pin selected"]
-    VALUE1,
-    #[doc = "HIB_IO_0 pin selected"]
-    VALUE2,
-}
-impl GPI0SELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            GPI0SELW::VALUE1 => false,
-            GPI0SELW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _GPI0SELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _GPI0SELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: GPI0SELW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "HIB_IO_1 pin selected"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(GPI0SELW::VALUE1)
-    }
-    #[doc = "HIB_IO_0 pin selected"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(GPI0SELW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `HIBIO0POL`"]
-pub enum HIBIO0POLW {
-    #[doc = "Direct value"]
-    VALUE1,
-    #[doc = "Inverted value"]
-    VALUE2,
-}
-impl HIBIO0POLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HIBIO0POLW::VALUE1 => false,
-            HIBIO0POLW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HIBIO0POLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HIBIO0POLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HIBIO0POLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Direct value"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(HIBIO0POLW::VALUE1)
-    }
-    #[doc = "Inverted value"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(HIBIO0POLW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `HIBIO1POL`"]
-pub enum HIBIO1POLW {
-    #[doc = "Direct value"]
-    VALUE1,
-    #[doc = "Inverted value"]
-    VALUE2,
-}
-impl HIBIO1POLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HIBIO1POLW::VALUE1 => false,
-            HIBIO1POLW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HIBIO1POLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HIBIO1POLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HIBIO1POLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Direct value"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(HIBIO1POLW::VALUE1)
-    }
-    #[doc = "Inverted value"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(HIBIO1POLW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `HIBIO0SEL`"]
-pub enum HIBIO0SELW {
-    #[doc = "Direct input, No input pull device connected"]
-    VALUE1,
-    #[doc = "Direct input, Input pull-down device connected"]
-    VALUE2,
-    #[doc = "Direct input, Input pull-up device connected"]
-    VALUE3,
-    #[doc = "Push-pull HIB Control output"]
-    VALUE4,
-    #[doc = "Push-pull WDT service output"]
-    VALUE5,
-    #[doc = "Push-pull GPIO output"]
-    VALUE6,
-    #[doc = "Open-drain HIB Control output"]
-    VALUE7,
-    #[doc = "Open-drain WDT service output"]
-    VALUE8,
-    #[doc = "Open-drain GPIO output"]
-    VALUE9,
-    #[doc = "Analog input"]
-    VALUE10,
-}
-impl HIBIO0SELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            HIBIO0SELW::VALUE1 => 0,
-            HIBIO0SELW::VALUE2 => 1,
-            HIBIO0SELW::VALUE3 => 2,
-            HIBIO0SELW::VALUE4 => 8,
-            HIBIO0SELW::VALUE5 => 9,
-            HIBIO0SELW::VALUE6 => 10,
-            HIBIO0SELW::VALUE7 => 12,
-            HIBIO0SELW::VALUE8 => 13,
-            HIBIO0SELW::VALUE9 => 14,
-            HIBIO0SELW::VALUE10 => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HIBIO0SELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HIBIO0SELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HIBIO0SELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> HIBIO1SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HIBIO1SEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Direct input, No input pull device connected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(HIBIO0SELW::VALUE1)
+        self.variant(HIBIO1SEL_A::VALUE1)
     }
     #[doc = "Direct input, Input pull-down device connected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(HIBIO0SELW::VALUE2)
+        self.variant(HIBIO1SEL_A::VALUE2)
     }
     #[doc = "Direct input, Input pull-up device connected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(HIBIO0SELW::VALUE3)
+        self.variant(HIBIO1SEL_A::VALUE3)
     }
     #[doc = "Push-pull HIB Control output"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(HIBIO0SELW::VALUE4)
+        self.variant(HIBIO1SEL_A::VALUE4)
     }
     #[doc = "Push-pull WDT service output"]
-    #[inline]
+    #[inline(always)]
     pub fn value5(self) -> &'a mut W {
-        self.variant(HIBIO0SELW::VALUE5)
+        self.variant(HIBIO1SEL_A::VALUE5)
     }
     #[doc = "Push-pull GPIO output"]
-    #[inline]
+    #[inline(always)]
     pub fn value6(self) -> &'a mut W {
-        self.variant(HIBIO0SELW::VALUE6)
+        self.variant(HIBIO1SEL_A::VALUE6)
     }
     #[doc = "Open-drain HIB Control output"]
-    #[inline]
+    #[inline(always)]
     pub fn value7(self) -> &'a mut W {
-        self.variant(HIBIO0SELW::VALUE7)
+        self.variant(HIBIO1SEL_A::VALUE7)
     }
     #[doc = "Open-drain WDT service output"]
-    #[inline]
+    #[inline(always)]
     pub fn value8(self) -> &'a mut W {
-        self.variant(HIBIO0SELW::VALUE8)
+        self.variant(HIBIO1SEL_A::VALUE8)
     }
     #[doc = "Open-drain GPIO output"]
-    #[inline]
+    #[inline(always)]
     pub fn value9(self) -> &'a mut W {
-        self.variant(HIBIO0SELW::VALUE9)
+        self.variant(HIBIO1SEL_A::VALUE9)
     }
     #[doc = "Analog input"]
-    #[inline]
+    #[inline(always)]
     pub fn value10(self) -> &'a mut W {
-        self.variant(HIBIO0SELW::VALUE10)
+        self.variant(HIBIO1SEL_A::VALUE10)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `HIBIO1SEL`"]
-pub enum HIBIO1SELW {
-    #[doc = "Direct input, No input pull device connected"]
-    VALUE1,
-    #[doc = "Direct input, Input pull-down device connected"]
-    VALUE2,
-    #[doc = "Direct input, Input pull-up device connected"]
-    VALUE3,
-    #[doc = "Push-pull HIB Control output"]
-    VALUE4,
-    #[doc = "Push-pull WDT service output"]
-    VALUE5,
-    #[doc = "Push-pull GPIO output"]
-    VALUE6,
-    #[doc = "Open-drain HIB Control output"]
-    VALUE7,
-    #[doc = "Open-drain WDT service output"]
-    VALUE8,
-    #[doc = "Open-drain GPIO output"]
-    VALUE9,
-    #[doc = "Analog input"]
-    VALUE10,
-}
-impl HIBIO1SELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            HIBIO1SELW::VALUE1 => 0,
-            HIBIO1SELW::VALUE2 => 1,
-            HIBIO1SELW::VALUE3 => 2,
-            HIBIO1SELW::VALUE4 => 8,
-            HIBIO1SELW::VALUE5 => 9,
-            HIBIO1SELW::VALUE6 => 10,
-            HIBIO1SELW::VALUE7 => 12,
-            HIBIO1SELW::VALUE8 => 13,
-            HIBIO1SELW::VALUE9 => 14,
-            HIBIO1SELW::VALUE10 => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HIBIO1SELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HIBIO1SELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HIBIO1SELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Direct input, No input pull device connected"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(HIBIO1SELW::VALUE1)
-    }
-    #[doc = "Direct input, Input pull-down device connected"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(HIBIO1SELW::VALUE2)
-    }
-    #[doc = "Direct input, Input pull-up device connected"]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(HIBIO1SELW::VALUE3)
-    }
-    #[doc = "Push-pull HIB Control output"]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(HIBIO1SELW::VALUE4)
-    }
-    #[doc = "Push-pull WDT service output"]
-    #[inline]
-    pub fn value5(self) -> &'a mut W {
-        self.variant(HIBIO1SELW::VALUE5)
-    }
-    #[doc = "Push-pull GPIO output"]
-    #[inline]
-    pub fn value6(self) -> &'a mut W {
-        self.variant(HIBIO1SELW::VALUE6)
-    }
-    #[doc = "Open-drain HIB Control output"]
-    #[inline]
-    pub fn value7(self) -> &'a mut W {
-        self.variant(HIBIO1SELW::VALUE7)
-    }
-    #[doc = "Open-drain WDT service output"]
-    #[inline]
-    pub fn value8(self) -> &'a mut W {
-        self.variant(HIBIO1SELW::VALUE8)
-    }
-    #[doc = "Open-drain GPIO output"]
-    #[inline]
-    pub fn value9(self) -> &'a mut W {
-        self.variant(HIBIO1SELW::VALUE9)
-    }
-    #[doc = "Analog input"]
-    #[inline]
-    pub fn value10(self) -> &'a mut W {
-        self.variant(HIBIO1SELW::VALUE10)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 20)) | (((value as u32) & 0x0f) << 20);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Wake-Up on Pin Event Positive Edge Enable"]
-    #[inline]
-    pub fn wkpep(&self) -> WKPEPR {
-        WKPEPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wkpep(&self) -> WKPEP_R {
+        WKPEP_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Wake-up on Pin Event Negative Edge Enable"]
-    #[inline]
-    pub fn wkpen(&self) -> WKPENR {
-        WKPENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wkpen(&self) -> WKPEN_R {
+        WKPEN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Wake-up on RTC Event Enable"]
-    #[inline]
-    pub fn rtce(&self) -> RTCER {
-        RTCER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rtce(&self) -> RTCE_R {
+        RTCE_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - ULP WDG Alarm Enable"]
-    #[inline]
-    pub fn ulpwdgen(&self) -> ULPWDGENR {
-        ULPWDGENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ulpwdgen(&self) -> ULPWDGEN_R {
+        ULPWDGEN_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Hibernate Request Value Set"]
-    #[inline]
-    pub fn hib(&self) -> HIBR {
-        HIBR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hib(&self) -> HIB_R {
+        HIB_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 6 - fRTC Clock Selection"]
-    #[inline]
-    pub fn rcs(&self) -> RCSR {
-        RCSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rcs(&self) -> RCS_R {
+        RCS_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - fSTDBY Clock Selection"]
-    #[inline]
-    pub fn stdbysel(&self) -> STDBYSELR {
-        STDBYSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn stdbysel(&self) -> STDBYSEL_R {
+        STDBYSEL_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Wake-Up from Hibernate Trigger Input Selection"]
-    #[inline]
-    pub fn wkupsel(&self) -> WKUPSELR {
-        WKUPSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wkupsel(&self) -> WKUPSEL_R {
+        WKUPSEL_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 10 - General Purpose Input 0 Selection"]
-    #[inline]
-    pub fn gpi0sel(&self) -> GPI0SELR {
-        GPI0SELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn gpi0sel(&self) -> GPI0SEL_R {
+        GPI0SEL_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 12 - HIBIO0 Polarity Set"]
-    #[inline]
-    pub fn hibio0pol(&self) -> HIBIO0POLR {
-        HIBIO0POLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hibio0pol(&self) -> HIBIO0POL_R {
+        HIBIO0POL_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - HIBIO1 Polarity Set"]
-    #[inline]
-    pub fn hibio1pol(&self) -> HIBIO1POLR {
-        HIBIO1POLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hibio1pol(&self) -> HIBIO1POL_R {
+        HIBIO1POL_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bits 16:19 - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
-    #[inline]
-    pub fn hibio0sel(&self) -> HIBIO0SELR {
-        HIBIO0SELR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn hibio0sel(&self) -> HIBIO0SEL_R {
+        HIBIO0SEL_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bits 20:23 - HIB_IO_1 Pin I/O Control (Default WKUP)"]
-    #[inline]
-    pub fn hibio1sel(&self) -> HIBIO1SELR {
-        HIBIO1SELR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn hibio1sel(&self) -> HIBIO1SEL_R {
+        HIBIO1SEL_R::new(((self.bits >> 20) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 794624 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Wake-Up on Pin Event Positive Edge Enable"]
-    #[inline]
-    pub fn wkpep(&mut self) -> _WKPEPW {
-        _WKPEPW { w: self }
+    #[inline(always)]
+    pub fn wkpep(&mut self) -> WKPEP_W {
+        WKPEP_W { w: self }
     }
     #[doc = "Bit 1 - Wake-up on Pin Event Negative Edge Enable"]
-    #[inline]
-    pub fn wkpen(&mut self) -> _WKPENW {
-        _WKPENW { w: self }
+    #[inline(always)]
+    pub fn wkpen(&mut self) -> WKPEN_W {
+        WKPEN_W { w: self }
     }
     #[doc = "Bit 2 - Wake-up on RTC Event Enable"]
-    #[inline]
-    pub fn rtce(&mut self) -> _RTCEW {
-        _RTCEW { w: self }
+    #[inline(always)]
+    pub fn rtce(&mut self) -> RTCE_W {
+        RTCE_W { w: self }
     }
     #[doc = "Bit 3 - ULP WDG Alarm Enable"]
-    #[inline]
-    pub fn ulpwdgen(&mut self) -> _ULPWDGENW {
-        _ULPWDGENW { w: self }
+    #[inline(always)]
+    pub fn ulpwdgen(&mut self) -> ULPWDGEN_W {
+        ULPWDGEN_W { w: self }
     }
     #[doc = "Bit 4 - Hibernate Request Value Set"]
-    #[inline]
-    pub fn hib(&mut self) -> _HIBW {
-        _HIBW { w: self }
+    #[inline(always)]
+    pub fn hib(&mut self) -> HIB_W {
+        HIB_W { w: self }
     }
     #[doc = "Bit 6 - fRTC Clock Selection"]
-    #[inline]
-    pub fn rcs(&mut self) -> _RCSW {
-        _RCSW { w: self }
+    #[inline(always)]
+    pub fn rcs(&mut self) -> RCS_W {
+        RCS_W { w: self }
     }
     #[doc = "Bit 7 - fSTDBY Clock Selection"]
-    #[inline]
-    pub fn stdbysel(&mut self) -> _STDBYSELW {
-        _STDBYSELW { w: self }
+    #[inline(always)]
+    pub fn stdbysel(&mut self) -> STDBYSEL_W {
+        STDBYSEL_W { w: self }
     }
     #[doc = "Bit 8 - Wake-Up from Hibernate Trigger Input Selection"]
-    #[inline]
-    pub fn wkupsel(&mut self) -> _WKUPSELW {
-        _WKUPSELW { w: self }
+    #[inline(always)]
+    pub fn wkupsel(&mut self) -> WKUPSEL_W {
+        WKUPSEL_W { w: self }
     }
     #[doc = "Bit 10 - General Purpose Input 0 Selection"]
-    #[inline]
-    pub fn gpi0sel(&mut self) -> _GPI0SELW {
-        _GPI0SELW { w: self }
+    #[inline(always)]
+    pub fn gpi0sel(&mut self) -> GPI0SEL_W {
+        GPI0SEL_W { w: self }
     }
     #[doc = "Bit 12 - HIBIO0 Polarity Set"]
-    #[inline]
-    pub fn hibio0pol(&mut self) -> _HIBIO0POLW {
-        _HIBIO0POLW { w: self }
+    #[inline(always)]
+    pub fn hibio0pol(&mut self) -> HIBIO0POL_W {
+        HIBIO0POL_W { w: self }
     }
     #[doc = "Bit 13 - HIBIO1 Polarity Set"]
-    #[inline]
-    pub fn hibio1pol(&mut self) -> _HIBIO1POLW {
-        _HIBIO1POLW { w: self }
+    #[inline(always)]
+    pub fn hibio1pol(&mut self) -> HIBIO1POL_W {
+        HIBIO1POL_W { w: self }
     }
     #[doc = "Bits 16:19 - HIB_IO_0 Pin I/O Control (default HIBOUT)"]
-    #[inline]
-    pub fn hibio0sel(&mut self) -> _HIBIO0SELW {
-        _HIBIO0SELW { w: self }
+    #[inline(always)]
+    pub fn hibio0sel(&mut self) -> HIBIO0SEL_W {
+        HIBIO0SEL_W { w: self }
     }
     #[doc = "Bits 20:23 - HIB_IO_1 Pin I/O Control (Default WKUP)"]
-    #[inline]
-    pub fn hibio1sel(&mut self) -> _HIBIO1SELW {
-        _HIBIO1SELW { w: self }
+    #[inline(always)]
+    pub fn hibio1sel(&mut self) -> HIBIO1SEL_W {
+        HIBIO1SEL_W { w: self }
     }
 }

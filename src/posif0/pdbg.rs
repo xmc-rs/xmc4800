@@ -1,175 +1,53 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PDBG {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct QCSVR {
-    bits: u8,
-}
-impl QCSVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct QPSVR {
-    bits: u8,
-}
-impl QPSVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct IVALR {
-    bits: bool,
-}
-impl IVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct HSPR {
-    bits: u8,
-}
-impl HSPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LPP0R {
-    bits: u8,
-}
-impl LPP0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LPP1R {
-    bits: u8,
-}
-impl LPP1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LPP2R {
-    bits: u8,
-}
-impl LPP2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register PDBG"]
+pub type R = crate::R<u32, super::PDBG>;
+#[doc = "Reader of field `QCSV`"]
+pub type QCSV_R = crate::R<u8, u8>;
+#[doc = "Reader of field `QPSV`"]
+pub type QPSV_R = crate::R<u8, u8>;
+#[doc = "Reader of field `IVAL`"]
+pub type IVAL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `HSP`"]
+pub type HSP_R = crate::R<u8, u8>;
+#[doc = "Reader of field `LPP0`"]
+pub type LPP0_R = crate::R<u8, u8>;
+#[doc = "Reader of field `LPP1`"]
+pub type LPP1_R = crate::R<u8, u8>;
+#[doc = "Reader of field `LPP2`"]
+pub type LPP2_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Quadrature Decoder Current state"]
-    #[inline]
-    pub fn qcsv(&self) -> QCSVR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        QCSVR { bits }
+    #[inline(always)]
+    pub fn qcsv(&self) -> QCSV_R {
+        QCSV_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - Quadrature Decoder Previous state"]
-    #[inline]
-    pub fn qpsv(&self) -> QPSVR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        QPSVR { bits }
+    #[inline(always)]
+    pub fn qpsv(&self) -> QPSV_R {
+        QPSV_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bit 4 - Current Index Value"]
-    #[inline]
-    pub fn ival(&self) -> IVALR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        IVALR { bits }
+    #[inline(always)]
+    pub fn ival(&self) -> IVAL_R {
+        IVAL_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bits 5:7 - Hall Current Sampled Pattern"]
-    #[inline]
-    pub fn hsp(&self) -> HSPR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        HSPR { bits }
+    #[inline(always)]
+    pub fn hsp(&self) -> HSP_R {
+        HSP_R::new(((self.bits >> 5) & 0x07) as u8)
     }
     #[doc = "Bits 8:13 - Actual count of the Low Pass Filter for POSI0"]
-    #[inline]
-    pub fn lpp0(&self) -> LPP0R {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        LPP0R { bits }
+    #[inline(always)]
+    pub fn lpp0(&self) -> LPP0_R {
+        LPP0_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bits 16:21 - Actual count of the Low Pass Filter for POSI1"]
-    #[inline]
-    pub fn lpp1(&self) -> LPP1R {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        LPP1R { bits }
+    #[inline(always)]
+    pub fn lpp1(&self) -> LPP1_R {
+        LPP1_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
     #[doc = "Bits 22:27 - Actual count of the Low Pass Filter for POSI2"]
-    #[inline]
-    pub fn lpp2(&self) -> LPP2R {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        LPP2R { bits }
+    #[inline(always)]
+    pub fn lpp2(&self) -> LPP2_R {
+        LPP2_R::new(((self.bits >> 22) & 0x3f) as u8)
     }
 }
