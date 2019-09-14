@@ -6,6 +6,7 @@ readme = "README.md"
 authors = ["Lucas Brendel <lucasbrendel@gmail.com>"]
 repository = "https://github.com/xmc-rs/xmc4800"
 license = "MIT"
+keywords = ["cortex-m", "infineon", "arm", "xmc4x"]
 documentation = "https://docs.rs/xmc4800"
 
 [dependencies]
