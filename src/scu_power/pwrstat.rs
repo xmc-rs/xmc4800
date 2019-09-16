@@ -1,242 +1,180 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PWRSTAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `HIBEN`"]
+#[doc = "Reader of register PWRSTAT"]
+pub type R = crate::R<u32, super::PWRSTAT>;
+#[doc = "Hibernate Domain Enable Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HIBENR {
-    #[doc = "Inactive"]
+pub enum HIBEN_A {
+    #[doc = "0: Inactive"]
     VALUE1,
-    #[doc = "Active"]
+    #[doc = "1: Active"]
     VALUE2,
 }
-impl HIBENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HIBENR::VALUE1 => false,
-            HIBENR::VALUE2 => true,
+impl From<HIBEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: HIBEN_A) -> Self {
+        match variant {
+            HIBEN_A::VALUE1 => false,
+            HIBEN_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HIBENR {
-        match value {
-            false => HIBENR::VALUE1,
-            true => HIBENR::VALUE2,
+}
+#[doc = "Reader of field `HIBEN`"]
+pub type HIBEN_R = crate::R<bool, HIBEN_A>;
+impl HIBEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HIBEN_A {
+        match self.bits {
+            false => HIBEN_A::VALUE1,
+            true => HIBEN_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == HIBENR::VALUE1
+        *self == HIBEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == HIBENR::VALUE2
+        *self == HIBEN_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `USBPHYPDQ`"]
+#[doc = "USB PHY Transceiver State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum USBPHYPDQR {
-    #[doc = "Power-down"]
+pub enum USBPHYPDQ_A {
+    #[doc = "0: Power-down"]
     VALUE1,
-    #[doc = "Active"]
+    #[doc = "1: Active"]
     VALUE2,
 }
-impl USBPHYPDQR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            USBPHYPDQR::VALUE1 => false,
-            USBPHYPDQR::VALUE2 => true,
+impl From<USBPHYPDQ_A> for bool {
+    #[inline(always)]
+    fn from(variant: USBPHYPDQ_A) -> Self {
+        match variant {
+            USBPHYPDQ_A::VALUE1 => false,
+            USBPHYPDQ_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> USBPHYPDQR {
-        match value {
-            false => USBPHYPDQR::VALUE1,
-            true => USBPHYPDQR::VALUE2,
+}
+#[doc = "Reader of field `USBPHYPDQ`"]
+pub type USBPHYPDQ_R = crate::R<bool, USBPHYPDQ_A>;
+impl USBPHYPDQ_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> USBPHYPDQ_A {
+        match self.bits {
+            false => USBPHYPDQ_A::VALUE1,
+            true => USBPHYPDQ_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == USBPHYPDQR::VALUE1
+        *self == USBPHYPDQ_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == USBPHYPDQR::VALUE2
+        *self == USBPHYPDQ_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `USBOTGEN`"]
+#[doc = "USB On-The-Go Comparators State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum USBOTGENR {
-    #[doc = "Power-down"]
+pub enum USBOTGEN_A {
+    #[doc = "0: Power-down"]
     VALUE1,
-    #[doc = "Active"]
+    #[doc = "1: Active"]
     VALUE2,
 }
-impl USBOTGENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            USBOTGENR::VALUE1 => false,
-            USBOTGENR::VALUE2 => true,
+impl From<USBOTGEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: USBOTGEN_A) -> Self {
+        match variant {
+            USBOTGEN_A::VALUE1 => false,
+            USBOTGEN_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> USBOTGENR {
-        match value {
-            false => USBOTGENR::VALUE1,
-            true => USBOTGENR::VALUE2,
+}
+#[doc = "Reader of field `USBOTGEN`"]
+pub type USBOTGEN_R = crate::R<bool, USBOTGEN_A>;
+impl USBOTGEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> USBOTGEN_A {
+        match self.bits {
+            false => USBOTGEN_A::VALUE1,
+            true => USBOTGEN_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == USBOTGENR::VALUE1
+        *self == USBOTGEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == USBOTGENR::VALUE2
+        *self == USBOTGEN_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `USBPUWQ`"]
+#[doc = "USB Weak Pull-Up at PADN State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum USBPUWQR {
-    #[doc = "Pull-up active"]
+pub enum USBPUWQ_A {
+    #[doc = "0: Pull-up active"]
     VALUE1,
-    #[doc = "Pull-up not active"]
+    #[doc = "1: Pull-up not active"]
     VALUE2,
 }
-impl USBPUWQR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            USBPUWQR::VALUE1 => false,
-            USBPUWQR::VALUE2 => true,
+impl From<USBPUWQ_A> for bool {
+    #[inline(always)]
+    fn from(variant: USBPUWQ_A) -> Self {
+        match variant {
+            USBPUWQ_A::VALUE1 => false,
+            USBPUWQ_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> USBPUWQR {
-        match value {
-            false => USBPUWQR::VALUE1,
-            true => USBPUWQR::VALUE2,
+}
+#[doc = "Reader of field `USBPUWQ`"]
+pub type USBPUWQ_R = crate::R<bool, USBPUWQ_A>;
+impl USBPUWQ_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> USBPUWQ_A {
+        match self.bits {
+            false => USBPUWQ_A::VALUE1,
+            true => USBPUWQ_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == USBPUWQR::VALUE1
+        *self == USBPUWQ_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == USBPUWQR::VALUE2
+        *self == USBPUWQ_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Hibernate Domain Enable Status"]
-    #[inline]
-    pub fn hiben(&self) -> HIBENR {
-        HIBENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hiben(&self) -> HIBEN_R {
+        HIBEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 16 - USB PHY Transceiver State"]
-    #[inline]
-    pub fn usbphypdq(&self) -> USBPHYPDQR {
-        USBPHYPDQR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn usbphypdq(&self) -> USBPHYPDQ_R {
+        USBPHYPDQ_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - USB On-The-Go Comparators State"]
-    #[inline]
-    pub fn usbotgen(&self) -> USBOTGENR {
-        USBOTGENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn usbotgen(&self) -> USBOTGEN_R {
+        USBOTGEN_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - USB Weak Pull-Up at PADN State"]
-    #[inline]
-    pub fn usbpuwq(&self) -> USBPUWQR {
-        USBPUWQR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn usbpuwq(&self) -> USBPUWQ_R {
+        USBPUWQ_R::new(((self.bits >> 18) & 0x01) != 0)
     }
 }

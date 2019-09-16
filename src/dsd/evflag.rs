@@ -1,1014 +1,720 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::EVFLAG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register EVFLAG"]
+pub type R = crate::R<u32, super::EVFLAG>;
+#[doc = "Writer for register EVFLAG"]
+pub type W = crate::W<u32, super::EVFLAG>;
+#[doc = "Register EVFLAG `reset()`'s with value 0"]
+impl crate::ResetValue for super::EVFLAG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `RESEV0`"]
+#[doc = "Result Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RESEV0R {
-    #[doc = "No result event"]
+pub enum RESEV0_A {
+    #[doc = "0: No result event"]
     VALUE1,
-    #[doc = "A new result has been stored in register RESMx"]
+    #[doc = "1: A new result has been stored in register RESMx"]
     VALUE2,
 }
-impl RESEV0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RESEV0R::VALUE1 => false,
-            RESEV0R::VALUE2 => true,
+impl From<RESEV0_A> for bool {
+    #[inline(always)]
+    fn from(variant: RESEV0_A) -> Self {
+        match variant {
+            RESEV0_A::VALUE1 => false,
+            RESEV0_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RESEV0R {
-        match value {
-            false => RESEV0R::VALUE1,
-            true => RESEV0R::VALUE2,
+}
+#[doc = "Reader of field `RESEV0`"]
+pub type RESEV0_R = crate::R<bool, RESEV0_A>;
+impl RESEV0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RESEV0_A {
+        match self.bits {
+            false => RESEV0_A::VALUE1,
+            true => RESEV0_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RESEV0R::VALUE1
+        *self == RESEV0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RESEV0R::VALUE2
+        *self == RESEV0_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `RESEV1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RESEV1R {
-    #[doc = "No result event"]
-    VALUE1,
-    #[doc = "A new result has been stored in register RESMx"]
-    VALUE2,
-}
-impl RESEV1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RESEV1R::VALUE1 => false,
-            RESEV1R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RESEV1R {
-        match value {
-            false => RESEV1R::VALUE1,
-            true => RESEV1R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == RESEV1R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == RESEV1R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `RESEV2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RESEV2R {
-    #[doc = "No result event"]
-    VALUE1,
-    #[doc = "A new result has been stored in register RESMx"]
-    VALUE2,
-}
-impl RESEV2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RESEV2R::VALUE1 => false,
-            RESEV2R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RESEV2R {
-        match value {
-            false => RESEV2R::VALUE1,
-            true => RESEV2R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == RESEV2R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == RESEV2R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `RESEV3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RESEV3R {
-    #[doc = "No result event"]
-    VALUE1,
-    #[doc = "A new result has been stored in register RESMx"]
-    VALUE2,
-}
-impl RESEV3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RESEV3R::VALUE1 => false,
-            RESEV3R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RESEV3R {
-        match value {
-            false => RESEV3R::VALUE1,
-            true => RESEV3R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == RESEV3R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == RESEV3R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `ALEV0`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ALEV0R {
-    #[doc = "No alarm event"]
-    VALUE1,
-    #[doc = "An alarm event has occurred"]
-    VALUE2,
-}
-impl ALEV0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ALEV0R::VALUE1 => false,
-            ALEV0R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ALEV0R {
-        match value {
-            false => ALEV0R::VALUE1,
-            true => ALEV0R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ALEV0R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ALEV0R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `ALEV1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ALEV1R {
-    #[doc = "No alarm event"]
-    VALUE1,
-    #[doc = "An alarm event has occurred"]
-    VALUE2,
-}
-impl ALEV1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ALEV1R::VALUE1 => false,
-            ALEV1R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ALEV1R {
-        match value {
-            false => ALEV1R::VALUE1,
-            true => ALEV1R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ALEV1R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ALEV1R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `ALEV2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ALEV2R {
-    #[doc = "No alarm event"]
-    VALUE1,
-    #[doc = "An alarm event has occurred"]
-    VALUE2,
-}
-impl ALEV2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ALEV2R::VALUE1 => false,
-            ALEV2R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ALEV2R {
-        match value {
-            false => ALEV2R::VALUE1,
-            true => ALEV2R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ALEV2R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ALEV2R::VALUE2
-    }
-}
-#[doc = "Possible values of the field `ALEV3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ALEV3R {
-    #[doc = "No alarm event"]
-    VALUE1,
-    #[doc = "An alarm event has occurred"]
-    VALUE2,
-}
-impl ALEV3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ALEV3R::VALUE1 => false,
-            ALEV3R::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ALEV3R {
-        match value {
-            false => ALEV3R::VALUE1,
-            true => ALEV3R::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ALEV3R::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ALEV3R::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `RESEV0`"]
-pub enum RESEV0W {
-    #[doc = "No result event"]
-    VALUE1,
-    #[doc = "A new result has been stored in register RESMx"]
-    VALUE2,
-}
-impl RESEV0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RESEV0W::VALUE1 => false,
-            RESEV0W::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RESEV0W<'a> {
+#[doc = "Write proxy for field `RESEV0`"]
+pub struct RESEV0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RESEV0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RESEV0W) -> &'a mut W {
+impl<'a> RESEV0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RESEV0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No result event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(RESEV0W::VALUE1)
+        self.variant(RESEV0_A::VALUE1)
     }
     #[doc = "A new result has been stored in register RESMx"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(RESEV0W::VALUE2)
+        self.variant(RESEV0_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RESEV1`"]
-pub enum RESEV1W {
-    #[doc = "No result event"]
+#[doc = "Result Event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RESEV1_A {
+    #[doc = "0: No result event"]
     VALUE1,
-    #[doc = "A new result has been stored in register RESMx"]
+    #[doc = "1: A new result has been stored in register RESMx"]
     VALUE2,
 }
-impl RESEV1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RESEV1W::VALUE1 => false,
-            RESEV1W::VALUE2 => true,
+impl From<RESEV1_A> for bool {
+    #[inline(always)]
+    fn from(variant: RESEV1_A) -> Self {
+        match variant {
+            RESEV1_A::VALUE1 => false,
+            RESEV1_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RESEV1W<'a> {
+#[doc = "Reader of field `RESEV1`"]
+pub type RESEV1_R = crate::R<bool, RESEV1_A>;
+impl RESEV1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RESEV1_A {
+        match self.bits {
+            false => RESEV1_A::VALUE1,
+            true => RESEV1_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == RESEV1_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == RESEV1_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `RESEV1`"]
+pub struct RESEV1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RESEV1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RESEV1W) -> &'a mut W {
+impl<'a> RESEV1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RESEV1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No result event"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(RESEV1W::VALUE1)
-    }
-    #[doc = "A new result has been stored in register RESMx"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(RESEV1W::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RESEV2`"]
-pub enum RESEV2W {
-    #[doc = "No result event"]
-    VALUE1,
-    #[doc = "A new result has been stored in register RESMx"]
-    VALUE2,
-}
-impl RESEV2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RESEV2W::VALUE1 => false,
-            RESEV2W::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RESEV2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RESEV2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RESEV2W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No result event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(RESEV2W::VALUE1)
+        self.variant(RESEV1_A::VALUE1)
     }
     #[doc = "A new result has been stored in register RESMx"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(RESEV2W::VALUE2)
+        self.variant(RESEV1_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RESEV3`"]
-pub enum RESEV3W {
+#[doc = "Result Event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RESEV2_A {
+    #[doc = "0: No result event"]
+    VALUE1,
+    #[doc = "1: A new result has been stored in register RESMx"]
+    VALUE2,
+}
+impl From<RESEV2_A> for bool {
+    #[inline(always)]
+    fn from(variant: RESEV2_A) -> Self {
+        match variant {
+            RESEV2_A::VALUE1 => false,
+            RESEV2_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `RESEV2`"]
+pub type RESEV2_R = crate::R<bool, RESEV2_A>;
+impl RESEV2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RESEV2_A {
+        match self.bits {
+            false => RESEV2_A::VALUE1,
+            true => RESEV2_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == RESEV2_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == RESEV2_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `RESEV2`"]
+pub struct RESEV2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RESEV2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RESEV2_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "No result event"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(RESEV2_A::VALUE1)
+    }
     #[doc = "A new result has been stored in register RESMx"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(RESEV2_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Result Event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RESEV3_A {
+    #[doc = "0: No result event"]
+    VALUE1,
+    #[doc = "1: A new result has been stored in register RESMx"]
     VALUE2,
 }
-impl RESEV3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RESEV3W::VALUE1 => false,
-            RESEV3W::VALUE2 => true,
+impl From<RESEV3_A> for bool {
+    #[inline(always)]
+    fn from(variant: RESEV3_A) -> Self {
+        match variant {
+            RESEV3_A::VALUE1 => false,
+            RESEV3_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RESEV3W<'a> {
+#[doc = "Reader of field `RESEV3`"]
+pub type RESEV3_R = crate::R<bool, RESEV3_A>;
+impl RESEV3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RESEV3_A {
+        match self.bits {
+            false => RESEV3_A::VALUE1,
+            true => RESEV3_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == RESEV3_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == RESEV3_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `RESEV3`"]
+pub struct RESEV3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RESEV3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RESEV3W) -> &'a mut W {
+impl<'a> RESEV3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RESEV3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No result event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(RESEV3W::VALUE1)
+        self.variant(RESEV3_A::VALUE1)
     }
     #[doc = "A new result has been stored in register RESMx"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(RESEV3W::VALUE2)
+        self.variant(RESEV3_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ALEV0`"]
-pub enum ALEV0W {
-    #[doc = "No alarm event"]
+#[doc = "Alarm Event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ALEV0_A {
+    #[doc = "0: No alarm event"]
     VALUE1,
-    #[doc = "An alarm event has occurred"]
+    #[doc = "1: An alarm event has occurred"]
     VALUE2,
 }
-impl ALEV0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ALEV0W::VALUE1 => false,
-            ALEV0W::VALUE2 => true,
+impl From<ALEV0_A> for bool {
+    #[inline(always)]
+    fn from(variant: ALEV0_A) -> Self {
+        match variant {
+            ALEV0_A::VALUE1 => false,
+            ALEV0_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ALEV0W<'a> {
+#[doc = "Reader of field `ALEV0`"]
+pub type ALEV0_R = crate::R<bool, ALEV0_A>;
+impl ALEV0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ALEV0_A {
+        match self.bits {
+            false => ALEV0_A::VALUE1,
+            true => ALEV0_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ALEV0_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ALEV0_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ALEV0`"]
+pub struct ALEV0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ALEV0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ALEV0W) -> &'a mut W {
+impl<'a> ALEV0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ALEV0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No alarm event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ALEV0W::VALUE1)
+        self.variant(ALEV0_A::VALUE1)
     }
     #[doc = "An alarm event has occurred"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ALEV0W::VALUE2)
+        self.variant(ALEV0_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ALEV1`"]
-pub enum ALEV1W {
-    #[doc = "No alarm event"]
+#[doc = "Alarm Event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ALEV1_A {
+    #[doc = "0: No alarm event"]
     VALUE1,
-    #[doc = "An alarm event has occurred"]
+    #[doc = "1: An alarm event has occurred"]
     VALUE2,
 }
-impl ALEV1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ALEV1W::VALUE1 => false,
-            ALEV1W::VALUE2 => true,
+impl From<ALEV1_A> for bool {
+    #[inline(always)]
+    fn from(variant: ALEV1_A) -> Self {
+        match variant {
+            ALEV1_A::VALUE1 => false,
+            ALEV1_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ALEV1W<'a> {
+#[doc = "Reader of field `ALEV1`"]
+pub type ALEV1_R = crate::R<bool, ALEV1_A>;
+impl ALEV1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ALEV1_A {
+        match self.bits {
+            false => ALEV1_A::VALUE1,
+            true => ALEV1_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ALEV1_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ALEV1_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ALEV1`"]
+pub struct ALEV1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ALEV1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ALEV1W) -> &'a mut W {
+impl<'a> ALEV1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ALEV1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No alarm event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ALEV1W::VALUE1)
+        self.variant(ALEV1_A::VALUE1)
     }
     #[doc = "An alarm event has occurred"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ALEV1W::VALUE2)
+        self.variant(ALEV1_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ALEV2`"]
-pub enum ALEV2W {
-    #[doc = "No alarm event"]
+#[doc = "Alarm Event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ALEV2_A {
+    #[doc = "0: No alarm event"]
     VALUE1,
-    #[doc = "An alarm event has occurred"]
+    #[doc = "1: An alarm event has occurred"]
     VALUE2,
 }
-impl ALEV2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ALEV2W::VALUE1 => false,
-            ALEV2W::VALUE2 => true,
+impl From<ALEV2_A> for bool {
+    #[inline(always)]
+    fn from(variant: ALEV2_A) -> Self {
+        match variant {
+            ALEV2_A::VALUE1 => false,
+            ALEV2_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ALEV2W<'a> {
+#[doc = "Reader of field `ALEV2`"]
+pub type ALEV2_R = crate::R<bool, ALEV2_A>;
+impl ALEV2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ALEV2_A {
+        match self.bits {
+            false => ALEV2_A::VALUE1,
+            true => ALEV2_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ALEV2_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ALEV2_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ALEV2`"]
+pub struct ALEV2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ALEV2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ALEV2W) -> &'a mut W {
+impl<'a> ALEV2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ALEV2_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No alarm event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ALEV2W::VALUE1)
+        self.variant(ALEV2_A::VALUE1)
     }
     #[doc = "An alarm event has occurred"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ALEV2W::VALUE2)
+        self.variant(ALEV2_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ALEV3`"]
-pub enum ALEV3W {
-    #[doc = "No alarm event"]
+#[doc = "Alarm Event\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ALEV3_A {
+    #[doc = "0: No alarm event"]
     VALUE1,
-    #[doc = "An alarm event has occurred"]
+    #[doc = "1: An alarm event has occurred"]
     VALUE2,
 }
-impl ALEV3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ALEV3W::VALUE1 => false,
-            ALEV3W::VALUE2 => true,
+impl From<ALEV3_A> for bool {
+    #[inline(always)]
+    fn from(variant: ALEV3_A) -> Self {
+        match variant {
+            ALEV3_A::VALUE1 => false,
+            ALEV3_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ALEV3W<'a> {
+#[doc = "Reader of field `ALEV3`"]
+pub type ALEV3_R = crate::R<bool, ALEV3_A>;
+impl ALEV3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ALEV3_A {
+        match self.bits {
+            false => ALEV3_A::VALUE1,
+            true => ALEV3_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ALEV3_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ALEV3_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ALEV3`"]
+pub struct ALEV3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ALEV3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ALEV3W) -> &'a mut W {
+impl<'a> ALEV3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ALEV3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No alarm event"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ALEV3W::VALUE1)
+        self.variant(ALEV3_A::VALUE1)
     }
     #[doc = "An alarm event has occurred"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ALEV3W::VALUE2)
+        self.variant(ALEV3_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Result Event"]
-    #[inline]
-    pub fn resev0(&self) -> RESEV0R {
-        RESEV0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn resev0(&self) -> RESEV0_R {
+        RESEV0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Result Event"]
-    #[inline]
-    pub fn resev1(&self) -> RESEV1R {
-        RESEV1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn resev1(&self) -> RESEV1_R {
+        RESEV1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Result Event"]
-    #[inline]
-    pub fn resev2(&self) -> RESEV2R {
-        RESEV2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn resev2(&self) -> RESEV2_R {
+        RESEV2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Result Event"]
-    #[inline]
-    pub fn resev3(&self) -> RESEV3R {
-        RESEV3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn resev3(&self) -> RESEV3_R {
+        RESEV3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Alarm Event"]
-    #[inline]
-    pub fn alev0(&self) -> ALEV0R {
-        ALEV0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn alev0(&self) -> ALEV0_R {
+        ALEV0_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Alarm Event"]
-    #[inline]
-    pub fn alev1(&self) -> ALEV1R {
-        ALEV1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn alev1(&self) -> ALEV1_R {
+        ALEV1_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - Alarm Event"]
-    #[inline]
-    pub fn alev2(&self) -> ALEV2R {
-        ALEV2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn alev2(&self) -> ALEV2_R {
+        ALEV2_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - Alarm Event"]
-    #[inline]
-    pub fn alev3(&self) -> ALEV3R {
-        ALEV3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn alev3(&self) -> ALEV3_R {
+        ALEV3_R::new(((self.bits >> 19) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Result Event"]
-    #[inline]
-    pub fn resev0(&mut self) -> _RESEV0W {
-        _RESEV0W { w: self }
+    #[inline(always)]
+    pub fn resev0(&mut self) -> RESEV0_W {
+        RESEV0_W { w: self }
     }
     #[doc = "Bit 1 - Result Event"]
-    #[inline]
-    pub fn resev1(&mut self) -> _RESEV1W {
-        _RESEV1W { w: self }
+    #[inline(always)]
+    pub fn resev1(&mut self) -> RESEV1_W {
+        RESEV1_W { w: self }
     }
     #[doc = "Bit 2 - Result Event"]
-    #[inline]
-    pub fn resev2(&mut self) -> _RESEV2W {
-        _RESEV2W { w: self }
+    #[inline(always)]
+    pub fn resev2(&mut self) -> RESEV2_W {
+        RESEV2_W { w: self }
     }
     #[doc = "Bit 3 - Result Event"]
-    #[inline]
-    pub fn resev3(&mut self) -> _RESEV3W {
-        _RESEV3W { w: self }
+    #[inline(always)]
+    pub fn resev3(&mut self) -> RESEV3_W {
+        RESEV3_W { w: self }
     }
     #[doc = "Bit 16 - Alarm Event"]
-    #[inline]
-    pub fn alev0(&mut self) -> _ALEV0W {
-        _ALEV0W { w: self }
+    #[inline(always)]
+    pub fn alev0(&mut self) -> ALEV0_W {
+        ALEV0_W { w: self }
     }
     #[doc = "Bit 17 - Alarm Event"]
-    #[inline]
-    pub fn alev1(&mut self) -> _ALEV1W {
-        _ALEV1W { w: self }
+    #[inline(always)]
+    pub fn alev1(&mut self) -> ALEV1_W {
+        ALEV1_W { w: self }
     }
     #[doc = "Bit 18 - Alarm Event"]
-    #[inline]
-    pub fn alev2(&mut self) -> _ALEV2W {
-        _ALEV2W { w: self }
+    #[inline(always)]
+    pub fn alev2(&mut self) -> ALEV2_W {
+        ALEV2_W { w: self }
     }
     #[doc = "Bit 19 - Alarm Event"]
-    #[inline]
-    pub fn alev3(&mut self) -> _ALEV3W {
-        _ALEV3W { w: self }
+    #[inline(always)]
+    pub fn alev3(&mut self) -> ALEV3_W {
+        ALEV3_W { w: self }
     }
 }

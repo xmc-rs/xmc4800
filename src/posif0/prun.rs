@@ -1,74 +1,48 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PRUN {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `RB`"]
+#[doc = "Reader of register PRUN"]
+pub type R = crate::R<u32, super::PRUN>;
+#[doc = "Run Bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RBR {
-    #[doc = "IDLE"]
+pub enum RB_A {
+    #[doc = "0: IDLE"]
     VALUE1,
-    #[doc = "Running"]
+    #[doc = "1: Running"]
     VALUE2,
 }
-impl RBR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RBR::VALUE1 => false,
-            RBR::VALUE2 => true,
+impl From<RB_A> for bool {
+    #[inline(always)]
+    fn from(variant: RB_A) -> Self {
+        match variant {
+            RB_A::VALUE1 => false,
+            RB_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RBR {
-        match value {
-            false => RBR::VALUE1,
-            true => RBR::VALUE2,
+}
+#[doc = "Reader of field `RB`"]
+pub type RB_R = crate::R<bool, RB_A>;
+impl RB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RB_A {
+        match self.bits {
+            false => RB_A::VALUE1,
+            true => RB_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RBR::VALUE1
+        *self == RB_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RBR::VALUE2
+        *self == RB_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Run Bit"]
-    #[inline]
-    pub fn rb(&self) -> RBR {
-        RBR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rb(&self) -> RB_R {
+        RB_R::new((self.bits & 0x01) != 0)
     }
 }

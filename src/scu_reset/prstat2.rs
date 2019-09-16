@@ -1,410 +1,312 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PRSTAT2 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = "Possible values of the field `WDTRS`"]
+#[doc = "Reader of register PRSTAT2"]
+pub type R = crate::R<u32, super::PRSTAT2>;
+#[doc = "WDT Reset Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WDTRSR {
-    #[doc = "Reset de-asserted"]
+pub enum WDTRS_A {
+    #[doc = "0: Reset de-asserted"]
     VALUE1,
-    #[doc = "Reset asserted"]
+    #[doc = "1: Reset asserted"]
     VALUE2,
 }
-impl WDTRSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WDTRSR::VALUE1 => false,
-            WDTRSR::VALUE2 => true,
+impl From<WDTRS_A> for bool {
+    #[inline(always)]
+    fn from(variant: WDTRS_A) -> Self {
+        match variant {
+            WDTRS_A::VALUE1 => false,
+            WDTRS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WDTRSR {
-        match value {
-            false => WDTRSR::VALUE1,
-            true => WDTRSR::VALUE2,
+}
+#[doc = "Reader of field `WDTRS`"]
+pub type WDTRS_R = crate::R<bool, WDTRS_A>;
+impl WDTRS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WDTRS_A {
+        match self.bits {
+            false => WDTRS_A::VALUE1,
+            true => WDTRS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WDTRSR::VALUE1
+        *self == WDTRS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WDTRSR::VALUE2
+        *self == WDTRS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `ETH0RS`"]
+#[doc = "ETH0 Reset Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ETH0RSR {
-    #[doc = "Reset de-asserted"]
+pub enum ETH0RS_A {
+    #[doc = "0: Reset de-asserted"]
     VALUE1,
-    #[doc = "Reset asserted"]
+    #[doc = "1: Reset asserted"]
     VALUE2,
 }
-impl ETH0RSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ETH0RSR::VALUE1 => false,
-            ETH0RSR::VALUE2 => true,
+impl From<ETH0RS_A> for bool {
+    #[inline(always)]
+    fn from(variant: ETH0RS_A) -> Self {
+        match variant {
+            ETH0RS_A::VALUE1 => false,
+            ETH0RS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ETH0RSR {
-        match value {
-            false => ETH0RSR::VALUE1,
-            true => ETH0RSR::VALUE2,
+}
+#[doc = "Reader of field `ETH0RS`"]
+pub type ETH0RS_R = crate::R<bool, ETH0RS_A>;
+impl ETH0RS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ETH0RS_A {
+        match self.bits {
+            false => ETH0RS_A::VALUE1,
+            true => ETH0RS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ETH0RSR::VALUE1
+        *self == ETH0RS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ETH0RSR::VALUE2
+        *self == ETH0RS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `DMA0RS`"]
+#[doc = "DMA0 Reset Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DMA0RSR {
-    #[doc = "Reset de-asserted"]
+pub enum DMA0RS_A {
+    #[doc = "0: Reset de-asserted"]
     VALUE1,
-    #[doc = "Reset asserted"]
+    #[doc = "1: Reset asserted"]
     VALUE2,
 }
-impl DMA0RSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DMA0RSR::VALUE1 => false,
-            DMA0RSR::VALUE2 => true,
+impl From<DMA0RS_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA0RS_A) -> Self {
+        match variant {
+            DMA0RS_A::VALUE1 => false,
+            DMA0RS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DMA0RSR {
-        match value {
-            false => DMA0RSR::VALUE1,
-            true => DMA0RSR::VALUE2,
+}
+#[doc = "Reader of field `DMA0RS`"]
+pub type DMA0RS_R = crate::R<bool, DMA0RS_A>;
+impl DMA0RS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA0RS_A {
+        match self.bits {
+            false => DMA0RS_A::VALUE1,
+            true => DMA0RS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DMA0RSR::VALUE1
+        *self == DMA0RS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DMA0RSR::VALUE2
+        *self == DMA0RS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `DMA1RS`"]
+#[doc = "DMA1 Reset Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DMA1RSR {
-    #[doc = "Reset de-asserted"]
+pub enum DMA1RS_A {
+    #[doc = "0: Reset de-asserted"]
     VALUE1,
-    #[doc = "Reset asserted"]
+    #[doc = "1: Reset asserted"]
     VALUE2,
 }
-impl DMA1RSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DMA1RSR::VALUE1 => false,
-            DMA1RSR::VALUE2 => true,
+impl From<DMA1RS_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA1RS_A) -> Self {
+        match variant {
+            DMA1RS_A::VALUE1 => false,
+            DMA1RS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DMA1RSR {
-        match value {
-            false => DMA1RSR::VALUE1,
-            true => DMA1RSR::VALUE2,
+}
+#[doc = "Reader of field `DMA1RS`"]
+pub type DMA1RS_R = crate::R<bool, DMA1RS_A>;
+impl DMA1RS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA1RS_A {
+        match self.bits {
+            false => DMA1RS_A::VALUE1,
+            true => DMA1RS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DMA1RSR::VALUE1
+        *self == DMA1RS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == DMA1RSR::VALUE2
+        *self == DMA1RS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `FCERS`"]
+#[doc = "FCE Reset Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FCERSR {
-    #[doc = "Reset de-asserted"]
+pub enum FCERS_A {
+    #[doc = "0: Reset de-asserted"]
     VALUE1,
-    #[doc = "Reset asserted"]
+    #[doc = "1: Reset asserted"]
     VALUE2,
 }
-impl FCERSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FCERSR::VALUE1 => false,
-            FCERSR::VALUE2 => true,
+impl From<FCERS_A> for bool {
+    #[inline(always)]
+    fn from(variant: FCERS_A) -> Self {
+        match variant {
+            FCERS_A::VALUE1 => false,
+            FCERS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FCERSR {
-        match value {
-            false => FCERSR::VALUE1,
-            true => FCERSR::VALUE2,
+}
+#[doc = "Reader of field `FCERS`"]
+pub type FCERS_R = crate::R<bool, FCERS_A>;
+impl FCERS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FCERS_A {
+        match self.bits {
+            false => FCERS_A::VALUE1,
+            true => FCERS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == FCERSR::VALUE1
+        *self == FCERS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == FCERSR::VALUE2
+        *self == FCERS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `USBRS`"]
+#[doc = "USB Reset Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum USBRSR {
-    #[doc = "Reset de-asserted"]
+pub enum USBRS_A {
+    #[doc = "0: Reset de-asserted"]
     VALUE1,
-    #[doc = "Reset asserted"]
+    #[doc = "1: Reset asserted"]
     VALUE2,
 }
-impl USBRSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            USBRSR::VALUE1 => false,
-            USBRSR::VALUE2 => true,
+impl From<USBRS_A> for bool {
+    #[inline(always)]
+    fn from(variant: USBRS_A) -> Self {
+        match variant {
+            USBRS_A::VALUE1 => false,
+            USBRS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> USBRSR {
-        match value {
-            false => USBRSR::VALUE1,
-            true => USBRSR::VALUE2,
+}
+#[doc = "Reader of field `USBRS`"]
+pub type USBRS_R = crate::R<bool, USBRS_A>;
+impl USBRS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> USBRS_A {
+        match self.bits {
+            false => USBRS_A::VALUE1,
+            true => USBRS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == USBRSR::VALUE1
+        *self == USBRS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == USBRSR::VALUE2
+        *self == USBRS_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `ECAT0RS`"]
+#[doc = "ECAT0 Reset Status\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ECAT0RSR {
-    #[doc = "Reset de-asserted"]
+pub enum ECAT0RS_A {
+    #[doc = "0: Reset de-asserted"]
     VALUE1,
-    #[doc = "Reset asserted"]
+    #[doc = "1: Reset asserted"]
     VALUE2,
 }
-impl ECAT0RSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ECAT0RSR::VALUE1 => false,
-            ECAT0RSR::VALUE2 => true,
+impl From<ECAT0RS_A> for bool {
+    #[inline(always)]
+    fn from(variant: ECAT0RS_A) -> Self {
+        match variant {
+            ECAT0RS_A::VALUE1 => false,
+            ECAT0RS_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ECAT0RSR {
-        match value {
-            false => ECAT0RSR::VALUE1,
-            true => ECAT0RSR::VALUE2,
+}
+#[doc = "Reader of field `ECAT0RS`"]
+pub type ECAT0RS_R = crate::R<bool, ECAT0RS_A>;
+impl ECAT0RS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ECAT0RS_A {
+        match self.bits {
+            false => ECAT0RS_A::VALUE1,
+            true => ECAT0RS_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ECAT0RSR::VALUE1
+        *self == ECAT0RS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ECAT0RSR::VALUE2
+        *self == ECAT0RS_A::VALUE2
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 1 - WDT Reset Status"]
-    #[inline]
-    pub fn wdtrs(&self) -> WDTRSR {
-        WDTRSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wdtrs(&self) -> WDTRS_R {
+        WDTRS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - ETH0 Reset Status"]
-    #[inline]
-    pub fn eth0rs(&self) -> ETH0RSR {
-        ETH0RSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn eth0rs(&self) -> ETH0RS_R {
+        ETH0RS_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 4 - DMA0 Reset Status"]
-    #[inline]
-    pub fn dma0rs(&self) -> DMA0RSR {
-        DMA0RSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dma0rs(&self) -> DMA0RS_R {
+        DMA0RS_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - DMA1 Reset Status"]
-    #[inline]
-    pub fn dma1rs(&self) -> DMA1RSR {
-        DMA1RSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dma1rs(&self) -> DMA1RS_R {
+        DMA1RS_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - FCE Reset Status"]
-    #[inline]
-    pub fn fcers(&self) -> FCERSR {
-        FCERSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fcers(&self) -> FCERS_R {
+        FCERS_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - USB Reset Status"]
-    #[inline]
-    pub fn usbrs(&self) -> USBRSR {
-        USBRSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn usbrs(&self) -> USBRS_R {
+        USBRS_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 10 - ECAT0 Reset Status"]
-    #[inline]
-    pub fn ecat0rs(&self) -> ECAT0RSR {
-        ECAT0RSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ecat0rs(&self) -> ECAT0RS_R {
+        ECAT0RS_R::new(((self.bits >> 10) & 0x01) != 0)
     }
 }

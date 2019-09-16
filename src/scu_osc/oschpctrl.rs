@@ -1,613 +1,430 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::OSCHPCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register OSCHPCTRL"]
+pub type R = crate::R<u32, super::OSCHPCTRL>;
+#[doc = "Writer for register OSCHPCTRL"]
+pub type W = crate::W<u32, super::OSCHPCTRL>;
+#[doc = "Register OSCHPCTRL `reset()`'s with value 0x3c"]
+impl crate::ResetValue for super::OSCHPCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x3c
     }
 }
-#[doc = "Possible values of the field `X1DEN`"]
+#[doc = "XTAL1 Data Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum X1DENR {
+pub enum X1DEN_A {
+    #[doc = "0: Bit X1D is not updated"]
+    VALUE1,
+    #[doc = "1: Bit X1D can be updated"]
+    VALUE2,
+}
+impl From<X1DEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: X1DEN_A) -> Self {
+        match variant {
+            X1DEN_A::VALUE1 => false,
+            X1DEN_A::VALUE2 => true,
+        }
+    }
+}
+#[doc = "Reader of field `X1DEN`"]
+pub type X1DEN_R = crate::R<bool, X1DEN_A>;
+impl X1DEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> X1DEN_A {
+        match self.bits {
+            false => X1DEN_A::VALUE1,
+            true => X1DEN_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == X1DEN_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == X1DEN_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `X1DEN`"]
+pub struct X1DEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> X1DEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: X1DEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Bit X1D is not updated"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(X1DEN_A::VALUE1)
+    }
     #[doc = "Bit X1D can be updated"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(X1DEN_A::VALUE2)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "Shaper Bypass\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SHBY_A {
+    #[doc = "0: The shaper is not bypassed"]
+    VALUE1,
+    #[doc = "1: The shaper is bypassed"]
     VALUE2,
 }
-impl X1DENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            X1DENR::VALUE1 => false,
-            X1DENR::VALUE2 => true,
+impl From<SHBY_A> for bool {
+    #[inline(always)]
+    fn from(variant: SHBY_A) -> Self {
+        match variant {
+            SHBY_A::VALUE1 => false,
+            SHBY_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> X1DENR {
-        match value {
-            false => X1DENR::VALUE1,
-            true => X1DENR::VALUE2,
+}
+#[doc = "Reader of field `SHBY`"]
+pub type SHBY_R = crate::R<bool, SHBY_A>;
+impl SHBY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SHBY_A {
+        match self.bits {
+            false => SHBY_A::VALUE1,
+            true => SHBY_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == X1DENR::VALUE1
+        *self == SHBY_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == X1DENR::VALUE2
+        *self == SHBY_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `SHBY`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SHBYR {
+#[doc = "Write proxy for field `SHBY`"]
+pub struct SHBY_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SHBY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SHBY_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "The shaper is not bypassed"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(SHBY_A::VALUE1)
+    }
     #[doc = "The shaper is bypassed"]
-    VALUE2,
-}
-impl SHBYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(SHBY_A::VALUE2)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SHBYR::VALUE1 => false,
-            SHBYR::VALUE2 => true,
-        }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SHBYR {
-        match value {
-            false => SHBYR::VALUE1,
-            true => SHBYR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == SHBYR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == SHBYR::VALUE2
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
-#[doc = "Possible values of the field `GAINSEL`"]
+#[doc = "Oscillator Gain Selection\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GAINSELR {
-    #[doc = "The gain control is configured for frequencies from 4 MHz to 8 MHz"]
+pub enum GAINSEL_A {
+    #[doc = "0: The gain control is configured for frequencies from 4 MHz to 8 MHz"]
     VALUE1,
-    #[doc = "The gain control is configured for frequencies from 4 MHz to 16 MHz"]
+    #[doc = "1: The gain control is configured for frequencies from 4 MHz to 16 MHz"]
     VALUE2,
-    #[doc = "The gain control is configured for frequencies from 4 MHz to 20 MHz"]
+    #[doc = "2: The gain control is configured for frequencies from 4 MHz to 20 MHz"]
     VALUE3,
-    #[doc = "The gain control is configured for frequencies from 4 MHz to 25 MHz"]
+    #[doc = "3: The gain control is configured for frequencies from 4 MHz to 25 MHz"]
     VALUE4,
 }
-impl GAINSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            GAINSELR::VALUE1 => 0,
-            GAINSELR::VALUE2 => 1,
-            GAINSELR::VALUE3 => 2,
-            GAINSELR::VALUE4 => 3,
+impl From<GAINSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: GAINSEL_A) -> Self {
+        match variant {
+            GAINSEL_A::VALUE1 => 0,
+            GAINSEL_A::VALUE2 => 1,
+            GAINSEL_A::VALUE3 => 2,
+            GAINSEL_A::VALUE4 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> GAINSELR {
-        match value {
-            0 => GAINSELR::VALUE1,
-            1 => GAINSELR::VALUE2,
-            2 => GAINSELR::VALUE3,
-            3 => GAINSELR::VALUE4,
+}
+#[doc = "Reader of field `GAINSEL`"]
+pub type GAINSEL_R = crate::R<u8, GAINSEL_A>;
+impl GAINSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GAINSEL_A {
+        match self.bits {
+            0 => GAINSEL_A::VALUE1,
+            1 => GAINSEL_A::VALUE2,
+            2 => GAINSEL_A::VALUE3,
+            3 => GAINSEL_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == GAINSELR::VALUE1
+        *self == GAINSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == GAINSELR::VALUE2
+        *self == GAINSEL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == GAINSELR::VALUE3
+        *self == GAINSEL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == GAINSELR::VALUE4
+        *self == GAINSEL_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `MODE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODER {
-    #[doc = "External Crystal Mode and External Input Clock Mode. The oscillator Power-Saving Mode is not entered."]
-    VALUE1,
-    #[doc = "OSC is disabled. The oscillator Power-Saving Mode is not entered."]
-    VALUE2,
-    #[doc = "External Input Clock Mode and the oscillator Power-Saving Mode is entered"]
-    VALUE3,
-    #[doc = "OSC is disabled. The oscillator Power-Saving Mode is entered."]
-    VALUE4,
+#[doc = "Write proxy for field `GAINSEL`"]
+pub struct GAINSEL_W<'a> {
+    w: &'a mut W,
 }
-impl MODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MODER::VALUE1 => 0,
-            MODER::VALUE2 => 1,
-            MODER::VALUE3 => 2,
-            MODER::VALUE4 => 3,
+impl<'a> GAINSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: GAINSEL_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODER {
-        match value {
-            0 => MODER::VALUE1,
-            1 => MODER::VALUE2,
-            2 => MODER::VALUE3,
-            3 => MODER::VALUE4,
+    #[doc = "The gain control is configured for frequencies from 4 MHz to 8 MHz"]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(GAINSEL_A::VALUE1)
+    }
+    #[doc = "The gain control is configured for frequencies from 4 MHz to 16 MHz"]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(GAINSEL_A::VALUE2)
+    }
+    #[doc = "The gain control is configured for frequencies from 4 MHz to 20 MHz"]
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(GAINSEL_A::VALUE3)
+    }
+    #[doc = "The gain control is configured for frequencies from 4 MHz to 25 MHz"]
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(GAINSEL_A::VALUE4)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w
+    }
+}
+#[doc = "Oscillator Mode\n\nValue on reset: 3"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MODE_A {
+    #[doc = "0: External Crystal Mode and External Input Clock Mode. The oscillator Power-Saving Mode is not entered."]
+    VALUE1,
+    #[doc = "1: OSC is disabled. The oscillator Power-Saving Mode is not entered."]
+    VALUE2,
+    #[doc = "2: External Input Clock Mode and the oscillator Power-Saving Mode is entered"]
+    VALUE3,
+    #[doc = "3: OSC is disabled. The oscillator Power-Saving Mode is entered."]
+    VALUE4,
+}
+impl From<MODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MODE_A) -> Self {
+        match variant {
+            MODE_A::VALUE1 => 0,
+            MODE_A::VALUE2 => 1,
+            MODE_A::VALUE3 => 2,
+            MODE_A::VALUE4 => 3,
+        }
+    }
+}
+#[doc = "Reader of field `MODE`"]
+pub type MODE_R = crate::R<u8, MODE_A>;
+impl MODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE_A {
+        match self.bits {
+            0 => MODE_A::VALUE1,
+            1 => MODE_A::VALUE2,
+            2 => MODE_A::VALUE3,
+            3 => MODE_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MODER::VALUE1
+        *self == MODE_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MODER::VALUE2
+        *self == MODE_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == MODER::VALUE3
+        *self == MODE_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == MODER::VALUE4
+        *self == MODE_A::VALUE4
     }
 }
-#[doc = r" Value of the field"]
-pub struct OSCVALR {
-    bits: u8,
-}
-impl OSCVALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `X1DEN`"]
-pub enum X1DENW {
-    #[doc = "Bit X1D is not updated"]
-    VALUE1,
-    #[doc = "Bit X1D can be updated"]
-    VALUE2,
-}
-impl X1DENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            X1DENW::VALUE1 => false,
-            X1DENW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _X1DENW<'a> {
+#[doc = "Write proxy for field `MODE`"]
+pub struct MODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _X1DENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: X1DENW) -> &'a mut W {
+impl<'a> MODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Bit X1D is not updated"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(X1DENW::VALUE1)
-    }
-    #[doc = "Bit X1D can be updated"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(X1DENW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SHBY`"]
-pub enum SHBYW {
-    #[doc = "The shaper is not bypassed"]
-    VALUE1,
-    #[doc = "The shaper is bypassed"]
-    VALUE2,
-}
-impl SHBYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SHBYW::VALUE1 => false,
-            SHBYW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SHBYW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SHBYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SHBYW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The shaper is not bypassed"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(SHBYW::VALUE1)
-    }
-    #[doc = "The shaper is bypassed"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(SHBYW::VALUE2)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `GAINSEL`"]
-pub enum GAINSELW {
-    #[doc = "The gain control is configured for frequencies from 4 MHz to 8 MHz"]
-    VALUE1,
-    #[doc = "The gain control is configured for frequencies from 4 MHz to 16 MHz"]
-    VALUE2,
-    #[doc = "The gain control is configured for frequencies from 4 MHz to 20 MHz"]
-    VALUE3,
-    #[doc = "The gain control is configured for frequencies from 4 MHz to 25 MHz"]
-    VALUE4,
-}
-impl GAINSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            GAINSELW::VALUE1 => 0,
-            GAINSELW::VALUE2 => 1,
-            GAINSELW::VALUE3 => 2,
-            GAINSELW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _GAINSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _GAINSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: GAINSELW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "The gain control is configured for frequencies from 4 MHz to 8 MHz"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(GAINSELW::VALUE1)
-    }
-    #[doc = "The gain control is configured for frequencies from 4 MHz to 16 MHz"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(GAINSELW::VALUE2)
-    }
-    #[doc = "The gain control is configured for frequencies from 4 MHz to 20 MHz"]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(GAINSELW::VALUE3)
-    }
-    #[doc = "The gain control is configured for frequencies from 4 MHz to 25 MHz"]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(GAINSELW::VALUE4)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MODE`"]
-pub enum MODEW {
-    #[doc = "External Crystal Mode and External Input Clock Mode. The oscillator Power-Saving Mode is not entered."]
-    VALUE1,
-    #[doc = "OSC is disabled. The oscillator Power-Saving Mode is not entered."]
-    VALUE2,
-    #[doc = "External Input Clock Mode and the oscillator Power-Saving Mode is entered"]
-    VALUE3,
-    #[doc = "OSC is disabled. The oscillator Power-Saving Mode is entered."]
-    VALUE4,
-}
-impl MODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODEW::VALUE1 => 0,
-            MODEW::VALUE2 => 1,
-            MODEW::VALUE3 => 2,
-            MODEW::VALUE4 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODEW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "External Crystal Mode and External Input Clock Mode. The oscillator Power-Saving Mode is not entered."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MODEW::VALUE1)
+        self.variant(MODE_A::VALUE1)
     }
     #[doc = "OSC is disabled. The oscillator Power-Saving Mode is not entered."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MODEW::VALUE2)
+        self.variant(MODE_A::VALUE2)
     }
     #[doc = "External Input Clock Mode and the oscillator Power-Saving Mode is entered"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(MODEW::VALUE3)
+        self.variant(MODE_A::VALUE3)
     }
     #[doc = "OSC is disabled. The oscillator Power-Saving Mode is entered."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(MODEW::VALUE4)
+        self.variant(MODE_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _OSCVALW<'a> {
+#[doc = "Reader of field `OSCVAL`"]
+pub type OSCVAL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `OSCVAL`"]
+pub struct OSCVAL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _OSCVALW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> OSCVAL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - XTAL1 Data Enable"]
-    #[inline]
-    pub fn x1den(&self) -> X1DENR {
-        X1DENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn x1den(&self) -> X1DEN_R {
+        X1DEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Shaper Bypass"]
-    #[inline]
-    pub fn shby(&self) -> SHBYR {
-        SHBYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn shby(&self) -> SHBY_R {
+        SHBY_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bits 2:3 - Oscillator Gain Selection"]
-    #[inline]
-    pub fn gainsel(&self) -> GAINSELR {
-        GAINSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn gainsel(&self) -> GAINSEL_R {
+        GAINSEL_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
-    #[inline]
-    pub fn mode(&self) -> MODER {
-        MODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode(&self) -> MODE_R {
+        MODE_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 16:19 - OSC Frequency Value"]
-    #[inline]
-    pub fn oscval(&self) -> OSCVALR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        OSCVALR { bits }
+    #[inline(always)]
+    pub fn oscval(&self) -> OSCVAL_R {
+        OSCVAL_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 60 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - XTAL1 Data Enable"]
-    #[inline]
-    pub fn x1den(&mut self) -> _X1DENW {
-        _X1DENW { w: self }
+    #[inline(always)]
+    pub fn x1den(&mut self) -> X1DEN_W {
+        X1DEN_W { w: self }
     }
     #[doc = "Bit 1 - Shaper Bypass"]
-    #[inline]
-    pub fn shby(&mut self) -> _SHBYW {
-        _SHBYW { w: self }
+    #[inline(always)]
+    pub fn shby(&mut self) -> SHBY_W {
+        SHBY_W { w: self }
     }
     #[doc = "Bits 2:3 - Oscillator Gain Selection"]
-    #[inline]
-    pub fn gainsel(&mut self) -> _GAINSELW {
-        _GAINSELW { w: self }
+    #[inline(always)]
+    pub fn gainsel(&mut self) -> GAINSEL_W {
+        GAINSEL_W { w: self }
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
-    #[inline]
-    pub fn mode(&mut self) -> _MODEW {
-        _MODEW { w: self }
+    #[inline(always)]
+    pub fn mode(&mut self) -> MODE_W {
+        MODE_W { w: self }
     }
     #[doc = "Bits 16:19 - OSC Frequency Value"]
-    #[inline]
-    pub fn oscval(&mut self) -> _OSCVALW {
-        _OSCVALW { w: self }
+    #[inline(always)]
+    pub fn oscval(&mut self) -> OSCVAL_W {
+        OSCVAL_W { w: self }
     }
 }

@@ -1,165 +1,94 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::GLOBCFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register GLOBCFG"]
+pub type R = crate::R<u32, super::GLOBCFG>;
+#[doc = "Writer for register GLOBCFG"]
+pub type W = crate::W<u32, super::GLOBCFG>;
+#[doc = "Register GLOBCFG `reset()`'s with value 0"]
+impl crate::ResetValue for super::GLOBCFG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `MCSEL`"]
+#[doc = "Modulator Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MCSELR {
-    #[doc = "Internal clock off, no source selected"]
+pub enum MCSEL_A {
+    #[doc = "0: Internal clock off, no source selected"]
     VALUE1,
-    #[doc = "fDSD"]
+    #[doc = "1: fDSD"]
     VALUE2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl MCSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MCSELR::VALUE1 => 0,
-            MCSELR::VALUE2 => 1,
-            MCSELR::_Reserved(bits) => bits,
+impl From<MCSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MCSEL_A) -> Self {
+        match variant {
+            MCSEL_A::VALUE1 => 0,
+            MCSEL_A::VALUE2 => 1,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MCSELR {
-        match value {
-            0 => MCSELR::VALUE1,
-            1 => MCSELR::VALUE2,
-            i => MCSELR::_Reserved(i),
+}
+#[doc = "Reader of field `MCSEL`"]
+pub type MCSEL_R = crate::R<u8, MCSEL_A>;
+impl MCSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, MCSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MCSEL_A::VALUE1),
+            1 => Val(MCSEL_A::VALUE2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MCSELR::VALUE1
+        *self == MCSEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MCSELR::VALUE2
+        *self == MCSEL_A::VALUE2
     }
 }
-#[doc = "Values that can be written to the field `MCSEL`"]
-pub enum MCSELW {
-    #[doc = "Internal clock off, no source selected"]
-    VALUE1,
-    #[doc = "fDSD"]
-    VALUE2,
-}
-impl MCSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MCSELW::VALUE1 => 0,
-            MCSELW::VALUE2 => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MCSELW<'a> {
+#[doc = "Write proxy for field `MCSEL`"]
+pub struct MCSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MCSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MCSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> MCSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MCSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Internal clock off, no source selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(MCSELW::VALUE1)
+        self.variant(MCSEL_A::VALUE1)
     }
     #[doc = "fDSD"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(MCSELW::VALUE2)
+        self.variant(MCSEL_A::VALUE2)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Modulator Clock Select"]
-    #[inline]
-    pub fn mcsel(&self) -> MCSELR {
-        MCSELR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mcsel(&self) -> MCSEL_R {
+        MCSEL_R::new((self.bits & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Modulator Clock Select"]
-    #[inline]
-    pub fn mcsel(&mut self) -> _MCSELW {
-        _MCSELW { w: self }
+    #[inline(always)]
+    pub fn mcsel(&mut self) -> MCSEL_W {
+        MCSEL_W { w: self }
     }
 }

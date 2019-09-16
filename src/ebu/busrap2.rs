@@ -1,1214 +1,904 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::BUSRAP2 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register BUSRAP2"]
+pub type R = crate::R<u32, super::BUSRAP2>;
+#[doc = "Writer for register BUSRAP2"]
+pub type W = crate::W<u32, super::BUSRAP2>;
+#[doc = "Register BUSRAP2 `reset()`'s with value 0xffff_ffff"]
+impl crate::ResetValue for super::BUSRAP2 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xffff_ffff
     }
 }
-#[doc = "Possible values of the field `RDDTACS`"]
+#[doc = "Recovery Cycles between Different Regions\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RDDTACSR {
-    #[doc = "No Recovery Phase clock cycles available."]
+pub enum RDDTACS_A {
+    #[doc = "0: No Recovery Phase clock cycles available."]
     VALUE1,
-    #[doc = "1 clock cycle selected."]
+    #[doc = "1: 1 clock cycle selected."]
     VALUE2,
+    #[doc = "14: 14 clock cycles selected."]
+    VALUE3,
+    #[doc = "15: 15 clock cycles selected."]
+    VALUE4,
+}
+impl From<RDDTACS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: RDDTACS_A) -> Self {
+        match variant {
+            RDDTACS_A::VALUE1 => 0,
+            RDDTACS_A::VALUE2 => 1,
+            RDDTACS_A::VALUE3 => 14,
+            RDDTACS_A::VALUE4 => 15,
+        }
+    }
+}
+#[doc = "Reader of field `RDDTACS`"]
+pub type RDDTACS_R = crate::R<u8, RDDTACS_A>;
+impl RDDTACS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, RDDTACS_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(RDDTACS_A::VALUE1),
+            1 => Val(RDDTACS_A::VALUE2),
+            14 => Val(RDDTACS_A::VALUE3),
+            15 => Val(RDDTACS_A::VALUE4),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == RDDTACS_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == RDDTACS_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == RDDTACS_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == RDDTACS_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `RDDTACS`"]
+pub struct RDDTACS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RDDTACS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RDDTACS_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "No Recovery Phase clock cycles available."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(RDDTACS_A::VALUE1)
+    }
+    #[doc = "1 clock cycle selected."]
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(RDDTACS_A::VALUE2)
+    }
     #[doc = "14 clock cycles selected."]
-    VALUE3,
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(RDDTACS_A::VALUE3)
+    }
     #[doc = "15 clock cycles selected."]
-    VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(RDDTACS_A::VALUE4)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w
+    }
 }
-impl RDDTACSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            RDDTACSR::VALUE1 => 0,
-            RDDTACSR::VALUE2 => 1,
-            RDDTACSR::VALUE3 => 14,
-            RDDTACSR::VALUE4 => 15,
-            RDDTACSR::_Reserved(bits) => bits,
+#[doc = "Recovery Cycles after Read Accesses\n\nValue on reset: 7"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RDRECOVC_A {
+    #[doc = "0: No Recovery Phase clock cycles available."]
+    VALUE1,
+    #[doc = "1: 1 clock cycle selected."]
+    VALUE2,
+    #[doc = "6: 6 clock cycles selected."]
+    VALUE3,
+    #[doc = "7: 7 clock cycles selected."]
+    VALUE4,
+}
+impl From<RDRECOVC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: RDRECOVC_A) -> Self {
+        match variant {
+            RDRECOVC_A::VALUE1 => 0,
+            RDRECOVC_A::VALUE2 => 1,
+            RDRECOVC_A::VALUE3 => 6,
+            RDRECOVC_A::VALUE4 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RDDTACSR {
-        match value {
-            0 => RDDTACSR::VALUE1,
-            1 => RDDTACSR::VALUE2,
-            14 => RDDTACSR::VALUE3,
-            15 => RDDTACSR::VALUE4,
-            i => RDDTACSR::_Reserved(i),
+}
+#[doc = "Reader of field `RDRECOVC`"]
+pub type RDRECOVC_R = crate::R<u8, RDRECOVC_A>;
+impl RDRECOVC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, RDRECOVC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(RDRECOVC_A::VALUE1),
+            1 => Val(RDRECOVC_A::VALUE2),
+            6 => Val(RDRECOVC_A::VALUE3),
+            7 => Val(RDRECOVC_A::VALUE4),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RDDTACSR::VALUE1
+        *self == RDRECOVC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RDDTACSR::VALUE2
+        *self == RDRECOVC_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == RDDTACSR::VALUE3
+        *self == RDRECOVC_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == RDDTACSR::VALUE4
+        *self == RDRECOVC_A::VALUE4
     }
 }
-#[doc = "Possible values of the field `RDRECOVC`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RDRECOVCR {
+#[doc = "Write proxy for field `RDRECOVC`"]
+pub struct RDRECOVC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RDRECOVC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RDRECOVC_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
     #[doc = "No Recovery Phase clock cycles available."]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(RDRECOVC_A::VALUE1)
+    }
     #[doc = "1 clock cycle selected."]
-    VALUE2,
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(RDRECOVC_A::VALUE2)
+    }
     #[doc = "6 clock cycles selected."]
-    VALUE3,
+    #[inline(always)]
+    pub fn value3(self) -> &'a mut W {
+        self.variant(RDRECOVC_A::VALUE3)
+    }
     #[doc = "7 clock cycles selected."]
-    VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl RDRECOVCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            RDRECOVCR::VALUE1 => 0,
-            RDRECOVCR::VALUE2 => 1,
-            RDRECOVCR::VALUE3 => 6,
-            RDRECOVCR::VALUE4 => 7,
-            RDRECOVCR::_Reserved(bits) => bits,
-        }
+    #[inline(always)]
+    pub fn value4(self) -> &'a mut W {
+        self.variant(RDRECOVC_A::VALUE4)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RDRECOVCR {
-        match value {
-            0 => RDRECOVCR::VALUE1,
-            1 => RDRECOVCR::VALUE2,
-            6 => RDRECOVCR::VALUE3,
-            7 => RDRECOVCR::VALUE4,
-            i => RDRECOVCR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == RDRECOVCR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == RDRECOVCR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == RDRECOVCR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == RDRECOVCR::VALUE4
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
+        self.w
     }
 }
-#[doc = "Possible values of the field `WAITRDC`"]
+#[doc = "Programmed Wait States for read accesses\n\nValue on reset: 31"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WAITRDCR {
-    #[doc = "1 wait state."]
+pub enum WAITRDC_A {
+    #[doc = "0: 1 wait state."]
     VALUE1,
-    #[doc = "1 wait states."]
+    #[doc = "1: 1 wait states."]
     VALUE2,
-    #[doc = "2 wait state."]
+    #[doc = "2: 2 wait state."]
     VALUE3,
-    #[doc = "30 wait states."]
+    #[doc = "30: 30 wait states."]
     VALUE4,
-    #[doc = "31 wait states."]
+    #[doc = "31: 31 wait states."]
     VALUE5,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl WAITRDCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            WAITRDCR::VALUE1 => 0,
-            WAITRDCR::VALUE2 => 1,
-            WAITRDCR::VALUE3 => 2,
-            WAITRDCR::VALUE4 => 30,
-            WAITRDCR::VALUE5 => 31,
-            WAITRDCR::_Reserved(bits) => bits,
+impl From<WAITRDC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: WAITRDC_A) -> Self {
+        match variant {
+            WAITRDC_A::VALUE1 => 0,
+            WAITRDC_A::VALUE2 => 1,
+            WAITRDC_A::VALUE3 => 2,
+            WAITRDC_A::VALUE4 => 30,
+            WAITRDC_A::VALUE5 => 31,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> WAITRDCR {
-        match value {
-            0 => WAITRDCR::VALUE1,
-            1 => WAITRDCR::VALUE2,
-            2 => WAITRDCR::VALUE3,
-            30 => WAITRDCR::VALUE4,
-            31 => WAITRDCR::VALUE5,
-            i => WAITRDCR::_Reserved(i),
+}
+#[doc = "Reader of field `WAITRDC`"]
+pub type WAITRDC_R = crate::R<u8, WAITRDC_A>;
+impl WAITRDC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, WAITRDC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(WAITRDC_A::VALUE1),
+            1 => Val(WAITRDC_A::VALUE2),
+            2 => Val(WAITRDC_A::VALUE3),
+            30 => Val(WAITRDC_A::VALUE4),
+            31 => Val(WAITRDC_A::VALUE5),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WAITRDCR::VALUE1
+        *self == WAITRDC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WAITRDCR::VALUE2
+        *self == WAITRDC_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == WAITRDCR::VALUE3
+        *self == WAITRDC_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == WAITRDCR::VALUE4
+        *self == WAITRDC_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == WAITRDCR::VALUE5
+        *self == WAITRDC_A::VALUE5
     }
 }
-#[doc = r" Value of the field"]
-pub struct DATACR {
-    bits: u8,
-}
-impl DATACR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `EXTCLOCK`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EXTCLOCKR {
-    #[doc = "Equal to INT_CLK frequency."]
-    VALUE1,
-    #[doc = "1/2 of INT_CLK frequency."]
-    VALUE2,
-    #[doc = "1/3 of INT_CLK frequency."]
-    VALUE3,
-    #[doc = "1/4 of INT_CLK frequency (default after reset)."]
-    VALUE4,
-}
-impl EXTCLOCKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            EXTCLOCKR::VALUE1 => 0,
-            EXTCLOCKR::VALUE2 => 1,
-            EXTCLOCKR::VALUE3 => 2,
-            EXTCLOCKR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EXTCLOCKR {
-        match value {
-            0 => EXTCLOCKR::VALUE1,
-            1 => EXTCLOCKR::VALUE2,
-            2 => EXTCLOCKR::VALUE3,
-            3 => EXTCLOCKR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EXTCLOCKR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EXTCLOCKR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == EXTCLOCKR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == EXTCLOCKR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `EXTDATA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EXTDATAR {
-    #[doc = "external memory outputs data every BFCLK cycle"]
-    VALUE1,
-    #[doc = "external memory outputs data every two BFCLK cycles"]
-    VALUE2,
-    #[doc = "external memory outputs data every four BFCLK cycles"]
-    VALUE3,
-    #[doc = "external memory outputs data every eight BFCLK cycles"]
-    VALUE4,
-}
-impl EXTDATAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            EXTDATAR::VALUE1 => 0,
-            EXTDATAR::VALUE2 => 1,
-            EXTDATAR::VALUE3 => 2,
-            EXTDATAR::VALUE4 => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> EXTDATAR {
-        match value {
-            0 => EXTDATAR::VALUE1,
-            1 => EXTDATAR::VALUE2,
-            2 => EXTDATAR::VALUE3,
-            3 => EXTDATAR::VALUE4,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == EXTDATAR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == EXTDATAR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == EXTDATAR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == EXTDATAR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `CMDDELAY`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CMDDELAYR {
-    #[doc = "0 clock cycle selected."]
-    VALUE1,
-    #[doc = "1 clock cycle selected."]
-    VALUE2,
-    #[doc = "14 clock cycles selected."]
-    VALUE3,
-    #[doc = "15 clock cycles selected."]
-    VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl CMDDELAYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CMDDELAYR::VALUE1 => 0,
-            CMDDELAYR::VALUE2 => 1,
-            CMDDELAYR::VALUE3 => 14,
-            CMDDELAYR::VALUE4 => 15,
-            CMDDELAYR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CMDDELAYR {
-        match value {
-            0 => CMDDELAYR::VALUE1,
-            1 => CMDDELAYR::VALUE2,
-            14 => CMDDELAYR::VALUE3,
-            15 => CMDDELAYR::VALUE4,
-            i => CMDDELAYR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == CMDDELAYR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CMDDELAYR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == CMDDELAYR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == CMDDELAYR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `AHOLDC`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AHOLDCR {
-    #[doc = "0 clock cycle selected"]
-    VALUE1,
-    #[doc = "1 clock cycle selected"]
-    VALUE2,
-    #[doc = "14 clock cycles selected"]
-    VALUE3,
-    #[doc = "15 clock cycles selected"]
-    VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl AHOLDCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            AHOLDCR::VALUE1 => 0,
-            AHOLDCR::VALUE2 => 1,
-            AHOLDCR::VALUE3 => 14,
-            AHOLDCR::VALUE4 => 15,
-            AHOLDCR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> AHOLDCR {
-        match value {
-            0 => AHOLDCR::VALUE1,
-            1 => AHOLDCR::VALUE2,
-            14 => AHOLDCR::VALUE3,
-            15 => AHOLDCR::VALUE4,
-            i => AHOLDCR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == AHOLDCR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == AHOLDCR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == AHOLDCR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == AHOLDCR::VALUE4
-    }
-}
-#[doc = "Possible values of the field `ADDRC`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDRCR {
-    #[doc = "1 clock cycle selected"]
-    VALUE1,
-    #[doc = "1 clock cycle selected"]
-    VALUE2,
-    #[doc = "14 clock cycles selected"]
-    VALUE3,
-    #[doc = "15 clock cycles selected"]
-    VALUE4,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl ADDRCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ADDRCR::VALUE1 => 0,
-            ADDRCR::VALUE2 => 1,
-            ADDRCR::VALUE3 => 14,
-            ADDRCR::VALUE4 => 15,
-            ADDRCR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ADDRCR {
-        match value {
-            0 => ADDRCR::VALUE1,
-            1 => ADDRCR::VALUE2,
-            14 => ADDRCR::VALUE3,
-            15 => ADDRCR::VALUE4,
-            i => ADDRCR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ADDRCR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ADDRCR::VALUE2
-    }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
-    pub fn is_value3(&self) -> bool {
-        *self == ADDRCR::VALUE3
-    }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
-    pub fn is_value4(&self) -> bool {
-        *self == ADDRCR::VALUE4
-    }
-}
-#[doc = "Values that can be written to the field `RDDTACS`"]
-pub enum RDDTACSW {
-    #[doc = "No Recovery Phase clock cycles available."]
-    VALUE1,
-    #[doc = "1 clock cycle selected."]
-    VALUE2,
-    #[doc = "14 clock cycles selected."]
-    VALUE3,
-    #[doc = "15 clock cycles selected."]
-    VALUE4,
-}
-impl RDDTACSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RDDTACSW::VALUE1 => 0,
-            RDDTACSW::VALUE2 => 1,
-            RDDTACSW::VALUE3 => 14,
-            RDDTACSW::VALUE4 => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RDDTACSW<'a> {
+#[doc = "Write proxy for field `WAITRDC`"]
+pub struct WAITRDC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RDDTACSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RDDTACSW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "No Recovery Phase clock cycles available."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(RDDTACSW::VALUE1)
-    }
-    #[doc = "1 clock cycle selected."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(RDDTACSW::VALUE2)
-    }
-    #[doc = "14 clock cycles selected."]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(RDDTACSW::VALUE3)
-    }
-    #[doc = "15 clock cycles selected."]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(RDDTACSW::VALUE4)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RDRECOVC`"]
-pub enum RDRECOVCW {
-    #[doc = "No Recovery Phase clock cycles available."]
-    VALUE1,
-    #[doc = "1 clock cycle selected."]
-    VALUE2,
-    #[doc = "6 clock cycles selected."]
-    VALUE3,
-    #[doc = "7 clock cycles selected."]
-    VALUE4,
-}
-impl RDRECOVCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RDRECOVCW::VALUE1 => 0,
-            RDRECOVCW::VALUE2 => 1,
-            RDRECOVCW::VALUE3 => 6,
-            RDRECOVCW::VALUE4 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RDRECOVCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RDRECOVCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RDRECOVCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "No Recovery Phase clock cycles available."]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(RDRECOVCW::VALUE1)
-    }
-    #[doc = "1 clock cycle selected."]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(RDRECOVCW::VALUE2)
-    }
-    #[doc = "6 clock cycles selected."]
-    #[inline]
-    pub fn value3(self) -> &'a mut W {
-        self.variant(RDRECOVCW::VALUE3)
-    }
-    #[doc = "7 clock cycles selected."]
-    #[inline]
-    pub fn value4(self) -> &'a mut W {
-        self.variant(RDRECOVCW::VALUE4)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `WAITRDC`"]
-pub enum WAITRDCW {
-    #[doc = "1 wait state."]
-    VALUE1,
-    #[doc = "1 wait states."]
-    VALUE2,
-    #[doc = "2 wait state."]
-    VALUE3,
-    #[doc = "30 wait states."]
-    VALUE4,
-    #[doc = "31 wait states."]
-    VALUE5,
-}
-impl WAITRDCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            WAITRDCW::VALUE1 => 0,
-            WAITRDCW::VALUE2 => 1,
-            WAITRDCW::VALUE3 => 2,
-            WAITRDCW::VALUE4 => 30,
-            WAITRDCW::VALUE5 => 31,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WAITRDCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _WAITRDCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WAITRDCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> WAITRDC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WAITRDC_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "1 wait state."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(WAITRDCW::VALUE1)
+        self.variant(WAITRDC_A::VALUE1)
     }
     #[doc = "1 wait states."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(WAITRDCW::VALUE2)
+        self.variant(WAITRDC_A::VALUE2)
     }
     #[doc = "2 wait state."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(WAITRDCW::VALUE3)
+        self.variant(WAITRDC_A::VALUE3)
     }
     #[doc = "30 wait states."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(WAITRDCW::VALUE4)
+        self.variant(WAITRDC_A::VALUE4)
     }
     #[doc = "31 wait states."]
-    #[inline]
+    #[inline(always)]
     pub fn value5(self) -> &'a mut W {
-        self.variant(WAITRDCW::VALUE5)
+        self.variant(WAITRDC_A::VALUE5)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 7)) | (((value as u32) & 0x1f) << 7);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DATACW<'a> {
+#[doc = "Reader of field `DATAC`"]
+pub type DATAC_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DATAC`"]
+pub struct DATAC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DATACW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DATAC_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 12)) | (((value as u32) & 0x0f) << 12);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EXTCLOCK`"]
-pub enum EXTCLOCKW {
-    #[doc = "Equal to INT_CLK frequency."]
+#[doc = "Frequency of external clock at pin BFCLKO\n\nValue on reset: 3"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EXTCLOCK_A {
+    #[doc = "0: Equal to INT_CLK frequency."]
     VALUE1,
-    #[doc = "1/2 of INT_CLK frequency."]
+    #[doc = "1: 1/2 of INT_CLK frequency."]
     VALUE2,
-    #[doc = "1/3 of INT_CLK frequency."]
+    #[doc = "2: 1/3 of INT_CLK frequency."]
     VALUE3,
-    #[doc = "1/4 of INT_CLK frequency (default after reset)."]
+    #[doc = "3: 1/4 of INT_CLK frequency (default after reset)."]
     VALUE4,
 }
-impl EXTCLOCKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EXTCLOCKW::VALUE1 => 0,
-            EXTCLOCKW::VALUE2 => 1,
-            EXTCLOCKW::VALUE3 => 2,
-            EXTCLOCKW::VALUE4 => 3,
+impl From<EXTCLOCK_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EXTCLOCK_A) -> Self {
+        match variant {
+            EXTCLOCK_A::VALUE1 => 0,
+            EXTCLOCK_A::VALUE2 => 1,
+            EXTCLOCK_A::VALUE3 => 2,
+            EXTCLOCK_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EXTCLOCKW<'a> {
+#[doc = "Reader of field `EXTCLOCK`"]
+pub type EXTCLOCK_R = crate::R<u8, EXTCLOCK_A>;
+impl EXTCLOCK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EXTCLOCK_A {
+        match self.bits {
+            0 => EXTCLOCK_A::VALUE1,
+            1 => EXTCLOCK_A::VALUE2,
+            2 => EXTCLOCK_A::VALUE3,
+            3 => EXTCLOCK_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EXTCLOCK_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EXTCLOCK_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == EXTCLOCK_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == EXTCLOCK_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `EXTCLOCK`"]
+pub struct EXTCLOCK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EXTCLOCKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EXTCLOCKW) -> &'a mut W {
+impl<'a> EXTCLOCK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXTCLOCK_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Equal to INT_CLK frequency."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EXTCLOCKW::VALUE1)
+        self.variant(EXTCLOCK_A::VALUE1)
     }
     #[doc = "1/2 of INT_CLK frequency."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EXTCLOCKW::VALUE2)
+        self.variant(EXTCLOCK_A::VALUE2)
     }
     #[doc = "1/3 of INT_CLK frequency."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(EXTCLOCKW::VALUE3)
+        self.variant(EXTCLOCK_A::VALUE3)
     }
     #[doc = "1/4 of INT_CLK frequency (default after reset)."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(EXTCLOCKW::VALUE4)
+        self.variant(EXTCLOCK_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EXTDATA`"]
-pub enum EXTDATAW {
-    #[doc = "external memory outputs data every BFCLK cycle"]
+#[doc = "Extended data\n\nValue on reset: 3"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EXTDATA_A {
+    #[doc = "0: external memory outputs data every BFCLK cycle"]
     VALUE1,
-    #[doc = "external memory outputs data every two BFCLK cycles"]
+    #[doc = "1: external memory outputs data every two BFCLK cycles"]
     VALUE2,
-    #[doc = "external memory outputs data every four BFCLK cycles"]
+    #[doc = "2: external memory outputs data every four BFCLK cycles"]
     VALUE3,
-    #[doc = "external memory outputs data every eight BFCLK cycles"]
+    #[doc = "3: external memory outputs data every eight BFCLK cycles"]
     VALUE4,
 }
-impl EXTDATAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            EXTDATAW::VALUE1 => 0,
-            EXTDATAW::VALUE2 => 1,
-            EXTDATAW::VALUE3 => 2,
-            EXTDATAW::VALUE4 => 3,
+impl From<EXTDATA_A> for u8 {
+    #[inline(always)]
+    fn from(variant: EXTDATA_A) -> Self {
+        match variant {
+            EXTDATA_A::VALUE1 => 0,
+            EXTDATA_A::VALUE2 => 1,
+            EXTDATA_A::VALUE3 => 2,
+            EXTDATA_A::VALUE4 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _EXTDATAW<'a> {
+#[doc = "Reader of field `EXTDATA`"]
+pub type EXTDATA_R = crate::R<u8, EXTDATA_A>;
+impl EXTDATA_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EXTDATA_A {
+        match self.bits {
+            0 => EXTDATA_A::VALUE1,
+            1 => EXTDATA_A::VALUE2,
+            2 => EXTDATA_A::VALUE3,
+            3 => EXTDATA_A::VALUE4,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EXTDATA_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == EXTDATA_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == EXTDATA_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == EXTDATA_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `EXTDATA`"]
+pub struct EXTDATA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EXTDATAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: EXTDATAW) -> &'a mut W {
+impl<'a> EXTDATA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXTDATA_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "external memory outputs data every BFCLK cycle"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(EXTDATAW::VALUE1)
+        self.variant(EXTDATA_A::VALUE1)
     }
     #[doc = "external memory outputs data every two BFCLK cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(EXTDATAW::VALUE2)
+        self.variant(EXTDATA_A::VALUE2)
     }
     #[doc = "external memory outputs data every four BFCLK cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(EXTDATAW::VALUE3)
+        self.variant(EXTDATA_A::VALUE3)
     }
     #[doc = "external memory outputs data every eight BFCLK cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(EXTDATAW::VALUE4)
+        self.variant(EXTDATA_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 18)) | (((value as u32) & 0x03) << 18);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `CMDDELAY`"]
-pub enum CMDDELAYW {
+#[doc = "Command Delay Cycles\n\nValue on reset: 15"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CMDDELAY_A {
+    #[doc = "0: 0 clock cycle selected."]
+    VALUE1,
+    #[doc = "1: 1 clock cycle selected."]
+    VALUE2,
+    #[doc = "14: 14 clock cycles selected."]
+    VALUE3,
+    #[doc = "15: 15 clock cycles selected."]
+    VALUE4,
+}
+impl From<CMDDELAY_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CMDDELAY_A) -> Self {
+        match variant {
+            CMDDELAY_A::VALUE1 => 0,
+            CMDDELAY_A::VALUE2 => 1,
+            CMDDELAY_A::VALUE3 => 14,
+            CMDDELAY_A::VALUE4 => 15,
+        }
+    }
+}
+#[doc = "Reader of field `CMDDELAY`"]
+pub type CMDDELAY_R = crate::R<u8, CMDDELAY_A>;
+impl CMDDELAY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CMDDELAY_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CMDDELAY_A::VALUE1),
+            1 => Val(CMDDELAY_A::VALUE2),
+            14 => Val(CMDDELAY_A::VALUE3),
+            15 => Val(CMDDELAY_A::VALUE4),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == CMDDELAY_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CMDDELAY_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == CMDDELAY_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == CMDDELAY_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `CMDDELAY`"]
+pub struct CMDDELAY_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CMDDELAY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CMDDELAY_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
     #[doc = "0 clock cycle selected."]
-    VALUE1,
-    #[doc = "1 clock cycle selected."]
-    VALUE2,
-    #[doc = "14 clock cycles selected."]
-    VALUE3,
-    #[doc = "15 clock cycles selected."]
-    VALUE4,
-}
-impl CMDDELAYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CMDDELAYW::VALUE1 => 0,
-            CMDDELAYW::VALUE2 => 1,
-            CMDDELAYW::VALUE3 => 14,
-            CMDDELAYW::VALUE4 => 15,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CMDDELAYW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CMDDELAYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CMDDELAYW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "0 clock cycle selected."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(CMDDELAYW::VALUE1)
+        self.variant(CMDDELAY_A::VALUE1)
     }
     #[doc = "1 clock cycle selected."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(CMDDELAYW::VALUE2)
+        self.variant(CMDDELAY_A::VALUE2)
     }
     #[doc = "14 clock cycles selected."]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(CMDDELAYW::VALUE3)
+        self.variant(CMDDELAY_A::VALUE3)
     }
     #[doc = "15 clock cycles selected."]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(CMDDELAYW::VALUE4)
+        self.variant(CMDDELAY_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 20)) | (((value as u32) & 0x0f) << 20);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `AHOLDC`"]
-pub enum AHOLDCW {
-    #[doc = "0 clock cycle selected"]
+#[doc = "Address Hold Cycles\n\nValue on reset: 15"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum AHOLDC_A {
+    #[doc = "0: 0 clock cycle selected"]
     VALUE1,
-    #[doc = "1 clock cycle selected"]
+    #[doc = "1: 1 clock cycle selected"]
     VALUE2,
-    #[doc = "14 clock cycles selected"]
+    #[doc = "14: 14 clock cycles selected"]
     VALUE3,
-    #[doc = "15 clock cycles selected"]
+    #[doc = "15: 15 clock cycles selected"]
     VALUE4,
 }
-impl AHOLDCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            AHOLDCW::VALUE1 => 0,
-            AHOLDCW::VALUE2 => 1,
-            AHOLDCW::VALUE3 => 14,
-            AHOLDCW::VALUE4 => 15,
+impl From<AHOLDC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: AHOLDC_A) -> Self {
+        match variant {
+            AHOLDC_A::VALUE1 => 0,
+            AHOLDC_A::VALUE2 => 1,
+            AHOLDC_A::VALUE3 => 14,
+            AHOLDC_A::VALUE4 => 15,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _AHOLDCW<'a> {
+#[doc = "Reader of field `AHOLDC`"]
+pub type AHOLDC_R = crate::R<u8, AHOLDC_A>;
+impl AHOLDC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, AHOLDC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(AHOLDC_A::VALUE1),
+            1 => Val(AHOLDC_A::VALUE2),
+            14 => Val(AHOLDC_A::VALUE3),
+            15 => Val(AHOLDC_A::VALUE4),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == AHOLDC_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == AHOLDC_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == AHOLDC_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == AHOLDC_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `AHOLDC`"]
+pub struct AHOLDC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AHOLDCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AHOLDCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> AHOLDC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AHOLDC_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "0 clock cycle selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(AHOLDCW::VALUE1)
+        self.variant(AHOLDC_A::VALUE1)
     }
     #[doc = "1 clock cycle selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(AHOLDCW::VALUE2)
+        self.variant(AHOLDC_A::VALUE2)
     }
     #[doc = "14 clock cycles selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(AHOLDCW::VALUE3)
+        self.variant(AHOLDC_A::VALUE3)
     }
     #[doc = "15 clock cycles selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(AHOLDCW::VALUE4)
+        self.variant(AHOLDC_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 24)) | (((value as u32) & 0x0f) << 24);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ADDRC`"]
-pub enum ADDRCW {
-    #[doc = "1 clock cycle selected"]
+#[doc = "Address Cycles\n\nValue on reset: 15"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADDRC_A {
+    #[doc = "0: 1 clock cycle selected"]
     VALUE1,
-    #[doc = "1 clock cycle selected"]
+    #[doc = "1: 1 clock cycle selected"]
     VALUE2,
-    #[doc = "14 clock cycles selected"]
+    #[doc = "14: 14 clock cycles selected"]
     VALUE3,
-    #[doc = "15 clock cycles selected"]
+    #[doc = "15: 15 clock cycles selected"]
     VALUE4,
 }
-impl ADDRCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ADDRCW::VALUE1 => 0,
-            ADDRCW::VALUE2 => 1,
-            ADDRCW::VALUE3 => 14,
-            ADDRCW::VALUE4 => 15,
+impl From<ADDRC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ADDRC_A) -> Self {
+        match variant {
+            ADDRC_A::VALUE1 => 0,
+            ADDRC_A::VALUE2 => 1,
+            ADDRC_A::VALUE3 => 14,
+            ADDRC_A::VALUE4 => 15,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ADDRCW<'a> {
+#[doc = "Reader of field `ADDRC`"]
+pub type ADDRC_R = crate::R<u8, ADDRC_A>;
+impl ADDRC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, ADDRC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(ADDRC_A::VALUE1),
+            1 => Val(ADDRC_A::VALUE2),
+            14 => Val(ADDRC_A::VALUE3),
+            15 => Val(ADDRC_A::VALUE4),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ADDRC_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ADDRC_A::VALUE2
+    }
+    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[inline(always)]
+    pub fn is_value3(&self) -> bool {
+        *self == ADDRC_A::VALUE3
+    }
+    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[inline(always)]
+    pub fn is_value4(&self) -> bool {
+        *self == ADDRC_A::VALUE4
+    }
+}
+#[doc = "Write proxy for field `ADDRC`"]
+pub struct ADDRC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDRCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADDRCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> ADDRC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADDRC_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "1 clock cycle selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ADDRCW::VALUE1)
+        self.variant(ADDRC_A::VALUE1)
     }
     #[doc = "1 clock cycle selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ADDRCW::VALUE2)
+        self.variant(ADDRC_A::VALUE2)
     }
     #[doc = "14 clock cycles selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(ADDRCW::VALUE3)
+        self.variant(ADDRC_A::VALUE3)
     }
     #[doc = "15 clock cycles selected"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(ADDRCW::VALUE4)
+        self.variant(ADDRC_A::VALUE4)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 28)) | (((value as u32) & 0x0f) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Recovery Cycles between Different Regions"]
-    #[inline]
-    pub fn rddtacs(&self) -> RDDTACSR {
-        RDDTACSR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn rddtacs(&self) -> RDDTACS_R {
+        RDDTACS_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:6 - Recovery Cycles after Read Accesses"]
-    #[inline]
-    pub fn rdrecovc(&self) -> RDRECOVCR {
-        RDRECOVCR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn rdrecovc(&self) -> RDRECOVC_R {
+        RDRECOVC_R::new(((self.bits >> 4) & 0x07) as u8)
     }
     #[doc = "Bits 7:11 - Programmed Wait States for read accesses"]
-    #[inline]
-    pub fn waitrdc(&self) -> WAITRDCR {
-        WAITRDCR::_from({
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn waitrdc(&self) -> WAITRDC_R {
+        WAITRDC_R::new(((self.bits >> 7) & 0x1f) as u8)
     }
     #[doc = "Bits 12:15 - Data Hold Cycles for Read Accesses"]
-    #[inline]
-    pub fn datac(&self) -> DATACR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DATACR { bits }
+    #[inline(always)]
+    pub fn datac(&self) -> DATAC_R {
+        DATAC_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 16:17 - Frequency of external clock at pin BFCLKO"]
-    #[inline]
-    pub fn extclock(&self) -> EXTCLOCKR {
-        EXTCLOCKR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn extclock(&self) -> EXTCLOCK_R {
+        EXTCLOCK_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bits 18:19 - Extended data"]
-    #[inline]
-    pub fn extdata(&self) -> EXTDATAR {
-        EXTDATAR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn extdata(&self) -> EXTDATA_R {
+        EXTDATA_R::new(((self.bits >> 18) & 0x03) as u8)
     }
     #[doc = "Bits 20:23 - Command Delay Cycles"]
-    #[inline]
-    pub fn cmddelay(&self) -> CMDDELAYR {
-        CMDDELAYR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn cmddelay(&self) -> CMDDELAY_R {
+        CMDDELAY_R::new(((self.bits >> 20) & 0x0f) as u8)
     }
     #[doc = "Bits 24:27 - Address Hold Cycles"]
-    #[inline]
-    pub fn aholdc(&self) -> AHOLDCR {
-        AHOLDCR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn aholdc(&self) -> AHOLDC_R {
+        AHOLDC_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
     #[doc = "Bits 28:31 - Address Cycles"]
-    #[inline]
-    pub fn addrc(&self) -> ADDRCR {
-        ADDRCR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn addrc(&self) -> ADDRC_R {
+        ADDRC_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 4294967295 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Recovery Cycles between Different Regions"]
-    #[inline]
-    pub fn rddtacs(&mut self) -> _RDDTACSW {
-        _RDDTACSW { w: self }
+    #[inline(always)]
+    pub fn rddtacs(&mut self) -> RDDTACS_W {
+        RDDTACS_W { w: self }
     }
     #[doc = "Bits 4:6 - Recovery Cycles after Read Accesses"]
-    #[inline]
-    pub fn rdrecovc(&mut self) -> _RDRECOVCW {
-        _RDRECOVCW { w: self }
+    #[inline(always)]
+    pub fn rdrecovc(&mut self) -> RDRECOVC_W {
+        RDRECOVC_W { w: self }
     }
     #[doc = "Bits 7:11 - Programmed Wait States for read accesses"]
-    #[inline]
-    pub fn waitrdc(&mut self) -> _WAITRDCW {
-        _WAITRDCW { w: self }
+    #[inline(always)]
+    pub fn waitrdc(&mut self) -> WAITRDC_W {
+        WAITRDC_W { w: self }
     }
     #[doc = "Bits 12:15 - Data Hold Cycles for Read Accesses"]
-    #[inline]
-    pub fn datac(&mut self) -> _DATACW {
-        _DATACW { w: self }
+    #[inline(always)]
+    pub fn datac(&mut self) -> DATAC_W {
+        DATAC_W { w: self }
     }
     #[doc = "Bits 16:17 - Frequency of external clock at pin BFCLKO"]
-    #[inline]
-    pub fn extclock(&mut self) -> _EXTCLOCKW {
-        _EXTCLOCKW { w: self }
+    #[inline(always)]
+    pub fn extclock(&mut self) -> EXTCLOCK_W {
+        EXTCLOCK_W { w: self }
     }
     #[doc = "Bits 18:19 - Extended data"]
-    #[inline]
-    pub fn extdata(&mut self) -> _EXTDATAW {
-        _EXTDATAW { w: self }
+    #[inline(always)]
+    pub fn extdata(&mut self) -> EXTDATA_W {
+        EXTDATA_W { w: self }
     }
     #[doc = "Bits 20:23 - Command Delay Cycles"]
-    #[inline]
-    pub fn cmddelay(&mut self) -> _CMDDELAYW {
-        _CMDDELAYW { w: self }
+    #[inline(always)]
+    pub fn cmddelay(&mut self) -> CMDDELAY_W {
+        CMDDELAY_W { w: self }
     }
     #[doc = "Bits 24:27 - Address Hold Cycles"]
-    #[inline]
-    pub fn aholdc(&mut self) -> _AHOLDCW {
-        _AHOLDCW { w: self }
+    #[inline(always)]
+    pub fn aholdc(&mut self) -> AHOLDC_W {
+        AHOLDC_W { w: self }
     }
     #[doc = "Bits 28:31 - Address Cycles"]
-    #[inline]
-    pub fn addrc(&mut self) -> _ADDRCW {
-        _ADDRCW { w: self }
+    #[inline(always)]
+    pub fn addrc(&mut self) -> ADDRC_W {
+        ADDRC_W { w: self }
     }
 }

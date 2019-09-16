@@ -1,419 +1,280 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ADDRSEL0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ADDRSEL0"]
+pub type R = crate::R<u32, super::ADDRSEL0>;
+#[doc = "Writer for register ADDRSEL0"]
+pub type W = crate::W<u32, super::ADDRSEL0>;
+#[doc = "Register ADDRSEL0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::ADDRSEL0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `REGENAB`"]
+#[doc = "Memory Region Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REGENABR {
-    #[doc = "Memory region is disabled (default after reset)."]
+pub enum REGENAB_A {
+    #[doc = "0: Memory region is disabled (default after reset)."]
     VALUE1,
-    #[doc = "Memory region is enabled."]
+    #[doc = "1: Memory region is enabled."]
     VALUE2,
 }
-impl REGENABR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            REGENABR::VALUE1 => false,
-            REGENABR::VALUE2 => true,
+impl From<REGENAB_A> for bool {
+    #[inline(always)]
+    fn from(variant: REGENAB_A) -> Self {
+        match variant {
+            REGENAB_A::VALUE1 => false,
+            REGENAB_A::VALUE2 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> REGENABR {
-        match value {
-            false => REGENABR::VALUE1,
-            true => REGENABR::VALUE2,
+}
+#[doc = "Reader of field `REGENAB`"]
+pub type REGENAB_R = crate::R<bool, REGENAB_A>;
+impl REGENAB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> REGENAB_A {
+        match self.bits {
+            false => REGENAB_A::VALUE1,
+            true => REGENAB_A::VALUE2,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == REGENABR::VALUE1
+        *self == REGENAB_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == REGENABR::VALUE2
+        *self == REGENAB_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `ALTENAB`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ALTENABR {
-    #[doc = "Memory region is disabled (default after reset)."]
-    VALUE1,
-    #[doc = "Memory region is enabled."]
-    VALUE2,
-}
-impl ALTENABR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ALTENABR::VALUE1 => false,
-            ALTENABR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ALTENABR {
-        match value {
-            false => ALTENABR::VALUE1,
-            true => ALTENABR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ALTENABR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ALTENABR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `WPROT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WPROTR {
-    #[doc = "Region is enabled for write accesses"]
-    VALUE1,
-    #[doc = "Region is write protected."]
-    VALUE2,
-}
-impl WPROTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WPROTR::VALUE1 => false,
-            WPROTR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WPROTR {
-        match value {
-            false => WPROTR::VALUE1,
-            true => WPROTR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == WPROTR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == WPROTR::VALUE2
-    }
-}
-#[doc = "Values that can be written to the field `REGENAB`"]
-pub enum REGENABW {
-    #[doc = "Memory region is disabled (default after reset)."]
-    VALUE1,
-    #[doc = "Memory region is enabled."]
-    VALUE2,
-}
-impl REGENABW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            REGENABW::VALUE1 => false,
-            REGENABW::VALUE2 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _REGENABW<'a> {
+#[doc = "Write proxy for field `REGENAB`"]
+pub struct REGENAB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REGENABW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REGENABW) -> &'a mut W {
+impl<'a> REGENAB_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REGENAB_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Memory region is disabled (default after reset)."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(REGENABW::VALUE1)
+        self.variant(REGENAB_A::VALUE1)
     }
     #[doc = "Memory region is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(REGENABW::VALUE2)
+        self.variant(REGENAB_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ALTENAB`"]
-pub enum ALTENABW {
-    #[doc = "Memory region is disabled (default after reset)."]
+#[doc = "Alternate Region Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ALTENAB_A {
+    #[doc = "0: Memory region is disabled (default after reset)."]
     VALUE1,
-    #[doc = "Memory region is enabled."]
+    #[doc = "1: Memory region is enabled."]
     VALUE2,
 }
-impl ALTENABW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ALTENABW::VALUE1 => false,
-            ALTENABW::VALUE2 => true,
+impl From<ALTENAB_A> for bool {
+    #[inline(always)]
+    fn from(variant: ALTENAB_A) -> Self {
+        match variant {
+            ALTENAB_A::VALUE1 => false,
+            ALTENAB_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ALTENABW<'a> {
+#[doc = "Reader of field `ALTENAB`"]
+pub type ALTENAB_R = crate::R<bool, ALTENAB_A>;
+impl ALTENAB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ALTENAB_A {
+        match self.bits {
+            false => ALTENAB_A::VALUE1,
+            true => ALTENAB_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ALTENAB_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ALTENAB_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ALTENAB`"]
+pub struct ALTENAB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ALTENABW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ALTENABW) -> &'a mut W {
+impl<'a> ALTENAB_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ALTENAB_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Memory region is disabled (default after reset)."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ALTENABW::VALUE1)
+        self.variant(ALTENAB_A::VALUE1)
     }
     #[doc = "Memory region is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ALTENABW::VALUE2)
+        self.variant(ALTENAB_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `WPROT`"]
-pub enum WPROTW {
-    #[doc = "Region is enabled for write accesses"]
+#[doc = "Memory Region Write Protect\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WPROT_A {
+    #[doc = "0: Region is enabled for write accesses"]
     VALUE1,
-    #[doc = "Region is write protected."]
+    #[doc = "1: Region is write protected."]
     VALUE2,
 }
-impl WPROTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WPROTW::VALUE1 => false,
-            WPROTW::VALUE2 => true,
+impl From<WPROT_A> for bool {
+    #[inline(always)]
+    fn from(variant: WPROT_A) -> Self {
+        match variant {
+            WPROT_A::VALUE1 => false,
+            WPROT_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _WPROTW<'a> {
+#[doc = "Reader of field `WPROT`"]
+pub type WPROT_R = crate::R<bool, WPROT_A>;
+impl WPROT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WPROT_A {
+        match self.bits {
+            false => WPROT_A::VALUE1,
+            true => WPROT_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == WPROT_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == WPROT_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `WPROT`"]
+pub struct WPROT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WPROTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WPROTW) -> &'a mut W {
+impl<'a> WPROT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WPROT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Region is enabled for write accesses"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(WPROTW::VALUE1)
+        self.variant(WPROT_A::VALUE1)
     }
     #[doc = "Region is write protected."]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(WPROTW::VALUE2)
+        self.variant(WPROT_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Memory Region Enable"]
-    #[inline]
-    pub fn regenab(&self) -> REGENABR {
-        REGENABR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn regenab(&self) -> REGENAB_R {
+        REGENAB_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Alternate Region Enable"]
-    #[inline]
-    pub fn altenab(&self) -> ALTENABR {
-        ALTENABR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn altenab(&self) -> ALTENAB_R {
+        ALTENAB_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Memory Region Write Protect"]
-    #[inline]
-    pub fn wprot(&self) -> WPROTR {
-        WPROTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wprot(&self) -> WPROT_R {
+        WPROT_R::new(((self.bits >> 2) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Memory Region Enable"]
-    #[inline]
-    pub fn regenab(&mut self) -> _REGENABW {
-        _REGENABW { w: self }
+    #[inline(always)]
+    pub fn regenab(&mut self) -> REGENAB_W {
+        REGENAB_W { w: self }
     }
     #[doc = "Bit 1 - Alternate Region Enable"]
-    #[inline]
-    pub fn altenab(&mut self) -> _ALTENABW {
-        _ALTENABW { w: self }
+    #[inline(always)]
+    pub fn altenab(&mut self) -> ALTENAB_W {
+        ALTENAB_W { w: self }
     }
     #[doc = "Bit 2 - Memory Region Write Protect"]
-    #[inline]
-    pub fn wprot(&mut self) -> _WPROTW {
-        _WPROTW { w: self }
+    #[inline(always)]
+    pub fn wprot(&mut self) -> WPROT_W {
+        WPROT_W { w: self }
     }
 }

@@ -1,565 +1,286 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SDRMREF {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SDRMREF"]
+pub type R = crate::R<u32, super::SDRMREF>;
+#[doc = "Writer for register SDRMREF"]
+pub type W = crate::W<u32, super::SDRMREF>;
+#[doc = "Register SDRMREF `reset()`'s with value 0"]
+impl crate::ResetValue for super::SDRMREF {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct RES_DLYR {
-    bits: u8,
-}
-impl RES_DLYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ARFSHR {
-    bits: bool,
-}
-impl ARFSHR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SELFREX_DLYR {
-    bits: u8,
-}
-impl SELFREX_DLYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERFSHCR {
-    bits: u8,
-}
-impl ERFSHCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AUTOSELFRR {
-    bits: bool,
-}
-impl AUTOSELFRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SELFRENR {
-    bits: bool,
-}
-impl SELFRENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SELFRENSTR {
-    bits: bool,
-}
-impl SELFRENSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SELFREXR {
-    bits: bool,
-}
-impl SELFREXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SELFREXSTR {
-    bits: bool,
-}
-impl SELFREXSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct REFRESHRR {
-    bits: u8,
-}
-impl REFRESHRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct REFRESHCR {
-    bits: u8,
-}
-impl REFRESHCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RES_DLYW<'a> {
+#[doc = "Reader of field `RES_DLY`"]
+pub type RES_DLY_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RES_DLY`"]
+pub struct RES_DLY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RES_DLYW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> RES_DLY_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 25)) | (((value as u32) & 0x07) << 25);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ARFSHW<'a> {
+#[doc = "Reader of field `ARFSH`"]
+pub type ARFSH_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ARFSH`"]
+pub struct ARFSH_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ARFSHW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ARFSH_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SELFREX_DLYW<'a> {
+#[doc = "Reader of field `SELFREX_DLY`"]
+pub type SELFREX_DLY_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SELFREX_DLY`"]
+pub struct SELFREX_DLY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SELFREX_DLYW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SELFREX_DLY_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERFSHCW<'a> {
+#[doc = "Reader of field `ERFSHC`"]
+pub type ERFSHC_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `ERFSHC`"]
+pub struct ERFSHC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERFSHCW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> ERFSHC_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _AUTOSELFRW<'a> {
+#[doc = "Reader of field `AUTOSELFR`"]
+pub type AUTOSELFR_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `AUTOSELFR`"]
+pub struct AUTOSELFR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AUTOSELFRW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> AUTOSELFR_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SELFRENW<'a> {
+#[doc = "Reader of field `SELFREN`"]
+pub type SELFREN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SELFREN`"]
+pub struct SELFREN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SELFRENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SELFREN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SELFREXW<'a> {
+#[doc = "Reader of field `SELFRENST`"]
+pub type SELFRENST_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SELFREX`"]
+pub type SELFREX_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SELFREX`"]
+pub struct SELFREX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SELFREXW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SELFREX_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _REFRESHRW<'a> {
+#[doc = "Reader of field `SELFREXST`"]
+pub type SELFREXST_R = crate::R<bool, bool>;
+#[doc = "Reader of field `REFRESHR`"]
+pub type REFRESHR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `REFRESHR`"]
+pub struct REFRESHR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REFRESHRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> REFRESHR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 6)) | (((value as u32) & 0x07) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _REFRESHCW<'a> {
+#[doc = "Reader of field `REFRESHC`"]
+pub type REFRESHC_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `REFRESHC`"]
+pub struct REFRESHC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REFRESHCW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> REFRESHC_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 25:27 - Delay on Power Down Exit"]
-    #[inline]
-    pub fn res_dly(&self) -> RES_DLYR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        RES_DLYR { bits }
+    #[inline(always)]
+    pub fn res_dly(&self) -> RES_DLY_R {
+        RES_DLY_R::new(((self.bits >> 25) & 0x07) as u8)
     }
     #[doc = "Bit 24 - Auto Refresh on Self refresh Exit"]
-    #[inline]
-    pub fn arfsh(&self) -> ARFSHR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ARFSHR { bits }
+    #[inline(always)]
+    pub fn arfsh(&self) -> ARFSH_R {
+        ARFSH_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bits 16:23 - Self Refresh Exit Delay"]
-    #[inline]
-    pub fn selfrex_dly(&self) -> SELFREX_DLYR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SELFREX_DLYR { bits }
+    #[inline(always)]
+    pub fn selfrex_dly(&self) -> SELFREX_DLY_R {
+        SELFREX_DLY_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 14:15 - Extended Refresh Counter Period"]
-    #[inline]
-    pub fn erfshc(&self) -> ERFSHCR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ERFSHCR { bits }
+    #[inline(always)]
+    pub fn erfshc(&self) -> ERFSHC_R {
+        ERFSHC_R::new(((self.bits >> 14) & 0x03) as u8)
     }
     #[doc = "Bit 13 - Automatic Self Refresh"]
-    #[inline]
-    pub fn autoselfr(&self) -> AUTOSELFRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AUTOSELFRR { bits }
+    #[inline(always)]
+    pub fn autoselfr(&self) -> AUTOSELFR_R {
+        AUTOSELFR_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Self Refresh Entry"]
-    #[inline]
-    pub fn selfren(&self) -> SELFRENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SELFRENR { bits }
+    #[inline(always)]
+    pub fn selfren(&self) -> SELFREN_R {
+        SELFREN_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Self Refresh Entry Status."]
-    #[inline]
-    pub fn selfrenst(&self) -> SELFRENSTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SELFRENSTR { bits }
+    #[inline(always)]
+    pub fn selfrenst(&self) -> SELFRENST_R {
+        SELFRENST_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Self Refresh Exit (Power Up)."]
-    #[inline]
-    pub fn selfrex(&self) -> SELFREXR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SELFREXR { bits }
+    #[inline(always)]
+    pub fn selfrex(&self) -> SELFREX_R {
+        SELFREX_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Self Refresh Exit Status."]
-    #[inline]
-    pub fn selfrexst(&self) -> SELFREXSTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SELFREXSTR { bits }
+    #[inline(always)]
+    pub fn selfrexst(&self) -> SELFREXST_R {
+        SELFREXST_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bits 6:8 - Number of refresh commands"]
-    #[inline]
-    pub fn refreshr(&self) -> REFRESHRR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        REFRESHRR { bits }
+    #[inline(always)]
+    pub fn refreshr(&self) -> REFRESHR_R {
+        REFRESHR_R::new(((self.bits >> 6) & 0x07) as u8)
     }
     #[doc = "Bits 0:5 - Refresh counter period"]
-    #[inline]
-    pub fn refreshc(&self) -> REFRESHCR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        REFRESHCR { bits }
+    #[inline(always)]
+    pub fn refreshc(&self) -> REFRESHC_R {
+        REFRESHC_R::new((self.bits & 0x3f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 25:27 - Delay on Power Down Exit"]
-    #[inline]
-    pub fn res_dly(&mut self) -> _RES_DLYW {
-        _RES_DLYW { w: self }
+    #[inline(always)]
+    pub fn res_dly(&mut self) -> RES_DLY_W {
+        RES_DLY_W { w: self }
     }
     #[doc = "Bit 24 - Auto Refresh on Self refresh Exit"]
-    #[inline]
-    pub fn arfsh(&mut self) -> _ARFSHW {
-        _ARFSHW { w: self }
+    #[inline(always)]
+    pub fn arfsh(&mut self) -> ARFSH_W {
+        ARFSH_W { w: self }
     }
     #[doc = "Bits 16:23 - Self Refresh Exit Delay"]
-    #[inline]
-    pub fn selfrex_dly(&mut self) -> _SELFREX_DLYW {
-        _SELFREX_DLYW { w: self }
+    #[inline(always)]
+    pub fn selfrex_dly(&mut self) -> SELFREX_DLY_W {
+        SELFREX_DLY_W { w: self }
     }
     #[doc = "Bits 14:15 - Extended Refresh Counter Period"]
-    #[inline]
-    pub fn erfshc(&mut self) -> _ERFSHCW {
-        _ERFSHCW { w: self }
+    #[inline(always)]
+    pub fn erfshc(&mut self) -> ERFSHC_W {
+        ERFSHC_W { w: self }
     }
     #[doc = "Bit 13 - Automatic Self Refresh"]
-    #[inline]
-    pub fn autoselfr(&mut self) -> _AUTOSELFRW {
-        _AUTOSELFRW { w: self }
+    #[inline(always)]
+    pub fn autoselfr(&mut self) -> AUTOSELFR_W {
+        AUTOSELFR_W { w: self }
     }
     #[doc = "Bit 12 - Self Refresh Entry"]
-    #[inline]
-    pub fn selfren(&mut self) -> _SELFRENW {
-        _SELFRENW { w: self }
+    #[inline(always)]
+    pub fn selfren(&mut self) -> SELFREN_W {
+        SELFREN_W { w: self }
     }
     #[doc = "Bit 10 - Self Refresh Exit (Power Up)."]
-    #[inline]
-    pub fn selfrex(&mut self) -> _SELFREXW {
-        _SELFREXW { w: self }
+    #[inline(always)]
+    pub fn selfrex(&mut self) -> SELFREX_W {
+        SELFREX_W { w: self }
     }
     #[doc = "Bits 6:8 - Number of refresh commands"]
-    #[inline]
-    pub fn refreshr(&mut self) -> _REFRESHRW {
-        _REFRESHRW { w: self }
+    #[inline(always)]
+    pub fn refreshr(&mut self) -> REFRESHR_W {
+        REFRESHR_W { w: self }
     }
     #[doc = "Bits 0:5 - Refresh counter period"]
-    #[inline]
-    pub fn refreshc(&mut self) -> _REFRESHCW {
-        _REFRESHCW { w: self }
+    #[inline(always)]
+    pub fn refreshc(&mut self) -> REFRESHC_W {
+        REFRESHC_W { w: self }
     }
 }

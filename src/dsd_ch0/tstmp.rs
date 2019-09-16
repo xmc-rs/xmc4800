@@ -1,81 +1,25 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::TSTMP {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct RESULTR {
-    bits: u16,
-}
-impl RESULTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CFMDCNTR {
-    bits: u8,
-}
-impl CFMDCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NVALCNTR {
-    bits: u8,
-}
-impl NVALCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register TSTMP"]
+pub type R = crate::R<u32, super::TSTMP>;
+#[doc = "Reader of field `RESULT`"]
+pub type RESULT_R = crate::R<u16, u16>;
+#[doc = "Reader of field `CFMDCNT`"]
+pub type CFMDCNT_R = crate::R<u8, u8>;
+#[doc = "Reader of field `NVALCNT`"]
+pub type NVALCNT_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Result of most recent conversion"]
-    #[inline]
-    pub fn result(&self) -> RESULTR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        RESULTR { bits }
+    #[inline(always)]
+    pub fn result(&self) -> RESULT_R {
+        RESULT_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:23 - CIC Filter (Main Chain) Decimation Counter"]
-    #[inline]
-    pub fn cfmdcnt(&self) -> CFMDCNTR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CFMDCNTR { bits }
+    #[inline(always)]
+    pub fn cfmdcnt(&self) -> CFMDCNT_R {
+        CFMDCNT_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:29 - Number of Values Counted"]
-    #[inline]
-    pub fn nvalcnt(&self) -> NVALCNTR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NVALCNTR { bits }
+    #[inline(always)]
+    pub fn nvalcnt(&self) -> NVALCNT_R {
+        NVALCNT_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }

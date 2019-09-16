@@ -1,343 +1,216 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::USERCON {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register USERCON"]
+pub type R = crate::R<u32, super::USERCON>;
+#[doc = "Writer for register USERCON"]
+pub type W = crate::W<u32, super::USERCON>;
+#[doc = "Register USERCON `reset()`'s with value 0"]
+impl crate::ResetValue for super::USERCON {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct DIPR {
-    bits: bool,
-}
-impl DIPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `ADDIO`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADDIOR {
-    #[doc = "Address Bit is required for addressing memory"]
-    VALUE1,
-    #[doc = "Address Bit is available for GPIO function"]
-    VALUE2,
-    #[doc = r" Reserved"]
-    _Reserved(u16),
-}
-impl ADDIOR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        match *self {
-            ADDIOR::VALUE1 => 0,
-            ADDIOR::VALUE2 => 1,
-            ADDIOR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u16) -> ADDIOR {
-        match value {
-            0 => ADDIOR::VALUE1,
-            1 => ADDIOR::VALUE2,
-            i => ADDIOR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ADDIOR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ADDIOR::VALUE2
-    }
-}
-#[doc = "Possible values of the field `ADVIO`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADVIOR {
-    #[doc = "ADV pin is required for controlling memory"]
-    VALUE1,
-    #[doc = "ADV pin is available for GPIO function"]
-    VALUE2,
-}
-impl ADVIOR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ADVIOR::VALUE1 => false,
-            ADVIOR::VALUE2 => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ADVIOR {
-        match value {
-            false => ADVIOR::VALUE1,
-            true => ADVIOR::VALUE2,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == ADVIOR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == ADVIOR::VALUE2
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DIPW<'a> {
+#[doc = "Reader of field `DIP`"]
+pub type DIP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DIP`"]
+pub struct DIP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DIPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DIP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ADDIO`"]
-pub enum ADDIOW {
-    #[doc = "Address Bit is required for addressing memory"]
+#[doc = "Address Pins to GPIO Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADDIO_A {
+    #[doc = "0: Address Bit is required for addressing memory"]
     VALUE1,
-    #[doc = "Address Bit is available for GPIO function"]
+    #[doc = "1: Address Bit is available for GPIO function"]
     VALUE2,
 }
-impl ADDIOW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u16 {
-        match *self {
-            ADDIOW::VALUE1 => 0,
-            ADDIOW::VALUE2 => 1,
+impl From<ADDIO_A> for u16 {
+    #[inline(always)]
+    fn from(variant: ADDIO_A) -> Self {
+        match variant {
+            ADDIO_A::VALUE1 => 0,
+            ADDIO_A::VALUE2 => 1,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ADDIOW<'a> {
+#[doc = "Reader of field `ADDIO`"]
+pub type ADDIO_R = crate::R<u16, ADDIO_A>;
+impl ADDIO_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u16, ADDIO_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(ADDIO_A::VALUE1),
+            1 => Val(ADDIO_A::VALUE2),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ADDIO_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ADDIO_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ADDIO`"]
+pub struct ADDIO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADDIOW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADDIOW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> ADDIO_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADDIO_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Address Bit is required for addressing memory"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ADDIOW::VALUE1)
+        self.variant(ADDIO_A::VALUE1)
     }
     #[doc = "Address Bit is available for GPIO function"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ADDIOW::VALUE2)
+        self.variant(ADDIO_A::VALUE2)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 511;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01ff << 16)) | (((value as u32) & 0x01ff) << 16);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ADVIO`"]
-pub enum ADVIOW {
-    #[doc = "ADV pin is required for controlling memory"]
+#[doc = "ADV Pin to GPIO Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADVIO_A {
+    #[doc = "0: ADV pin is required for controlling memory"]
     VALUE1,
-    #[doc = "ADV pin is available for GPIO function"]
+    #[doc = "1: ADV pin is available for GPIO function"]
     VALUE2,
 }
-impl ADVIOW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADVIOW::VALUE1 => false,
-            ADVIOW::VALUE2 => true,
+impl From<ADVIO_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADVIO_A) -> Self {
+        match variant {
+            ADVIO_A::VALUE1 => false,
+            ADVIO_A::VALUE2 => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ADVIOW<'a> {
+#[doc = "Reader of field `ADVIO`"]
+pub type ADVIO_R = crate::R<bool, ADVIO_A>;
+impl ADVIO_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADVIO_A {
+        match self.bits {
+            false => ADVIO_A::VALUE1,
+            true => ADVIO_A::VALUE2,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == ADVIO_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == ADVIO_A::VALUE2
+    }
+}
+#[doc = "Write proxy for field `ADVIO`"]
+pub struct ADVIO_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADVIOW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADVIOW) -> &'a mut W {
+impl<'a> ADVIO_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADVIO_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "ADV pin is required for controlling memory"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(ADVIOW::VALUE1)
+        self.variant(ADVIO_A::VALUE1)
     }
     #[doc = "ADV pin is available for GPIO function"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(ADVIOW::VALUE2)
+        self.variant(ADVIO_A::VALUE2)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Disable Internal Pipelining"]
-    #[inline]
-    pub fn dip(&self) -> DIPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DIPR { bits }
+    #[inline(always)]
+    pub fn dip(&self) -> DIP_R {
+        DIP_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bits 16:24 - Address Pins to GPIO Mode"]
-    #[inline]
-    pub fn addio(&self) -> ADDIOR {
-        ADDIOR::_from({
-            const MASK: u16 = 511;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        })
+    #[inline(always)]
+    pub fn addio(&self) -> ADDIO_R {
+        ADDIO_R::new(((self.bits >> 16) & 0x01ff) as u16)
     }
     #[doc = "Bit 25 - ADV Pin to GPIO Mode"]
-    #[inline]
-    pub fn advio(&self) -> ADVIOR {
-        ADVIOR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn advio(&self) -> ADVIO_R {
+        ADVIO_R::new(((self.bits >> 25) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Disable Internal Pipelining"]
-    #[inline]
-    pub fn dip(&mut self) -> _DIPW {
-        _DIPW { w: self }
+    #[inline(always)]
+    pub fn dip(&mut self) -> DIP_W {
+        DIP_W { w: self }
     }
     #[doc = "Bits 16:24 - Address Pins to GPIO Mode"]
-    #[inline]
-    pub fn addio(&mut self) -> _ADDIOW {
-        _ADDIOW { w: self }
+    #[inline(always)]
+    pub fn addio(&mut self) -> ADDIO_W {
+        ADDIO_W { w: self }
     }
     #[doc = "Bit 25 - ADV Pin to GPIO Mode"]
-    #[inline]
-    pub fn advio(&mut self) -> _ADVIOW {
-        _ADVIOW { w: self }
+    #[inline(always)]
+    pub fn advio(&mut self) -> ADVIO_W {
+        ADVIO_W { w: self }
     }
 }

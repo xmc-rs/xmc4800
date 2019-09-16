@@ -1,621 +1,429 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SDRMOD {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R { bits: self.register.get() }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SDRMOD"]
+pub type R = crate::R<u32, super::SDRMOD>;
+#[doc = "Writer for register SDRMOD"]
+pub type W = crate::W<u32, super::SDRMOD>;
+#[doc = "Register SDRMOD `reset()`'s with value 0x20"]
+impl crate::ResetValue for super::SDRMOD {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x20
     }
 }
-#[doc = r" Value of the field"]
-pub struct XBAR {
-    bits: u8,
+#[doc = "Reader of field `XBA`"]
+pub type XBA_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `XBA`"]
+pub struct XBA_W<'a> {
+    w: &'a mut W,
 }
-impl XBAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> XBA_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 28)) | (((value as u32) & 0x0f) << 28);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct XOPMR {
-    bits: u16,
+#[doc = "Reader of field `XOPM`"]
+pub type XOPM_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `XOPM`"]
+pub struct XOPM_W<'a> {
+    w: &'a mut W,
 }
-impl XOPMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
+impl<'a> XOPM_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0fff << 16)) | (((value as u32) & 0x0fff) << 16);
+        self.w
     }
 }
-#[doc = "Possible values of the field `OPMODE`"]
+#[doc = "Write proxy for field `COLDSTART`"]
+pub struct COLDSTART_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> COLDSTART_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w
+    }
+}
+#[doc = "Operation Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OPMODER {
+pub enum OPMODE_A {
+    #[doc = "0: Only this value must be written (default after reset)"]
+    VALUE1,
+}
+impl From<OPMODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: OPMODE_A) -> Self {
+        match variant {
+            OPMODE_A::VALUE1 => 0,
+        }
+    }
+}
+#[doc = "Reader of field `OPMODE`"]
+pub type OPMODE_R = crate::R<u8, OPMODE_A>;
+impl OPMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, OPMODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(OPMODE_A::VALUE1),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == OPMODE_A::VALUE1
+    }
+}
+#[doc = "Write proxy for field `OPMODE`"]
+pub struct OPMODE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> OPMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: OPMODE_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
     #[doc = "Only this value must be written (default after reset)"]
-    VALUE1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(OPMODE_A::VALUE1)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x7f << 7)) | (((value as u32) & 0x7f) << 7);
+        self.w
+    }
 }
-impl OPMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            OPMODER::VALUE1 => 0,
-            OPMODER::_Reserved(bits) => bits,
+#[doc = "CAS latency\n\nValue on reset: 2"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CASLAT_A {
+    #[doc = "2: Two clocks (default after reset)"]
+    VALUE1,
+    #[doc = "3: Three clocks"]
+    VALUE2,
+}
+impl From<CASLAT_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CASLAT_A) -> Self {
+        match variant {
+            CASLAT_A::VALUE1 => 2,
+            CASLAT_A::VALUE2 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> OPMODER {
-        match value {
-            0 => OPMODER::VALUE1,
-            i => OPMODER::_Reserved(i),
+}
+#[doc = "Reader of field `CASLAT`"]
+pub type CASLAT_R = crate::R<u8, CASLAT_A>;
+impl CASLAT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CASLAT_A> {
+        use crate::Variant::*;
+        match self.bits {
+            2 => Val(CASLAT_A::VALUE1),
+            3 => Val(CASLAT_A::VALUE2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == OPMODER::VALUE1
+        *self == CASLAT_A::VALUE1
+    }
+    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[inline(always)]
+    pub fn is_value2(&self) -> bool {
+        *self == CASLAT_A::VALUE2
     }
 }
-#[doc = "Possible values of the field `CASLAT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CASLATR {
+#[doc = "Write proxy for field `CASLAT`"]
+pub struct CASLAT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CASLAT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CASLAT_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
     #[doc = "Two clocks (default after reset)"]
-    VALUE1,
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(CASLAT_A::VALUE1)
+    }
     #[doc = "Three clocks"]
-    VALUE2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
+    #[inline(always)]
+    pub fn value2(self) -> &'a mut W {
+        self.variant(CASLAT_A::VALUE2)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
+        self.w
+    }
 }
-impl CASLATR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CASLATR::VALUE1 => 2,
-            CASLATR::VALUE2 => 3,
-            CASLATR::_Reserved(bits) => bits,
+#[doc = "Burst type\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BTYP_A {
+    #[doc = "0: Only this value should be written (default after reset)"]
+    VALUE1,
+}
+impl From<BTYP_A> for bool {
+    #[inline(always)]
+    fn from(variant: BTYP_A) -> Self {
+        match variant {
+            BTYP_A::VALUE1 => false,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CASLATR {
-        match value {
-            2 => CASLATR::VALUE1,
-            3 => CASLATR::VALUE2,
-            i => CASLATR::_Reserved(i),
+}
+#[doc = "Reader of field `BTYP`"]
+pub type BTYP_R = crate::R<bool, BTYP_A>;
+impl BTYP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<bool, BTYP_A> {
+        use crate::Variant::*;
+        match self.bits {
+            false => Val(BTYP_A::VALUE1),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CASLATR::VALUE1
-    }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
-    pub fn is_value2(&self) -> bool {
-        *self == CASLATR::VALUE2
+        *self == BTYP_A::VALUE1
     }
 }
-#[doc = "Possible values of the field `BTYP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BTYPR {
+#[doc = "Write proxy for field `BTYP`"]
+pub struct BTYP_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> BTYP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BTYP_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Only this value should be written (default after reset)"]
-    VALUE1,
-    #[doc = r" Reserved"]
-    _Reserved(bool),
-}
-impl BTYPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(BTYP_A::VALUE1)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BTYPR::VALUE1 => false,
-            BTYPR::_Reserved(bits) => bits,
-        }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BTYPR {
-        match value {
-            false => BTYPR::VALUE1,
-            i => BTYPR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
-    pub fn is_value1(&self) -> bool {
-        *self == BTYPR::VALUE1
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
-#[doc = "Possible values of the field `BURSTL`"]
+#[doc = "Burst length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BURSTLR {
-    #[doc = "1 (default after reset)"]
+pub enum BURSTL_A {
+    #[doc = "0: 1 (default after reset)"]
     VALUE1,
-    #[doc = "2"]
+    #[doc = "1: 2"]
     VALUE2,
-    #[doc = "4"]
+    #[doc = "2: 4"]
     VALUE3,
-    #[doc = "8"]
+    #[doc = "3: 8"]
     VALUE4,
-    #[doc = "16"]
+    #[doc = "4: 16"]
     VALUE5,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl BURSTLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            BURSTLR::VALUE1 => 0,
-            BURSTLR::VALUE2 => 1,
-            BURSTLR::VALUE3 => 2,
-            BURSTLR::VALUE4 => 3,
-            BURSTLR::VALUE5 => 4,
-            BURSTLR::_Reserved(bits) => bits,
+impl From<BURSTL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: BURSTL_A) -> Self {
+        match variant {
+            BURSTL_A::VALUE1 => 0,
+            BURSTL_A::VALUE2 => 1,
+            BURSTL_A::VALUE3 => 2,
+            BURSTL_A::VALUE4 => 3,
+            BURSTL_A::VALUE5 => 4,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> BURSTLR {
-        match value {
-            0 => BURSTLR::VALUE1,
-            1 => BURSTLR::VALUE2,
-            2 => BURSTLR::VALUE3,
-            3 => BURSTLR::VALUE4,
-            4 => BURSTLR::VALUE5,
-            i => BURSTLR::_Reserved(i),
+}
+#[doc = "Reader of field `BURSTL`"]
+pub type BURSTL_R = crate::R<u8, BURSTL_A>;
+impl BURSTL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, BURSTL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(BURSTL_A::VALUE1),
+            1 => Val(BURSTL_A::VALUE2),
+            2 => Val(BURSTL_A::VALUE3),
+            3 => Val(BURSTL_A::VALUE4),
+            4 => Val(BURSTL_A::VALUE5),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BURSTLR::VALUE1
+        *self == BURSTL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == BURSTLR::VALUE2
+        *self == BURSTL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == BURSTLR::VALUE3
+        *self == BURSTL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == BURSTLR::VALUE4
+        *self == BURSTL_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == BURSTLR::VALUE5
+        *self == BURSTL_A::VALUE5
     }
 }
-#[doc = r" Proxy"]
-pub struct _XBAW<'a> {
+#[doc = "Write proxy for field `BURSTL`"]
+pub struct BURSTL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _XBAW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _XOPMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _XOPMW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 4095;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _COLDSTARTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _COLDSTARTW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `OPMODE`"]
-pub enum OPMODEW {
-    #[doc = "Only this value must be written (default after reset)"]
-    VALUE1,
-}
-impl OPMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            OPMODEW::VALUE1 => 0,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _OPMODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _OPMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: OPMODEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Only this value must be written (default after reset)"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(OPMODEW::VALUE1)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 127;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CASLAT`"]
-pub enum CASLATW {
-    #[doc = "Two clocks (default after reset)"]
-    VALUE1,
-    #[doc = "Three clocks"]
-    VALUE2,
-}
-impl CASLATW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CASLATW::VALUE1 => 2,
-            CASLATW::VALUE2 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CASLATW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CASLATW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CASLATW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Two clocks (default after reset)"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(CASLATW::VALUE1)
-    }
-    #[doc = "Three clocks"]
-    #[inline]
-    pub fn value2(self) -> &'a mut W {
-        self.variant(CASLATW::VALUE2)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `BTYP`"]
-pub enum BTYPW {
-    #[doc = "Only this value should be written (default after reset)"]
-    VALUE1,
-}
-impl BTYPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BTYPW::VALUE1 => false,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BTYPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BTYPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BTYPW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Only this value should be written (default after reset)"]
-    #[inline]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(BTYPW::VALUE1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `BURSTL`"]
-pub enum BURSTLW {
-    #[doc = "1 (default after reset)"]
-    VALUE1,
-    #[doc = "2"]
-    VALUE2,
-    #[doc = "4"]
-    VALUE3,
-    #[doc = "8"]
-    VALUE4,
-    #[doc = "16"]
-    VALUE5,
-}
-impl BURSTLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            BURSTLW::VALUE1 => 0,
-            BURSTLW::VALUE2 => 1,
-            BURSTLW::VALUE3 => 2,
-            BURSTLW::VALUE4 => 3,
-            BURSTLW::VALUE5 => 4,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BURSTLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BURSTLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BURSTLW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> BURSTL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BURSTL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "1 (default after reset)"]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(BURSTLW::VALUE1)
+        self.variant(BURSTL_A::VALUE1)
     }
     #[doc = "2"]
-    #[inline]
+    #[inline(always)]
     pub fn value2(self) -> &'a mut W {
-        self.variant(BURSTLW::VALUE2)
+        self.variant(BURSTL_A::VALUE2)
     }
     #[doc = "4"]
-    #[inline]
+    #[inline(always)]
     pub fn value3(self) -> &'a mut W {
-        self.variant(BURSTLW::VALUE3)
+        self.variant(BURSTL_A::VALUE3)
     }
     #[doc = "8"]
-    #[inline]
+    #[inline(always)]
     pub fn value4(self) -> &'a mut W {
-        self.variant(BURSTLW::VALUE4)
+        self.variant(BURSTL_A::VALUE4)
     }
     #[doc = "16"]
-    #[inline]
+    #[inline(always)]
     pub fn value5(self) -> &'a mut W {
-        self.variant(BURSTLW::VALUE5)
+        self.variant(BURSTL_A::VALUE5)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 28:31 - Extended Operation Bank Select"]
-    #[inline]
-    pub fn xba(&self) -> XBAR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        XBAR { bits }
+    #[inline(always)]
+    pub fn xba(&self) -> XBA_R {
+        XBA_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
     #[doc = "Bits 16:27 - Extended Operation Mode"]
-    #[inline]
-    pub fn xopm(&self) -> XOPMR {
-        let bits = {
-            const MASK: u16 = 4095;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        XOPMR { bits }
+    #[inline(always)]
+    pub fn xopm(&self) -> XOPM_R {
+        XOPM_R::new(((self.bits >> 16) & 0x0fff) as u16)
     }
     #[doc = "Bits 7:13 - Operation Mode"]
-    #[inline]
-    pub fn opmode(&self) -> OPMODER {
-        OPMODER::_from({
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn opmode(&self) -> OPMODE_R {
+        OPMODE_R::new(((self.bits >> 7) & 0x7f) as u8)
     }
     #[doc = "Bits 4:6 - CAS latency"]
-    #[inline]
-    pub fn caslat(&self) -> CASLATR {
-        CASLATR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn caslat(&self) -> CASLAT_R {
+        CASLAT_R::new(((self.bits >> 4) & 0x07) as u8)
     }
     #[doc = "Bit 3 - Burst type"]
-    #[inline]
-    pub fn btyp(&self) -> BTYPR {
-        BTYPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn btyp(&self) -> BTYP_R {
+        BTYP_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bits 0:2 - Burst length"]
-    #[inline]
-    pub fn burstl(&self) -> BURSTLR {
-        BURSTLR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn burstl(&self) -> BURSTL_R {
+        BURSTL_R::new((self.bits & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 32 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 28:31 - Extended Operation Bank Select"]
-    #[inline]
-    pub fn xba(&mut self) -> _XBAW {
-        _XBAW { w: self }
+    #[inline(always)]
+    pub fn xba(&mut self) -> XBA_W {
+        XBA_W { w: self }
     }
     #[doc = "Bits 16:27 - Extended Operation Mode"]
-    #[inline]
-    pub fn xopm(&mut self) -> _XOPMW {
-        _XOPMW { w: self }
+    #[inline(always)]
+    pub fn xopm(&mut self) -> XOPM_W {
+        XOPM_W { w: self }
     }
     #[doc = "Bit 15 - SDRAM coldstart"]
-    #[inline]
-    pub fn coldstart(&mut self) -> _COLDSTARTW {
-        _COLDSTARTW { w: self }
+    #[inline(always)]
+    pub fn coldstart(&mut self) -> COLDSTART_W {
+        COLDSTART_W { w: self }
     }
     #[doc = "Bits 7:13 - Operation Mode"]
-    #[inline]
-    pub fn opmode(&mut self) -> _OPMODEW {
-        _OPMODEW { w: self }
+    #[inline(always)]
+    pub fn opmode(&mut self) -> OPMODE_W {
+        OPMODE_W { w: self }
     }
     #[doc = "Bits 4:6 - CAS latency"]
-    #[inline]
-    pub fn caslat(&mut self) -> _CASLATW {
-        _CASLATW { w: self }
+    #[inline(always)]
+    pub fn caslat(&mut self) -> CASLAT_W {
+        CASLAT_W { w: self }
     }
     #[doc = "Bit 3 - Burst type"]
-    #[inline]
-    pub fn btyp(&mut self) -> _BTYPW {
-        _BTYPW { w: self }
+    #[inline(always)]
+    pub fn btyp(&mut self) -> BTYP_W {
+        BTYP_W { w: self }
     }
     #[doc = "Bits 0:2 - Burst length"]
-    #[inline]
-    pub fn burstl(&mut self) -> _BURSTLW {
-        _BURSTLW { w: self }
+    #[inline(always)]
+    pub fn burstl(&mut self) -> BURSTL_W {
+        BURSTL_W { w: self }
     }
 }
