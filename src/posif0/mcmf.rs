@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::MCMF>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSS_A {
     #[doc = "0: Update of the Multi-Channel pattern is set"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Update of the Multi-Channel pattern is not set"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MSS_A> for bool {
     #[inline(always)]
     fn from(variant: MSS_A) -> Self {
-        match variant {
-            MSS_A::VALUE1 => false,
-            MSS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSS`"]

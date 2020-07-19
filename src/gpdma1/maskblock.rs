@@ -14,17 +14,14 @@ impl crate::ResetValue for super::MASKBLOCK {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WE_CH0_AW {
     #[doc = "0: write disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WE_CH0_AW> for bool {
     #[inline(always)]
     fn from(variant: WE_CH0_AW) -> Self {
-        match variant {
-            WE_CH0_AW::VALUE1 => false,
-            WE_CH0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WE_CH0`"]
@@ -70,17 +67,14 @@ impl<'a> WE_CH0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WE_CH1_AW {
     #[doc = "0: write disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WE_CH1_AW> for bool {
     #[inline(always)]
     fn from(variant: WE_CH1_AW) -> Self {
-        match variant {
-            WE_CH1_AW::VALUE1 => false,
-            WE_CH1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WE_CH1`"]
@@ -126,17 +120,14 @@ impl<'a> WE_CH1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WE_CH2_AW {
     #[doc = "0: write disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WE_CH2_AW> for bool {
     #[inline(always)]
     fn from(variant: WE_CH2_AW) -> Self {
-        match variant {
-            WE_CH2_AW::VALUE1 => false,
-            WE_CH2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WE_CH2`"]
@@ -182,17 +173,14 @@ impl<'a> WE_CH2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WE_CH3_AW {
     #[doc = "0: write disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WE_CH3_AW> for bool {
     #[inline(always)]
     fn from(variant: WE_CH3_AW) -> Self {
-        match variant {
-            WE_CH3_AW::VALUE1 => false,
-            WE_CH3_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `WE_CH3`"]
@@ -238,17 +226,14 @@ impl<'a> WE_CH3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0_A {
     #[doc = "0: masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: unmasked"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH0_A> for bool {
     #[inline(always)]
     fn from(variant: CH0_A) -> Self {
-        match variant {
-            CH0_A::VALUE1 => false,
-            CH0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH0`"]
@@ -316,17 +301,14 @@ impl<'a> CH0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1_A {
     #[doc = "0: masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: unmasked"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH1_A> for bool {
     #[inline(always)]
     fn from(variant: CH1_A) -> Self {
-        match variant {
-            CH1_A::VALUE1 => false,
-            CH1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH1`"]
@@ -394,17 +376,14 @@ impl<'a> CH1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2_A {
     #[doc = "0: masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: unmasked"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH2_A> for bool {
     #[inline(always)]
     fn from(variant: CH2_A) -> Self {
-        match variant {
-            CH2_A::VALUE1 => false,
-            CH2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH2`"]
@@ -472,17 +451,14 @@ impl<'a> CH2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3_A {
     #[doc = "0: masked"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: unmasked"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH3_A> for bool {
     #[inline(always)]
     fn from(variant: CH3_A) -> Self {
-        match variant {
-            CH3_A::VALUE1 => false,
-            CH3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH3`"]

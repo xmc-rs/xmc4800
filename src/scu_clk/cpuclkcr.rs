@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CPUCLKCR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPUDIV_A {
     #[doc = "0: fCPU = fSYS"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: fCPU = fSYS / 2"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CPUDIV_A> for bool {
     #[inline(always)]
     fn from(variant: CPUDIV_A) -> Self {
-        match variant {
-            CPUDIV_A::VALUE1 => false,
-            CPUDIV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPUDIV`"]

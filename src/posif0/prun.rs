@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::PRUN>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RB_A {
     #[doc = "0: IDLE"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Running"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RB_A> for bool {
     #[inline(always)]
     fn from(variant: RB_A) -> Self {
-        match variant {
-            RB_A::VALUE1 => false,
-            RB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RB`"]

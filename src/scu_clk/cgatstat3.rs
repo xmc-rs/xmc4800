@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::CGATSTAT3>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EBU_A {
     #[doc = "0: Gating de-asserted"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Gating asserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EBU_A> for bool {
     #[inline(always)]
     fn from(variant: EBU_A) -> Self {
-        match variant {
-            EBU_A::VALUE1 => false,
-            EBU_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EBU`"]

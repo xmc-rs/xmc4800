@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::CGATSTAT1>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCU43_A {
     #[doc = "0: Gating de-asserted"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Gating asserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CCU43_A> for bool {
     #[inline(always)]
     fn from(variant: CCU43_A) -> Self {
-        match variant {
-            CCU43_A::VALUE1 => false,
-            CCU43_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CCU43`"]
@@ -43,17 +40,14 @@ impl CCU43_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LEDTSCU0_A {
     #[doc = "0: Gating de-asserted"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Gating asserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LEDTSCU0_A> for bool {
     #[inline(always)]
     fn from(variant: LEDTSCU0_A) -> Self {
-        match variant {
-            LEDTSCU0_A::VALUE1 => false,
-            LEDTSCU0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LEDTSCU0`"]
@@ -82,17 +76,14 @@ impl LEDTSCU0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCAN0_A {
     #[doc = "0: Gating de-asserted"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Gating asserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MCAN0_A> for bool {
     #[inline(always)]
     fn from(variant: MCAN0_A) -> Self {
-        match variant {
-            MCAN0_A::VALUE1 => false,
-            MCAN0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MCAN0`"]
@@ -121,17 +112,14 @@ impl MCAN0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DAC_A {
     #[doc = "0: Gating de-asserted"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Gating asserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DAC_A> for bool {
     #[inline(always)]
     fn from(variant: DAC_A) -> Self {
-        match variant {
-            DAC_A::VALUE1 => false,
-            DAC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DAC`"]
@@ -160,17 +148,14 @@ impl DAC_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MMCI_A {
     #[doc = "0: Gating de-asserted"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Gating asserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MMCI_A> for bool {
     #[inline(always)]
     fn from(variant: MMCI_A) -> Self {
-        match variant {
-            MMCI_A::VALUE1 => false,
-            MMCI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MMCI`"]
@@ -199,17 +184,14 @@ impl MMCI_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USIC1_A {
     #[doc = "0: Gating de-asserted"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Gating asserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<USIC1_A> for bool {
     #[inline(always)]
     fn from(variant: USIC1_A) -> Self {
-        match variant {
-            USIC1_A::VALUE1 => false,
-            USIC1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USIC1`"]
@@ -238,17 +220,14 @@ impl USIC1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USIC2_A {
     #[doc = "0: Gating de-asserted"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Gating asserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<USIC2_A> for bool {
     #[inline(always)]
     fn from(variant: USIC2_A) -> Self {
-        match variant {
-            USIC2_A::VALUE1 => false,
-            USIC2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USIC2`"]
@@ -277,17 +256,14 @@ impl USIC2_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPORTS_A {
     #[doc = "0: Gating de-asserted"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Gating asserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PPORTS_A> for bool {
     #[inline(always)]
     fn from(variant: PPORTS_A) -> Self {
-        match variant {
-            PPORTS_A::VALUE1 => false,
-            PPORTS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PPORTS`"]

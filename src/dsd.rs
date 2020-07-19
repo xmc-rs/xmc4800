@@ -24,7 +24,7 @@ pub struct RegisterBlock {
     #[doc = "0xe4 - Event Flag Clear Register"]
     pub evflagclr: EVFLAGCLR,
 }
-#[doc = "Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clc](clc) module"]
+#[doc = "Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clc](clc) module"]
 pub type CLC = crate::Reg<u32, _CLC>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -35,7 +35,7 @@ impl crate::Readable for CLC {}
 impl crate::Writable for CLC {}
 #[doc = "Clock Control Register"]
 pub mod clc;
-#[doc = "Module Identification Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [id](id) module"]
+#[doc = "Module Identification Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [id](id) module"]
 pub type ID = crate::Reg<u32, _ID>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -44,7 +44,7 @@ pub struct _ID;
 impl crate::Readable for ID {}
 #[doc = "Module Identification Register"]
 pub mod id;
-#[doc = "OCDS Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ocs](ocs) module"]
+#[doc = "OCDS Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ocs](ocs) module"]
 pub type OCS = crate::Reg<u32, _OCS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -55,7 +55,7 @@ impl crate::Readable for OCS {}
 impl crate::Writable for OCS {}
 #[doc = "OCDS Control and Status Register"]
 pub mod ocs;
-#[doc = "Global Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [globcfg](globcfg) module"]
+#[doc = "Global Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [globcfg](globcfg) module"]
 pub type GLOBCFG = crate::Reg<u32, _GLOBCFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -66,7 +66,7 @@ impl crate::Readable for GLOBCFG {}
 impl crate::Writable for GLOBCFG {}
 #[doc = "Global Configuration Register"]
 pub mod globcfg;
-#[doc = "Global Run Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [globrc](globrc) module"]
+#[doc = "Global Run Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [globrc](globrc) module"]
 pub type GLOBRC = crate::Reg<u32, _GLOBRC>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -77,7 +77,7 @@ impl crate::Readable for GLOBRC {}
 impl crate::Writable for GLOBRC {}
 #[doc = "Global Run Control Register"]
 pub mod globrc;
-#[doc = "Carrier Generator Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cgcfg](cgcfg) module"]
+#[doc = "Carrier Generator Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgcfg](cgcfg) module"]
 pub type CGCFG = crate::Reg<u32, _CGCFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -88,7 +88,7 @@ impl crate::Readable for CGCFG {}
 impl crate::Writable for CGCFG {}
 #[doc = "Carrier Generator Configuration Register"]
 pub mod cgcfg;
-#[doc = "Event Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [evflag](evflag) module"]
+#[doc = "Event Flag Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [evflag](evflag) module"]
 pub type EVFLAG = crate::Reg<u32, _EVFLAG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -99,7 +99,7 @@ impl crate::Readable for EVFLAG {}
 impl crate::Writable for EVFLAG {}
 #[doc = "Event Flag Register"]
 pub mod evflag;
-#[doc = "Event Flag Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [evflagclr](evflagclr) module"]
+#[doc = "Event Flag Clear Register\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [evflagclr](evflagclr) module"]
 pub type EVFLAGCLR = crate::Reg<u32, _EVFLAGCLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]

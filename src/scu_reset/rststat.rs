@@ -2,34 +2,27 @@
 pub type R = crate::R<u32, super::RSTSTAT>;
 #[doc = "Reset Status Information\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RSTSTAT_A {
     #[doc = "1: PORST reset"]
-    VALUE1,
+    VALUE1 = 1,
     #[doc = "2: SWD reset"]
-    VALUE2,
+    VALUE2 = 2,
     #[doc = "4: PV reset"]
-    VALUE3,
+    VALUE3 = 4,
     #[doc = "8: CPU system reset"]
-    VALUE4,
+    VALUE4 = 8,
     #[doc = "16: CPU lockup reset"]
-    VALUE5,
+    VALUE5 = 16,
     #[doc = "32: WDT reset"]
-    VALUE6,
+    VALUE6 = 32,
     #[doc = "128: Parity Error reset"]
-    VALUE8,
+    VALUE8 = 128,
 }
 impl From<RSTSTAT_A> for u8 {
     #[inline(always)]
     fn from(variant: RSTSTAT_A) -> Self {
-        match variant {
-            RSTSTAT_A::VALUE1 => 1,
-            RSTSTAT_A::VALUE2 => 2,
-            RSTSTAT_A::VALUE3 => 4,
-            RSTSTAT_A::VALUE4 => 8,
-            RSTSTAT_A::VALUE5 => 16,
-            RSTSTAT_A::VALUE6 => 32,
-            RSTSTAT_A::VALUE8 => 128,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RSTSTAT`"]
@@ -90,17 +83,14 @@ impl RSTSTAT_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIBWK_A {
     #[doc = "0: No Wake-up"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Wake-up event"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HIBWK_A> for bool {
     #[inline(always)]
     fn from(variant: HIBWK_A) -> Self {
-        match variant {
-            HIBWK_A::VALUE1 => false,
-            HIBWK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HIBWK`"]
@@ -129,17 +119,14 @@ impl HIBWK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIBRS_A {
     #[doc = "0: Reset de-asserted"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Reset asserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HIBRS_A> for bool {
     #[inline(always)]
     fn from(variant: HIBRS_A) -> Self {
-        match variant {
-            HIBRS_A::VALUE1 => false,
-            HIBRS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HIBRS`"]
@@ -168,17 +155,14 @@ impl HIBRS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCKEN_A {
     #[doc = "0: Reset by Lockup disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Reset by Lockup enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LCKEN_A> for bool {
     #[inline(always)]
     fn from(variant: LCKEN_A) -> Self {
-        match variant {
-            LCKEN_A::VALUE1 => false,
-            LCKEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LCKEN`"]
@@ -207,17 +191,14 @@ impl LCKEN_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECAT0RS_A {
     #[doc = "0: Reset did not occur"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Reset occurred"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ECAT0RS_A> for bool {
     #[inline(always)]
     fn from(variant: ECAT0RS_A) -> Self {
-        match variant {
-            ECAT0RS_A::VALUE1 => false,
-            ECAT0RS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ECAT0RS`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PLLCON0 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCOBYP_A {
     #[doc = "0: Normal operation, VCO is not bypassed"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Prescaler Mode, VCO is bypassed"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VCOBYP_A> for bool {
     #[inline(always)]
     fn from(variant: VCOBYP_A) -> Self {
-        match variant {
-            VCOBYP_A::VALUE1 => false,
-            VCOBYP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VCOBYP`"]
@@ -92,17 +89,14 @@ impl<'a> VCOBYP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCOPWD_A {
     #[doc = "0: Normal behavior"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The VCO is put into a Power Saving Mode and can no longer be used. Only the Bypass and Prescaler Mode are active if previously selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VCOPWD_A> for bool {
     #[inline(always)]
     fn from(variant: VCOPWD_A) -> Self {
-        match variant {
-            VCOPWD_A::VALUE1 => false,
-            VCOPWD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VCOPWD`"]
@@ -170,17 +164,14 @@ impl<'a> VCOPWD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCOTR_A {
     #[doc = "0: VCO bandwidth is operation in the normal range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: VCO bandwidth is operation in the test range. VCO output frequency is between 260 and 520 MHz for a input frequency between 8 and 16 MHz."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<VCOTR_A> for bool {
     #[inline(always)]
     fn from(variant: VCOTR_A) -> Self {
-        match variant {
-            VCOTR_A::VALUE1 => false,
-            VCOTR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VCOTR`"]
@@ -248,17 +239,14 @@ impl<'a> VCOTR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FINDIS_A {
     #[doc = "0: connect oscillator to the VCO part"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: disconnect oscillator from the VCO part."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FINDIS_A> for bool {
     #[inline(always)]
     fn from(variant: FINDIS_A) -> Self {
-        match variant {
-            FINDIS_A::VALUE1 => false,
-            FINDIS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FINDIS`"]
@@ -326,17 +314,14 @@ impl<'a> FINDIS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OSCDISCDIS_A {
     #[doc = "0: In case of a PLL loss-of-lock bit FINDIS is set"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: In case of a PLL loss-of-lock bit FINDIS is cleared"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<OSCDISCDIS_A> for bool {
     #[inline(always)]
     fn from(variant: OSCDISCDIS_A) -> Self {
-        match variant {
-            OSCDISCDIS_A::VALUE1 => false,
-            OSCDISCDIS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OSCDISCDIS`"]
@@ -404,17 +389,14 @@ impl<'a> OSCDISCDIS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLLPWD_A {
     #[doc = "0: Normal behavior"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The complete PLL block is put into a Power Saving Mode and can no longer be used. Only the Bypass Mode is active if previously selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PLLPWD_A> for bool {
     #[inline(always)]
     fn from(variant: PLLPWD_A) -> Self {
-        match variant {
-            PLLPWD_A::VALUE1 => false,
-            PLLPWD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PLLPWD`"]
@@ -482,17 +464,14 @@ impl<'a> PLLPWD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OSCRES_A {
     #[doc = "0: The Oscillator Watchdog of the PLL is not cleared and remains active"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The Oscillator Watchdog of the PLL is cleared and restarted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<OSCRES_A> for bool {
     #[inline(always)]
     fn from(variant: OSCRES_A) -> Self {
-        match variant {
-            OSCRES_A::VALUE1 => false,
-            OSCRES_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OSCRES`"]
@@ -582,17 +561,14 @@ impl<'a> RESLD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AOTREN_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AOTREN_A> for bool {
     #[inline(always)]
     fn from(variant: AOTREN_A) -> Self {
-        match variant {
-            AOTREN_A::VALUE1 => false,
-            AOTREN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AOTREN`"]
@@ -660,17 +636,14 @@ impl<'a> AOTREN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FOTR_A {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Force fixed-value trimming"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FOTR_A> for bool {
     #[inline(always)]
     fn from(variant: FOTR_A) -> Self {
-        match variant {
-            FOTR_A::VALUE1 => false,
-            FOTR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FOTR`"]

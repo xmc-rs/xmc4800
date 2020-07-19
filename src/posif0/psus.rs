@@ -12,25 +12,21 @@ impl crate::ResetValue for super::PSUS {
 }
 #[doc = "Quadrature Mode Suspend Config\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum QSUS_A {
     #[doc = "0: Suspend request ignored"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Stop immediately"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Suspend in the next index occurrence"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Suspend in the next phase (PhaseA or PhaseB) occurrence"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<QSUS_A> for u8 {
     #[inline(always)]
     fn from(variant: QSUS_A) -> Self {
-        match variant {
-            QSUS_A::VALUE1 => 0,
-            QSUS_A::VALUE2 => 1,
-            QSUS_A::VALUE3 => 2,
-            QSUS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `QSUS`"]
@@ -109,25 +105,21 @@ impl<'a> QSUS_W<'a> {
 }
 #[doc = "Multi-Channel Mode Suspend Config\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MSUS_A {
     #[doc = "0: Suspend request ignored"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Stop immediately. Multi-Channel pattern is not set to the reset value."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Stop immediately. Multi-Channel pattern is set to the reset value."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Suspend with the synchronization of the PWM signal. Multi-Channel pattern is set to the reset value at the same time of the synchronization."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<MSUS_A> for u8 {
     #[inline(always)]
     fn from(variant: MSUS_A) -> Self {
-        match variant {
-            MSUS_A::VALUE1 => 0,
-            MSUS_A::VALUE2 => 1,
-            MSUS_A::VALUE3 => 2,
-            MSUS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MSUS`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CCUCLKCR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCUDIV_A {
     #[doc = "0: fCCU = fSYS"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: fCCU = fSYS / 2"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CCUDIV_A> for bool {
     #[inline(always)]
     fn from(variant: CCUDIV_A) -> Self {
-        match variant {
-            CCUDIV_A::VALUE1 => false,
-            CCUDIV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CCUDIV`"]

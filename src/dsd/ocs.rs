@@ -12,28 +12,23 @@ impl crate::ResetValue for super::OCS {
 }
 #[doc = "OCDS Suspend Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SUS_A {
     #[doc = "0: Will not suspend"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Hard suspend: Clock is switched off immediately."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Soft suspend channel 0"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Soft suspend channel 1"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "5: Soft suspend channel 3"]
-    VALUE5,
+    VALUE5 = 5,
 }
 impl From<SUS_A> for u8 {
     #[inline(always)]
     fn from(variant: SUS_A) -> Self {
-        match variant {
-            SUS_A::VALUE1 => 0,
-            SUS_A::VALUE2 => 1,
-            SUS_A::VALUE3 => 2,
-            SUS_A::VALUE4 => 3,
-            SUS_A::VALUE5 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SUS`"]
@@ -146,17 +141,14 @@ impl<'a> SUS_P_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUSSTA_A {
     #[doc = "0: Module is not (yet) suspended"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Module is suspended"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SUSSTA_A> for bool {
     #[inline(always)]
     fn from(variant: SUSSTA_A) -> Self {
-        match variant {
-            SUSSTA_A::VALUE1 => false,
-            SUSSTA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUSSTA`"]

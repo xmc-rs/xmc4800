@@ -12,17 +12,14 @@ impl crate::ResetValue for super::EVFLAGCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESEC0_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear bit RESEVx"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RESEC0_AW> for bool {
     #[inline(always)]
     fn from(variant: RESEC0_AW) -> Self {
-        match variant {
-            RESEC0_AW::VALUE1 => false,
-            RESEC0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RESEC0`"]
@@ -68,17 +65,14 @@ impl<'a> RESEC0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESEC1_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear bit RESEVx"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RESEC1_AW> for bool {
     #[inline(always)]
     fn from(variant: RESEC1_AW) -> Self {
-        match variant {
-            RESEC1_AW::VALUE1 => false,
-            RESEC1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RESEC1`"]
@@ -124,17 +118,14 @@ impl<'a> RESEC1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESEC2_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear bit RESEVx"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RESEC2_AW> for bool {
     #[inline(always)]
     fn from(variant: RESEC2_AW) -> Self {
-        match variant {
-            RESEC2_AW::VALUE1 => false,
-            RESEC2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RESEC2`"]
@@ -180,17 +171,14 @@ impl<'a> RESEC2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESEC3_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear bit RESEVx"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RESEC3_AW> for bool {
     #[inline(always)]
     fn from(variant: RESEC3_AW) -> Self {
-        match variant {
-            RESEC3_AW::VALUE1 => false,
-            RESEC3_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RESEC3`"]
@@ -236,17 +224,14 @@ impl<'a> RESEC3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALEC0_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear bit ALEVx"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ALEC0_AW> for bool {
     #[inline(always)]
     fn from(variant: ALEC0_AW) -> Self {
-        match variant {
-            ALEC0_AW::VALUE1 => false,
-            ALEC0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ALEC0`"]
@@ -292,17 +277,14 @@ impl<'a> ALEC0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALEC1_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear bit ALEVx"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ALEC1_AW> for bool {
     #[inline(always)]
     fn from(variant: ALEC1_AW) -> Self {
-        match variant {
-            ALEC1_AW::VALUE1 => false,
-            ALEC1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ALEC1`"]
@@ -348,17 +330,14 @@ impl<'a> ALEC1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALEC2_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear bit ALEVx"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ALEC2_AW> for bool {
     #[inline(always)]
     fn from(variant: ALEC2_AW) -> Self {
-        match variant {
-            ALEC2_AW::VALUE1 => false,
-            ALEC2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ALEC2`"]
@@ -404,17 +383,14 @@ impl<'a> ALEC2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALEC3_AW {
     #[doc = "0: No action"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clear bit ALEVx"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ALEC3_AW> for bool {
     #[inline(always)]
     fn from(variant: ALEC3_AW) -> Self {
-        match variant {
-            ALEC3_AW::VALUE1 => false,
-            ALEC3_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ALEC3`"]

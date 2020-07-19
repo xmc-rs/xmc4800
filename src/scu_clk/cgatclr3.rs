@@ -12,17 +12,14 @@ impl crate::ResetValue for super::CGATCLR3 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EBU_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EBU_AW> for bool {
     #[inline(always)]
     fn from(variant: EBU_AW) -> Self {
-        match variant {
-            EBU_AW::VALUE1 => false,
-            EBU_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `EBU`"]

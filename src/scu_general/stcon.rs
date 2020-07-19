@@ -12,25 +12,21 @@ impl crate::ResetValue for super::STCON {
 }
 #[doc = "HW Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HWCON_A {
     #[doc = "0: Normal mode, JTAG"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: ASC BSL enabled"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: BMI customized boot enabled"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: CAN BSL enabled"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<HWCON_A> for u8 {
     #[inline(always)]
     fn from(variant: HWCON_A) -> Self {
-        match variant {
-            HWCON_A::VALUE1 => 0,
-            HWCON_A::VALUE2 => 1,
-            HWCON_A::VALUE3 => 2,
-            HWCON_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HWCON`"]
@@ -70,37 +66,29 @@ impl HWCON_R {
 }
 #[doc = "SW Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SWCON_A {
     #[doc = "0: Normal mode, boot from Boot ROM"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: ASC BSL enabled"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: BMI customized boot enabled"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: CAN BSL enabled"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Boot from Code SRAM"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "8: Boot from alternate Flash Address 0"]
-    VALUE6,
+    VALUE6 = 8,
     #[doc = "12: Boot from alternate Flash Address 1"]
-    VALUE7,
+    VALUE7 = 12,
     #[doc = "14: Enable fallback Alternate Boot Mode (ABM)"]
-    VALUE8,
+    VALUE8 = 14,
 }
 impl From<SWCON_A> for u8 {
     #[inline(always)]
     fn from(variant: SWCON_A) -> Self {
-        match variant {
-            SWCON_A::VALUE1 => 0,
-            SWCON_A::VALUE2 => 1,
-            SWCON_A::VALUE3 => 2,
-            SWCON_A::VALUE4 => 3,
-            SWCON_A::VALUE5 => 4,
-            SWCON_A::VALUE6 => 8,
-            SWCON_A::VALUE7 => 12,
-            SWCON_A::VALUE8 => 14,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SWCON`"]

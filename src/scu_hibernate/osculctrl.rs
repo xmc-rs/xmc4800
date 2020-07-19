@@ -14,17 +14,14 @@ impl crate::ResetValue for super::OSCULCTRL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum X1DEN_A {
     #[doc = "0: Data input inactivated, power down"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data input active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<X1DEN_A> for bool {
     #[inline(always)]
     fn from(variant: X1DEN_A) -> Self {
-        match variant {
-            X1DEN_A::VALUE1 => false,
-            X1DEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `X1DEN`"]
@@ -90,25 +87,21 @@ impl<'a> X1DEN_W<'a> {
 }
 #[doc = "Oscillator Mode\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Oscillator is enabled, in operation"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Oscillator is enabled, in bypass mode"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Oscillator in power down"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Oscillator in power down, can be used as GPI"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::VALUE1 => 0,
-            MODE_A::VALUE2 => 1,
-            MODE_A::VALUE3 => 2,
-            MODE_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]

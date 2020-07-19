@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::PRSTAT3>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EBURS_A {
     #[doc = "0: Reset de-asserted"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Reset asserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EBURS_A> for bool {
     #[inline(always)]
     fn from(variant: EBURS_A) -> Self {
-        match variant {
-            EBURS_A::VALUE1 => false,
-            EBURS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EBURS`"]

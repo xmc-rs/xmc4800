@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CGCFG {
 }
 #[doc = "Carrier Generator Operating Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CGMOD_A {
     #[doc = "0: Stopped"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Square wave"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Triangle"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Sine wave"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CGMOD_A> for u8 {
     #[inline(always)]
     fn from(variant: CGMOD_A) -> Self {
-        match variant {
-            CGMOD_A::VALUE1 => 0,
-            CGMOD_A::VALUE2 => 1,
-            CGMOD_A::VALUE3 => 2,
-            CGMOD_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CGMOD`"]
@@ -111,17 +107,14 @@ impl<'a> CGMOD_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BREV_A {
     #[doc = "0: Normal mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bit-reverse mode"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BREV_A> for bool {
     #[inline(always)]
     fn from(variant: BREV_A) -> Self {
-        match variant {
-            BREV_A::VALUE1 => false,
-            BREV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BREV`"]
@@ -189,17 +182,14 @@ impl<'a> BREV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIGPOL_A {
     #[doc = "0: Normal: carrier signal begins with +1"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Inverted: carrier signal begins with -1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SIGPOL_A> for bool {
     #[inline(always)]
     fn from(variant: SIGPOL_A) -> Self {
-        match variant {
-            SIGPOL_A::VALUE1 => false,
-            SIGPOL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SIGPOL`"]
@@ -265,25 +255,21 @@ impl<'a> SIGPOL_W<'a> {
 }
 #[doc = "Divider Factor for the PWM Pattern Signal Generator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DIVCG_A {
     #[doc = "0: fCG = fCLK / 2"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: fCG = fCLK / 4"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: fCG = fCLK / 6"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "15: fCG = fCLK / 32"]
-    VALUE4,
+    VALUE4 = 15,
 }
 impl From<DIVCG_A> for u8 {
     #[inline(always)]
     fn from(variant: DIVCG_A) -> Self {
-        match variant {
-            DIVCG_A::VALUE1 => 0,
-            DIVCG_A::VALUE2 => 1,
-            DIVCG_A::VALUE3 => 2,
-            DIVCG_A::VALUE4 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DIVCG`"]
@@ -363,17 +349,14 @@ impl<'a> DIVCG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RUN_A {
     #[doc = "0: Stopped (cleared at the end of a period)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Running"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RUN_A> for bool {
     #[inline(always)]
     fn from(variant: RUN_A) -> Self {
-        match variant {
-            RUN_A::VALUE1 => false,
-            RUN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RUN`"]
@@ -406,17 +389,14 @@ pub type STEPCOUNT_R = crate::R<u8, u8>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STEPS_A {
     #[doc = "0: Step counter value is positive"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Step counter value is negative"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STEPS_A> for bool {
     #[inline(always)]
     fn from(variant: STEPS_A) -> Self {
-        match variant {
-            STEPS_A::VALUE1 => false,
-            STEPS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STEPS`"]
@@ -445,17 +425,14 @@ impl STEPS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STEPD_A {
     #[doc = "0: Step counter is counting up"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Step counter is counting down"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STEPD_A> for bool {
     #[inline(always)]
     fn from(variant: STEPD_A) -> Self {
-        match variant {
-            STEPD_A::VALUE1 => false,
-            STEPD_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STEPD`"]
@@ -484,17 +461,14 @@ impl STEPD_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SGNCG_A {
     #[doc = "0: Positive values"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Negative values"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SGNCG_A> for bool {
     #[inline(always)]
     fn from(variant: SGNCG_A) -> Self {
-        match variant {
-            SGNCG_A::VALUE1 => false,
-            SGNCG_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SGNCG`"]

@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PDISC {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS0_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC 0 analog input 0 selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS0_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS0_A) -> Self {
-        match variant {
-            PDIS0_A::VALUE1 => false,
-            PDIS0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS0`"]
@@ -92,17 +89,14 @@ impl<'a> PDIS0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS1_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC 0 analog input 1 selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS1_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS1_A) -> Self {
-        match variant {
-            PDIS1_A::VALUE1 => false,
-            PDIS1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS1`"]
@@ -170,17 +164,14 @@ impl<'a> PDIS1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS2_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC 0 and ADC 1 analog input 2 selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS2_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS2_A) -> Self {
-        match variant {
-            PDIS2_A::VALUE1 => false,
-            PDIS2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS2`"]
@@ -248,17 +239,14 @@ impl<'a> PDIS2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS3_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC 0 and ADC 1 analog input 3 selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS3_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS3_A) -> Self {
-        match variant {
-            PDIS3_A::VALUE1 => false,
-            PDIS3_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS3`"]
@@ -326,17 +314,14 @@ impl<'a> PDIS3_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS4_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC 0 analog input 4 and ADC 2 analog input 0 and DAC Reference selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS4_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS4_A) -> Self {
-        match variant {
-            PDIS4_A::VALUE1 => false,
-            PDIS4_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS4`"]
@@ -404,17 +389,14 @@ impl<'a> PDIS4_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS5_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC 0 analog input 5 and ADC 2 analog input 1 selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS5_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS5_A) -> Self {
-        match variant {
-            PDIS5_A::VALUE1 => false,
-            PDIS5_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS5`"]
@@ -482,17 +464,14 @@ impl<'a> PDIS5_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS6_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC 0 analog input 6 selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS6_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS6_A) -> Self {
-        match variant {
-            PDIS6_A::VALUE1 => false,
-            PDIS6_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS6`"]
@@ -560,17 +539,14 @@ impl<'a> PDIS6_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS7_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC0 analog input 7 selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS7_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS7_A) -> Self {
-        match variant {
-            PDIS7_A::VALUE1 => false,
-            PDIS7_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS7`"]
@@ -638,17 +614,14 @@ impl<'a> PDIS7_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS8_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC 1 analog input 0 and ADC 2 analog input 4 and DAC output 0 selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS8_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS8_A) -> Self {
-        match variant {
-            PDIS8_A::VALUE1 => false,
-            PDIS8_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS8`"]
@@ -716,17 +689,14 @@ impl<'a> PDIS8_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS9_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC 1 analog input 1 and ADC 2 analog input 5 and DAC output 1 selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS9_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS9_A) -> Self {
-        match variant {
-            PDIS9_A::VALUE1 => false,
-            PDIS9_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS9`"]
@@ -794,17 +764,14 @@ impl<'a> PDIS9_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS12_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC 1 analog input 4 selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS12_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS12_A) -> Self {
-        match variant {
-            PDIS12_A::VALUE1 => false,
-            PDIS12_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS12`"]
@@ -872,17 +839,14 @@ impl<'a> PDIS12_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS13_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC 1 analog input 5 selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS13_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS13_A) -> Self {
-        match variant {
-            PDIS13_A::VALUE1 => false,
-            PDIS13_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS13`"]
@@ -950,17 +914,14 @@ impl<'a> PDIS13_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS14_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC 1 analog input 6 selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS14_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS14_A) -> Self {
-        match variant {
-            PDIS14_A::VALUE1 => false,
-            PDIS14_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS14`"]
@@ -1028,17 +989,14 @@ impl<'a> PDIS14_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDIS15_A {
     #[doc = "0: Pad is enabled, digital input selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pad is disabled, ADC 1 analog input 7 selected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PDIS15_A> for bool {
     #[inline(always)]
     fn from(variant: PDIS15_A) -> Self {
-        match variant {
-            PDIS15_A::VALUE1 => false,
-            PDIS15_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDIS15`"]

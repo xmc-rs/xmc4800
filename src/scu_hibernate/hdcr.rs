@@ -14,17 +14,14 @@ impl crate::ResetValue for super::HDCR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKPEP_A {
     #[doc = "0: Wake-up event disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Wake-up event enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WKPEP_A> for bool {
     #[inline(always)]
     fn from(variant: WKPEP_A) -> Self {
-        match variant {
-            WKPEP_A::VALUE1 => false,
-            WKPEP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WKPEP`"]
@@ -92,17 +89,14 @@ impl<'a> WKPEP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKPEN_A {
     #[doc = "0: Wake-up event disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Wake-up event enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WKPEN_A> for bool {
     #[inline(always)]
     fn from(variant: WKPEN_A) -> Self {
-        match variant {
-            WKPEN_A::VALUE1 => false,
-            WKPEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WKPEN`"]
@@ -170,17 +164,14 @@ impl<'a> WKPEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTCE_A {
     #[doc = "0: Wake-up event disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Wake-up event enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RTCE_A> for bool {
     #[inline(always)]
     fn from(variant: RTCE_A) -> Self {
-        match variant {
-            RTCE_A::VALUE1 => false,
-            RTCE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTCE`"]
@@ -248,17 +239,14 @@ impl<'a> RTCE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ULPWDGEN_A {
     #[doc = "0: Wake-up event disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Wake-up event enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ULPWDGEN_A> for bool {
     #[inline(always)]
     fn from(variant: ULPWDGEN_A) -> Self {
-        match variant {
-            ULPWDGEN_A::VALUE1 => false,
-            ULPWDGEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ULPWDGEN`"]
@@ -326,17 +314,14 @@ impl<'a> ULPWDGEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIB_A {
     #[doc = "0: External hibernate request inactive"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: External hibernate request active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HIB_A> for bool {
     #[inline(always)]
     fn from(variant: HIB_A) -> Self {
-        match variant {
-            HIB_A::VALUE1 => false,
-            HIB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HIB`"]
@@ -404,17 +389,14 @@ impl<'a> HIB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RCS_A {
     #[doc = "0: fOSI selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: fULP selected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RCS_A> for bool {
     #[inline(always)]
     fn from(variant: RCS_A) -> Self {
-        match variant {
-            RCS_A::VALUE1 => false,
-            RCS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RCS`"]
@@ -482,17 +464,14 @@ impl<'a> RCS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STDBYSEL_A {
     #[doc = "0: fOSI selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: fULP selected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<STDBYSEL_A> for bool {
     #[inline(always)]
     fn from(variant: STDBYSEL_A) -> Self {
-        match variant {
-            STDBYSEL_A::VALUE1 => false,
-            STDBYSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STDBYSEL`"]
@@ -560,17 +539,14 @@ impl<'a> STDBYSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WKUPSEL_A {
     #[doc = "0: HIB_IO_1 pin selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: HIB_IO_0 pin selected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WKUPSEL_A> for bool {
     #[inline(always)]
     fn from(variant: WKUPSEL_A) -> Self {
-        match variant {
-            WKUPSEL_A::VALUE1 => false,
-            WKUPSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WKUPSEL`"]
@@ -638,17 +614,14 @@ impl<'a> WKUPSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPI0SEL_A {
     #[doc = "0: HIB_IO_1 pin selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: HIB_IO_0 pin selected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<GPI0SEL_A> for bool {
     #[inline(always)]
     fn from(variant: GPI0SEL_A) -> Self {
-        match variant {
-            GPI0SEL_A::VALUE1 => false,
-            GPI0SEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GPI0SEL`"]
@@ -716,17 +689,14 @@ impl<'a> GPI0SEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIBIO0POL_A {
     #[doc = "0: Direct value"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Inverted value"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HIBIO0POL_A> for bool {
     #[inline(always)]
     fn from(variant: HIBIO0POL_A) -> Self {
-        match variant {
-            HIBIO0POL_A::VALUE1 => false,
-            HIBIO0POL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HIBIO0POL`"]
@@ -794,17 +764,14 @@ impl<'a> HIBIO0POL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIBIO1POL_A {
     #[doc = "0: Direct value"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Inverted value"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HIBIO1POL_A> for bool {
     #[inline(always)]
     fn from(variant: HIBIO1POL_A) -> Self {
-        match variant {
-            HIBIO1POL_A::VALUE1 => false,
-            HIBIO1POL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HIBIO1POL`"]
@@ -870,43 +837,33 @@ impl<'a> HIBIO1POL_W<'a> {
 }
 #[doc = "HIB_IO_0 Pin I/O Control (default HIBOUT)\n\nValue on reset: 12"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HIBIO0SEL_A {
     #[doc = "0: Direct input, No input pull device connected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Direct input, Input pull-down device connected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Direct input, Input pull-up device connected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "8: Push-pull HIB Control output"]
-    VALUE4,
+    VALUE4 = 8,
     #[doc = "9: Push-pull WDT service output"]
-    VALUE5,
+    VALUE5 = 9,
     #[doc = "10: Push-pull GPIO output"]
-    VALUE6,
+    VALUE6 = 10,
     #[doc = "12: Open-drain HIB Control output"]
-    VALUE7,
+    VALUE7 = 12,
     #[doc = "13: Open-drain WDT service output"]
-    VALUE8,
+    VALUE8 = 13,
     #[doc = "14: Open-drain GPIO output"]
-    VALUE9,
+    VALUE9 = 14,
     #[doc = "15: Analog input"]
-    VALUE10,
+    VALUE10 = 15,
 }
 impl From<HIBIO0SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: HIBIO0SEL_A) -> Self {
-        match variant {
-            HIBIO0SEL_A::VALUE1 => 0,
-            HIBIO0SEL_A::VALUE2 => 1,
-            HIBIO0SEL_A::VALUE3 => 2,
-            HIBIO0SEL_A::VALUE4 => 8,
-            HIBIO0SEL_A::VALUE5 => 9,
-            HIBIO0SEL_A::VALUE6 => 10,
-            HIBIO0SEL_A::VALUE7 => 12,
-            HIBIO0SEL_A::VALUE8 => 13,
-            HIBIO0SEL_A::VALUE9 => 14,
-            HIBIO0SEL_A::VALUE10 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HIBIO0SEL`"]
@@ -1050,43 +1007,33 @@ impl<'a> HIBIO0SEL_W<'a> {
 }
 #[doc = "HIB_IO_1 Pin I/O Control (Default WKUP)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HIBIO1SEL_A {
     #[doc = "0: Direct input, No input pull device connected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Direct input, Input pull-down device connected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Direct input, Input pull-up device connected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "8: Push-pull HIB Control output"]
-    VALUE4,
+    VALUE4 = 8,
     #[doc = "9: Push-pull WDT service output"]
-    VALUE5,
+    VALUE5 = 9,
     #[doc = "10: Push-pull GPIO output"]
-    VALUE6,
+    VALUE6 = 10,
     #[doc = "12: Open-drain HIB Control output"]
-    VALUE7,
+    VALUE7 = 12,
     #[doc = "13: Open-drain WDT service output"]
-    VALUE8,
+    VALUE8 = 13,
     #[doc = "14: Open-drain GPIO output"]
-    VALUE9,
+    VALUE9 = 14,
     #[doc = "15: Analog input"]
-    VALUE10,
+    VALUE10 = 15,
 }
 impl From<HIBIO1SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: HIBIO1SEL_A) -> Self {
-        match variant {
-            HIBIO1SEL_A::VALUE1 => 0,
-            HIBIO1SEL_A::VALUE2 => 1,
-            HIBIO1SEL_A::VALUE3 => 2,
-            HIBIO1SEL_A::VALUE4 => 8,
-            HIBIO1SEL_A::VALUE5 => 9,
-            HIBIO1SEL_A::VALUE6 => 10,
-            HIBIO1SEL_A::VALUE7 => 12,
-            HIBIO1SEL_A::VALUE8 => 13,
-            HIBIO1SEL_A::VALUE9 => 14,
-            HIBIO1SEL_A::VALUE10 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HIBIO1SEL`"]

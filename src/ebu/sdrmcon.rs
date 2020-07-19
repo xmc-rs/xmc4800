@@ -14,17 +14,14 @@ impl crate::ResetValue for super::SDRMCON {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDCMSEL_A {
     #[doc = "1: clock disabled between accesses"]
-    VALUE1,
+    VALUE1 = 1,
     #[doc = "0: clock continuously runs"]
-    VALUE2,
+    VALUE2 = 0,
 }
 impl From<SDCMSEL_A> for bool {
     #[inline(always)]
     fn from(variant: SDCMSEL_A) -> Self {
-        match variant {
-            SDCMSEL_A::VALUE1 => true,
-            SDCMSEL_A::VALUE2 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDCMSEL`"]
@@ -90,25 +87,21 @@ impl<'a> SDCMSEL_W<'a> {
 }
 #[doc = "Power Save Mode used for gated clock mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PWR_MODE_A {
     #[doc = "0: precharge before clock stop (default after reset)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: auto-precharge before clock stop"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: active power down (stop clock without precharge)"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: clock stop power down"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<PWR_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: PWR_MODE_A) -> Self {
-        match variant {
-            PWR_MODE_A::VALUE1 => 0,
-            PWR_MODE_A::VALUE2 => 1,
-            PWR_MODE_A::VALUE3 => 2,
-            PWR_MODE_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PWR_MODE`"]
@@ -189,17 +182,14 @@ impl<'a> PWR_MODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKDIS_A {
     #[doc = "0: clock enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: clock disabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CLKDIS_A> for bool {
     #[inline(always)]
     fn from(variant: CLKDIS_A) -> Self {
-        match variant {
-            CLKDIS_A::VALUE1 => false,
-            CLKDIS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CLKDIS`"]
@@ -279,34 +269,27 @@ impl<'a> CRCE_W<'a> {
 }
 #[doc = "Mask for bank tag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BANKM_A {
     #[doc = "1: Address bit 21 to 20"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Address bit 22 to 21"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Address bit 23 to 22"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Address bit 24 to 23"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: Address bit 25 to 24"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: Address bit 26 to 25"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: Address bit 26"]
-    VALUE8,
+    VALUE8 = 7,
 }
 impl From<BANKM_A> for u8 {
     #[inline(always)]
     fn from(variant: BANKM_A) -> Self {
-        match variant {
-            BANKM_A::VALUE2 => 1,
-            BANKM_A::VALUE3 => 2,
-            BANKM_A::VALUE4 => 3,
-            BANKM_A::VALUE5 => 4,
-            BANKM_A::VALUE6 => 5,
-            BANKM_A::VALUE7 => 6,
-            BANKM_A::VALUE8 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BANKM`"]
@@ -417,28 +400,23 @@ impl<'a> BANKM_W<'a> {
 }
 #[doc = "Mask for row tag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ROWM_A {
     #[doc = "1: Address bit 26 to 9"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Address bit 26 to 10"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Address bit 26 to 11"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Address bit 26 to 12"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: Address bit 26 to 13"]
-    VALUE6,
+    VALUE6 = 5,
 }
 impl From<ROWM_A> for u8 {
     #[inline(always)]
     fn from(variant: ROWM_A) -> Self {
-        match variant {
-            ROWM_A::VALUE2 => 1,
-            ROWM_A::VALUE3 => 2,
-            ROWM_A::VALUE4 => 3,
-            ROWM_A::VALUE5 => 4,
-            ROWM_A::VALUE6 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ROWM`"]
@@ -555,25 +533,21 @@ impl<'a> CRCD_W<'a> {
 }
 #[doc = "Width of column address\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum AWIDTH_A {
     #[doc = "0: do not use"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Address(8:0)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Address(9:0)"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Address(10:0)"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<AWIDTH_A> for u8 {
     #[inline(always)]
     fn from(variant: AWIDTH_A) -> Self {
-        match variant {
-            AWIDTH_A::VALUE1 => 0,
-            AWIDTH_A::VALUE2 => 1,
-            AWIDTH_A::VALUE3 => 2,
-            AWIDTH_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `AWIDTH`"]

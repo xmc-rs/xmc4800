@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::MIRRSTS>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HDCLR_A {
     #[doc = "0: Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HDCLR_A> for bool {
     #[inline(always)]
     fn from(variant: HDCLR_A) -> Self {
-        match variant {
-            HDCLR_A::VALUE1 => false,
-            HDCLR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HDCLR`"]
@@ -43,17 +40,14 @@ impl HDCLR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HDSET_A {
     #[doc = "0: Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HDSET_A> for bool {
     #[inline(always)]
     fn from(variant: HDSET_A) -> Self {
-        match variant {
-            HDSET_A::VALUE1 => false,
-            HDSET_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HDSET`"]
@@ -82,17 +76,14 @@ impl HDSET_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HDCR_A {
     #[doc = "0: Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HDCR_A> for bool {
     #[inline(always)]
     fn from(variant: HDCR_A) -> Self {
-        match variant {
-            HDCR_A::VALUE1 => false,
-            HDCR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HDCR`"]
@@ -121,17 +112,14 @@ impl HDCR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OSCSICTRL_A {
     #[doc = "0: Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<OSCSICTRL_A> for bool {
     #[inline(always)]
     fn from(variant: OSCSICTRL_A) -> Self {
-        match variant {
-            OSCSICTRL_A::VALUE1 => false,
-            OSCSICTRL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OSCSICTRL`"]
@@ -160,17 +148,14 @@ impl OSCSICTRL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OSCULCTRL_A {
     #[doc = "0: Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<OSCULCTRL_A> for bool {
     #[inline(always)]
     fn from(variant: OSCULCTRL_A) -> Self {
-        match variant {
-            OSCULCTRL_A::VALUE1 => false,
-            OSCULCTRL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OSCULCTRL`"]
@@ -199,17 +184,14 @@ impl OSCULCTRL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_CTR_A {
     #[doc = "0: Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RTC_CTR_A> for bool {
     #[inline(always)]
     fn from(variant: RTC_CTR_A) -> Self {
-        match variant {
-            RTC_CTR_A::VALUE1 => false,
-            RTC_CTR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC_CTR`"]
@@ -238,17 +220,14 @@ impl RTC_CTR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_ATIM0_A {
     #[doc = "0: Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RTC_ATIM0_A> for bool {
     #[inline(always)]
     fn from(variant: RTC_ATIM0_A) -> Self {
-        match variant {
-            RTC_ATIM0_A::VALUE1 => false,
-            RTC_ATIM0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC_ATIM0`"]
@@ -277,17 +256,14 @@ impl RTC_ATIM0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_ATIM1_A {
     #[doc = "0: Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RTC_ATIM1_A> for bool {
     #[inline(always)]
     fn from(variant: RTC_ATIM1_A) -> Self {
-        match variant {
-            RTC_ATIM1_A::VALUE1 => false,
-            RTC_ATIM1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC_ATIM1`"]
@@ -316,17 +292,14 @@ impl RTC_ATIM1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_TIM0_A {
     #[doc = "0: Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RTC_TIM0_A> for bool {
     #[inline(always)]
     fn from(variant: RTC_TIM0_A) -> Self {
-        match variant {
-            RTC_TIM0_A::VALUE1 => false,
-            RTC_TIM0_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC_TIM0`"]
@@ -355,17 +328,14 @@ impl RTC_TIM0_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_TIM1_A {
     #[doc = "0: Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RTC_TIM1_A> for bool {
     #[inline(always)]
     fn from(variant: RTC_TIM1_A) -> Self {
-        match variant {
-            RTC_TIM1_A::VALUE1 => false,
-            RTC_TIM1_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC_TIM1`"]
@@ -394,17 +364,14 @@ impl RTC_TIM1_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RMX_A {
     #[doc = "0: Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RMX_A> for bool {
     #[inline(always)]
     fn from(variant: RMX_A) -> Self {
-        match variant {
-            RMX_A::VALUE1 => false,
-            RMX_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RMX`"]
@@ -433,17 +400,14 @@ impl RMX_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_MSKSR_A {
     #[doc = "0: Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RTC_MSKSR_A> for bool {
     #[inline(always)]
     fn from(variant: RTC_MSKSR_A) -> Self {
-        match variant {
-            RTC_MSKSR_A::VALUE1 => false,
-            RTC_MSKSR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC_MSKSR`"]
@@ -472,17 +436,14 @@ impl RTC_MSKSR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_CLRSR_A {
     #[doc = "0: Ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RTC_CLRSR_A> for bool {
     #[inline(always)]
     fn from(variant: RTC_CLRSR_A) -> Self {
-        match variant {
-            RTC_CLRSR_A::VALUE1 => false,
-            RTC_CLRSR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC_CLRSR`"]

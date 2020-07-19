@@ -12,28 +12,23 @@ impl crate::ResetValue for super::PDR0 {
 }
 #[doc = "Pad Driver Mode for Pn.0\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PD0_A {
     #[doc = "0: A2 strong driver, sharp edge"]
-    SD_SHE,
+    SD_SHE = 0,
     #[doc = "1: A2 strong driver, medium edge"]
-    SD_MEE,
+    SD_MEE = 1,
     #[doc = "2: A2 strong driver, soft edge"]
-    SD_SOE,
+    SD_SOE = 2,
     #[doc = "4: A2 medium driver"]
-    MD,
+    MD = 4,
     #[doc = "7: A2 weak driver"]
-    WD,
+    WD = 7,
 }
 impl From<PD0_A> for u8 {
     #[inline(always)]
     fn from(variant: PD0_A) -> Self {
-        match variant {
-            PD0_A::SD_SHE => 0,
-            PD0_A::SD_MEE => 1,
-            PD0_A::SD_SOE => 2,
-            PD0_A::MD => 4,
-            PD0_A::WD => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PD0`"]
@@ -122,28 +117,23 @@ impl<'a> PD0_W<'a> {
 }
 #[doc = "Pad Driver Mode for Pn.1\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PD1_A {
     #[doc = "0: A2 strong driver, sharp edge"]
-    SD_SHE,
+    SD_SHE = 0,
     #[doc = "1: A2 strong driver, medium edge"]
-    SD_MEE,
+    SD_MEE = 1,
     #[doc = "2: A2 strong driver, soft edge"]
-    SD_SOE,
+    SD_SOE = 2,
     #[doc = "4: A2 medium driver"]
-    MD,
+    MD = 4,
     #[doc = "7: A2 weak driver"]
-    WD,
+    WD = 7,
 }
 impl From<PD1_A> for u8 {
     #[inline(always)]
     fn from(variant: PD1_A) -> Self {
-        match variant {
-            PD1_A::SD_SHE => 0,
-            PD1_A::SD_MEE => 1,
-            PD1_A::SD_SOE => 2,
-            PD1_A::MD => 4,
-            PD1_A::WD => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PD1`"]
@@ -232,28 +222,23 @@ impl<'a> PD1_W<'a> {
 }
 #[doc = "Pad Driver Mode for Pn.2\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PD2_A {
     #[doc = "0: A2 strong driver, sharp edge"]
-    SD_SHE,
+    SD_SHE = 0,
     #[doc = "1: A2 strong driver, medium edge"]
-    SD_MEE,
+    SD_MEE = 1,
     #[doc = "2: A2 strong driver, soft edge"]
-    SD_SOE,
+    SD_SOE = 2,
     #[doc = "4: A2 medium driver"]
-    MD,
+    MD = 4,
     #[doc = "7: A2 weak driver"]
-    WD,
+    WD = 7,
 }
 impl From<PD2_A> for u8 {
     #[inline(always)]
     fn from(variant: PD2_A) -> Self {
-        match variant {
-            PD2_A::SD_SHE => 0,
-            PD2_A::SD_MEE => 1,
-            PD2_A::SD_SOE => 2,
-            PD2_A::MD => 4,
-            PD2_A::WD => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PD2`"]
@@ -342,37 +327,29 @@ impl<'a> PD2_W<'a> {
 }
 #[doc = "Pad Driver Mode for Pn.3\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PD3_A {
     #[doc = "2: A1+ strong driver, soft edge"]
-    SD_SOE,
+    SD_SOE = 2,
     #[doc = "3: A1+ strong driver, slow edge"]
-    SD_SLE,
+    SD_SLE = 3,
     #[doc = "4: A1+ medium driver"]
-    MD,
+    MD = 4,
     #[doc = "7: A1+ weak driver"]
-    WD,
+    WD = 7,
     #[doc = "0: A1+ strong driver, soft edge (alternate value)"]
-    SD_SOE_ALT,
+    SD_SOE_ALT = 0,
     #[doc = "1: A1+ strong driver, slow edge (alternate value)"]
-    SD_SLE_ALT,
+    SD_SLE_ALT = 1,
     #[doc = "6: A1+ medium driver (alternate value)"]
-    MD_ALT,
+    MD_ALT = 6,
     #[doc = "5: A1+ weak driver (alternate value)"]
-    WD_ALT,
+    WD_ALT = 5,
 }
 impl From<PD3_A> for u8 {
     #[inline(always)]
     fn from(variant: PD3_A) -> Self {
-        match variant {
-            PD3_A::SD_SOE => 2,
-            PD3_A::SD_SLE => 3,
-            PD3_A::MD => 4,
-            PD3_A::WD => 7,
-            PD3_A::SD_SOE_ALT => 0,
-            PD3_A::SD_SLE_ALT => 1,
-            PD3_A::MD_ALT => 6,
-            PD3_A::WD_ALT => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PD3`"]
@@ -495,37 +472,29 @@ impl<'a> PD3_W<'a> {
 }
 #[doc = "Pad Driver Mode for Pn.4\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PD4_A {
     #[doc = "2: A1+ strong driver, soft edge"]
-    SD_SOE,
+    SD_SOE = 2,
     #[doc = "3: A1+ strong driver, slow edge"]
-    SD_SLE,
+    SD_SLE = 3,
     #[doc = "4: A1+ medium driver"]
-    MD,
+    MD = 4,
     #[doc = "7: A1+ weak driver"]
-    WD,
+    WD = 7,
     #[doc = "0: A1+ strong driver, soft edge (alternate value)"]
-    SD_SOE_ALT,
+    SD_SOE_ALT = 0,
     #[doc = "1: A1+ strong driver, slow edge (alternate value)"]
-    SD_SLE_ALT,
+    SD_SLE_ALT = 1,
     #[doc = "6: A1+ medium driver (alternate value)"]
-    MD_ALT,
+    MD_ALT = 6,
     #[doc = "5: A1+ weak driver (alternate value)"]
-    WD_ALT,
+    WD_ALT = 5,
 }
 impl From<PD4_A> for u8 {
     #[inline(always)]
     fn from(variant: PD4_A) -> Self {
-        match variant {
-            PD4_A::SD_SOE => 2,
-            PD4_A::SD_SLE => 3,
-            PD4_A::MD => 4,
-            PD4_A::WD => 7,
-            PD4_A::SD_SOE_ALT => 0,
-            PD4_A::SD_SLE_ALT => 1,
-            PD4_A::MD_ALT => 6,
-            PD4_A::WD_ALT => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PD4`"]
@@ -648,28 +617,23 @@ impl<'a> PD4_W<'a> {
 }
 #[doc = "Pad Driver Mode for Pn.5\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PD5_A {
     #[doc = "0: A2 strong driver, sharp edge"]
-    SD_SHE,
+    SD_SHE = 0,
     #[doc = "1: A2 strong driver, medium edge"]
-    SD_MEE,
+    SD_MEE = 1,
     #[doc = "2: A2 strong driver, soft edge"]
-    SD_SOE,
+    SD_SOE = 2,
     #[doc = "4: A2 medium driver"]
-    MD,
+    MD = 4,
     #[doc = "7: A2 weak driver"]
-    WD,
+    WD = 7,
 }
 impl From<PD5_A> for u8 {
     #[inline(always)]
     fn from(variant: PD5_A) -> Self {
-        match variant {
-            PD5_A::SD_SHE => 0,
-            PD5_A::SD_MEE => 1,
-            PD5_A::SD_SOE => 2,
-            PD5_A::MD => 4,
-            PD5_A::WD => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PD5`"]
@@ -758,28 +722,23 @@ impl<'a> PD5_W<'a> {
 }
 #[doc = "Pad Driver Mode for Pn.6\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PD6_A {
     #[doc = "0: A2 strong driver, sharp edge"]
-    SD_SHE,
+    SD_SHE = 0,
     #[doc = "1: A2 strong driver, medium edge"]
-    SD_MEE,
+    SD_MEE = 1,
     #[doc = "2: A2 strong driver, soft edge"]
-    SD_SOE,
+    SD_SOE = 2,
     #[doc = "4: A2 medium driver"]
-    MD,
+    MD = 4,
     #[doc = "7: A2 weak driver"]
-    WD,
+    WD = 7,
 }
 impl From<PD6_A> for u8 {
     #[inline(always)]
     fn from(variant: PD6_A) -> Self {
-        match variant {
-            PD6_A::SD_SHE => 0,
-            PD6_A::SD_MEE => 1,
-            PD6_A::SD_SOE => 2,
-            PD6_A::MD => 4,
-            PD6_A::WD => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PD6`"]
@@ -868,37 +827,29 @@ impl<'a> PD6_W<'a> {
 }
 #[doc = "Pad Driver Mode for Pn.7\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PD7_A {
     #[doc = "2: A1+ strong driver, soft edge"]
-    SD_SOE,
+    SD_SOE = 2,
     #[doc = "3: A1+ strong driver, slow edge"]
-    SD_SLE,
+    SD_SLE = 3,
     #[doc = "4: A1+ medium driver"]
-    MD,
+    MD = 4,
     #[doc = "7: A1+ weak driver"]
-    WD,
+    WD = 7,
     #[doc = "0: A1+ strong driver, soft edge (alternate value)"]
-    SD_SOE_ALT,
+    SD_SOE_ALT = 0,
     #[doc = "1: A1+ strong driver, slow edge (alternate value)"]
-    SD_SLE_ALT,
+    SD_SLE_ALT = 1,
     #[doc = "6: A1+ medium driver (alternate value)"]
-    MD_ALT,
+    MD_ALT = 6,
     #[doc = "5: A1+ weak driver (alternate value)"]
-    WD_ALT,
+    WD_ALT = 5,
 }
 impl From<PD7_A> for u8 {
     #[inline(always)]
     fn from(variant: PD7_A) -> Self {
-        match variant {
-            PD7_A::SD_SOE => 2,
-            PD7_A::SD_SLE => 3,
-            PD7_A::MD => 4,
-            PD7_A::WD => 7,
-            PD7_A::SD_SOE_ALT => 0,
-            PD7_A::SD_SLE_ALT => 1,
-            PD7_A::MD_ALT => 6,
-            PD7_A::WD_ALT => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PD7`"]

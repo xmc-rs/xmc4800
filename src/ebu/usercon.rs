@@ -36,19 +36,17 @@ impl<'a> DIP_W<'a> {
 }
 #[doc = "Address Pins to GPIO Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum ADDIO_A {
     #[doc = "0: Address Bit is required for addressing memory"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Address Bit is available for GPIO function"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ADDIO_A> for u16 {
     #[inline(always)]
     fn from(variant: ADDIO_A) -> Self {
-        match variant {
-            ADDIO_A::VALUE1 => 0,
-            ADDIO_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADDIO`"]
@@ -106,17 +104,14 @@ impl<'a> ADDIO_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADVIO_A {
     #[doc = "0: ADV pin is required for controlling memory"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: ADV pin is available for GPIO function"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ADVIO_A> for bool {
     #[inline(always)]
     fn from(variant: ADVIO_A) -> Self {
-        match variant {
-            ADVIO_A::VALUE1 => false,
-            ADVIO_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADVIO`"]

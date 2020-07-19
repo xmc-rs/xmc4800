@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::SDRSTAT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDERR_A {
     #[doc = "0: Reads running successfully"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read error condition has been detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SDERR_A> for bool {
     #[inline(always)]
     fn from(variant: SDERR_A) -> Self {
-        match variant {
-            SDERR_A::VALUE1 => false,
-            SDERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDERR`"]
@@ -43,17 +40,14 @@ impl SDERR_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDRMBUSY_A {
     #[doc = "0: Power-up initialization sequence is not running"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Power-up initialization sequence is running"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SDRMBUSY_A> for bool {
     #[inline(always)]
     fn from(variant: SDRMBUSY_A) -> Self {
-        match variant {
-            SDRMBUSY_A::VALUE1 => false,
-            SDRMBUSY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDRMBUSY`"]
@@ -82,17 +76,14 @@ impl SDRMBUSY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REFERR_A {
     #[doc = "0: No refresh error."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Refresh error occurred."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REFERR_A> for bool {
     #[inline(always)]
     fn from(variant: REFERR_A) -> Self {
-        match variant {
-            REFERR_A::VALUE1 => false,
-            REFERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REFERR`"]

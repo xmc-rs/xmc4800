@@ -12,17 +12,14 @@ impl crate::ResetValue for super::CLEARDSTTRAN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0_AW {
     #[doc = "0: no effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: clear status"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH0_AW> for bool {
     #[inline(always)]
     fn from(variant: CH0_AW) -> Self {
-        match variant {
-            CH0_AW::VALUE1 => false,
-            CH0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH0`"]
@@ -68,17 +65,14 @@ impl<'a> CH0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1_AW {
     #[doc = "0: no effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: clear status"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH1_AW> for bool {
     #[inline(always)]
     fn from(variant: CH1_AW) -> Self {
-        match variant {
-            CH1_AW::VALUE1 => false,
-            CH1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH1`"]
@@ -124,17 +118,14 @@ impl<'a> CH1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2_AW {
     #[doc = "0: no effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: clear status"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH2_AW> for bool {
     #[inline(always)]
     fn from(variant: CH2_AW) -> Self {
-        match variant {
-            CH2_AW::VALUE1 => false,
-            CH2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH2`"]
@@ -180,17 +171,14 @@ impl<'a> CH2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3_AW {
     #[doc = "0: no effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: clear status"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH3_AW> for bool {
     #[inline(always)]
     fn from(variant: CH3_AW) -> Self {
-        match variant {
-            CH3_AW::VALUE1 => false,
-            CH3_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CH3`"]
