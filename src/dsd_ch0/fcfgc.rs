@@ -26,25 +26,21 @@ impl<'a> CFMDF_W<'a> {
 }
 #[doc = "CIC Filter (Main Chain) Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CFMC_A {
     #[doc = "0: CIC1"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CIC2"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: CIC3"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: CICF"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CFMC_A> for u8 {
     #[inline(always)]
     fn from(variant: CFMC_A) -> Self {
-        match variant {
-            CFMC_A::VALUE1 => 0,
-            CFMC_A::VALUE2 => 1,
-            CFMC_A::VALUE3 => 2,
-            CFMC_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CFMC`"]
@@ -125,17 +121,14 @@ impl<'a> CFMC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CFEN_A {
     #[doc = "0: CIC filter disabled and bypassed"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable CIC filter"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CFEN_A> for bool {
     #[inline(always)]
     fn from(variant: CFEN_A) -> Self {
-        match variant {
-            CFEN_A::VALUE1 => false,
-            CFEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CFEN`"]
@@ -201,19 +194,17 @@ impl<'a> CFEN_W<'a> {
 }
 #[doc = "Service Request Generation Main Chain\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRGM_A {
     #[doc = "0: Never, service requests disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "3: Always, for each new result value"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<SRGM_A> for u8 {
     #[inline(always)]
     fn from(variant: SRGM_A) -> Self {
-        match variant {
-            SRGM_A::VALUE1 => 0,
-            SRGM_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRGM`"]

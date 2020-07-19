@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::PFLG>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHES_A {
     #[doc = "0: Correct Hall Event not detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Correct Hall Event detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHES_A> for bool {
     #[inline(always)]
     fn from(variant: CHES_A) -> Self {
-        match variant {
-            CHES_A::VALUE1 => false,
-            CHES_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHES`"]
@@ -43,17 +40,14 @@ impl CHES_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WHES_A {
     #[doc = "0: Wrong Hall Event not detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Wrong Hall Event detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WHES_A> for bool {
     #[inline(always)]
     fn from(variant: WHES_A) -> Self {
-        match variant {
-            WHES_A::VALUE1 => false,
-            WHES_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WHES`"]
@@ -82,17 +76,14 @@ impl WHES_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIES_A {
     #[doc = "0: Transition on the Hall Inputs not detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Transition on the Hall Inputs detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HIES_A> for bool {
     #[inline(always)]
     fn from(variant: HIES_A) -> Self {
-        match variant {
-            HIES_A::VALUE1 => false,
-            HIES_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HIES`"]
@@ -121,17 +112,14 @@ impl HIES_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSTS_A {
     #[doc = "0: Shadow transfer not done"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Shadow transfer done"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MSTS_A> for bool {
     #[inline(always)]
     fn from(variant: MSTS_A) -> Self {
-        match variant {
-            MSTS_A::VALUE1 => false,
-            MSTS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSTS`"]
@@ -160,17 +148,14 @@ impl MSTS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INDXS_A {
     #[doc = "0: Index event not detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Index event detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<INDXS_A> for bool {
     #[inline(always)]
     fn from(variant: INDXS_A) -> Self {
-        match variant {
-            INDXS_A::VALUE1 => false,
-            INDXS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INDXS`"]
@@ -199,17 +184,14 @@ impl INDXS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRS_A {
     #[doc = "0: Phase Error event not detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Phase Error event detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ERRS_A> for bool {
     #[inline(always)]
     fn from(variant: ERRS_A) -> Self {
-        match variant {
-            ERRS_A::VALUE1 => false,
-            ERRS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERRS`"]
@@ -238,17 +220,14 @@ impl ERRS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CNTS_A {
     #[doc = "0: Quadrature clock not generated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Quadrature clock generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CNTS_A> for bool {
     #[inline(always)]
     fn from(variant: CNTS_A) -> Self {
-        match variant {
-            CNTS_A::VALUE1 => false,
-            CNTS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CNTS`"]
@@ -277,17 +256,14 @@ impl CNTS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIRS_A {
     #[doc = "0: Change on direction not detected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Change on direction detected"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DIRS_A> for bool {
     #[inline(always)]
     fn from(variant: DIRS_A) -> Self {
-        match variant {
-            DIRS_A::VALUE1 => false,
-            DIRS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIRS`"]
@@ -316,17 +292,14 @@ impl DIRS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCLKS_A {
     #[doc = "0: Period clock not generated"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Period clock generated"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PCLKS_A> for bool {
     #[inline(always)]
     fn from(variant: PCLKS_A) -> Self {
-        match variant {
-            PCLKS_A::VALUE1 => false,
-            PCLKS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PCLKS`"]

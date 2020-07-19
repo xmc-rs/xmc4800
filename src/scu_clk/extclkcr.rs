@@ -12,22 +12,19 @@ impl crate::ResetValue for super::EXTCLKCR {
 }
 #[doc = "External Clock Selection Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ECKSEL_A {
     #[doc = "0: fSYS clock"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "2: fUSB clock"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: fPLL clock divided according to ECKDIV bit field configuration"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<ECKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: ECKSEL_A) -> Self {
-        match variant {
-            ECKSEL_A::VALUE1 => 0,
-            ECKSEL_A::VALUE3 => 2,
-            ECKSEL_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ECKSEL`"]

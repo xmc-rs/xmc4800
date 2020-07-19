@@ -12,25 +12,21 @@ impl crate::ResetValue for super::BUSRCON2 {
 }
 #[doc = "Burst Length for Synchronous Burst\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FETBLEN_A {
     #[doc = "0: 1 data access (default after reset)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 2 data accesses."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 4 data accesses."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 8 data accesses."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<FETBLEN_A> for u8 {
     #[inline(always)]
     fn from(variant: FETBLEN_A) -> Self {
-        match variant {
-            FETBLEN_A::VALUE1 => 0,
-            FETBLEN_A::VALUE2 => 1,
-            FETBLEN_A::VALUE3 => 2,
-            FETBLEN_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FETBLEN`"]
@@ -110,17 +106,14 @@ impl<'a> FETBLEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FBBMSEL_A {
     #[doc = "0: Burst buffer length defined by value in FETBLEN (default after reset)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Continuous mode. All data required for transaction is transferred in a single burst."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FBBMSEL_A> for bool {
     #[inline(always)]
     fn from(variant: FBBMSEL_A) -> Self {
-        match variant {
-            FBBMSEL_A::VALUE1 => false,
-            FBBMSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FBBMSEL`"]
@@ -188,17 +181,14 @@ impl<'a> FBBMSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BFSSS_A {
     #[doc = "0: Two stages of synchronization used. (maximum margin)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: One stage of synchronization used. (minimum latency)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BFSSS_A> for bool {
     #[inline(always)]
     fn from(variant: BFSSS_A) -> Self {
-        match variant {
-            BFSSS_A::VALUE1 => false,
-            BFSSS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BFSSS`"]
@@ -266,17 +256,14 @@ impl<'a> BFSSS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FDBKEN_A {
     #[doc = "0: BFCLK feedback not used."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Incoming data and control signals (from the Burst FLASH device) are re-synchronized to the BFCLKI input."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<FDBKEN_A> for bool {
     #[inline(always)]
     fn from(variant: FDBKEN_A) -> Self {
-        match variant {
-            FDBKEN_A::VALUE1 => false,
-            FDBKEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FDBKEN`"]
@@ -344,17 +331,14 @@ impl<'a> FDBKEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BFCMSEL_A {
     #[doc = "0: Burst Flash Clock runs continuously with values selected by this register"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Burst Flash Clock is disabled between accesses"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BFCMSEL_A> for bool {
     #[inline(always)]
     fn from(variant: BFCMSEL_A) -> Self {
-        match variant {
-            BFCMSEL_A::VALUE1 => false,
-            BFCMSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BFCMSEL`"]
@@ -446,17 +430,14 @@ impl<'a> NAA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECSE_A {
     #[doc = "0: CS is delayed."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CS is not delayed."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ECSE_A> for bool {
     #[inline(always)]
     fn from(variant: ECSE_A) -> Self {
-        match variant {
-            ECSE_A::VALUE1 => false,
-            ECSE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ECSE`"]
@@ -524,17 +505,14 @@ impl<'a> ECSE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EBSE_A {
     #[doc = "0: ADV is delayed."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: ADV is not delayed."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EBSE_A> for bool {
     #[inline(always)]
     fn from(variant: EBSE_A) -> Self {
-        match variant {
-            EBSE_A::VALUE1 => false,
-            EBSE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EBSE`"]
@@ -602,17 +580,14 @@ impl<'a> EBSE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBA_A {
     #[doc = "0: Memory Controller automatically re-aligns any non-aligned synchronous burst access so that data can be fetched from the device in a single burst transaction."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Memory Controller always starts any burst access to a synchronous burst device at the address specified by the AHB request. Any required address wrapping must be automatically provided by the Burst FLASH device."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DBA_A> for bool {
     #[inline(always)]
     fn from(variant: DBA_A) -> Self {
-        match variant {
-            DBA_A::VALUE1 => false,
-            DBA_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DBA`"]
@@ -680,17 +655,14 @@ impl<'a> DBA_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAITINV_A {
     #[doc = "0: input at WAIT pin is active low (default after reset)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: input at WAIT pin is active high."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WAITINV_A> for bool {
     #[inline(always)]
     fn from(variant: WAITINV_A) -> Self {
-        match variant {
-            WAITINV_A::VALUE1 => false,
-            WAITINV_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAITINV`"]
@@ -756,22 +728,19 @@ impl<'a> WAITINV_W<'a> {
 }
 #[doc = "Byte Control Signal Control\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BCGEN_A {
     #[doc = "0: Byte control signals follow chip select timing."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Byte control signals follow control signal timing (RD, RD/WR) (default after reset)."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Byte control signals follow write enable signal timing (RD/WR only)."]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<BCGEN_A> for u8 {
     #[inline(always)]
     fn from(variant: BCGEN_A) -> Self {
-        match variant {
-            BCGEN_A::VALUE1 => 0,
-            BCGEN_A::VALUE2 => 1,
-            BCGEN_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BCGEN`"]
@@ -868,17 +837,14 @@ impl<'a> WAIT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AAP_A {
     #[doc = "0: Clock is enabled at beginning of access."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clock is enabled at after address phase."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<AAP_A> for bool {
     #[inline(always)]
     fn from(variant: AAP_A) -> Self {
-        match variant {
-            AAP_A::VALUE1 => false,
-            AAP_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AAP`"]

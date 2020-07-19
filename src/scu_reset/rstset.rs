@@ -12,17 +12,14 @@ impl crate::ResetValue for super::RSTSET {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIBWK_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Assert reset status bit"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HIBWK_AW> for bool {
     #[inline(always)]
     fn from(variant: HIBWK_AW) -> Self {
-        match variant {
-            HIBWK_AW::VALUE1 => false,
-            HIBWK_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `HIBWK`"]
@@ -68,17 +65,14 @@ impl<'a> HIBWK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIBRS_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Assert reset"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HIBRS_AW> for bool {
     #[inline(always)]
     fn from(variant: HIBRS_AW) -> Self {
-        match variant {
-            HIBRS_AW::VALUE1 => false,
-            HIBRS_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `HIBRS`"]
@@ -124,17 +118,14 @@ impl<'a> HIBRS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCKEN_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable reset when Lockup gets asserted"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LCKEN_AW> for bool {
     #[inline(always)]
     fn from(variant: LCKEN_AW) -> Self {
-        match variant {
-            LCKEN_AW::VALUE1 => false,
-            LCKEN_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `LCKEN`"]
@@ -180,17 +171,14 @@ impl<'a> LCKEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECAT0RS_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Assert reset status bit"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ECAT0RS_AW> for bool {
     #[inline(always)]
     fn from(variant: ECAT0RS_AW) -> Self {
-        match variant {
-            ECAT0RS_AW::VALUE1 => false,
-            ECAT0RS_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `ECAT0RS`"]

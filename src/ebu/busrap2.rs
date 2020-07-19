@@ -12,25 +12,21 @@ impl crate::ResetValue for super::BUSRAP2 {
 }
 #[doc = "Recovery Cycles between Different Regions\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RDDTACS_A {
     #[doc = "0: No Recovery Phase clock cycles available."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1 clock cycle selected."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "14: 14 clock cycles selected."]
-    VALUE3,
+    VALUE3 = 14,
     #[doc = "15: 15 clock cycles selected."]
-    VALUE4,
+    VALUE4 = 15,
 }
 impl From<RDDTACS_A> for u8 {
     #[inline(always)]
     fn from(variant: RDDTACS_A) -> Self {
-        match variant {
-            RDDTACS_A::VALUE1 => 0,
-            RDDTACS_A::VALUE2 => 1,
-            RDDTACS_A::VALUE3 => 14,
-            RDDTACS_A::VALUE4 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RDDTACS`"]
@@ -108,25 +104,21 @@ impl<'a> RDDTACS_W<'a> {
 }
 #[doc = "Recovery Cycles after Read Accesses\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RDRECOVC_A {
     #[doc = "0: No Recovery Phase clock cycles available."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1 clock cycle selected."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "6: 6 clock cycles selected."]
-    VALUE3,
+    VALUE3 = 6,
     #[doc = "7: 7 clock cycles selected."]
-    VALUE4,
+    VALUE4 = 7,
 }
 impl From<RDRECOVC_A> for u8 {
     #[inline(always)]
     fn from(variant: RDRECOVC_A) -> Self {
-        match variant {
-            RDRECOVC_A::VALUE1 => 0,
-            RDRECOVC_A::VALUE2 => 1,
-            RDRECOVC_A::VALUE3 => 6,
-            RDRECOVC_A::VALUE4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RDRECOVC`"]
@@ -204,28 +196,23 @@ impl<'a> RDRECOVC_W<'a> {
 }
 #[doc = "Programmed Wait States for read accesses\n\nValue on reset: 31"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WAITRDC_A {
     #[doc = "0: 1 wait state."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1 wait states."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 2 wait state."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "30: 30 wait states."]
-    VALUE4,
+    VALUE4 = 30,
     #[doc = "31: 31 wait states."]
-    VALUE5,
+    VALUE5 = 31,
 }
 impl From<WAITRDC_A> for u8 {
     #[inline(always)]
     fn from(variant: WAITRDC_A) -> Self {
-        match variant {
-            WAITRDC_A::VALUE1 => 0,
-            WAITRDC_A::VALUE2 => 1,
-            WAITRDC_A::VALUE3 => 2,
-            WAITRDC_A::VALUE4 => 30,
-            WAITRDC_A::VALUE5 => 31,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WAITRDC`"]
@@ -328,25 +315,21 @@ impl<'a> DATAC_W<'a> {
 }
 #[doc = "Frequency of external clock at pin BFCLKO\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXTCLOCK_A {
     #[doc = "0: Equal to INT_CLK frequency."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1/2 of INT_CLK frequency."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 1/3 of INT_CLK frequency."]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 1/4 of INT_CLK frequency (default after reset)."]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EXTCLOCK_A> for u8 {
     #[inline(always)]
     fn from(variant: EXTCLOCK_A) -> Self {
-        match variant {
-            EXTCLOCK_A::VALUE1 => 0,
-            EXTCLOCK_A::VALUE2 => 1,
-            EXTCLOCK_A::VALUE3 => 2,
-            EXTCLOCK_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXTCLOCK`"]
@@ -425,25 +408,21 @@ impl<'a> EXTCLOCK_W<'a> {
 }
 #[doc = "Extended data\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EXTDATA_A {
     #[doc = "0: external memory outputs data every BFCLK cycle"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: external memory outputs data every two BFCLK cycles"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: external memory outputs data every four BFCLK cycles"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: external memory outputs data every eight BFCLK cycles"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EXTDATA_A> for u8 {
     #[inline(always)]
     fn from(variant: EXTDATA_A) -> Self {
-        match variant {
-            EXTDATA_A::VALUE1 => 0,
-            EXTDATA_A::VALUE2 => 1,
-            EXTDATA_A::VALUE3 => 2,
-            EXTDATA_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EXTDATA`"]
@@ -522,25 +501,21 @@ impl<'a> EXTDATA_W<'a> {
 }
 #[doc = "Command Delay Cycles\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CMDDELAY_A {
     #[doc = "0: 0 clock cycle selected."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1 clock cycle selected."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "14: 14 clock cycles selected."]
-    VALUE3,
+    VALUE3 = 14,
     #[doc = "15: 15 clock cycles selected."]
-    VALUE4,
+    VALUE4 = 15,
 }
 impl From<CMDDELAY_A> for u8 {
     #[inline(always)]
     fn from(variant: CMDDELAY_A) -> Self {
-        match variant {
-            CMDDELAY_A::VALUE1 => 0,
-            CMDDELAY_A::VALUE2 => 1,
-            CMDDELAY_A::VALUE3 => 14,
-            CMDDELAY_A::VALUE4 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CMDDELAY`"]
@@ -618,25 +593,21 @@ impl<'a> CMDDELAY_W<'a> {
 }
 #[doc = "Address Hold Cycles\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum AHOLDC_A {
     #[doc = "0: 0 clock cycle selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1 clock cycle selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "14: 14 clock cycles selected"]
-    VALUE3,
+    VALUE3 = 14,
     #[doc = "15: 15 clock cycles selected"]
-    VALUE4,
+    VALUE4 = 15,
 }
 impl From<AHOLDC_A> for u8 {
     #[inline(always)]
     fn from(variant: AHOLDC_A) -> Self {
-        match variant {
-            AHOLDC_A::VALUE1 => 0,
-            AHOLDC_A::VALUE2 => 1,
-            AHOLDC_A::VALUE3 => 14,
-            AHOLDC_A::VALUE4 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `AHOLDC`"]
@@ -714,25 +685,21 @@ impl<'a> AHOLDC_W<'a> {
 }
 #[doc = "Address Cycles\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADDRC_A {
     #[doc = "0: 1 clock cycle selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 1 clock cycle selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "14: 14 clock cycles selected"]
-    VALUE3,
+    VALUE3 = 14,
     #[doc = "15: 15 clock cycles selected"]
-    VALUE4,
+    VALUE4 = 15,
 }
 impl From<ADDRC_A> for u8 {
     #[inline(always)]
     fn from(variant: ADDRC_A) -> Self {
-        match variant {
-            ADDRC_A::VALUE1 => 0,
-            ADDRC_A::VALUE2 => 1,
-            ADDRC_A::VALUE3 => 14,
-            ADDRC_A::VALUE4 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADDRC`"]

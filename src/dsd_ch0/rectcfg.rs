@@ -14,17 +14,14 @@ impl crate::ResetValue for super::RECTCFG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RFEN_A {
     #[doc = "0: No rectification, data not altered"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Data are rectified according to SGND"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RFEN_A> for bool {
     #[inline(always)]
     fn from(variant: RFEN_A) -> Self {
-        match variant {
-            RFEN_A::VALUE1 => false,
-            RFEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RFEN`"]
@@ -90,25 +87,21 @@ impl<'a> RFEN_W<'a> {
 }
 #[doc = "Sign Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SSRC_A {
     #[doc = "0: On-chip carrier generator"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Sign of result of next channel"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: External sign signal A"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: External sign signal B"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<SSRC_A> for u8 {
     #[inline(always)]
     fn from(variant: SSRC_A) -> Self {
-        match variant {
-            SSRC_A::VALUE1 => 0,
-            SSRC_A::VALUE2 => 1,
-            SSRC_A::VALUE3 => 2,
-            SSRC_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SSRC`"]
@@ -189,17 +182,14 @@ impl<'a> SSRC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDVAL_A {
     #[doc = "0: No new result available"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bitfield SDCAP has been updated with a new captured value and has not yet been read"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SDVAL_A> for bool {
     #[inline(always)]
     fn from(variant: SDVAL_A) -> Self {
-        match variant {
-            SDVAL_A::VALUE1 => false,
-            SDVAL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDVAL`"]
@@ -228,17 +218,14 @@ impl SDVAL_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SGNCS_A {
     #[doc = "0: Positive values"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Negative values"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SGNCS_A> for bool {
     #[inline(always)]
     fn from(variant: SGNCS_A) -> Self {
-        match variant {
-            SGNCS_A::VALUE1 => false,
-            SGNCS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SGNCS`"]
@@ -267,17 +254,14 @@ impl SGNCS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SGND_A {
     #[doc = "0: Positive values"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Negative values"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SGND_A> for bool {
     #[inline(always)]
     fn from(variant: SGND_A) -> Self {
-        match variant {
-            SGND_A::VALUE1 => false,
-            SGND_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SGND`"]

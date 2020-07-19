@@ -14,17 +14,14 @@ impl crate::ResetValue for super::RMACR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDWR_A {
     #[doc = "0: transfer data from Retention Memory in Hibernate domain to RMDATA register"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: transfer data from RMDATA into Retention Memory in Hibernate domain"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RDWR_A> for bool {
     #[inline(always)]
     fn from(variant: RDWR_A) -> Self {
-        match variant {
-            RDWR_A::VALUE1 => false,
-            RDWR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RDWR`"]

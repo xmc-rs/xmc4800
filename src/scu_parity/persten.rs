@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PERSTEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSEN_A {
     #[doc = "0: Reset request disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Reset request enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RSEN_A> for bool {
     #[inline(always)]
     fn from(variant: RSEN_A) -> Self {
-        match variant {
-            RSEN_A::VALUE1 => false,
-            RSEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RSEN`"]

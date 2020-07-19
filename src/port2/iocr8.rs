@@ -12,67 +12,49 @@ impl crate::ResetValue for super::IOCR8 {
 }
 #[doc = "Port Control for Port n Pin 8 to 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PC8_A {
     #[doc = "0: Input - No internal pull device active"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input - Internal pull-down device active"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input - Internal pull-up device active"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input - No internal pull device, Pn_OUTx = input value"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Input inverted - No internal pull device active"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: Input inverted - Internal pull-down device active"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: Input inverted - Internal pull-up device active"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: Input inverted - No internal pull device, Pn_OUTx = input value"]
-    VALUE8,
+    VALUE8 = 7,
     #[doc = "16: Output Push-Pull - General-purpose output"]
-    VALUE9,
+    VALUE9 = 16,
     #[doc = "17: Output Push-Pull - Alternate output function 1"]
-    VALUE10,
+    VALUE10 = 17,
     #[doc = "18: Output Push-Pull - Alternate output function 2"]
-    VALUE11,
+    VALUE11 = 18,
     #[doc = "19: Output Push-Pull - Alternate output function 3"]
-    VALUE12,
+    VALUE12 = 19,
     #[doc = "20: Output Push-Pull - Alternate output function 4"]
-    VALUE13,
+    VALUE13 = 20,
     #[doc = "24: Output Open Drain - General-purpose output"]
-    VALUE14,
+    VALUE14 = 24,
     #[doc = "25: Output Open Drain - Alternate output function 1"]
-    VALUE15,
+    VALUE15 = 25,
     #[doc = "26: Output Open Drain - Alternate output function 2"]
-    VALUE16,
+    VALUE16 = 26,
     #[doc = "27: Output Open Drain - Alternate output function 3"]
-    VALUE17,
+    VALUE17 = 27,
     #[doc = "28: Output Open Drain - Alternate output function 4"]
-    VALUE18,
+    VALUE18 = 28,
 }
 impl From<PC8_A> for u8 {
     #[inline(always)]
     fn from(variant: PC8_A) -> Self {
-        match variant {
-            PC8_A::VALUE1 => 0,
-            PC8_A::VALUE2 => 1,
-            PC8_A::VALUE3 => 2,
-            PC8_A::VALUE4 => 3,
-            PC8_A::VALUE5 => 4,
-            PC8_A::VALUE6 => 5,
-            PC8_A::VALUE7 => 6,
-            PC8_A::VALUE8 => 7,
-            PC8_A::VALUE9 => 16,
-            PC8_A::VALUE10 => 17,
-            PC8_A::VALUE11 => 18,
-            PC8_A::VALUE12 => 19,
-            PC8_A::VALUE13 => 20,
-            PC8_A::VALUE14 => 24,
-            PC8_A::VALUE15 => 25,
-            PC8_A::VALUE16 => 26,
-            PC8_A::VALUE17 => 27,
-            PC8_A::VALUE18 => 28,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PC8`"]
@@ -304,67 +286,49 @@ impl<'a> PC8_W<'a> {
 }
 #[doc = "Port Control for Port n Pin 8 to 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PC9_A {
     #[doc = "0: Input - No internal pull device active"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input - Internal pull-down device active"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input - Internal pull-up device active"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input - No internal pull device, Pn_OUTx = input value"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Input inverted - No internal pull device active"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: Input inverted - Internal pull-down device active"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: Input inverted - Internal pull-up device active"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: Input inverted - No internal pull device, Pn_OUTx = input value"]
-    VALUE8,
+    VALUE8 = 7,
     #[doc = "16: Output Push-Pull - General-purpose output"]
-    VALUE9,
+    VALUE9 = 16,
     #[doc = "17: Output Push-Pull - Alternate output function 1"]
-    VALUE10,
+    VALUE10 = 17,
     #[doc = "18: Output Push-Pull - Alternate output function 2"]
-    VALUE11,
+    VALUE11 = 18,
     #[doc = "19: Output Push-Pull - Alternate output function 3"]
-    VALUE12,
+    VALUE12 = 19,
     #[doc = "20: Output Push-Pull - Alternate output function 4"]
-    VALUE13,
+    VALUE13 = 20,
     #[doc = "24: Output Open Drain - General-purpose output"]
-    VALUE14,
+    VALUE14 = 24,
     #[doc = "25: Output Open Drain - Alternate output function 1"]
-    VALUE15,
+    VALUE15 = 25,
     #[doc = "26: Output Open Drain - Alternate output function 2"]
-    VALUE16,
+    VALUE16 = 26,
     #[doc = "27: Output Open Drain - Alternate output function 3"]
-    VALUE17,
+    VALUE17 = 27,
     #[doc = "28: Output Open Drain - Alternate output function 4"]
-    VALUE18,
+    VALUE18 = 28,
 }
 impl From<PC9_A> for u8 {
     #[inline(always)]
     fn from(variant: PC9_A) -> Self {
-        match variant {
-            PC9_A::VALUE1 => 0,
-            PC9_A::VALUE2 => 1,
-            PC9_A::VALUE3 => 2,
-            PC9_A::VALUE4 => 3,
-            PC9_A::VALUE5 => 4,
-            PC9_A::VALUE6 => 5,
-            PC9_A::VALUE7 => 6,
-            PC9_A::VALUE8 => 7,
-            PC9_A::VALUE9 => 16,
-            PC9_A::VALUE10 => 17,
-            PC9_A::VALUE11 => 18,
-            PC9_A::VALUE12 => 19,
-            PC9_A::VALUE13 => 20,
-            PC9_A::VALUE14 => 24,
-            PC9_A::VALUE15 => 25,
-            PC9_A::VALUE16 => 26,
-            PC9_A::VALUE17 => 27,
-            PC9_A::VALUE18 => 28,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PC9`"]
@@ -596,67 +560,49 @@ impl<'a> PC9_W<'a> {
 }
 #[doc = "Port Control for Port n Pin 8 to 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PC10_A {
     #[doc = "0: Input - No internal pull device active"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input - Internal pull-down device active"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input - Internal pull-up device active"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input - No internal pull device, Pn_OUTx = input value"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Input inverted - No internal pull device active"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: Input inverted - Internal pull-down device active"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: Input inverted - Internal pull-up device active"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: Input inverted - No internal pull device, Pn_OUTx = input value"]
-    VALUE8,
+    VALUE8 = 7,
     #[doc = "16: Output Push-Pull - General-purpose output"]
-    VALUE9,
+    VALUE9 = 16,
     #[doc = "17: Output Push-Pull - Alternate output function 1"]
-    VALUE10,
+    VALUE10 = 17,
     #[doc = "18: Output Push-Pull - Alternate output function 2"]
-    VALUE11,
+    VALUE11 = 18,
     #[doc = "19: Output Push-Pull - Alternate output function 3"]
-    VALUE12,
+    VALUE12 = 19,
     #[doc = "20: Output Push-Pull - Alternate output function 4"]
-    VALUE13,
+    VALUE13 = 20,
     #[doc = "24: Output Open Drain - General-purpose output"]
-    VALUE14,
+    VALUE14 = 24,
     #[doc = "25: Output Open Drain - Alternate output function 1"]
-    VALUE15,
+    VALUE15 = 25,
     #[doc = "26: Output Open Drain - Alternate output function 2"]
-    VALUE16,
+    VALUE16 = 26,
     #[doc = "27: Output Open Drain - Alternate output function 3"]
-    VALUE17,
+    VALUE17 = 27,
     #[doc = "28: Output Open Drain - Alternate output function 4"]
-    VALUE18,
+    VALUE18 = 28,
 }
 impl From<PC10_A> for u8 {
     #[inline(always)]
     fn from(variant: PC10_A) -> Self {
-        match variant {
-            PC10_A::VALUE1 => 0,
-            PC10_A::VALUE2 => 1,
-            PC10_A::VALUE3 => 2,
-            PC10_A::VALUE4 => 3,
-            PC10_A::VALUE5 => 4,
-            PC10_A::VALUE6 => 5,
-            PC10_A::VALUE7 => 6,
-            PC10_A::VALUE8 => 7,
-            PC10_A::VALUE9 => 16,
-            PC10_A::VALUE10 => 17,
-            PC10_A::VALUE11 => 18,
-            PC10_A::VALUE12 => 19,
-            PC10_A::VALUE13 => 20,
-            PC10_A::VALUE14 => 24,
-            PC10_A::VALUE15 => 25,
-            PC10_A::VALUE16 => 26,
-            PC10_A::VALUE17 => 27,
-            PC10_A::VALUE18 => 28,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PC10`"]
@@ -888,67 +834,49 @@ impl<'a> PC10_W<'a> {
 }
 #[doc = "Port Control for Port n Pin 8 to 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PC11_A {
     #[doc = "0: Input - No internal pull device active"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Input - Internal pull-down device active"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Input - Internal pull-up device active"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Input - No internal pull device, Pn_OUTx = input value"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Input inverted - No internal pull device active"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: Input inverted - Internal pull-down device active"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: Input inverted - Internal pull-up device active"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: Input inverted - No internal pull device, Pn_OUTx = input value"]
-    VALUE8,
+    VALUE8 = 7,
     #[doc = "16: Output Push-Pull - General-purpose output"]
-    VALUE9,
+    VALUE9 = 16,
     #[doc = "17: Output Push-Pull - Alternate output function 1"]
-    VALUE10,
+    VALUE10 = 17,
     #[doc = "18: Output Push-Pull - Alternate output function 2"]
-    VALUE11,
+    VALUE11 = 18,
     #[doc = "19: Output Push-Pull - Alternate output function 3"]
-    VALUE12,
+    VALUE12 = 19,
     #[doc = "20: Output Push-Pull - Alternate output function 4"]
-    VALUE13,
+    VALUE13 = 20,
     #[doc = "24: Output Open Drain - General-purpose output"]
-    VALUE14,
+    VALUE14 = 24,
     #[doc = "25: Output Open Drain - Alternate output function 1"]
-    VALUE15,
+    VALUE15 = 25,
     #[doc = "26: Output Open Drain - Alternate output function 2"]
-    VALUE16,
+    VALUE16 = 26,
     #[doc = "27: Output Open Drain - Alternate output function 3"]
-    VALUE17,
+    VALUE17 = 27,
     #[doc = "28: Output Open Drain - Alternate output function 4"]
-    VALUE18,
+    VALUE18 = 28,
 }
 impl From<PC11_A> for u8 {
     #[inline(always)]
     fn from(variant: PC11_A) -> Self {
-        match variant {
-            PC11_A::VALUE1 => 0,
-            PC11_A::VALUE2 => 1,
-            PC11_A::VALUE3 => 2,
-            PC11_A::VALUE4 => 3,
-            PC11_A::VALUE5 => 4,
-            PC11_A::VALUE6 => 5,
-            PC11_A::VALUE7 => 6,
-            PC11_A::VALUE8 => 7,
-            PC11_A::VALUE9 => 16,
-            PC11_A::VALUE10 => 17,
-            PC11_A::VALUE11 => 18,
-            PC11_A::VALUE12 => 19,
-            PC11_A::VALUE13 => 20,
-            PC11_A::VALUE14 => 24,
-            PC11_A::VALUE15 => 25,
-            PC11_A::VALUE16 => 26,
-            PC11_A::VALUE17 => 27,
-            PC11_A::VALUE18 => 28,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PC11`"]

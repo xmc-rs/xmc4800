@@ -18,17 +18,14 @@ pub type LCKABRT_R = crate::R<bool, bool>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDTRI_A {
     #[doc = "0: SDRAM control signals are driven by the EBU when the EBU does not own the external bus. SDRAM cannot be shared."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: SDRAM control signals are tri-stated by the EBU when the EBU does not own the external bus. The SDRAM can be shared."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SDTRI_A> for bool {
     #[inline(always)]
     fn from(variant: SDTRI_A) -> Self {
-        match variant {
-            SDTRI_A::VALUE1 => false,
-            SDTRI_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDTRI`"]
@@ -96,17 +93,14 @@ impl<'a> SDTRI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXTLOCK_A {
     #[doc = "0: External bus is not locked after the EBU gains ownership"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: External bus is locked after the EBU gains ownership"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EXTLOCK_A> for bool {
     #[inline(always)]
     fn from(variant: EXTLOCK_A) -> Self {
-        match variant {
-            EXTLOCK_A::VALUE1 => false,
-            EXTLOCK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EXTLOCK`"]
@@ -174,17 +168,14 @@ impl<'a> EXTLOCK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ARBSYNC_A {
     #[doc = "0: Arbitration inputs are synchronous"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Arbitration inputs are asynchronous"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ARBSYNC_A> for bool {
     #[inline(always)]
     fn from(variant: ARBSYNC_A) -> Self {
-        match variant {
-            ARBSYNC_A::VALUE1 => false,
-            ARBSYNC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ARBSYNC`"]
@@ -250,25 +241,21 @@ impl<'a> ARBSYNC_W<'a> {
 }
 #[doc = "Arbitration Mode Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ARBMODE_A {
     #[doc = "0: No Bus arbitration mode selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Arbiter Mode arbitration mode selected"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Participant arbitration mode selected"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Sole Master arbitration mode selected"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<ARBMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: ARBMODE_A) -> Self {
-        match variant {
-            ARBMODE_A::VALUE1 => 0,
-            ARBMODE_A::VALUE2 => 1,
-            ARBMODE_A::VALUE3 => 2,
-            ARBMODE_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ARBMODE`"]
@@ -347,22 +334,19 @@ impl<'a> ARBMODE_W<'a> {
 }
 #[doc = "Bus Time-out Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TIMEOUTC_A {
     #[doc = "0: Time-out is disabled."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Time-out is generated after 1 8 clock cycles."]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "255: Time-out is generated after 255 8 clock cycles."]
-    VALUE3,
+    VALUE3 = 255,
 }
 impl From<TIMEOUTC_A> for u8 {
     #[inline(always)]
     fn from(variant: TIMEOUTC_A) -> Self {
-        match variant {
-            TIMEOUTC_A::VALUE1 => 0,
-            TIMEOUTC_A::VALUE2 => 1,
-            TIMEOUTC_A::VALUE3 => 255,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TIMEOUTC`"]
@@ -485,17 +469,14 @@ pub type ACCSINHACK_R = crate::R<bool, bool>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALE_A {
     #[doc = "0: Output is ADV"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Output is ALE"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ALE_A> for bool {
     #[inline(always)]
     fn from(variant: ALE_A) -> Self {
-        match variant {
-            ALE_A::VALUE1 => false,
-            ALE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ALE`"]

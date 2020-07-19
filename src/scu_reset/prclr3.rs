@@ -12,17 +12,14 @@ impl crate::ResetValue for super::PRCLR3 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EBURS_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: De-assert reset"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EBURS_AW> for bool {
     #[inline(always)]
     fn from(variant: EBURS_AW) -> Self {
-        match variant {
-            EBURS_AW::VALUE1 => false,
-            EBURS_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `EBURS`"]

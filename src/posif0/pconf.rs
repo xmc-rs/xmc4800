@@ -12,25 +12,21 @@ impl crate::ResetValue for super::PCONF {
 }
 #[doc = "Function Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FSEL_A {
     #[doc = "0: Hall Sensor Mode enabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Quadrature Decoder Mode enabled"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: stand-alone Multi-Channel Mode enabled"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Quadrature Decoder and stand-alone Multi-Channel Mode enabled"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<FSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: FSEL_A) -> Self {
-        match variant {
-            FSEL_A::VALUE1 => 0,
-            FSEL_A::VALUE2 => 1,
-            FSEL_A::VALUE3 => 2,
-            FSEL_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FSEL`"]
@@ -111,17 +107,14 @@ impl<'a> FSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum QDCM_A {
     #[doc = "0: Position encoder is in Quadrature Mode"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Position encoder is in Direction Count Mode."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<QDCM_A> for bool {
     #[inline(always)]
     fn from(variant: QDCM_A) -> Self {
-        match variant {
-            QDCM_A::VALUE1 => false,
-            QDCM_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `QDCM`"]
@@ -213,17 +206,14 @@ impl<'a> HIDG_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCUE_A {
     #[doc = "0: Multi-Channel pattern update is controlled via HW"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Multi-Channel pattern update is controlled via SW"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MCUE_A> for bool {
     #[inline(always)]
     fn from(variant: MCUE_A) -> Self {
-        match variant {
-            MCUE_A::VALUE1 => false,
-            MCUE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MCUE`"]
@@ -289,25 +279,21 @@ impl<'a> MCUE_W<'a> {
 }
 #[doc = "PhaseA/Hal input 1 selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INSEL0_A {
     #[doc = "0: POSIFx.IN0A"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: POSIFx.IN0B"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: POSIFx.IN0C"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: POSIFx.IN0D"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<INSEL0_A> for u8 {
     #[inline(always)]
     fn from(variant: INSEL0_A) -> Self {
-        match variant {
-            INSEL0_A::VALUE1 => 0,
-            INSEL0_A::VALUE2 => 1,
-            INSEL0_A::VALUE3 => 2,
-            INSEL0_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INSEL0`"]
@@ -386,25 +372,21 @@ impl<'a> INSEL0_W<'a> {
 }
 #[doc = "PhaseB/Hall input 2 selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INSEL1_A {
     #[doc = "0: POSIFx.IN1A"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: POSIFx.IN1B"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: POSIFx.IN1C"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: POSIFx.IN1D"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<INSEL1_A> for u8 {
     #[inline(always)]
     fn from(variant: INSEL1_A) -> Self {
-        match variant {
-            INSEL1_A::VALUE1 => 0,
-            INSEL1_A::VALUE2 => 1,
-            INSEL1_A::VALUE3 => 2,
-            INSEL1_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INSEL1`"]
@@ -483,25 +465,21 @@ impl<'a> INSEL1_W<'a> {
 }
 #[doc = "Index/Hall input 3 selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INSEL2_A {
     #[doc = "0: POSIFx.IN2A"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: POSIFx.IN2B"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: POSIFx.IN2C"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: POSIFx.IN2D"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<INSEL2_A> for u8 {
     #[inline(always)]
     fn from(variant: INSEL2_A) -> Self {
-        match variant {
-            INSEL2_A::VALUE1 => 0,
-            INSEL2_A::VALUE2 => 1,
-            INSEL2_A::VALUE3 => 2,
-            INSEL2_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INSEL2`"]
@@ -582,17 +560,14 @@ impl<'a> INSEL2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DSEL_A {
     #[doc = "0: POSIFx.HSDA"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: POSIFx.HSDB"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DSEL_A> for bool {
     #[inline(always)]
     fn from(variant: DSEL_A) -> Self {
-        match variant {
-            DSEL_A::VALUE1 => false,
-            DSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DSEL`"]
@@ -660,17 +635,14 @@ impl<'a> DSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPES_A {
     #[doc = "0: Rising edge"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Falling edge"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SPES_A> for bool {
     #[inline(always)]
     fn from(variant: SPES_A) -> Self {
-        match variant {
-            SPES_A::VALUE1 => false,
-            SPES_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SPES`"]
@@ -736,37 +708,29 @@ impl<'a> SPES_W<'a> {
 }
 #[doc = "Pattern update signal select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MSETS_A {
     #[doc = "0: POSIFx.MSETA"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: POSIFx.MSETB"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: POSIFx.MSETC"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: POSIFx.MSETD"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: POSIFx.MSETE"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: POSIFx.MSETF"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: POSIFx.MSETG"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: POSIFx.MSETH"]
-    VALUE8,
+    VALUE8 = 7,
 }
 impl From<MSETS_A> for u8 {
     #[inline(always)]
     fn from(variant: MSETS_A) -> Self {
-        match variant {
-            MSETS_A::VALUE1 => 0,
-            MSETS_A::VALUE2 => 1,
-            MSETS_A::VALUE3 => 2,
-            MSETS_A::VALUE4 => 3,
-            MSETS_A::VALUE5 => 4,
-            MSETS_A::VALUE6 => 5,
-            MSETS_A::VALUE7 => 6,
-            MSETS_A::VALUE8 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MSETS`"]
@@ -891,17 +855,14 @@ impl<'a> MSETS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSES_A {
     #[doc = "0: The signal used to enable a pattern update is active on the rising edge"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The signal used to enable a pattern update is active on the falling edge"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MSES_A> for bool {
     #[inline(always)]
     fn from(variant: MSES_A) -> Self {
-        match variant {
-            MSES_A::VALUE1 => false,
-            MSES_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSES`"]
@@ -967,25 +928,21 @@ impl<'a> MSES_W<'a> {
 }
 #[doc = "PWM synchronization signal selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MSYNS_A {
     #[doc = "0: POSIFx.MSYNCA"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: POSIFx.MSYNCB"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: POSIFx.MSYNCC"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: POSIFx.MSYNCD"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<MSYNS_A> for u8 {
     #[inline(always)]
     fn from(variant: MSYNS_A) -> Self {
-        match variant {
-            MSYNS_A::VALUE1 => 0,
-            MSYNS_A::VALUE2 => 1,
-            MSYNS_A::VALUE3 => 2,
-            MSYNS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MSYNS`"]
@@ -1064,25 +1021,21 @@ impl<'a> MSYNS_W<'a> {
 }
 #[doc = "Wrong Hall Event selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EWIS_A {
     #[doc = "0: POSIFx.EWHEA"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: POSIFx.EWHEB"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: POSIFx.EWHEC"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: POSIFx.EWHED"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EWIS_A> for u8 {
     #[inline(always)]
     fn from(variant: EWIS_A) -> Self {
-        match variant {
-            EWIS_A::VALUE1 => 0,
-            EWIS_A::VALUE2 => 1,
-            EWIS_A::VALUE3 => 2,
-            EWIS_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EWIS`"]
@@ -1163,17 +1116,14 @@ impl<'a> EWIS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EWIE_A {
     #[doc = "0: External wrong hall event emulation signal, POSIFx.EWHE\\[D...A\\], is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: External wrong hall event emulation signal, POSIFx.EWHE\\[D...A\\], is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EWIE_A> for bool {
     #[inline(always)]
     fn from(variant: EWIE_A) -> Self {
-        match variant {
-            EWIE_A::VALUE1 => false,
-            EWIE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EWIE`"]
@@ -1240,18 +1190,17 @@ impl<'a> EWIE_W<'a> {
 #[doc = "External Wrong Hall Event active level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EWIL_A {
-    #[doc = "0: POSIFx.EWHE\\[D...A\\] signal is active HIGH"]
-    VALUE1,
-    #[doc = "1: POSIFx.EWHE\\[D...A\\] signal is active LOW"]
-    VALUE2,
+    #[doc = "0: POSIFx.EWHE\\[D...A\\]
+signal is active HIGH"]
+    VALUE1 = 0,
+    #[doc = "1: POSIFx.EWHE\\[D...A\\]
+signal is active LOW"]
+    VALUE2 = 1,
 }
 impl From<EWIL_A> for bool {
     #[inline(always)]
     fn from(variant: EWIL_A) -> Self {
-        match variant {
-            EWIL_A::VALUE1 => false,
-            EWIL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EWIL`"]
@@ -1288,12 +1237,14 @@ impl<'a> EWIL_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "POSIFx.EWHE\\[D...A\\] signal is active HIGH"]
+    #[doc = "POSIFx.EWHE\\[D...A\\]
+signal is active HIGH"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
         self.variant(EWIL_A::VALUE1)
     }
-    #[doc = "POSIFx.EWHE\\[D...A\\] signal is active LOW"]
+    #[doc = "POSIFx.EWHE\\[D...A\\]
+signal is active LOW"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
         self.variant(EWIL_A::VALUE2)
@@ -1317,37 +1268,29 @@ impl<'a> EWIL_W<'a> {
 }
 #[doc = "Low Pass Filters Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LPC_A {
     #[doc = "0: Low pass filter disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Low pass of 1 clock cycle"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Low pass of 2 clock cycles"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Low pass of 4 clock cycles"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: Low pass of 8 clock cycles"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "5: Low pass of 16 clock cycles"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: Low pass of 32 clock cycles"]
-    VALUE7,
+    VALUE7 = 6,
     #[doc = "7: Low pass of 64 clock cycles"]
-    VALUE8,
+    VALUE8 = 7,
 }
 impl From<LPC_A> for u8 {
     #[inline(always)]
     fn from(variant: LPC_A) -> Self {
-        match variant {
-            LPC_A::VALUE1 => 0,
-            LPC_A::VALUE2 => 1,
-            LPC_A::VALUE3 => 2,
-            LPC_A::VALUE4 => 3,
-            LPC_A::VALUE5 => 4,
-            LPC_A::VALUE6 => 5,
-            LPC_A::VALUE7 => 6,
-            LPC_A::VALUE8 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LPC`"]

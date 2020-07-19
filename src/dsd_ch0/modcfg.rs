@@ -12,25 +12,21 @@ impl crate::ResetValue for super::MODCFG {
 }
 #[doc = "Divider Factor for Modulator Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DIVM_A {
     #[doc = "0: fMOD = fCLK / 2"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: fMOD = fCLK / 4"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: fMOD = fCLK / 6"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "15: fMOD = fCLK / 32"]
-    VALUE4,
+    VALUE4 = 15,
 }
 impl From<DIVM_A> for u8 {
     #[inline(always)]
     fn from(variant: DIVM_A) -> Self {
-        match variant {
-            DIVM_A::VALUE1 => 0,
-            DIVM_A::VALUE2 => 1,
-            DIVM_A::VALUE3 => 2,
-            DIVM_A::VALUE4 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DIVM`"]
@@ -110,17 +106,14 @@ impl<'a> DIVM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DWC_AW {
     #[doc = "0: No write access to divider factor"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bitfield DIVM can be written"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DWC_AW> for bool {
     #[inline(always)]
     fn from(variant: DWC_AW) -> Self {
-        match variant {
-            DWC_AW::VALUE1 => false,
-            DWC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `DWC`"]

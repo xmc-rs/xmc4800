@@ -12,17 +12,14 @@ impl crate::ResetValue for super::CGATCLR1 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCU43_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CCU43_AW> for bool {
     #[inline(always)]
     fn from(variant: CCU43_AW) -> Self {
-        match variant {
-            CCU43_AW::VALUE1 => false,
-            CCU43_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `CCU43`"]
@@ -68,17 +65,14 @@ impl<'a> CCU43_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LEDTSCU0_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<LEDTSCU0_AW> for bool {
     #[inline(always)]
     fn from(variant: LEDTSCU0_AW) -> Self {
-        match variant {
-            LEDTSCU0_AW::VALUE1 => false,
-            LEDTSCU0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `LEDTSCU0`"]
@@ -124,17 +118,14 @@ impl<'a> LEDTSCU0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCAN0_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MCAN0_AW> for bool {
     #[inline(always)]
     fn from(variant: MCAN0_AW) -> Self {
-        match variant {
-            MCAN0_AW::VALUE1 => false,
-            MCAN0_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `MCAN0`"]
@@ -180,17 +171,14 @@ impl<'a> MCAN0_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DAC_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DAC_AW> for bool {
     #[inline(always)]
     fn from(variant: DAC_AW) -> Self {
-        match variant {
-            DAC_AW::VALUE1 => false,
-            DAC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `DAC`"]
@@ -236,17 +224,14 @@ impl<'a> DAC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MMCI_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MMCI_AW> for bool {
     #[inline(always)]
     fn from(variant: MMCI_AW) -> Self {
-        match variant {
-            MMCI_AW::VALUE1 => false,
-            MMCI_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `MMCI`"]
@@ -292,17 +277,14 @@ impl<'a> MMCI_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USIC1_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<USIC1_AW> for bool {
     #[inline(always)]
     fn from(variant: USIC1_AW) -> Self {
-        match variant {
-            USIC1_AW::VALUE1 => false,
-            USIC1_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `USIC1`"]
@@ -348,17 +330,14 @@ impl<'a> USIC1_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USIC2_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<USIC2_AW> for bool {
     #[inline(always)]
     fn from(variant: USIC2_AW) -> Self {
-        match variant {
-            USIC2_AW::VALUE1 => false,
-            USIC2_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `USIC2`"]
@@ -404,17 +383,14 @@ impl<'a> USIC2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PPORTS_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PPORTS_AW> for bool {
     #[inline(always)]
     fn from(variant: PPORTS_AW) -> Self {
-        match variant {
-            PPORTS_AW::VALUE1 => false,
-            PPORTS_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `PPORTS`"]

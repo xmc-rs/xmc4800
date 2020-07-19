@@ -6,17 +6,14 @@ pub type RESULT_R = crate::R<u16, u16>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDY_A {
     #[doc = "0: The DTS is not ready"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: The DTS is ready"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RDY_A> for bool {
     #[inline(always)]
     fn from(variant: RDY_A) -> Self {
-        match variant {
-            RDY_A::VALUE1 => false,
-            RDY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RDY`"]
@@ -45,17 +42,14 @@ impl RDY_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUSY_A {
     #[doc = "0: not busy"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: busy"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<BUSY_A> for bool {
     #[inline(always)]
     fn from(variant: BUSY_A) -> Self {
-        match variant {
-            BUSY_A::VALUE1 => false,
-            BUSY_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BUSY`"]

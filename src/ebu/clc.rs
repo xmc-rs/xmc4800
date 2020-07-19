@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CLC {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DISR_A {
     #[doc = "0: EBU disable is not requested"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: EBU disable is requested"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DISR_A> for bool {
     #[inline(always)]
     fn from(variant: DISR_A) -> Self {
-        match variant {
-            DISR_A::VALUE1 => false,
-            DISR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DISR`"]
@@ -92,17 +89,14 @@ impl<'a> DISR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DISS_A {
     #[doc = "0: EBU is enabled (default after reset)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: EBU is disabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DISS_A> for bool {
     #[inline(always)]
     fn from(variant: DISS_A) -> Self {
-        match variant {
-            DISS_A::VALUE1 => false,
-            DISS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DISS`"]
@@ -131,17 +125,14 @@ impl DISS_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNC_A {
     #[doc = "0: request EBU to run asynchronously to AHB bus clock and use separate clock source"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: request EBU to run synchronously to ARM processor (default after reset)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SYNC_A> for bool {
     #[inline(always)]
     fn from(variant: SYNC_A) -> Self {
-        match variant {
-            SYNC_A::VALUE1 => false,
-            SYNC_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYNC`"]
@@ -209,17 +200,14 @@ impl<'a> SYNC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIV2_A {
     #[doc = "0: standard clocking mode. clock input selected by SYNC bitfield (default after reset)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: request EBU to run off AHB bus clock divided by 2."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DIV2_A> for bool {
     #[inline(always)]
     fn from(variant: DIV2_A) -> Self {
-        match variant {
-            DIV2_A::VALUE1 => false,
-            DIV2_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIV2`"]
@@ -285,25 +273,21 @@ impl<'a> DIV2_W<'a> {
 }
 #[doc = "EBU Clock Divide Ratio\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EBUDIV_A {
     #[doc = "0: request EBU to run off input clock (default after reset)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: request EBU to run off input clock divided by 2"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: request EBU to run off input clock divided by 3"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: request EBU to run off input clock divided by 4"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EBUDIV_A> for u8 {
     #[inline(always)]
     fn from(variant: EBUDIV_A) -> Self {
-        match variant {
-            EBUDIV_A::VALUE1 => 0,
-            EBUDIV_A::VALUE2 => 1,
-            EBUDIV_A::VALUE3 => 2,
-            EBUDIV_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EBUDIV`"]
@@ -384,17 +368,14 @@ impl<'a> EBUDIV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNCACK_A {
     #[doc = "0: the EBU is asynchronous to the AHB bus clock and is using a separate clock source"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: EBU is synchronous to the AHB bus clock (default after reset)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SYNCACK_A> for bool {
     #[inline(always)]
     fn from(variant: SYNCACK_A) -> Self {
-        match variant {
-            SYNCACK_A::VALUE1 => false,
-            SYNCACK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYNCACK`"]
@@ -423,17 +404,14 @@ impl SYNCACK_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIV2ACK_A {
     #[doc = "0: EBU is using standard clocking mode. clock input selected by SYNC bitfield (default after reset)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: EBU is running off AHB bus clock divided by 2."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DIV2ACK_A> for bool {
     #[inline(always)]
     fn from(variant: DIV2ACK_A) -> Self {
-        match variant {
-            DIV2ACK_A::VALUE1 => false,
-            DIV2ACK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIV2ACK`"]
@@ -460,25 +438,21 @@ impl DIV2ACK_R {
 }
 #[doc = "EBU Clock Divide Ratio Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EBUDIVACK_A {
     #[doc = "0: EBU is running off input clock (default after reset)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: EBU is running off input clock divided by 2"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: EBU is running off input clock divided by 3"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: EBU is running off input clock divided by 4"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<EBUDIVACK_A> for u8 {
     #[inline(always)]
     fn from(variant: EBUDIVACK_A) -> Self {
-        match variant {
-            EBUDIVACK_A::VALUE1 => 0,
-            EBUDIVACK_A::VALUE2 => 1,
-            EBUDIVACK_A::VALUE3 => 2,
-            EBUDIVACK_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EBUDIVACK`"]

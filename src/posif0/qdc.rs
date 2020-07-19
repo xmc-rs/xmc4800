@@ -14,17 +14,14 @@ impl crate::ResetValue for super::QDC {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PALS_A {
     #[doc = "0: Phase A is active HIGH"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Phase A is active LOW"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PALS_A> for bool {
     #[inline(always)]
     fn from(variant: PALS_A) -> Self {
-        match variant {
-            PALS_A::VALUE1 => false,
-            PALS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PALS`"]
@@ -92,17 +89,14 @@ impl<'a> PALS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PBLS_A {
     #[doc = "0: Phase B is active HIGH"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Phase B is active LOW"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PBLS_A> for bool {
     #[inline(always)]
     fn from(variant: PBLS_A) -> Self {
-        match variant {
-            PBLS_A::VALUE1 => false,
-            PBLS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PBLS`"]
@@ -170,17 +164,14 @@ impl<'a> PBLS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PHS_A {
     #[doc = "0: Phase A is the leading signal for clockwise rotation"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Phase B is the leading signal for clockwise rotation"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PHS_A> for bool {
     #[inline(always)]
     fn from(variant: PHS_A) -> Self {
-        match variant {
-            PHS_A::VALUE1 => false,
-            PHS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PHS`"]
@@ -246,22 +237,19 @@ impl<'a> PHS_W<'a> {
 }
 #[doc = "Index Marker generations control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ICM_A {
     #[doc = "0: No index marker generation on POSIFx.OUT3"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Only first index occurrence generated on POSIFx.OUT3"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: All index occurrences generated on POSIFx.OUT3"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<ICM_A> for u8 {
     #[inline(always)]
     fn from(variant: ICM_A) -> Self {
-        match variant {
-            ICM_A::VALUE1 => 0,
-            ICM_A::VALUE2 => 1,
-            ICM_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ICM`"]
@@ -330,17 +318,14 @@ impl<'a> ICM_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DVAL_A {
     #[doc = "0: Counterclockwise rotation"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Clockwise rotation"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DVAL_A> for bool {
     #[inline(always)]
     fn from(variant: DVAL_A) -> Self {
-        match variant {
-            DVAL_A::VALUE1 => false,
-            DVAL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DVAL`"]

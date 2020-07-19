@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::PROCON0>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S0L_A {
     #[doc = "0: No write protection is configured for sector n."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S0L_A> for bool {
     #[inline(always)]
     fn from(variant: S0L_A) -> Self {
-        match variant {
-            S0L_A::VALUE1 => false,
-            S0L_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S0L`"]
@@ -43,17 +40,14 @@ impl S0L_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S1L_A {
     #[doc = "0: No write protection is configured for sector n."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S1L_A> for bool {
     #[inline(always)]
     fn from(variant: S1L_A) -> Self {
-        match variant {
-            S1L_A::VALUE1 => false,
-            S1L_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S1L`"]
@@ -82,17 +76,14 @@ impl S1L_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S2L_A {
     #[doc = "0: No write protection is configured for sector n."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S2L_A> for bool {
     #[inline(always)]
     fn from(variant: S2L_A) -> Self {
-        match variant {
-            S2L_A::VALUE1 => false,
-            S2L_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S2L`"]
@@ -121,17 +112,14 @@ impl S2L_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S3L_A {
     #[doc = "0: No write protection is configured for sector n."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S3L_A> for bool {
     #[inline(always)]
     fn from(variant: S3L_A) -> Self {
-        match variant {
-            S3L_A::VALUE1 => false,
-            S3L_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S3L`"]
@@ -160,17 +148,14 @@ impl S3L_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S4L_A {
     #[doc = "0: No write protection is configured for sector n."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S4L_A> for bool {
     #[inline(always)]
     fn from(variant: S4L_A) -> Self {
-        match variant {
-            S4L_A::VALUE1 => false,
-            S4L_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S4L`"]
@@ -199,17 +184,14 @@ impl S4L_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S5L_A {
     #[doc = "0: No write protection is configured for sector n."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S5L_A> for bool {
     #[inline(always)]
     fn from(variant: S5L_A) -> Self {
-        match variant {
-            S5L_A::VALUE1 => false,
-            S5L_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S5L`"]
@@ -238,17 +220,14 @@ impl S5L_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S6L_A {
     #[doc = "0: No write protection is configured for sector n."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S6L_A> for bool {
     #[inline(always)]
     fn from(variant: S6L_A) -> Self {
-        match variant {
-            S6L_A::VALUE1 => false,
-            S6L_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S6L`"]
@@ -277,17 +256,14 @@ impl S6L_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S7L_A {
     #[doc = "0: No write protection is configured for sector n."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S7L_A> for bool {
     #[inline(always)]
     fn from(variant: S7L_A) -> Self {
-        match variant {
-            S7L_A::VALUE1 => false,
-            S7L_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S7L`"]
@@ -316,17 +292,14 @@ impl S7L_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S8L_A {
     #[doc = "0: No write protection is configured for sector n."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S8L_A> for bool {
     #[inline(always)]
     fn from(variant: S8L_A) -> Self {
-        match variant {
-            S8L_A::VALUE1 => false,
-            S8L_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S8L`"]
@@ -355,17 +328,14 @@ impl S8L_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S9L_A {
     #[doc = "0: No write protection is configured for sector n."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection is configured for sector n."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S9L_A> for bool {
     #[inline(always)]
     fn from(variant: S9L_A) -> Self {
-        match variant {
-            S9L_A::VALUE1 => false,
-            S9L_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S9L`"]
@@ -394,17 +364,14 @@ impl S9L_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S10_S11L_A {
     #[doc = "0: No write protection is configured for sectors 10+11."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection is configured for sectors 10+11."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S10_S11L_A> for bool {
     #[inline(always)]
     fn from(variant: S10_S11L_A) -> Self {
-        match variant {
-            S10_S11L_A::VALUE1 => false,
-            S10_S11L_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S10_S11L`"]
@@ -433,17 +400,14 @@ impl S10_S11L_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S12_S13L_A {
     #[doc = "0: No write protection is configured for sectors 12+13."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection is configured for sectors 12+13."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S12_S13L_A> for bool {
     #[inline(always)]
     fn from(variant: S12_S13L_A) -> Self {
-        match variant {
-            S12_S13L_A::VALUE1 => false,
-            S12_S13L_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S12_S13L`"]
@@ -472,17 +436,14 @@ impl S12_S13L_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S14_S15L_A {
     #[doc = "0: No write protection is configured for sectors 14+15."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Write protection is configured for sectors 14+15."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<S14_S15L_A> for bool {
     #[inline(always)]
     fn from(variant: S14_S15L_A) -> Self {
-        match variant {
-            S14_S15L_A::VALUE1 => false,
-            S14_S15L_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S14_S15L`"]
@@ -511,17 +472,14 @@ impl S14_S15L_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RPRO_A {
     #[doc = "0: No read protection configured"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Read protection and global write protection is configured by user 0 (master user)"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<RPRO_A> for bool {
     #[inline(always)]
     fn from(variant: RPRO_A) -> Self {
-        match variant {
-            RPRO_A::VALUE1 => false,
-            RPRO_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RPRO`"]

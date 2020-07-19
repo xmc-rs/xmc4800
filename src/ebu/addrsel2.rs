@@ -14,17 +14,14 @@ impl crate::ResetValue for super::ADDRSEL2 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REGENAB_A {
     #[doc = "0: Memory region is disabled (default after reset)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Memory region is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<REGENAB_A> for bool {
     #[inline(always)]
     fn from(variant: REGENAB_A) -> Self {
-        match variant {
-            REGENAB_A::VALUE1 => false,
-            REGENAB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REGENAB`"]
@@ -92,17 +89,14 @@ impl<'a> REGENAB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALTENAB_A {
     #[doc = "0: Memory region is disabled (default after reset)."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Memory region is enabled."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ALTENAB_A> for bool {
     #[inline(always)]
     fn from(variant: ALTENAB_A) -> Self {
-        match variant {
-            ALTENAB_A::VALUE1 => false,
-            ALTENAB_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ALTENAB`"]
@@ -170,17 +164,14 @@ impl<'a> ALTENAB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WPROT_A {
     #[doc = "0: Region is enabled for write accesses"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Region is write protected."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WPROT_A> for bool {
     #[inline(always)]
     fn from(variant: WPROT_A) -> Self {
-        match variant {
-            WPROT_A::VALUE1 => false,
-            WPROT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WPROT`"]

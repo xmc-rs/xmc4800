@@ -14,17 +14,14 @@ impl crate::ResetValue for super::PFLGE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECHE_A {
     #[doc = "0: Correct Hall Event interrupt disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Correct Hall Event interrupt enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ECHE_A> for bool {
     #[inline(always)]
     fn from(variant: ECHE_A) -> Self {
-        match variant {
-            ECHE_A::VALUE1 => false,
-            ECHE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ECHE`"]
@@ -92,17 +89,14 @@ impl<'a> ECHE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EWHE_A {
     #[doc = "0: Wrong Hall Event interrupt disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Wrong Hall Event interrupt enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EWHE_A> for bool {
     #[inline(always)]
     fn from(variant: EWHE_A) -> Self {
-        match variant {
-            EWHE_A::VALUE1 => false,
-            EWHE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EWHE`"]
@@ -170,17 +164,14 @@ impl<'a> EWHE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EHIE_A {
     #[doc = "0: Update of the Hall Inputs interrupt is disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Update of the Hall Inputs interrupt is enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EHIE_A> for bool {
     #[inline(always)]
     fn from(variant: EHIE_A) -> Self {
-        match variant {
-            EHIE_A::VALUE1 => false,
-            EHIE_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EHIE`"]
@@ -248,17 +239,14 @@ impl<'a> EHIE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EMST_A {
     #[doc = "0: Shadow transfer event interrupt disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Shadow transfer event interrupt enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EMST_A> for bool {
     #[inline(always)]
     fn from(variant: EMST_A) -> Self {
-        match variant {
-            EMST_A::VALUE1 => false,
-            EMST_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EMST`"]
@@ -326,17 +314,14 @@ impl<'a> EMST_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EINDX_A {
     #[doc = "0: Index event interrupt disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Index event interrupt enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EINDX_A> for bool {
     #[inline(always)]
     fn from(variant: EINDX_A) -> Self {
-        match variant {
-            EINDX_A::VALUE1 => false,
-            EINDX_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EINDX`"]
@@ -404,17 +389,14 @@ impl<'a> EINDX_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EERR_A {
     #[doc = "0: Phase error event interrupt disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Phase error event interrupt enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EERR_A> for bool {
     #[inline(always)]
     fn from(variant: EERR_A) -> Self {
-        match variant {
-            EERR_A::VALUE1 => false,
-            EERR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EERR`"]
@@ -482,17 +464,14 @@ impl<'a> EERR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECNT_A {
     #[doc = "0: Quadrature CLK event interrupt disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Quadrature CLK event interrupt enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ECNT_A> for bool {
     #[inline(always)]
     fn from(variant: ECNT_A) -> Self {
-        match variant {
-            ECNT_A::VALUE1 => false,
-            ECNT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ECNT`"]
@@ -560,17 +539,14 @@ impl<'a> ECNT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EDIR_A {
     #[doc = "0: Direction change event interrupt disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Direction change event interrupt enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EDIR_A> for bool {
     #[inline(always)]
     fn from(variant: EDIR_A) -> Self {
-        match variant {
-            EDIR_A::VALUE1 => false,
-            EDIR_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EDIR`"]
@@ -638,17 +614,14 @@ impl<'a> EDIR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EPCLK_A {
     #[doc = "0: Quadrature Period CLK event interrupt disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Quadrature Period CLK event interrupt enabled"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EPCLK_A> for bool {
     #[inline(always)]
     fn from(variant: EPCLK_A) -> Self {
-        match variant {
-            EPCLK_A::VALUE1 => false,
-            EPCLK_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EPCLK`"]
@@ -716,17 +689,14 @@ impl<'a> EPCLK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHESEL_A {
     #[doc = "0: Correct Hall Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Correct Hall Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CHESEL_A> for bool {
     #[inline(always)]
     fn from(variant: CHESEL_A) -> Self {
-        match variant {
-            CHESEL_A::VALUE1 => false,
-            CHESEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CHESEL`"]
@@ -794,17 +764,14 @@ impl<'a> CHESEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WHESEL_A {
     #[doc = "0: Wrong Hall Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Wrong Hall Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<WHESEL_A> for bool {
     #[inline(always)]
     fn from(variant: WHESEL_A) -> Self {
-        match variant {
-            WHESEL_A::VALUE1 => false,
-            WHESEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WHESEL`"]
@@ -872,17 +839,14 @@ impl<'a> WHESEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIESEL_A {
     #[doc = "0: Hall Inputs Update Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Hall Inputs Update Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HIESEL_A> for bool {
     #[inline(always)]
     fn from(variant: HIESEL_A) -> Self {
-        match variant {
-            HIESEL_A::VALUE1 => false,
-            HIESEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HIESEL`"]
@@ -950,17 +914,14 @@ impl<'a> HIESEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSTSEL_A {
     #[doc = "0: Multi-Channel pattern Update Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Multi-Channel pattern Update Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MSTSEL_A> for bool {
     #[inline(always)]
     fn from(variant: MSTSEL_A) -> Self {
-        match variant {
-            MSTSEL_A::VALUE1 => false,
-            MSTSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSTSEL`"]
@@ -1028,17 +989,14 @@ impl<'a> MSTSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INDSEL_A {
     #[doc = "0: Quadrature Index Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Quadrature Index Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<INDSEL_A> for bool {
     #[inline(always)]
     fn from(variant: INDSEL_A) -> Self {
-        match variant {
-            INDSEL_A::VALUE1 => false,
-            INDSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INDSEL`"]
@@ -1106,17 +1064,14 @@ impl<'a> INDSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERRSEL_A {
     #[doc = "0: Quadrature Phase error Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Quadrature Phase error Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ERRSEL_A> for bool {
     #[inline(always)]
     fn from(variant: ERRSEL_A) -> Self {
-        match variant {
-            ERRSEL_A::VALUE1 => false,
-            ERRSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERRSEL`"]
@@ -1184,17 +1139,14 @@ impl<'a> ERRSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CNTSEL_A {
     #[doc = "0: Quadrature Clock Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Quadrature Clock Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CNTSEL_A> for bool {
     #[inline(always)]
     fn from(variant: CNTSEL_A) -> Self {
-        match variant {
-            CNTSEL_A::VALUE1 => false,
-            CNTSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CNTSEL`"]
@@ -1262,17 +1214,14 @@ impl<'a> CNTSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIRSEL_A {
     #[doc = "0: Quadrature Direction Update Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Quadrature Direction Update Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DIRSEL_A> for bool {
     #[inline(always)]
     fn from(variant: DIRSEL_A) -> Self {
-        match variant {
-            DIRSEL_A::VALUE1 => false,
-            DIRSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIRSEL`"]
@@ -1340,17 +1289,14 @@ impl<'a> DIRSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCLSEL_A {
     #[doc = "0: Quadrature Period clock Event interrupt forward to POSIFx.SR0"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Quadrature Period clock Event interrupt forward to POSIFx.SR1"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<PCLSEL_A> for bool {
     #[inline(always)]
     fn from(variant: PCLSEL_A) -> Self {
-        match variant {
-            PCLSEL_A::VALUE1 => false,
-            PCLSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PCLSEL`"]

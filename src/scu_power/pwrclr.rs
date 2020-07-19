@@ -12,17 +12,14 @@ impl crate::ResetValue for super::PWRCLR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIB_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Disable Hibernate domain"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HIB_AW> for bool {
     #[inline(always)]
     fn from(variant: HIB_AW) -> Self {
-        match variant {
-            HIB_AW::VALUE1 => false,
-            HIB_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `HIB`"]
@@ -68,17 +65,14 @@ impl<'a> HIB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBPHYPDQ_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Power-down"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<USBPHYPDQ_AW> for bool {
     #[inline(always)]
     fn from(variant: USBPHYPDQ_AW) -> Self {
-        match variant {
-            USBPHYPDQ_AW::VALUE1 => false,
-            USBPHYPDQ_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `USBPHYPDQ`"]
@@ -124,17 +118,14 @@ impl<'a> USBPHYPDQ_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBOTGEN_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Power-down"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<USBOTGEN_AW> for bool {
     #[inline(always)]
     fn from(variant: USBOTGEN_AW) -> Self {
-        match variant {
-            USBOTGEN_AW::VALUE1 => false,
-            USBOTGEN_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `USBOTGEN`"]
@@ -180,17 +171,14 @@ impl<'a> USBOTGEN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBPUWQ_AW {
     #[doc = "0: No effect"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pull-up active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<USBPUWQ_AW> for bool {
     #[inline(always)]
     fn from(variant: USBPUWQ_AW) -> Self {
-        match variant {
-            USBPUWQ_AW::VALUE1 => false,
-            USBPUWQ_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `USBPUWQ`"]

@@ -12,28 +12,23 @@ impl crate::ResetValue for super::DICFG {
 }
 #[doc = "Input Data Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DSRC_A {
     #[doc = "0: Disconnected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "2: External, from input A, direct"]
-    VALUE2,
+    VALUE2 = 2,
     #[doc = "3: External, from input A, inverted"]
-    VALUE3,
+    VALUE3 = 3,
     #[doc = "4: External, from input B, direct"]
-    VALUE4,
+    VALUE4 = 4,
     #[doc = "5: External, from input B, inverted"]
-    VALUE5,
+    VALUE5 = 5,
 }
 impl From<DSRC_A> for u8 {
     #[inline(always)]
     fn from(variant: DSRC_A) -> Self {
-        match variant {
-            DSRC_A::VALUE1 => 0,
-            DSRC_A::VALUE2 => 2,
-            DSRC_A::VALUE3 => 3,
-            DSRC_A::VALUE4 => 4,
-            DSRC_A::VALUE5 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DSRC`"]
@@ -124,17 +119,14 @@ impl<'a> DSRC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DSWC_AW {
     #[doc = "0: No write access to data parameters"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bitfield DSRC can be written"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<DSWC_AW> for bool {
     #[inline(always)]
     fn from(variant: DSWC_AW) -> Self {
-        match variant {
-            DSWC_AW::VALUE1 => false,
-            DSWC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `DSWC`"]
@@ -178,25 +170,21 @@ impl<'a> DSWC_W<'a> {
 }
 #[doc = "Integrator Trigger Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ITRMODE_A {
     #[doc = "0: No integration trigger, integrator bypassed, INTEN = 0 all the time"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Trigger event upon a falling edge"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Trigger event upon a rising edge"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: No trigger, integrator active all the time, INTEN = 1 all the time"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<ITRMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: ITRMODE_A) -> Self {
-        match variant {
-            ITRMODE_A::VALUE1 => 0,
-            ITRMODE_A::VALUE2 => 1,
-            ITRMODE_A::VALUE3 => 2,
-            ITRMODE_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ITRMODE`"]
@@ -275,25 +263,21 @@ impl<'a> ITRMODE_W<'a> {
 }
 #[doc = "Timestamp Trigger Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TSTRMODE_A {
     #[doc = "0: No timestamp trigger"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Trigger event upon a falling edge"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Trigger event upon a rising edge"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Trigger event upon each edge"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<TSTRMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: TSTRMODE_A) -> Self {
-        match variant {
-            TSTRMODE_A::VALUE1 => 0,
-            TSTRMODE_A::VALUE2 => 1,
-            TSTRMODE_A::VALUE3 => 2,
-            TSTRMODE_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TSTRMODE`"]
@@ -388,17 +372,14 @@ impl<'a> TRSEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRWC_AW {
     #[doc = "0: No write access to trigger parameters"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bitfields TRSEL, TSTRMODE, ITRMODE can be written"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<TRWC_AW> for bool {
     #[inline(always)]
     fn from(variant: TRWC_AW) -> Self {
-        match variant {
-            TRWC_AW::VALUE1 => false,
-            TRWC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TRWC`"]
@@ -442,28 +423,23 @@ impl<'a> TRWC_W<'a> {
 }
 #[doc = "Sample Clock Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CSRC_A {
     #[doc = "1: External, from input A"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: External, from input B"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: External, from input C"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: External, from input D"]
-    VALUE5,
+    VALUE5 = 4,
     #[doc = "15: Internal clock"]
-    VALUE6,
+    VALUE6 = 15,
 }
 impl From<CSRC_A> for u8 {
     #[inline(always)]
     fn from(variant: CSRC_A) -> Self {
-        match variant {
-            CSRC_A::VALUE2 => 1,
-            CSRC_A::VALUE3 => 2,
-            CSRC_A::VALUE4 => 3,
-            CSRC_A::VALUE5 => 4,
-            CSRC_A::VALUE6 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CSRC`"]
@@ -552,31 +528,25 @@ impl<'a> CSRC_W<'a> {
 }
 #[doc = "Data Strobe Generatoion Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STROBE_A {
     #[doc = "0: No data strobe"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Direct clock, a sample trigger is generated at each rising clock edge"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Direct clock, a sample trigger is generated at each falling clock edge"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: Double data, a sample trigger is generated at each rising and falling clock edge"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "5: Double clock, a sample trigger is generated at every 2nd rising clock edge"]
-    VALUE6,
+    VALUE6 = 5,
     #[doc = "6: Double clock, a sample trigger is generated at every 2nd falling clock edge"]
-    VALUE7,
+    VALUE7 = 6,
 }
 impl From<STROBE_A> for u8 {
     #[inline(always)]
     fn from(variant: STROBE_A) -> Self {
-        match variant {
-            STROBE_A::VALUE1 => 0,
-            STROBE_A::VALUE2 => 1,
-            STROBE_A::VALUE3 => 2,
-            STROBE_A::VALUE4 => 3,
-            STROBE_A::VALUE6 => 5,
-            STROBE_A::VALUE7 => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STROBE`"]
@@ -678,17 +648,14 @@ impl<'a> STROBE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SCWC_AW {
     #[doc = "0: No write access to strobe/clock parameters"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Bitfields STROBE, CSRC can be written"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<SCWC_AW> for bool {
     #[inline(always)]
     fn from(variant: SCWC_AW) -> Self {
-        match variant {
-            SCWC_AW::VALUE1 => false,
-            SCWC_AW::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SCWC`"]

@@ -62,16 +62,15 @@ impl<'a> COLDSTART_W<'a> {
 }
 #[doc = "Operation Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OPMODE_A {
     #[doc = "0: Only this value must be written (default after reset)"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<OPMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: OPMODE_A) -> Self {
-        match variant {
-            OPMODE_A::VALUE1 => 0,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OPMODE`"]
@@ -116,19 +115,17 @@ impl<'a> OPMODE_W<'a> {
 }
 #[doc = "CAS latency\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CASLAT_A {
     #[doc = "2: Two clocks (default after reset)"]
-    VALUE1,
+    VALUE1 = 2,
     #[doc = "3: Three clocks"]
-    VALUE2,
+    VALUE2 = 3,
 }
 impl From<CASLAT_A> for u8 {
     #[inline(always)]
     fn from(variant: CASLAT_A) -> Self {
-        match variant {
-            CASLAT_A::VALUE1 => 2,
-            CASLAT_A::VALUE2 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CASLAT`"]
@@ -186,14 +183,12 @@ impl<'a> CASLAT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BTYP_A {
     #[doc = "0: Only this value should be written (default after reset)"]
-    VALUE1,
+    VALUE1 = 0,
 }
 impl From<BTYP_A> for bool {
     #[inline(always)]
     fn from(variant: BTYP_A) -> Self {
-        match variant {
-            BTYP_A::VALUE1 => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BTYP`"]
@@ -250,28 +245,23 @@ impl<'a> BTYP_W<'a> {
 }
 #[doc = "Burst length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BURSTL_A {
     #[doc = "0: 1 (default after reset)"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: 2"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: 4"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: 8"]
-    VALUE4,
+    VALUE4 = 3,
     #[doc = "4: 16"]
-    VALUE5,
+    VALUE5 = 4,
 }
 impl From<BURSTL_A> for u8 {
     #[inline(always)]
     fn from(variant: BURSTL_A) -> Self {
-        match variant {
-            BURSTL_A::VALUE1 => 0,
-            BURSTL_A::VALUE2 => 1,
-            BURSTL_A::VALUE3 => 2,
-            BURSTL_A::VALUE4 => 3,
-            BURSTL_A::VALUE5 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BURSTL`"]

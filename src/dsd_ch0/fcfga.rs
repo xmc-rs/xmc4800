@@ -26,25 +26,21 @@ impl<'a> CFADF_W<'a> {
 }
 #[doc = "CIC Filter (Auxiliary) Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CFAC_A {
     #[doc = "0: CIC1"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: CIC2"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: CIC3"]
-    VALUE3,
+    VALUE3 = 2,
     #[doc = "3: CICF"]
-    VALUE4,
+    VALUE4 = 3,
 }
 impl From<CFAC_A> for u8 {
     #[inline(always)]
     fn from(variant: CFAC_A) -> Self {
-        match variant {
-            CFAC_A::VALUE1 => 0,
-            CFAC_A::VALUE2 => 1,
-            CFAC_A::VALUE3 => 2,
-            CFAC_A::VALUE4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CFAC`"]
@@ -123,22 +119,19 @@ impl<'a> CFAC_W<'a> {
 }
 #[doc = "Service Request Generation Auxiliary Filter\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRGA_A {
     #[doc = "0: Never, service requests disabled"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Auxiliary filter: As selected by bitfields ESEL and EGT (if integrator enabled)"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: Alternate source: Capturing of a sign delay value to register CGSYNCx (x = 0 - 3)"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<SRGA_A> for u8 {
     #[inline(always)]
     fn from(variant: SRGA_A) -> Self {
-        match variant {
-            SRGA_A::VALUE1 => 0,
-            SRGA_A::VALUE2 => 1,
-            SRGA_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRGA`"]
@@ -205,22 +198,19 @@ impl<'a> SRGA_W<'a> {
 }
 #[doc = "Event Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ESEL_A {
     #[doc = "0: Always, for each new result value"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: If result is inside the boundary band"]
-    VALUE2,
+    VALUE2 = 1,
     #[doc = "2: If result is outside the boundary band"]
-    VALUE3,
+    VALUE3 = 2,
 }
 impl From<ESEL_A> for u8 {
     #[inline(always)]
     fn from(variant: ESEL_A) -> Self {
-        match variant {
-            ESEL_A::VALUE1 => 0,
-            ESEL_A::VALUE2 => 1,
-            ESEL_A::VALUE3 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ESEL`"]
@@ -289,17 +279,14 @@ impl<'a> ESEL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EGT_A {
     #[doc = "0: Separate: generate events according to ESEL"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Coupled: generate events only when the integrator is enabled and after the discard phase defined by bitfield NVALDISWhile the integrator is bypassed, event gating is disabled, i.e. service requests are generated according to bitfield ESEL. The event gating suppresses service requests, result values are still stored in register RESAx."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<EGT_A> for bool {
     #[inline(always)]
     fn from(variant: EGT_A) -> Self {
-        match variant {
-            EGT_A::VALUE1 => false,
-            EGT_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EGT`"]

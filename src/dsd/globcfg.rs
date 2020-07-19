@@ -12,19 +12,17 @@ impl crate::ResetValue for super::GLOBCFG {
 }
 #[doc = "Modulator Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MCSEL_A {
     #[doc = "0: Internal clock off, no source selected"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: fDSD"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<MCSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: MCSEL_A) -> Self {
-        match variant {
-            MCSEL_A::VALUE1 => 0,
-            MCSEL_A::VALUE2 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MCSEL`"]

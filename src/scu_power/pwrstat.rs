@@ -4,17 +4,14 @@ pub type R = crate::R<u32, super::PWRSTAT>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HIBEN_A {
     #[doc = "0: Inactive"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<HIBEN_A> for bool {
     #[inline(always)]
     fn from(variant: HIBEN_A) -> Self {
-        match variant {
-            HIBEN_A::VALUE1 => false,
-            HIBEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HIBEN`"]
@@ -43,17 +40,14 @@ impl HIBEN_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBPHYPDQ_A {
     #[doc = "0: Power-down"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<USBPHYPDQ_A> for bool {
     #[inline(always)]
     fn from(variant: USBPHYPDQ_A) -> Self {
-        match variant {
-            USBPHYPDQ_A::VALUE1 => false,
-            USBPHYPDQ_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USBPHYPDQ`"]
@@ -82,17 +76,14 @@ impl USBPHYPDQ_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBOTGEN_A {
     #[doc = "0: Power-down"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<USBOTGEN_A> for bool {
     #[inline(always)]
     fn from(variant: USBOTGEN_A) -> Self {
-        match variant {
-            USBOTGEN_A::VALUE1 => false,
-            USBOTGEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USBOTGEN`"]
@@ -121,17 +112,14 @@ impl USBOTGEN_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBPUWQ_A {
     #[doc = "0: Pull-up active"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Pull-up not active"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<USBPUWQ_A> for bool {
     #[inline(always)]
     fn from(variant: USBPUWQ_A) -> Self {
-        match variant {
-            USBPUWQ_A::VALUE1 => false,
-            USBPUWQ_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USBPUWQ`"]

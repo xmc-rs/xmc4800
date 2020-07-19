@@ -14,17 +14,14 @@ impl crate::ResetValue for super::GLOBRC {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH0RUN_A {
     #[doc = "0: Stop channel x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Demodulator channel x is enabled and runs"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH0RUN_A> for bool {
     #[inline(always)]
     fn from(variant: CH0RUN_A) -> Self {
-        match variant {
-            CH0RUN_A::VALUE1 => false,
-            CH0RUN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH0RUN`"]
@@ -92,17 +89,14 @@ impl<'a> CH0RUN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH1RUN_A {
     #[doc = "0: Stop channel x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Demodulator channel x is enabled and runs"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH1RUN_A> for bool {
     #[inline(always)]
     fn from(variant: CH1RUN_A) -> Self {
-        match variant {
-            CH1RUN_A::VALUE1 => false,
-            CH1RUN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH1RUN`"]
@@ -170,17 +164,14 @@ impl<'a> CH1RUN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH2RUN_A {
     #[doc = "0: Stop channel x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Demodulator channel x is enabled and runs"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH2RUN_A> for bool {
     #[inline(always)]
     fn from(variant: CH2RUN_A) -> Self {
-        match variant {
-            CH2RUN_A::VALUE1 => false,
-            CH2RUN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH2RUN`"]
@@ -248,17 +239,14 @@ impl<'a> CH2RUN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH3RUN_A {
     #[doc = "0: Stop channel x"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Demodulator channel x is enabled and runs"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<CH3RUN_A> for bool {
     #[inline(always)]
     fn from(variant: CH3RUN_A) -> Self {
-        match variant {
-            CH3RUN_A::VALUE1 => false,
-            CH3RUN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CH3RUN`"]

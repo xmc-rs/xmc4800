@@ -16,17 +16,14 @@ pub type NVALCNT_R = crate::R<u8, u8>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INTEN_A {
     #[doc = "0: Integration stopped. INTEN is cleared at the end of the integration window, i.e. upon the inverse trigger event transition of the external trigger signal."]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Integration enabled. INTEN is set upon the defined trigger event."]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<INTEN_A> for bool {
     #[inline(always)]
     fn from(variant: INTEN_A) -> Self {
-        match variant {
-            INTEN_A::VALUE1 => false,
-            INTEN_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INTEN`"]
@@ -85,17 +82,14 @@ impl<'a> NVALDIS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IWS_A {
     #[doc = "0: Internal control: stop integrator after REPVAL+1 integration cycles"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: External control: stop integrator when bit INTEN becomes 0"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<IWS_A> for bool {
     #[inline(always)]
     fn from(variant: IWS_A) -> Self {
-        match variant {
-            IWS_A::VALUE1 => false,
-            IWS_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IWS`"]

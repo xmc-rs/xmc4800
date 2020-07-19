@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CCUCON {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GSC40_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<GSC40_A> for bool {
     #[inline(always)]
     fn from(variant: GSC40_A) -> Self {
-        match variant {
-            GSC40_A::VALUE1 => false,
-            GSC40_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GSC40`"]
@@ -92,17 +89,14 @@ impl<'a> GSC40_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GSC41_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<GSC41_A> for bool {
     #[inline(always)]
     fn from(variant: GSC41_A) -> Self {
-        match variant {
-            GSC41_A::VALUE1 => false,
-            GSC41_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GSC41`"]
@@ -170,17 +164,14 @@ impl<'a> GSC41_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GSC42_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<GSC42_A> for bool {
     #[inline(always)]
     fn from(variant: GSC42_A) -> Self {
-        match variant {
-            GSC42_A::VALUE1 => false,
-            GSC42_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GSC42`"]
@@ -248,17 +239,14 @@ impl<'a> GSC42_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GSC43_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<GSC43_A> for bool {
     #[inline(always)]
     fn from(variant: GSC43_A) -> Self {
-        match variant {
-            GSC43_A::VALUE1 => false,
-            GSC43_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GSC43`"]
@@ -326,17 +314,14 @@ impl<'a> GSC43_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GSC80_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<GSC80_A> for bool {
     #[inline(always)]
     fn from(variant: GSC80_A) -> Self {
-        match variant {
-            GSC80_A::VALUE1 => false,
-            GSC80_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GSC80`"]
@@ -404,17 +389,14 @@ impl<'a> GSC80_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GSC81_A {
     #[doc = "0: Disable"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: Enable"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<GSC81_A> for bool {
     #[inline(always)]
     fn from(variant: GSC81_A) -> Self {
-        match variant {
-            GSC81_A::VALUE1 => false,
-            GSC81_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GSC81`"]

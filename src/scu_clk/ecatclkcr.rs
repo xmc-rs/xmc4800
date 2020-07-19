@@ -28,17 +28,14 @@ impl<'a> ECADIV_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECATSEL_A {
     #[doc = "0: fPLLUSBclock"]
-    VALUE1,
+    VALUE1 = 0,
     #[doc = "1: fPLLclock"]
-    VALUE2,
+    VALUE2 = 1,
 }
 impl From<ECATSEL_A> for bool {
     #[inline(always)]
     fn from(variant: ECATSEL_A) -> Self {
-        match variant {
-            ECATSEL_A::VALUE1 => false,
-            ECATSEL_A::VALUE2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ECATSEL`"]
