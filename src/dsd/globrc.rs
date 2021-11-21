@@ -1,13 +1,37 @@
-#[doc = "Reader of register GLOBRC"]
-pub type R = crate::R<u32, super::GLOBRC>;
-#[doc = "Writer for register GLOBRC"]
-pub type W = crate::W<u32, super::GLOBRC>;
-#[doc = "Register GLOBRC `reset()`'s with value 0"]
-impl crate::ResetValue for super::GLOBRC {
-    type Type = u32;
+#[doc = "Register `GLOBRC` reader"]
+pub struct R(crate::R<GLOBRC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<GLOBRC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<GLOBRC_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<GLOBRC_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `GLOBRC` writer"]
+pub struct W(crate::W<GLOBRC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<GLOBRC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<GLOBRC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<GLOBRC_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Channel 0 Run Control\n\nValue on reset: 0"]
@@ -24,9 +48,12 @@ impl From<CH0RUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH0RUN`"]
-pub type CH0RUN_R = crate::R<bool, CH0RUN_A>;
+#[doc = "Field `CH0RUN` reader - Channel 0 Run Control"]
+pub struct CH0RUN_R(crate::FieldReader<bool, CH0RUN_A>);
 impl CH0RUN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH0RUN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH0RUN_A {
@@ -38,15 +65,22 @@ impl CH0RUN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH0RUN_A::VALUE1
+        **self == CH0RUN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH0RUN_A::VALUE2
+        **self == CH0RUN_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CH0RUN`"]
+impl core::ops::Deref for CH0RUN_R {
+    type Target = crate::FieldReader<bool, CH0RUN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH0RUN` writer - Channel 0 Run Control"]
 pub struct CH0RUN_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +88,7 @@ impl<'a> CH0RUN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH0RUN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Stop channel x"]
     #[inline(always)]
@@ -81,7 +113,7 @@ impl<'a> CH0RUN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +131,12 @@ impl From<CH1RUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH1RUN`"]
-pub type CH1RUN_R = crate::R<bool, CH1RUN_A>;
+#[doc = "Field `CH1RUN` reader - Channel 1 Run Control"]
+pub struct CH1RUN_R(crate::FieldReader<bool, CH1RUN_A>);
 impl CH1RUN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH1RUN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH1RUN_A {
@@ -113,15 +148,22 @@ impl CH1RUN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH1RUN_A::VALUE1
+        **self == CH1RUN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH1RUN_A::VALUE2
+        **self == CH1RUN_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CH1RUN`"]
+impl core::ops::Deref for CH1RUN_R {
+    type Target = crate::FieldReader<bool, CH1RUN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH1RUN` writer - Channel 1 Run Control"]
 pub struct CH1RUN_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +171,7 @@ impl<'a> CH1RUN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH1RUN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Stop channel x"]
     #[inline(always)]
@@ -156,7 +196,7 @@ impl<'a> CH1RUN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +214,12 @@ impl From<CH2RUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH2RUN`"]
-pub type CH2RUN_R = crate::R<bool, CH2RUN_A>;
+#[doc = "Field `CH2RUN` reader - Channel 2 Run Control"]
+pub struct CH2RUN_R(crate::FieldReader<bool, CH2RUN_A>);
 impl CH2RUN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH2RUN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH2RUN_A {
@@ -188,15 +231,22 @@ impl CH2RUN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH2RUN_A::VALUE1
+        **self == CH2RUN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH2RUN_A::VALUE2
+        **self == CH2RUN_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CH2RUN`"]
+impl core::ops::Deref for CH2RUN_R {
+    type Target = crate::FieldReader<bool, CH2RUN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH2RUN` writer - Channel 2 Run Control"]
 pub struct CH2RUN_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +254,7 @@ impl<'a> CH2RUN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH2RUN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Stop channel x"]
     #[inline(always)]
@@ -231,7 +279,7 @@ impl<'a> CH2RUN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +297,12 @@ impl From<CH3RUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH3RUN`"]
-pub type CH3RUN_R = crate::R<bool, CH3RUN_A>;
+#[doc = "Field `CH3RUN` reader - Channel 3 Run Control"]
+pub struct CH3RUN_R(crate::FieldReader<bool, CH3RUN_A>);
 impl CH3RUN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH3RUN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH3RUN_A {
@@ -263,15 +314,22 @@ impl CH3RUN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH3RUN_A::VALUE1
+        **self == CH3RUN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH3RUN_A::VALUE2
+        **self == CH3RUN_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CH3RUN`"]
+impl core::ops::Deref for CH3RUN_R {
+    type Target = crate::FieldReader<bool, CH3RUN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH3RUN` writer - Channel 3 Run Control"]
 pub struct CH3RUN_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +337,7 @@ impl<'a> CH3RUN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH3RUN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Stop channel x"]
     #[inline(always)]
@@ -306,7 +362,7 @@ impl<'a> CH3RUN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -352,5 +408,31 @@ impl W {
     #[inline(always)]
     pub fn ch3run(&mut self) -> CH3RUN_W {
         CH3RUN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Global Run Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [globrc](index.html) module"]
+pub struct GLOBRC_SPEC;
+impl crate::RegisterSpec for GLOBRC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [globrc::R](R) reader structure"]
+impl crate::Readable for GLOBRC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [globrc::W](W) writer structure"]
+impl crate::Writable for GLOBRC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets GLOBRC to value 0"]
+impl crate::Resettable for GLOBRC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

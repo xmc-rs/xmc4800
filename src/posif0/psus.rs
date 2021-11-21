@@ -1,13 +1,37 @@
-#[doc = "Reader of register PSUS"]
-pub type R = crate::R<u32, super::PSUS>;
-#[doc = "Writer for register PSUS"]
-pub type W = crate::W<u32, super::PSUS>;
-#[doc = "Register PSUS `reset()`'s with value 0"]
-impl crate::ResetValue for super::PSUS {
-    type Type = u32;
+#[doc = "Register `PSUS` reader"]
+pub struct R(crate::R<PSUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PSUS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PSUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PSUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PSUS` writer"]
+pub struct W(crate::W<PSUS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PSUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PSUS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PSUS_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Quadrature Mode Suspend Config\n\nValue on reset: 0"]
@@ -29,9 +53,12 @@ impl From<QSUS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `QSUS`"]
-pub type QSUS_R = crate::R<u8, QSUS_A>;
+#[doc = "Field `QSUS` reader - Quadrature Mode Suspend Config"]
+pub struct QSUS_R(crate::FieldReader<u8, QSUS_A>);
 impl QSUS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        QSUS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> QSUS_A {
@@ -46,25 +73,32 @@ impl QSUS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == QSUS_A::VALUE1
+        **self == QSUS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == QSUS_A::VALUE2
+        **self == QSUS_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == QSUS_A::VALUE3
+        **self == QSUS_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == QSUS_A::VALUE4
+        **self == QSUS_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `QSUS`"]
+impl core::ops::Deref for QSUS_R {
+    type Target = crate::FieldReader<u8, QSUS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `QSUS` writer - Quadrature Mode Suspend Config"]
 pub struct QSUS_W<'a> {
     w: &'a mut W,
 }
@@ -72,9 +106,7 @@ impl<'a> QSUS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: QSUS_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Suspend request ignored"]
     #[inline(always)]
@@ -99,7 +131,7 @@ impl<'a> QSUS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
@@ -122,9 +154,12 @@ impl From<MSUS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MSUS`"]
-pub type MSUS_R = crate::R<u8, MSUS_A>;
+#[doc = "Field `MSUS` reader - Multi-Channel Mode Suspend Config"]
+pub struct MSUS_R(crate::FieldReader<u8, MSUS_A>);
 impl MSUS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MSUS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MSUS_A {
@@ -139,25 +174,32 @@ impl MSUS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MSUS_A::VALUE1
+        **self == MSUS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MSUS_A::VALUE2
+        **self == MSUS_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == MSUS_A::VALUE3
+        **self == MSUS_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == MSUS_A::VALUE4
+        **self == MSUS_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `MSUS`"]
+impl core::ops::Deref for MSUS_R {
+    type Target = crate::FieldReader<u8, MSUS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MSUS` writer - Multi-Channel Mode Suspend Config"]
 pub struct MSUS_W<'a> {
     w: &'a mut W,
 }
@@ -165,9 +207,7 @@ impl<'a> MSUS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MSUS_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Suspend request ignored"]
     #[inline(always)]
@@ -192,7 +232,7 @@ impl<'a> MSUS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
         self.w
     }
 }
@@ -218,5 +258,31 @@ impl W {
     #[inline(always)]
     pub fn msus(&mut self) -> MSUS_W {
         MSUS_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "POSIF Suspend Config\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [psus](index.html) module"]
+pub struct PSUS_SPEC;
+impl crate::RegisterSpec for PSUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [psus::R](R) reader structure"]
+impl crate::Readable for PSUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [psus::W](W) writer structure"]
+impl crate::Writable for PSUS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PSUS to value 0"]
+impl crate::Resettable for PSUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

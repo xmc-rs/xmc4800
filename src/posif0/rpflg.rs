@@ -1,14 +1,25 @@
-#[doc = "Writer for register RPFLG"]
-pub type W = crate::W<u32, super::RPFLG>;
-#[doc = "Register RPFLG `reset()`'s with value 0"]
-impl crate::ResetValue for super::RPFLG {
-    type Type = u32;
+#[doc = "Register `RPFLG` writer"]
+pub struct W(crate::W<RPFLG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RPFLG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `RCHE`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<RPFLG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<RPFLG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `RCHE` writer - Correct Hall Event flag clear"]
 pub struct RCHE_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +37,11 @@ impl<'a> RCHE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `RWHE`"]
+#[doc = "Field `RWHE` writer - Wrong Hall Event flag clear"]
 pub struct RWHE_W<'a> {
     w: &'a mut W,
 }
@@ -48,11 +59,11 @@ impl<'a> RWHE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `RHIE`"]
+#[doc = "Field `RHIE` writer - Hall Inputs Update Event flag clear"]
 pub struct RHIE_W<'a> {
     w: &'a mut W,
 }
@@ -70,11 +81,11 @@ impl<'a> RHIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `RMST`"]
+#[doc = "Field `RMST` writer - Multi-Channel Pattern shadow transfer flag clear"]
 pub struct RMST_W<'a> {
     w: &'a mut W,
 }
@@ -92,11 +103,11 @@ impl<'a> RMST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Write proxy for field `RINDX`"]
+#[doc = "Field `RINDX` writer - Quadrature Index flag clear"]
 pub struct RINDX_W<'a> {
     w: &'a mut W,
 }
@@ -114,11 +125,11 @@ impl<'a> RINDX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Write proxy for field `RERR`"]
+#[doc = "Field `RERR` writer - Quadrature Phase Error flag clear"]
 pub struct RERR_W<'a> {
     w: &'a mut W,
 }
@@ -136,11 +147,11 @@ impl<'a> RERR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Write proxy for field `RCNT`"]
+#[doc = "Field `RCNT` writer - Quadrature CLK flag clear"]
 pub struct RCNT_W<'a> {
     w: &'a mut W,
 }
@@ -158,11 +169,11 @@ impl<'a> RCNT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Write proxy for field `RDIR`"]
+#[doc = "Field `RDIR` writer - Quadrature Direction flag clear"]
 pub struct RDIR_W<'a> {
     w: &'a mut W,
 }
@@ -180,11 +191,11 @@ impl<'a> RDIR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Write proxy for field `RPCLK`"]
+#[doc = "Field `RPCLK` writer - Quadrature period clock flag clear"]
 pub struct RPCLK_W<'a> {
     w: &'a mut W,
 }
@@ -202,7 +213,7 @@ impl<'a> RPCLK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -251,5 +262,27 @@ impl W {
     #[inline(always)]
     pub fn rpclk(&mut self) -> RPCLK_W {
         RPCLK_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "POSIF Interrupt Clear\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rpflg](index.html) module"]
+pub struct RPFLG_SPEC;
+impl crate::RegisterSpec for RPFLG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [rpflg::W](W) writer structure"]
+impl crate::Writable for RPFLG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RPFLG to value 0"]
+impl crate::Resettable for RPFLG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

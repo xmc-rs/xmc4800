@@ -1,13 +1,37 @@
-#[doc = "Reader of register MASKBLOCK"]
-pub type R = crate::R<u32, super::MASKBLOCK>;
-#[doc = "Writer for register MASKBLOCK"]
-pub type W = crate::W<u32, super::MASKBLOCK>;
-#[doc = "Register MASKBLOCK `reset()`'s with value 0"]
-impl crate::ResetValue for super::MASKBLOCK {
-    type Type = u32;
+#[doc = "Register `MASKBLOCK` reader"]
+pub struct R(crate::R<MASKBLOCK_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MASKBLOCK_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<MASKBLOCK_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MASKBLOCK_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MASKBLOCK` writer"]
+pub struct W(crate::W<MASKBLOCK_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MASKBLOCK_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MASKBLOCK_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MASKBLOCK_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Write enable for mask bit of channel 0\n\nValue on reset: 0"]
@@ -24,7 +48,7 @@ impl From<WE_CH0_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WE_CH0`"]
+#[doc = "Field `WE_CH0` writer - Write enable for mask bit of channel 0"]
 pub struct WE_CH0_W<'a> {
     w: &'a mut W,
 }
@@ -32,9 +56,7 @@ impl<'a> WE_CH0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WE_CH0_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "write disabled"]
     #[inline(always)]
@@ -59,7 +81,7 @@ impl<'a> WE_CH0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -77,7 +99,7 @@ impl From<WE_CH1_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WE_CH1`"]
+#[doc = "Field `WE_CH1` writer - Write enable for mask bit of channel 1"]
 pub struct WE_CH1_W<'a> {
     w: &'a mut W,
 }
@@ -85,9 +107,7 @@ impl<'a> WE_CH1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WE_CH1_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "write disabled"]
     #[inline(always)]
@@ -112,7 +132,7 @@ impl<'a> WE_CH1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -130,7 +150,7 @@ impl From<WE_CH2_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WE_CH2`"]
+#[doc = "Field `WE_CH2` writer - Write enable for mask bit of channel 2"]
 pub struct WE_CH2_W<'a> {
     w: &'a mut W,
 }
@@ -138,9 +158,7 @@ impl<'a> WE_CH2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WE_CH2_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "write disabled"]
     #[inline(always)]
@@ -165,7 +183,7 @@ impl<'a> WE_CH2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -183,7 +201,7 @@ impl From<WE_CH3_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `WE_CH3`"]
+#[doc = "Field `WE_CH3` writer - Write enable for mask bit of channel 3"]
 pub struct WE_CH3_W<'a> {
     w: &'a mut W,
 }
@@ -191,9 +209,7 @@ impl<'a> WE_CH3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: WE_CH3_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "write disabled"]
     #[inline(always)]
@@ -218,7 +234,7 @@ impl<'a> WE_CH3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -236,9 +252,12 @@ impl From<CH0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH0`"]
-pub type CH0_R = crate::R<bool, CH0_A>;
+#[doc = "Field `CH0` reader - Mask bit for channel 0"]
+pub struct CH0_R(crate::FieldReader<bool, CH0_A>);
 impl CH0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH0_A {
@@ -250,15 +269,22 @@ impl CH0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH0_A::VALUE1
+        **self == CH0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH0_A::VALUE2
+        **self == CH0_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CH0`"]
+impl core::ops::Deref for CH0_R {
+    type Target = crate::FieldReader<bool, CH0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH0` writer - Mask bit for channel 0"]
 pub struct CH0_W<'a> {
     w: &'a mut W,
 }
@@ -266,9 +292,7 @@ impl<'a> CH0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "masked"]
     #[inline(always)]
@@ -293,7 +317,7 @@ impl<'a> CH0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -311,9 +335,12 @@ impl From<CH1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH1`"]
-pub type CH1_R = crate::R<bool, CH1_A>;
+#[doc = "Field `CH1` reader - Mask bit for channel 1"]
+pub struct CH1_R(crate::FieldReader<bool, CH1_A>);
 impl CH1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH1_A {
@@ -325,15 +352,22 @@ impl CH1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH1_A::VALUE1
+        **self == CH1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH1_A::VALUE2
+        **self == CH1_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CH1`"]
+impl core::ops::Deref for CH1_R {
+    type Target = crate::FieldReader<bool, CH1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH1` writer - Mask bit for channel 1"]
 pub struct CH1_W<'a> {
     w: &'a mut W,
 }
@@ -341,9 +375,7 @@ impl<'a> CH1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "masked"]
     #[inline(always)]
@@ -368,7 +400,7 @@ impl<'a> CH1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -386,9 +418,12 @@ impl From<CH2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH2`"]
-pub type CH2_R = crate::R<bool, CH2_A>;
+#[doc = "Field `CH2` reader - Mask bit for channel 2"]
+pub struct CH2_R(crate::FieldReader<bool, CH2_A>);
 impl CH2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH2_A {
@@ -400,15 +435,22 @@ impl CH2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH2_A::VALUE1
+        **self == CH2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH2_A::VALUE2
+        **self == CH2_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CH2`"]
+impl core::ops::Deref for CH2_R {
+    type Target = crate::FieldReader<bool, CH2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH2` writer - Mask bit for channel 2"]
 pub struct CH2_W<'a> {
     w: &'a mut W,
 }
@@ -416,9 +458,7 @@ impl<'a> CH2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "masked"]
     #[inline(always)]
@@ -443,7 +483,7 @@ impl<'a> CH2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -461,9 +501,12 @@ impl From<CH3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CH3`"]
-pub type CH3_R = crate::R<bool, CH3_A>;
+#[doc = "Field `CH3` reader - Mask bit for channel 3"]
+pub struct CH3_R(crate::FieldReader<bool, CH3_A>);
 impl CH3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CH3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH3_A {
@@ -475,15 +518,22 @@ impl CH3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH3_A::VALUE1
+        **self == CH3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH3_A::VALUE2
+        **self == CH3_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CH3`"]
+impl core::ops::Deref for CH3_R {
+    type Target = crate::FieldReader<bool, CH3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CH3` writer - Mask bit for channel 3"]
 pub struct CH3_W<'a> {
     w: &'a mut W,
 }
@@ -491,9 +541,7 @@ impl<'a> CH3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CH3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "masked"]
     #[inline(always)]
@@ -518,7 +566,7 @@ impl<'a> CH3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -584,5 +632,31 @@ impl W {
     #[inline(always)]
     pub fn ch3(&mut self) -> CH3_W {
         CH3_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Mask for Raw IntBlock Status\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [maskblock](index.html) module"]
+pub struct MASKBLOCK_SPEC;
+impl crate::RegisterSpec for MASKBLOCK_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [maskblock::R](R) reader structure"]
+impl crate::Readable for MASKBLOCK_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [maskblock::W](W) writer structure"]
+impl crate::Writable for MASKBLOCK_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MASKBLOCK to value 0"]
+impl crate::Resettable for MASKBLOCK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }
