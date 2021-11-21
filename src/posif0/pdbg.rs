@@ -1,19 +1,116 @@
-#[doc = "Reader of register PDBG"]
-pub type R = crate::R<u32, super::PDBG>;
-#[doc = "Reader of field `QCSV`"]
-pub type QCSV_R = crate::R<u8, u8>;
-#[doc = "Reader of field `QPSV`"]
-pub type QPSV_R = crate::R<u8, u8>;
-#[doc = "Reader of field `IVAL`"]
-pub type IVAL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `HSP`"]
-pub type HSP_R = crate::R<u8, u8>;
-#[doc = "Reader of field `LPP0`"]
-pub type LPP0_R = crate::R<u8, u8>;
-#[doc = "Reader of field `LPP1`"]
-pub type LPP1_R = crate::R<u8, u8>;
-#[doc = "Reader of field `LPP2`"]
-pub type LPP2_R = crate::R<u8, u8>;
+#[doc = "Register `PDBG` reader"]
+pub struct R(crate::R<PDBG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PDBG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PDBG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PDBG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `QCSV` reader - Quadrature Decoder Current state"]
+pub struct QCSV_R(crate::FieldReader<u8, u8>);
+impl QCSV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        QCSV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for QCSV_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `QPSV` reader - Quadrature Decoder Previous state"]
+pub struct QPSV_R(crate::FieldReader<u8, u8>);
+impl QPSV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        QPSV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for QPSV_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IVAL` reader - Current Index Value"]
+pub struct IVAL_R(crate::FieldReader<bool, bool>);
+impl IVAL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        IVAL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for IVAL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HSP` reader - Hall Current Sampled Pattern"]
+pub struct HSP_R(crate::FieldReader<u8, u8>);
+impl HSP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        HSP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for HSP_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LPP0` reader - Actual count of the Low Pass Filter for POSI0"]
+pub struct LPP0_R(crate::FieldReader<u8, u8>);
+impl LPP0_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LPP0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LPP0_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LPP1` reader - Actual count of the Low Pass Filter for POSI1"]
+pub struct LPP1_R(crate::FieldReader<u8, u8>);
+impl LPP1_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LPP1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LPP1_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LPP2` reader - Actual count of the Low Pass Filter for POSI2"]
+pub struct LPP2_R(crate::FieldReader<u8, u8>);
+impl LPP2_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LPP2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LPP2_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bits 0:1 - Quadrature Decoder Current state"]
     #[inline(always)]
@@ -49,5 +146,21 @@ impl R {
     #[inline(always)]
     pub fn lpp2(&self) -> LPP2_R {
         LPP2_R::new(((self.bits >> 22) & 0x3f) as u8)
+    }
+}
+#[doc = "POSIF Debug register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdbg](index.html) module"]
+pub struct PDBG_SPEC;
+impl crate::RegisterSpec for PDBG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pdbg::R](R) reader structure"]
+impl crate::Readable for PDBG_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets PDBG to value 0"]
+impl crate::Resettable for PDBG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

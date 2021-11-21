@@ -1,5 +1,18 @@
-#[doc = "Reader of register PRUN"]
-pub type R = crate::R<u32, super::PRUN>;
+#[doc = "Register `PRUN` reader"]
+pub struct R(crate::R<PRUN_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PRUN_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PRUN_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PRUN_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Run Bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RB_A {
@@ -14,9 +27,12 @@ impl From<RB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RB`"]
-pub type RB_R = crate::R<bool, RB_A>;
+#[doc = "Field `RB` reader - Run Bit"]
+pub struct RB_R(crate::FieldReader<bool, RB_A>);
 impl RB_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RB_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RB_A {
@@ -28,12 +44,19 @@ impl RB_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RB_A::VALUE1
+        **self == RB_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RB_A::VALUE2
+        **self == RB_A::VALUE2
+    }
+}
+impl core::ops::Deref for RB_R {
+    type Target = crate::FieldReader<bool, RB_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -41,5 +64,21 @@ impl R {
     #[inline(always)]
     pub fn rb(&self) -> RB_R {
         RB_R::new((self.bits & 0x01) != 0)
+    }
+}
+#[doc = "POSIF Run Bit Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prun](index.html) module"]
+pub struct PRUN_SPEC;
+impl crate::RegisterSpec for PRUN_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [prun::R](R) reader structure"]
+impl crate::Readable for PRUN_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets PRUN to value 0"]
+impl crate::Resettable for PRUN_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

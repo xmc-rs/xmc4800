@@ -1,18 +1,54 @@
-#[doc = "Reader of register FCFGC"]
-pub type R = crate::R<u32, super::FCFGC>;
-#[doc = "Writer for register FCFGC"]
-pub type W = crate::W<u32, super::FCFGC>;
-#[doc = "Register FCFGC `reset()`'s with value 0"]
-impl crate::ResetValue for super::FCFGC {
-    type Type = u32;
+#[doc = "Register `FCFGC` reader"]
+pub struct R(crate::R<FCFGC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FCFGC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `CFMDF`"]
-pub type CFMDF_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `CFMDF`"]
+impl From<crate::R<FCFGC_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<FCFGC_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `FCFGC` writer"]
+pub struct W(crate::W<FCFGC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FCFGC_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<FCFGC_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<FCFGC_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CFMDF` reader - CIC Filter (Main Chain) Decimation Factor"]
+pub struct CFMDF_R(crate::FieldReader<u8, u8>);
+impl CFMDF_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CFMDF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CFMDF_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CFMDF` writer - CIC Filter (Main Chain) Decimation Factor"]
 pub struct CFMDF_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +56,7 @@ impl<'a> CFMDF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
@@ -43,9 +79,12 @@ impl From<CFMC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CFMC`"]
-pub type CFMC_R = crate::R<u8, CFMC_A>;
+#[doc = "Field `CFMC` reader - CIC Filter (Main Chain) Configuration"]
+pub struct CFMC_R(crate::FieldReader<u8, CFMC_A>);
 impl CFMC_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CFMC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CFMC_A {
@@ -60,25 +99,32 @@ impl CFMC_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CFMC_A::VALUE1
+        **self == CFMC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CFMC_A::VALUE2
+        **self == CFMC_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == CFMC_A::VALUE3
+        **self == CFMC_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == CFMC_A::VALUE4
+        **self == CFMC_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `CFMC`"]
+impl core::ops::Deref for CFMC_R {
+    type Target = crate::FieldReader<u8, CFMC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CFMC` writer - CIC Filter (Main Chain) Configuration"]
 pub struct CFMC_W<'a> {
     w: &'a mut W,
 }
@@ -86,9 +132,7 @@ impl<'a> CFMC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CFMC_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "CIC1"]
     #[inline(always)]
@@ -113,7 +157,7 @@ impl<'a> CFMC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
@@ -131,9 +175,12 @@ impl From<CFEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CFEN`"]
-pub type CFEN_R = crate::R<bool, CFEN_A>;
+#[doc = "Field `CFEN` reader - CIC Filter Enable"]
+pub struct CFEN_R(crate::FieldReader<bool, CFEN_A>);
 impl CFEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CFEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CFEN_A {
@@ -145,15 +192,22 @@ impl CFEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CFEN_A::VALUE1
+        **self == CFEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CFEN_A::VALUE2
+        **self == CFEN_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `CFEN`"]
+impl core::ops::Deref for CFEN_R {
+    type Target = crate::FieldReader<bool, CFEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CFEN` writer - CIC Filter Enable"]
 pub struct CFEN_W<'a> {
     w: &'a mut W,
 }
@@ -161,9 +215,7 @@ impl<'a> CFEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CFEN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "CIC filter disabled and bypassed"]
     #[inline(always)]
@@ -188,7 +240,7 @@ impl<'a> CFEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -207,31 +259,40 @@ impl From<SRGM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SRGM`"]
-pub type SRGM_R = crate::R<u8, SRGM_A>;
+#[doc = "Field `SRGM` reader - Service Request Generation Main Chain"]
+pub struct SRGM_R(crate::FieldReader<u8, SRGM_A>);
 impl SRGM_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SRGM_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, SRGM_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SRGM_A> {
         match self.bits {
-            0 => Val(SRGM_A::VALUE1),
-            3 => Val(SRGM_A::VALUE4),
-            i => Res(i),
+            0 => Some(SRGM_A::VALUE1),
+            3 => Some(SRGM_A::VALUE4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SRGM_A::VALUE1
+        **self == SRGM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == SRGM_A::VALUE4
+        **self == SRGM_A::VALUE4
     }
 }
-#[doc = "Write proxy for field `SRGM`"]
+impl core::ops::Deref for SRGM_R {
+    type Target = crate::FieldReader<u8, SRGM_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SRGM` writer - Service Request Generation Main Chain"]
 pub struct SRGM_W<'a> {
     w: &'a mut W,
 }
@@ -254,13 +315,25 @@ impl<'a> SRGM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | ((value as u32 & 0x03) << 14);
         self.w
     }
 }
-#[doc = "Reader of field `CFMSV`"]
-pub type CFMSV_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `CFMSV`"]
+#[doc = "Field `CFMSV` reader - CIC Filter (Main Chain) Start Value"]
+pub struct CFMSV_R(crate::FieldReader<u8, u8>);
+impl CFMSV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CFMSV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CFMSV_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CFMSV` writer - CIC Filter (Main Chain) Start Value"]
 pub struct CFMSV_W<'a> {
     w: &'a mut W,
 }
@@ -268,12 +341,24 @@ impl<'a> CFMSV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
+        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `CFMDCNT`"]
-pub type CFMDCNT_R = crate::R<u8, u8>;
+#[doc = "Field `CFMDCNT` reader - CIC Filter (Main Chain) Decimation Counter"]
+pub struct CFMDCNT_R(crate::FieldReader<u8, u8>);
+impl CFMDCNT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CFMDCNT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CFMDCNT_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bits 0:7 - CIC Filter (Main Chain) Decimation Factor"]
     #[inline(always)]
@@ -331,5 +416,31 @@ impl W {
     #[inline(always)]
     pub fn cfmsv(&mut self) -> CFMSV_W {
         CFMSV_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Filter Configuration Register, Main CIC Filter\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fcfgc](index.html) module"]
+pub struct FCFGC_SPEC;
+impl crate::RegisterSpec for FCFGC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [fcfgc::R](R) reader structure"]
+impl crate::Readable for FCFGC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [fcfgc::W](W) writer structure"]
+impl crate::Writable for FCFGC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets FCFGC to value 0"]
+impl crate::Resettable for FCFGC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

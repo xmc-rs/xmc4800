@@ -1,14 +1,25 @@
-#[doc = "Writer for register MCMS"]
-pub type W = crate::W<u32, super::MCMS>;
-#[doc = "Register MCMS `reset()`'s with value 0"]
-impl crate::ResetValue for super::MCMS {
-    type Type = u32;
+#[doc = "Register `MCMS` writer"]
+pub struct W(crate::W<MCMS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MCMS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `MNPS`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MCMS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MCMS_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `MNPS` writer - Multi-Channel Pattern Update Enable Set"]
 pub struct MNPS_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +37,11 @@ impl<'a> MNPS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `STHR`"]
+#[doc = "Field `STHR` writer - Hall Pattern Shadow Transfer Request"]
 pub struct STHR_W<'a> {
     w: &'a mut W,
 }
@@ -48,11 +59,11 @@ impl<'a> STHR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `STMR`"]
+#[doc = "Field `STMR` writer - Multi-Channel Shadow Transfer Request"]
 pub struct STMR_W<'a> {
     w: &'a mut W,
 }
@@ -70,7 +81,7 @@ impl<'a> STMR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -89,5 +100,27 @@ impl W {
     #[inline(always)]
     pub fn stmr(&mut self) -> STMR_W {
         STMR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Multi-Channel Pattern Control set\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mcms](index.html) module"]
+pub struct MCMS_SPEC;
+impl crate::RegisterSpec for MCMS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [mcms::W](W) writer structure"]
+impl crate::Writable for MCMS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MCMS to value 0"]
+impl crate::Resettable for MCMS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }
