@@ -35,31 +35,9 @@ impl From<crate::W<CLKCALCONST_SPEC>> for W {
     }
 }
 #[doc = "Field `CALIBCONST` reader - Clock Calibration Constant Value"]
-pub struct CALIBCONST_R(crate::FieldReader<u8, u8>);
-impl CALIBCONST_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CALIBCONST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CALIBCONST_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CALIBCONST_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CALIBCONST` writer - Clock Calibration Constant Value"]
-pub struct CALIBCONST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CALIBCONST_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type CALIBCONST_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLKCALCONST_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Clock Calibration Constant Value"]
     #[inline(always)]
@@ -70,8 +48,9 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Clock Calibration Constant Value"]
     #[inline(always)]
-    pub fn calibconst(&mut self) -> CALIBCONST_W {
-        CALIBCONST_W { w: self }
+    #[must_use]
+    pub fn calibconst(&mut self) -> CALIBCONST_W<0> {
+        CALIBCONST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -92,11 +71,10 @@ impl crate::Readable for CLKCALCONST_SPEC {
 #[doc = "`write(|w| ..)` method takes [clkcalconst::W](W) writer structure"]
 impl crate::Writable for CLKCALCONST_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLKCALCONST to value 0"]
 impl crate::Resettable for CLKCALCONST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

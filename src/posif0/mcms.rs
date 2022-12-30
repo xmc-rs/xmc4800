@@ -20,86 +20,29 @@ impl From<crate::W<MCMS_SPEC>> for W {
     }
 }
 #[doc = "Field `MNPS` writer - Multi-Channel Pattern Update Enable Set"]
-pub struct MNPS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MNPS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type MNPS_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCMS_SPEC, bool, O>;
 #[doc = "Field `STHR` writer - Hall Pattern Shadow Transfer Request"]
-pub struct STHR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STHR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type STHR_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCMS_SPEC, bool, O>;
 #[doc = "Field `STMR` writer - Multi-Channel Shadow Transfer Request"]
-pub struct STMR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STMR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type STMR_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCMS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Multi-Channel Pattern Update Enable Set"]
     #[inline(always)]
-    pub fn mnps(&mut self) -> MNPS_W {
-        MNPS_W { w: self }
+    #[must_use]
+    pub fn mnps(&mut self) -> MNPS_W<0> {
+        MNPS_W::new(self)
     }
     #[doc = "Bit 1 - Hall Pattern Shadow Transfer Request"]
     #[inline(always)]
-    pub fn sthr(&mut self) -> STHR_W {
-        STHR_W { w: self }
+    #[must_use]
+    pub fn sthr(&mut self) -> STHR_W<1> {
+        STHR_W::new(self)
     }
     #[doc = "Bit 2 - Multi-Channel Shadow Transfer Request"]
     #[inline(always)]
-    pub fn stmr(&mut self) -> STMR_W {
-        STMR_W { w: self }
+    #[must_use]
+    pub fn stmr(&mut self) -> STMR_W<2> {
+        STMR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -116,11 +59,10 @@ impl crate::RegisterSpec for MCMS_SPEC {
 #[doc = "`write(|w| ..)` method takes [mcms::W](W) writer structure"]
 impl crate::Writable for MCMS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MCMS to value 0"]
 impl crate::Resettable for MCMS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

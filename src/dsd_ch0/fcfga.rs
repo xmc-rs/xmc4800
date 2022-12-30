@@ -35,33 +35,13 @@ impl From<crate::W<FCFGA_SPEC>> for W {
     }
 }
 #[doc = "Field `CFADF` reader - CIC Filter (Auxiliary) Decimation Factor"]
-pub struct CFADF_R(crate::FieldReader<u8, u8>);
-impl CFADF_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CFADF_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CFADF_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CFADF_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CFADF` writer - CIC Filter (Auxiliary) Decimation Factor"]
-pub struct CFADF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CFADF_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type CFADF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCFGA_SPEC, u8, u8, 8, O>;
+#[doc = "Field `CFAC` reader - CIC Filter (Auxiliary) Configuration"]
+pub type CFAC_R = crate::FieldReader<u8, CFAC_A>;
 #[doc = "CIC Filter (Auxiliary) Configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CFAC_A {
     #[doc = "0: CIC1"]
@@ -79,13 +59,8 @@ impl From<CFAC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CFAC` reader - CIC Filter (Auxiliary) Configuration"]
-pub struct CFAC_R(crate::FieldReader<u8, CFAC_A>);
 impl CFAC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CFAC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CFAC_A {
         match self.bits {
@@ -99,41 +74,27 @@ impl CFAC_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == CFAC_A::VALUE1
+        *self == CFAC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == CFAC_A::VALUE2
+        *self == CFAC_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == CFAC_A::VALUE3
+        *self == CFAC_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == CFAC_A::VALUE4
-    }
-}
-impl core::ops::Deref for CFAC_R {
-    type Target = crate::FieldReader<u8, CFAC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CFAC_A::VALUE4
     }
 }
 #[doc = "Field `CFAC` writer - CIC Filter (Auxiliary) Configuration"]
-pub struct CFAC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CFAC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CFAC_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type CFAC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, FCFGA_SPEC, u8, CFAC_A, 2, O>;
+impl<'a, const O: u8> CFAC_W<'a, O> {
     #[doc = "CIC1"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -154,15 +115,11 @@ impl<'a> CFAC_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(CFAC_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
 }
+#[doc = "Field `SRGA` reader - Service Request Generation Auxiliary Filter"]
+pub type SRGA_R = crate::FieldReader<u8, SRGA_A>;
 #[doc = "Service Request Generation Auxiliary Filter\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SRGA_A {
     #[doc = "0: Never, service requests disabled"]
@@ -178,13 +135,8 @@ impl From<SRGA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SRGA` reader - Service Request Generation Auxiliary Filter"]
-pub struct SRGA_R(crate::FieldReader<u8, SRGA_A>);
 impl SRGA_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SRGA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SRGA_A> {
         match self.bits {
@@ -197,36 +149,22 @@ impl SRGA_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SRGA_A::VALUE1
+        *self == SRGA_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SRGA_A::VALUE2
+        *self == SRGA_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == SRGA_A::VALUE3
-    }
-}
-impl core::ops::Deref for SRGA_R {
-    type Target = crate::FieldReader<u8, SRGA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SRGA_A::VALUE3
     }
 }
 #[doc = "Field `SRGA` writer - Service Request Generation Auxiliary Filter"]
-pub struct SRGA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRGA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SRGA_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type SRGA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCFGA_SPEC, u8, SRGA_A, 2, O>;
+impl<'a, const O: u8> SRGA_W<'a, O> {
     #[doc = "Never, service requests disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -242,15 +180,11 @@ impl<'a> SRGA_W<'a> {
     pub fn value3(self) -> &'a mut W {
         self.variant(SRGA_A::VALUE3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
-        self.w
-    }
 }
+#[doc = "Field `ESEL` reader - Event Select"]
+pub type ESEL_R = crate::FieldReader<u8, ESEL_A>;
 #[doc = "Event Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ESEL_A {
     #[doc = "0: Always, for each new result value"]
@@ -266,13 +200,8 @@ impl From<ESEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ESEL` reader - Event Select"]
-pub struct ESEL_R(crate::FieldReader<u8, ESEL_A>);
 impl ESEL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ESEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<ESEL_A> {
         match self.bits {
@@ -285,36 +214,22 @@ impl ESEL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ESEL_A::VALUE1
+        *self == ESEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ESEL_A::VALUE2
+        *self == ESEL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == ESEL_A::VALUE3
-    }
-}
-impl core::ops::Deref for ESEL_R {
-    type Target = crate::FieldReader<u8, ESEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ESEL_A::VALUE3
     }
 }
 #[doc = "Field `ESEL` writer - Event Select"]
-pub struct ESEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ESEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ESEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type ESEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCFGA_SPEC, u8, ESEL_A, 2, O>;
+impl<'a, const O: u8> ESEL_W<'a, O> {
     #[doc = "Always, for each new result value"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -330,15 +245,11 @@ impl<'a> ESEL_W<'a> {
     pub fn value3(self) -> &'a mut W {
         self.variant(ESEL_A::VALUE3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
-        self.w
-    }
 }
+#[doc = "Field `EGT` reader - Event Gating"]
+pub type EGT_R = crate::BitReader<EGT_A>;
 #[doc = "Event Gating\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EGT_A {
     #[doc = "0: Separate: generate events according to ESEL"]
     VALUE1 = 0,
@@ -351,13 +262,8 @@ impl From<EGT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EGT` reader - Event Gating"]
-pub struct EGT_R(crate::FieldReader<bool, EGT_A>);
 impl EGT_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EGT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EGT_A {
         match self.bits {
@@ -368,31 +274,17 @@ impl EGT_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == EGT_A::VALUE1
+        *self == EGT_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == EGT_A::VALUE2
-    }
-}
-impl core::ops::Deref for EGT_R {
-    type Target = crate::FieldReader<bool, EGT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EGT_A::VALUE2
     }
 }
 #[doc = "Field `EGT` writer - Event Gating"]
-pub struct EGT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EGT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EGT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EGT_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCFGA_SPEC, EGT_A, O>;
+impl<'a, const O: u8> EGT_W<'a, O> {
     #[doc = "Separate: generate events according to ESEL"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -403,37 +295,9 @@ impl<'a> EGT_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(EGT_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
-        self.w
-    }
 }
 #[doc = "Field `CFADCNT` reader - CIC Filter (Auxiliary) Decimation Counter"]
-pub struct CFADCNT_R(crate::FieldReader<u8, u8>);
-impl CFADCNT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CFADCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CFADCNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CFADCNT_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - CIC Filter (Auxiliary) Decimation Factor"]
     #[inline(always)]
@@ -443,22 +307,22 @@ impl R {
     #[doc = "Bits 8:9 - CIC Filter (Auxiliary) Configuration"]
     #[inline(always)]
     pub fn cfac(&self) -> CFAC_R {
-        CFAC_R::new(((self.bits >> 8) & 0x03) as u8)
+        CFAC_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - Service Request Generation Auxiliary Filter"]
     #[inline(always)]
     pub fn srga(&self) -> SRGA_R {
-        SRGA_R::new(((self.bits >> 10) & 0x03) as u8)
+        SRGA_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - Event Select"]
     #[inline(always)]
     pub fn esel(&self) -> ESEL_R {
-        ESEL_R::new(((self.bits >> 12) & 0x03) as u8)
+        ESEL_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bit 14 - Event Gating"]
     #[inline(always)]
     pub fn egt(&self) -> EGT_R {
-        EGT_R::new(((self.bits >> 14) & 0x01) != 0)
+        EGT_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bits 24:31 - CIC Filter (Auxiliary) Decimation Counter"]
     #[inline(always)]
@@ -469,28 +333,33 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - CIC Filter (Auxiliary) Decimation Factor"]
     #[inline(always)]
-    pub fn cfadf(&mut self) -> CFADF_W {
-        CFADF_W { w: self }
+    #[must_use]
+    pub fn cfadf(&mut self) -> CFADF_W<0> {
+        CFADF_W::new(self)
     }
     #[doc = "Bits 8:9 - CIC Filter (Auxiliary) Configuration"]
     #[inline(always)]
-    pub fn cfac(&mut self) -> CFAC_W {
-        CFAC_W { w: self }
+    #[must_use]
+    pub fn cfac(&mut self) -> CFAC_W<8> {
+        CFAC_W::new(self)
     }
     #[doc = "Bits 10:11 - Service Request Generation Auxiliary Filter"]
     #[inline(always)]
-    pub fn srga(&mut self) -> SRGA_W {
-        SRGA_W { w: self }
+    #[must_use]
+    pub fn srga(&mut self) -> SRGA_W<10> {
+        SRGA_W::new(self)
     }
     #[doc = "Bits 12:13 - Event Select"]
     #[inline(always)]
-    pub fn esel(&mut self) -> ESEL_W {
-        ESEL_W { w: self }
+    #[must_use]
+    pub fn esel(&mut self) -> ESEL_W<12> {
+        ESEL_W::new(self)
     }
     #[doc = "Bit 14 - Event Gating"]
     #[inline(always)]
-    pub fn egt(&mut self) -> EGT_W {
-        EGT_W { w: self }
+    #[must_use]
+    pub fn egt(&mut self) -> EGT_W<14> {
+        EGT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -511,11 +380,10 @@ impl crate::Readable for FCFGA_SPEC {
 #[doc = "`write(|w| ..)` method takes [fcfga::W](W) writer structure"]
 impl crate::Writable for FCFGA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FCFGA to value 0"]
 impl crate::Resettable for FCFGA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

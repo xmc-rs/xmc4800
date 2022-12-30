@@ -13,8 +13,10 @@ impl From<crate::R<PRSTAT3_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `EBURS` reader - EBU Reset Status"]
+pub type EBURS_R = crate::BitReader<EBURS_A>;
 #[doc = "EBU Reset Status\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EBURS_A {
     #[doc = "0: Reset de-asserted"]
     VALUE1 = 0,
@@ -27,13 +29,8 @@ impl From<EBURS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EBURS` reader - EBU Reset Status"]
-pub struct EBURS_R(crate::FieldReader<bool, EBURS_A>);
 impl EBURS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        EBURS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EBURS_A {
         match self.bits {
@@ -44,26 +41,19 @@ impl EBURS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == EBURS_A::VALUE1
+        *self == EBURS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == EBURS_A::VALUE2
-    }
-}
-impl core::ops::Deref for EBURS_R {
-    type Target = crate::FieldReader<bool, EBURS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EBURS_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 2 - EBU Reset Status"]
     #[inline(always)]
     pub fn eburs(&self) -> EBURS_R {
-        EBURS_R::new(((self.bits >> 2) & 0x01) != 0)
+        EBURS_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 #[doc = "RCU Peripheral 3 Reset Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prstat3](index.html) module"]
@@ -77,8 +67,5 @@ impl crate::Readable for PRSTAT3_SPEC {
 }
 #[doc = "`reset()` method sets PRSTAT3 to value 0x04"]
 impl crate::Resettable for PRSTAT3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x04
-    }
+    const RESET_VALUE: Self::Ux = 0x04;
 }

@@ -14,47 +14,11 @@ impl From<crate::R<TSTMP_SPEC>> for R {
     }
 }
 #[doc = "Field `RESULT` reader - Result of most recent conversion"]
-pub struct RESULT_R(crate::FieldReader<u16, u16>);
-impl RESULT_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        RESULT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESULT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RESULT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CFMDCNT` reader - CIC Filter (Main Chain) Decimation Counter"]
-pub struct CFMDCNT_R(crate::FieldReader<u8, u8>);
-impl CFMDCNT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        CFMDCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CFMDCNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CFMDCNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NVALCNT` reader - Number of Values Counted"]
-pub struct NVALCNT_R(crate::FieldReader<u8, u8>);
-impl NVALCNT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NVALCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NVALCNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NVALCNT_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:15 - Result of most recent conversion"]
     #[inline(always)]
@@ -83,8 +47,5 @@ impl crate::Readable for TSTMP_SPEC {
 }
 #[doc = "`reset()` method sets TSTMP to value 0"]
 impl crate::Resettable for TSTMP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<CLC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DISR` reader - EBU Disable Request Bit"]
+pub type DISR_R = crate::BitReader<DISR_A>;
 #[doc = "EBU Disable Request Bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DISR_A {
     #[doc = "0: EBU disable is not requested"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<DISR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DISR` reader - EBU Disable Request Bit"]
-pub struct DISR_R(crate::FieldReader<bool, DISR_A>);
 impl DISR_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DISR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DISR_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl DISR_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DISR_A::VALUE1
+        *self == DISR_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DISR_A::VALUE2
-    }
-}
-impl core::ops::Deref for DISR_R {
-    type Target = crate::FieldReader<bool, DISR_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DISR_A::VALUE2
     }
 }
 #[doc = "Field `DISR` writer - EBU Disable Request Bit"]
-pub struct DISR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DISR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DISR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DISR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLC_SPEC, DISR_A, O>;
+impl<'a, const O: u8> DISR_W<'a, O> {
     #[doc = "EBU disable is not requested"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> DISR_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(DISR_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `DISS` reader - EBU Disable Status Bit"]
+pub type DISS_R = crate::BitReader<DISS_A>;
 #[doc = "EBU Disable Status Bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DISS_A {
     #[doc = "0: EBU is enabled (default after reset)"]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<DISS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DISS` reader - EBU Disable Status Bit"]
-pub struct DISS_R(crate::FieldReader<bool, DISS_A>);
 impl DISS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DISS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DISS_A {
         match self.bits {
@@ -148,23 +112,18 @@ impl DISS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DISS_A::VALUE1
+        *self == DISS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DISS_A::VALUE2
+        *self == DISS_A::VALUE2
     }
 }
-impl core::ops::Deref for DISS_R {
-    type Target = crate::FieldReader<bool, DISS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SYNC` reader - EBU Clocking Mode"]
+pub type SYNC_R = crate::BitReader<SYNC_A>;
 #[doc = "EBU Clocking Mode\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYNC_A {
     #[doc = "0: request EBU to run asynchronously to AHB bus clock and use separate clock source"]
     VALUE1 = 0,
@@ -177,13 +136,8 @@ impl From<SYNC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SYNC` reader - EBU Clocking Mode"]
-pub struct SYNC_R(crate::FieldReader<bool, SYNC_A>);
 impl SYNC_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SYNC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYNC_A {
         match self.bits {
@@ -194,31 +148,17 @@ impl SYNC_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SYNC_A::VALUE1
+        *self == SYNC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SYNC_A::VALUE2
-    }
-}
-impl core::ops::Deref for SYNC_R {
-    type Target = crate::FieldReader<bool, SYNC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SYNC_A::VALUE2
     }
 }
 #[doc = "Field `SYNC` writer - EBU Clocking Mode"]
-pub struct SYNC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SYNC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SYNC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLC_SPEC, SYNC_A, O>;
+impl<'a, const O: u8> SYNC_W<'a, O> {
     #[doc = "request EBU to run asynchronously to AHB bus clock and use separate clock source"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -229,25 +169,11 @@ impl<'a> SYNC_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(SYNC_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
+#[doc = "Field `DIV2` reader - DIV2 Clocking Mode"]
+pub type DIV2_R = crate::BitReader<DIV2_A>;
 #[doc = "DIV2 Clocking Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DIV2_A {
     #[doc = "0: standard clocking mode. clock input selected by SYNC bitfield (default after reset)."]
     VALUE1 = 0,
@@ -260,13 +186,8 @@ impl From<DIV2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DIV2` reader - DIV2 Clocking Mode"]
-pub struct DIV2_R(crate::FieldReader<bool, DIV2_A>);
 impl DIV2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIV2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIV2_A {
         match self.bits {
@@ -277,31 +198,17 @@ impl DIV2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DIV2_A::VALUE1
+        *self == DIV2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DIV2_A::VALUE2
-    }
-}
-impl core::ops::Deref for DIV2_R {
-    type Target = crate::FieldReader<bool, DIV2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DIV2_A::VALUE2
     }
 }
 #[doc = "Field `DIV2` writer - DIV2 Clocking Mode"]
-pub struct DIV2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIV2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DIV2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DIV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLC_SPEC, DIV2_A, O>;
+impl<'a, const O: u8> DIV2_W<'a, O> {
     #[doc = "standard clocking mode. clock input selected by SYNC bitfield (default after reset)."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -312,25 +219,11 @@ impl<'a> DIV2_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(DIV2_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
 }
+#[doc = "Field `EBUDIV` reader - EBU Clock Divide Ratio"]
+pub type EBUDIV_R = crate::FieldReader<u8, EBUDIV_A>;
 #[doc = "EBU Clock Divide Ratio\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EBUDIV_A {
     #[doc = "0: request EBU to run off input clock (default after reset)"]
@@ -348,13 +241,8 @@ impl From<EBUDIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EBUDIV` reader - EBU Clock Divide Ratio"]
-pub struct EBUDIV_R(crate::FieldReader<u8, EBUDIV_A>);
 impl EBUDIV_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EBUDIV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EBUDIV_A {
         match self.bits {
@@ -368,41 +256,27 @@ impl EBUDIV_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == EBUDIV_A::VALUE1
+        *self == EBUDIV_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == EBUDIV_A::VALUE2
+        *self == EBUDIV_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == EBUDIV_A::VALUE3
+        *self == EBUDIV_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == EBUDIV_A::VALUE4
-    }
-}
-impl core::ops::Deref for EBUDIV_R {
-    type Target = crate::FieldReader<u8, EBUDIV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EBUDIV_A::VALUE4
     }
 }
 #[doc = "Field `EBUDIV` writer - EBU Clock Divide Ratio"]
-pub struct EBUDIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EBUDIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EBUDIV_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type EBUDIV_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CLC_SPEC, u8, EBUDIV_A, 2, O>;
+impl<'a, const O: u8> EBUDIV_W<'a, O> {
     #[doc = "request EBU to run off input clock (default after reset)"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -423,15 +297,11 @@ impl<'a> EBUDIV_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(EBUDIV_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 18)) | ((value as u32 & 0x03) << 18);
-        self.w
-    }
 }
+#[doc = "Field `SYNCACK` reader - EBU Clocking Mode Status"]
+pub type SYNCACK_R = crate::BitReader<SYNCACK_A>;
 #[doc = "EBU Clocking Mode Status\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SYNCACK_A {
     #[doc = "0: the EBU is asynchronous to the AHB bus clock and is using a separate clock source"]
     VALUE1 = 0,
@@ -444,13 +314,8 @@ impl From<SYNCACK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SYNCACK` reader - EBU Clocking Mode Status"]
-pub struct SYNCACK_R(crate::FieldReader<bool, SYNCACK_A>);
 impl SYNCACK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SYNCACK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYNCACK_A {
         match self.bits {
@@ -461,23 +326,18 @@ impl SYNCACK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SYNCACK_A::VALUE1
+        *self == SYNCACK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SYNCACK_A::VALUE2
+        *self == SYNCACK_A::VALUE2
     }
 }
-impl core::ops::Deref for SYNCACK_R {
-    type Target = crate::FieldReader<bool, SYNCACK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `DIV2ACK` reader - DIV2 Clocking Mode Status"]
+pub type DIV2ACK_R = crate::BitReader<DIV2ACK_A>;
 #[doc = "DIV2 Clocking Mode Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DIV2ACK_A {
     #[doc = "0: EBU is using standard clocking mode. clock input selected by SYNC bitfield (default after reset)."]
     VALUE1 = 0,
@@ -490,13 +350,8 @@ impl From<DIV2ACK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DIV2ACK` reader - DIV2 Clocking Mode Status"]
-pub struct DIV2ACK_R(crate::FieldReader<bool, DIV2ACK_A>);
 impl DIV2ACK_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DIV2ACK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIV2ACK_A {
         match self.bits {
@@ -507,23 +362,18 @@ impl DIV2ACK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DIV2ACK_A::VALUE1
+        *self == DIV2ACK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DIV2ACK_A::VALUE2
+        *self == DIV2ACK_A::VALUE2
     }
 }
-impl core::ops::Deref for DIV2ACK_R {
-    type Target = crate::FieldReader<bool, DIV2ACK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `EBUDIVACK` reader - EBU Clock Divide Ratio Status"]
+pub type EBUDIVACK_R = crate::FieldReader<u8, EBUDIVACK_A>;
 #[doc = "EBU Clock Divide Ratio Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EBUDIVACK_A {
     #[doc = "0: EBU is running off input clock (default after reset)"]
@@ -541,13 +391,8 @@ impl From<EBUDIVACK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EBUDIVACK` reader - EBU Clock Divide Ratio Status"]
-pub struct EBUDIVACK_R(crate::FieldReader<u8, EBUDIVACK_A>);
 impl EBUDIVACK_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        EBUDIVACK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EBUDIVACK_A {
         match self.bits {
@@ -561,93 +406,90 @@ impl EBUDIVACK_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == EBUDIVACK_A::VALUE1
+        *self == EBUDIVACK_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == EBUDIVACK_A::VALUE2
+        *self == EBUDIVACK_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == EBUDIVACK_A::VALUE3
+        *self == EBUDIVACK_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == EBUDIVACK_A::VALUE4
-    }
-}
-impl core::ops::Deref for EBUDIVACK_R {
-    type Target = crate::FieldReader<u8, EBUDIVACK_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EBUDIVACK_A::VALUE4
     }
 }
 impl R {
     #[doc = "Bit 0 - EBU Disable Request Bit"]
     #[inline(always)]
     pub fn disr(&self) -> DISR_R {
-        DISR_R::new((self.bits & 0x01) != 0)
+        DISR_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - EBU Disable Status Bit"]
     #[inline(always)]
     pub fn diss(&self) -> DISS_R {
-        DISS_R::new(((self.bits >> 1) & 0x01) != 0)
+        DISS_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 16 - EBU Clocking Mode"]
     #[inline(always)]
     pub fn sync(&self) -> SYNC_R {
-        SYNC_R::new(((self.bits >> 16) & 0x01) != 0)
+        SYNC_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - DIV2 Clocking Mode"]
     #[inline(always)]
     pub fn div2(&self) -> DIV2_R {
-        DIV2_R::new(((self.bits >> 17) & 0x01) != 0)
+        DIV2_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bits 18:19 - EBU Clock Divide Ratio"]
     #[inline(always)]
     pub fn ebudiv(&self) -> EBUDIV_R {
-        EBUDIV_R::new(((self.bits >> 18) & 0x03) as u8)
+        EBUDIV_R::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bit 20 - EBU Clocking Mode Status"]
     #[inline(always)]
     pub fn syncack(&self) -> SYNCACK_R {
-        SYNCACK_R::new(((self.bits >> 20) & 0x01) != 0)
+        SYNCACK_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - DIV2 Clocking Mode Status"]
     #[inline(always)]
     pub fn div2ack(&self) -> DIV2ACK_R {
-        DIV2ACK_R::new(((self.bits >> 21) & 0x01) != 0)
+        DIV2ACK_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bits 22:23 - EBU Clock Divide Ratio Status"]
     #[inline(always)]
     pub fn ebudivack(&self) -> EBUDIVACK_R {
-        EBUDIVACK_R::new(((self.bits >> 22) & 0x03) as u8)
+        EBUDIVACK_R::new(((self.bits >> 22) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bit 0 - EBU Disable Request Bit"]
     #[inline(always)]
-    pub fn disr(&mut self) -> DISR_W {
-        DISR_W { w: self }
+    #[must_use]
+    pub fn disr(&mut self) -> DISR_W<0> {
+        DISR_W::new(self)
     }
     #[doc = "Bit 16 - EBU Clocking Mode"]
     #[inline(always)]
-    pub fn sync(&mut self) -> SYNC_W {
-        SYNC_W { w: self }
+    #[must_use]
+    pub fn sync(&mut self) -> SYNC_W<16> {
+        SYNC_W::new(self)
     }
     #[doc = "Bit 17 - DIV2 Clocking Mode"]
     #[inline(always)]
-    pub fn div2(&mut self) -> DIV2_W {
-        DIV2_W { w: self }
+    #[must_use]
+    pub fn div2(&mut self) -> DIV2_W<17> {
+        DIV2_W::new(self)
     }
     #[doc = "Bits 18:19 - EBU Clock Divide Ratio"]
     #[inline(always)]
-    pub fn ebudiv(&mut self) -> EBUDIV_W {
-        EBUDIV_W { w: self }
+    #[must_use]
+    pub fn ebudiv(&mut self) -> EBUDIV_W<18> {
+        EBUDIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -668,11 +510,10 @@ impl crate::Readable for CLC_SPEC {
 #[doc = "`write(|w| ..)` method takes [clc::W](W) writer structure"]
 impl crate::Writable for CLC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLC to value 0x0011_0000"]
 impl crate::Resettable for CLC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0011_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0011_0000;
 }

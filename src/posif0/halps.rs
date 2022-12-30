@@ -35,79 +35,37 @@ impl From<crate::W<HALPS_SPEC>> for W {
     }
 }
 #[doc = "Field `HCPS` reader - Shadow Hall Current Pattern"]
-pub struct HCPS_R(crate::FieldReader<u8, u8>);
-impl HCPS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HCPS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HCPS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HCPS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HCPS` writer - Shadow Hall Current Pattern"]
-pub struct HCPS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HCPS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
-}
+pub type HCPS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HALPS_SPEC, u8, u8, 3, O>;
 #[doc = "Field `HEPS` reader - Shadow Hall expected Pattern"]
-pub struct HEPS_R(crate::FieldReader<u8, u8>);
-impl HEPS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HEPS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HEPS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HEPS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HEPS` writer - Shadow Hall expected Pattern"]
-pub struct HEPS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HEPS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 3)) | ((value as u32 & 0x07) << 3);
-        self.w
-    }
-}
+pub type HEPS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HALPS_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:2 - Shadow Hall Current Pattern"]
     #[inline(always)]
     pub fn hcps(&self) -> HCPS_R {
-        HCPS_R::new((self.bits & 0x07) as u8)
+        HCPS_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 3:5 - Shadow Hall expected Pattern"]
     #[inline(always)]
     pub fn heps(&self) -> HEPS_R {
-        HEPS_R::new(((self.bits >> 3) & 0x07) as u8)
+        HEPS_R::new(((self.bits >> 3) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Shadow Hall Current Pattern"]
     #[inline(always)]
-    pub fn hcps(&mut self) -> HCPS_W {
-        HCPS_W { w: self }
+    #[must_use]
+    pub fn hcps(&mut self) -> HCPS_W<0> {
+        HCPS_W::new(self)
     }
     #[doc = "Bits 3:5 - Shadow Hall expected Pattern"]
     #[inline(always)]
-    pub fn heps(&mut self) -> HEPS_W {
-        HEPS_W { w: self }
+    #[must_use]
+    pub fn heps(&mut self) -> HEPS_W<3> {
+        HEPS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for HALPS_SPEC {
 #[doc = "`write(|w| ..)` method takes [halps::W](W) writer structure"]
 impl crate::Writable for HALPS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HALPS to value 0"]
 impl crate::Resettable for HALPS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

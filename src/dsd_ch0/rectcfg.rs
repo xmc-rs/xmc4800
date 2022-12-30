@@ -34,8 +34,10 @@ impl From<crate::W<RECTCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RFEN` reader - Rectification Enable"]
+pub type RFEN_R = crate::BitReader<RFEN_A>;
 #[doc = "Rectification Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RFEN_A {
     #[doc = "0: No rectification, data not altered"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<RFEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RFEN` reader - Rectification Enable"]
-pub struct RFEN_R(crate::FieldReader<bool, RFEN_A>);
 impl RFEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RFEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RFEN_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl RFEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RFEN_A::VALUE1
+        *self == RFEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RFEN_A::VALUE2
-    }
-}
-impl core::ops::Deref for RFEN_R {
-    type Target = crate::FieldReader<bool, RFEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RFEN_A::VALUE2
     }
 }
 #[doc = "Field `RFEN` writer - Rectification Enable"]
-pub struct RFEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RFEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RFEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RECTCFG_SPEC, RFEN_A, O>;
+impl<'a, const O: u8> RFEN_W<'a, O> {
     #[doc = "No rectification, data not altered"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> RFEN_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(RFEN_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `SSRC` reader - Sign Source"]
+pub type SSRC_R = crate::FieldReader<u8, SSRC_A>;
 #[doc = "Sign Source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SSRC_A {
     #[doc = "0: On-chip carrier generator"]
@@ -136,13 +105,8 @@ impl From<SSRC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SSRC` reader - Sign Source"]
-pub struct SSRC_R(crate::FieldReader<u8, SSRC_A>);
 impl SSRC_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SSRC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SSRC_A {
         match self.bits {
@@ -156,41 +120,27 @@ impl SSRC_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SSRC_A::VALUE1
+        *self == SSRC_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SSRC_A::VALUE2
+        *self == SSRC_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == SSRC_A::VALUE3
+        *self == SSRC_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == SSRC_A::VALUE4
-    }
-}
-impl core::ops::Deref for SSRC_R {
-    type Target = crate::FieldReader<u8, SSRC_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SSRC_A::VALUE4
     }
 }
 #[doc = "Field `SSRC` writer - Sign Source"]
-pub struct SSRC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SSRC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SSRC_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type SSRC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, RECTCFG_SPEC, u8, SSRC_A, 2, O>;
+impl<'a, const O: u8> SSRC_W<'a, O> {
     #[doc = "On-chip carrier generator"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -211,15 +161,11 @@ impl<'a> SSRC_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(SSRC_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
 }
+#[doc = "Field `SDVAL` reader - Valid Flag"]
+pub type SDVAL_R = crate::BitReader<SDVAL_A>;
 #[doc = "Valid Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SDVAL_A {
     #[doc = "0: No new result available"]
     VALUE1 = 0,
@@ -232,13 +178,8 @@ impl From<SDVAL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SDVAL` reader - Valid Flag"]
-pub struct SDVAL_R(crate::FieldReader<bool, SDVAL_A>);
 impl SDVAL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SDVAL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SDVAL_A {
         match self.bits {
@@ -249,23 +190,18 @@ impl SDVAL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SDVAL_A::VALUE1
+        *self == SDVAL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SDVAL_A::VALUE2
+        *self == SDVAL_A::VALUE2
     }
 }
-impl core::ops::Deref for SDVAL_R {
-    type Target = crate::FieldReader<bool, SDVAL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SGNCS` reader - Selected Carrier Sign Signal"]
+pub type SGNCS_R = crate::BitReader<SGNCS_A>;
 #[doc = "Selected Carrier Sign Signal\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SGNCS_A {
     #[doc = "0: Positive values"]
     VALUE1 = 0,
@@ -278,13 +214,8 @@ impl From<SGNCS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SGNCS` reader - Selected Carrier Sign Signal"]
-pub struct SGNCS_R(crate::FieldReader<bool, SGNCS_A>);
 impl SGNCS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SGNCS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SGNCS_A {
         match self.bits {
@@ -295,23 +226,18 @@ impl SGNCS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SGNCS_A::VALUE1
+        *self == SGNCS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SGNCS_A::VALUE2
+        *self == SGNCS_A::VALUE2
     }
 }
-impl core::ops::Deref for SGNCS_R {
-    type Target = crate::FieldReader<bool, SGNCS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SGND` reader - Sign Signal Delayed"]
+pub type SGND_R = crate::BitReader<SGND_A>;
 #[doc = "Sign Signal Delayed\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SGND_A {
     #[doc = "0: Positive values"]
     VALUE1 = 0,
@@ -324,13 +250,8 @@ impl From<SGND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SGND` reader - Sign Signal Delayed"]
-pub struct SGND_R(crate::FieldReader<bool, SGND_A>);
 impl SGND_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        SGND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SGND_A {
         match self.bits {
@@ -341,58 +262,53 @@ impl SGND_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SGND_A::VALUE1
+        *self == SGND_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SGND_A::VALUE2
-    }
-}
-impl core::ops::Deref for SGND_R {
-    type Target = crate::FieldReader<bool, SGND_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SGND_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - Rectification Enable"]
     #[inline(always)]
     pub fn rfen(&self) -> RFEN_R {
-        RFEN_R::new((self.bits & 0x01) != 0)
+        RFEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:5 - Sign Source"]
     #[inline(always)]
     pub fn ssrc(&self) -> SSRC_R {
-        SSRC_R::new(((self.bits >> 4) & 0x03) as u8)
+        SSRC_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 15 - Valid Flag"]
     #[inline(always)]
     pub fn sdval(&self) -> SDVAL_R {
-        SDVAL_R::new(((self.bits >> 15) & 0x01) != 0)
+        SDVAL_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 30 - Selected Carrier Sign Signal"]
     #[inline(always)]
     pub fn sgncs(&self) -> SGNCS_R {
-        SGNCS_R::new(((self.bits >> 30) & 0x01) != 0)
+        SGNCS_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Sign Signal Delayed"]
     #[inline(always)]
     pub fn sgnd(&self) -> SGND_R {
-        SGND_R::new(((self.bits >> 31) & 0x01) != 0)
+        SGND_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Rectification Enable"]
     #[inline(always)]
-    pub fn rfen(&mut self) -> RFEN_W {
-        RFEN_W { w: self }
+    #[must_use]
+    pub fn rfen(&mut self) -> RFEN_W<0> {
+        RFEN_W::new(self)
     }
     #[doc = "Bits 4:5 - Sign Source"]
     #[inline(always)]
-    pub fn ssrc(&mut self) -> SSRC_W {
-        SSRC_W { w: self }
+    #[must_use]
+    pub fn ssrc(&mut self) -> SSRC_W<4> {
+        SSRC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -413,11 +329,10 @@ impl crate::Readable for RECTCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [rectcfg::W](W) writer structure"]
 impl crate::Writable for RECTCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RECTCFG to value 0x8000_0000"]
 impl crate::Resettable for RECTCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x8000_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x8000_0000;
 }

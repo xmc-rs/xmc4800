@@ -34,8 +34,10 @@ impl From<crate::W<QDC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PALS` reader - Phase A Level selector"]
+pub type PALS_R = crate::BitReader<PALS_A>;
 #[doc = "Phase A Level selector\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PALS_A {
     #[doc = "0: Phase A is active HIGH"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<PALS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PALS` reader - Phase A Level selector"]
-pub struct PALS_R(crate::FieldReader<bool, PALS_A>);
 impl PALS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PALS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PALS_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl PALS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PALS_A::VALUE1
+        *self == PALS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PALS_A::VALUE2
-    }
-}
-impl core::ops::Deref for PALS_R {
-    type Target = crate::FieldReader<bool, PALS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PALS_A::VALUE2
     }
 }
 #[doc = "Field `PALS` writer - Phase A Level selector"]
-pub struct PALS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PALS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PALS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PALS_W<'a, const O: u8> = crate::BitWriter<'a, u32, QDC_SPEC, PALS_A, O>;
+impl<'a, const O: u8> PALS_W<'a, O> {
     #[doc = "Phase A is active HIGH"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> PALS_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(PALS_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `PBLS` reader - Phase B Level selector"]
+pub type PBLS_R = crate::BitReader<PBLS_A>;
 #[doc = "Phase B Level selector\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PBLS_A {
     #[doc = "0: Phase B is active HIGH"]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<PBLS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PBLS` reader - Phase B Level selector"]
-pub struct PBLS_R(crate::FieldReader<bool, PBLS_A>);
 impl PBLS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PBLS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PBLS_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl PBLS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PBLS_A::VALUE1
+        *self == PBLS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PBLS_A::VALUE2
-    }
-}
-impl core::ops::Deref for PBLS_R {
-    type Target = crate::FieldReader<bool, PBLS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PBLS_A::VALUE2
     }
 }
 #[doc = "Field `PBLS` writer - Phase B Level selector"]
-pub struct PBLS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PBLS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PBLS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PBLS_W<'a, const O: u8> = crate::BitWriter<'a, u32, QDC_SPEC, PBLS_A, O>;
+impl<'a, const O: u8> PBLS_W<'a, O> {
     #[doc = "Phase B is active HIGH"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -183,25 +133,11 @@ impl<'a> PBLS_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(PBLS_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `PHS` reader - Phase signals swap"]
+pub type PHS_R = crate::BitReader<PHS_A>;
 #[doc = "Phase signals swap\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PHS_A {
     #[doc = "0: Phase A is the leading signal for clockwise rotation"]
     VALUE1 = 0,
@@ -214,13 +150,8 @@ impl From<PHS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PHS` reader - Phase signals swap"]
-pub struct PHS_R(crate::FieldReader<bool, PHS_A>);
 impl PHS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        PHS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PHS_A {
         match self.bits {
@@ -231,31 +162,17 @@ impl PHS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PHS_A::VALUE1
+        *self == PHS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PHS_A::VALUE2
-    }
-}
-impl core::ops::Deref for PHS_R {
-    type Target = crate::FieldReader<bool, PHS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PHS_A::VALUE2
     }
 }
 #[doc = "Field `PHS` writer - Phase signals swap"]
-pub struct PHS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PHS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PHS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type PHS_W<'a, const O: u8> = crate::BitWriter<'a, u32, QDC_SPEC, PHS_A, O>;
+impl<'a, const O: u8> PHS_W<'a, O> {
     #[doc = "Phase A is the leading signal for clockwise rotation"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -266,25 +183,11 @@ impl<'a> PHS_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(PHS_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `ICM` reader - Index Marker generations control"]
+pub type ICM_R = crate::FieldReader<u8, ICM_A>;
 #[doc = "Index Marker generations control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ICM_A {
     #[doc = "0: No index marker generation on POSIFx.OUT3"]
@@ -300,13 +203,8 @@ impl From<ICM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ICM` reader - Index Marker generations control"]
-pub struct ICM_R(crate::FieldReader<u8, ICM_A>);
 impl ICM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        ICM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<ICM_A> {
         match self.bits {
@@ -319,36 +217,22 @@ impl ICM_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ICM_A::VALUE1
+        *self == ICM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ICM_A::VALUE2
+        *self == ICM_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == ICM_A::VALUE3
-    }
-}
-impl core::ops::Deref for ICM_R {
-    type Target = crate::FieldReader<u8, ICM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ICM_A::VALUE3
     }
 }
 #[doc = "Field `ICM` writer - Index Marker generations control"]
-pub struct ICM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ICM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ICM_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type ICM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, QDC_SPEC, u8, ICM_A, 2, O>;
+impl<'a, const O: u8> ICM_W<'a, O> {
     #[doc = "No index marker generation on POSIFx.OUT3"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -364,15 +248,11 @@ impl<'a> ICM_W<'a> {
     pub fn value3(self) -> &'a mut W {
         self.variant(ICM_A::VALUE3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
-        self.w
-    }
 }
+#[doc = "Field `DVAL` reader - Current rotation direction"]
+pub type DVAL_R = crate::BitReader<DVAL_A>;
 #[doc = "Current rotation direction\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DVAL_A {
     #[doc = "0: Counterclockwise rotation"]
     VALUE1 = 0,
@@ -385,13 +265,8 @@ impl From<DVAL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DVAL` reader - Current rotation direction"]
-pub struct DVAL_R(crate::FieldReader<bool, DVAL_A>);
 impl DVAL_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        DVAL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DVAL_A {
         match self.bits {
@@ -402,68 +277,65 @@ impl DVAL_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DVAL_A::VALUE1
+        *self == DVAL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DVAL_A::VALUE2
-    }
-}
-impl core::ops::Deref for DVAL_R {
-    type Target = crate::FieldReader<bool, DVAL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DVAL_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - Phase A Level selector"]
     #[inline(always)]
     pub fn pals(&self) -> PALS_R {
-        PALS_R::new((self.bits & 0x01) != 0)
+        PALS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Phase B Level selector"]
     #[inline(always)]
     pub fn pbls(&self) -> PBLS_R {
-        PBLS_R::new(((self.bits >> 1) & 0x01) != 0)
+        PBLS_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Phase signals swap"]
     #[inline(always)]
     pub fn phs(&self) -> PHS_R {
-        PHS_R::new(((self.bits >> 2) & 0x01) != 0)
+        PHS_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 4:5 - Index Marker generations control"]
     #[inline(always)]
     pub fn icm(&self) -> ICM_R {
-        ICM_R::new(((self.bits >> 4) & 0x03) as u8)
+        ICM_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 8 - Current rotation direction"]
     #[inline(always)]
     pub fn dval(&self) -> DVAL_R {
-        DVAL_R::new(((self.bits >> 8) & 0x01) != 0)
+        DVAL_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Phase A Level selector"]
     #[inline(always)]
-    pub fn pals(&mut self) -> PALS_W {
-        PALS_W { w: self }
+    #[must_use]
+    pub fn pals(&mut self) -> PALS_W<0> {
+        PALS_W::new(self)
     }
     #[doc = "Bit 1 - Phase B Level selector"]
     #[inline(always)]
-    pub fn pbls(&mut self) -> PBLS_W {
-        PBLS_W { w: self }
+    #[must_use]
+    pub fn pbls(&mut self) -> PBLS_W<1> {
+        PBLS_W::new(self)
     }
     #[doc = "Bit 2 - Phase signals swap"]
     #[inline(always)]
-    pub fn phs(&mut self) -> PHS_W {
-        PHS_W { w: self }
+    #[must_use]
+    pub fn phs(&mut self) -> PHS_W<2> {
+        PHS_W::new(self)
     }
     #[doc = "Bits 4:5 - Index Marker generations control"]
     #[inline(always)]
-    pub fn icm(&mut self) -> ICM_W {
-        ICM_W { w: self }
+    #[must_use]
+    pub fn icm(&mut self) -> ICM_W<4> {
+        ICM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -484,11 +356,10 @@ impl crate::Readable for QDC_SPEC {
 #[doc = "`write(|w| ..)` method takes [qdc::W](W) writer structure"]
 impl crate::Writable for QDC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets QDC to value 0"]
 impl crate::Resettable for QDC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }
