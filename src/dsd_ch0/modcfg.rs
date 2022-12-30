@@ -34,8 +34,10 @@ impl From<crate::W<MODCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DIVM` reader - Divider Factor for Modulator Clock"]
+pub type DIVM_R = crate::FieldReader<u8, DIVM_A>;
 #[doc = "Divider Factor for Modulator Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DIVM_A {
     #[doc = "0: fMOD = fCLK / 2"]
@@ -53,13 +55,8 @@ impl From<DIVM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DIVM` reader - Divider Factor for Modulator Clock"]
-pub struct DIVM_R(crate::FieldReader<u8, DIVM_A>);
 impl DIVM_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        DIVM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DIVM_A> {
         match self.bits {
@@ -73,41 +70,27 @@ impl DIVM_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == DIVM_A::VALUE1
+        *self == DIVM_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == DIVM_A::VALUE2
+        *self == DIVM_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == DIVM_A::VALUE3
+        *self == DIVM_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == DIVM_A::VALUE4
-    }
-}
-impl core::ops::Deref for DIVM_R {
-    type Target = crate::FieldReader<u8, DIVM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DIVM_A::VALUE4
     }
 }
 #[doc = "Field `DIVM` writer - Divider Factor for Modulator Clock"]
-pub struct DIVM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIVM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DIVM_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type DIVM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODCFG_SPEC, u8, DIVM_A, 4, O>;
+impl<'a, const O: u8> DIVM_W<'a, O> {
     #[doc = "fMOD = fCLK / 2"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -128,15 +111,9 @@ impl<'a> DIVM_W<'a> {
     pub fn value4(self) -> &'a mut W {
         self.variant(DIVM_A::VALUE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
 }
 #[doc = "Write Control for Divider Factor\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DWC_AW {
     #[doc = "0: No write access to divider factor"]
     VALUE1 = 0,
@@ -150,15 +127,8 @@ impl From<DWC_AW> for bool {
     }
 }
 #[doc = "Field `DWC` writer - Write Control for Divider Factor"]
-pub struct DWC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DWC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DWC_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type DWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODCFG_SPEC, DWC_AW, O>;
+impl<'a, const O: u8> DWC_W<'a, O> {
     #[doc = "No write access to divider factor"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -168,22 +138,6 @@ impl<'a> DWC_W<'a> {
     #[inline(always)]
     pub fn value2(self) -> &'a mut W {
         self.variant(DWC_AW::VALUE2)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
     }
 }
 impl R {
@@ -196,13 +150,15 @@ impl R {
 impl W {
     #[doc = "Bits 16:19 - Divider Factor for Modulator Clock"]
     #[inline(always)]
-    pub fn divm(&mut self) -> DIVM_W {
-        DIVM_W { w: self }
+    #[must_use]
+    pub fn divm(&mut self) -> DIVM_W<16> {
+        DIVM_W::new(self)
     }
     #[doc = "Bit 23 - Write Control for Divider Factor"]
     #[inline(always)]
-    pub fn dwc(&mut self) -> DWC_W {
-        DWC_W { w: self }
+    #[must_use]
+    pub fn dwc(&mut self) -> DWC_W<23> {
+        DWC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -223,11 +179,10 @@ impl crate::Readable for MODCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [modcfg::W](W) writer structure"]
 impl crate::Writable for MODCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MODCFG to value 0"]
 impl crate::Resettable for MODCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

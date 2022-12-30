@@ -35,21 +35,11 @@ impl From<crate::W<IWCTR_SPEC>> for W {
     }
 }
 #[doc = "Field `NVALCNT` reader - Number of Values Counted"]
-pub struct NVALCNT_R(crate::FieldReader<u8, u8>);
-impl NVALCNT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NVALCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NVALCNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NVALCNT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `INTEN` reader - Integration Enable"]
+pub type INTEN_R = crate::BitReader<INTEN_A>;
 #[doc = "Integration Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum INTEN_A {
     #[doc = "0: Integration stopped. INTEN is cleared at the end of the integration window, i.e. upon the inverse trigger event transition of the external trigger signal."]
     VALUE1 = 0,
@@ -62,13 +52,8 @@ impl From<INTEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INTEN` reader - Integration Enable"]
-pub struct INTEN_R(crate::FieldReader<bool, INTEN_A>);
 impl INTEN_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        INTEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INTEN_A {
         match self.bits {
@@ -79,89 +64,28 @@ impl INTEN_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == INTEN_A::VALUE1
+        *self == INTEN_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == INTEN_A::VALUE2
-    }
-}
-impl core::ops::Deref for INTEN_R {
-    type Target = crate::FieldReader<bool, INTEN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == INTEN_A::VALUE2
     }
 }
 #[doc = "Field `REPCNT` reader - Integration Cycle Counter"]
-pub struct REPCNT_R(crate::FieldReader<u8, u8>);
-impl REPCNT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        REPCNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REPCNT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REPCNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `REPVAL` reader - Number of Integration Cycles"]
-pub struct REPVAL_R(crate::FieldReader<u8, u8>);
-impl REPVAL_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        REPVAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for REPVAL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type REPVAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `REPVAL` writer - Number of Integration Cycles"]
-pub struct REPVAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REPVAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
-        self.w
-    }
-}
+pub type REPVAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IWCTR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `NVALDIS` reader - Number of Values Discarded"]
-pub struct NVALDIS_R(crate::FieldReader<u8, u8>);
-impl NVALDIS_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NVALDIS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NVALDIS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NVALDIS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NVALDIS` writer - Number of Values Discarded"]
-pub struct NVALDIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NVALDIS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 16)) | ((value as u32 & 0x3f) << 16);
-        self.w
-    }
-}
+pub type NVALDIS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IWCTR_SPEC, u8, u8, 6, O>;
+#[doc = "Field `IWS` reader - Integration Window SIze"]
+pub type IWS_R = crate::BitReader<IWS_A>;
 #[doc = "Integration Window SIze\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IWS_A {
     #[doc = "0: Internal control: stop integrator after REPVAL+1 integration cycles"]
     VALUE1 = 0,
@@ -174,13 +98,8 @@ impl From<IWS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IWS` reader - Integration Window SIze"]
-pub struct IWS_R(crate::FieldReader<bool, IWS_A>);
 impl IWS_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        IWS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IWS_A {
         match self.bits {
@@ -191,31 +110,17 @@ impl IWS_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == IWS_A::VALUE1
+        *self == IWS_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == IWS_A::VALUE2
-    }
-}
-impl core::ops::Deref for IWS_R {
-    type Target = crate::FieldReader<bool, IWS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IWS_A::VALUE2
     }
 }
 #[doc = "Field `IWS` writer - Integration Window SIze"]
-pub struct IWS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IWS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IWS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type IWS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IWCTR_SPEC, IWS_A, O>;
+impl<'a, const O: u8> IWS_W<'a, O> {
     #[doc = "Internal control: stop integrator after REPVAL+1 integration cycles"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -226,49 +131,11 @@ impl<'a> IWS_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(IWS_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
-        self.w
-    }
 }
 #[doc = "Field `NVALINT` reader - Number of Values Integrated"]
-pub struct NVALINT_R(crate::FieldReader<u8, u8>);
-impl NVALINT_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        NVALINT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NVALINT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NVALINT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NVALINT` writer - Number of Values Integrated"]
-pub struct NVALINT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NVALINT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 24)) | ((value as u32 & 0x3f) << 24);
-        self.w
-    }
-}
+pub type NVALINT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IWCTR_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - Number of Values Counted"]
     #[inline(always)]
@@ -278,7 +145,7 @@ impl R {
     #[doc = "Bit 7 - Integration Enable"]
     #[inline(always)]
     pub fn inten(&self) -> INTEN_R {
-        INTEN_R::new(((self.bits >> 7) & 0x01) != 0)
+        INTEN_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:11 - Integration Cycle Counter"]
     #[inline(always)]
@@ -298,7 +165,7 @@ impl R {
     #[doc = "Bit 23 - Integration Window SIze"]
     #[inline(always)]
     pub fn iws(&self) -> IWS_R {
-        IWS_R::new(((self.bits >> 23) & 0x01) != 0)
+        IWS_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bits 24:29 - Number of Values Integrated"]
     #[inline(always)]
@@ -309,23 +176,27 @@ impl R {
 impl W {
     #[doc = "Bits 12:15 - Number of Integration Cycles"]
     #[inline(always)]
-    pub fn repval(&mut self) -> REPVAL_W {
-        REPVAL_W { w: self }
+    #[must_use]
+    pub fn repval(&mut self) -> REPVAL_W<12> {
+        REPVAL_W::new(self)
     }
     #[doc = "Bits 16:21 - Number of Values Discarded"]
     #[inline(always)]
-    pub fn nvaldis(&mut self) -> NVALDIS_W {
-        NVALDIS_W { w: self }
+    #[must_use]
+    pub fn nvaldis(&mut self) -> NVALDIS_W<16> {
+        NVALDIS_W::new(self)
     }
     #[doc = "Bit 23 - Integration Window SIze"]
     #[inline(always)]
-    pub fn iws(&mut self) -> IWS_W {
-        IWS_W { w: self }
+    #[must_use]
+    pub fn iws(&mut self) -> IWS_W<23> {
+        IWS_W::new(self)
     }
     #[doc = "Bits 24:29 - Number of Values Integrated"]
     #[inline(always)]
-    pub fn nvalint(&mut self) -> NVALINT_W {
-        NVALINT_W { w: self }
+    #[must_use]
+    pub fn nvalint(&mut self) -> NVALINT_W<24> {
+        NVALINT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -346,11 +217,10 @@ impl crate::Readable for IWCTR_SPEC {
 #[doc = "`write(|w| ..)` method takes [iwctr::W](W) writer structure"]
 impl crate::Writable for IWCTR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IWCTR to value 0"]
 impl crate::Resettable for IWCTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

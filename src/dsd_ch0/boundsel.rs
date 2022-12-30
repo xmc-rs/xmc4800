@@ -35,57 +35,13 @@ impl From<crate::W<BOUNDSEL_SPEC>> for W {
     }
 }
 #[doc = "Field `BOUNDARYL` reader - Lower Boundary Value for Limit Checking"]
-pub struct BOUNDARYL_R(crate::FieldReader<u16, u16>);
-impl BOUNDARYL_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        BOUNDARYL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BOUNDARYL_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BOUNDARYL_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BOUNDARYL` writer - Lower Boundary Value for Limit Checking"]
-pub struct BOUNDARYL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BOUNDARYL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type BOUNDARYL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BOUNDSEL_SPEC, u16, u16, 16, O>;
 #[doc = "Field `BOUNDARYU` reader - Upper Boundary Value for Limit Checking"]
-pub struct BOUNDARYU_R(crate::FieldReader<u16, u16>);
-impl BOUNDARYU_R {
-    pub(crate) fn new(bits: u16) -> Self {
-        BOUNDARYU_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BOUNDARYU_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BOUNDARYU_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BOUNDARYU` writer - Upper Boundary Value for Limit Checking"]
-pub struct BOUNDARYU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BOUNDARYU_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type BOUNDARYU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BOUNDSEL_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Lower Boundary Value for Limit Checking"]
     #[inline(always)]
@@ -101,13 +57,15 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Lower Boundary Value for Limit Checking"]
     #[inline(always)]
-    pub fn boundaryl(&mut self) -> BOUNDARYL_W {
-        BOUNDARYL_W { w: self }
+    #[must_use]
+    pub fn boundaryl(&mut self) -> BOUNDARYL_W<0> {
+        BOUNDARYL_W::new(self)
     }
     #[doc = "Bits 16:31 - Upper Boundary Value for Limit Checking"]
     #[inline(always)]
-    pub fn boundaryu(&mut self) -> BOUNDARYU_W {
-        BOUNDARYU_W { w: self }
+    #[must_use]
+    pub fn boundaryu(&mut self) -> BOUNDARYU_W<16> {
+        BOUNDARYU_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -128,11 +86,10 @@ impl crate::Readable for BOUNDSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [boundsel::W](W) writer structure"]
 impl crate::Writable for BOUNDSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BOUNDSEL to value 0"]
 impl crate::Resettable for BOUNDSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<EVFLAG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RESEV0` reader - Result Event"]
+pub type RESEV0_R = crate::BitReader<RESEV0_A>;
 #[doc = "Result Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RESEV0_A {
     #[doc = "0: No result event"]
     VALUE1 = 0,
@@ -48,13 +50,8 @@ impl From<RESEV0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RESEV0` reader - Result Event"]
-pub struct RESEV0_R(crate::FieldReader<bool, RESEV0_A>);
 impl RESEV0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RESEV0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RESEV0_A {
         match self.bits {
@@ -65,31 +62,17 @@ impl RESEV0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RESEV0_A::VALUE1
+        *self == RESEV0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RESEV0_A::VALUE2
-    }
-}
-impl core::ops::Deref for RESEV0_R {
-    type Target = crate::FieldReader<bool, RESEV0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RESEV0_A::VALUE2
     }
 }
 #[doc = "Field `RESEV0` writer - Result Event"]
-pub struct RESEV0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESEV0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RESEV0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RESEV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, RESEV0_A, O>;
+impl<'a, const O: u8> RESEV0_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -100,25 +83,11 @@ impl<'a> RESEV0_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(RESEV0_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
+#[doc = "Field `RESEV1` reader - Result Event"]
+pub type RESEV1_R = crate::BitReader<RESEV1_A>;
 #[doc = "Result Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RESEV1_A {
     #[doc = "0: No result event"]
     VALUE1 = 0,
@@ -131,13 +100,8 @@ impl From<RESEV1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RESEV1` reader - Result Event"]
-pub struct RESEV1_R(crate::FieldReader<bool, RESEV1_A>);
 impl RESEV1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RESEV1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RESEV1_A {
         match self.bits {
@@ -148,31 +112,17 @@ impl RESEV1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RESEV1_A::VALUE1
+        *self == RESEV1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RESEV1_A::VALUE2
-    }
-}
-impl core::ops::Deref for RESEV1_R {
-    type Target = crate::FieldReader<bool, RESEV1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RESEV1_A::VALUE2
     }
 }
 #[doc = "Field `RESEV1` writer - Result Event"]
-pub struct RESEV1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESEV1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RESEV1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RESEV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, RESEV1_A, O>;
+impl<'a, const O: u8> RESEV1_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -183,25 +133,11 @@ impl<'a> RESEV1_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(RESEV1_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
+#[doc = "Field `RESEV2` reader - Result Event"]
+pub type RESEV2_R = crate::BitReader<RESEV2_A>;
 #[doc = "Result Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RESEV2_A {
     #[doc = "0: No result event"]
     VALUE1 = 0,
@@ -214,13 +150,8 @@ impl From<RESEV2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RESEV2` reader - Result Event"]
-pub struct RESEV2_R(crate::FieldReader<bool, RESEV2_A>);
 impl RESEV2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RESEV2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RESEV2_A {
         match self.bits {
@@ -231,31 +162,17 @@ impl RESEV2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RESEV2_A::VALUE1
+        *self == RESEV2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RESEV2_A::VALUE2
-    }
-}
-impl core::ops::Deref for RESEV2_R {
-    type Target = crate::FieldReader<bool, RESEV2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RESEV2_A::VALUE2
     }
 }
 #[doc = "Field `RESEV2` writer - Result Event"]
-pub struct RESEV2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESEV2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RESEV2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RESEV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, RESEV2_A, O>;
+impl<'a, const O: u8> RESEV2_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -266,25 +183,11 @@ impl<'a> RESEV2_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(RESEV2_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
 }
+#[doc = "Field `RESEV3` reader - Result Event"]
+pub type RESEV3_R = crate::BitReader<RESEV3_A>;
 #[doc = "Result Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RESEV3_A {
     #[doc = "0: No result event"]
     VALUE1 = 0,
@@ -297,13 +200,8 @@ impl From<RESEV3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RESEV3` reader - Result Event"]
-pub struct RESEV3_R(crate::FieldReader<bool, RESEV3_A>);
 impl RESEV3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        RESEV3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RESEV3_A {
         match self.bits {
@@ -314,31 +212,17 @@ impl RESEV3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == RESEV3_A::VALUE1
+        *self == RESEV3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == RESEV3_A::VALUE2
-    }
-}
-impl core::ops::Deref for RESEV3_R {
-    type Target = crate::FieldReader<bool, RESEV3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RESEV3_A::VALUE2
     }
 }
 #[doc = "Field `RESEV3` writer - Result Event"]
-pub struct RESEV3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESEV3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RESEV3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type RESEV3_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, RESEV3_A, O>;
+impl<'a, const O: u8> RESEV3_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -349,25 +233,11 @@ impl<'a> RESEV3_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(RESEV3_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
 }
+#[doc = "Field `ALEV0` reader - Alarm Event"]
+pub type ALEV0_R = crate::BitReader<ALEV0_A>;
 #[doc = "Alarm Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALEV0_A {
     #[doc = "0: No alarm event"]
     VALUE1 = 0,
@@ -380,13 +250,8 @@ impl From<ALEV0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALEV0` reader - Alarm Event"]
-pub struct ALEV0_R(crate::FieldReader<bool, ALEV0_A>);
 impl ALEV0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ALEV0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ALEV0_A {
         match self.bits {
@@ -397,31 +262,17 @@ impl ALEV0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ALEV0_A::VALUE1
+        *self == ALEV0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ALEV0_A::VALUE2
-    }
-}
-impl core::ops::Deref for ALEV0_R {
-    type Target = crate::FieldReader<bool, ALEV0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ALEV0_A::VALUE2
     }
 }
 #[doc = "Field `ALEV0` writer - Alarm Event"]
-pub struct ALEV0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALEV0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ALEV0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ALEV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, ALEV0_A, O>;
+impl<'a, const O: u8> ALEV0_W<'a, O> {
     #[doc = "No alarm event"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -432,25 +283,11 @@ impl<'a> ALEV0_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ALEV0_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
+#[doc = "Field `ALEV1` reader - Alarm Event"]
+pub type ALEV1_R = crate::BitReader<ALEV1_A>;
 #[doc = "Alarm Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALEV1_A {
     #[doc = "0: No alarm event"]
     VALUE1 = 0,
@@ -463,13 +300,8 @@ impl From<ALEV1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALEV1` reader - Alarm Event"]
-pub struct ALEV1_R(crate::FieldReader<bool, ALEV1_A>);
 impl ALEV1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ALEV1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ALEV1_A {
         match self.bits {
@@ -480,31 +312,17 @@ impl ALEV1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ALEV1_A::VALUE1
+        *self == ALEV1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ALEV1_A::VALUE2
-    }
-}
-impl core::ops::Deref for ALEV1_R {
-    type Target = crate::FieldReader<bool, ALEV1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ALEV1_A::VALUE2
     }
 }
 #[doc = "Field `ALEV1` writer - Alarm Event"]
-pub struct ALEV1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALEV1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ALEV1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ALEV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, ALEV1_A, O>;
+impl<'a, const O: u8> ALEV1_W<'a, O> {
     #[doc = "No alarm event"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -515,25 +333,11 @@ impl<'a> ALEV1_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ALEV1_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
-    }
 }
+#[doc = "Field `ALEV2` reader - Alarm Event"]
+pub type ALEV2_R = crate::BitReader<ALEV2_A>;
 #[doc = "Alarm Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALEV2_A {
     #[doc = "0: No alarm event"]
     VALUE1 = 0,
@@ -546,13 +350,8 @@ impl From<ALEV2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALEV2` reader - Alarm Event"]
-pub struct ALEV2_R(crate::FieldReader<bool, ALEV2_A>);
 impl ALEV2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ALEV2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ALEV2_A {
         match self.bits {
@@ -563,31 +362,17 @@ impl ALEV2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ALEV2_A::VALUE1
+        *self == ALEV2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ALEV2_A::VALUE2
-    }
-}
-impl core::ops::Deref for ALEV2_R {
-    type Target = crate::FieldReader<bool, ALEV2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ALEV2_A::VALUE2
     }
 }
 #[doc = "Field `ALEV2` writer - Alarm Event"]
-pub struct ALEV2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALEV2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ALEV2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ALEV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, ALEV2_A, O>;
+impl<'a, const O: u8> ALEV2_W<'a, O> {
     #[doc = "No alarm event"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -598,25 +383,11 @@ impl<'a> ALEV2_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ALEV2_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
-    }
 }
+#[doc = "Field `ALEV3` reader - Alarm Event"]
+pub type ALEV3_R = crate::BitReader<ALEV3_A>;
 #[doc = "Alarm Event\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALEV3_A {
     #[doc = "0: No alarm event"]
     VALUE1 = 0,
@@ -629,13 +400,8 @@ impl From<ALEV3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALEV3` reader - Alarm Event"]
-pub struct ALEV3_R(crate::FieldReader<bool, ALEV3_A>);
 impl ALEV3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        ALEV3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ALEV3_A {
         match self.bits {
@@ -646,31 +412,17 @@ impl ALEV3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == ALEV3_A::VALUE1
+        *self == ALEV3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == ALEV3_A::VALUE2
-    }
-}
-impl core::ops::Deref for ALEV3_R {
-    type Target = crate::FieldReader<bool, ALEV3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ALEV3_A::VALUE2
     }
 }
 #[doc = "Field `ALEV3` writer - Alarm Event"]
-pub struct ALEV3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ALEV3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ALEV3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type ALEV3_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, ALEV3_A, O>;
+impl<'a, const O: u8> ALEV3_W<'a, O> {
     #[doc = "No alarm event"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -681,105 +433,97 @@ impl<'a> ALEV3_W<'a> {
     pub fn value2(self) -> &'a mut W {
         self.variant(ALEV3_A::VALUE2)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - Result Event"]
     #[inline(always)]
     pub fn resev0(&self) -> RESEV0_R {
-        RESEV0_R::new((self.bits & 0x01) != 0)
+        RESEV0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Result Event"]
     #[inline(always)]
     pub fn resev1(&self) -> RESEV1_R {
-        RESEV1_R::new(((self.bits >> 1) & 0x01) != 0)
+        RESEV1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Result Event"]
     #[inline(always)]
     pub fn resev2(&self) -> RESEV2_R {
-        RESEV2_R::new(((self.bits >> 2) & 0x01) != 0)
+        RESEV2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Result Event"]
     #[inline(always)]
     pub fn resev3(&self) -> RESEV3_R {
-        RESEV3_R::new(((self.bits >> 3) & 0x01) != 0)
+        RESEV3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 16 - Alarm Event"]
     #[inline(always)]
     pub fn alev0(&self) -> ALEV0_R {
-        ALEV0_R::new(((self.bits >> 16) & 0x01) != 0)
+        ALEV0_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Alarm Event"]
     #[inline(always)]
     pub fn alev1(&self) -> ALEV1_R {
-        ALEV1_R::new(((self.bits >> 17) & 0x01) != 0)
+        ALEV1_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Alarm Event"]
     #[inline(always)]
     pub fn alev2(&self) -> ALEV2_R {
-        ALEV2_R::new(((self.bits >> 18) & 0x01) != 0)
+        ALEV2_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Alarm Event"]
     #[inline(always)]
     pub fn alev3(&self) -> ALEV3_R {
-        ALEV3_R::new(((self.bits >> 19) & 0x01) != 0)
+        ALEV3_R::new(((self.bits >> 19) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Result Event"]
     #[inline(always)]
-    pub fn resev0(&mut self) -> RESEV0_W {
-        RESEV0_W { w: self }
+    #[must_use]
+    pub fn resev0(&mut self) -> RESEV0_W<0> {
+        RESEV0_W::new(self)
     }
     #[doc = "Bit 1 - Result Event"]
     #[inline(always)]
-    pub fn resev1(&mut self) -> RESEV1_W {
-        RESEV1_W { w: self }
+    #[must_use]
+    pub fn resev1(&mut self) -> RESEV1_W<1> {
+        RESEV1_W::new(self)
     }
     #[doc = "Bit 2 - Result Event"]
     #[inline(always)]
-    pub fn resev2(&mut self) -> RESEV2_W {
-        RESEV2_W { w: self }
+    #[must_use]
+    pub fn resev2(&mut self) -> RESEV2_W<2> {
+        RESEV2_W::new(self)
     }
     #[doc = "Bit 3 - Result Event"]
     #[inline(always)]
-    pub fn resev3(&mut self) -> RESEV3_W {
-        RESEV3_W { w: self }
+    #[must_use]
+    pub fn resev3(&mut self) -> RESEV3_W<3> {
+        RESEV3_W::new(self)
     }
     #[doc = "Bit 16 - Alarm Event"]
     #[inline(always)]
-    pub fn alev0(&mut self) -> ALEV0_W {
-        ALEV0_W { w: self }
+    #[must_use]
+    pub fn alev0(&mut self) -> ALEV0_W<16> {
+        ALEV0_W::new(self)
     }
     #[doc = "Bit 17 - Alarm Event"]
     #[inline(always)]
-    pub fn alev1(&mut self) -> ALEV1_W {
-        ALEV1_W { w: self }
+    #[must_use]
+    pub fn alev1(&mut self) -> ALEV1_W<17> {
+        ALEV1_W::new(self)
     }
     #[doc = "Bit 18 - Alarm Event"]
     #[inline(always)]
-    pub fn alev2(&mut self) -> ALEV2_W {
-        ALEV2_W { w: self }
+    #[must_use]
+    pub fn alev2(&mut self) -> ALEV2_W<18> {
+        ALEV2_W::new(self)
     }
     #[doc = "Bit 19 - Alarm Event"]
     #[inline(always)]
-    pub fn alev3(&mut self) -> ALEV3_W {
-        ALEV3_W { w: self }
+    #[must_use]
+    pub fn alev3(&mut self) -> ALEV3_W<19> {
+        ALEV3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -800,11 +544,10 @@ impl crate::Readable for EVFLAG_SPEC {
 #[doc = "`write(|w| ..)` method takes [evflag::W](W) writer structure"]
 impl crate::Writable for EVFLAG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EVFLAG to value 0"]
 impl crate::Resettable for EVFLAG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

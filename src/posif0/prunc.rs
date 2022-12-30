@@ -20,59 +20,21 @@ impl From<crate::W<PRUNC_SPEC>> for W {
     }
 }
 #[doc = "Field `CRB` writer - Clear Run bit"]
-pub struct CRB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CRB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CRB_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRUNC_SPEC, bool, O>;
 #[doc = "Field `CSM` writer - Clear Current internal status"]
-pub struct CSM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRUNC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Clear Run bit"]
     #[inline(always)]
-    pub fn crb(&mut self) -> CRB_W {
-        CRB_W { w: self }
+    #[must_use]
+    pub fn crb(&mut self) -> CRB_W<0> {
+        CRB_W::new(self)
     }
     #[doc = "Bit 1 - Clear Current internal status"]
     #[inline(always)]
-    pub fn csm(&mut self) -> CSM_W {
-        CSM_W { w: self }
+    #[must_use]
+    pub fn csm(&mut self) -> CSM_W<1> {
+        CSM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -89,11 +51,10 @@ impl crate::RegisterSpec for PRUNC_SPEC {
 #[doc = "`write(|w| ..)` method takes [prunc::W](W) writer structure"]
 impl crate::Writable for PRUNC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PRUNC to value 0"]
 impl crate::Resettable for PRUNC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

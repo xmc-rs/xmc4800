@@ -34,8 +34,10 @@ impl From<crate::W<IOCR0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PC0` reader - Port Control for Port n Pin 0 to 3"]
+pub type PC0_R = crate::FieldReader<u8, PC0_A>;
 #[doc = "Port Control for Port n Pin 0 to 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PC0_A {
     #[doc = "0: Input - No internal pull device active"]
@@ -81,13 +83,8 @@ impl From<PC0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PC0` reader - Port Control for Port n Pin 0 to 3"]
-pub struct PC0_R(crate::FieldReader<u8, PC0_A>);
 impl PC0_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PC0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PC0_A> {
         match self.bits {
@@ -115,111 +112,97 @@ impl PC0_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PC0_A::VALUE1
+        *self == PC0_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PC0_A::VALUE2
+        *self == PC0_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == PC0_A::VALUE3
+        *self == PC0_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == PC0_A::VALUE4
+        *self == PC0_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        **self == PC0_A::VALUE5
+        *self == PC0_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        **self == PC0_A::VALUE6
+        *self == PC0_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        **self == PC0_A::VALUE7
+        *self == PC0_A::VALUE7
     }
     #[doc = "Checks if the value of the field is `VALUE8`"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        **self == PC0_A::VALUE8
+        *self == PC0_A::VALUE8
     }
     #[doc = "Checks if the value of the field is `VALUE9`"]
     #[inline(always)]
     pub fn is_value9(&self) -> bool {
-        **self == PC0_A::VALUE9
+        *self == PC0_A::VALUE9
     }
     #[doc = "Checks if the value of the field is `VALUE10`"]
     #[inline(always)]
     pub fn is_value10(&self) -> bool {
-        **self == PC0_A::VALUE10
+        *self == PC0_A::VALUE10
     }
     #[doc = "Checks if the value of the field is `VALUE11`"]
     #[inline(always)]
     pub fn is_value11(&self) -> bool {
-        **self == PC0_A::VALUE11
+        *self == PC0_A::VALUE11
     }
     #[doc = "Checks if the value of the field is `VALUE12`"]
     #[inline(always)]
     pub fn is_value12(&self) -> bool {
-        **self == PC0_A::VALUE12
+        *self == PC0_A::VALUE12
     }
     #[doc = "Checks if the value of the field is `VALUE13`"]
     #[inline(always)]
     pub fn is_value13(&self) -> bool {
-        **self == PC0_A::VALUE13
+        *self == PC0_A::VALUE13
     }
     #[doc = "Checks if the value of the field is `VALUE14`"]
     #[inline(always)]
     pub fn is_value14(&self) -> bool {
-        **self == PC0_A::VALUE14
+        *self == PC0_A::VALUE14
     }
     #[doc = "Checks if the value of the field is `VALUE15`"]
     #[inline(always)]
     pub fn is_value15(&self) -> bool {
-        **self == PC0_A::VALUE15
+        *self == PC0_A::VALUE15
     }
     #[doc = "Checks if the value of the field is `VALUE16`"]
     #[inline(always)]
     pub fn is_value16(&self) -> bool {
-        **self == PC0_A::VALUE16
+        *self == PC0_A::VALUE16
     }
     #[doc = "Checks if the value of the field is `VALUE17`"]
     #[inline(always)]
     pub fn is_value17(&self) -> bool {
-        **self == PC0_A::VALUE17
+        *self == PC0_A::VALUE17
     }
     #[doc = "Checks if the value of the field is `VALUE18`"]
     #[inline(always)]
     pub fn is_value18(&self) -> bool {
-        **self == PC0_A::VALUE18
-    }
-}
-impl core::ops::Deref for PC0_R {
-    type Target = crate::FieldReader<u8, PC0_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PC0_A::VALUE18
     }
 }
 #[doc = "Field `PC0` writer - Port Control for Port n Pin 0 to 3"]
-pub struct PC0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PC0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PC0_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PC0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR0_SPEC, u8, PC0_A, 5, O>;
+impl<'a, const O: u8> PC0_W<'a, O> {
     #[doc = "Input - No internal pull device active"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -310,15 +293,11 @@ impl<'a> PC0_W<'a> {
     pub fn value18(self) -> &'a mut W {
         self.variant(PC0_A::VALUE18)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 3)) | ((value as u32 & 0x1f) << 3);
-        self.w
-    }
 }
+#[doc = "Field `PC1` reader - Port Control for Port n Pin 0 to 3"]
+pub type PC1_R = crate::FieldReader<u8, PC1_A>;
 #[doc = "Port Control for Port n Pin 0 to 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PC1_A {
     #[doc = "0: Input - No internal pull device active"]
@@ -364,13 +343,8 @@ impl From<PC1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PC1` reader - Port Control for Port n Pin 0 to 3"]
-pub struct PC1_R(crate::FieldReader<u8, PC1_A>);
 impl PC1_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PC1_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PC1_A> {
         match self.bits {
@@ -398,111 +372,97 @@ impl PC1_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PC1_A::VALUE1
+        *self == PC1_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PC1_A::VALUE2
+        *self == PC1_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == PC1_A::VALUE3
+        *self == PC1_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == PC1_A::VALUE4
+        *self == PC1_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        **self == PC1_A::VALUE5
+        *self == PC1_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        **self == PC1_A::VALUE6
+        *self == PC1_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        **self == PC1_A::VALUE7
+        *self == PC1_A::VALUE7
     }
     #[doc = "Checks if the value of the field is `VALUE8`"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        **self == PC1_A::VALUE8
+        *self == PC1_A::VALUE8
     }
     #[doc = "Checks if the value of the field is `VALUE9`"]
     #[inline(always)]
     pub fn is_value9(&self) -> bool {
-        **self == PC1_A::VALUE9
+        *self == PC1_A::VALUE9
     }
     #[doc = "Checks if the value of the field is `VALUE10`"]
     #[inline(always)]
     pub fn is_value10(&self) -> bool {
-        **self == PC1_A::VALUE10
+        *self == PC1_A::VALUE10
     }
     #[doc = "Checks if the value of the field is `VALUE11`"]
     #[inline(always)]
     pub fn is_value11(&self) -> bool {
-        **self == PC1_A::VALUE11
+        *self == PC1_A::VALUE11
     }
     #[doc = "Checks if the value of the field is `VALUE12`"]
     #[inline(always)]
     pub fn is_value12(&self) -> bool {
-        **self == PC1_A::VALUE12
+        *self == PC1_A::VALUE12
     }
     #[doc = "Checks if the value of the field is `VALUE13`"]
     #[inline(always)]
     pub fn is_value13(&self) -> bool {
-        **self == PC1_A::VALUE13
+        *self == PC1_A::VALUE13
     }
     #[doc = "Checks if the value of the field is `VALUE14`"]
     #[inline(always)]
     pub fn is_value14(&self) -> bool {
-        **self == PC1_A::VALUE14
+        *self == PC1_A::VALUE14
     }
     #[doc = "Checks if the value of the field is `VALUE15`"]
     #[inline(always)]
     pub fn is_value15(&self) -> bool {
-        **self == PC1_A::VALUE15
+        *self == PC1_A::VALUE15
     }
     #[doc = "Checks if the value of the field is `VALUE16`"]
     #[inline(always)]
     pub fn is_value16(&self) -> bool {
-        **self == PC1_A::VALUE16
+        *self == PC1_A::VALUE16
     }
     #[doc = "Checks if the value of the field is `VALUE17`"]
     #[inline(always)]
     pub fn is_value17(&self) -> bool {
-        **self == PC1_A::VALUE17
+        *self == PC1_A::VALUE17
     }
     #[doc = "Checks if the value of the field is `VALUE18`"]
     #[inline(always)]
     pub fn is_value18(&self) -> bool {
-        **self == PC1_A::VALUE18
-    }
-}
-impl core::ops::Deref for PC1_R {
-    type Target = crate::FieldReader<u8, PC1_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PC1_A::VALUE18
     }
 }
 #[doc = "Field `PC1` writer - Port Control for Port n Pin 0 to 3"]
-pub struct PC1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PC1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PC1_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PC1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR0_SPEC, u8, PC1_A, 5, O>;
+impl<'a, const O: u8> PC1_W<'a, O> {
     #[doc = "Input - No internal pull device active"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -593,15 +553,11 @@ impl<'a> PC1_W<'a> {
     pub fn value18(self) -> &'a mut W {
         self.variant(PC1_A::VALUE18)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 11)) | ((value as u32 & 0x1f) << 11);
-        self.w
-    }
 }
+#[doc = "Field `PC2` reader - Port Control for Port n Pin 0 to 3"]
+pub type PC2_R = crate::FieldReader<u8, PC2_A>;
 #[doc = "Port Control for Port n Pin 0 to 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PC2_A {
     #[doc = "0: Input - No internal pull device active"]
@@ -647,13 +603,8 @@ impl From<PC2_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PC2` reader - Port Control for Port n Pin 0 to 3"]
-pub struct PC2_R(crate::FieldReader<u8, PC2_A>);
 impl PC2_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PC2_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PC2_A> {
         match self.bits {
@@ -681,111 +632,97 @@ impl PC2_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PC2_A::VALUE1
+        *self == PC2_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PC2_A::VALUE2
+        *self == PC2_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == PC2_A::VALUE3
+        *self == PC2_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == PC2_A::VALUE4
+        *self == PC2_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        **self == PC2_A::VALUE5
+        *self == PC2_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        **self == PC2_A::VALUE6
+        *self == PC2_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        **self == PC2_A::VALUE7
+        *self == PC2_A::VALUE7
     }
     #[doc = "Checks if the value of the field is `VALUE8`"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        **self == PC2_A::VALUE8
+        *self == PC2_A::VALUE8
     }
     #[doc = "Checks if the value of the field is `VALUE9`"]
     #[inline(always)]
     pub fn is_value9(&self) -> bool {
-        **self == PC2_A::VALUE9
+        *self == PC2_A::VALUE9
     }
     #[doc = "Checks if the value of the field is `VALUE10`"]
     #[inline(always)]
     pub fn is_value10(&self) -> bool {
-        **self == PC2_A::VALUE10
+        *self == PC2_A::VALUE10
     }
     #[doc = "Checks if the value of the field is `VALUE11`"]
     #[inline(always)]
     pub fn is_value11(&self) -> bool {
-        **self == PC2_A::VALUE11
+        *self == PC2_A::VALUE11
     }
     #[doc = "Checks if the value of the field is `VALUE12`"]
     #[inline(always)]
     pub fn is_value12(&self) -> bool {
-        **self == PC2_A::VALUE12
+        *self == PC2_A::VALUE12
     }
     #[doc = "Checks if the value of the field is `VALUE13`"]
     #[inline(always)]
     pub fn is_value13(&self) -> bool {
-        **self == PC2_A::VALUE13
+        *self == PC2_A::VALUE13
     }
     #[doc = "Checks if the value of the field is `VALUE14`"]
     #[inline(always)]
     pub fn is_value14(&self) -> bool {
-        **self == PC2_A::VALUE14
+        *self == PC2_A::VALUE14
     }
     #[doc = "Checks if the value of the field is `VALUE15`"]
     #[inline(always)]
     pub fn is_value15(&self) -> bool {
-        **self == PC2_A::VALUE15
+        *self == PC2_A::VALUE15
     }
     #[doc = "Checks if the value of the field is `VALUE16`"]
     #[inline(always)]
     pub fn is_value16(&self) -> bool {
-        **self == PC2_A::VALUE16
+        *self == PC2_A::VALUE16
     }
     #[doc = "Checks if the value of the field is `VALUE17`"]
     #[inline(always)]
     pub fn is_value17(&self) -> bool {
-        **self == PC2_A::VALUE17
+        *self == PC2_A::VALUE17
     }
     #[doc = "Checks if the value of the field is `VALUE18`"]
     #[inline(always)]
     pub fn is_value18(&self) -> bool {
-        **self == PC2_A::VALUE18
-    }
-}
-impl core::ops::Deref for PC2_R {
-    type Target = crate::FieldReader<u8, PC2_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PC2_A::VALUE18
     }
 }
 #[doc = "Field `PC2` writer - Port Control for Port n Pin 0 to 3"]
-pub struct PC2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PC2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PC2_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PC2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR0_SPEC, u8, PC2_A, 5, O>;
+impl<'a, const O: u8> PC2_W<'a, O> {
     #[doc = "Input - No internal pull device active"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -876,15 +813,11 @@ impl<'a> PC2_W<'a> {
     pub fn value18(self) -> &'a mut W {
         self.variant(PC2_A::VALUE18)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 19)) | ((value as u32 & 0x1f) << 19);
-        self.w
-    }
 }
+#[doc = "Field `PC3` reader - Port Control for Port n Pin 0 to 3"]
+pub type PC3_R = crate::FieldReader<u8, PC3_A>;
 #[doc = "Port Control for Port n Pin 0 to 3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PC3_A {
     #[doc = "0: Input - No internal pull device active"]
@@ -930,13 +863,8 @@ impl From<PC3_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PC3` reader - Port Control for Port n Pin 0 to 3"]
-pub struct PC3_R(crate::FieldReader<u8, PC3_A>);
 impl PC3_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PC3_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PC3_A> {
         match self.bits {
@@ -964,111 +892,97 @@ impl PC3_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == PC3_A::VALUE1
+        *self == PC3_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == PC3_A::VALUE2
+        *self == PC3_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == PC3_A::VALUE3
+        *self == PC3_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == PC3_A::VALUE4
+        *self == PC3_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        **self == PC3_A::VALUE5
+        *self == PC3_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        **self == PC3_A::VALUE6
+        *self == PC3_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        **self == PC3_A::VALUE7
+        *self == PC3_A::VALUE7
     }
     #[doc = "Checks if the value of the field is `VALUE8`"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        **self == PC3_A::VALUE8
+        *self == PC3_A::VALUE8
     }
     #[doc = "Checks if the value of the field is `VALUE9`"]
     #[inline(always)]
     pub fn is_value9(&self) -> bool {
-        **self == PC3_A::VALUE9
+        *self == PC3_A::VALUE9
     }
     #[doc = "Checks if the value of the field is `VALUE10`"]
     #[inline(always)]
     pub fn is_value10(&self) -> bool {
-        **self == PC3_A::VALUE10
+        *self == PC3_A::VALUE10
     }
     #[doc = "Checks if the value of the field is `VALUE11`"]
     #[inline(always)]
     pub fn is_value11(&self) -> bool {
-        **self == PC3_A::VALUE11
+        *self == PC3_A::VALUE11
     }
     #[doc = "Checks if the value of the field is `VALUE12`"]
     #[inline(always)]
     pub fn is_value12(&self) -> bool {
-        **self == PC3_A::VALUE12
+        *self == PC3_A::VALUE12
     }
     #[doc = "Checks if the value of the field is `VALUE13`"]
     #[inline(always)]
     pub fn is_value13(&self) -> bool {
-        **self == PC3_A::VALUE13
+        *self == PC3_A::VALUE13
     }
     #[doc = "Checks if the value of the field is `VALUE14`"]
     #[inline(always)]
     pub fn is_value14(&self) -> bool {
-        **self == PC3_A::VALUE14
+        *self == PC3_A::VALUE14
     }
     #[doc = "Checks if the value of the field is `VALUE15`"]
     #[inline(always)]
     pub fn is_value15(&self) -> bool {
-        **self == PC3_A::VALUE15
+        *self == PC3_A::VALUE15
     }
     #[doc = "Checks if the value of the field is `VALUE16`"]
     #[inline(always)]
     pub fn is_value16(&self) -> bool {
-        **self == PC3_A::VALUE16
+        *self == PC3_A::VALUE16
     }
     #[doc = "Checks if the value of the field is `VALUE17`"]
     #[inline(always)]
     pub fn is_value17(&self) -> bool {
-        **self == PC3_A::VALUE17
+        *self == PC3_A::VALUE17
     }
     #[doc = "Checks if the value of the field is `VALUE18`"]
     #[inline(always)]
     pub fn is_value18(&self) -> bool {
-        **self == PC3_A::VALUE18
-    }
-}
-impl core::ops::Deref for PC3_R {
-    type Target = crate::FieldReader<u8, PC3_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PC3_A::VALUE18
     }
 }
 #[doc = "Field `PC3` writer - Port Control for Port n Pin 0 to 3"]
-pub struct PC3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PC3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PC3_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PC3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR0_SPEC, u8, PC3_A, 5, O>;
+impl<'a, const O: u8> PC3_W<'a, O> {
     #[doc = "Input - No internal pull device active"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -1159,12 +1073,6 @@ impl<'a> PC3_W<'a> {
     pub fn value18(self) -> &'a mut W {
         self.variant(PC3_A::VALUE18)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 27)) | ((value as u32 & 0x1f) << 27);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 3:7 - Port Control for Port n Pin 0 to 3"]
@@ -1191,23 +1099,27 @@ impl R {
 impl W {
     #[doc = "Bits 3:7 - Port Control for Port n Pin 0 to 3"]
     #[inline(always)]
-    pub fn pc0(&mut self) -> PC0_W {
-        PC0_W { w: self }
+    #[must_use]
+    pub fn pc0(&mut self) -> PC0_W<3> {
+        PC0_W::new(self)
     }
     #[doc = "Bits 11:15 - Port Control for Port n Pin 0 to 3"]
     #[inline(always)]
-    pub fn pc1(&mut self) -> PC1_W {
-        PC1_W { w: self }
+    #[must_use]
+    pub fn pc1(&mut self) -> PC1_W<11> {
+        PC1_W::new(self)
     }
     #[doc = "Bits 19:23 - Port Control for Port n Pin 0 to 3"]
     #[inline(always)]
-    pub fn pc2(&mut self) -> PC2_W {
-        PC2_W { w: self }
+    #[must_use]
+    pub fn pc2(&mut self) -> PC2_W<19> {
+        PC2_W::new(self)
     }
     #[doc = "Bits 27:31 - Port Control for Port n Pin 0 to 3"]
     #[inline(always)]
-    pub fn pc3(&mut self) -> PC3_W {
-        PC3_W { w: self }
+    #[must_use]
+    pub fn pc3(&mut self) -> PC3_W<27> {
+        PC3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -1228,11 +1140,10 @@ impl crate::Readable for IOCR0_SPEC {
 #[doc = "`write(|w| ..)` method takes [iocr0::W](W) writer structure"]
 impl crate::Writable for IOCR0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IOCR0 to value 0"]
 impl crate::Resettable for IOCR0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

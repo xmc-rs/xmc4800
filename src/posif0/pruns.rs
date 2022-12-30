@@ -20,32 +20,13 @@ impl From<crate::W<PRUNS_SPEC>> for W {
     }
 }
 #[doc = "Field `SRB` writer - Set Run bit"]
-pub struct SRB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type SRB_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRUNS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Set Run bit"]
     #[inline(always)]
-    pub fn srb(&mut self) -> SRB_W {
-        SRB_W { w: self }
+    #[must_use]
+    pub fn srb(&mut self) -> SRB_W<0> {
+        SRB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -62,11 +43,10 @@ impl crate::RegisterSpec for PRUNS_SPEC {
 #[doc = "`write(|w| ..)` method takes [pruns::W](W) writer structure"]
 impl crate::Writable for PRUNS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PRUNS to value 0"]
 impl crate::Resettable for PRUNS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

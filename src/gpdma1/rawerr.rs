@@ -35,191 +35,67 @@ impl From<crate::W<RAWERR_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0` reader - Raw Interrupt Status for channel 0"]
-pub struct CH0_R(crate::FieldReader<bool, bool>);
-impl CH0_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH0_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH0_R = crate::BitReader<bool>;
 #[doc = "Field `CH0` writer - Raw Interrupt Status for channel 0"]
-pub struct CH0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAWERR_SPEC, bool, O>;
 #[doc = "Field `CH1` reader - Raw Interrupt Status for channel 1"]
-pub struct CH1_R(crate::FieldReader<bool, bool>);
-impl CH1_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH1_R = crate::BitReader<bool>;
 #[doc = "Field `CH1` writer - Raw Interrupt Status for channel 1"]
-pub struct CH1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAWERR_SPEC, bool, O>;
 #[doc = "Field `CH2` reader - Raw Interrupt Status for channel 2"]
-pub struct CH2_R(crate::FieldReader<bool, bool>);
-impl CH2_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH2_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH2_R = crate::BitReader<bool>;
 #[doc = "Field `CH2` writer - Raw Interrupt Status for channel 2"]
-pub struct CH2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAWERR_SPEC, bool, O>;
 #[doc = "Field `CH3` reader - Raw Interrupt Status for channel 3"]
-pub struct CH3_R(crate::FieldReader<bool, bool>);
-impl CH3_R {
-    pub(crate) fn new(bits: bool) -> Self {
-        CH3_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CH3_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CH3_R = crate::BitReader<bool>;
 #[doc = "Field `CH3` writer - Raw Interrupt Status for channel 3"]
-pub struct CH3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAWERR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Raw Interrupt Status for channel 0"]
     #[inline(always)]
     pub fn ch0(&self) -> CH0_R {
-        CH0_R::new((self.bits & 0x01) != 0)
+        CH0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Raw Interrupt Status for channel 1"]
     #[inline(always)]
     pub fn ch1(&self) -> CH1_R {
-        CH1_R::new(((self.bits >> 1) & 0x01) != 0)
+        CH1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Raw Interrupt Status for channel 2"]
     #[inline(always)]
     pub fn ch2(&self) -> CH2_R {
-        CH2_R::new(((self.bits >> 2) & 0x01) != 0)
+        CH2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Raw Interrupt Status for channel 3"]
     #[inline(always)]
     pub fn ch3(&self) -> CH3_R {
-        CH3_R::new(((self.bits >> 3) & 0x01) != 0)
+        CH3_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Raw Interrupt Status for channel 0"]
     #[inline(always)]
-    pub fn ch0(&mut self) -> CH0_W {
-        CH0_W { w: self }
+    #[must_use]
+    pub fn ch0(&mut self) -> CH0_W<0> {
+        CH0_W::new(self)
     }
     #[doc = "Bit 1 - Raw Interrupt Status for channel 1"]
     #[inline(always)]
-    pub fn ch1(&mut self) -> CH1_W {
-        CH1_W { w: self }
+    #[must_use]
+    pub fn ch1(&mut self) -> CH1_W<1> {
+        CH1_W::new(self)
     }
     #[doc = "Bit 2 - Raw Interrupt Status for channel 2"]
     #[inline(always)]
-    pub fn ch2(&mut self) -> CH2_W {
-        CH2_W { w: self }
+    #[must_use]
+    pub fn ch2(&mut self) -> CH2_W<2> {
+        CH2_W::new(self)
     }
     #[doc = "Bit 3 - Raw Interrupt Status for channel 3"]
     #[inline(always)]
-    pub fn ch3(&mut self) -> CH3_W {
-        CH3_W { w: self }
+    #[must_use]
+    pub fn ch3(&mut self) -> CH3_W<3> {
+        CH3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -240,11 +116,10 @@ impl crate::Readable for RAWERR_SPEC {
 #[doc = "`write(|w| ..)` method takes [rawerr::W](W) writer structure"]
 impl crate::Writable for RAWERR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RAWERR to value 0"]
 impl crate::Resettable for RAWERR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

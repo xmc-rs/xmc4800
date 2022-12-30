@@ -34,8 +34,10 @@ impl From<crate::W<PDR1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PD8` reader - Pad Driver Mode for Pn.8"]
+pub type PD8_R = crate::FieldReader<u8, PD8_A>;
 #[doc = "Pad Driver Mode for Pn.8\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD8_A {
     #[doc = "0: A2 strong driver, sharp edge"]
@@ -55,13 +57,8 @@ impl From<PD8_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PD8` reader - Pad Driver Mode for Pn.8"]
-pub struct PD8_R(crate::FieldReader<u8, PD8_A>);
 impl PD8_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PD8_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PD8_A> {
         match self.bits {
@@ -76,46 +73,32 @@ impl PD8_R {
     #[doc = "Checks if the value of the field is `SD_SHE`"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        **self == PD8_A::SD_SHE
+        *self == PD8_A::SD_SHE
     }
     #[doc = "Checks if the value of the field is `SD_MEE`"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        **self == PD8_A::SD_MEE
+        *self == PD8_A::SD_MEE
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        **self == PD8_A::SD_SOE
+        *self == PD8_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `MD`"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        **self == PD8_A::MD
+        *self == PD8_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        **self == PD8_A::WD
-    }
-}
-impl core::ops::Deref for PD8_R {
-    type Target = crate::FieldReader<u8, PD8_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PD8_A::WD
     }
 }
 #[doc = "Field `PD8` writer - Pad Driver Mode for Pn.8"]
-pub struct PD8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PD8_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PD8_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PD8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR1_SPEC, u8, PD8_A, 3, O>;
+impl<'a, const O: u8> PD8_W<'a, O> {
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn sd_she(self) -> &'a mut W {
@@ -141,15 +124,11 @@ impl<'a> PD8_W<'a> {
     pub fn wd(self) -> &'a mut W {
         self.variant(PD8_A::WD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
-        self.w
-    }
 }
+#[doc = "Field `PD9` reader - Pad Driver Mode for Pn.9"]
+pub type PD9_R = crate::FieldReader<u8, PD9_A>;
 #[doc = "Pad Driver Mode for Pn.9\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD9_A {
     #[doc = "0: A2 strong driver, sharp edge"]
@@ -169,13 +148,8 @@ impl From<PD9_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PD9` reader - Pad Driver Mode for Pn.9"]
-pub struct PD9_R(crate::FieldReader<u8, PD9_A>);
 impl PD9_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PD9_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PD9_A> {
         match self.bits {
@@ -190,46 +164,32 @@ impl PD9_R {
     #[doc = "Checks if the value of the field is `SD_SHE`"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        **self == PD9_A::SD_SHE
+        *self == PD9_A::SD_SHE
     }
     #[doc = "Checks if the value of the field is `SD_MEE`"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        **self == PD9_A::SD_MEE
+        *self == PD9_A::SD_MEE
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        **self == PD9_A::SD_SOE
+        *self == PD9_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `MD`"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        **self == PD9_A::MD
+        *self == PD9_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        **self == PD9_A::WD
-    }
-}
-impl core::ops::Deref for PD9_R {
-    type Target = crate::FieldReader<u8, PD9_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PD9_A::WD
     }
 }
 #[doc = "Field `PD9` writer - Pad Driver Mode for Pn.9"]
-pub struct PD9_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PD9_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PD9_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PD9_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR1_SPEC, u8, PD9_A, 3, O>;
+impl<'a, const O: u8> PD9_W<'a, O> {
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn sd_she(self) -> &'a mut W {
@@ -255,15 +215,11 @@ impl<'a> PD9_W<'a> {
     pub fn wd(self) -> &'a mut W {
         self.variant(PD9_A::WD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
-        self.w
-    }
 }
+#[doc = "Field `PD10` reader - Pad Driver Mode for Pn.10"]
+pub type PD10_R = crate::FieldReader<u8, PD10_A>;
 #[doc = "Pad Driver Mode for Pn.10\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD10_A {
     #[doc = "0: A2 strong driver, sharp edge"]
@@ -283,13 +239,8 @@ impl From<PD10_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PD10` reader - Pad Driver Mode for Pn.10"]
-pub struct PD10_R(crate::FieldReader<u8, PD10_A>);
 impl PD10_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PD10_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PD10_A> {
         match self.bits {
@@ -304,46 +255,32 @@ impl PD10_R {
     #[doc = "Checks if the value of the field is `SD_SHE`"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        **self == PD10_A::SD_SHE
+        *self == PD10_A::SD_SHE
     }
     #[doc = "Checks if the value of the field is `SD_MEE`"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        **self == PD10_A::SD_MEE
+        *self == PD10_A::SD_MEE
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        **self == PD10_A::SD_SOE
+        *self == PD10_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `MD`"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        **self == PD10_A::MD
+        *self == PD10_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        **self == PD10_A::WD
-    }
-}
-impl core::ops::Deref for PD10_R {
-    type Target = crate::FieldReader<u8, PD10_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PD10_A::WD
     }
 }
 #[doc = "Field `PD10` writer - Pad Driver Mode for Pn.10"]
-pub struct PD10_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PD10_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PD10_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PD10_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR1_SPEC, u8, PD10_A, 3, O>;
+impl<'a, const O: u8> PD10_W<'a, O> {
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn sd_she(self) -> &'a mut W {
@@ -369,15 +306,11 @@ impl<'a> PD10_W<'a> {
     pub fn wd(self) -> &'a mut W {
         self.variant(PD10_A::WD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
-    }
 }
+#[doc = "Field `PD11` reader - Pad Driver Mode for Pn.11"]
+pub type PD11_R = crate::FieldReader<u8, PD11_A>;
 #[doc = "Pad Driver Mode for Pn.11\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD11_A {
     #[doc = "0: A2 strong driver, sharp edge"]
@@ -397,13 +330,8 @@ impl From<PD11_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PD11` reader - Pad Driver Mode for Pn.11"]
-pub struct PD11_R(crate::FieldReader<u8, PD11_A>);
 impl PD11_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PD11_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PD11_A> {
         match self.bits {
@@ -418,46 +346,32 @@ impl PD11_R {
     #[doc = "Checks if the value of the field is `SD_SHE`"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        **self == PD11_A::SD_SHE
+        *self == PD11_A::SD_SHE
     }
     #[doc = "Checks if the value of the field is `SD_MEE`"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        **self == PD11_A::SD_MEE
+        *self == PD11_A::SD_MEE
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        **self == PD11_A::SD_SOE
+        *self == PD11_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `MD`"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        **self == PD11_A::MD
+        *self == PD11_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        **self == PD11_A::WD
-    }
-}
-impl core::ops::Deref for PD11_R {
-    type Target = crate::FieldReader<u8, PD11_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PD11_A::WD
     }
 }
 #[doc = "Field `PD11` writer - Pad Driver Mode for Pn.11"]
-pub struct PD11_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PD11_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PD11_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PD11_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR1_SPEC, u8, PD11_A, 3, O>;
+impl<'a, const O: u8> PD11_W<'a, O> {
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn sd_she(self) -> &'a mut W {
@@ -483,15 +397,11 @@ impl<'a> PD11_W<'a> {
     pub fn wd(self) -> &'a mut W {
         self.variant(PD11_A::WD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | ((value as u32 & 0x07) << 12);
-        self.w
-    }
 }
+#[doc = "Field `PD12` reader - Pad Driver Mode for Pn.12"]
+pub type PD12_R = crate::FieldReader<u8, PD12_A>;
 #[doc = "Pad Driver Mode for Pn.12\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD12_A {
     #[doc = "0: A2 strong driver, sharp edge"]
@@ -511,13 +421,8 @@ impl From<PD12_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PD12` reader - Pad Driver Mode for Pn.12"]
-pub struct PD12_R(crate::FieldReader<u8, PD12_A>);
 impl PD12_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PD12_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PD12_A> {
         match self.bits {
@@ -532,46 +437,32 @@ impl PD12_R {
     #[doc = "Checks if the value of the field is `SD_SHE`"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        **self == PD12_A::SD_SHE
+        *self == PD12_A::SD_SHE
     }
     #[doc = "Checks if the value of the field is `SD_MEE`"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        **self == PD12_A::SD_MEE
+        *self == PD12_A::SD_MEE
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        **self == PD12_A::SD_SOE
+        *self == PD12_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `MD`"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        **self == PD12_A::MD
+        *self == PD12_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        **self == PD12_A::WD
-    }
-}
-impl core::ops::Deref for PD12_R {
-    type Target = crate::FieldReader<u8, PD12_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PD12_A::WD
     }
 }
 #[doc = "Field `PD12` writer - Pad Driver Mode for Pn.12"]
-pub struct PD12_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PD12_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PD12_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PD12_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR1_SPEC, u8, PD12_A, 3, O>;
+impl<'a, const O: u8> PD12_W<'a, O> {
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn sd_she(self) -> &'a mut W {
@@ -597,15 +488,11 @@ impl<'a> PD12_W<'a> {
     pub fn wd(self) -> &'a mut W {
         self.variant(PD12_A::WD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
-        self.w
-    }
 }
+#[doc = "Field `PD13` reader - Pad Driver Mode for Pn.13"]
+pub type PD13_R = crate::FieldReader<u8, PD13_A>;
 #[doc = "Pad Driver Mode for Pn.13\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD13_A {
     #[doc = "0: A2 strong driver, sharp edge"]
@@ -625,13 +512,8 @@ impl From<PD13_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PD13` reader - Pad Driver Mode for Pn.13"]
-pub struct PD13_R(crate::FieldReader<u8, PD13_A>);
 impl PD13_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PD13_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PD13_A> {
         match self.bits {
@@ -646,46 +528,32 @@ impl PD13_R {
     #[doc = "Checks if the value of the field is `SD_SHE`"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        **self == PD13_A::SD_SHE
+        *self == PD13_A::SD_SHE
     }
     #[doc = "Checks if the value of the field is `SD_MEE`"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        **self == PD13_A::SD_MEE
+        *self == PD13_A::SD_MEE
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        **self == PD13_A::SD_SOE
+        *self == PD13_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `MD`"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        **self == PD13_A::MD
+        *self == PD13_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        **self == PD13_A::WD
-    }
-}
-impl core::ops::Deref for PD13_R {
-    type Target = crate::FieldReader<u8, PD13_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PD13_A::WD
     }
 }
 #[doc = "Field `PD13` writer - Pad Driver Mode for Pn.13"]
-pub struct PD13_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PD13_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PD13_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PD13_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR1_SPEC, u8, PD13_A, 3, O>;
+impl<'a, const O: u8> PD13_W<'a, O> {
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn sd_she(self) -> &'a mut W {
@@ -711,15 +579,11 @@ impl<'a> PD13_W<'a> {
     pub fn wd(self) -> &'a mut W {
         self.variant(PD13_A::WD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 20)) | ((value as u32 & 0x07) << 20);
-        self.w
-    }
 }
+#[doc = "Field `PD14` reader - Pad Driver Mode for Pn.14"]
+pub type PD14_R = crate::FieldReader<u8, PD14_A>;
 #[doc = "Pad Driver Mode for Pn.14\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD14_A {
     #[doc = "0: A2 strong driver, sharp edge"]
@@ -739,13 +603,8 @@ impl From<PD14_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PD14` reader - Pad Driver Mode for Pn.14"]
-pub struct PD14_R(crate::FieldReader<u8, PD14_A>);
 impl PD14_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PD14_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PD14_A> {
         match self.bits {
@@ -760,46 +619,32 @@ impl PD14_R {
     #[doc = "Checks if the value of the field is `SD_SHE`"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        **self == PD14_A::SD_SHE
+        *self == PD14_A::SD_SHE
     }
     #[doc = "Checks if the value of the field is `SD_MEE`"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        **self == PD14_A::SD_MEE
+        *self == PD14_A::SD_MEE
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        **self == PD14_A::SD_SOE
+        *self == PD14_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `MD`"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        **self == PD14_A::MD
+        *self == PD14_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        **self == PD14_A::WD
-    }
-}
-impl core::ops::Deref for PD14_R {
-    type Target = crate::FieldReader<u8, PD14_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PD14_A::WD
     }
 }
 #[doc = "Field `PD14` writer - Pad Driver Mode for Pn.14"]
-pub struct PD14_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PD14_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PD14_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PD14_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR1_SPEC, u8, PD14_A, 3, O>;
+impl<'a, const O: u8> PD14_W<'a, O> {
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn sd_she(self) -> &'a mut W {
@@ -825,15 +670,11 @@ impl<'a> PD14_W<'a> {
     pub fn wd(self) -> &'a mut W {
         self.variant(PD14_A::WD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | ((value as u32 & 0x07) << 24);
-        self.w
-    }
 }
+#[doc = "Field `PD15` reader - Pad Driver Mode for Pn.15"]
+pub type PD15_R = crate::FieldReader<u8, PD15_A>;
 #[doc = "Pad Driver Mode for Pn.15\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD15_A {
     #[doc = "0: A2 strong driver, sharp edge"]
@@ -853,13 +694,8 @@ impl From<PD15_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PD15` reader - Pad Driver Mode for Pn.15"]
-pub struct PD15_R(crate::FieldReader<u8, PD15_A>);
 impl PD15_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        PD15_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PD15_A> {
         match self.bits {
@@ -874,46 +710,32 @@ impl PD15_R {
     #[doc = "Checks if the value of the field is `SD_SHE`"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        **self == PD15_A::SD_SHE
+        *self == PD15_A::SD_SHE
     }
     #[doc = "Checks if the value of the field is `SD_MEE`"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        **self == PD15_A::SD_MEE
+        *self == PD15_A::SD_MEE
     }
     #[doc = "Checks if the value of the field is `SD_SOE`"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        **self == PD15_A::SD_SOE
+        *self == PD15_A::SD_SOE
     }
     #[doc = "Checks if the value of the field is `MD`"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        **self == PD15_A::MD
+        *self == PD15_A::MD
     }
     #[doc = "Checks if the value of the field is `WD`"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        **self == PD15_A::WD
-    }
-}
-impl core::ops::Deref for PD15_R {
-    type Target = crate::FieldReader<u8, PD15_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PD15_A::WD
     }
 }
 #[doc = "Field `PD15` writer - Pad Driver Mode for Pn.15"]
-pub struct PD15_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PD15_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PD15_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PD15_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR1_SPEC, u8, PD15_A, 3, O>;
+impl<'a, const O: u8> PD15_W<'a, O> {
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn sd_she(self) -> &'a mut W {
@@ -939,95 +761,97 @@ impl<'a> PD15_W<'a> {
     pub fn wd(self) -> &'a mut W {
         self.variant(PD15_A::WD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | ((value as u32 & 0x07) << 28);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.8"]
     #[inline(always)]
     pub fn pd8(&self) -> PD8_R {
-        PD8_R::new((self.bits & 0x07) as u8)
+        PD8_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 4:6 - Pad Driver Mode for Pn.9"]
     #[inline(always)]
     pub fn pd9(&self) -> PD9_R {
-        PD9_R::new(((self.bits >> 4) & 0x07) as u8)
+        PD9_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bits 8:10 - Pad Driver Mode for Pn.10"]
     #[inline(always)]
     pub fn pd10(&self) -> PD10_R {
-        PD10_R::new(((self.bits >> 8) & 0x07) as u8)
+        PD10_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bits 12:14 - Pad Driver Mode for Pn.11"]
     #[inline(always)]
     pub fn pd11(&self) -> PD11_R {
-        PD11_R::new(((self.bits >> 12) & 0x07) as u8)
+        PD11_R::new(((self.bits >> 12) & 7) as u8)
     }
     #[doc = "Bits 16:18 - Pad Driver Mode for Pn.12"]
     #[inline(always)]
     pub fn pd12(&self) -> PD12_R {
-        PD12_R::new(((self.bits >> 16) & 0x07) as u8)
+        PD12_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 20:22 - Pad Driver Mode for Pn.13"]
     #[inline(always)]
     pub fn pd13(&self) -> PD13_R {
-        PD13_R::new(((self.bits >> 20) & 0x07) as u8)
+        PD13_R::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bits 24:26 - Pad Driver Mode for Pn.14"]
     #[inline(always)]
     pub fn pd14(&self) -> PD14_R {
-        PD14_R::new(((self.bits >> 24) & 0x07) as u8)
+        PD14_R::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bits 28:30 - Pad Driver Mode for Pn.15"]
     #[inline(always)]
     pub fn pd15(&self) -> PD15_R {
-        PD15_R::new(((self.bits >> 28) & 0x07) as u8)
+        PD15_R::new(((self.bits >> 28) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.8"]
     #[inline(always)]
-    pub fn pd8(&mut self) -> PD8_W {
-        PD8_W { w: self }
+    #[must_use]
+    pub fn pd8(&mut self) -> PD8_W<0> {
+        PD8_W::new(self)
     }
     #[doc = "Bits 4:6 - Pad Driver Mode for Pn.9"]
     #[inline(always)]
-    pub fn pd9(&mut self) -> PD9_W {
-        PD9_W { w: self }
+    #[must_use]
+    pub fn pd9(&mut self) -> PD9_W<4> {
+        PD9_W::new(self)
     }
     #[doc = "Bits 8:10 - Pad Driver Mode for Pn.10"]
     #[inline(always)]
-    pub fn pd10(&mut self) -> PD10_W {
-        PD10_W { w: self }
+    #[must_use]
+    pub fn pd10(&mut self) -> PD10_W<8> {
+        PD10_W::new(self)
     }
     #[doc = "Bits 12:14 - Pad Driver Mode for Pn.11"]
     #[inline(always)]
-    pub fn pd11(&mut self) -> PD11_W {
-        PD11_W { w: self }
+    #[must_use]
+    pub fn pd11(&mut self) -> PD11_W<12> {
+        PD11_W::new(self)
     }
     #[doc = "Bits 16:18 - Pad Driver Mode for Pn.12"]
     #[inline(always)]
-    pub fn pd12(&mut self) -> PD12_W {
-        PD12_W { w: self }
+    #[must_use]
+    pub fn pd12(&mut self) -> PD12_W<16> {
+        PD12_W::new(self)
     }
     #[doc = "Bits 20:22 - Pad Driver Mode for Pn.13"]
     #[inline(always)]
-    pub fn pd13(&mut self) -> PD13_W {
-        PD13_W { w: self }
+    #[must_use]
+    pub fn pd13(&mut self) -> PD13_W<20> {
+        PD13_W::new(self)
     }
     #[doc = "Bits 24:26 - Pad Driver Mode for Pn.14"]
     #[inline(always)]
-    pub fn pd14(&mut self) -> PD14_W {
-        PD14_W { w: self }
+    #[must_use]
+    pub fn pd14(&mut self) -> PD14_W<24> {
+        PD14_W::new(self)
     }
     #[doc = "Bits 28:30 - Pad Driver Mode for Pn.15"]
     #[inline(always)]
-    pub fn pd15(&mut self) -> PD15_W {
-        PD15_W { w: self }
+    #[must_use]
+    pub fn pd15(&mut self) -> PD15_W<28> {
+        PD15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -1048,11 +872,10 @@ impl crate::Readable for PDR1_SPEC {
 #[doc = "`write(|w| ..)` method takes [pdr1::W](W) writer structure"]
 impl crate::Writable for PDR1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PDR1 to value 0x2222_2222"]
 impl crate::Resettable for PDR1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x2222_2222
-    }
+    const RESET_VALUE: Self::Ux = 0x2222_2222;
 }

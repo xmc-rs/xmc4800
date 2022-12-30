@@ -34,8 +34,10 @@ impl From<crate::W<STCON_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `HWCON` reader - HW Configuration"]
+pub type HWCON_R = crate::FieldReader<u8, HWCON_A>;
 #[doc = "HW Configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HWCON_A {
     #[doc = "0: Normal mode, JTAG"]
@@ -53,13 +55,8 @@ impl From<HWCON_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HWCON` reader - HW Configuration"]
-pub struct HWCON_R(crate::FieldReader<u8, HWCON_A>);
 impl HWCON_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        HWCON_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HWCON_A {
         match self.bits {
@@ -73,33 +70,28 @@ impl HWCON_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == HWCON_A::VALUE1
+        *self == HWCON_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == HWCON_A::VALUE2
+        *self == HWCON_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == HWCON_A::VALUE3
+        *self == HWCON_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == HWCON_A::VALUE4
+        *self == HWCON_A::VALUE4
     }
 }
-impl core::ops::Deref for HWCON_R {
-    type Target = crate::FieldReader<u8, HWCON_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+#[doc = "Field `SWCON` reader - SW Configuration"]
+pub type SWCON_R = crate::FieldReader<u8, SWCON_A>;
 #[doc = "SW Configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SWCON_A {
     #[doc = "0: Normal mode, boot from Boot ROM"]
@@ -125,13 +117,8 @@ impl From<SWCON_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SWCON` reader - SW Configuration"]
-pub struct SWCON_R(crate::FieldReader<u8, SWCON_A>);
 impl SWCON_R {
-    pub(crate) fn new(bits: u8) -> Self {
-        SWCON_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<SWCON_A> {
         match self.bits {
@@ -149,61 +136,47 @@ impl SWCON_R {
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        **self == SWCON_A::VALUE1
+        *self == SWCON_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        **self == SWCON_A::VALUE2
+        *self == SWCON_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        **self == SWCON_A::VALUE3
+        *self == SWCON_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        **self == SWCON_A::VALUE4
+        *self == SWCON_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        **self == SWCON_A::VALUE5
+        *self == SWCON_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        **self == SWCON_A::VALUE6
+        *self == SWCON_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        **self == SWCON_A::VALUE7
+        *self == SWCON_A::VALUE7
     }
     #[doc = "Checks if the value of the field is `VALUE8`"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        **self == SWCON_A::VALUE8
-    }
-}
-impl core::ops::Deref for SWCON_R {
-    type Target = crate::FieldReader<u8, SWCON_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SWCON_A::VALUE8
     }
 }
 #[doc = "Field `SWCON` writer - SW Configuration"]
-pub struct SWCON_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWCON_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SWCON_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type SWCON_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STCON_SPEC, u8, SWCON_A, 4, O>;
+impl<'a, const O: u8> SWCON_W<'a, O> {
     #[doc = "Normal mode, boot from Boot ROM"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut W {
@@ -244,18 +217,12 @@ impl<'a> SWCON_W<'a> {
     pub fn value8(self) -> &'a mut W {
         self.variant(SWCON_A::VALUE8)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - HW Configuration"]
     #[inline(always)]
     pub fn hwcon(&self) -> HWCON_R {
-        HWCON_R::new((self.bits & 0x03) as u8)
+        HWCON_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 8:11 - SW Configuration"]
     #[inline(always)]
@@ -266,8 +233,9 @@ impl R {
 impl W {
     #[doc = "Bits 8:11 - SW Configuration"]
     #[inline(always)]
-    pub fn swcon(&mut self) -> SWCON_W {
-        SWCON_W { w: self }
+    #[must_use]
+    pub fn swcon(&mut self) -> SWCON_W<8> {
+        SWCON_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -288,11 +256,10 @@ impl crate::Readable for STCON_SPEC {
 #[doc = "`write(|w| ..)` method takes [stcon::W](W) writer structure"]
 impl crate::Writable for STCON_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets STCON to value 0"]
 impl crate::Resettable for STCON_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,248 +20,77 @@ impl From<crate::W<RPFLG_SPEC>> for W {
     }
 }
 #[doc = "Field `RCHE` writer - Correct Hall Event flag clear"]
-pub struct RCHE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCHE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
-}
+pub type RCHE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
 #[doc = "Field `RWHE` writer - Wrong Hall Event flag clear"]
-pub struct RWHE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RWHE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
-}
+pub type RWHE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
 #[doc = "Field `RHIE` writer - Hall Inputs Update Event flag clear"]
-pub struct RHIE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RHIE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
-    }
-}
+pub type RHIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
 #[doc = "Field `RMST` writer - Multi-Channel Pattern shadow transfer flag clear"]
-pub struct RMST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RMST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
-    }
-}
+pub type RMST_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
 #[doc = "Field `RINDX` writer - Quadrature Index flag clear"]
-pub struct RINDX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RINDX_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
-    }
-}
+pub type RINDX_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
 #[doc = "Field `RERR` writer - Quadrature Phase Error flag clear"]
-pub struct RERR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RERR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
-        self.w
-    }
-}
+pub type RERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
 #[doc = "Field `RCNT` writer - Quadrature CLK flag clear"]
-pub struct RCNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCNT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
-        self.w
-    }
-}
+pub type RCNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
 #[doc = "Field `RDIR` writer - Quadrature Direction flag clear"]
-pub struct RDIR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RDIR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
-        self.w
-    }
-}
+pub type RDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
 #[doc = "Field `RPCLK` writer - Quadrature period clock flag clear"]
-pub struct RPCLK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RPCLK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
-        self.w
-    }
-}
+pub type RPCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Correct Hall Event flag clear"]
     #[inline(always)]
-    pub fn rche(&mut self) -> RCHE_W {
-        RCHE_W { w: self }
+    #[must_use]
+    pub fn rche(&mut self) -> RCHE_W<0> {
+        RCHE_W::new(self)
     }
     #[doc = "Bit 1 - Wrong Hall Event flag clear"]
     #[inline(always)]
-    pub fn rwhe(&mut self) -> RWHE_W {
-        RWHE_W { w: self }
+    #[must_use]
+    pub fn rwhe(&mut self) -> RWHE_W<1> {
+        RWHE_W::new(self)
     }
     #[doc = "Bit 2 - Hall Inputs Update Event flag clear"]
     #[inline(always)]
-    pub fn rhie(&mut self) -> RHIE_W {
-        RHIE_W { w: self }
+    #[must_use]
+    pub fn rhie(&mut self) -> RHIE_W<2> {
+        RHIE_W::new(self)
     }
     #[doc = "Bit 4 - Multi-Channel Pattern shadow transfer flag clear"]
     #[inline(always)]
-    pub fn rmst(&mut self) -> RMST_W {
-        RMST_W { w: self }
+    #[must_use]
+    pub fn rmst(&mut self) -> RMST_W<4> {
+        RMST_W::new(self)
     }
     #[doc = "Bit 8 - Quadrature Index flag clear"]
     #[inline(always)]
-    pub fn rindx(&mut self) -> RINDX_W {
-        RINDX_W { w: self }
+    #[must_use]
+    pub fn rindx(&mut self) -> RINDX_W<8> {
+        RINDX_W::new(self)
     }
     #[doc = "Bit 9 - Quadrature Phase Error flag clear"]
     #[inline(always)]
-    pub fn rerr(&mut self) -> RERR_W {
-        RERR_W { w: self }
+    #[must_use]
+    pub fn rerr(&mut self) -> RERR_W<9> {
+        RERR_W::new(self)
     }
     #[doc = "Bit 10 - Quadrature CLK flag clear"]
     #[inline(always)]
-    pub fn rcnt(&mut self) -> RCNT_W {
-        RCNT_W { w: self }
+    #[must_use]
+    pub fn rcnt(&mut self) -> RCNT_W<10> {
+        RCNT_W::new(self)
     }
     #[doc = "Bit 11 - Quadrature Direction flag clear"]
     #[inline(always)]
-    pub fn rdir(&mut self) -> RDIR_W {
-        RDIR_W { w: self }
+    #[must_use]
+    pub fn rdir(&mut self) -> RDIR_W<11> {
+        RDIR_W::new(self)
     }
     #[doc = "Bit 12 - Quadrature period clock flag clear"]
     #[inline(always)]
-    pub fn rpclk(&mut self) -> RPCLK_W {
-        RPCLK_W { w: self }
+    #[must_use]
+    pub fn rpclk(&mut self) -> RPCLK_W<12> {
+        RPCLK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -278,11 +107,10 @@ impl crate::RegisterSpec for RPFLG_SPEC {
 #[doc = "`write(|w| ..)` method takes [rpflg::W](W) writer structure"]
 impl crate::Writable for RPFLG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets RPFLG to value 0"]
 impl crate::Resettable for RPFLG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }
