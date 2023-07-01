@@ -35,7 +35,7 @@ impl From<crate::W<OCS_SPEC>> for W {
     }
 }
 #[doc = "Field `SUS` reader - OCDS Suspend Control"]
-pub type SUS_R = crate::FieldReader<u8, SUS_A>;
+pub type SUS_R = crate::FieldReader<SUS_A>;
 #[doc = "OCDS Suspend Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<SUS_A> for u8 {
     fn from(variant: SUS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SUS_A {
+    type Ux = u8;
 }
 impl SUS_R {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl SUS_R {
     }
 }
 #[doc = "Field `SUS` writer - OCDS Suspend Control"]
-pub type SUS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OCS_SPEC, u8, SUS_A, 4, O>;
+pub type SUS_W<'a, const O: u8> = crate::FieldWriter<'a, OCS_SPEC, 4, O, SUS_A>;
 impl<'a, const O: u8> SUS_W<'a, O> {
     #[doc = "Will not suspend"]
     #[inline(always)]
@@ -126,7 +129,7 @@ impl<'a, const O: u8> SUS_W<'a, O> {
     }
 }
 #[doc = "Field `SUS_P` writer - SUS Write Protection"]
-pub type SUS_P_W<'a, const O: u8> = crate::BitWriter<'a, u32, OCS_SPEC, bool, O>;
+pub type SUS_P_W<'a, const O: u8> = crate::BitWriter<'a, OCS_SPEC, O>;
 #[doc = "Field `SUSSTA` reader - Suspend State"]
 pub type SUSSTA_R = crate::BitReader<SUSSTA_A>;
 #[doc = "Suspend State\n\nValue on reset: 0"]

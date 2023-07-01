@@ -34,7 +34,7 @@ impl From<CH0_AW> for bool {
     }
 }
 #[doc = "Field `CH0` writer - Clear Interrupt Status and Raw Status for channel 0"]
-pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLEARERR_SPEC, CH0_AW, O>;
+pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, CLEARERR_SPEC, O, CH0_AW>;
 impl<'a, const O: u8> CH0_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<CH1_AW> for bool {
     }
 }
 #[doc = "Field `CH1` writer - Clear Interrupt Status and Raw Status for channel 1"]
-pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLEARERR_SPEC, CH1_AW, O>;
+pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, CLEARERR_SPEC, O, CH1_AW>;
 impl<'a, const O: u8> CH1_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<CH2_AW> for bool {
     }
 }
 #[doc = "Field `CH2` writer - Clear Interrupt Status and Raw Status for channel 2"]
-pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLEARERR_SPEC, CH2_AW, O>;
+pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, CLEARERR_SPEC, O, CH2_AW>;
 impl<'a, const O: u8> CH2_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<CH3_AW> for bool {
     }
 }
 #[doc = "Field `CH3` writer - Clear Interrupt Status and Raw Status for channel 3"]
-pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLEARERR_SPEC, CH3_AW, O>;
+pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, CLEARERR_SPEC, O, CH3_AW>;
 impl<'a, const O: u8> CH3_W<'a, O> {
     #[doc = "no effect"]
     #[inline(always)]

@@ -35,7 +35,7 @@ impl From<crate::W<IWCTR_SPEC>> for W {
     }
 }
 #[doc = "Field `NVALCNT` reader - Number of Values Counted"]
-pub type NVALCNT_R = crate::FieldReader<u8, u8>;
+pub type NVALCNT_R = crate::FieldReader;
 #[doc = "Field `INTEN` reader - Integration Enable"]
 pub type INTEN_R = crate::BitReader<INTEN_A>;
 #[doc = "Integration Enable\n\nValue on reset: 0"]
@@ -73,15 +73,15 @@ impl INTEN_R {
     }
 }
 #[doc = "Field `REPCNT` reader - Integration Cycle Counter"]
-pub type REPCNT_R = crate::FieldReader<u8, u8>;
+pub type REPCNT_R = crate::FieldReader;
 #[doc = "Field `REPVAL` reader - Number of Integration Cycles"]
-pub type REPVAL_R = crate::FieldReader<u8, u8>;
+pub type REPVAL_R = crate::FieldReader;
 #[doc = "Field `REPVAL` writer - Number of Integration Cycles"]
-pub type REPVAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IWCTR_SPEC, u8, u8, 4, O>;
+pub type REPVAL_W<'a, const O: u8> = crate::FieldWriter<'a, IWCTR_SPEC, 4, O>;
 #[doc = "Field `NVALDIS` reader - Number of Values Discarded"]
-pub type NVALDIS_R = crate::FieldReader<u8, u8>;
+pub type NVALDIS_R = crate::FieldReader;
 #[doc = "Field `NVALDIS` writer - Number of Values Discarded"]
-pub type NVALDIS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IWCTR_SPEC, u8, u8, 6, O>;
+pub type NVALDIS_W<'a, const O: u8> = crate::FieldWriter<'a, IWCTR_SPEC, 6, O>;
 #[doc = "Field `IWS` reader - Integration Window SIze"]
 pub type IWS_R = crate::BitReader<IWS_A>;
 #[doc = "Integration Window SIze\n\nValue on reset: 0"]
@@ -119,7 +119,7 @@ impl IWS_R {
     }
 }
 #[doc = "Field `IWS` writer - Integration Window SIze"]
-pub type IWS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IWCTR_SPEC, IWS_A, O>;
+pub type IWS_W<'a, const O: u8> = crate::BitWriter<'a, IWCTR_SPEC, O, IWS_A>;
 impl<'a, const O: u8> IWS_W<'a, O> {
     #[doc = "Internal control: stop integrator after REPVAL+1 integration cycles"]
     #[inline(always)]
@@ -133,9 +133,9 @@ impl<'a, const O: u8> IWS_W<'a, O> {
     }
 }
 #[doc = "Field `NVALINT` reader - Number of Values Integrated"]
-pub type NVALINT_R = crate::FieldReader<u8, u8>;
+pub type NVALINT_R = crate::FieldReader;
 #[doc = "Field `NVALINT` writer - Number of Values Integrated"]
-pub type NVALINT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IWCTR_SPEC, u8, u8, 6, O>;
+pub type NVALINT_W<'a, const O: u8> = crate::FieldWriter<'a, IWCTR_SPEC, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - Number of Values Counted"]
     #[inline(always)]

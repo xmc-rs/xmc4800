@@ -71,7 +71,7 @@ impl DISR_R {
     }
 }
 #[doc = "Field `DISR` writer - EBU Disable Request Bit"]
-pub type DISR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLC_SPEC, DISR_A, O>;
+pub type DISR_W<'a, const O: u8> = crate::BitWriter<'a, CLC_SPEC, O, DISR_A>;
 impl<'a, const O: u8> DISR_W<'a, O> {
     #[doc = "EBU disable is not requested"]
     #[inline(always)]
@@ -157,7 +157,7 @@ impl SYNC_R {
     }
 }
 #[doc = "Field `SYNC` writer - EBU Clocking Mode"]
-pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLC_SPEC, SYNC_A, O>;
+pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, CLC_SPEC, O, SYNC_A>;
 impl<'a, const O: u8> SYNC_W<'a, O> {
     #[doc = "request EBU to run asynchronously to AHB bus clock and use separate clock source"]
     #[inline(always)]
@@ -207,7 +207,7 @@ impl DIV2_R {
     }
 }
 #[doc = "Field `DIV2` writer - DIV2 Clocking Mode"]
-pub type DIV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLC_SPEC, DIV2_A, O>;
+pub type DIV2_W<'a, const O: u8> = crate::BitWriter<'a, CLC_SPEC, O, DIV2_A>;
 impl<'a, const O: u8> DIV2_W<'a, O> {
     #[doc = "standard clocking mode. clock input selected by SYNC bitfield (default after reset)."]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl<'a, const O: u8> DIV2_W<'a, O> {
     }
 }
 #[doc = "Field `EBUDIV` reader - EBU Clock Divide Ratio"]
-pub type EBUDIV_R = crate::FieldReader<u8, EBUDIV_A>;
+pub type EBUDIV_R = crate::FieldReader<EBUDIV_A>;
 #[doc = "EBU Clock Divide Ratio\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -240,6 +240,9 @@ impl From<EBUDIV_A> for u8 {
     fn from(variant: EBUDIV_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EBUDIV_A {
+    type Ux = u8;
 }
 impl EBUDIV_R {
     #[doc = "Get enumerated values variant"]
@@ -275,7 +278,7 @@ impl EBUDIV_R {
     }
 }
 #[doc = "Field `EBUDIV` writer - EBU Clock Divide Ratio"]
-pub type EBUDIV_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CLC_SPEC, u8, EBUDIV_A, 2, O>;
+pub type EBUDIV_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CLC_SPEC, 2, O, EBUDIV_A>;
 impl<'a, const O: u8> EBUDIV_W<'a, O> {
     #[doc = "request EBU to run off input clock (default after reset)"]
     #[inline(always)]
@@ -371,7 +374,7 @@ impl DIV2ACK_R {
     }
 }
 #[doc = "Field `EBUDIVACK` reader - EBU Clock Divide Ratio Status"]
-pub type EBUDIVACK_R = crate::FieldReader<u8, EBUDIVACK_A>;
+pub type EBUDIVACK_R = crate::FieldReader<EBUDIVACK_A>;
 #[doc = "EBU Clock Divide Ratio Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -390,6 +393,9 @@ impl From<EBUDIVACK_A> for u8 {
     fn from(variant: EBUDIVACK_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EBUDIVACK_A {
+    type Ux = u8;
 }
 impl EBUDIVACK_R {
     #[doc = "Get enumerated values variant"]

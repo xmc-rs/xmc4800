@@ -35,7 +35,7 @@ impl From<crate::W<PCONF_SPEC>> for W {
     }
 }
 #[doc = "Field `FSEL` reader - Function Selector"]
-pub type FSEL_R = crate::FieldReader<u8, FSEL_A>;
+pub type FSEL_R = crate::FieldReader<FSEL_A>;
 #[doc = "Function Selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<FSEL_A> for u8 {
     fn from(variant: FSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for FSEL_A {
+    type Ux = u8;
 }
 impl FSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl FSEL_R {
     }
 }
 #[doc = "Field `FSEL` writer - Function Selector"]
-pub type FSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PCONF_SPEC, u8, FSEL_A, 2, O>;
+pub type FSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PCONF_SPEC, 2, O, FSEL_A>;
 impl<'a, const O: u8> FSEL_W<'a, O> {
     #[doc = "Hall Sensor Mode enabled"]
     #[inline(always)]
@@ -149,7 +152,7 @@ impl QDCM_R {
     }
 }
 #[doc = "Field `QDCM` writer - Position Decoder Mode selection"]
-pub type QDCM_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCONF_SPEC, QDCM_A, O>;
+pub type QDCM_W<'a, const O: u8> = crate::BitWriter<'a, PCONF_SPEC, O, QDCM_A>;
 impl<'a, const O: u8> QDCM_W<'a, O> {
     #[doc = "Position encoder is in Quadrature Mode"]
     #[inline(always)]
@@ -163,9 +166,9 @@ impl<'a, const O: u8> QDCM_W<'a, O> {
     }
 }
 #[doc = "Field `HIDG` reader - Idle generation enable"]
-pub type HIDG_R = crate::BitReader<bool>;
+pub type HIDG_R = crate::BitReader;
 #[doc = "Field `HIDG` writer - Idle generation enable"]
-pub type HIDG_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCONF_SPEC, bool, O>;
+pub type HIDG_W<'a, const O: u8> = crate::BitWriter<'a, PCONF_SPEC, O>;
 #[doc = "Field `MCUE` reader - Multi-Channel Pattern SW update enable"]
 pub type MCUE_R = crate::BitReader<MCUE_A>;
 #[doc = "Multi-Channel Pattern SW update enable\n\nValue on reset: 0"]
@@ -203,7 +206,7 @@ impl MCUE_R {
     }
 }
 #[doc = "Field `MCUE` writer - Multi-Channel Pattern SW update enable"]
-pub type MCUE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCONF_SPEC, MCUE_A, O>;
+pub type MCUE_W<'a, const O: u8> = crate::BitWriter<'a, PCONF_SPEC, O, MCUE_A>;
 impl<'a, const O: u8> MCUE_W<'a, O> {
     #[doc = "Multi-Channel pattern update is controlled via HW"]
     #[inline(always)]
@@ -217,7 +220,7 @@ impl<'a, const O: u8> MCUE_W<'a, O> {
     }
 }
 #[doc = "Field `INSEL0` reader - PhaseA/Hal input 1 selector"]
-pub type INSEL0_R = crate::FieldReader<u8, INSEL0_A>;
+pub type INSEL0_R = crate::FieldReader<INSEL0_A>;
 #[doc = "PhaseA/Hal input 1 selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -236,6 +239,9 @@ impl From<INSEL0_A> for u8 {
     fn from(variant: INSEL0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for INSEL0_A {
+    type Ux = u8;
 }
 impl INSEL0_R {
     #[doc = "Get enumerated values variant"]
@@ -271,7 +277,7 @@ impl INSEL0_R {
     }
 }
 #[doc = "Field `INSEL0` writer - PhaseA/Hal input 1 selector"]
-pub type INSEL0_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PCONF_SPEC, u8, INSEL0_A, 2, O>;
+pub type INSEL0_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PCONF_SPEC, 2, O, INSEL0_A>;
 impl<'a, const O: u8> INSEL0_W<'a, O> {
     #[doc = "POSIFx.IN0A"]
     #[inline(always)]
@@ -295,7 +301,7 @@ impl<'a, const O: u8> INSEL0_W<'a, O> {
     }
 }
 #[doc = "Field `INSEL1` reader - PhaseB/Hall input 2 selector"]
-pub type INSEL1_R = crate::FieldReader<u8, INSEL1_A>;
+pub type INSEL1_R = crate::FieldReader<INSEL1_A>;
 #[doc = "PhaseB/Hall input 2 selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -314,6 +320,9 @@ impl From<INSEL1_A> for u8 {
     fn from(variant: INSEL1_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for INSEL1_A {
+    type Ux = u8;
 }
 impl INSEL1_R {
     #[doc = "Get enumerated values variant"]
@@ -349,7 +358,7 @@ impl INSEL1_R {
     }
 }
 #[doc = "Field `INSEL1` writer - PhaseB/Hall input 2 selector"]
-pub type INSEL1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PCONF_SPEC, u8, INSEL1_A, 2, O>;
+pub type INSEL1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PCONF_SPEC, 2, O, INSEL1_A>;
 impl<'a, const O: u8> INSEL1_W<'a, O> {
     #[doc = "POSIFx.IN1A"]
     #[inline(always)]
@@ -373,7 +382,7 @@ impl<'a, const O: u8> INSEL1_W<'a, O> {
     }
 }
 #[doc = "Field `INSEL2` reader - Index/Hall input 3 selector"]
-pub type INSEL2_R = crate::FieldReader<u8, INSEL2_A>;
+pub type INSEL2_R = crate::FieldReader<INSEL2_A>;
 #[doc = "Index/Hall input 3 selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -392,6 +401,9 @@ impl From<INSEL2_A> for u8 {
     fn from(variant: INSEL2_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for INSEL2_A {
+    type Ux = u8;
 }
 impl INSEL2_R {
     #[doc = "Get enumerated values variant"]
@@ -427,7 +439,7 @@ impl INSEL2_R {
     }
 }
 #[doc = "Field `INSEL2` writer - Index/Hall input 3 selector"]
-pub type INSEL2_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PCONF_SPEC, u8, INSEL2_A, 2, O>;
+pub type INSEL2_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PCONF_SPEC, 2, O, INSEL2_A>;
 impl<'a, const O: u8> INSEL2_W<'a, O> {
     #[doc = "POSIFx.IN2A"]
     #[inline(always)]
@@ -487,7 +499,7 @@ impl DSEL_R {
     }
 }
 #[doc = "Field `DSEL` writer - Delay Pin selector"]
-pub type DSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCONF_SPEC, DSEL_A, O>;
+pub type DSEL_W<'a, const O: u8> = crate::BitWriter<'a, PCONF_SPEC, O, DSEL_A>;
 impl<'a, const O: u8> DSEL_W<'a, O> {
     #[doc = "POSIFx.HSDA"]
     #[inline(always)]
@@ -537,7 +549,7 @@ impl SPES_R {
     }
 }
 #[doc = "Field `SPES` writer - Edge selector for the sampling trigger"]
-pub type SPES_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCONF_SPEC, SPES_A, O>;
+pub type SPES_W<'a, const O: u8> = crate::BitWriter<'a, PCONF_SPEC, O, SPES_A>;
 impl<'a, const O: u8> SPES_W<'a, O> {
     #[doc = "Rising edge"]
     #[inline(always)]
@@ -551,7 +563,7 @@ impl<'a, const O: u8> SPES_W<'a, O> {
     }
 }
 #[doc = "Field `MSETS` reader - Pattern update signal select"]
-pub type MSETS_R = crate::FieldReader<u8, MSETS_A>;
+pub type MSETS_R = crate::FieldReader<MSETS_A>;
 #[doc = "Pattern update signal select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -578,6 +590,9 @@ impl From<MSETS_A> for u8 {
     fn from(variant: MSETS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MSETS_A {
+    type Ux = u8;
 }
 impl MSETS_R {
     #[doc = "Get enumerated values variant"]
@@ -637,7 +652,7 @@ impl MSETS_R {
     }
 }
 #[doc = "Field `MSETS` writer - Pattern update signal select"]
-pub type MSETS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PCONF_SPEC, u8, MSETS_A, 3, O>;
+pub type MSETS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PCONF_SPEC, 3, O, MSETS_A>;
 impl<'a, const O: u8> MSETS_W<'a, O> {
     #[doc = "POSIFx.MSETA"]
     #[inline(always)]
@@ -717,7 +732,7 @@ impl MSES_R {
     }
 }
 #[doc = "Field `MSES` writer - Multi-Channel pattern update trigger edge"]
-pub type MSES_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCONF_SPEC, MSES_A, O>;
+pub type MSES_W<'a, const O: u8> = crate::BitWriter<'a, PCONF_SPEC, O, MSES_A>;
 impl<'a, const O: u8> MSES_W<'a, O> {
     #[doc = "The signal used to enable a pattern update is active on the rising edge"]
     #[inline(always)]
@@ -731,7 +746,7 @@ impl<'a, const O: u8> MSES_W<'a, O> {
     }
 }
 #[doc = "Field `MSYNS` reader - PWM synchronization signal selector"]
-pub type MSYNS_R = crate::FieldReader<u8, MSYNS_A>;
+pub type MSYNS_R = crate::FieldReader<MSYNS_A>;
 #[doc = "PWM synchronization signal selector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -750,6 +765,9 @@ impl From<MSYNS_A> for u8 {
     fn from(variant: MSYNS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MSYNS_A {
+    type Ux = u8;
 }
 impl MSYNS_R {
     #[doc = "Get enumerated values variant"]
@@ -785,7 +803,7 @@ impl MSYNS_R {
     }
 }
 #[doc = "Field `MSYNS` writer - PWM synchronization signal selector"]
-pub type MSYNS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PCONF_SPEC, u8, MSYNS_A, 2, O>;
+pub type MSYNS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PCONF_SPEC, 2, O, MSYNS_A>;
 impl<'a, const O: u8> MSYNS_W<'a, O> {
     #[doc = "POSIFx.MSYNCA"]
     #[inline(always)]
@@ -809,7 +827,7 @@ impl<'a, const O: u8> MSYNS_W<'a, O> {
     }
 }
 #[doc = "Field `EWIS` reader - Wrong Hall Event selection"]
-pub type EWIS_R = crate::FieldReader<u8, EWIS_A>;
+pub type EWIS_R = crate::FieldReader<EWIS_A>;
 #[doc = "Wrong Hall Event selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -828,6 +846,9 @@ impl From<EWIS_A> for u8 {
     fn from(variant: EWIS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EWIS_A {
+    type Ux = u8;
 }
 impl EWIS_R {
     #[doc = "Get enumerated values variant"]
@@ -863,7 +884,7 @@ impl EWIS_R {
     }
 }
 #[doc = "Field `EWIS` writer - Wrong Hall Event selection"]
-pub type EWIS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PCONF_SPEC, u8, EWIS_A, 2, O>;
+pub type EWIS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PCONF_SPEC, 2, O, EWIS_A>;
 impl<'a, const O: u8> EWIS_W<'a, O> {
     #[doc = "POSIFx.EWHEA"]
     #[inline(always)]
@@ -923,7 +944,7 @@ impl EWIE_R {
     }
 }
 #[doc = "Field `EWIE` writer - External Wrong Hall Event enable"]
-pub type EWIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCONF_SPEC, EWIE_A, O>;
+pub type EWIE_W<'a, const O: u8> = crate::BitWriter<'a, PCONF_SPEC, O, EWIE_A>;
 impl<'a, const O: u8> EWIE_W<'a, O> {
     #[doc = "External wrong hall event emulation signal, POSIFx.EWHE\\[D...A\\], is disabled"]
     #[inline(always)]
@@ -975,7 +996,7 @@ impl EWIL_R {
     }
 }
 #[doc = "Field `EWIL` writer - External Wrong Hall Event active level"]
-pub type EWIL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCONF_SPEC, EWIL_A, O>;
+pub type EWIL_W<'a, const O: u8> = crate::BitWriter<'a, PCONF_SPEC, O, EWIL_A>;
 impl<'a, const O: u8> EWIL_W<'a, O> {
     #[doc = "POSIFx.EWHE\\[D...A\\]
 signal is active HIGH"]
@@ -991,7 +1012,7 @@ signal is active LOW"]
     }
 }
 #[doc = "Field `LPC` reader - Low Pass Filters Configuration"]
-pub type LPC_R = crate::FieldReader<u8, LPC_A>;
+pub type LPC_R = crate::FieldReader<LPC_A>;
 #[doc = "Low Pass Filters Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -1018,6 +1039,9 @@ impl From<LPC_A> for u8 {
     fn from(variant: LPC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for LPC_A {
+    type Ux = u8;
 }
 impl LPC_R {
     #[doc = "Get enumerated values variant"]
@@ -1077,7 +1101,7 @@ impl LPC_R {
     }
 }
 #[doc = "Field `LPC` writer - Low Pass Filters Configuration"]
-pub type LPC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PCONF_SPEC, u8, LPC_A, 3, O>;
+pub type LPC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PCONF_SPEC, 3, O, LPC_A>;
 impl<'a, const O: u8> LPC_W<'a, O> {
     #[doc = "Low pass filter disabled"]
     #[inline(always)]

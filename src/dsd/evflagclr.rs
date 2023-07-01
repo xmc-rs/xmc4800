@@ -34,7 +34,7 @@ impl From<RESEC0_AW> for bool {
     }
 }
 #[doc = "Field `RESEC0` writer - Result Event Clear"]
-pub type RESEC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAGCLR_SPEC, RESEC0_AW, O>;
+pub type RESEC0_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAGCLR_SPEC, O, RESEC0_AW>;
 impl<'a, const O: u8> RESEC0_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<RESEC1_AW> for bool {
     }
 }
 #[doc = "Field `RESEC1` writer - Result Event Clear"]
-pub type RESEC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAGCLR_SPEC, RESEC1_AW, O>;
+pub type RESEC1_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAGCLR_SPEC, O, RESEC1_AW>;
 impl<'a, const O: u8> RESEC1_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<RESEC2_AW> for bool {
     }
 }
 #[doc = "Field `RESEC2` writer - Result Event Clear"]
-pub type RESEC2_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAGCLR_SPEC, RESEC2_AW, O>;
+pub type RESEC2_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAGCLR_SPEC, O, RESEC2_AW>;
 impl<'a, const O: u8> RESEC2_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<RESEC3_AW> for bool {
     }
 }
 #[doc = "Field `RESEC3` writer - Result Event Clear"]
-pub type RESEC3_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAGCLR_SPEC, RESEC3_AW, O>;
+pub type RESEC3_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAGCLR_SPEC, O, RESEC3_AW>;
 impl<'a, const O: u8> RESEC3_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<ALEC0_AW> for bool {
     }
 }
 #[doc = "Field `ALEC0` writer - Alarm Event Clear"]
-pub type ALEC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAGCLR_SPEC, ALEC0_AW, O>;
+pub type ALEC0_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAGCLR_SPEC, O, ALEC0_AW>;
 impl<'a, const O: u8> ALEC0_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<ALEC1_AW> for bool {
     }
 }
 #[doc = "Field `ALEC1` writer - Alarm Event Clear"]
-pub type ALEC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAGCLR_SPEC, ALEC1_AW, O>;
+pub type ALEC1_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAGCLR_SPEC, O, ALEC1_AW>;
 impl<'a, const O: u8> ALEC1_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -202,7 +202,7 @@ impl From<ALEC2_AW> for bool {
     }
 }
 #[doc = "Field `ALEC2` writer - Alarm Event Clear"]
-pub type ALEC2_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAGCLR_SPEC, ALEC2_AW, O>;
+pub type ALEC2_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAGCLR_SPEC, O, ALEC2_AW>;
 impl<'a, const O: u8> ALEC2_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]
@@ -230,7 +230,7 @@ impl From<ALEC3_AW> for bool {
     }
 }
 #[doc = "Field `ALEC3` writer - Alarm Event Clear"]
-pub type ALEC3_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAGCLR_SPEC, ALEC3_AW, O>;
+pub type ALEC3_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAGCLR_SPEC, O, ALEC3_AW>;
 impl<'a, const O: u8> ALEC3_W<'a, O> {
     #[doc = "No action"]
     #[inline(always)]

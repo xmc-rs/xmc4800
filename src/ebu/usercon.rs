@@ -35,11 +35,11 @@ impl From<crate::W<USERCON_SPEC>> for W {
     }
 }
 #[doc = "Field `DIP` reader - Disable Internal Pipelining"]
-pub type DIP_R = crate::BitReader<bool>;
+pub type DIP_R = crate::BitReader;
 #[doc = "Field `DIP` writer - Disable Internal Pipelining"]
-pub type DIP_W<'a, const O: u8> = crate::BitWriter<'a, u32, USERCON_SPEC, bool, O>;
+pub type DIP_W<'a, const O: u8> = crate::BitWriter<'a, USERCON_SPEC, O>;
 #[doc = "Field `ADDIO` reader - Address Pins to GPIO Mode"]
-pub type ADDIO_R = crate::FieldReader<u16, ADDIO_A>;
+pub type ADDIO_R = crate::FieldReader<ADDIO_A>;
 #[doc = "Address Pins to GPIO Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
@@ -54,6 +54,9 @@ impl From<ADDIO_A> for u16 {
     fn from(variant: ADDIO_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ADDIO_A {
+    type Ux = u16;
 }
 impl ADDIO_R {
     #[doc = "Get enumerated values variant"]
@@ -77,7 +80,7 @@ impl ADDIO_R {
     }
 }
 #[doc = "Field `ADDIO` writer - Address Pins to GPIO Mode"]
-pub type ADDIO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, USERCON_SPEC, u16, ADDIO_A, 9, O>;
+pub type ADDIO_W<'a, const O: u8> = crate::FieldWriter<'a, USERCON_SPEC, 9, O, ADDIO_A>;
 impl<'a, const O: u8> ADDIO_W<'a, O> {
     #[doc = "Address Bit is required for addressing memory"]
     #[inline(always)]
@@ -127,7 +130,7 @@ impl ADVIO_R {
     }
 }
 #[doc = "Field `ADVIO` writer - ADV Pin to GPIO Mode"]
-pub type ADVIO_W<'a, const O: u8> = crate::BitWriter<'a, u32, USERCON_SPEC, ADVIO_A, O>;
+pub type ADVIO_W<'a, const O: u8> = crate::BitWriter<'a, USERCON_SPEC, O, ADVIO_A>;
 impl<'a, const O: u8> ADVIO_W<'a, O> {
     #[doc = "ADV pin is required for controlling memory"]
     #[inline(always)]

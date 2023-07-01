@@ -35,9 +35,9 @@ impl From<crate::W<EBUCLKCR_SPEC>> for W {
     }
 }
 #[doc = "Field `EBUDIV` reader - EBU Clock Divider Value"]
-pub type EBUDIV_R = crate::FieldReader<u8, u8>;
+pub type EBUDIV_R = crate::FieldReader;
 #[doc = "Field `EBUDIV` writer - EBU Clock Divider Value"]
-pub type EBUDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EBUCLKCR_SPEC, u8, u8, 6, O>;
+pub type EBUDIV_W<'a, const O: u8> = crate::FieldWriter<'a, EBUCLKCR_SPEC, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - EBU Clock Divider Value"]
     #[inline(always)]

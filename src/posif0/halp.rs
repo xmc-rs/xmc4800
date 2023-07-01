@@ -14,9 +14,9 @@ impl From<crate::R<HALP_SPEC>> for R {
     }
 }
 #[doc = "Field `HCP` reader - Hall Current Pattern"]
-pub type HCP_R = crate::FieldReader<u8, u8>;
+pub type HCP_R = crate::FieldReader;
 #[doc = "Field `HEP` reader - Hall Expected Pattern"]
-pub type HEP_R = crate::FieldReader<u8, u8>;
+pub type HEP_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:2 - Hall Current Pattern"]
     #[inline(always)]

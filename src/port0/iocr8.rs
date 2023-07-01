@@ -35,7 +35,7 @@ impl From<crate::W<IOCR8_SPEC>> for W {
     }
 }
 #[doc = "Field `PC8` reader - Port Control for Port n Pin 8 to 11"]
-pub type PC8_R = crate::FieldReader<u8, PC8_A>;
+pub type PC8_R = crate::FieldReader<PC8_A>;
 #[doc = "Port Control for Port n Pin 8 to 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -82,6 +82,9 @@ impl From<PC8_A> for u8 {
     fn from(variant: PC8_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PC8_A {
+    type Ux = u8;
 }
 impl PC8_R {
     #[doc = "Get enumerated values variant"]
@@ -201,7 +204,7 @@ impl PC8_R {
     }
 }
 #[doc = "Field `PC8` writer - Port Control for Port n Pin 8 to 11"]
-pub type PC8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR8_SPEC, u8, PC8_A, 5, O>;
+pub type PC8_W<'a, const O: u8> = crate::FieldWriter<'a, IOCR8_SPEC, 5, O, PC8_A>;
 impl<'a, const O: u8> PC8_W<'a, O> {
     #[doc = "Input - No internal pull device active"]
     #[inline(always)]
@@ -295,7 +298,7 @@ impl<'a, const O: u8> PC8_W<'a, O> {
     }
 }
 #[doc = "Field `PC9` reader - Port Control for Port n Pin 8 to 11"]
-pub type PC9_R = crate::FieldReader<u8, PC9_A>;
+pub type PC9_R = crate::FieldReader<PC9_A>;
 #[doc = "Port Control for Port n Pin 8 to 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -342,6 +345,9 @@ impl From<PC9_A> for u8 {
     fn from(variant: PC9_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PC9_A {
+    type Ux = u8;
 }
 impl PC9_R {
     #[doc = "Get enumerated values variant"]
@@ -461,7 +467,7 @@ impl PC9_R {
     }
 }
 #[doc = "Field `PC9` writer - Port Control for Port n Pin 8 to 11"]
-pub type PC9_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR8_SPEC, u8, PC9_A, 5, O>;
+pub type PC9_W<'a, const O: u8> = crate::FieldWriter<'a, IOCR8_SPEC, 5, O, PC9_A>;
 impl<'a, const O: u8> PC9_W<'a, O> {
     #[doc = "Input - No internal pull device active"]
     #[inline(always)]
@@ -555,7 +561,7 @@ impl<'a, const O: u8> PC9_W<'a, O> {
     }
 }
 #[doc = "Field `PC10` reader - Port Control for Port n Pin 8 to 11"]
-pub type PC10_R = crate::FieldReader<u8, PC10_A>;
+pub type PC10_R = crate::FieldReader<PC10_A>;
 #[doc = "Port Control for Port n Pin 8 to 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -602,6 +608,9 @@ impl From<PC10_A> for u8 {
     fn from(variant: PC10_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PC10_A {
+    type Ux = u8;
 }
 impl PC10_R {
     #[doc = "Get enumerated values variant"]
@@ -721,7 +730,7 @@ impl PC10_R {
     }
 }
 #[doc = "Field `PC10` writer - Port Control for Port n Pin 8 to 11"]
-pub type PC10_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR8_SPEC, u8, PC10_A, 5, O>;
+pub type PC10_W<'a, const O: u8> = crate::FieldWriter<'a, IOCR8_SPEC, 5, O, PC10_A>;
 impl<'a, const O: u8> PC10_W<'a, O> {
     #[doc = "Input - No internal pull device active"]
     #[inline(always)]
@@ -815,7 +824,7 @@ impl<'a, const O: u8> PC10_W<'a, O> {
     }
 }
 #[doc = "Field `PC11` reader - Port Control for Port n Pin 8 to 11"]
-pub type PC11_R = crate::FieldReader<u8, PC11_A>;
+pub type PC11_R = crate::FieldReader<PC11_A>;
 #[doc = "Port Control for Port n Pin 8 to 11\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -862,6 +871,9 @@ impl From<PC11_A> for u8 {
     fn from(variant: PC11_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PC11_A {
+    type Ux = u8;
 }
 impl PC11_R {
     #[doc = "Get enumerated values variant"]
@@ -981,7 +993,7 @@ impl PC11_R {
     }
 }
 #[doc = "Field `PC11` writer - Port Control for Port n Pin 8 to 11"]
-pub type PC11_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IOCR8_SPEC, u8, PC11_A, 5, O>;
+pub type PC11_W<'a, const O: u8> = crate::FieldWriter<'a, IOCR8_SPEC, 5, O, PC11_A>;
 impl<'a, const O: u8> PC11_W<'a, O> {
     #[doc = "Input - No internal pull device active"]
     #[inline(always)]

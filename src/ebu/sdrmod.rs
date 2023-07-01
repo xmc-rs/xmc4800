@@ -35,7 +35,7 @@ impl From<crate::W<SDRMOD_SPEC>> for W {
     }
 }
 #[doc = "Field `BURSTL` reader - Burst length"]
-pub type BURSTL_R = crate::FieldReader<u8, BURSTL_A>;
+pub type BURSTL_R = crate::FieldReader<BURSTL_A>;
 #[doc = "Burst length\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<BURSTL_A> for u8 {
     fn from(variant: BURSTL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BURSTL_A {
+    type Ux = u8;
 }
 impl BURSTL_R {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl BURSTL_R {
     }
 }
 #[doc = "Field `BURSTL` writer - Burst length"]
-pub type BURSTL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMOD_SPEC, u8, BURSTL_A, 3, O>;
+pub type BURSTL_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMOD_SPEC, 3, O, BURSTL_A>;
 impl<'a, const O: u8> BURSTL_W<'a, O> {
     #[doc = "1 (default after reset)"]
     #[inline(always)]
@@ -155,7 +158,7 @@ impl BTYP_R {
     }
 }
 #[doc = "Field `BTYP` writer - Burst type"]
-pub type BTYP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SDRMOD_SPEC, BTYP_A, O>;
+pub type BTYP_W<'a, const O: u8> = crate::BitWriter<'a, SDRMOD_SPEC, O, BTYP_A>;
 impl<'a, const O: u8> BTYP_W<'a, O> {
     #[doc = "Only this value should be written (default after reset)"]
     #[inline(always)]
@@ -164,7 +167,7 @@ impl<'a, const O: u8> BTYP_W<'a, O> {
     }
 }
 #[doc = "Field `CASLAT` reader - CAS latency"]
-pub type CASLAT_R = crate::FieldReader<u8, CASLAT_A>;
+pub type CASLAT_R = crate::FieldReader<CASLAT_A>;
 #[doc = "CAS latency\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -179,6 +182,9 @@ impl From<CASLAT_A> for u8 {
     fn from(variant: CASLAT_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CASLAT_A {
+    type Ux = u8;
 }
 impl CASLAT_R {
     #[doc = "Get enumerated values variant"]
@@ -202,7 +208,7 @@ impl CASLAT_R {
     }
 }
 #[doc = "Field `CASLAT` writer - CAS latency"]
-pub type CASLAT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMOD_SPEC, u8, CASLAT_A, 3, O>;
+pub type CASLAT_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMOD_SPEC, 3, O, CASLAT_A>;
 impl<'a, const O: u8> CASLAT_W<'a, O> {
     #[doc = "Two clocks (default after reset)"]
     #[inline(always)]
@@ -216,7 +222,7 @@ impl<'a, const O: u8> CASLAT_W<'a, O> {
     }
 }
 #[doc = "Field `OPMODE` reader - Operation Mode"]
-pub type OPMODE_R = crate::FieldReader<u8, OPMODE_A>;
+pub type OPMODE_R = crate::FieldReader<OPMODE_A>;
 #[doc = "Operation Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -229,6 +235,9 @@ impl From<OPMODE_A> for u8 {
     fn from(variant: OPMODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for OPMODE_A {
+    type Ux = u8;
 }
 impl OPMODE_R {
     #[doc = "Get enumerated values variant"]
@@ -246,7 +255,7 @@ impl OPMODE_R {
     }
 }
 #[doc = "Field `OPMODE` writer - Operation Mode"]
-pub type OPMODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMOD_SPEC, u8, OPMODE_A, 7, O>;
+pub type OPMODE_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMOD_SPEC, 7, O, OPMODE_A>;
 impl<'a, const O: u8> OPMODE_W<'a, O> {
     #[doc = "Only this value must be written (default after reset)"]
     #[inline(always)]
@@ -255,15 +264,15 @@ impl<'a, const O: u8> OPMODE_W<'a, O> {
     }
 }
 #[doc = "Field `COLDSTART` writer - SDRAM coldstart"]
-pub type COLDSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, SDRMOD_SPEC, bool, O>;
+pub type COLDSTART_W<'a, const O: u8> = crate::BitWriter<'a, SDRMOD_SPEC, O>;
 #[doc = "Field `XOPM` reader - Extended Operation Mode"]
-pub type XOPM_R = crate::FieldReader<u16, u16>;
+pub type XOPM_R = crate::FieldReader<u16>;
 #[doc = "Field `XOPM` writer - Extended Operation Mode"]
-pub type XOPM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMOD_SPEC, u16, u16, 12, O>;
+pub type XOPM_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMOD_SPEC, 12, O, u16>;
 #[doc = "Field `XBA` reader - Extended Operation Bank Select"]
-pub type XBA_R = crate::FieldReader<u8, u8>;
+pub type XBA_R = crate::FieldReader;
 #[doc = "Field `XBA` writer - Extended Operation Bank Select"]
-pub type XBA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMOD_SPEC, u8, u8, 4, O>;
+pub type XBA_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMOD_SPEC, 4, O>;
 impl R {
     #[doc = "Bits 0:2 - Burst length"]
     #[inline(always)]

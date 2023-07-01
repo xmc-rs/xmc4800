@@ -71,7 +71,7 @@ impl LN0_R {
     }
 }
 #[doc = "Field `LN0` writer - Line 0 Enable"]
-pub type LN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, LNEN_SPEC, LN0_A, O>;
+pub type LN0_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN0_A>;
 impl<'a, const O: u8> LN0_W<'a, O> {
     #[doc = "Disables the line"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl LN1_R {
     }
 }
 #[doc = "Field `LN1` writer - Line 1 Enable"]
-pub type LN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, LNEN_SPEC, LN1_A, O>;
+pub type LN1_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN1_A>;
 impl<'a, const O: u8> LN1_W<'a, O> {
     #[doc = "Disables the line"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl LN2_R {
     }
 }
 #[doc = "Field `LN2` writer - Line 2 Enable"]
-pub type LN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, LNEN_SPEC, LN2_A, O>;
+pub type LN2_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN2_A>;
 impl<'a, const O: u8> LN2_W<'a, O> {
     #[doc = "Disables the line"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl LN3_R {
     }
 }
 #[doc = "Field `LN3` writer - Line 3 Enable"]
-pub type LN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, LNEN_SPEC, LN3_A, O>;
+pub type LN3_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN3_A>;
 impl<'a, const O: u8> LN3_W<'a, O> {
     #[doc = "Disables the line"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl LN4_R {
     }
 }
 #[doc = "Field `LN4` writer - Line 4 Enable"]
-pub type LN4_W<'a, const O: u8> = crate::BitWriter<'a, u32, LNEN_SPEC, LN4_A, O>;
+pub type LN4_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN4_A>;
 impl<'a, const O: u8> LN4_W<'a, O> {
     #[doc = "Disables the line"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl LN5_R {
     }
 }
 #[doc = "Field `LN5` writer - Line 5 Enable"]
-pub type LN5_W<'a, const O: u8> = crate::BitWriter<'a, u32, LNEN_SPEC, LN5_A, O>;
+pub type LN5_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN5_A>;
 impl<'a, const O: u8> LN5_W<'a, O> {
     #[doc = "Disables the line"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl LN6_R {
     }
 }
 #[doc = "Field `LN6` writer - Line 6 Enable"]
-pub type LN6_W<'a, const O: u8> = crate::BitWriter<'a, u32, LNEN_SPEC, LN6_A, O>;
+pub type LN6_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN6_A>;
 impl<'a, const O: u8> LN6_W<'a, O> {
     #[doc = "Disables the line"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl LN7_R {
     }
 }
 #[doc = "Field `LN7` writer - Line 7 Enable"]
-pub type LN7_W<'a, const O: u8> = crate::BitWriter<'a, u32, LNEN_SPEC, LN7_A, O>;
+pub type LN7_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN7_A>;
 impl<'a, const O: u8> LN7_W<'a, O> {
     #[doc = "Disables the line"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl LN8_R {
     }
 }
 #[doc = "Field `LN8` writer - Line 8 Enable"]
-pub type LN8_W<'a, const O: u8> = crate::BitWriter<'a, u32, LNEN_SPEC, LN8_A, O>;
+pub type LN8_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN8_A>;
 impl<'a, const O: u8> LN8_W<'a, O> {
     #[doc = "Disables the line"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl LN9_R {
     }
 }
 #[doc = "Field `LN9` writer - Line 9 Enable"]
-pub type LN9_W<'a, const O: u8> = crate::BitWriter<'a, u32, LNEN_SPEC, LN9_A, O>;
+pub type LN9_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN9_A>;
 impl<'a, const O: u8> LN9_W<'a, O> {
     #[doc = "Disables the line"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl LN10_R {
     }
 }
 #[doc = "Field `LN10` writer - Line 10 Enable"]
-pub type LN10_W<'a, const O: u8> = crate::BitWriter<'a, u32, LNEN_SPEC, LN10_A, O>;
+pub type LN10_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN10_A>;
 impl<'a, const O: u8> LN10_W<'a, O> {
     #[doc = "Disables the line"]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl LN11_R {
     }
 }
 #[doc = "Field `LN11` writer - Line 11 Enable"]
-pub type LN11_W<'a, const O: u8> = crate::BitWriter<'a, u32, LNEN_SPEC, LN11_A, O>;
+pub type LN11_W<'a, const O: u8> = crate::BitWriter<'a, LNEN_SPEC, O, LN11_A>;
 impl<'a, const O: u8> LN11_W<'a, O> {
     #[doc = "Disables the line"]
     #[inline(always)]

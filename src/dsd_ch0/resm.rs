@@ -14,7 +14,7 @@ impl From<crate::R<RESM_SPEC>> for R {
     }
 }
 #[doc = "Field `RESULT` reader - Result of most recent conversion"]
-pub type RESULT_R = crate::FieldReader<u16, u16>;
+pub type RESULT_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Result of most recent conversion"]
     #[inline(always)]

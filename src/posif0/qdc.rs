@@ -71,7 +71,7 @@ impl PALS_R {
     }
 }
 #[doc = "Field `PALS` writer - Phase A Level selector"]
-pub type PALS_W<'a, const O: u8> = crate::BitWriter<'a, u32, QDC_SPEC, PALS_A, O>;
+pub type PALS_W<'a, const O: u8> = crate::BitWriter<'a, QDC_SPEC, O, PALS_A>;
 impl<'a, const O: u8> PALS_W<'a, O> {
     #[doc = "Phase A is active HIGH"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl PBLS_R {
     }
 }
 #[doc = "Field `PBLS` writer - Phase B Level selector"]
-pub type PBLS_W<'a, const O: u8> = crate::BitWriter<'a, u32, QDC_SPEC, PBLS_A, O>;
+pub type PBLS_W<'a, const O: u8> = crate::BitWriter<'a, QDC_SPEC, O, PBLS_A>;
 impl<'a, const O: u8> PBLS_W<'a, O> {
     #[doc = "Phase B is active HIGH"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl PHS_R {
     }
 }
 #[doc = "Field `PHS` writer - Phase signals swap"]
-pub type PHS_W<'a, const O: u8> = crate::BitWriter<'a, u32, QDC_SPEC, PHS_A, O>;
+pub type PHS_W<'a, const O: u8> = crate::BitWriter<'a, QDC_SPEC, O, PHS_A>;
 impl<'a, const O: u8> PHS_W<'a, O> {
     #[doc = "Phase A is the leading signal for clockwise rotation"]
     #[inline(always)]
@@ -185,7 +185,7 @@ impl<'a, const O: u8> PHS_W<'a, O> {
     }
 }
 #[doc = "Field `ICM` reader - Index Marker generations control"]
-pub type ICM_R = crate::FieldReader<u8, ICM_A>;
+pub type ICM_R = crate::FieldReader<ICM_A>;
 #[doc = "Index Marker generations control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -202,6 +202,9 @@ impl From<ICM_A> for u8 {
     fn from(variant: ICM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ICM_A {
+    type Ux = u8;
 }
 impl ICM_R {
     #[doc = "Get enumerated values variant"]
@@ -231,7 +234,7 @@ impl ICM_R {
     }
 }
 #[doc = "Field `ICM` writer - Index Marker generations control"]
-pub type ICM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, QDC_SPEC, u8, ICM_A, 2, O>;
+pub type ICM_W<'a, const O: u8> = crate::FieldWriter<'a, QDC_SPEC, 2, O, ICM_A>;
 impl<'a, const O: u8> ICM_W<'a, O> {
     #[doc = "No index marker generation on POSIFx.OUT3"]
     #[inline(always)]

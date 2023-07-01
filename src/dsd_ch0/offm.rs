@@ -35,9 +35,9 @@ impl From<crate::W<OFFM_SPEC>> for W {
     }
 }
 #[doc = "Field `OFFSET` reader - Offset Value"]
-pub type OFFSET_R = crate::FieldReader<u16, u16>;
+pub type OFFSET_R = crate::FieldReader<u16>;
 #[doc = "Field `OFFSET` writer - Offset Value"]
-pub type OFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OFFM_SPEC, u16, u16, 16, O>;
+pub type OFFSET_W<'a, const O: u8> = crate::FieldWriter<'a, OFFM_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Offset Value"]
     #[inline(always)]

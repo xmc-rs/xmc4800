@@ -35,7 +35,7 @@ impl From<crate::W<PSUS_SPEC>> for W {
     }
 }
 #[doc = "Field `QSUS` reader - Quadrature Mode Suspend Config"]
-pub type QSUS_R = crate::FieldReader<u8, QSUS_A>;
+pub type QSUS_R = crate::FieldReader<QSUS_A>;
 #[doc = "Quadrature Mode Suspend Config\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<QSUS_A> for u8 {
     fn from(variant: QSUS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for QSUS_A {
+    type Ux = u8;
 }
 impl QSUS_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl QSUS_R {
     }
 }
 #[doc = "Field `QSUS` writer - Quadrature Mode Suspend Config"]
-pub type QSUS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PSUS_SPEC, u8, QSUS_A, 2, O>;
+pub type QSUS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PSUS_SPEC, 2, O, QSUS_A>;
 impl<'a, const O: u8> QSUS_W<'a, O> {
     #[doc = "Suspend request ignored"]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> QSUS_W<'a, O> {
     }
 }
 #[doc = "Field `MSUS` reader - Multi-Channel Mode Suspend Config"]
-pub type MSUS_R = crate::FieldReader<u8, MSUS_A>;
+pub type MSUS_R = crate::FieldReader<MSUS_A>;
 #[doc = "Multi-Channel Mode Suspend Config\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<MSUS_A> for u8 {
     fn from(variant: MSUS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MSUS_A {
+    type Ux = u8;
 }
 impl MSUS_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl MSUS_R {
     }
 }
 #[doc = "Field `MSUS` writer - Multi-Channel Mode Suspend Config"]
-pub type MSUS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PSUS_SPEC, u8, MSUS_A, 2, O>;
+pub type MSUS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PSUS_SPEC, 2, O, MSUS_A>;
 impl<'a, const O: u8> MSUS_W<'a, O> {
     #[doc = "Suspend request ignored"]
     #[inline(always)]

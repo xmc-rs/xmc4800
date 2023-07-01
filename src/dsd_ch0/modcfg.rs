@@ -35,7 +35,7 @@ impl From<crate::W<MODCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `DIVM` reader - Divider Factor for Modulator Clock"]
-pub type DIVM_R = crate::FieldReader<u8, DIVM_A>;
+pub type DIVM_R = crate::FieldReader<DIVM_A>;
 #[doc = "Divider Factor for Modulator Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<DIVM_A> for u8 {
     fn from(variant: DIVM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DIVM_A {
+    type Ux = u8;
 }
 impl DIVM_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl DIVM_R {
     }
 }
 #[doc = "Field `DIVM` writer - Divider Factor for Modulator Clock"]
-pub type DIVM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODCFG_SPEC, u8, DIVM_A, 4, O>;
+pub type DIVM_W<'a, const O: u8> = crate::FieldWriter<'a, MODCFG_SPEC, 4, O, DIVM_A>;
 impl<'a, const O: u8> DIVM_W<'a, O> {
     #[doc = "fMOD = fCLK / 2"]
     #[inline(always)]
@@ -127,7 +130,7 @@ impl From<DWC_AW> for bool {
     }
 }
 #[doc = "Field `DWC` writer - Write Control for Divider Factor"]
-pub type DWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODCFG_SPEC, DWC_AW, O>;
+pub type DWC_W<'a, const O: u8> = crate::BitWriter<'a, MODCFG_SPEC, O, DWC_AW>;
 impl<'a, const O: u8> DWC_W<'a, O> {
     #[doc = "No write access to divider factor"]
     #[inline(always)]

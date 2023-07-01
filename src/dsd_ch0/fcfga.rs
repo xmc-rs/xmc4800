@@ -35,11 +35,11 @@ impl From<crate::W<FCFGA_SPEC>> for W {
     }
 }
 #[doc = "Field `CFADF` reader - CIC Filter (Auxiliary) Decimation Factor"]
-pub type CFADF_R = crate::FieldReader<u8, u8>;
+pub type CFADF_R = crate::FieldReader;
 #[doc = "Field `CFADF` writer - CIC Filter (Auxiliary) Decimation Factor"]
-pub type CFADF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCFGA_SPEC, u8, u8, 8, O>;
+pub type CFADF_W<'a, const O: u8> = crate::FieldWriter<'a, FCFGA_SPEC, 8, O>;
 #[doc = "Field `CFAC` reader - CIC Filter (Auxiliary) Configuration"]
-pub type CFAC_R = crate::FieldReader<u8, CFAC_A>;
+pub type CFAC_R = crate::FieldReader<CFAC_A>;
 #[doc = "CIC Filter (Auxiliary) Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -58,6 +58,9 @@ impl From<CFAC_A> for u8 {
     fn from(variant: CFAC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CFAC_A {
+    type Ux = u8;
 }
 impl CFAC_R {
     #[doc = "Get enumerated values variant"]
@@ -93,7 +96,7 @@ impl CFAC_R {
     }
 }
 #[doc = "Field `CFAC` writer - CIC Filter (Auxiliary) Configuration"]
-pub type CFAC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, FCFGA_SPEC, u8, CFAC_A, 2, O>;
+pub type CFAC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, FCFGA_SPEC, 2, O, CFAC_A>;
 impl<'a, const O: u8> CFAC_W<'a, O> {
     #[doc = "CIC1"]
     #[inline(always)]
@@ -117,7 +120,7 @@ impl<'a, const O: u8> CFAC_W<'a, O> {
     }
 }
 #[doc = "Field `SRGA` reader - Service Request Generation Auxiliary Filter"]
-pub type SRGA_R = crate::FieldReader<u8, SRGA_A>;
+pub type SRGA_R = crate::FieldReader<SRGA_A>;
 #[doc = "Service Request Generation Auxiliary Filter\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -134,6 +137,9 @@ impl From<SRGA_A> for u8 {
     fn from(variant: SRGA_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SRGA_A {
+    type Ux = u8;
 }
 impl SRGA_R {
     #[doc = "Get enumerated values variant"]
@@ -163,7 +169,7 @@ impl SRGA_R {
     }
 }
 #[doc = "Field `SRGA` writer - Service Request Generation Auxiliary Filter"]
-pub type SRGA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCFGA_SPEC, u8, SRGA_A, 2, O>;
+pub type SRGA_W<'a, const O: u8> = crate::FieldWriter<'a, FCFGA_SPEC, 2, O, SRGA_A>;
 impl<'a, const O: u8> SRGA_W<'a, O> {
     #[doc = "Never, service requests disabled"]
     #[inline(always)]
@@ -182,7 +188,7 @@ impl<'a, const O: u8> SRGA_W<'a, O> {
     }
 }
 #[doc = "Field `ESEL` reader - Event Select"]
-pub type ESEL_R = crate::FieldReader<u8, ESEL_A>;
+pub type ESEL_R = crate::FieldReader<ESEL_A>;
 #[doc = "Event Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -199,6 +205,9 @@ impl From<ESEL_A> for u8 {
     fn from(variant: ESEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ESEL_A {
+    type Ux = u8;
 }
 impl ESEL_R {
     #[doc = "Get enumerated values variant"]
@@ -228,7 +237,7 @@ impl ESEL_R {
     }
 }
 #[doc = "Field `ESEL` writer - Event Select"]
-pub type ESEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCFGA_SPEC, u8, ESEL_A, 2, O>;
+pub type ESEL_W<'a, const O: u8> = crate::FieldWriter<'a, FCFGA_SPEC, 2, O, ESEL_A>;
 impl<'a, const O: u8> ESEL_W<'a, O> {
     #[doc = "Always, for each new result value"]
     #[inline(always)]
@@ -283,7 +292,7 @@ impl EGT_R {
     }
 }
 #[doc = "Field `EGT` writer - Event Gating"]
-pub type EGT_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCFGA_SPEC, EGT_A, O>;
+pub type EGT_W<'a, const O: u8> = crate::BitWriter<'a, FCFGA_SPEC, O, EGT_A>;
 impl<'a, const O: u8> EGT_W<'a, O> {
     #[doc = "Separate: generate events according to ESEL"]
     #[inline(always)]
@@ -297,7 +306,7 @@ impl<'a, const O: u8> EGT_W<'a, O> {
     }
 }
 #[doc = "Field `CFADCNT` reader - CIC Filter (Auxiliary) Decimation Counter"]
-pub type CFADCNT_R = crate::FieldReader<u8, u8>;
+pub type CFADCNT_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - CIC Filter (Auxiliary) Decimation Factor"]
     #[inline(always)]

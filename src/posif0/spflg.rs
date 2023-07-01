@@ -20,23 +20,23 @@ impl From<crate::W<SPFLG_SPEC>> for W {
     }
 }
 #[doc = "Field `SCHE` writer - Correct Hall Event flag set"]
-pub type SCHE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPFLG_SPEC, bool, O>;
+pub type SCHE_W<'a, const O: u8> = crate::BitWriter<'a, SPFLG_SPEC, O>;
 #[doc = "Field `SWHE` writer - Wrong Hall Event flag set"]
-pub type SWHE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPFLG_SPEC, bool, O>;
+pub type SWHE_W<'a, const O: u8> = crate::BitWriter<'a, SPFLG_SPEC, O>;
 #[doc = "Field `SHIE` writer - Hall Inputs Update Event flag set"]
-pub type SHIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPFLG_SPEC, bool, O>;
+pub type SHIE_W<'a, const O: u8> = crate::BitWriter<'a, SPFLG_SPEC, O>;
 #[doc = "Field `SMST` writer - Multi-Channel Pattern shadow transfer flag set"]
-pub type SMST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPFLG_SPEC, bool, O>;
+pub type SMST_W<'a, const O: u8> = crate::BitWriter<'a, SPFLG_SPEC, O>;
 #[doc = "Field `SINDX` writer - Quadrature Index flag set"]
-pub type SINDX_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPFLG_SPEC, bool, O>;
+pub type SINDX_W<'a, const O: u8> = crate::BitWriter<'a, SPFLG_SPEC, O>;
 #[doc = "Field `SERR` writer - Quadrature Phase Error flag set"]
-pub type SERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPFLG_SPEC, bool, O>;
+pub type SERR_W<'a, const O: u8> = crate::BitWriter<'a, SPFLG_SPEC, O>;
 #[doc = "Field `SCNT` writer - Quadrature CLK flag set"]
-pub type SCNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPFLG_SPEC, bool, O>;
+pub type SCNT_W<'a, const O: u8> = crate::BitWriter<'a, SPFLG_SPEC, O>;
 #[doc = "Field `SDIR` writer - Quadrature Direction flag set"]
-pub type SDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPFLG_SPEC, bool, O>;
+pub type SDIR_W<'a, const O: u8> = crate::BitWriter<'a, SPFLG_SPEC, O>;
 #[doc = "Field `SPCLK` writer - Quadrature period clock flag set"]
-pub type SPCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPFLG_SPEC, bool, O>;
+pub type SPCLK_W<'a, const O: u8> = crate::BitWriter<'a, SPFLG_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Correct Hall Event flag set"]
     #[inline(always)]

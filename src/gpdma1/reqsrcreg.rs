@@ -35,21 +35,21 @@ impl From<crate::W<REQSRCREG_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0` reader - Source request for channel 0"]
-pub type CH0_R = crate::BitReader<bool>;
+pub type CH0_R = crate::BitReader;
 #[doc = "Field `CH0` writer - Source request for channel 0"]
-pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, REQSRCREG_SPEC, bool, O>;
+pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, REQSRCREG_SPEC, O>;
 #[doc = "Field `CH1` reader - Source request for channel 1"]
-pub type CH1_R = crate::BitReader<bool>;
+pub type CH1_R = crate::BitReader;
 #[doc = "Field `CH1` writer - Source request for channel 1"]
-pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, REQSRCREG_SPEC, bool, O>;
+pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, REQSRCREG_SPEC, O>;
 #[doc = "Field `CH2` reader - Source request for channel 2"]
-pub type CH2_R = crate::BitReader<bool>;
+pub type CH2_R = crate::BitReader;
 #[doc = "Field `CH2` writer - Source request for channel 2"]
-pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, REQSRCREG_SPEC, bool, O>;
+pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, REQSRCREG_SPEC, O>;
 #[doc = "Field `CH3` reader - Source request for channel 3"]
-pub type CH3_R = crate::BitReader<bool>;
+pub type CH3_R = crate::BitReader;
 #[doc = "Field `CH3` writer - Source request for channel 3"]
-pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, REQSRCREG_SPEC, bool, O>;
+pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, REQSRCREG_SPEC, O>;
 #[doc = "Source request write enable for channel 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WE_CH0_AW {
@@ -65,7 +65,7 @@ impl From<WE_CH0_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH0` writer - Source request write enable for channel 0"]
-pub type WE_CH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, REQSRCREG_SPEC, WE_CH0_AW, O>;
+pub type WE_CH0_W<'a, const O: u8> = crate::BitWriter<'a, REQSRCREG_SPEC, O, WE_CH0_AW>;
 impl<'a, const O: u8> WE_CH0_W<'a, O> {
     #[doc = "write disabled"]
     #[inline(always)]
@@ -93,7 +93,7 @@ impl From<WE_CH1_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH1` writer - Source request write enable for channel 1"]
-pub type WE_CH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, REQSRCREG_SPEC, WE_CH1_AW, O>;
+pub type WE_CH1_W<'a, const O: u8> = crate::BitWriter<'a, REQSRCREG_SPEC, O, WE_CH1_AW>;
 impl<'a, const O: u8> WE_CH1_W<'a, O> {
     #[doc = "write disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl From<WE_CH2_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH2` writer - Source request write enable for channel 2"]
-pub type WE_CH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, REQSRCREG_SPEC, WE_CH2_AW, O>;
+pub type WE_CH2_W<'a, const O: u8> = crate::BitWriter<'a, REQSRCREG_SPEC, O, WE_CH2_AW>;
 impl<'a, const O: u8> WE_CH2_W<'a, O> {
     #[doc = "write disabled"]
     #[inline(always)]
@@ -149,7 +149,7 @@ impl From<WE_CH3_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH3` writer - Source request write enable for channel 3"]
-pub type WE_CH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, REQSRCREG_SPEC, WE_CH3_AW, O>;
+pub type WE_CH3_W<'a, const O: u8> = crate::BitWriter<'a, REQSRCREG_SPEC, O, WE_CH3_AW>;
 impl<'a, const O: u8> WE_CH3_W<'a, O> {
     #[doc = "write disabled"]
     #[inline(always)]
