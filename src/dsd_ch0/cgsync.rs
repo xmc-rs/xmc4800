@@ -35,17 +35,17 @@ impl From<crate::W<CGSYNC_SPEC>> for W {
     }
 }
 #[doc = "Field `SDCOUNT` reader - Sign Delay Counter"]
-pub type SDCOUNT_R = crate::FieldReader<u8, u8>;
+pub type SDCOUNT_R = crate::FieldReader;
 #[doc = "Field `SDCAP` reader - Sign Delay Capture Value"]
-pub type SDCAP_R = crate::FieldReader<u8, u8>;
+pub type SDCAP_R = crate::FieldReader;
 #[doc = "Field `SDPOS` reader - Sign Delay Value for Positive Halfwave"]
-pub type SDPOS_R = crate::FieldReader<u8, u8>;
+pub type SDPOS_R = crate::FieldReader;
 #[doc = "Field `SDPOS` writer - Sign Delay Value for Positive Halfwave"]
-pub type SDPOS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CGSYNC_SPEC, u8, u8, 8, O>;
+pub type SDPOS_W<'a, const O: u8> = crate::FieldWriter<'a, CGSYNC_SPEC, 8, O>;
 #[doc = "Field `SDNEG` reader - Sign Delay Value for Negative Halfwave"]
-pub type SDNEG_R = crate::FieldReader<u8, u8>;
+pub type SDNEG_R = crate::FieldReader;
 #[doc = "Field `SDNEG` writer - Sign Delay Value for Negative Halfwave"]
-pub type SDNEG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CGSYNC_SPEC, u8, u8, 8, O>;
+pub type SDNEG_W<'a, const O: u8> = crate::FieldWriter<'a, CGSYNC_SPEC, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Sign Delay Counter"]
     #[inline(always)]

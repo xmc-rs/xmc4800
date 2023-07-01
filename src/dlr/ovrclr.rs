@@ -20,29 +20,29 @@ impl From<crate::W<OVRCLR_SPEC>> for W {
     }
 }
 #[doc = "Field `LN0` writer - Line 0 Overrun Status Clear"]
-pub type LN0_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN0_W<'a, const O: u8> = crate::BitWriter<'a, OVRCLR_SPEC, O>;
 #[doc = "Field `LN1` writer - Line 1 Overrun Status Clear"]
-pub type LN1_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN1_W<'a, const O: u8> = crate::BitWriter<'a, OVRCLR_SPEC, O>;
 #[doc = "Field `LN2` writer - Line 2 Overrun Status Clear"]
-pub type LN2_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN2_W<'a, const O: u8> = crate::BitWriter<'a, OVRCLR_SPEC, O>;
 #[doc = "Field `LN3` writer - Line 3 Overrun Status Clear"]
-pub type LN3_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN3_W<'a, const O: u8> = crate::BitWriter<'a, OVRCLR_SPEC, O>;
 #[doc = "Field `LN4` writer - Line 4 Overrun Status Clear"]
-pub type LN4_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN4_W<'a, const O: u8> = crate::BitWriter<'a, OVRCLR_SPEC, O>;
 #[doc = "Field `LN5` writer - Line 5 Overrun Status Clear"]
-pub type LN5_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN5_W<'a, const O: u8> = crate::BitWriter<'a, OVRCLR_SPEC, O>;
 #[doc = "Field `LN6` writer - Line 6 Overrun Status Clear"]
-pub type LN6_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN6_W<'a, const O: u8> = crate::BitWriter<'a, OVRCLR_SPEC, O>;
 #[doc = "Field `LN7` writer - Line 7 Overrun Status Clear"]
-pub type LN7_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN7_W<'a, const O: u8> = crate::BitWriter<'a, OVRCLR_SPEC, O>;
 #[doc = "Field `LN8` writer - Line 8 Overrun Status Clear"]
-pub type LN8_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN8_W<'a, const O: u8> = crate::BitWriter<'a, OVRCLR_SPEC, O>;
 #[doc = "Field `LN9` writer - Line 9 Overrun Status Clear"]
-pub type LN9_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN9_W<'a, const O: u8> = crate::BitWriter<'a, OVRCLR_SPEC, O>;
 #[doc = "Field `LN10` writer - Line 10 Overrun Status Clear"]
-pub type LN10_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN10_W<'a, const O: u8> = crate::BitWriter<'a, OVRCLR_SPEC, O>;
 #[doc = "Field `LN11` writer - Line 11 Overrun Status Clear"]
-pub type LN11_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVRCLR_SPEC, bool, O>;
+pub type LN11_W<'a, const O: u8> = crate::BitWriter<'a, OVRCLR_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Line 0 Overrun Status Clear"]
     #[inline(always)]

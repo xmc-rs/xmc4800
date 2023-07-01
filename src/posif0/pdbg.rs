@@ -14,19 +14,19 @@ impl From<crate::R<PDBG_SPEC>> for R {
     }
 }
 #[doc = "Field `QCSV` reader - Quadrature Decoder Current state"]
-pub type QCSV_R = crate::FieldReader<u8, u8>;
+pub type QCSV_R = crate::FieldReader;
 #[doc = "Field `QPSV` reader - Quadrature Decoder Previous state"]
-pub type QPSV_R = crate::FieldReader<u8, u8>;
+pub type QPSV_R = crate::FieldReader;
 #[doc = "Field `IVAL` reader - Current Index Value"]
-pub type IVAL_R = crate::BitReader<bool>;
+pub type IVAL_R = crate::BitReader;
 #[doc = "Field `HSP` reader - Hall Current Sampled Pattern"]
-pub type HSP_R = crate::FieldReader<u8, u8>;
+pub type HSP_R = crate::FieldReader;
 #[doc = "Field `LPP0` reader - Actual count of the Low Pass Filter for POSI0"]
-pub type LPP0_R = crate::FieldReader<u8, u8>;
+pub type LPP0_R = crate::FieldReader;
 #[doc = "Field `LPP1` reader - Actual count of the Low Pass Filter for POSI1"]
-pub type LPP1_R = crate::FieldReader<u8, u8>;
+pub type LPP1_R = crate::FieldReader;
 #[doc = "Field `LPP2` reader - Actual count of the Low Pass Filter for POSI2"]
-pub type LPP2_R = crate::FieldReader<u8, u8>;
+pub type LPP2_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:1 - Quadrature Decoder Current state"]
     #[inline(always)]

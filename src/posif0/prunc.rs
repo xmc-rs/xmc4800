@@ -20,9 +20,9 @@ impl From<crate::W<PRUNC_SPEC>> for W {
     }
 }
 #[doc = "Field `CRB` writer - Clear Run bit"]
-pub type CRB_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRUNC_SPEC, bool, O>;
+pub type CRB_W<'a, const O: u8> = crate::BitWriter<'a, PRUNC_SPEC, O>;
 #[doc = "Field `CSM` writer - Clear Current internal status"]
-pub type CSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRUNC_SPEC, bool, O>;
+pub type CSM_W<'a, const O: u8> = crate::BitWriter<'a, PRUNC_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Clear Run bit"]
     #[inline(always)]

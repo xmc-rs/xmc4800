@@ -35,9 +35,9 @@ impl From<crate::W<MCSM_SPEC>> for W {
     }
 }
 #[doc = "Field `MCMPS` reader - Shadow Multi-Channel Pattern"]
-pub type MCMPS_R = crate::FieldReader<u16, u16>;
+pub type MCMPS_R = crate::FieldReader<u16>;
 #[doc = "Field `MCMPS` writer - Shadow Multi-Channel Pattern"]
-pub type MCMPS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MCSM_SPEC, u16, u16, 16, O>;
+pub type MCMPS_W<'a, const O: u8> = crate::FieldWriter<'a, MCSM_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Shadow Multi-Channel Pattern"]
     #[inline(always)]

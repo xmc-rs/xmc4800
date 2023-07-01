@@ -35,23 +35,23 @@ impl From<crate::W<SDRMCON_SPEC>> for W {
     }
 }
 #[doc = "Field `CRAS` reader - Row to precharge delay counter"]
-pub type CRAS_R = crate::FieldReader<u8, u8>;
+pub type CRAS_R = crate::FieldReader;
 #[doc = "Field `CRAS` writer - Row to precharge delay counter"]
-pub type CRAS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMCON_SPEC, u8, u8, 4, O>;
+pub type CRAS_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 4, O>;
 #[doc = "Field `CRFSH` reader - Initialization refresh commands counter"]
-pub type CRFSH_R = crate::FieldReader<u8, u8>;
+pub type CRFSH_R = crate::FieldReader;
 #[doc = "Field `CRFSH` writer - Initialization refresh commands counter"]
-pub type CRFSH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMCON_SPEC, u8, u8, 4, O>;
+pub type CRFSH_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 4, O>;
 #[doc = "Field `CRSC` reader - Mode register set-up time"]
-pub type CRSC_R = crate::FieldReader<u8, u8>;
+pub type CRSC_R = crate::FieldReader;
 #[doc = "Field `CRSC` writer - Mode register set-up time"]
-pub type CRSC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMCON_SPEC, u8, u8, 2, O>;
+pub type CRSC_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 2, O>;
 #[doc = "Field `CRP` reader - Row precharge time counter"]
-pub type CRP_R = crate::FieldReader<u8, u8>;
+pub type CRP_R = crate::FieldReader;
 #[doc = "Field `CRP` writer - Row precharge time counter"]
-pub type CRP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMCON_SPEC, u8, u8, 2, O>;
+pub type CRP_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 2, O>;
 #[doc = "Field `AWIDTH` reader - Width of column address"]
-pub type AWIDTH_R = crate::FieldReader<u8, AWIDTH_A>;
+pub type AWIDTH_R = crate::FieldReader<AWIDTH_A>;
 #[doc = "Width of column address\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -70,6 +70,9 @@ impl From<AWIDTH_A> for u8 {
     fn from(variant: AWIDTH_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for AWIDTH_A {
+    type Ux = u8;
 }
 impl AWIDTH_R {
     #[doc = "Get enumerated values variant"]
@@ -105,7 +108,7 @@ impl AWIDTH_R {
     }
 }
 #[doc = "Field `AWIDTH` writer - Width of column address"]
-pub type AWIDTH_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SDRMCON_SPEC, u8, AWIDTH_A, 2, O>;
+pub type AWIDTH_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SDRMCON_SPEC, 2, O, AWIDTH_A>;
 impl<'a, const O: u8> AWIDTH_W<'a, O> {
     #[doc = "do not use"]
     #[inline(always)]
@@ -129,15 +132,15 @@ impl<'a, const O: u8> AWIDTH_W<'a, O> {
     }
 }
 #[doc = "Field `CRCD` reader - Row to column delay counter"]
-pub type CRCD_R = crate::FieldReader<u8, u8>;
+pub type CRCD_R = crate::FieldReader;
 #[doc = "Field `CRCD` writer - Row to column delay counter"]
-pub type CRCD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMCON_SPEC, u8, u8, 2, O>;
+pub type CRCD_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 2, O>;
 #[doc = "Field `CRC` reader - Row cycle time counter"]
-pub type CRC_R = crate::FieldReader<u8, u8>;
+pub type CRC_R = crate::FieldReader;
 #[doc = "Field `CRC` writer - Row cycle time counter"]
-pub type CRC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMCON_SPEC, u8, u8, 3, O>;
+pub type CRC_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 3, O>;
 #[doc = "Field `ROWM` reader - Mask for row tag"]
-pub type ROWM_R = crate::FieldReader<u8, ROWM_A>;
+pub type ROWM_R = crate::FieldReader<ROWM_A>;
 #[doc = "Mask for row tag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -158,6 +161,9 @@ impl From<ROWM_A> for u8 {
     fn from(variant: ROWM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ROWM_A {
+    type Ux = u8;
 }
 impl ROWM_R {
     #[doc = "Get enumerated values variant"]
@@ -199,7 +205,7 @@ impl ROWM_R {
     }
 }
 #[doc = "Field `ROWM` writer - Mask for row tag"]
-pub type ROWM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMCON_SPEC, u8, ROWM_A, 3, O>;
+pub type ROWM_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 3, O, ROWM_A>;
 impl<'a, const O: u8> ROWM_W<'a, O> {
     #[doc = "Address bit 26 to 9"]
     #[inline(always)]
@@ -228,7 +234,7 @@ impl<'a, const O: u8> ROWM_W<'a, O> {
     }
 }
 #[doc = "Field `BANKM` reader - Mask for bank tag"]
-pub type BANKM_R = crate::FieldReader<u8, BANKM_A>;
+pub type BANKM_R = crate::FieldReader<BANKM_A>;
 #[doc = "Mask for bank tag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -253,6 +259,9 @@ impl From<BANKM_A> for u8 {
     fn from(variant: BANKM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for BANKM_A {
+    type Ux = u8;
 }
 impl BANKM_R {
     #[doc = "Get enumerated values variant"]
@@ -306,7 +315,7 @@ impl BANKM_R {
     }
 }
 #[doc = "Field `BANKM` writer - Mask for bank tag"]
-pub type BANKM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMCON_SPEC, u8, BANKM_A, 3, O>;
+pub type BANKM_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 3, O, BANKM_A>;
 impl<'a, const O: u8> BANKM_W<'a, O> {
     #[doc = "Address bit 21 to 20"]
     #[inline(always)]
@@ -345,9 +354,9 @@ impl<'a, const O: u8> BANKM_W<'a, O> {
     }
 }
 #[doc = "Field `CRCE` reader - Row cycle time counter extension"]
-pub type CRCE_R = crate::FieldReader<u8, u8>;
+pub type CRCE_R = crate::FieldReader;
 #[doc = "Field `CRCE` writer - Row cycle time counter extension"]
-pub type CRCE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SDRMCON_SPEC, u8, u8, 3, O>;
+pub type CRCE_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 3, O>;
 #[doc = "Field `CLKDIS` reader - Disable SDRAM clock output"]
 pub type CLKDIS_R = crate::BitReader<CLKDIS_A>;
 #[doc = "Disable SDRAM clock output\n\nValue on reset: 0"]
@@ -385,7 +394,7 @@ impl CLKDIS_R {
     }
 }
 #[doc = "Field `CLKDIS` writer - Disable SDRAM clock output"]
-pub type CLKDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SDRMCON_SPEC, CLKDIS_A, O>;
+pub type CLKDIS_W<'a, const O: u8> = crate::BitWriter<'a, SDRMCON_SPEC, O, CLKDIS_A>;
 impl<'a, const O: u8> CLKDIS_W<'a, O> {
     #[doc = "clock enabled"]
     #[inline(always)]
@@ -399,7 +408,7 @@ impl<'a, const O: u8> CLKDIS_W<'a, O> {
     }
 }
 #[doc = "Field `PWR_MODE` reader - Power Save Mode used for gated clock mode"]
-pub type PWR_MODE_R = crate::FieldReader<u8, PWR_MODE_A>;
+pub type PWR_MODE_R = crate::FieldReader<PWR_MODE_A>;
 #[doc = "Power Save Mode used for gated clock mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -418,6 +427,9 @@ impl From<PWR_MODE_A> for u8 {
     fn from(variant: PWR_MODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PWR_MODE_A {
+    type Ux = u8;
 }
 impl PWR_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -453,7 +465,7 @@ impl PWR_MODE_R {
     }
 }
 #[doc = "Field `PWR_MODE` writer - Power Save Mode used for gated clock mode"]
-pub type PWR_MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SDRMCON_SPEC, u8, PWR_MODE_A, 2, O>;
+pub type PWR_MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SDRMCON_SPEC, 2, O, PWR_MODE_A>;
 impl<'a, const O: u8> PWR_MODE_W<'a, O> {
     #[doc = "precharge before clock stop (default after reset)"]
     #[inline(always)]
@@ -513,7 +525,7 @@ impl SDCMSEL_R {
     }
 }
 #[doc = "Field `SDCMSEL` writer - SDRAM clock mode select"]
-pub type SDCMSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SDRMCON_SPEC, SDCMSEL_A, O>;
+pub type SDCMSEL_W<'a, const O: u8> = crate::BitWriter<'a, SDRMCON_SPEC, O, SDCMSEL_A>;
 impl<'a, const O: u8> SDCMSEL_W<'a, O> {
     #[doc = "clock disabled between accesses"]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl GSC40_R {
     }
 }
 #[doc = "Field `GSC40` writer - Global Start Control CCU40"]
-pub type GSC40_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCUCON_SPEC, GSC40_A, O>;
+pub type GSC40_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O, GSC40_A>;
 impl<'a, const O: u8> GSC40_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl GSC41_R {
     }
 }
 #[doc = "Field `GSC41` writer - Global Start Control CCU41"]
-pub type GSC41_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCUCON_SPEC, GSC41_A, O>;
+pub type GSC41_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O, GSC41_A>;
 impl<'a, const O: u8> GSC41_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl GSC42_R {
     }
 }
 #[doc = "Field `GSC42` writer - Global Start Control CCU42"]
-pub type GSC42_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCUCON_SPEC, GSC42_A, O>;
+pub type GSC42_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O, GSC42_A>;
 impl<'a, const O: u8> GSC42_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl GSC43_R {
     }
 }
 #[doc = "Field `GSC43` writer - Global Start Control CCU43"]
-pub type GSC43_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCUCON_SPEC, GSC43_A, O>;
+pub type GSC43_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O, GSC43_A>;
 impl<'a, const O: u8> GSC43_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl GSC80_R {
     }
 }
 #[doc = "Field `GSC80` writer - Global Start Control CCU80"]
-pub type GSC80_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCUCON_SPEC, GSC80_A, O>;
+pub type GSC80_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O, GSC80_A>;
 impl<'a, const O: u8> GSC80_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl GSC81_R {
     }
 }
 #[doc = "Field `GSC81` writer - Global Start Control CCU81"]
-pub type GSC81_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCUCON_SPEC, GSC81_A, O>;
+pub type GSC81_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O, GSC81_A>;
 impl<'a, const O: u8> GSC81_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]

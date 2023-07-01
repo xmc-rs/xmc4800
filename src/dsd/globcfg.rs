@@ -35,7 +35,7 @@ impl From<crate::W<GLOBCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `MCSEL` reader - Modulator Clock Select"]
-pub type MCSEL_R = crate::FieldReader<u8, MCSEL_A>;
+pub type MCSEL_R = crate::FieldReader<MCSEL_A>;
 #[doc = "Modulator Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -50,6 +50,9 @@ impl From<MCSEL_A> for u8 {
     fn from(variant: MCSEL_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for MCSEL_A {
+    type Ux = u8;
 }
 impl MCSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +76,7 @@ impl MCSEL_R {
     }
 }
 #[doc = "Field `MCSEL` writer - Modulator Clock Select"]
-pub type MCSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GLOBCFG_SPEC, u8, MCSEL_A, 3, O>;
+pub type MCSEL_W<'a, const O: u8> = crate::FieldWriter<'a, GLOBCFG_SPEC, 3, O, MCSEL_A>;
 impl<'a, const O: u8> MCSEL_W<'a, O> {
     #[doc = "Internal clock off, no source selected"]
     #[inline(always)]

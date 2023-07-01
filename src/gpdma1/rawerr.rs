@@ -35,21 +35,21 @@ impl From<crate::W<RAWERR_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0` reader - Raw Interrupt Status for channel 0"]
-pub type CH0_R = crate::BitReader<bool>;
+pub type CH0_R = crate::BitReader;
 #[doc = "Field `CH0` writer - Raw Interrupt Status for channel 0"]
-pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAWERR_SPEC, bool, O>;
+pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, RAWERR_SPEC, O>;
 #[doc = "Field `CH1` reader - Raw Interrupt Status for channel 1"]
-pub type CH1_R = crate::BitReader<bool>;
+pub type CH1_R = crate::BitReader;
 #[doc = "Field `CH1` writer - Raw Interrupt Status for channel 1"]
-pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAWERR_SPEC, bool, O>;
+pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, RAWERR_SPEC, O>;
 #[doc = "Field `CH2` reader - Raw Interrupt Status for channel 2"]
-pub type CH2_R = crate::BitReader<bool>;
+pub type CH2_R = crate::BitReader;
 #[doc = "Field `CH2` writer - Raw Interrupt Status for channel 2"]
-pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAWERR_SPEC, bool, O>;
+pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, RAWERR_SPEC, O>;
 #[doc = "Field `CH3` reader - Raw Interrupt Status for channel 3"]
-pub type CH3_R = crate::BitReader<bool>;
+pub type CH3_R = crate::BitReader;
 #[doc = "Field `CH3` writer - Raw Interrupt Status for channel 3"]
-pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, RAWERR_SPEC, bool, O>;
+pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, RAWERR_SPEC, O>;
 impl R {
     #[doc = "Bit 0 - Raw Interrupt Status for channel 0"]
     #[inline(always)]

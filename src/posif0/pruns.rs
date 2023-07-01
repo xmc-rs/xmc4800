@@ -20,7 +20,7 @@ impl From<crate::W<PRUNS_SPEC>> for W {
     }
 }
 #[doc = "Field `SRB` writer - Set Run bit"]
-pub type SRB_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRUNS_SPEC, bool, O>;
+pub type SRB_W<'a, const O: u8> = crate::BitWriter<'a, PRUNS_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Set Run bit"]
     #[inline(always)]

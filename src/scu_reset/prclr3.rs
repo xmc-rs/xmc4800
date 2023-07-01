@@ -34,7 +34,7 @@ impl From<EBURS_AW> for bool {
     }
 }
 #[doc = "Field `EBURS` writer - EBU Reset Assert"]
-pub type EBURS_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRCLR3_SPEC, EBURS_AW, O>;
+pub type EBURS_W<'a, const O: u8> = crate::BitWriter<'a, PRCLR3_SPEC, O, EBURS_AW>;
 impl<'a, const O: u8> EBURS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

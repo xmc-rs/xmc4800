@@ -35,7 +35,7 @@ impl From<crate::W<DICFG_SPEC>> for W {
     }
 }
 #[doc = "Field `DSRC` reader - Input Data Source Select"]
-pub type DSRC_R = crate::FieldReader<u8, DSRC_A>;
+pub type DSRC_R = crate::FieldReader<DSRC_A>;
 #[doc = "Input Data Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -56,6 +56,9 @@ impl From<DSRC_A> for u8 {
     fn from(variant: DSRC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DSRC_A {
+    type Ux = u8;
 }
 impl DSRC_R {
     #[doc = "Get enumerated values variant"]
@@ -97,7 +100,7 @@ impl DSRC_R {
     }
 }
 #[doc = "Field `DSRC` writer - Input Data Source Select"]
-pub type DSRC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DICFG_SPEC, u8, DSRC_A, 4, O>;
+pub type DSRC_W<'a, const O: u8> = crate::FieldWriter<'a, DICFG_SPEC, 4, O, DSRC_A>;
 impl<'a, const O: u8> DSRC_W<'a, O> {
     #[doc = "Disconnected"]
     #[inline(always)]
@@ -140,7 +143,7 @@ impl From<DSWC_AW> for bool {
     }
 }
 #[doc = "Field `DSWC` writer - Write Control for Data Selection"]
-pub type DSWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DICFG_SPEC, DSWC_AW, O>;
+pub type DSWC_W<'a, const O: u8> = crate::BitWriter<'a, DICFG_SPEC, O, DSWC_AW>;
 impl<'a, const O: u8> DSWC_W<'a, O> {
     #[doc = "No write access to data parameters"]
     #[inline(always)]
@@ -154,7 +157,7 @@ impl<'a, const O: u8> DSWC_W<'a, O> {
     }
 }
 #[doc = "Field `ITRMODE` reader - Integrator Trigger Mode"]
-pub type ITRMODE_R = crate::FieldReader<u8, ITRMODE_A>;
+pub type ITRMODE_R = crate::FieldReader<ITRMODE_A>;
 #[doc = "Integrator Trigger Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -173,6 +176,9 @@ impl From<ITRMODE_A> for u8 {
     fn from(variant: ITRMODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ITRMODE_A {
+    type Ux = u8;
 }
 impl ITRMODE_R {
     #[doc = "Get enumerated values variant"]
@@ -208,7 +214,7 @@ impl ITRMODE_R {
     }
 }
 #[doc = "Field `ITRMODE` writer - Integrator Trigger Mode"]
-pub type ITRMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DICFG_SPEC, u8, ITRMODE_A, 2, O>;
+pub type ITRMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DICFG_SPEC, 2, O, ITRMODE_A>;
 impl<'a, const O: u8> ITRMODE_W<'a, O> {
     #[doc = "No integration trigger, integrator bypassed, INTEN = 0 all the time"]
     #[inline(always)]
@@ -232,7 +238,7 @@ impl<'a, const O: u8> ITRMODE_W<'a, O> {
     }
 }
 #[doc = "Field `TSTRMODE` reader - Timestamp Trigger Mode"]
-pub type TSTRMODE_R = crate::FieldReader<u8, TSTRMODE_A>;
+pub type TSTRMODE_R = crate::FieldReader<TSTRMODE_A>;
 #[doc = "Timestamp Trigger Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -251,6 +257,9 @@ impl From<TSTRMODE_A> for u8 {
     fn from(variant: TSTRMODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TSTRMODE_A {
+    type Ux = u8;
 }
 impl TSTRMODE_R {
     #[doc = "Get enumerated values variant"]
@@ -286,7 +295,7 @@ impl TSTRMODE_R {
     }
 }
 #[doc = "Field `TSTRMODE` writer - Timestamp Trigger Mode"]
-pub type TSTRMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DICFG_SPEC, u8, TSTRMODE_A, 2, O>;
+pub type TSTRMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, DICFG_SPEC, 2, O, TSTRMODE_A>;
 impl<'a, const O: u8> TSTRMODE_W<'a, O> {
     #[doc = "No timestamp trigger"]
     #[inline(always)]
@@ -310,9 +319,9 @@ impl<'a, const O: u8> TSTRMODE_W<'a, O> {
     }
 }
 #[doc = "Field `TRSEL` reader - Trigger Select"]
-pub type TRSEL_R = crate::FieldReader<u8, u8>;
+pub type TRSEL_R = crate::FieldReader;
 #[doc = "Field `TRSEL` writer - Trigger Select"]
-pub type TRSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DICFG_SPEC, u8, u8, 3, O>;
+pub type TRSEL_W<'a, const O: u8> = crate::FieldWriter<'a, DICFG_SPEC, 3, O>;
 #[doc = "Write Control for Trigger Parameters\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRWC_AW {
@@ -328,7 +337,7 @@ impl From<TRWC_AW> for bool {
     }
 }
 #[doc = "Field `TRWC` writer - Write Control for Trigger Parameters"]
-pub type TRWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DICFG_SPEC, TRWC_AW, O>;
+pub type TRWC_W<'a, const O: u8> = crate::BitWriter<'a, DICFG_SPEC, O, TRWC_AW>;
 impl<'a, const O: u8> TRWC_W<'a, O> {
     #[doc = "No write access to trigger parameters"]
     #[inline(always)]
@@ -342,7 +351,7 @@ impl<'a, const O: u8> TRWC_W<'a, O> {
     }
 }
 #[doc = "Field `CSRC` reader - Sample Clock Source Select"]
-pub type CSRC_R = crate::FieldReader<u8, CSRC_A>;
+pub type CSRC_R = crate::FieldReader<CSRC_A>;
 #[doc = "Sample Clock Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -363,6 +372,9 @@ impl From<CSRC_A> for u8 {
     fn from(variant: CSRC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CSRC_A {
+    type Ux = u8;
 }
 impl CSRC_R {
     #[doc = "Get enumerated values variant"]
@@ -404,7 +416,7 @@ impl CSRC_R {
     }
 }
 #[doc = "Field `CSRC` writer - Sample Clock Source Select"]
-pub type CSRC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DICFG_SPEC, u8, CSRC_A, 4, O>;
+pub type CSRC_W<'a, const O: u8> = crate::FieldWriter<'a, DICFG_SPEC, 4, O, CSRC_A>;
 impl<'a, const O: u8> CSRC_W<'a, O> {
     #[doc = "External, from input A"]
     #[inline(always)]
@@ -433,7 +445,7 @@ impl<'a, const O: u8> CSRC_W<'a, O> {
     }
 }
 #[doc = "Field `STROBE` reader - Data Strobe Generatoion Mode"]
-pub type STROBE_R = crate::FieldReader<u8, STROBE_A>;
+pub type STROBE_R = crate::FieldReader<STROBE_A>;
 #[doc = "Data Strobe Generatoion Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -456,6 +468,9 @@ impl From<STROBE_A> for u8 {
     fn from(variant: STROBE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for STROBE_A {
+    type Ux = u8;
 }
 impl STROBE_R {
     #[doc = "Get enumerated values variant"]
@@ -503,7 +518,7 @@ impl STROBE_R {
     }
 }
 #[doc = "Field `STROBE` writer - Data Strobe Generatoion Mode"]
-pub type STROBE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DICFG_SPEC, u8, STROBE_A, 4, O>;
+pub type STROBE_W<'a, const O: u8> = crate::FieldWriter<'a, DICFG_SPEC, 4, O, STROBE_A>;
 impl<'a, const O: u8> STROBE_W<'a, O> {
     #[doc = "No data strobe"]
     #[inline(always)]
@@ -551,7 +566,7 @@ impl From<SCWC_AW> for bool {
     }
 }
 #[doc = "Field `SCWC` writer - Write Control for Strobe/Clock Selection"]
-pub type SCWC_W<'a, const O: u8> = crate::BitWriter<'a, u32, DICFG_SPEC, SCWC_AW, O>;
+pub type SCWC_W<'a, const O: u8> = crate::BitWriter<'a, DICFG_SPEC, O, SCWC_AW>;
 impl<'a, const O: u8> SCWC_W<'a, O> {
     #[doc = "No write access to strobe/clock parameters"]
     #[inline(always)]

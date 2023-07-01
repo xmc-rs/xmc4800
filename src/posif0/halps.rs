@@ -35,13 +35,13 @@ impl From<crate::W<HALPS_SPEC>> for W {
     }
 }
 #[doc = "Field `HCPS` reader - Shadow Hall Current Pattern"]
-pub type HCPS_R = crate::FieldReader<u8, u8>;
+pub type HCPS_R = crate::FieldReader;
 #[doc = "Field `HCPS` writer - Shadow Hall Current Pattern"]
-pub type HCPS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HALPS_SPEC, u8, u8, 3, O>;
+pub type HCPS_W<'a, const O: u8> = crate::FieldWriter<'a, HALPS_SPEC, 3, O>;
 #[doc = "Field `HEPS` reader - Shadow Hall expected Pattern"]
-pub type HEPS_R = crate::FieldReader<u8, u8>;
+pub type HEPS_R = crate::FieldReader;
 #[doc = "Field `HEPS` writer - Shadow Hall expected Pattern"]
-pub type HEPS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HALPS_SPEC, u8, u8, 3, O>;
+pub type HEPS_W<'a, const O: u8> = crate::FieldWriter<'a, HALPS_SPEC, 3, O>;
 impl R {
     #[doc = "Bits 0:2 - Shadow Hall Current Pattern"]
     #[inline(always)]

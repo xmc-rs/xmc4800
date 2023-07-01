@@ -14,7 +14,7 @@ impl From<crate::R<MCM_SPEC>> for R {
     }
 }
 #[doc = "Field `MCMP` reader - Multi-Channel Pattern"]
-pub type MCMP_R = crate::FieldReader<u16, u16>;
+pub type MCMP_R = crate::FieldReader<u16>;
 impl R {
     #[doc = "Bits 0:15 - Multi-Channel Pattern"]
     #[inline(always)]

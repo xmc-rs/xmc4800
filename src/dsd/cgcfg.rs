@@ -35,7 +35,7 @@ impl From<crate::W<CGCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `CGMOD` reader - Carrier Generator Operating Mode"]
-pub type CGMOD_R = crate::FieldReader<u8, CGMOD_A>;
+pub type CGMOD_R = crate::FieldReader<CGMOD_A>;
 #[doc = "Carrier Generator Operating Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<CGMOD_A> for u8 {
     fn from(variant: CGMOD_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CGMOD_A {
+    type Ux = u8;
 }
 impl CGMOD_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl CGMOD_R {
     }
 }
 #[doc = "Field `CGMOD` writer - Carrier Generator Operating Mode"]
-pub type CGMOD_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CGCFG_SPEC, u8, CGMOD_A, 2, O>;
+pub type CGMOD_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CGCFG_SPEC, 2, O, CGMOD_A>;
 impl<'a, const O: u8> CGMOD_W<'a, O> {
     #[doc = "Stopped"]
     #[inline(always)]
@@ -149,7 +152,7 @@ impl BREV_R {
     }
 }
 #[doc = "Field `BREV` writer - Bit-Reverse PWM Generation"]
-pub type BREV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGCFG_SPEC, BREV_A, O>;
+pub type BREV_W<'a, const O: u8> = crate::BitWriter<'a, CGCFG_SPEC, O, BREV_A>;
 impl<'a, const O: u8> BREV_W<'a, O> {
     #[doc = "Normal mode"]
     #[inline(always)]
@@ -199,7 +202,7 @@ impl SIGPOL_R {
     }
 }
 #[doc = "Field `SIGPOL` writer - Signal Polarity"]
-pub type SIGPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGCFG_SPEC, SIGPOL_A, O>;
+pub type SIGPOL_W<'a, const O: u8> = crate::BitWriter<'a, CGCFG_SPEC, O, SIGPOL_A>;
 impl<'a, const O: u8> SIGPOL_W<'a, O> {
     #[doc = "Normal: carrier signal begins with +1"]
     #[inline(always)]
@@ -213,7 +216,7 @@ impl<'a, const O: u8> SIGPOL_W<'a, O> {
     }
 }
 #[doc = "Field `DIVCG` reader - Divider Factor for the PWM Pattern Signal Generator"]
-pub type DIVCG_R = crate::FieldReader<u8, DIVCG_A>;
+pub type DIVCG_R = crate::FieldReader<DIVCG_A>;
 #[doc = "Divider Factor for the PWM Pattern Signal Generator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -232,6 +235,9 @@ impl From<DIVCG_A> for u8 {
     fn from(variant: DIVCG_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for DIVCG_A {
+    type Ux = u8;
 }
 impl DIVCG_R {
     #[doc = "Get enumerated values variant"]
@@ -267,7 +273,7 @@ impl DIVCG_R {
     }
 }
 #[doc = "Field `DIVCG` writer - Divider Factor for the PWM Pattern Signal Generator"]
-pub type DIVCG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CGCFG_SPEC, u8, DIVCG_A, 4, O>;
+pub type DIVCG_W<'a, const O: u8> = crate::FieldWriter<'a, CGCFG_SPEC, 4, O, DIVCG_A>;
 impl<'a, const O: u8> DIVCG_W<'a, O> {
     #[doc = "fCG = fCLK / 2"]
     #[inline(always)]
@@ -327,9 +333,9 @@ impl RUN_R {
     }
 }
 #[doc = "Field `BITCOUNT` reader - Bit Counter"]
-pub type BITCOUNT_R = crate::FieldReader<u8, u8>;
+pub type BITCOUNT_R = crate::FieldReader;
 #[doc = "Field `STEPCOUNT` reader - Step Counter"]
-pub type STEPCOUNT_R = crate::FieldReader<u8, u8>;
+pub type STEPCOUNT_R = crate::FieldReader;
 #[doc = "Field `STEPS` reader - Step Counter Sign"]
 pub type STEPS_R = crate::BitReader<STEPS_A>;
 #[doc = "Step Counter Sign\n\nValue on reset: 0"]

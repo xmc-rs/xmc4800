@@ -35,11 +35,11 @@ impl From<crate::W<FCFGC_SPEC>> for W {
     }
 }
 #[doc = "Field `CFMDF` reader - CIC Filter (Main Chain) Decimation Factor"]
-pub type CFMDF_R = crate::FieldReader<u8, u8>;
+pub type CFMDF_R = crate::FieldReader;
 #[doc = "Field `CFMDF` writer - CIC Filter (Main Chain) Decimation Factor"]
-pub type CFMDF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCFGC_SPEC, u8, u8, 8, O>;
+pub type CFMDF_W<'a, const O: u8> = crate::FieldWriter<'a, FCFGC_SPEC, 8, O>;
 #[doc = "Field `CFMC` reader - CIC Filter (Main Chain) Configuration"]
-pub type CFMC_R = crate::FieldReader<u8, CFMC_A>;
+pub type CFMC_R = crate::FieldReader<CFMC_A>;
 #[doc = "CIC Filter (Main Chain) Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -58,6 +58,9 @@ impl From<CFMC_A> for u8 {
     fn from(variant: CFMC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CFMC_A {
+    type Ux = u8;
 }
 impl CFMC_R {
     #[doc = "Get enumerated values variant"]
@@ -93,7 +96,7 @@ impl CFMC_R {
     }
 }
 #[doc = "Field `CFMC` writer - CIC Filter (Main Chain) Configuration"]
-pub type CFMC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, FCFGC_SPEC, u8, CFMC_A, 2, O>;
+pub type CFMC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, FCFGC_SPEC, 2, O, CFMC_A>;
 impl<'a, const O: u8> CFMC_W<'a, O> {
     #[doc = "CIC1"]
     #[inline(always)]
@@ -153,7 +156,7 @@ impl CFEN_R {
     }
 }
 #[doc = "Field `CFEN` writer - CIC Filter Enable"]
-pub type CFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCFGC_SPEC, CFEN_A, O>;
+pub type CFEN_W<'a, const O: u8> = crate::BitWriter<'a, FCFGC_SPEC, O, CFEN_A>;
 impl<'a, const O: u8> CFEN_W<'a, O> {
     #[doc = "CIC filter disabled and bypassed"]
     #[inline(always)]
@@ -167,7 +170,7 @@ impl<'a, const O: u8> CFEN_W<'a, O> {
     }
 }
 #[doc = "Field `SRGM` reader - Service Request Generation Main Chain"]
-pub type SRGM_R = crate::FieldReader<u8, SRGM_A>;
+pub type SRGM_R = crate::FieldReader<SRGM_A>;
 #[doc = "Service Request Generation Main Chain\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -182,6 +185,9 @@ impl From<SRGM_A> for u8 {
     fn from(variant: SRGM_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SRGM_A {
+    type Ux = u8;
 }
 impl SRGM_R {
     #[doc = "Get enumerated values variant"]
@@ -205,7 +211,7 @@ impl SRGM_R {
     }
 }
 #[doc = "Field `SRGM` writer - Service Request Generation Main Chain"]
-pub type SRGM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCFGC_SPEC, u8, SRGM_A, 2, O>;
+pub type SRGM_W<'a, const O: u8> = crate::FieldWriter<'a, FCFGC_SPEC, 2, O, SRGM_A>;
 impl<'a, const O: u8> SRGM_W<'a, O> {
     #[doc = "Never, service requests disabled"]
     #[inline(always)]
@@ -219,11 +225,11 @@ impl<'a, const O: u8> SRGM_W<'a, O> {
     }
 }
 #[doc = "Field `CFMSV` reader - CIC Filter (Main Chain) Start Value"]
-pub type CFMSV_R = crate::FieldReader<u8, u8>;
+pub type CFMSV_R = crate::FieldReader;
 #[doc = "Field `CFMSV` writer - CIC Filter (Main Chain) Start Value"]
-pub type CFMSV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FCFGC_SPEC, u8, u8, 8, O>;
+pub type CFMSV_W<'a, const O: u8> = crate::FieldWriter<'a, FCFGC_SPEC, 8, O>;
 #[doc = "Field `CFMDCNT` reader - CIC Filter (Main Chain) Decimation Counter"]
-pub type CFMDCNT_R = crate::FieldReader<u8, u8>;
+pub type CFMDCNT_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:7 - CIC Filter (Main Chain) Decimation Factor"]
     #[inline(always)]

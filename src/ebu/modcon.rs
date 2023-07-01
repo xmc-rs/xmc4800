@@ -35,9 +35,9 @@ impl From<crate::W<MODCON_SPEC>> for W {
     }
 }
 #[doc = "Field `STS` reader - Memory Status Bit"]
-pub type STS_R = crate::BitReader<bool>;
+pub type STS_R = crate::BitReader;
 #[doc = "Field `LCKABRT` reader - Lock Abort"]
-pub type LCKABRT_R = crate::BitReader<bool>;
+pub type LCKABRT_R = crate::BitReader;
 #[doc = "Field `SDTRI` reader - SDRAM Tristate"]
 pub type SDTRI_R = crate::BitReader<SDTRI_A>;
 #[doc = "SDRAM Tristate\n\nValue on reset: 0"]
@@ -75,7 +75,7 @@ impl SDTRI_R {
     }
 }
 #[doc = "Field `SDTRI` writer - SDRAM Tristate"]
-pub type SDTRI_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODCON_SPEC, SDTRI_A, O>;
+pub type SDTRI_W<'a, const O: u8> = crate::BitWriter<'a, MODCON_SPEC, O, SDTRI_A>;
 impl<'a, const O: u8> SDTRI_W<'a, O> {
     #[doc = "SDRAM control signals are driven by the EBU when the EBU does not own the external bus. SDRAM cannot be shared."]
     #[inline(always)]
@@ -125,7 +125,7 @@ impl EXTLOCK_R {
     }
 }
 #[doc = "Field `EXTLOCK` writer - External Bus Lock Control"]
-pub type EXTLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODCON_SPEC, EXTLOCK_A, O>;
+pub type EXTLOCK_W<'a, const O: u8> = crate::BitWriter<'a, MODCON_SPEC, O, EXTLOCK_A>;
 impl<'a, const O: u8> EXTLOCK_W<'a, O> {
     #[doc = "External bus is not locked after the EBU gains ownership"]
     #[inline(always)]
@@ -175,7 +175,7 @@ impl ARBSYNC_R {
     }
 }
 #[doc = "Field `ARBSYNC` writer - Arbitration Signal Synchronization Control"]
-pub type ARBSYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODCON_SPEC, ARBSYNC_A, O>;
+pub type ARBSYNC_W<'a, const O: u8> = crate::BitWriter<'a, MODCON_SPEC, O, ARBSYNC_A>;
 impl<'a, const O: u8> ARBSYNC_W<'a, O> {
     #[doc = "Arbitration inputs are synchronous"]
     #[inline(always)]
@@ -189,7 +189,7 @@ impl<'a, const O: u8> ARBSYNC_W<'a, O> {
     }
 }
 #[doc = "Field `ARBMODE` reader - Arbitration Mode Selection"]
-pub type ARBMODE_R = crate::FieldReader<u8, ARBMODE_A>;
+pub type ARBMODE_R = crate::FieldReader<ARBMODE_A>;
 #[doc = "Arbitration Mode Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -208,6 +208,9 @@ impl From<ARBMODE_A> for u8 {
     fn from(variant: ARBMODE_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ARBMODE_A {
+    type Ux = u8;
 }
 impl ARBMODE_R {
     #[doc = "Get enumerated values variant"]
@@ -243,7 +246,7 @@ impl ARBMODE_R {
     }
 }
 #[doc = "Field `ARBMODE` writer - Arbitration Mode Selection"]
-pub type ARBMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, MODCON_SPEC, u8, ARBMODE_A, 2, O>;
+pub type ARBMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, MODCON_SPEC, 2, O, ARBMODE_A>;
 impl<'a, const O: u8> ARBMODE_W<'a, O> {
     #[doc = "No Bus arbitration mode selected"]
     #[inline(always)]
@@ -267,7 +270,7 @@ impl<'a, const O: u8> ARBMODE_W<'a, O> {
     }
 }
 #[doc = "Field `TIMEOUTC` reader - Bus Time-out Control"]
-pub type TIMEOUTC_R = crate::FieldReader<u8, TIMEOUTC_A>;
+pub type TIMEOUTC_R = crate::FieldReader<TIMEOUTC_A>;
 #[doc = "Bus Time-out Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -284,6 +287,9 @@ impl From<TIMEOUTC_A> for u8 {
     fn from(variant: TIMEOUTC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for TIMEOUTC_A {
+    type Ux = u8;
 }
 impl TIMEOUTC_R {
     #[doc = "Get enumerated values variant"]
@@ -313,7 +319,7 @@ impl TIMEOUTC_R {
     }
 }
 #[doc = "Field `TIMEOUTC` writer - Bus Time-out Control"]
-pub type TIMEOUTC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODCON_SPEC, u8, TIMEOUTC_A, 8, O>;
+pub type TIMEOUTC_W<'a, const O: u8> = crate::FieldWriter<'a, MODCON_SPEC, 8, O, TIMEOUTC_A>;
 impl<'a, const O: u8> TIMEOUTC_W<'a, O> {
     #[doc = "Time-out is disabled."]
     #[inline(always)]
@@ -332,19 +338,19 @@ impl<'a, const O: u8> TIMEOUTC_W<'a, O> {
     }
 }
 #[doc = "Field `LOCKTIMEOUT` reader - Lock Timeout Counter Preload"]
-pub type LOCKTIMEOUT_R = crate::FieldReader<u8, u8>;
+pub type LOCKTIMEOUT_R = crate::FieldReader;
 #[doc = "Field `LOCKTIMEOUT` writer - Lock Timeout Counter Preload"]
-pub type LOCKTIMEOUT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODCON_SPEC, u8, u8, 8, O>;
+pub type LOCKTIMEOUT_W<'a, const O: u8> = crate::FieldWriter<'a, MODCON_SPEC, 8, O>;
 #[doc = "Field `GLOBALCS` reader - Global Chip Select Enable"]
-pub type GLOBALCS_R = crate::FieldReader<u8, u8>;
+pub type GLOBALCS_R = crate::FieldReader;
 #[doc = "Field `GLOBALCS` writer - Global Chip Select Enable"]
-pub type GLOBALCS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODCON_SPEC, u8, u8, 4, O>;
+pub type GLOBALCS_W<'a, const O: u8> = crate::FieldWriter<'a, MODCON_SPEC, 4, O>;
 #[doc = "Field `ACCSINH` reader - Access Inhibit request"]
-pub type ACCSINH_R = crate::BitReader<bool>;
+pub type ACCSINH_R = crate::BitReader;
 #[doc = "Field `ACCSINH` writer - Access Inhibit request"]
-pub type ACCSINH_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODCON_SPEC, bool, O>;
+pub type ACCSINH_W<'a, const O: u8> = crate::BitWriter<'a, MODCON_SPEC, O>;
 #[doc = "Field `ACCSINHACK` reader - Access inhibit acknowledge"]
-pub type ACCSINHACK_R = crate::BitReader<bool>;
+pub type ACCSINHACK_R = crate::BitReader;
 #[doc = "Field `ALE` reader - ALE Mode"]
 pub type ALE_R = crate::BitReader<ALE_A>;
 #[doc = "ALE Mode\n\nValue on reset: 0"]
@@ -382,7 +388,7 @@ impl ALE_R {
     }
 }
 #[doc = "Field `ALE` writer - ALE Mode"]
-pub type ALE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODCON_SPEC, ALE_A, O>;
+pub type ALE_W<'a, const O: u8> = crate::BitWriter<'a, MODCON_SPEC, O, ALE_A>;
 impl<'a, const O: u8> ALE_W<'a, O> {
     #[doc = "Output is ADV"]
     #[inline(always)]
