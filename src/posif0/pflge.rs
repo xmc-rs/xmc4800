@@ -71,7 +71,7 @@ impl ECHE_R {
     }
 }
 #[doc = "Field `ECHE` writer - Correct Hall Event Enable"]
-pub type ECHE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, ECHE_A, O>;
+pub type ECHE_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, ECHE_A>;
 impl<'a, const O: u8> ECHE_W<'a, O> {
     #[doc = "Correct Hall Event interrupt disabled"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl EWHE_R {
     }
 }
 #[doc = "Field `EWHE` writer - Wrong Hall Event Enable"]
-pub type EWHE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EWHE_A, O>;
+pub type EWHE_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, EWHE_A>;
 impl<'a, const O: u8> EWHE_W<'a, O> {
     #[doc = "Wrong Hall Event interrupt disabled"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl EHIE_R {
     }
 }
 #[doc = "Field `EHIE` writer - Hall Input Update Enable"]
-pub type EHIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EHIE_A, O>;
+pub type EHIE_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, EHIE_A>;
 impl<'a, const O: u8> EHIE_W<'a, O> {
     #[doc = "Update of the Hall Inputs interrupt is disabled"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl EMST_R {
     }
 }
 #[doc = "Field `EMST` writer - Multi-Channel pattern shadow transfer enable"]
-pub type EMST_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EMST_A, O>;
+pub type EMST_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, EMST_A>;
 impl<'a, const O: u8> EMST_W<'a, O> {
     #[doc = "Shadow transfer event interrupt disabled"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl EINDX_R {
     }
 }
 #[doc = "Field `EINDX` writer - Quadrature Index Event Enable"]
-pub type EINDX_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EINDX_A, O>;
+pub type EINDX_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, EINDX_A>;
 impl<'a, const O: u8> EINDX_W<'a, O> {
     #[doc = "Index event interrupt disabled"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl EERR_R {
     }
 }
 #[doc = "Field `EERR` writer - Quadrature Phase Error Enable"]
-pub type EERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EERR_A, O>;
+pub type EERR_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, EERR_A>;
 impl<'a, const O: u8> EERR_W<'a, O> {
     #[doc = "Phase error event interrupt disabled"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl ECNT_R {
     }
 }
 #[doc = "Field `ECNT` writer - Quadrature CLK interrupt Enable"]
-pub type ECNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, ECNT_A, O>;
+pub type ECNT_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, ECNT_A>;
 impl<'a, const O: u8> ECNT_W<'a, O> {
     #[doc = "Quadrature CLK event interrupt disabled"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl EDIR_R {
     }
 }
 #[doc = "Field `EDIR` writer - Quadrature direction change interrupt Enable"]
-pub type EDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EDIR_A, O>;
+pub type EDIR_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, EDIR_A>;
 impl<'a, const O: u8> EDIR_W<'a, O> {
     #[doc = "Direction change event interrupt disabled"]
     #[inline(always)]
@@ -471,7 +471,7 @@ impl EPCLK_R {
     }
 }
 #[doc = "Field `EPCLK` writer - Quadrature Period CLK interrupt Enable"]
-pub type EPCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, EPCLK_A, O>;
+pub type EPCLK_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, EPCLK_A>;
 impl<'a, const O: u8> EPCLK_W<'a, O> {
     #[doc = "Quadrature Period CLK event interrupt disabled"]
     #[inline(always)]
@@ -521,7 +521,7 @@ impl CHESEL_R {
     }
 }
 #[doc = "Field `CHESEL` writer - Correct Hall Event Service Request Selector"]
-pub type CHESEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, CHESEL_A, O>;
+pub type CHESEL_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, CHESEL_A>;
 impl<'a, const O: u8> CHESEL_W<'a, O> {
     #[doc = "Correct Hall Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
@@ -571,7 +571,7 @@ impl WHESEL_R {
     }
 }
 #[doc = "Field `WHESEL` writer - Wrong Hall Event Service Request Selector"]
-pub type WHESEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, WHESEL_A, O>;
+pub type WHESEL_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, WHESEL_A>;
 impl<'a, const O: u8> WHESEL_W<'a, O> {
     #[doc = "Wrong Hall Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
@@ -621,7 +621,7 @@ impl HIESEL_R {
     }
 }
 #[doc = "Field `HIESEL` writer - Hall Inputs Update Event Service Request Selector"]
-pub type HIESEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, HIESEL_A, O>;
+pub type HIESEL_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, HIESEL_A>;
 impl<'a, const O: u8> HIESEL_W<'a, O> {
     #[doc = "Hall Inputs Update Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
@@ -671,7 +671,7 @@ impl MSTSEL_R {
     }
 }
 #[doc = "Field `MSTSEL` writer - Multi-Channel pattern Update Event Service Request Selector"]
-pub type MSTSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, MSTSEL_A, O>;
+pub type MSTSEL_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, MSTSEL_A>;
 impl<'a, const O: u8> MSTSEL_W<'a, O> {
     #[doc = "Multi-Channel pattern Update Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
@@ -721,7 +721,7 @@ impl INDSEL_R {
     }
 }
 #[doc = "Field `INDSEL` writer - Quadrature Index Event Service Request Selector"]
-pub type INDSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, INDSEL_A, O>;
+pub type INDSEL_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, INDSEL_A>;
 impl<'a, const O: u8> INDSEL_W<'a, O> {
     #[doc = "Quadrature Index Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
@@ -771,7 +771,7 @@ impl ERRSEL_R {
     }
 }
 #[doc = "Field `ERRSEL` writer - Quadrature Phase Error Event Service Request Selector"]
-pub type ERRSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, ERRSEL_A, O>;
+pub type ERRSEL_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, ERRSEL_A>;
 impl<'a, const O: u8> ERRSEL_W<'a, O> {
     #[doc = "Quadrature Phase error Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
@@ -821,7 +821,7 @@ impl CNTSEL_R {
     }
 }
 #[doc = "Field `CNTSEL` writer - Quadrature Clock Event Service Request Selector"]
-pub type CNTSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, CNTSEL_A, O>;
+pub type CNTSEL_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, CNTSEL_A>;
 impl<'a, const O: u8> CNTSEL_W<'a, O> {
     #[doc = "Quadrature Clock Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
@@ -871,7 +871,7 @@ impl DIRSEL_R {
     }
 }
 #[doc = "Field `DIRSEL` writer - Quadrature Direction Update Event Service Request Selector"]
-pub type DIRSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, DIRSEL_A, O>;
+pub type DIRSEL_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, DIRSEL_A>;
 impl<'a, const O: u8> DIRSEL_W<'a, O> {
     #[doc = "Quadrature Direction Update Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]
@@ -921,7 +921,7 @@ impl PCLSEL_R {
     }
 }
 #[doc = "Field `PCLSEL` writer - Quadrature Period clock Event Service Request Selector"]
-pub type PCLSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PFLGE_SPEC, PCLSEL_A, O>;
+pub type PCLSEL_W<'a, const O: u8> = crate::BitWriter<'a, PFLGE_SPEC, O, PCLSEL_A>;
 impl<'a, const O: u8> PCLSEL_W<'a, O> {
     #[doc = "Quadrature Period clock Event interrupt forward to POSIFx.SR0"]
     #[inline(always)]

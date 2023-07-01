@@ -35,7 +35,7 @@ impl From<crate::W<BUSRAP2_SPEC>> for W {
     }
 }
 #[doc = "Field `RDDTACS` reader - Recovery Cycles between Different Regions"]
-pub type RDDTACS_R = crate::FieldReader<u8, RDDTACS_A>;
+pub type RDDTACS_R = crate::FieldReader<RDDTACS_A>;
 #[doc = "Recovery Cycles between Different Regions\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -54,6 +54,9 @@ impl From<RDDTACS_A> for u8 {
     fn from(variant: RDDTACS_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RDDTACS_A {
+    type Ux = u8;
 }
 impl RDDTACS_R {
     #[doc = "Get enumerated values variant"]
@@ -89,7 +92,7 @@ impl RDDTACS_R {
     }
 }
 #[doc = "Field `RDDTACS` writer - Recovery Cycles between Different Regions"]
-pub type RDDTACS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUSRAP2_SPEC, u8, RDDTACS_A, 4, O>;
+pub type RDDTACS_W<'a, const O: u8> = crate::FieldWriter<'a, BUSRAP2_SPEC, 4, O, RDDTACS_A>;
 impl<'a, const O: u8> RDDTACS_W<'a, O> {
     #[doc = "No Recovery Phase clock cycles available."]
     #[inline(always)]
@@ -113,7 +116,7 @@ impl<'a, const O: u8> RDDTACS_W<'a, O> {
     }
 }
 #[doc = "Field `RDRECOVC` reader - Recovery Cycles after Read Accesses"]
-pub type RDRECOVC_R = crate::FieldReader<u8, RDRECOVC_A>;
+pub type RDRECOVC_R = crate::FieldReader<RDRECOVC_A>;
 #[doc = "Recovery Cycles after Read Accesses\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -132,6 +135,9 @@ impl From<RDRECOVC_A> for u8 {
     fn from(variant: RDRECOVC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for RDRECOVC_A {
+    type Ux = u8;
 }
 impl RDRECOVC_R {
     #[doc = "Get enumerated values variant"]
@@ -167,7 +173,7 @@ impl RDRECOVC_R {
     }
 }
 #[doc = "Field `RDRECOVC` writer - Recovery Cycles after Read Accesses"]
-pub type RDRECOVC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUSRAP2_SPEC, u8, RDRECOVC_A, 3, O>;
+pub type RDRECOVC_W<'a, const O: u8> = crate::FieldWriter<'a, BUSRAP2_SPEC, 3, O, RDRECOVC_A>;
 impl<'a, const O: u8> RDRECOVC_W<'a, O> {
     #[doc = "No Recovery Phase clock cycles available."]
     #[inline(always)]
@@ -191,7 +197,7 @@ impl<'a, const O: u8> RDRECOVC_W<'a, O> {
     }
 }
 #[doc = "Field `WAITRDC` reader - Programmed Wait States for read accesses"]
-pub type WAITRDC_R = crate::FieldReader<u8, WAITRDC_A>;
+pub type WAITRDC_R = crate::FieldReader<WAITRDC_A>;
 #[doc = "Programmed Wait States for read accesses\n\nValue on reset: 31"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -212,6 +218,9 @@ impl From<WAITRDC_A> for u8 {
     fn from(variant: WAITRDC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for WAITRDC_A {
+    type Ux = u8;
 }
 impl WAITRDC_R {
     #[doc = "Get enumerated values variant"]
@@ -253,7 +262,7 @@ impl WAITRDC_R {
     }
 }
 #[doc = "Field `WAITRDC` writer - Programmed Wait States for read accesses"]
-pub type WAITRDC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUSRAP2_SPEC, u8, WAITRDC_A, 5, O>;
+pub type WAITRDC_W<'a, const O: u8> = crate::FieldWriter<'a, BUSRAP2_SPEC, 5, O, WAITRDC_A>;
 impl<'a, const O: u8> WAITRDC_W<'a, O> {
     #[doc = "1 wait state."]
     #[inline(always)]
@@ -282,11 +291,11 @@ impl<'a, const O: u8> WAITRDC_W<'a, O> {
     }
 }
 #[doc = "Field `DATAC` reader - Data Hold Cycles for Read Accesses"]
-pub type DATAC_R = crate::FieldReader<u8, u8>;
+pub type DATAC_R = crate::FieldReader;
 #[doc = "Field `DATAC` writer - Data Hold Cycles for Read Accesses"]
-pub type DATAC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUSRAP2_SPEC, u8, u8, 4, O>;
+pub type DATAC_W<'a, const O: u8> = crate::FieldWriter<'a, BUSRAP2_SPEC, 4, O>;
 #[doc = "Field `EXTCLOCK` reader - Frequency of external clock at pin BFCLKO"]
-pub type EXTCLOCK_R = crate::FieldReader<u8, EXTCLOCK_A>;
+pub type EXTCLOCK_R = crate::FieldReader<EXTCLOCK_A>;
 #[doc = "Frequency of external clock at pin BFCLKO\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -305,6 +314,9 @@ impl From<EXTCLOCK_A> for u8 {
     fn from(variant: EXTCLOCK_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXTCLOCK_A {
+    type Ux = u8;
 }
 impl EXTCLOCK_R {
     #[doc = "Get enumerated values variant"]
@@ -340,7 +352,7 @@ impl EXTCLOCK_R {
     }
 }
 #[doc = "Field `EXTCLOCK` writer - Frequency of external clock at pin BFCLKO"]
-pub type EXTCLOCK_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, BUSRAP2_SPEC, u8, EXTCLOCK_A, 2, O>;
+pub type EXTCLOCK_W<'a, const O: u8> = crate::FieldWriterSafe<'a, BUSRAP2_SPEC, 2, O, EXTCLOCK_A>;
 impl<'a, const O: u8> EXTCLOCK_W<'a, O> {
     #[doc = "Equal to INT_CLK frequency."]
     #[inline(always)]
@@ -364,7 +376,7 @@ impl<'a, const O: u8> EXTCLOCK_W<'a, O> {
     }
 }
 #[doc = "Field `EXTDATA` reader - Extended data"]
-pub type EXTDATA_R = crate::FieldReader<u8, EXTDATA_A>;
+pub type EXTDATA_R = crate::FieldReader<EXTDATA_A>;
 #[doc = "Extended data\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -383,6 +395,9 @@ impl From<EXTDATA_A> for u8 {
     fn from(variant: EXTDATA_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for EXTDATA_A {
+    type Ux = u8;
 }
 impl EXTDATA_R {
     #[doc = "Get enumerated values variant"]
@@ -418,7 +433,7 @@ impl EXTDATA_R {
     }
 }
 #[doc = "Field `EXTDATA` writer - Extended data"]
-pub type EXTDATA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, BUSRAP2_SPEC, u8, EXTDATA_A, 2, O>;
+pub type EXTDATA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, BUSRAP2_SPEC, 2, O, EXTDATA_A>;
 impl<'a, const O: u8> EXTDATA_W<'a, O> {
     #[doc = "external memory outputs data every BFCLK cycle"]
     #[inline(always)]
@@ -442,7 +457,7 @@ impl<'a, const O: u8> EXTDATA_W<'a, O> {
     }
 }
 #[doc = "Field `CMDDELAY` reader - Command Delay Cycles"]
-pub type CMDDELAY_R = crate::FieldReader<u8, CMDDELAY_A>;
+pub type CMDDELAY_R = crate::FieldReader<CMDDELAY_A>;
 #[doc = "Command Delay Cycles\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -461,6 +476,9 @@ impl From<CMDDELAY_A> for u8 {
     fn from(variant: CMDDELAY_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for CMDDELAY_A {
+    type Ux = u8;
 }
 impl CMDDELAY_R {
     #[doc = "Get enumerated values variant"]
@@ -496,7 +514,7 @@ impl CMDDELAY_R {
     }
 }
 #[doc = "Field `CMDDELAY` writer - Command Delay Cycles"]
-pub type CMDDELAY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUSRAP2_SPEC, u8, CMDDELAY_A, 4, O>;
+pub type CMDDELAY_W<'a, const O: u8> = crate::FieldWriter<'a, BUSRAP2_SPEC, 4, O, CMDDELAY_A>;
 impl<'a, const O: u8> CMDDELAY_W<'a, O> {
     #[doc = "0 clock cycle selected."]
     #[inline(always)]
@@ -520,7 +538,7 @@ impl<'a, const O: u8> CMDDELAY_W<'a, O> {
     }
 }
 #[doc = "Field `AHOLDC` reader - Address Hold Cycles"]
-pub type AHOLDC_R = crate::FieldReader<u8, AHOLDC_A>;
+pub type AHOLDC_R = crate::FieldReader<AHOLDC_A>;
 #[doc = "Address Hold Cycles\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -539,6 +557,9 @@ impl From<AHOLDC_A> for u8 {
     fn from(variant: AHOLDC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for AHOLDC_A {
+    type Ux = u8;
 }
 impl AHOLDC_R {
     #[doc = "Get enumerated values variant"]
@@ -574,7 +595,7 @@ impl AHOLDC_R {
     }
 }
 #[doc = "Field `AHOLDC` writer - Address Hold Cycles"]
-pub type AHOLDC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUSRAP2_SPEC, u8, AHOLDC_A, 4, O>;
+pub type AHOLDC_W<'a, const O: u8> = crate::FieldWriter<'a, BUSRAP2_SPEC, 4, O, AHOLDC_A>;
 impl<'a, const O: u8> AHOLDC_W<'a, O> {
     #[doc = "0 clock cycle selected"]
     #[inline(always)]
@@ -598,7 +619,7 @@ impl<'a, const O: u8> AHOLDC_W<'a, O> {
     }
 }
 #[doc = "Field `ADDRC` reader - Address Cycles"]
-pub type ADDRC_R = crate::FieldReader<u8, ADDRC_A>;
+pub type ADDRC_R = crate::FieldReader<ADDRC_A>;
 #[doc = "Address Cycles\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -617,6 +638,9 @@ impl From<ADDRC_A> for u8 {
     fn from(variant: ADDRC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for ADDRC_A {
+    type Ux = u8;
 }
 impl ADDRC_R {
     #[doc = "Get enumerated values variant"]
@@ -652,7 +676,7 @@ impl ADDRC_R {
     }
 }
 #[doc = "Field `ADDRC` writer - Address Cycles"]
-pub type ADDRC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUSRAP2_SPEC, u8, ADDRC_A, 4, O>;
+pub type ADDRC_W<'a, const O: u8> = crate::FieldWriter<'a, BUSRAP2_SPEC, 4, O, ADDRC_A>;
 impl<'a, const O: u8> ADDRC_W<'a, O> {
     #[doc = "1 clock cycle selected"]
     #[inline(always)]

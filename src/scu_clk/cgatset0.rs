@@ -34,7 +34,7 @@ impl From<VADC_AW> for bool {
     }
 }
 #[doc = "Field `VADC` writer - VADC Gating Set"]
-pub type VADC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET0_SPEC, VADC_AW, O>;
+pub type VADC_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET0_SPEC, O, VADC_AW>;
 impl<'a, const O: u8> VADC_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -62,7 +62,7 @@ impl From<DSD_AW> for bool {
     }
 }
 #[doc = "Field `DSD` writer - DSD Gating Set"]
-pub type DSD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET0_SPEC, DSD_AW, O>;
+pub type DSD_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET0_SPEC, O, DSD_AW>;
 impl<'a, const O: u8> DSD_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -90,7 +90,7 @@ impl From<CCU40_AW> for bool {
     }
 }
 #[doc = "Field `CCU40` writer - CCU40 Gating Set"]
-pub type CCU40_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET0_SPEC, CCU40_AW, O>;
+pub type CCU40_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET0_SPEC, O, CCU40_AW>;
 impl<'a, const O: u8> CCU40_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -118,7 +118,7 @@ impl From<CCU41_AW> for bool {
     }
 }
 #[doc = "Field `CCU41` writer - CCU41 Gating Set"]
-pub type CCU41_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET0_SPEC, CCU41_AW, O>;
+pub type CCU41_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET0_SPEC, O, CCU41_AW>;
 impl<'a, const O: u8> CCU41_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -146,7 +146,7 @@ impl From<CCU42_AW> for bool {
     }
 }
 #[doc = "Field `CCU42` writer - CCU42 Gating Set"]
-pub type CCU42_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET0_SPEC, CCU42_AW, O>;
+pub type CCU42_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET0_SPEC, O, CCU42_AW>;
 impl<'a, const O: u8> CCU42_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -174,7 +174,7 @@ impl From<CCU80_AW> for bool {
     }
 }
 #[doc = "Field `CCU80` writer - CCU80 Gating Set"]
-pub type CCU80_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET0_SPEC, CCU80_AW, O>;
+pub type CCU80_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET0_SPEC, O, CCU80_AW>;
 impl<'a, const O: u8> CCU80_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -202,7 +202,7 @@ impl From<CCU81_AW> for bool {
     }
 }
 #[doc = "Field `CCU81` writer - CCU81 Gating Set"]
-pub type CCU81_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET0_SPEC, CCU81_AW, O>;
+pub type CCU81_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET0_SPEC, O, CCU81_AW>;
 impl<'a, const O: u8> CCU81_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -230,7 +230,7 @@ impl From<POSIF0_AW> for bool {
     }
 }
 #[doc = "Field `POSIF0` writer - POSIF0 Gating Set"]
-pub type POSIF0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET0_SPEC, POSIF0_AW, O>;
+pub type POSIF0_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET0_SPEC, O, POSIF0_AW>;
 impl<'a, const O: u8> POSIF0_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -258,7 +258,7 @@ impl From<POSIF1_AW> for bool {
     }
 }
 #[doc = "Field `POSIF1` writer - POSIF1 Gating Set"]
-pub type POSIF1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET0_SPEC, POSIF1_AW, O>;
+pub type POSIF1_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET0_SPEC, O, POSIF1_AW>;
 impl<'a, const O: u8> POSIF1_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -286,7 +286,7 @@ impl From<USIC0_AW> for bool {
     }
 }
 #[doc = "Field `USIC0` writer - USIC0 Gating Set"]
-pub type USIC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET0_SPEC, USIC0_AW, O>;
+pub type USIC0_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET0_SPEC, O, USIC0_AW>;
 impl<'a, const O: u8> USIC0_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
@@ -314,7 +314,7 @@ impl From<ERU1_AW> for bool {
     }
 }
 #[doc = "Field `ERU1` writer - ERU1 Gating Set"]
-pub type ERU1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATSET0_SPEC, ERU1_AW, O>;
+pub type ERU1_W<'a, const O: u8> = crate::BitWriter<'a, CGATSET0_SPEC, O, ERU1_AW>;
 impl<'a, const O: u8> ERU1_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

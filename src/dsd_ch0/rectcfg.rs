@@ -71,7 +71,7 @@ impl RFEN_R {
     }
 }
 #[doc = "Field `RFEN` writer - Rectification Enable"]
-pub type RFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RECTCFG_SPEC, RFEN_A, O>;
+pub type RFEN_W<'a, const O: u8> = crate::BitWriter<'a, RECTCFG_SPEC, O, RFEN_A>;
 impl<'a, const O: u8> RFEN_W<'a, O> {
     #[doc = "No rectification, data not altered"]
     #[inline(always)]
@@ -85,7 +85,7 @@ impl<'a, const O: u8> RFEN_W<'a, O> {
     }
 }
 #[doc = "Field `SSRC` reader - Sign Source"]
-pub type SSRC_R = crate::FieldReader<u8, SSRC_A>;
+pub type SSRC_R = crate::FieldReader<SSRC_A>;
 #[doc = "Sign Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -104,6 +104,9 @@ impl From<SSRC_A> for u8 {
     fn from(variant: SSRC_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for SSRC_A {
+    type Ux = u8;
 }
 impl SSRC_R {
     #[doc = "Get enumerated values variant"]
@@ -139,7 +142,7 @@ impl SSRC_R {
     }
 }
 #[doc = "Field `SSRC` writer - Sign Source"]
-pub type SSRC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, RECTCFG_SPEC, u8, SSRC_A, 2, O>;
+pub type SSRC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, RECTCFG_SPEC, 2, O, SSRC_A>;
 impl<'a, const O: u8> SSRC_W<'a, O> {
     #[doc = "On-chip carrier generator"]
     #[inline(always)]

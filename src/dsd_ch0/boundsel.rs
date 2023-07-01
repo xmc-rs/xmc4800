@@ -35,13 +35,13 @@ impl From<crate::W<BOUNDSEL_SPEC>> for W {
     }
 }
 #[doc = "Field `BOUNDARYL` reader - Lower Boundary Value for Limit Checking"]
-pub type BOUNDARYL_R = crate::FieldReader<u16, u16>;
+pub type BOUNDARYL_R = crate::FieldReader<u16>;
 #[doc = "Field `BOUNDARYL` writer - Lower Boundary Value for Limit Checking"]
-pub type BOUNDARYL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BOUNDSEL_SPEC, u16, u16, 16, O>;
+pub type BOUNDARYL_W<'a, const O: u8> = crate::FieldWriter<'a, BOUNDSEL_SPEC, 16, O, u16>;
 #[doc = "Field `BOUNDARYU` reader - Upper Boundary Value for Limit Checking"]
-pub type BOUNDARYU_R = crate::FieldReader<u16, u16>;
+pub type BOUNDARYU_R = crate::FieldReader<u16>;
 #[doc = "Field `BOUNDARYU` writer - Upper Boundary Value for Limit Checking"]
-pub type BOUNDARYU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BOUNDSEL_SPEC, u16, u16, 16, O>;
+pub type BOUNDARYU_W<'a, const O: u8> = crate::FieldWriter<'a, BOUNDSEL_SPEC, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Lower Boundary Value for Limit Checking"]
     #[inline(always)]

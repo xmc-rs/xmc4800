@@ -14,11 +14,11 @@ impl From<crate::R<TSTMP_SPEC>> for R {
     }
 }
 #[doc = "Field `RESULT` reader - Result of most recent conversion"]
-pub type RESULT_R = crate::FieldReader<u16, u16>;
+pub type RESULT_R = crate::FieldReader<u16>;
 #[doc = "Field `CFMDCNT` reader - CIC Filter (Main Chain) Decimation Counter"]
-pub type CFMDCNT_R = crate::FieldReader<u8, u8>;
+pub type CFMDCNT_R = crate::FieldReader;
 #[doc = "Field `NVALCNT` reader - Number of Values Counted"]
-pub type NVALCNT_R = crate::FieldReader<u8, u8>;
+pub type NVALCNT_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:15 - Result of most recent conversion"]
     #[inline(always)]

@@ -71,7 +71,7 @@ impl RESEV0_R {
     }
 }
 #[doc = "Field `RESEV0` writer - Result Event"]
-pub type RESEV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, RESEV0_A, O>;
+pub type RESEV0_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAG_SPEC, O, RESEV0_A>;
 impl<'a, const O: u8> RESEV0_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl RESEV1_R {
     }
 }
 #[doc = "Field `RESEV1` writer - Result Event"]
-pub type RESEV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, RESEV1_A, O>;
+pub type RESEV1_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAG_SPEC, O, RESEV1_A>;
 impl<'a, const O: u8> RESEV1_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl RESEV2_R {
     }
 }
 #[doc = "Field `RESEV2` writer - Result Event"]
-pub type RESEV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, RESEV2_A, O>;
+pub type RESEV2_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAG_SPEC, O, RESEV2_A>;
 impl<'a, const O: u8> RESEV2_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl RESEV3_R {
     }
 }
 #[doc = "Field `RESEV3` writer - Result Event"]
-pub type RESEV3_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, RESEV3_A, O>;
+pub type RESEV3_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAG_SPEC, O, RESEV3_A>;
 impl<'a, const O: u8> RESEV3_W<'a, O> {
     #[doc = "No result event"]
     #[inline(always)]
@@ -271,7 +271,7 @@ impl ALEV0_R {
     }
 }
 #[doc = "Field `ALEV0` writer - Alarm Event"]
-pub type ALEV0_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, ALEV0_A, O>;
+pub type ALEV0_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAG_SPEC, O, ALEV0_A>;
 impl<'a, const O: u8> ALEV0_W<'a, O> {
     #[doc = "No alarm event"]
     #[inline(always)]
@@ -321,7 +321,7 @@ impl ALEV1_R {
     }
 }
 #[doc = "Field `ALEV1` writer - Alarm Event"]
-pub type ALEV1_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, ALEV1_A, O>;
+pub type ALEV1_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAG_SPEC, O, ALEV1_A>;
 impl<'a, const O: u8> ALEV1_W<'a, O> {
     #[doc = "No alarm event"]
     #[inline(always)]
@@ -371,7 +371,7 @@ impl ALEV2_R {
     }
 }
 #[doc = "Field `ALEV2` writer - Alarm Event"]
-pub type ALEV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, ALEV2_A, O>;
+pub type ALEV2_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAG_SPEC, O, ALEV2_A>;
 impl<'a, const O: u8> ALEV2_W<'a, O> {
     #[doc = "No alarm event"]
     #[inline(always)]
@@ -421,7 +421,7 @@ impl ALEV3_R {
     }
 }
 #[doc = "Field `ALEV3` writer - Alarm Event"]
-pub type ALEV3_W<'a, const O: u8> = crate::BitWriter<'a, u32, EVFLAG_SPEC, ALEV3_A, O>;
+pub type ALEV3_W<'a, const O: u8> = crate::BitWriter<'a, EVFLAG_SPEC, O, ALEV3_A>;
 impl<'a, const O: u8> ALEV3_W<'a, O> {
     #[doc = "No alarm event"]
     #[inline(always)]

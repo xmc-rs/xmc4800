@@ -71,7 +71,7 @@ impl CH0RUN_R {
     }
 }
 #[doc = "Field `CH0RUN` writer - Channel 0 Run Control"]
-pub type CH0RUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBRC_SPEC, CH0RUN_A, O>;
+pub type CH0RUN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBRC_SPEC, O, CH0RUN_A>;
 impl<'a, const O: u8> CH0RUN_W<'a, O> {
     #[doc = "Stop channel x"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl CH1RUN_R {
     }
 }
 #[doc = "Field `CH1RUN` writer - Channel 1 Run Control"]
-pub type CH1RUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBRC_SPEC, CH1RUN_A, O>;
+pub type CH1RUN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBRC_SPEC, O, CH1RUN_A>;
 impl<'a, const O: u8> CH1RUN_W<'a, O> {
     #[doc = "Stop channel x"]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl CH2RUN_R {
     }
 }
 #[doc = "Field `CH2RUN` writer - Channel 2 Run Control"]
-pub type CH2RUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBRC_SPEC, CH2RUN_A, O>;
+pub type CH2RUN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBRC_SPEC, O, CH2RUN_A>;
 impl<'a, const O: u8> CH2RUN_W<'a, O> {
     #[doc = "Stop channel x"]
     #[inline(always)]
@@ -221,7 +221,7 @@ impl CH3RUN_R {
     }
 }
 #[doc = "Field `CH3RUN` writer - Channel 3 Run Control"]
-pub type CH3RUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GLOBRC_SPEC, CH3RUN_A, O>;
+pub type CH3RUN_W<'a, const O: u8> = crate::BitWriter<'a, GLOBRC_SPEC, O, CH3RUN_A>;
 impl<'a, const O: u8> CH3RUN_W<'a, O> {
     #[doc = "Stop channel x"]
     #[inline(always)]

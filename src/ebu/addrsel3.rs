@@ -71,7 +71,7 @@ impl REGENAB_R {
     }
 }
 #[doc = "Field `REGENAB` writer - Memory Region Enable"]
-pub type REGENAB_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADDRSEL3_SPEC, REGENAB_A, O>;
+pub type REGENAB_W<'a, const O: u8> = crate::BitWriter<'a, ADDRSEL3_SPEC, O, REGENAB_A>;
 impl<'a, const O: u8> REGENAB_W<'a, O> {
     #[doc = "Memory region is disabled (default after reset)."]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl ALTENAB_R {
     }
 }
 #[doc = "Field `ALTENAB` writer - Alternate Region Enable"]
-pub type ALTENAB_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADDRSEL3_SPEC, ALTENAB_A, O>;
+pub type ALTENAB_W<'a, const O: u8> = crate::BitWriter<'a, ADDRSEL3_SPEC, O, ALTENAB_A>;
 impl<'a, const O: u8> ALTENAB_W<'a, O> {
     #[doc = "Memory region is disabled (default after reset)."]
     #[inline(always)]
@@ -171,7 +171,7 @@ impl WPROT_R {
     }
 }
 #[doc = "Field `WPROT` writer - Memory Region Write Protect"]
-pub type WPROT_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADDRSEL3_SPEC, WPROT_A, O>;
+pub type WPROT_W<'a, const O: u8> = crate::BitWriter<'a, ADDRSEL3_SPEC, O, WPROT_A>;
 impl<'a, const O: u8> WPROT_W<'a, O> {
     #[doc = "Region is enabled for write accesses"]
     #[inline(always)]

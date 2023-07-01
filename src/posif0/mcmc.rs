@@ -20,9 +20,9 @@ impl From<crate::W<MCMC_SPEC>> for W {
     }
 }
 #[doc = "Field `MNPC` writer - Multi-Channel Pattern Update Enable Clear"]
-pub type MNPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCMC_SPEC, bool, O>;
+pub type MNPC_W<'a, const O: u8> = crate::BitWriter<'a, MCMC_SPEC, O>;
 #[doc = "Field `MPC` writer - Multi-Channel Pattern clear"]
-pub type MPC_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCMC_SPEC, bool, O>;
+pub type MPC_W<'a, const O: u8> = crate::BitWriter<'a, MCMC_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Multi-Channel Pattern Update Enable Clear"]
     #[inline(always)]

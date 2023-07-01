@@ -20,11 +20,11 @@ impl From<crate::W<MCMS_SPEC>> for W {
     }
 }
 #[doc = "Field `MNPS` writer - Multi-Channel Pattern Update Enable Set"]
-pub type MNPS_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCMS_SPEC, bool, O>;
+pub type MNPS_W<'a, const O: u8> = crate::BitWriter<'a, MCMS_SPEC, O>;
 #[doc = "Field `STHR` writer - Hall Pattern Shadow Transfer Request"]
-pub type STHR_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCMS_SPEC, bool, O>;
+pub type STHR_W<'a, const O: u8> = crate::BitWriter<'a, MCMS_SPEC, O>;
 #[doc = "Field `STMR` writer - Multi-Channel Shadow Transfer Request"]
-pub type STMR_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCMS_SPEC, bool, O>;
+pub type STMR_W<'a, const O: u8> = crate::BitWriter<'a, MCMS_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Multi-Channel Pattern Update Enable Set"]
     #[inline(always)]

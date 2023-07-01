@@ -35,7 +35,7 @@ impl From<crate::W<PDR0_SPEC>> for W {
     }
 }
 #[doc = "Field `PD0` reader - Pad Driver Mode for Pn.0"]
-pub type PD0_R = crate::FieldReader<u8, PD0_A>;
+pub type PD0_R = crate::FieldReader<PD0_A>;
 #[doc = "Pad Driver Mode for Pn.0\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -62,6 +62,9 @@ impl From<PD0_A> for u8 {
     fn from(variant: PD0_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PD0_A {
+    type Ux = u8;
 }
 impl PD0_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +124,7 @@ impl PD0_R {
     }
 }
 #[doc = "Field `PD0` writer - Pad Driver Mode for Pn.0"]
-pub type PD0_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PDR0_SPEC, u8, PD0_A, 3, O>;
+pub type PD0_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PDR0_SPEC, 3, O, PD0_A>;
 impl<'a, const O: u8> PD0_W<'a, O> {
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
@@ -165,7 +168,7 @@ impl<'a, const O: u8> PD0_W<'a, O> {
     }
 }
 #[doc = "Field `PD1` reader - Pad Driver Mode for Pn.1"]
-pub type PD1_R = crate::FieldReader<u8, PD1_A>;
+pub type PD1_R = crate::FieldReader<PD1_A>;
 #[doc = "Pad Driver Mode for Pn.1\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -192,6 +195,9 @@ impl From<PD1_A> for u8 {
     fn from(variant: PD1_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PD1_A {
+    type Ux = u8;
 }
 impl PD1_R {
     #[doc = "Get enumerated values variant"]
@@ -251,7 +257,7 @@ impl PD1_R {
     }
 }
 #[doc = "Field `PD1` writer - Pad Driver Mode for Pn.1"]
-pub type PD1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PDR0_SPEC, u8, PD1_A, 3, O>;
+pub type PD1_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PDR0_SPEC, 3, O, PD1_A>;
 impl<'a, const O: u8> PD1_W<'a, O> {
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
@@ -295,7 +301,7 @@ impl<'a, const O: u8> PD1_W<'a, O> {
     }
 }
 #[doc = "Field `PD2` reader - Pad Driver Mode for Pn.2"]
-pub type PD2_R = crate::FieldReader<u8, PD2_A>;
+pub type PD2_R = crate::FieldReader<PD2_A>;
 #[doc = "Pad Driver Mode for Pn.2\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -316,6 +322,9 @@ impl From<PD2_A> for u8 {
     fn from(variant: PD2_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PD2_A {
+    type Ux = u8;
 }
 impl PD2_R {
     #[doc = "Get enumerated values variant"]
@@ -357,7 +366,7 @@ impl PD2_R {
     }
 }
 #[doc = "Field `PD2` writer - Pad Driver Mode for Pn.2"]
-pub type PD2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR0_SPEC, u8, PD2_A, 3, O>;
+pub type PD2_W<'a, const O: u8> = crate::FieldWriter<'a, PDR0_SPEC, 3, O, PD2_A>;
 impl<'a, const O: u8> PD2_W<'a, O> {
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
@@ -386,7 +395,7 @@ impl<'a, const O: u8> PD2_W<'a, O> {
     }
 }
 #[doc = "Field `PD3` reader - Pad Driver Mode for Pn.3"]
-pub type PD3_R = crate::FieldReader<u8, PD3_A>;
+pub type PD3_R = crate::FieldReader<PD3_A>;
 #[doc = "Pad Driver Mode for Pn.3\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -407,6 +416,9 @@ impl From<PD3_A> for u8 {
     fn from(variant: PD3_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PD3_A {
+    type Ux = u8;
 }
 impl PD3_R {
     #[doc = "Get enumerated values variant"]
@@ -448,7 +460,7 @@ impl PD3_R {
     }
 }
 #[doc = "Field `PD3` writer - Pad Driver Mode for Pn.3"]
-pub type PD3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR0_SPEC, u8, PD3_A, 3, O>;
+pub type PD3_W<'a, const O: u8> = crate::FieldWriter<'a, PDR0_SPEC, 3, O, PD3_A>;
 impl<'a, const O: u8> PD3_W<'a, O> {
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
@@ -477,7 +489,7 @@ impl<'a, const O: u8> PD3_W<'a, O> {
     }
 }
 #[doc = "Field `PD4` reader - Pad Driver Mode for Pn.4"]
-pub type PD4_R = crate::FieldReader<u8, PD4_A>;
+pub type PD4_R = crate::FieldReader<PD4_A>;
 #[doc = "Pad Driver Mode for Pn.4\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -504,6 +516,9 @@ impl From<PD4_A> for u8 {
     fn from(variant: PD4_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PD4_A {
+    type Ux = u8;
 }
 impl PD4_R {
     #[doc = "Get enumerated values variant"]
@@ -563,7 +578,7 @@ impl PD4_R {
     }
 }
 #[doc = "Field `PD4` writer - Pad Driver Mode for Pn.4"]
-pub type PD4_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PDR0_SPEC, u8, PD4_A, 3, O>;
+pub type PD4_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PDR0_SPEC, 3, O, PD4_A>;
 impl<'a, const O: u8> PD4_W<'a, O> {
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
@@ -607,7 +622,7 @@ impl<'a, const O: u8> PD4_W<'a, O> {
     }
 }
 #[doc = "Field `PD5` reader - Pad Driver Mode for Pn.5"]
-pub type PD5_R = crate::FieldReader<u8, PD5_A>;
+pub type PD5_R = crate::FieldReader<PD5_A>;
 #[doc = "Pad Driver Mode for Pn.5\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -634,6 +649,9 @@ impl From<PD5_A> for u8 {
     fn from(variant: PD5_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PD5_A {
+    type Ux = u8;
 }
 impl PD5_R {
     #[doc = "Get enumerated values variant"]
@@ -693,7 +711,7 @@ impl PD5_R {
     }
 }
 #[doc = "Field `PD5` writer - Pad Driver Mode for Pn.5"]
-pub type PD5_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, PDR0_SPEC, u8, PD5_A, 3, O>;
+pub type PD5_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PDR0_SPEC, 3, O, PD5_A>;
 impl<'a, const O: u8> PD5_W<'a, O> {
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
@@ -737,7 +755,7 @@ impl<'a, const O: u8> PD5_W<'a, O> {
     }
 }
 #[doc = "Field `PD6` reader - Pad Driver Mode for Pn.6"]
-pub type PD6_R = crate::FieldReader<u8, PD6_A>;
+pub type PD6_R = crate::FieldReader<PD6_A>;
 #[doc = "Pad Driver Mode for Pn.6\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -758,6 +776,9 @@ impl From<PD6_A> for u8 {
     fn from(variant: PD6_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PD6_A {
+    type Ux = u8;
 }
 impl PD6_R {
     #[doc = "Get enumerated values variant"]
@@ -799,7 +820,7 @@ impl PD6_R {
     }
 }
 #[doc = "Field `PD6` writer - Pad Driver Mode for Pn.6"]
-pub type PD6_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR0_SPEC, u8, PD6_A, 3, O>;
+pub type PD6_W<'a, const O: u8> = crate::FieldWriter<'a, PDR0_SPEC, 3, O, PD6_A>;
 impl<'a, const O: u8> PD6_W<'a, O> {
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
@@ -828,7 +849,7 @@ impl<'a, const O: u8> PD6_W<'a, O> {
     }
 }
 #[doc = "Field `PD7` reader - Pad Driver Mode for Pn.7"]
-pub type PD7_R = crate::FieldReader<u8, PD7_A>;
+pub type PD7_R = crate::FieldReader<PD7_A>;
 #[doc = "Pad Driver Mode for Pn.7\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -849,6 +870,9 @@ impl From<PD7_A> for u8 {
     fn from(variant: PD7_A) -> Self {
         variant as _
     }
+}
+impl crate::FieldSpec for PD7_A {
+    type Ux = u8;
 }
 impl PD7_R {
     #[doc = "Get enumerated values variant"]
@@ -890,7 +914,7 @@ impl PD7_R {
     }
 }
 #[doc = "Field `PD7` writer - Pad Driver Mode for Pn.7"]
-pub type PD7_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDR0_SPEC, u8, PD7_A, 3, O>;
+pub type PD7_W<'a, const O: u8> = crate::FieldWriter<'a, PDR0_SPEC, 3, O, PD7_A>;
 impl<'a, const O: u8> PD7_W<'a, O> {
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]

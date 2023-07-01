@@ -34,7 +34,7 @@ impl From<EBU_AW> for bool {
     }
 }
 #[doc = "Field `EBU` writer - EBU Gating Clear"]
-pub type EBU_W<'a, const O: u8> = crate::BitWriter<'a, u32, CGATCLR3_SPEC, EBU_AW, O>;
+pub type EBU_W<'a, const O: u8> = crate::BitWriter<'a, CGATCLR3_SPEC, O, EBU_AW>;
 impl<'a, const O: u8> EBU_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]

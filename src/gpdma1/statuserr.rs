@@ -14,13 +14,13 @@ impl From<crate::R<STATUSERR_SPEC>> for R {
     }
 }
 #[doc = "Field `CH0` reader - Interrupt Status for channel 0"]
-pub type CH0_R = crate::BitReader<bool>;
+pub type CH0_R = crate::BitReader;
 #[doc = "Field `CH1` reader - Interrupt Status for channel 1"]
-pub type CH1_R = crate::BitReader<bool>;
+pub type CH1_R = crate::BitReader;
 #[doc = "Field `CH2` reader - Interrupt Status for channel 2"]
-pub type CH2_R = crate::BitReader<bool>;
+pub type CH2_R = crate::BitReader;
 #[doc = "Field `CH3` reader - Interrupt Status for channel 3"]
-pub type CH3_R = crate::BitReader<bool>;
+pub type CH3_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Interrupt Status for channel 0"]
     #[inline(always)]

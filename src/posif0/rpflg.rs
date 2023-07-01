@@ -20,23 +20,23 @@ impl From<crate::W<RPFLG_SPEC>> for W {
     }
 }
 #[doc = "Field `RCHE` writer - Correct Hall Event flag clear"]
-pub type RCHE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
+pub type RCHE_W<'a, const O: u8> = crate::BitWriter<'a, RPFLG_SPEC, O>;
 #[doc = "Field `RWHE` writer - Wrong Hall Event flag clear"]
-pub type RWHE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
+pub type RWHE_W<'a, const O: u8> = crate::BitWriter<'a, RPFLG_SPEC, O>;
 #[doc = "Field `RHIE` writer - Hall Inputs Update Event flag clear"]
-pub type RHIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
+pub type RHIE_W<'a, const O: u8> = crate::BitWriter<'a, RPFLG_SPEC, O>;
 #[doc = "Field `RMST` writer - Multi-Channel Pattern shadow transfer flag clear"]
-pub type RMST_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
+pub type RMST_W<'a, const O: u8> = crate::BitWriter<'a, RPFLG_SPEC, O>;
 #[doc = "Field `RINDX` writer - Quadrature Index flag clear"]
-pub type RINDX_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
+pub type RINDX_W<'a, const O: u8> = crate::BitWriter<'a, RPFLG_SPEC, O>;
 #[doc = "Field `RERR` writer - Quadrature Phase Error flag clear"]
-pub type RERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
+pub type RERR_W<'a, const O: u8> = crate::BitWriter<'a, RPFLG_SPEC, O>;
 #[doc = "Field `RCNT` writer - Quadrature CLK flag clear"]
-pub type RCNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
+pub type RCNT_W<'a, const O: u8> = crate::BitWriter<'a, RPFLG_SPEC, O>;
 #[doc = "Field `RDIR` writer - Quadrature Direction flag clear"]
-pub type RDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
+pub type RDIR_W<'a, const O: u8> = crate::BitWriter<'a, RPFLG_SPEC, O>;
 #[doc = "Field `RPCLK` writer - Quadrature period clock flag clear"]
-pub type RPCLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, RPFLG_SPEC, bool, O>;
+pub type RPCLK_W<'a, const O: u8> = crate::BitWriter<'a, RPFLG_SPEC, O>;
 impl W {
     #[doc = "Bit 0 - Correct Hall Event flag clear"]
     #[inline(always)]
