@@ -1,39 +1,7 @@
 #[doc = "Register `RECTCFG` reader"]
-pub struct R(crate::R<RECTCFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RECTCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RECTCFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RECTCFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RECTCFG_SPEC>;
 #[doc = "Register `RECTCFG` writer"]
-pub struct W(crate::W<RECTCFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RECTCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RECTCFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RECTCFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<RECTCFG_SPEC>;
 #[doc = "Field `RFEN` reader - Rectification Enable"]
 pub type RFEN_R = crate::BitReader<RFEN_A>;
 #[doc = "Rectification Enable\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl RFEN_R {
             true => RFEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No rectification, data not altered"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RFEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Data are rectified according to SGND"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RFEN_A::VALUE2
     }
 }
 #[doc = "Field `RFEN` writer - Rectification Enable"]
-pub type RFEN_W<'a, const O: u8> = crate::BitWriter<'a, RECTCFG_SPEC, O, RFEN_A>;
-impl<'a, const O: u8> RFEN_W<'a, O> {
+pub type RFEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RFEN_A>;
+impl<'a, REG, const O: u8> RFEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No rectification, data not altered"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(RFEN_A::VALUE1)
     }
     #[doc = "Data are rectified according to SGND"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(RFEN_A::VALUE2)
     }
 }
@@ -120,48 +91,52 @@ impl SSRC_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "On-chip carrier generator"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SSRC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Sign of result of next channel"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SSRC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "External sign signal A"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == SSRC_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "External sign signal B"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == SSRC_A::VALUE4
     }
 }
 #[doc = "Field `SSRC` writer - Sign Source"]
-pub type SSRC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, RECTCFG_SPEC, 2, O, SSRC_A>;
-impl<'a, const O: u8> SSRC_W<'a, O> {
+pub type SSRC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, SSRC_A>;
+impl<'a, REG, const O: u8> SSRC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "On-chip carrier generator"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SSRC_A::VALUE1)
     }
     #[doc = "Sign of result of next channel"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SSRC_A::VALUE2)
     }
     #[doc = "External sign signal A"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(SSRC_A::VALUE3)
     }
     #[doc = "External sign signal B"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(SSRC_A::VALUE4)
     }
 }
@@ -190,12 +165,12 @@ impl SDVAL_R {
             true => SDVAL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No new result available"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SDVAL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Bitfield SDCAP has been updated with a new captured value and has not yet been read"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SDVAL_A::VALUE2
@@ -226,12 +201,12 @@ impl SGNCS_R {
             true => SGNCS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Positive values"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SGNCS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Negative values"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SGNCS_A::VALUE2
@@ -262,12 +237,12 @@ impl SGND_R {
             true => SGND_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Positive values"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SGND_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Negative values"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SGND_A::VALUE2
@@ -304,34 +279,31 @@ impl W {
     #[doc = "Bit 0 - Rectification Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rfen(&mut self) -> RFEN_W<0> {
+    pub fn rfen(&mut self) -> RFEN_W<RECTCFG_SPEC, 0> {
         RFEN_W::new(self)
     }
     #[doc = "Bits 4:5 - Sign Source"]
     #[inline(always)]
     #[must_use]
-    pub fn ssrc(&mut self) -> SSRC_W<4> {
+    pub fn ssrc(&mut self) -> SSRC_W<RECTCFG_SPEC, 4> {
         SSRC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Rectification Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rectcfg](index.html) module"]
+#[doc = "Rectification Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rectcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rectcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RECTCFG_SPEC;
 impl crate::RegisterSpec for RECTCFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rectcfg::R](R) reader structure"]
-impl crate::Readable for RECTCFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [rectcfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`rectcfg::R`](R) reader structure"]
+impl crate::Readable for RECTCFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`rectcfg::W`](W) writer structure"]
 impl crate::Writable for RECTCFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

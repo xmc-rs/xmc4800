@@ -1,18 +1,5 @@
 #[doc = "Register `IN` reader"]
-pub struct R(crate::R<IN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IN_SPEC>;
 #[doc = "Field `P0` reader - Port n Input Bit 0"]
 pub type P0_R = crate::BitReader<P0_A>;
 #[doc = "Port n Input Bit 0\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl P0_R {
             true => P0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P0_A::VALUE2
@@ -74,12 +61,12 @@ impl P1_R {
             true => P1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P1_A::VALUE2
@@ -110,12 +97,12 @@ impl P2_R {
             true => P2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P2_A::VALUE2
@@ -146,12 +133,12 @@ impl P3_R {
             true => P3_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P3_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P3_A::VALUE2
@@ -182,12 +169,12 @@ impl P4_R {
             true => P4_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P4_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P4_A::VALUE2
@@ -218,12 +205,12 @@ impl P5_R {
             true => P5_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P5_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P5_A::VALUE2
@@ -254,12 +241,12 @@ impl P6_R {
             true => P6_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P6_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P6_A::VALUE2
@@ -290,12 +277,12 @@ impl P7_R {
             true => P7_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P7_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P7_A::VALUE2
@@ -326,12 +313,12 @@ impl P8_R {
             true => P8_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P8_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P8_A::VALUE2
@@ -362,12 +349,12 @@ impl P9_R {
             true => P9_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P9_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P9_A::VALUE2
@@ -398,12 +385,12 @@ impl P10_R {
             true => P10_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P10_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P10_A::VALUE2
@@ -434,12 +421,12 @@ impl P11_R {
             true => P11_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P11_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P11_A::VALUE2
@@ -470,12 +457,12 @@ impl P12_R {
             true => P12_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P12_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P12_A::VALUE2
@@ -506,12 +493,12 @@ impl P13_R {
             true => P13_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P13_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P13_A::VALUE2
@@ -542,12 +529,12 @@ impl P14_R {
             true => P14_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P14_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P14_A::VALUE2
@@ -578,12 +565,12 @@ impl P15_R {
             true => P15_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The input level of Pn.x is 0."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == P15_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The input level of Pn.x is 1."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == P15_A::VALUE2
@@ -671,15 +658,13 @@ impl R {
         P15_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Port 9 Input Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [in_](index.html) module"]
+#[doc = "Port 9 Input Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`in_::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IN_SPEC;
 impl crate::RegisterSpec for IN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [in_::R](R) reader structure"]
-impl crate::Readable for IN_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`in_::R`](R) reader structure"]
+impl crate::Readable for IN_SPEC {}
 #[doc = "`reset()` method sets IN to value 0"]
 impl crate::Resettable for IN_SPEC {
     const RESET_VALUE: Self::Ux = 0;

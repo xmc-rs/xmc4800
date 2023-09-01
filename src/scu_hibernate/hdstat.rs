@@ -1,18 +1,5 @@
 #[doc = "Register `HDSTAT` reader"]
-pub struct R(crate::R<HDSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HDSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HDSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HDSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HDSTAT_SPEC>;
 #[doc = "Field `EPEV` reader - Wake-up Pin Event Positive Edge"]
 pub type EPEV_R = crate::BitReader<EPEV_A>;
 #[doc = "Wake-up Pin Event Positive Edge\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl EPEV_R {
             true => EPEV_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Wake-up on positive edge pin event inactive"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EPEV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Wake-up on positive edge pin event active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EPEV_A::VALUE2
@@ -74,12 +61,12 @@ impl ENEV_R {
             true => ENEV_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Wake-up on negative edge pin event inactive"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ENEV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Wake-up on negative edge pin event active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ENEV_A::VALUE2
@@ -110,12 +97,12 @@ impl RTCEV_R {
             true => RTCEV_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Wake-up on RTC event inactive"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTCEV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Wake-up on RTC event active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTCEV_A::VALUE2
@@ -146,12 +133,12 @@ impl ULPWDG_R {
             true => ULPWDG_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Watchdog alarm did not occur"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ULPWDG_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Watchdog alarm occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ULPWDG_A::VALUE2
@@ -182,12 +169,12 @@ impl HIBNOUT_R {
             true => HIBNOUT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Hibernate not driven active to pads"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HIBNOUT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Hibernate driven active to pads"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HIBNOUT_A::VALUE2
@@ -220,15 +207,13 @@ impl R {
         HIBNOUT_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
-#[doc = "Hibernate Domain Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hdstat](index.html) module"]
+#[doc = "Hibernate Domain Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HDSTAT_SPEC;
 impl crate::RegisterSpec for HDSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hdstat::R](R) reader structure"]
-impl crate::Readable for HDSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`hdstat::R`](R) reader structure"]
+impl crate::Readable for HDSTAT_SPEC {}
 #[doc = "`reset()` method sets HDSTAT to value 0"]
 impl crate::Resettable for HDSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

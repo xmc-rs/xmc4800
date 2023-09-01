@@ -1,18 +1,5 @@
 #[doc = "Register `RSTSTAT` reader"]
-pub struct R(crate::R<RSTSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RSTSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RSTSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RSTSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RSTSTAT_SPEC>;
 #[doc = "Field `RSTSTAT` reader - Reset Status Information"]
 pub type RSTSTAT_R = crate::FieldReader<RSTSTAT_A>;
 #[doc = "Reset Status Information\n\nValue on reset: 0"]
@@ -58,37 +45,37 @@ impl RSTSTAT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "PORST reset"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RSTSTAT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SWD reset"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RSTSTAT_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "PV reset"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == RSTSTAT_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "CPU system reset"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == RSTSTAT_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "CPU lockup reset"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == RSTSTAT_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "WDT reset"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == RSTSTAT_A::VALUE6
     }
-    #[doc = "Checks if the value of the field is `VALUE8`"]
+    #[doc = "Parity Error reset"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
         *self == RSTSTAT_A::VALUE8
@@ -119,12 +106,12 @@ impl HIBWK_R {
             true => HIBWK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Wake-up"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HIBWK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Wake-up event"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HIBWK_A::VALUE2
@@ -155,12 +142,12 @@ impl HIBRS_R {
             true => HIBRS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HIBRS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HIBRS_A::VALUE2
@@ -191,12 +178,12 @@ impl LCKEN_R {
             true => LCKEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset by Lockup disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == LCKEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reset by Lockup enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == LCKEN_A::VALUE2
@@ -227,12 +214,12 @@ impl ECAT0RS_R {
             true => ECAT0RS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reset did not occur"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ECAT0RS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Reset occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ECAT0RS_A::VALUE2
@@ -265,15 +252,13 @@ impl R {
         ECAT0RS_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
-#[doc = "RCU Reset Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rststat](index.html) module"]
+#[doc = "RCU Reset Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rststat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RSTSTAT_SPEC;
 impl crate::RegisterSpec for RSTSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rststat::R](R) reader structure"]
-impl crate::Readable for RSTSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`rststat::R`](R) reader structure"]
+impl crate::Readable for RSTSTAT_SPEC {}
 #[doc = "`reset()` method sets RSTSTAT to value 0"]
 impl crate::Resettable for RSTSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

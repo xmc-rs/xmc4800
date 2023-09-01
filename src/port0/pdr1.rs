@@ -1,39 +1,7 @@
 #[doc = "Register `PDR1` reader"]
-pub struct R(crate::R<PDR1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PDR1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PDR1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PDR1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PDR1_SPEC>;
 #[doc = "Register `PDR1` writer"]
-pub struct W(crate::W<PDR1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PDR1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PDR1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PDR1_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PDR1_SPEC>;
 #[doc = "Field `PD8` reader - Pad Driver Mode for Pn.8"]
 pub type PD8_R = crate::FieldReader<PD8_A>;
 #[doc = "Pad Driver Mode for Pn.8\n\nValue on reset: 2"]
@@ -73,58 +41,62 @@ impl PD8_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `SD_SHE`"]
+    #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
         *self == PD8_A::SD_SHE
     }
-    #[doc = "Checks if the value of the field is `SD_MEE`"]
+    #[doc = "A2 strong driver, medium edge"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
         *self == PD8_A::SD_MEE
     }
-    #[doc = "Checks if the value of the field is `SD_SOE`"]
+    #[doc = "A2 strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
         *self == PD8_A::SD_SOE
     }
-    #[doc = "Checks if the value of the field is `MD`"]
+    #[doc = "A2 medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
         *self == PD8_A::MD
     }
-    #[doc = "Checks if the value of the field is `WD`"]
+    #[doc = "A2 weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
         *self == PD8_A::WD
     }
 }
 #[doc = "Field `PD8` writer - Pad Driver Mode for Pn.8"]
-pub type PD8_W<'a, const O: u8> = crate::FieldWriter<'a, PDR1_SPEC, 3, O, PD8_A>;
-impl<'a, const O: u8> PD8_W<'a, O> {
+pub type PD8_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PD8_A>;
+impl<'a, REG, const O: u8> PD8_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
-    pub fn sd_she(self) -> &'a mut W {
+    pub fn sd_she(self) -> &'a mut crate::W<REG> {
         self.variant(PD8_A::SD_SHE)
     }
     #[doc = "A2 strong driver, medium edge"]
     #[inline(always)]
-    pub fn sd_mee(self) -> &'a mut W {
+    pub fn sd_mee(self) -> &'a mut crate::W<REG> {
         self.variant(PD8_A::SD_MEE)
     }
     #[doc = "A2 strong driver, soft edge"]
     #[inline(always)]
-    pub fn sd_soe(self) -> &'a mut W {
+    pub fn sd_soe(self) -> &'a mut crate::W<REG> {
         self.variant(PD8_A::SD_SOE)
     }
     #[doc = "A2 medium driver"]
     #[inline(always)]
-    pub fn md(self) -> &'a mut W {
+    pub fn md(self) -> &'a mut crate::W<REG> {
         self.variant(PD8_A::MD)
     }
     #[doc = "A2 weak driver"]
     #[inline(always)]
-    pub fn wd(self) -> &'a mut W {
+    pub fn wd(self) -> &'a mut crate::W<REG> {
         self.variant(PD8_A::WD)
     }
 }
@@ -167,58 +139,62 @@ impl PD9_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `SD_SHE`"]
+    #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
         *self == PD9_A::SD_SHE
     }
-    #[doc = "Checks if the value of the field is `SD_MEE`"]
+    #[doc = "A2 strong driver, medium edge"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
         *self == PD9_A::SD_MEE
     }
-    #[doc = "Checks if the value of the field is `SD_SOE`"]
+    #[doc = "A2 strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
         *self == PD9_A::SD_SOE
     }
-    #[doc = "Checks if the value of the field is `MD`"]
+    #[doc = "A2 medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
         *self == PD9_A::MD
     }
-    #[doc = "Checks if the value of the field is `WD`"]
+    #[doc = "A2 weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
         *self == PD9_A::WD
     }
 }
 #[doc = "Field `PD9` writer - Pad Driver Mode for Pn.9"]
-pub type PD9_W<'a, const O: u8> = crate::FieldWriter<'a, PDR1_SPEC, 3, O, PD9_A>;
-impl<'a, const O: u8> PD9_W<'a, O> {
+pub type PD9_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PD9_A>;
+impl<'a, REG, const O: u8> PD9_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
-    pub fn sd_she(self) -> &'a mut W {
+    pub fn sd_she(self) -> &'a mut crate::W<REG> {
         self.variant(PD9_A::SD_SHE)
     }
     #[doc = "A2 strong driver, medium edge"]
     #[inline(always)]
-    pub fn sd_mee(self) -> &'a mut W {
+    pub fn sd_mee(self) -> &'a mut crate::W<REG> {
         self.variant(PD9_A::SD_MEE)
     }
     #[doc = "A2 strong driver, soft edge"]
     #[inline(always)]
-    pub fn sd_soe(self) -> &'a mut W {
+    pub fn sd_soe(self) -> &'a mut crate::W<REG> {
         self.variant(PD9_A::SD_SOE)
     }
     #[doc = "A2 medium driver"]
     #[inline(always)]
-    pub fn md(self) -> &'a mut W {
+    pub fn md(self) -> &'a mut crate::W<REG> {
         self.variant(PD9_A::MD)
     }
     #[doc = "A2 weak driver"]
     #[inline(always)]
-    pub fn wd(self) -> &'a mut W {
+    pub fn wd(self) -> &'a mut crate::W<REG> {
         self.variant(PD9_A::WD)
     }
 }
@@ -270,88 +246,92 @@ impl PD10_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `SD_SOE`"]
+    #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
         *self == PD10_A::SD_SOE
     }
-    #[doc = "Checks if the value of the field is `SD_SLE`"]
+    #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
         *self == PD10_A::SD_SLE
     }
-    #[doc = "Checks if the value of the field is `MD`"]
+    #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
         *self == PD10_A::MD
     }
-    #[doc = "Checks if the value of the field is `WD`"]
+    #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
         *self == PD10_A::WD
     }
-    #[doc = "Checks if the value of the field is `SD_SOE_ALT`"]
+    #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
         *self == PD10_A::SD_SOE_ALT
     }
-    #[doc = "Checks if the value of the field is `SD_SLE_ALT`"]
+    #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
         *self == PD10_A::SD_SLE_ALT
     }
-    #[doc = "Checks if the value of the field is `MD_ALT`"]
+    #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
         *self == PD10_A::MD_ALT
     }
-    #[doc = "Checks if the value of the field is `WD_ALT`"]
+    #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
         *self == PD10_A::WD_ALT
     }
 }
 #[doc = "Field `PD10` writer - Pad Driver Mode for Pn.10"]
-pub type PD10_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PDR1_SPEC, 3, O, PD10_A>;
-impl<'a, const O: u8> PD10_W<'a, O> {
+pub type PD10_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PD10_A>;
+impl<'a, REG, const O: u8> PD10_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
-    pub fn sd_soe(self) -> &'a mut W {
+    pub fn sd_soe(self) -> &'a mut crate::W<REG> {
         self.variant(PD10_A::SD_SOE)
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
-    pub fn sd_sle(self) -> &'a mut W {
+    pub fn sd_sle(self) -> &'a mut crate::W<REG> {
         self.variant(PD10_A::SD_SLE)
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
-    pub fn md(self) -> &'a mut W {
+    pub fn md(self) -> &'a mut crate::W<REG> {
         self.variant(PD10_A::MD)
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
-    pub fn wd(self) -> &'a mut W {
+    pub fn wd(self) -> &'a mut crate::W<REG> {
         self.variant(PD10_A::WD)
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
-    pub fn sd_soe_alt(self) -> &'a mut W {
+    pub fn sd_soe_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD10_A::SD_SOE_ALT)
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
-    pub fn sd_sle_alt(self) -> &'a mut W {
+    pub fn sd_sle_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD10_A::SD_SLE_ALT)
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
-    pub fn md_alt(self) -> &'a mut W {
+    pub fn md_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD10_A::MD_ALT)
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
-    pub fn wd_alt(self) -> &'a mut W {
+    pub fn wd_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD10_A::WD_ALT)
     }
 }
@@ -403,88 +383,92 @@ impl PD11_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `SD_SOE`"]
+    #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
         *self == PD11_A::SD_SOE
     }
-    #[doc = "Checks if the value of the field is `SD_SLE`"]
+    #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
         *self == PD11_A::SD_SLE
     }
-    #[doc = "Checks if the value of the field is `MD`"]
+    #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
         *self == PD11_A::MD
     }
-    #[doc = "Checks if the value of the field is `WD`"]
+    #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
         *self == PD11_A::WD
     }
-    #[doc = "Checks if the value of the field is `SD_SOE_ALT`"]
+    #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
         *self == PD11_A::SD_SOE_ALT
     }
-    #[doc = "Checks if the value of the field is `SD_SLE_ALT`"]
+    #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
         *self == PD11_A::SD_SLE_ALT
     }
-    #[doc = "Checks if the value of the field is `MD_ALT`"]
+    #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
         *self == PD11_A::MD_ALT
     }
-    #[doc = "Checks if the value of the field is `WD_ALT`"]
+    #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
         *self == PD11_A::WD_ALT
     }
 }
 #[doc = "Field `PD11` writer - Pad Driver Mode for Pn.11"]
-pub type PD11_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PDR1_SPEC, 3, O, PD11_A>;
-impl<'a, const O: u8> PD11_W<'a, O> {
+pub type PD11_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PD11_A>;
+impl<'a, REG, const O: u8> PD11_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
-    pub fn sd_soe(self) -> &'a mut W {
+    pub fn sd_soe(self) -> &'a mut crate::W<REG> {
         self.variant(PD11_A::SD_SOE)
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
-    pub fn sd_sle(self) -> &'a mut W {
+    pub fn sd_sle(self) -> &'a mut crate::W<REG> {
         self.variant(PD11_A::SD_SLE)
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
-    pub fn md(self) -> &'a mut W {
+    pub fn md(self) -> &'a mut crate::W<REG> {
         self.variant(PD11_A::MD)
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
-    pub fn wd(self) -> &'a mut W {
+    pub fn wd(self) -> &'a mut crate::W<REG> {
         self.variant(PD11_A::WD)
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
-    pub fn sd_soe_alt(self) -> &'a mut W {
+    pub fn sd_soe_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD11_A::SD_SOE_ALT)
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
-    pub fn sd_sle_alt(self) -> &'a mut W {
+    pub fn sd_sle_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD11_A::SD_SLE_ALT)
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
-    pub fn md_alt(self) -> &'a mut W {
+    pub fn md_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD11_A::MD_ALT)
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
-    pub fn wd_alt(self) -> &'a mut W {
+    pub fn wd_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD11_A::WD_ALT)
     }
 }
@@ -536,88 +520,92 @@ impl PD12_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `SD_SOE`"]
+    #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
         *self == PD12_A::SD_SOE
     }
-    #[doc = "Checks if the value of the field is `SD_SLE`"]
+    #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
         *self == PD12_A::SD_SLE
     }
-    #[doc = "Checks if the value of the field is `MD`"]
+    #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
         *self == PD12_A::MD
     }
-    #[doc = "Checks if the value of the field is `WD`"]
+    #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
         *self == PD12_A::WD
     }
-    #[doc = "Checks if the value of the field is `SD_SOE_ALT`"]
+    #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
         *self == PD12_A::SD_SOE_ALT
     }
-    #[doc = "Checks if the value of the field is `SD_SLE_ALT`"]
+    #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
         *self == PD12_A::SD_SLE_ALT
     }
-    #[doc = "Checks if the value of the field is `MD_ALT`"]
+    #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
         *self == PD12_A::MD_ALT
     }
-    #[doc = "Checks if the value of the field is `WD_ALT`"]
+    #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
         *self == PD12_A::WD_ALT
     }
 }
 #[doc = "Field `PD12` writer - Pad Driver Mode for Pn.12"]
-pub type PD12_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PDR1_SPEC, 3, O, PD12_A>;
-impl<'a, const O: u8> PD12_W<'a, O> {
+pub type PD12_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PD12_A>;
+impl<'a, REG, const O: u8> PD12_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
-    pub fn sd_soe(self) -> &'a mut W {
+    pub fn sd_soe(self) -> &'a mut crate::W<REG> {
         self.variant(PD12_A::SD_SOE)
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
-    pub fn sd_sle(self) -> &'a mut W {
+    pub fn sd_sle(self) -> &'a mut crate::W<REG> {
         self.variant(PD12_A::SD_SLE)
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
-    pub fn md(self) -> &'a mut W {
+    pub fn md(self) -> &'a mut crate::W<REG> {
         self.variant(PD12_A::MD)
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
-    pub fn wd(self) -> &'a mut W {
+    pub fn wd(self) -> &'a mut crate::W<REG> {
         self.variant(PD12_A::WD)
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
-    pub fn sd_soe_alt(self) -> &'a mut W {
+    pub fn sd_soe_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD12_A::SD_SOE_ALT)
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
-    pub fn sd_sle_alt(self) -> &'a mut W {
+    pub fn sd_sle_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD12_A::SD_SLE_ALT)
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
-    pub fn md_alt(self) -> &'a mut W {
+    pub fn md_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD12_A::MD_ALT)
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
-    pub fn wd_alt(self) -> &'a mut W {
+    pub fn wd_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD12_A::WD_ALT)
     }
 }
@@ -669,88 +657,92 @@ impl PD13_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `SD_SOE`"]
+    #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
         *self == PD13_A::SD_SOE
     }
-    #[doc = "Checks if the value of the field is `SD_SLE`"]
+    #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
         *self == PD13_A::SD_SLE
     }
-    #[doc = "Checks if the value of the field is `MD`"]
+    #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
         *self == PD13_A::MD
     }
-    #[doc = "Checks if the value of the field is `WD`"]
+    #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
         *self == PD13_A::WD
     }
-    #[doc = "Checks if the value of the field is `SD_SOE_ALT`"]
+    #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
         *self == PD13_A::SD_SOE_ALT
     }
-    #[doc = "Checks if the value of the field is `SD_SLE_ALT`"]
+    #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
         *self == PD13_A::SD_SLE_ALT
     }
-    #[doc = "Checks if the value of the field is `MD_ALT`"]
+    #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
         *self == PD13_A::MD_ALT
     }
-    #[doc = "Checks if the value of the field is `WD_ALT`"]
+    #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
         *self == PD13_A::WD_ALT
     }
 }
 #[doc = "Field `PD13` writer - Pad Driver Mode for Pn.13"]
-pub type PD13_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PDR1_SPEC, 3, O, PD13_A>;
-impl<'a, const O: u8> PD13_W<'a, O> {
+pub type PD13_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PD13_A>;
+impl<'a, REG, const O: u8> PD13_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
-    pub fn sd_soe(self) -> &'a mut W {
+    pub fn sd_soe(self) -> &'a mut crate::W<REG> {
         self.variant(PD13_A::SD_SOE)
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
-    pub fn sd_sle(self) -> &'a mut W {
+    pub fn sd_sle(self) -> &'a mut crate::W<REG> {
         self.variant(PD13_A::SD_SLE)
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
-    pub fn md(self) -> &'a mut W {
+    pub fn md(self) -> &'a mut crate::W<REG> {
         self.variant(PD13_A::MD)
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
-    pub fn wd(self) -> &'a mut W {
+    pub fn wd(self) -> &'a mut crate::W<REG> {
         self.variant(PD13_A::WD)
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
-    pub fn sd_soe_alt(self) -> &'a mut W {
+    pub fn sd_soe_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD13_A::SD_SOE_ALT)
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
-    pub fn sd_sle_alt(self) -> &'a mut W {
+    pub fn sd_sle_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD13_A::SD_SLE_ALT)
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
-    pub fn md_alt(self) -> &'a mut W {
+    pub fn md_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD13_A::MD_ALT)
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
-    pub fn wd_alt(self) -> &'a mut W {
+    pub fn wd_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD13_A::WD_ALT)
     }
 }
@@ -802,88 +794,92 @@ impl PD14_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `SD_SOE`"]
+    #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
         *self == PD14_A::SD_SOE
     }
-    #[doc = "Checks if the value of the field is `SD_SLE`"]
+    #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
         *self == PD14_A::SD_SLE
     }
-    #[doc = "Checks if the value of the field is `MD`"]
+    #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
         *self == PD14_A::MD
     }
-    #[doc = "Checks if the value of the field is `WD`"]
+    #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
         *self == PD14_A::WD
     }
-    #[doc = "Checks if the value of the field is `SD_SOE_ALT`"]
+    #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
         *self == PD14_A::SD_SOE_ALT
     }
-    #[doc = "Checks if the value of the field is `SD_SLE_ALT`"]
+    #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
         *self == PD14_A::SD_SLE_ALT
     }
-    #[doc = "Checks if the value of the field is `MD_ALT`"]
+    #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
         *self == PD14_A::MD_ALT
     }
-    #[doc = "Checks if the value of the field is `WD_ALT`"]
+    #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
         *self == PD14_A::WD_ALT
     }
 }
 #[doc = "Field `PD14` writer - Pad Driver Mode for Pn.14"]
-pub type PD14_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PDR1_SPEC, 3, O, PD14_A>;
-impl<'a, const O: u8> PD14_W<'a, O> {
+pub type PD14_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PD14_A>;
+impl<'a, REG, const O: u8> PD14_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
-    pub fn sd_soe(self) -> &'a mut W {
+    pub fn sd_soe(self) -> &'a mut crate::W<REG> {
         self.variant(PD14_A::SD_SOE)
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
-    pub fn sd_sle(self) -> &'a mut W {
+    pub fn sd_sle(self) -> &'a mut crate::W<REG> {
         self.variant(PD14_A::SD_SLE)
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
-    pub fn md(self) -> &'a mut W {
+    pub fn md(self) -> &'a mut crate::W<REG> {
         self.variant(PD14_A::MD)
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
-    pub fn wd(self) -> &'a mut W {
+    pub fn wd(self) -> &'a mut crate::W<REG> {
         self.variant(PD14_A::WD)
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
-    pub fn sd_soe_alt(self) -> &'a mut W {
+    pub fn sd_soe_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD14_A::SD_SOE_ALT)
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
-    pub fn sd_sle_alt(self) -> &'a mut W {
+    pub fn sd_sle_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD14_A::SD_SLE_ALT)
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
-    pub fn md_alt(self) -> &'a mut W {
+    pub fn md_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD14_A::MD_ALT)
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
-    pub fn wd_alt(self) -> &'a mut W {
+    pub fn wd_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD14_A::WD_ALT)
     }
 }
@@ -935,88 +931,92 @@ impl PD15_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `SD_SOE`"]
+    #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
         *self == PD15_A::SD_SOE
     }
-    #[doc = "Checks if the value of the field is `SD_SLE`"]
+    #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
         *self == PD15_A::SD_SLE
     }
-    #[doc = "Checks if the value of the field is `MD`"]
+    #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
         *self == PD15_A::MD
     }
-    #[doc = "Checks if the value of the field is `WD`"]
+    #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
         *self == PD15_A::WD
     }
-    #[doc = "Checks if the value of the field is `SD_SOE_ALT`"]
+    #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
         *self == PD15_A::SD_SOE_ALT
     }
-    #[doc = "Checks if the value of the field is `SD_SLE_ALT`"]
+    #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
         *self == PD15_A::SD_SLE_ALT
     }
-    #[doc = "Checks if the value of the field is `MD_ALT`"]
+    #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
         *self == PD15_A::MD_ALT
     }
-    #[doc = "Checks if the value of the field is `WD_ALT`"]
+    #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
         *self == PD15_A::WD_ALT
     }
 }
 #[doc = "Field `PD15` writer - Pad Driver Mode for Pn.15"]
-pub type PD15_W<'a, const O: u8> = crate::FieldWriterSafe<'a, PDR1_SPEC, 3, O, PD15_A>;
-impl<'a, const O: u8> PD15_W<'a, O> {
+pub type PD15_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PD15_A>;
+impl<'a, REG, const O: u8> PD15_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
-    pub fn sd_soe(self) -> &'a mut W {
+    pub fn sd_soe(self) -> &'a mut crate::W<REG> {
         self.variant(PD15_A::SD_SOE)
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
-    pub fn sd_sle(self) -> &'a mut W {
+    pub fn sd_sle(self) -> &'a mut crate::W<REG> {
         self.variant(PD15_A::SD_SLE)
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
-    pub fn md(self) -> &'a mut W {
+    pub fn md(self) -> &'a mut crate::W<REG> {
         self.variant(PD15_A::MD)
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
-    pub fn wd(self) -> &'a mut W {
+    pub fn wd(self) -> &'a mut crate::W<REG> {
         self.variant(PD15_A::WD)
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
-    pub fn sd_soe_alt(self) -> &'a mut W {
+    pub fn sd_soe_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD15_A::SD_SOE_ALT)
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
-    pub fn sd_sle_alt(self) -> &'a mut W {
+    pub fn sd_sle_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD15_A::SD_SLE_ALT)
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
-    pub fn md_alt(self) -> &'a mut W {
+    pub fn md_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD15_A::MD_ALT)
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
-    pub fn wd_alt(self) -> &'a mut W {
+    pub fn wd_alt(self) -> &'a mut crate::W<REG> {
         self.variant(PD15_A::WD_ALT)
     }
 }
@@ -1066,70 +1066,67 @@ impl W {
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.8"]
     #[inline(always)]
     #[must_use]
-    pub fn pd8(&mut self) -> PD8_W<0> {
+    pub fn pd8(&mut self) -> PD8_W<PDR1_SPEC, 0> {
         PD8_W::new(self)
     }
     #[doc = "Bits 4:6 - Pad Driver Mode for Pn.9"]
     #[inline(always)]
     #[must_use]
-    pub fn pd9(&mut self) -> PD9_W<4> {
+    pub fn pd9(&mut self) -> PD9_W<PDR1_SPEC, 4> {
         PD9_W::new(self)
     }
     #[doc = "Bits 8:10 - Pad Driver Mode for Pn.10"]
     #[inline(always)]
     #[must_use]
-    pub fn pd10(&mut self) -> PD10_W<8> {
+    pub fn pd10(&mut self) -> PD10_W<PDR1_SPEC, 8> {
         PD10_W::new(self)
     }
     #[doc = "Bits 12:14 - Pad Driver Mode for Pn.11"]
     #[inline(always)]
     #[must_use]
-    pub fn pd11(&mut self) -> PD11_W<12> {
+    pub fn pd11(&mut self) -> PD11_W<PDR1_SPEC, 12> {
         PD11_W::new(self)
     }
     #[doc = "Bits 16:18 - Pad Driver Mode for Pn.12"]
     #[inline(always)]
     #[must_use]
-    pub fn pd12(&mut self) -> PD12_W<16> {
+    pub fn pd12(&mut self) -> PD12_W<PDR1_SPEC, 16> {
         PD12_W::new(self)
     }
     #[doc = "Bits 20:22 - Pad Driver Mode for Pn.13"]
     #[inline(always)]
     #[must_use]
-    pub fn pd13(&mut self) -> PD13_W<20> {
+    pub fn pd13(&mut self) -> PD13_W<PDR1_SPEC, 20> {
         PD13_W::new(self)
     }
     #[doc = "Bits 24:26 - Pad Driver Mode for Pn.14"]
     #[inline(always)]
     #[must_use]
-    pub fn pd14(&mut self) -> PD14_W<24> {
+    pub fn pd14(&mut self) -> PD14_W<PDR1_SPEC, 24> {
         PD14_W::new(self)
     }
     #[doc = "Bits 28:30 - Pad Driver Mode for Pn.15"]
     #[inline(always)]
     #[must_use]
-    pub fn pd15(&mut self) -> PD15_W<28> {
+    pub fn pd15(&mut self) -> PD15_W<PDR1_SPEC, 28> {
         PD15_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Port 0 Pad Driver Mode 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdr1](index.html) module"]
+#[doc = "Port 0 Pad Driver Mode 1 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdr1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pdr1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PDR1_SPEC;
 impl crate::RegisterSpec for PDR1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pdr1::R](R) reader structure"]
-impl crate::Readable for PDR1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pdr1::W](W) writer structure"]
+#[doc = "`read()` method returns [`pdr1::R`](R) reader structure"]
+impl crate::Readable for PDR1_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pdr1::W`](W) writer structure"]
 impl crate::Writable for PDR1_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

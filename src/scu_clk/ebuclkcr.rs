@@ -1,43 +1,11 @@
 #[doc = "Register `EBUCLKCR` reader"]
-pub struct R(crate::R<EBUCLKCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EBUCLKCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EBUCLKCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EBUCLKCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EBUCLKCR_SPEC>;
 #[doc = "Register `EBUCLKCR` writer"]
-pub struct W(crate::W<EBUCLKCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EBUCLKCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EBUCLKCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EBUCLKCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EBUCLKCR_SPEC>;
 #[doc = "Field `EBUDIV` reader - EBU Clock Divider Value"]
 pub type EBUDIV_R = crate::FieldReader;
 #[doc = "Field `EBUDIV` writer - EBU Clock Divider Value"]
-pub type EBUDIV_W<'a, const O: u8> = crate::FieldWriter<'a, EBUCLKCR_SPEC, 6, O>;
+pub type EBUDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - EBU Clock Divider Value"]
     #[inline(always)]
@@ -49,28 +17,25 @@ impl W {
     #[doc = "Bits 0:5 - EBU Clock Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ebudiv(&mut self) -> EBUDIV_W<0> {
+    pub fn ebudiv(&mut self) -> EBUDIV_W<EBUCLKCR_SPEC, 0> {
         EBUDIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EBU Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ebuclkcr](index.html) module"]
+#[doc = "EBU Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ebuclkcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ebuclkcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EBUCLKCR_SPEC;
 impl crate::RegisterSpec for EBUCLKCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ebuclkcr::R](R) reader structure"]
-impl crate::Readable for EBUCLKCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ebuclkcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`ebuclkcr::R`](R) reader structure"]
+impl crate::Readable for EBUCLKCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ebuclkcr::W`](W) writer structure"]
 impl crate::Writable for EBUCLKCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

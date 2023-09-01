@@ -1,18 +1,5 @@
 #[doc = "Register `SDRSTAT` reader"]
-pub struct R(crate::R<SDRSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SDRSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SDRSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SDRSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SDRSTAT_SPEC>;
 #[doc = "Field `REFERR` reader - SDRAM Refresh Error"]
 pub type REFERR_R = crate::BitReader<REFERR_A>;
 #[doc = "SDRAM Refresh Error\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl REFERR_R {
             true => REFERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No refresh error."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == REFERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Refresh error occurred."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == REFERR_A::VALUE2
@@ -74,12 +61,12 @@ impl SDRMBUSY_R {
             true => SDRMBUSY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Power-up initialization sequence is not running"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SDRMBUSY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Power-up initialization sequence is running"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SDRMBUSY_A::VALUE2
@@ -110,12 +97,12 @@ impl SDERR_R {
             true => SDERR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Reads running successfully"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SDERR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Read error condition has been detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SDERR_A::VALUE2
@@ -138,15 +125,13 @@ impl R {
         SDERR_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "EBU SDRAM Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sdrstat](index.html) module"]
+#[doc = "EBU SDRAM Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sdrstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SDRSTAT_SPEC;
 impl crate::RegisterSpec for SDRSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sdrstat::R](R) reader structure"]
-impl crate::Readable for SDRSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`sdrstat::R`](R) reader structure"]
+impl crate::Readable for SDRSTAT_SPEC {}
 #[doc = "`reset()` method sets SDRSTAT to value 0x0001_0000"]
 impl crate::Resettable for SDRSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0x0001_0000;

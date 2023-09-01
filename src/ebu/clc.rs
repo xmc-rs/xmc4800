@@ -1,39 +1,7 @@
 #[doc = "Register `CLC` reader"]
-pub struct R(crate::R<CLC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CLC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CLC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CLC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CLC_SPEC>;
 #[doc = "Register `CLC` writer"]
-pub struct W(crate::W<CLC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CLC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CLC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CLC_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CLC_SPEC>;
 #[doc = "Field `DISR` reader - EBU Disable Request Bit"]
 pub type DISR_R = crate::BitReader<DISR_A>;
 #[doc = "EBU Disable Request Bit\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl DISR_R {
             true => DISR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "EBU disable is not requested"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DISR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "EBU disable is requested"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DISR_A::VALUE2
     }
 }
 #[doc = "Field `DISR` writer - EBU Disable Request Bit"]
-pub type DISR_W<'a, const O: u8> = crate::BitWriter<'a, CLC_SPEC, O, DISR_A>;
-impl<'a, const O: u8> DISR_W<'a, O> {
+pub type DISR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DISR_A>;
+impl<'a, REG, const O: u8> DISR_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "EBU disable is not requested"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DISR_A::VALUE1)
     }
     #[doc = "EBU disable is requested"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DISR_A::VALUE2)
     }
 }
@@ -109,12 +80,12 @@ impl DISS_R {
             true => DISS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "EBU is enabled (default after reset)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DISS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "EBU is disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DISS_A::VALUE2
@@ -145,28 +116,31 @@ impl SYNC_R {
             true => SYNC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "request EBU to run asynchronously to AHB bus clock and use separate clock source"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SYNC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "request EBU to run synchronously to ARM processor (default after reset)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SYNC_A::VALUE2
     }
 }
 #[doc = "Field `SYNC` writer - EBU Clocking Mode"]
-pub type SYNC_W<'a, const O: u8> = crate::BitWriter<'a, CLC_SPEC, O, SYNC_A>;
-impl<'a, const O: u8> SYNC_W<'a, O> {
+pub type SYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SYNC_A>;
+impl<'a, REG, const O: u8> SYNC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "request EBU to run asynchronously to AHB bus clock and use separate clock source"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SYNC_A::VALUE1)
     }
     #[doc = "request EBU to run synchronously to ARM processor (default after reset)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SYNC_A::VALUE2)
     }
 }
@@ -195,28 +169,31 @@ impl DIV2_R {
             true => DIV2_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "standard clocking mode. clock input selected by SYNC bitfield (default after reset)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DIV2_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "request EBU to run off AHB bus clock divided by 2."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DIV2_A::VALUE2
     }
 }
 #[doc = "Field `DIV2` writer - DIV2 Clocking Mode"]
-pub type DIV2_W<'a, const O: u8> = crate::BitWriter<'a, CLC_SPEC, O, DIV2_A>;
-impl<'a, const O: u8> DIV2_W<'a, O> {
+pub type DIV2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DIV2_A>;
+impl<'a, REG, const O: u8> DIV2_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "standard clocking mode. clock input selected by SYNC bitfield (default after reset)."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DIV2_A::VALUE1)
     }
     #[doc = "request EBU to run off AHB bus clock divided by 2."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DIV2_A::VALUE2)
     }
 }
@@ -256,48 +233,52 @@ impl EBUDIV_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "request EBU to run off input clock (default after reset)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EBUDIV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "request EBU to run off input clock divided by 2"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EBUDIV_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "request EBU to run off input clock divided by 3"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == EBUDIV_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "request EBU to run off input clock divided by 4"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == EBUDIV_A::VALUE4
     }
 }
 #[doc = "Field `EBUDIV` writer - EBU Clock Divide Ratio"]
-pub type EBUDIV_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CLC_SPEC, 2, O, EBUDIV_A>;
-impl<'a, const O: u8> EBUDIV_W<'a, O> {
+pub type EBUDIV_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EBUDIV_A>;
+impl<'a, REG, const O: u8> EBUDIV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "request EBU to run off input clock (default after reset)"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EBUDIV_A::VALUE1)
     }
     #[doc = "request EBU to run off input clock divided by 2"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EBUDIV_A::VALUE2)
     }
     #[doc = "request EBU to run off input clock divided by 3"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(EBUDIV_A::VALUE3)
     }
     #[doc = "request EBU to run off input clock divided by 4"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(EBUDIV_A::VALUE4)
     }
 }
@@ -326,12 +307,12 @@ impl SYNCACK_R {
             true => SYNCACK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "the EBU is asynchronous to the AHB bus clock and is using a separate clock source"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SYNCACK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "EBU is synchronous to the AHB bus clock (default after reset)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SYNCACK_A::VALUE2
@@ -362,12 +343,12 @@ impl DIV2ACK_R {
             true => DIV2ACK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "EBU is using standard clocking mode. clock input selected by SYNC bitfield (default after reset)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DIV2ACK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "EBU is running off AHB bus clock divided by 2."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DIV2ACK_A::VALUE2
@@ -409,22 +390,22 @@ impl EBUDIVACK_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "EBU is running off input clock (default after reset)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EBUDIVACK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "EBU is running off input clock divided by 2"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EBUDIVACK_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "EBU is running off input clock divided by 3"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == EBUDIVACK_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "EBU is running off input clock divided by 4"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == EBUDIVACK_A::VALUE4
@@ -476,46 +457,43 @@ impl W {
     #[doc = "Bit 0 - EBU Disable Request Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn disr(&mut self) -> DISR_W<0> {
+    pub fn disr(&mut self) -> DISR_W<CLC_SPEC, 0> {
         DISR_W::new(self)
     }
     #[doc = "Bit 16 - EBU Clocking Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn sync(&mut self) -> SYNC_W<16> {
+    pub fn sync(&mut self) -> SYNC_W<CLC_SPEC, 16> {
         SYNC_W::new(self)
     }
     #[doc = "Bit 17 - DIV2 Clocking Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn div2(&mut self) -> DIV2_W<17> {
+    pub fn div2(&mut self) -> DIV2_W<CLC_SPEC, 17> {
         DIV2_W::new(self)
     }
     #[doc = "Bits 18:19 - EBU Clock Divide Ratio"]
     #[inline(always)]
     #[must_use]
-    pub fn ebudiv(&mut self) -> EBUDIV_W<18> {
+    pub fn ebudiv(&mut self) -> EBUDIV_W<CLC_SPEC, 18> {
         EBUDIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EBU Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clc](index.html) module"]
+#[doc = "EBU Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CLC_SPEC;
 impl crate::RegisterSpec for CLC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [clc::R](R) reader structure"]
-impl crate::Readable for CLC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [clc::W](W) writer structure"]
+#[doc = "`read()` method returns [`clc::R`](R) reader structure"]
+impl crate::Readable for CLC_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`clc::W`](W) writer structure"]
 impl crate::Writable for CLC_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

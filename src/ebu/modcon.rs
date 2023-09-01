@@ -1,39 +1,7 @@
 #[doc = "Register `MODCON` reader"]
-pub struct R(crate::R<MODCON_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MODCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MODCON_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MODCON_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MODCON_SPEC>;
 #[doc = "Register `MODCON` writer"]
-pub struct W(crate::W<MODCON_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MODCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MODCON_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MODCON_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MODCON_SPEC>;
 #[doc = "Field `STS` reader - Memory Status Bit"]
 pub type STS_R = crate::BitReader;
 #[doc = "Field `LCKABRT` reader - Lock Abort"]
@@ -63,28 +31,31 @@ impl SDTRI_R {
             true => SDTRI_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "SDRAM control signals are driven by the EBU when the EBU does not own the external bus. SDRAM cannot be shared."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SDTRI_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "SDRAM control signals are tri-stated by the EBU when the EBU does not own the external bus. The SDRAM can be shared."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SDTRI_A::VALUE2
     }
 }
 #[doc = "Field `SDTRI` writer - SDRAM Tristate"]
-pub type SDTRI_W<'a, const O: u8> = crate::BitWriter<'a, MODCON_SPEC, O, SDTRI_A>;
-impl<'a, const O: u8> SDTRI_W<'a, O> {
+pub type SDTRI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SDTRI_A>;
+impl<'a, REG, const O: u8> SDTRI_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "SDRAM control signals are driven by the EBU when the EBU does not own the external bus. SDRAM cannot be shared."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SDTRI_A::VALUE1)
     }
     #[doc = "SDRAM control signals are tri-stated by the EBU when the EBU does not own the external bus. The SDRAM can be shared."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SDTRI_A::VALUE2)
     }
 }
@@ -113,28 +84,31 @@ impl EXTLOCK_R {
             true => EXTLOCK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "External bus is not locked after the EBU gains ownership"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EXTLOCK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "External bus is locked after the EBU gains ownership"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EXTLOCK_A::VALUE2
     }
 }
 #[doc = "Field `EXTLOCK` writer - External Bus Lock Control"]
-pub type EXTLOCK_W<'a, const O: u8> = crate::BitWriter<'a, MODCON_SPEC, O, EXTLOCK_A>;
-impl<'a, const O: u8> EXTLOCK_W<'a, O> {
+pub type EXTLOCK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EXTLOCK_A>;
+impl<'a, REG, const O: u8> EXTLOCK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "External bus is not locked after the EBU gains ownership"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EXTLOCK_A::VALUE1)
     }
     #[doc = "External bus is locked after the EBU gains ownership"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EXTLOCK_A::VALUE2)
     }
 }
@@ -163,28 +137,31 @@ impl ARBSYNC_R {
             true => ARBSYNC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Arbitration inputs are synchronous"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ARBSYNC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Arbitration inputs are asynchronous"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ARBSYNC_A::VALUE2
     }
 }
 #[doc = "Field `ARBSYNC` writer - Arbitration Signal Synchronization Control"]
-pub type ARBSYNC_W<'a, const O: u8> = crate::BitWriter<'a, MODCON_SPEC, O, ARBSYNC_A>;
-impl<'a, const O: u8> ARBSYNC_W<'a, O> {
+pub type ARBSYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ARBSYNC_A>;
+impl<'a, REG, const O: u8> ARBSYNC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Arbitration inputs are synchronous"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ARBSYNC_A::VALUE1)
     }
     #[doc = "Arbitration inputs are asynchronous"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ARBSYNC_A::VALUE2)
     }
 }
@@ -224,48 +201,52 @@ impl ARBMODE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Bus arbitration mode selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ARBMODE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Arbiter Mode arbitration mode selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ARBMODE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Participant arbitration mode selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ARBMODE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Sole Master arbitration mode selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ARBMODE_A::VALUE4
     }
 }
 #[doc = "Field `ARBMODE` writer - Arbitration Mode Selection"]
-pub type ARBMODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, MODCON_SPEC, 2, O, ARBMODE_A>;
-impl<'a, const O: u8> ARBMODE_W<'a, O> {
+pub type ARBMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ARBMODE_A>;
+impl<'a, REG, const O: u8> ARBMODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No Bus arbitration mode selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ARBMODE_A::VALUE1)
     }
     #[doc = "Arbiter Mode arbitration mode selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ARBMODE_A::VALUE2)
     }
     #[doc = "Participant arbitration mode selected"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ARBMODE_A::VALUE3)
     }
     #[doc = "Sole Master arbitration mode selected"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(ARBMODE_A::VALUE4)
     }
 }
@@ -302,53 +283,57 @@ impl TIMEOUTC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Time-out is disabled."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == TIMEOUTC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Time-out is generated after 1 8 clock cycles."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == TIMEOUTC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Time-out is generated after 255 8 clock cycles."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == TIMEOUTC_A::VALUE3
     }
 }
 #[doc = "Field `TIMEOUTC` writer - Bus Time-out Control"]
-pub type TIMEOUTC_W<'a, const O: u8> = crate::FieldWriter<'a, MODCON_SPEC, 8, O, TIMEOUTC_A>;
-impl<'a, const O: u8> TIMEOUTC_W<'a, O> {
+pub type TIMEOUTC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, TIMEOUTC_A>;
+impl<'a, REG, const O: u8> TIMEOUTC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Time-out is disabled."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(TIMEOUTC_A::VALUE1)
     }
     #[doc = "Time-out is generated after 1 8 clock cycles."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(TIMEOUTC_A::VALUE2)
     }
     #[doc = "Time-out is generated after 255 8 clock cycles."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(TIMEOUTC_A::VALUE3)
     }
 }
 #[doc = "Field `LOCKTIMEOUT` reader - Lock Timeout Counter Preload"]
 pub type LOCKTIMEOUT_R = crate::FieldReader;
 #[doc = "Field `LOCKTIMEOUT` writer - Lock Timeout Counter Preload"]
-pub type LOCKTIMEOUT_W<'a, const O: u8> = crate::FieldWriter<'a, MODCON_SPEC, 8, O>;
+pub type LOCKTIMEOUT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `GLOBALCS` reader - Global Chip Select Enable"]
 pub type GLOBALCS_R = crate::FieldReader;
 #[doc = "Field `GLOBALCS` writer - Global Chip Select Enable"]
-pub type GLOBALCS_W<'a, const O: u8> = crate::FieldWriter<'a, MODCON_SPEC, 4, O>;
+pub type GLOBALCS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `ACCSINH` reader - Access Inhibit request"]
 pub type ACCSINH_R = crate::BitReader;
 #[doc = "Field `ACCSINH` writer - Access Inhibit request"]
-pub type ACCSINH_W<'a, const O: u8> = crate::BitWriter<'a, MODCON_SPEC, O>;
+pub type ACCSINH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ACCSINHACK` reader - Access inhibit acknowledge"]
 pub type ACCSINHACK_R = crate::BitReader;
 #[doc = "Field `ALE` reader - ALE Mode"]
@@ -376,28 +361,31 @@ impl ALE_R {
             true => ALE_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Output is ADV"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ALE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Output is ALE"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ALE_A::VALUE2
     }
 }
 #[doc = "Field `ALE` writer - ALE Mode"]
-pub type ALE_W<'a, const O: u8> = crate::BitWriter<'a, MODCON_SPEC, O, ALE_A>;
-impl<'a, const O: u8> ALE_W<'a, O> {
+pub type ALE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALE_A>;
+impl<'a, REG, const O: u8> ALE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Output is ADV"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ALE_A::VALUE1)
     }
     #[doc = "Output is ALE"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ALE_A::VALUE2)
     }
 }
@@ -467,76 +455,73 @@ impl W {
     #[doc = "Bit 2 - SDRAM Tristate"]
     #[inline(always)]
     #[must_use]
-    pub fn sdtri(&mut self) -> SDTRI_W<2> {
+    pub fn sdtri(&mut self) -> SDTRI_W<MODCON_SPEC, 2> {
         SDTRI_W::new(self)
     }
     #[doc = "Bit 4 - External Bus Lock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn extlock(&mut self) -> EXTLOCK_W<4> {
+    pub fn extlock(&mut self) -> EXTLOCK_W<MODCON_SPEC, 4> {
         EXTLOCK_W::new(self)
     }
     #[doc = "Bit 5 - Arbitration Signal Synchronization Control"]
     #[inline(always)]
     #[must_use]
-    pub fn arbsync(&mut self) -> ARBSYNC_W<5> {
+    pub fn arbsync(&mut self) -> ARBSYNC_W<MODCON_SPEC, 5> {
         ARBSYNC_W::new(self)
     }
     #[doc = "Bits 6:7 - Arbitration Mode Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn arbmode(&mut self) -> ARBMODE_W<6> {
+    pub fn arbmode(&mut self) -> ARBMODE_W<MODCON_SPEC, 6> {
         ARBMODE_W::new(self)
     }
     #[doc = "Bits 8:15 - Bus Time-out Control"]
     #[inline(always)]
     #[must_use]
-    pub fn timeoutc(&mut self) -> TIMEOUTC_W<8> {
+    pub fn timeoutc(&mut self) -> TIMEOUTC_W<MODCON_SPEC, 8> {
         TIMEOUTC_W::new(self)
     }
     #[doc = "Bits 16:23 - Lock Timeout Counter Preload"]
     #[inline(always)]
     #[must_use]
-    pub fn locktimeout(&mut self) -> LOCKTIMEOUT_W<16> {
+    pub fn locktimeout(&mut self) -> LOCKTIMEOUT_W<MODCON_SPEC, 16> {
         LOCKTIMEOUT_W::new(self)
     }
     #[doc = "Bits 24:27 - Global Chip Select Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn globalcs(&mut self) -> GLOBALCS_W<24> {
+    pub fn globalcs(&mut self) -> GLOBALCS_W<MODCON_SPEC, 24> {
         GLOBALCS_W::new(self)
     }
     #[doc = "Bit 28 - Access Inhibit request"]
     #[inline(always)]
     #[must_use]
-    pub fn accsinh(&mut self) -> ACCSINH_W<28> {
+    pub fn accsinh(&mut self) -> ACCSINH_W<MODCON_SPEC, 28> {
         ACCSINH_W::new(self)
     }
     #[doc = "Bit 31 - ALE Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ale(&mut self) -> ALE_W<31> {
+    pub fn ale(&mut self) -> ALE_W<MODCON_SPEC, 31> {
         ALE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EBU Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [modcon](index.html) module"]
+#[doc = "EBU Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`modcon::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`modcon::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MODCON_SPEC;
 impl crate::RegisterSpec for MODCON_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [modcon::R](R) reader structure"]
-impl crate::Readable for MODCON_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [modcon::W](W) writer structure"]
+#[doc = "`read()` method returns [`modcon::R`](R) reader structure"]
+impl crate::Readable for MODCON_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`modcon::W`](W) writer structure"]
 impl crate::Writable for MODCON_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

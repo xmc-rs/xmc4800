@@ -1,18 +1,5 @@
 #[doc = "Register `MIRRSTS` reader"]
-pub struct R(crate::R<MIRRSTS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MIRRSTS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MIRRSTS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MIRRSTS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MIRRSTS_SPEC>;
 #[doc = "Field `HDCLR` reader - HDCLR Mirror Register Write Status"]
 pub type HDCLR_R = crate::BitReader<HDCLR_A>;
 #[doc = "HDCLR Mirror Register Write Status\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl HDCLR_R {
             true => HDCLR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HDCLR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HDCLR_A::VALUE2
@@ -74,12 +61,12 @@ impl HDSET_R {
             true => HDSET_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HDSET_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HDSET_A::VALUE2
@@ -110,12 +97,12 @@ impl HDCR_R {
             true => HDCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HDCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HDCR_A::VALUE2
@@ -146,12 +133,12 @@ impl OSCSICTRL_R {
             true => OSCSICTRL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == OSCSICTRL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == OSCSICTRL_A::VALUE2
@@ -182,12 +169,12 @@ impl OSCULCTRL_R {
             true => OSCULCTRL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == OSCULCTRL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == OSCULCTRL_A::VALUE2
@@ -218,12 +205,12 @@ impl RTC_CTR_R {
             true => RTC_CTR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTC_CTR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTC_CTR_A::VALUE2
@@ -254,12 +241,12 @@ impl RTC_ATIM0_R {
             true => RTC_ATIM0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTC_ATIM0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTC_ATIM0_A::VALUE2
@@ -290,12 +277,12 @@ impl RTC_ATIM1_R {
             true => RTC_ATIM1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTC_ATIM1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTC_ATIM1_A::VALUE2
@@ -326,12 +313,12 @@ impl RTC_TIM0_R {
             true => RTC_TIM0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTC_TIM0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTC_TIM0_A::VALUE2
@@ -362,12 +349,12 @@ impl RTC_TIM1_R {
             true => RTC_TIM1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTC_TIM1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTC_TIM1_A::VALUE2
@@ -398,12 +385,12 @@ impl RMX_R {
             true => RMX_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RMX_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RMX_A::VALUE2
@@ -434,12 +421,12 @@ impl RTC_MSKSR_R {
             true => RTC_MSKSR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTC_MSKSR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTC_MSKSR_A::VALUE2
@@ -470,12 +457,12 @@ impl RTC_CLRSR_R {
             true => RTC_CLRSR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Ready"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTC_CLRSR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTC_CLRSR_A::VALUE2
@@ -548,15 +535,13 @@ impl R {
         RTC_CLRSR_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
-#[doc = "Mirror Write Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mirrsts](index.html) module"]
+#[doc = "Mirror Write Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mirrsts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MIRRSTS_SPEC;
 impl crate::RegisterSpec for MIRRSTS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mirrsts::R](R) reader structure"]
-impl crate::Readable for MIRRSTS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`mirrsts::R`](R) reader structure"]
+impl crate::Readable for MIRRSTS_SPEC {}
 #[doc = "`reset()` method sets MIRRSTS to value 0"]
 impl crate::Resettable for MIRRSTS_SPEC {
     const RESET_VALUE: Self::Ux = 0;

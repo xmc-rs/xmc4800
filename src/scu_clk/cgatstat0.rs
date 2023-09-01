@@ -1,18 +1,5 @@
 #[doc = "Register `CGATSTAT0` reader"]
-pub struct R(crate::R<CGATSTAT0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CGATSTAT0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CGATSTAT0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CGATSTAT0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CGATSTAT0_SPEC>;
 #[doc = "Field `VADC` reader - VADC Gating Status"]
 pub type VADC_R = crate::BitReader<VADC_A>;
 #[doc = "VADC Gating Status\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl VADC_R {
             true => VADC_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Gating de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VADC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Gating asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VADC_A::VALUE2
@@ -74,12 +61,12 @@ impl DSD_R {
             true => DSD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Gating de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DSD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Gating asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DSD_A::VALUE2
@@ -110,12 +97,12 @@ impl CCU40_R {
             true => CCU40_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Gating de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CCU40_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Gating asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CCU40_A::VALUE2
@@ -146,12 +133,12 @@ impl CCU41_R {
             true => CCU41_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Gating de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CCU41_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Gating asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CCU41_A::VALUE2
@@ -182,12 +169,12 @@ impl CCU42_R {
             true => CCU42_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Gating de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CCU42_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Gating asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CCU42_A::VALUE2
@@ -218,12 +205,12 @@ impl CCU80_R {
             true => CCU80_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Gating de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CCU80_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Gating asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CCU80_A::VALUE2
@@ -254,12 +241,12 @@ impl CCU81_R {
             true => CCU81_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Gating de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CCU81_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Gating asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CCU81_A::VALUE2
@@ -290,12 +277,12 @@ impl POSIF0_R {
             true => POSIF0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Gating de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == POSIF0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Gating asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == POSIF0_A::VALUE2
@@ -326,12 +313,12 @@ impl POSIF1_R {
             true => POSIF1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Gating de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == POSIF1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Gating asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == POSIF1_A::VALUE2
@@ -362,12 +349,12 @@ impl USIC0_R {
             true => USIC0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Gating de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == USIC0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Gating asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == USIC0_A::VALUE2
@@ -398,12 +385,12 @@ impl ERU1_R {
             true => ERU1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Gating de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ERU1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Gating asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ERU1_A::VALUE2
@@ -466,15 +453,13 @@ impl R {
         ERU1_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
-#[doc = "Peripheral 0 Clock Gating Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatstat0](index.html) module"]
+#[doc = "Peripheral 0 Clock Gating Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cgatstat0::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CGATSTAT0_SPEC;
 impl crate::RegisterSpec for CGATSTAT0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cgatstat0::R](R) reader structure"]
-impl crate::Readable for CGATSTAT0_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`cgatstat0::R`](R) reader structure"]
+impl crate::Readable for CGATSTAT0_SPEC {}
 #[doc = "`reset()` method sets CGATSTAT0 to value 0"]
 impl crate::Resettable for CGATSTAT0_SPEC {
     const RESET_VALUE: Self::Ux = 0;
