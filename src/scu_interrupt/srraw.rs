@@ -1,18 +1,5 @@
 #[doc = "Register `SRRAW` reader"]
-pub struct R(crate::R<SRRAW_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SRRAW_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SRRAW_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SRRAW_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SRRAW_SPEC>;
 #[doc = "Field `PRWARN` reader - WDT pre-warning Interrupt Status Before Masking"]
 pub type PRWARN_R = crate::BitReader<PRWARN_A>;
 #[doc = "WDT pre-warning Interrupt Status Before Masking\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl PRWARN_R {
             true => PRWARN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Inactive"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PRWARN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PRWARN_A::VALUE2
@@ -80,12 +67,12 @@ impl HDCLR_R {
             true => HDCLR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not updated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HDCLR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Update completed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HDCLR_A::VALUE2
@@ -116,12 +103,12 @@ impl HDSET_R {
             true => HDSET_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not updated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HDSET_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Update completed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HDSET_A::VALUE2
@@ -152,12 +139,12 @@ impl HDCR_R {
             true => HDCR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not updated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HDCR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Update completed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HDCR_A::VALUE2
@@ -188,12 +175,12 @@ impl OSCSICTRL_R {
             true => OSCSICTRL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not updated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == OSCSICTRL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Update completed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == OSCSICTRL_A::VALUE2
@@ -224,12 +211,12 @@ impl OSCULCTRL_R {
             true => OSCULCTRL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not updated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == OSCULCTRL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Update completed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == OSCULCTRL_A::VALUE2
@@ -260,12 +247,12 @@ impl RTC_CTR_R {
             true => RTC_CTR_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not updated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTC_CTR_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Update completed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTC_CTR_A::VALUE2
@@ -296,12 +283,12 @@ impl RTC_ATIM0_R {
             true => RTC_ATIM0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not updated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTC_ATIM0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Update completed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTC_ATIM0_A::VALUE2
@@ -332,12 +319,12 @@ impl RTC_ATIM1_R {
             true => RTC_ATIM1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not updated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTC_ATIM1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Update completed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTC_ATIM1_A::VALUE2
@@ -368,12 +355,12 @@ impl RTC_TIM0_R {
             true => RTC_TIM0_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not updated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTC_TIM0_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Update completed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTC_TIM0_A::VALUE2
@@ -404,12 +391,12 @@ impl RTC_TIM1_R {
             true => RTC_TIM1_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not updated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RTC_TIM1_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Update completed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RTC_TIM1_A::VALUE2
@@ -440,12 +427,12 @@ impl RMX_R {
             true => RMX_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Not updated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RMX_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Update completed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RMX_A::VALUE2
@@ -528,15 +515,13 @@ impl R {
         RMX_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
-#[doc = "SCU Raw Service Request Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srraw](index.html) module"]
+#[doc = "SCU Raw Service Request Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`srraw::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SRRAW_SPEC;
 impl crate::RegisterSpec for SRRAW_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [srraw::R](R) reader structure"]
-impl crate::Readable for SRRAW_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`srraw::R`](R) reader structure"]
+impl crate::Readable for SRRAW_SPEC {}
 #[doc = "`reset()` method sets SRRAW to value 0"]
 impl crate::Resettable for SRRAW_SPEC {
     const RESET_VALUE: Self::Ux = 0;

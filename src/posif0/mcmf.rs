@@ -1,18 +1,5 @@
 #[doc = "Register `MCMF` reader"]
-pub struct R(crate::R<MCMF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MCMF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MCMF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MCMF_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MCMF_SPEC>;
 #[doc = "Field `MSS` reader - Multi-Channel Pattern update status"]
 pub type MSS_R = crate::BitReader<MSS_A>;
 #[doc = "Multi-Channel Pattern update status\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl MSS_R {
             true => MSS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Update of the Multi-Channel pattern is set"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Update of the Multi-Channel pattern is not set"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSS_A::VALUE2
@@ -56,15 +43,13 @@ impl R {
         MSS_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Multi-Channel Pattern Control flag\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mcmf](index.html) module"]
+#[doc = "Multi-Channel Pattern Control flag\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mcmf::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MCMF_SPEC;
 impl crate::RegisterSpec for MCMF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mcmf::R](R) reader structure"]
-impl crate::Readable for MCMF_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`mcmf::R`](R) reader structure"]
+impl crate::Readable for MCMF_SPEC {}
 #[doc = "`reset()` method sets MCMF to value 0"]
 impl crate::Resettable for MCMF_SPEC {
     const RESET_VALUE: Self::Ux = 0;

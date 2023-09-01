@@ -1,39 +1,7 @@
 #[doc = "Register `BUSWAP0` reader"]
-pub struct R(crate::R<BUSWAP0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BUSWAP0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BUSWAP0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BUSWAP0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<BUSWAP0_SPEC>;
 #[doc = "Register `BUSWAP0` writer"]
-pub struct W(crate::W<BUSWAP0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<BUSWAP0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<BUSWAP0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<BUSWAP0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<BUSWAP0_SPEC>;
 #[doc = "Field `WRDTACS` reader - Recovery Cycles between Different Regions"]
 pub type WRDTACS_R = crate::FieldReader<WRDTACS_A>;
 #[doc = "Recovery Cycles between Different Regions\n\nValue on reset: 15"]
@@ -70,48 +38,52 @@ impl WRDTACS_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Recovery Phase clock cycles available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WRDTACS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "1 clock cycle selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WRDTACS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "14 clock cycles selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == WRDTACS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "15 clock cycles selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == WRDTACS_A::VALUE4
     }
 }
 #[doc = "Field `WRDTACS` writer - Recovery Cycles between Different Regions"]
-pub type WRDTACS_W<'a, const O: u8> = crate::FieldWriter<'a, BUSWAP0_SPEC, 4, O, WRDTACS_A>;
-impl<'a, const O: u8> WRDTACS_W<'a, O> {
+pub type WRDTACS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, WRDTACS_A>;
+impl<'a, REG, const O: u8> WRDTACS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No Recovery Phase clock cycles available."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WRDTACS_A::VALUE1)
     }
     #[doc = "1 clock cycle selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WRDTACS_A::VALUE2)
     }
     #[doc = "14 clock cycles selected."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(WRDTACS_A::VALUE3)
     }
     #[doc = "15 clock cycles selected."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(WRDTACS_A::VALUE4)
     }
 }
@@ -151,48 +123,52 @@ impl WRRECOVC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Recovery Phase clock cycles available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WRRECOVC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "1 clock cycle selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WRRECOVC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "6 clock cycles selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == WRRECOVC_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "7 clock cycles selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == WRRECOVC_A::VALUE4
     }
 }
 #[doc = "Field `WRRECOVC` writer - Recovery Cycles after Write Accesses"]
-pub type WRRECOVC_W<'a, const O: u8> = crate::FieldWriter<'a, BUSWAP0_SPEC, 3, O, WRRECOVC_A>;
-impl<'a, const O: u8> WRRECOVC_W<'a, O> {
+pub type WRRECOVC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, WRRECOVC_A>;
+impl<'a, REG, const O: u8> WRRECOVC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No Recovery Phase clock cycles available."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WRRECOVC_A::VALUE1)
     }
     #[doc = "1 clock cycle selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WRRECOVC_A::VALUE2)
     }
     #[doc = "6 clock cycles selected."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(WRRECOVC_A::VALUE3)
     }
     #[doc = "7 clock cycles selected."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(WRRECOVC_A::VALUE4)
     }
 }
@@ -235,58 +211,62 @@ impl WAITWRC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "1 wait state."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WAITWRC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "1 wait states."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WAITWRC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "2 wait state."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == WAITWRC_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "30 wait states."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == WAITWRC_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "31 wait states."]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == WAITWRC_A::VALUE5
     }
 }
 #[doc = "Field `WAITWRC` writer - Programmed Wait States for write accesses"]
-pub type WAITWRC_W<'a, const O: u8> = crate::FieldWriter<'a, BUSWAP0_SPEC, 5, O, WAITWRC_A>;
-impl<'a, const O: u8> WAITWRC_W<'a, O> {
+pub type WAITWRC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O, WAITWRC_A>;
+impl<'a, REG, const O: u8> WAITWRC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "1 wait state."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(WAITWRC_A::VALUE1)
     }
     #[doc = "1 wait states."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(WAITWRC_A::VALUE2)
     }
     #[doc = "2 wait state."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(WAITWRC_A::VALUE3)
     }
     #[doc = "30 wait states."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(WAITWRC_A::VALUE4)
     }
     #[doc = "31 wait states."]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(WAITWRC_A::VALUE5)
     }
 }
@@ -326,48 +306,52 @@ impl DATAC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No Recovery Phase clock cycles available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DATAC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "1 clock cycle selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DATAC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "14 clock cycles selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == DATAC_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "15 clock cycles selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == DATAC_A::VALUE4
     }
 }
 #[doc = "Field `DATAC` writer - Data Hold Cycles for Write Accesses"]
-pub type DATAC_W<'a, const O: u8> = crate::FieldWriter<'a, BUSWAP0_SPEC, 4, O, DATAC_A>;
-impl<'a, const O: u8> DATAC_W<'a, O> {
+pub type DATAC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, DATAC_A>;
+impl<'a, REG, const O: u8> DATAC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No Recovery Phase clock cycles available."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DATAC_A::VALUE1)
     }
     #[doc = "1 clock cycle selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DATAC_A::VALUE2)
     }
     #[doc = "14 clock cycles selected."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(DATAC_A::VALUE3)
     }
     #[doc = "15 clock cycles selected."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(DATAC_A::VALUE4)
     }
 }
@@ -407,48 +391,52 @@ impl EXTCLOCK_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Equal to INT_CLK frequency."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EXTCLOCK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "1/2 of INT_CLK frequency."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EXTCLOCK_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "1/3 of INT_CLK frequency."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == EXTCLOCK_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "1/4 of INT_CLK frequency (default after reset)."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == EXTCLOCK_A::VALUE4
     }
 }
 #[doc = "Field `EXTCLOCK` writer - Frequency of external clock at pin BFCLKO"]
-pub type EXTCLOCK_W<'a, const O: u8> = crate::FieldWriterSafe<'a, BUSWAP0_SPEC, 2, O, EXTCLOCK_A>;
-impl<'a, const O: u8> EXTCLOCK_W<'a, O> {
+pub type EXTCLOCK_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EXTCLOCK_A>;
+impl<'a, REG, const O: u8> EXTCLOCK_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Equal to INT_CLK frequency."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EXTCLOCK_A::VALUE1)
     }
     #[doc = "1/2 of INT_CLK frequency."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EXTCLOCK_A::VALUE2)
     }
     #[doc = "1/3 of INT_CLK frequency."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(EXTCLOCK_A::VALUE3)
     }
     #[doc = "1/4 of INT_CLK frequency (default after reset)."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(EXTCLOCK_A::VALUE4)
     }
 }
@@ -488,48 +476,52 @@ impl EXTDATA_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "external memory outputs data every BFCLK cycle"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EXTDATA_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "external memory outputs data every two BFCLK cycles"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EXTDATA_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "external memory outputs data every four BFCLK cycles"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == EXTDATA_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "external memory outputs data every eight BFCLK cycles"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == EXTDATA_A::VALUE4
     }
 }
 #[doc = "Field `EXTDATA` writer - Extended data"]
-pub type EXTDATA_W<'a, const O: u8> = crate::FieldWriterSafe<'a, BUSWAP0_SPEC, 2, O, EXTDATA_A>;
-impl<'a, const O: u8> EXTDATA_W<'a, O> {
+pub type EXTDATA_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EXTDATA_A>;
+impl<'a, REG, const O: u8> EXTDATA_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "external memory outputs data every BFCLK cycle"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EXTDATA_A::VALUE1)
     }
     #[doc = "external memory outputs data every two BFCLK cycles"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EXTDATA_A::VALUE2)
     }
     #[doc = "external memory outputs data every four BFCLK cycles"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(EXTDATA_A::VALUE3)
     }
     #[doc = "external memory outputs data every eight BFCLK cycles"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(EXTDATA_A::VALUE4)
     }
 }
@@ -569,48 +561,52 @@ impl CMDDELAY_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "0 clock cycle selected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CMDDELAY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "1 clock cycle selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CMDDELAY_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "14 clock cycles selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CMDDELAY_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "15 clock cycles selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CMDDELAY_A::VALUE4
     }
 }
 #[doc = "Field `CMDDELAY` writer - Command Delay Cycles"]
-pub type CMDDELAY_W<'a, const O: u8> = crate::FieldWriter<'a, BUSWAP0_SPEC, 4, O, CMDDELAY_A>;
-impl<'a, const O: u8> CMDDELAY_W<'a, O> {
+pub type CMDDELAY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CMDDELAY_A>;
+impl<'a, REG, const O: u8> CMDDELAY_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "0 clock cycle selected."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CMDDELAY_A::VALUE1)
     }
     #[doc = "1 clock cycle selected."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CMDDELAY_A::VALUE2)
     }
     #[doc = "14 clock cycles selected."]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CMDDELAY_A::VALUE3)
     }
     #[doc = "15 clock cycles selected."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CMDDELAY_A::VALUE4)
     }
 }
@@ -650,48 +646,52 @@ impl AHOLDC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "0 clock cycle selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == AHOLDC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "1 clock cycle selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == AHOLDC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "14 clock cycles selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == AHOLDC_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "15 clock cycles selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == AHOLDC_A::VALUE4
     }
 }
 #[doc = "Field `AHOLDC` writer - Address Hold Cycles"]
-pub type AHOLDC_W<'a, const O: u8> = crate::FieldWriter<'a, BUSWAP0_SPEC, 4, O, AHOLDC_A>;
-impl<'a, const O: u8> AHOLDC_W<'a, O> {
+pub type AHOLDC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, AHOLDC_A>;
+impl<'a, REG, const O: u8> AHOLDC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "0 clock cycle selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(AHOLDC_A::VALUE1)
     }
     #[doc = "1 clock cycle selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(AHOLDC_A::VALUE2)
     }
     #[doc = "14 clock cycles selected"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(AHOLDC_A::VALUE3)
     }
     #[doc = "15 clock cycles selected"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(AHOLDC_A::VALUE4)
     }
 }
@@ -731,48 +731,52 @@ impl ADDRC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "1 clock cycle selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ADDRC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "1 clock cycle selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ADDRC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "14 clock cycles selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ADDRC_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "15 clock cycles selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ADDRC_A::VALUE4
     }
 }
 #[doc = "Field `ADDRC` writer - Address Cycles"]
-pub type ADDRC_W<'a, const O: u8> = crate::FieldWriter<'a, BUSWAP0_SPEC, 4, O, ADDRC_A>;
-impl<'a, const O: u8> ADDRC_W<'a, O> {
+pub type ADDRC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, ADDRC_A>;
+impl<'a, REG, const O: u8> ADDRC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "1 clock cycle selected"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ADDRC_A::VALUE1)
     }
     #[doc = "1 clock cycle selected"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ADDRC_A::VALUE2)
     }
     #[doc = "14 clock cycles selected"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ADDRC_A::VALUE3)
     }
     #[doc = "15 clock cycles selected"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(ADDRC_A::VALUE4)
     }
 }
@@ -827,76 +831,73 @@ impl W {
     #[doc = "Bits 0:3 - Recovery Cycles between Different Regions"]
     #[inline(always)]
     #[must_use]
-    pub fn wrdtacs(&mut self) -> WRDTACS_W<0> {
+    pub fn wrdtacs(&mut self) -> WRDTACS_W<BUSWAP0_SPEC, 0> {
         WRDTACS_W::new(self)
     }
     #[doc = "Bits 4:6 - Recovery Cycles after Write Accesses"]
     #[inline(always)]
     #[must_use]
-    pub fn wrrecovc(&mut self) -> WRRECOVC_W<4> {
+    pub fn wrrecovc(&mut self) -> WRRECOVC_W<BUSWAP0_SPEC, 4> {
         WRRECOVC_W::new(self)
     }
     #[doc = "Bits 7:11 - Programmed Wait States for write accesses"]
     #[inline(always)]
     #[must_use]
-    pub fn waitwrc(&mut self) -> WAITWRC_W<7> {
+    pub fn waitwrc(&mut self) -> WAITWRC_W<BUSWAP0_SPEC, 7> {
         WAITWRC_W::new(self)
     }
     #[doc = "Bits 12:15 - Data Hold Cycles for Write Accesses"]
     #[inline(always)]
     #[must_use]
-    pub fn datac(&mut self) -> DATAC_W<12> {
+    pub fn datac(&mut self) -> DATAC_W<BUSWAP0_SPEC, 12> {
         DATAC_W::new(self)
     }
     #[doc = "Bits 16:17 - Frequency of external clock at pin BFCLKO"]
     #[inline(always)]
     #[must_use]
-    pub fn extclock(&mut self) -> EXTCLOCK_W<16> {
+    pub fn extclock(&mut self) -> EXTCLOCK_W<BUSWAP0_SPEC, 16> {
         EXTCLOCK_W::new(self)
     }
     #[doc = "Bits 18:19 - Extended data"]
     #[inline(always)]
     #[must_use]
-    pub fn extdata(&mut self) -> EXTDATA_W<18> {
+    pub fn extdata(&mut self) -> EXTDATA_W<BUSWAP0_SPEC, 18> {
         EXTDATA_W::new(self)
     }
     #[doc = "Bits 20:23 - Command Delay Cycles"]
     #[inline(always)]
     #[must_use]
-    pub fn cmddelay(&mut self) -> CMDDELAY_W<20> {
+    pub fn cmddelay(&mut self) -> CMDDELAY_W<BUSWAP0_SPEC, 20> {
         CMDDELAY_W::new(self)
     }
     #[doc = "Bits 24:27 - Address Hold Cycles"]
     #[inline(always)]
     #[must_use]
-    pub fn aholdc(&mut self) -> AHOLDC_W<24> {
+    pub fn aholdc(&mut self) -> AHOLDC_W<BUSWAP0_SPEC, 24> {
         AHOLDC_W::new(self)
     }
     #[doc = "Bits 28:31 - Address Cycles"]
     #[inline(always)]
     #[must_use]
-    pub fn addrc(&mut self) -> ADDRC_W<28> {
+    pub fn addrc(&mut self) -> ADDRC_W<BUSWAP0_SPEC, 28> {
         ADDRC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EBU Bus Write Access Parameter Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buswap0](index.html) module"]
+#[doc = "EBU Bus Write Access Parameter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`buswap0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`buswap0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BUSWAP0_SPEC;
 impl crate::RegisterSpec for BUSWAP0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [buswap0::R](R) reader structure"]
-impl crate::Readable for BUSWAP0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [buswap0::W](W) writer structure"]
+#[doc = "`read()` method returns [`buswap0::R`](R) reader structure"]
+impl crate::Readable for BUSWAP0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`buswap0::W`](W) writer structure"]
 impl crate::Writable for BUSWAP0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

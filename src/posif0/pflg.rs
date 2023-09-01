@@ -1,18 +1,5 @@
 #[doc = "Register `PFLG` reader"]
-pub struct R(crate::R<PFLG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PFLG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PFLG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PFLG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PFLG_SPEC>;
 #[doc = "Field `CHES` reader - Correct Hall Event Status"]
 pub type CHES_R = crate::BitReader<CHES_A>;
 #[doc = "Correct Hall Event Status\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl CHES_R {
             true => CHES_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Correct Hall Event not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CHES_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Correct Hall Event detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CHES_A::VALUE2
@@ -74,12 +61,12 @@ impl WHES_R {
             true => WHES_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Wrong Hall Event not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == WHES_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Wrong Hall Event detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == WHES_A::VALUE2
@@ -110,12 +97,12 @@ impl HIES_R {
             true => HIES_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Transition on the Hall Inputs not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HIES_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Transition on the Hall Inputs detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == HIES_A::VALUE2
@@ -146,12 +133,12 @@ impl MSTS_R {
             true => MSTS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Shadow transfer not done"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MSTS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Shadow transfer done"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MSTS_A::VALUE2
@@ -182,12 +169,12 @@ impl INDXS_R {
             true => INDXS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Index event not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == INDXS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Index event detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == INDXS_A::VALUE2
@@ -218,12 +205,12 @@ impl ERRS_R {
             true => ERRS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Phase Error event not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ERRS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Phase Error event detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ERRS_A::VALUE2
@@ -254,12 +241,12 @@ impl CNTS_R {
             true => CNTS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Quadrature clock not generated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CNTS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Quadrature clock generated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CNTS_A::VALUE2
@@ -290,12 +277,12 @@ impl DIRS_R {
             true => DIRS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Change on direction not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DIRS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Change on direction detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DIRS_A::VALUE2
@@ -326,12 +313,12 @@ impl PCLKS_R {
             true => PCLKS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Period clock not generated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PCLKS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Period clock generated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PCLKS_A::VALUE2
@@ -384,15 +371,13 @@ impl R {
         PCLKS_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
-#[doc = "POSIF Interrupt Flags\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pflg](index.html) module"]
+#[doc = "POSIF Interrupt Flags\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pflg::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PFLG_SPEC;
 impl crate::RegisterSpec for PFLG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pflg::R](R) reader structure"]
-impl crate::Readable for PFLG_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pflg::R`](R) reader structure"]
+impl crate::Readable for PFLG_SPEC {}
 #[doc = "`reset()` method sets PFLG to value 0"]
 impl crate::Resettable for PFLG_SPEC {
     const RESET_VALUE: Self::Ux = 0;

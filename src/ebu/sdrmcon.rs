@@ -1,55 +1,23 @@
 #[doc = "Register `SDRMCON` reader"]
-pub struct R(crate::R<SDRMCON_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SDRMCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SDRMCON_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SDRMCON_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SDRMCON_SPEC>;
 #[doc = "Register `SDRMCON` writer"]
-pub struct W(crate::W<SDRMCON_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SDRMCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SDRMCON_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SDRMCON_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SDRMCON_SPEC>;
 #[doc = "Field `CRAS` reader - Row to precharge delay counter"]
 pub type CRAS_R = crate::FieldReader;
 #[doc = "Field `CRAS` writer - Row to precharge delay counter"]
-pub type CRAS_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 4, O>;
+pub type CRAS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `CRFSH` reader - Initialization refresh commands counter"]
 pub type CRFSH_R = crate::FieldReader;
 #[doc = "Field `CRFSH` writer - Initialization refresh commands counter"]
-pub type CRFSH_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 4, O>;
+pub type CRFSH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `CRSC` reader - Mode register set-up time"]
 pub type CRSC_R = crate::FieldReader;
 #[doc = "Field `CRSC` writer - Mode register set-up time"]
-pub type CRSC_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 2, O>;
+pub type CRSC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `CRP` reader - Row precharge time counter"]
 pub type CRP_R = crate::FieldReader;
 #[doc = "Field `CRP` writer - Row precharge time counter"]
-pub type CRP_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 2, O>;
+pub type CRP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `AWIDTH` reader - Width of column address"]
 pub type AWIDTH_R = crate::FieldReader<AWIDTH_A>;
 #[doc = "Width of column address\n\nValue on reset: 0"]
@@ -86,59 +54,63 @@ impl AWIDTH_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "do not use"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == AWIDTH_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Address(8:0)"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == AWIDTH_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Address(9:0)"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == AWIDTH_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Address(10:0)"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == AWIDTH_A::VALUE4
     }
 }
 #[doc = "Field `AWIDTH` writer - Width of column address"]
-pub type AWIDTH_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SDRMCON_SPEC, 2, O, AWIDTH_A>;
-impl<'a, const O: u8> AWIDTH_W<'a, O> {
+pub type AWIDTH_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, AWIDTH_A>;
+impl<'a, REG, const O: u8> AWIDTH_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "do not use"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(AWIDTH_A::VALUE1)
     }
     #[doc = "Address(8:0)"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(AWIDTH_A::VALUE2)
     }
     #[doc = "Address(9:0)"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(AWIDTH_A::VALUE3)
     }
     #[doc = "Address(10:0)"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(AWIDTH_A::VALUE4)
     }
 }
 #[doc = "Field `CRCD` reader - Row to column delay counter"]
 pub type CRCD_R = crate::FieldReader;
 #[doc = "Field `CRCD` writer - Row to column delay counter"]
-pub type CRCD_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 2, O>;
+pub type CRCD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `CRC` reader - Row cycle time counter"]
 pub type CRC_R = crate::FieldReader;
 #[doc = "Field `CRC` writer - Row cycle time counter"]
-pub type CRC_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 3, O>;
+pub type CRC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `ROWM` reader - Mask for row tag"]
 pub type ROWM_R = crate::FieldReader<ROWM_A>;
 #[doc = "Mask for row tag\n\nValue on reset: 0"]
@@ -178,58 +150,62 @@ impl ROWM_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Address bit 26 to 9"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ROWM_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Address bit 26 to 10"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ROWM_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Address bit 26 to 11"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == ROWM_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "Address bit 26 to 12"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == ROWM_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "Address bit 26 to 13"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == ROWM_A::VALUE6
     }
 }
 #[doc = "Field `ROWM` writer - Mask for row tag"]
-pub type ROWM_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 3, O, ROWM_A>;
-impl<'a, const O: u8> ROWM_W<'a, O> {
+pub type ROWM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, ROWM_A>;
+impl<'a, REG, const O: u8> ROWM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Address bit 26 to 9"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ROWM_A::VALUE2)
     }
     #[doc = "Address bit 26 to 10"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ROWM_A::VALUE3)
     }
     #[doc = "Address bit 26 to 11"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(ROWM_A::VALUE4)
     }
     #[doc = "Address bit 26 to 12"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(ROWM_A::VALUE5)
     }
     #[doc = "Address bit 26 to 13"]
     #[inline(always)]
-    pub fn value6(self) -> &'a mut W {
+    pub fn value6(self) -> &'a mut crate::W<REG> {
         self.variant(ROWM_A::VALUE6)
     }
 }
@@ -278,85 +254,89 @@ impl BANKM_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Address bit 21 to 20"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BANKM_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Address bit 22 to 21"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == BANKM_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Address bit 23 to 22"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == BANKM_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "Address bit 24 to 23"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == BANKM_A::VALUE5
     }
-    #[doc = "Checks if the value of the field is `VALUE6`"]
+    #[doc = "Address bit 25 to 24"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
         *self == BANKM_A::VALUE6
     }
-    #[doc = "Checks if the value of the field is `VALUE7`"]
+    #[doc = "Address bit 26 to 25"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
         *self == BANKM_A::VALUE7
     }
-    #[doc = "Checks if the value of the field is `VALUE8`"]
+    #[doc = "Address bit 26"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
         *self == BANKM_A::VALUE8
     }
 }
 #[doc = "Field `BANKM` writer - Mask for bank tag"]
-pub type BANKM_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 3, O, BANKM_A>;
-impl<'a, const O: u8> BANKM_W<'a, O> {
+pub type BANKM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, BANKM_A>;
+impl<'a, REG, const O: u8> BANKM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Address bit 21 to 20"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BANKM_A::VALUE2)
     }
     #[doc = "Address bit 22 to 21"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(BANKM_A::VALUE3)
     }
     #[doc = "Address bit 23 to 22"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(BANKM_A::VALUE4)
     }
     #[doc = "Address bit 24 to 23"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(BANKM_A::VALUE5)
     }
     #[doc = "Address bit 25 to 24"]
     #[inline(always)]
-    pub fn value6(self) -> &'a mut W {
+    pub fn value6(self) -> &'a mut crate::W<REG> {
         self.variant(BANKM_A::VALUE6)
     }
     #[doc = "Address bit 26 to 25"]
     #[inline(always)]
-    pub fn value7(self) -> &'a mut W {
+    pub fn value7(self) -> &'a mut crate::W<REG> {
         self.variant(BANKM_A::VALUE7)
     }
     #[doc = "Address bit 26"]
     #[inline(always)]
-    pub fn value8(self) -> &'a mut W {
+    pub fn value8(self) -> &'a mut crate::W<REG> {
         self.variant(BANKM_A::VALUE8)
     }
 }
 #[doc = "Field `CRCE` reader - Row cycle time counter extension"]
 pub type CRCE_R = crate::FieldReader;
 #[doc = "Field `CRCE` writer - Row cycle time counter extension"]
-pub type CRCE_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMCON_SPEC, 3, O>;
+pub type CRCE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `CLKDIS` reader - Disable SDRAM clock output"]
 pub type CLKDIS_R = crate::BitReader<CLKDIS_A>;
 #[doc = "Disable SDRAM clock output\n\nValue on reset: 0"]
@@ -382,28 +362,31 @@ impl CLKDIS_R {
             true => CLKDIS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "clock enabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CLKDIS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "clock disabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CLKDIS_A::VALUE2
     }
 }
 #[doc = "Field `CLKDIS` writer - Disable SDRAM clock output"]
-pub type CLKDIS_W<'a, const O: u8> = crate::BitWriter<'a, SDRMCON_SPEC, O, CLKDIS_A>;
-impl<'a, const O: u8> CLKDIS_W<'a, O> {
+pub type CLKDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CLKDIS_A>;
+impl<'a, REG, const O: u8> CLKDIS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "clock enabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CLKDIS_A::VALUE1)
     }
     #[doc = "clock disabled"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CLKDIS_A::VALUE2)
     }
 }
@@ -443,48 +426,52 @@ impl PWR_MODE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "precharge before clock stop (default after reset)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PWR_MODE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "auto-precharge before clock stop"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PWR_MODE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "active power down (stop clock without precharge)"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == PWR_MODE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "clock stop power down"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == PWR_MODE_A::VALUE4
     }
 }
 #[doc = "Field `PWR_MODE` writer - Power Save Mode used for gated clock mode"]
-pub type PWR_MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, SDRMCON_SPEC, 2, O, PWR_MODE_A>;
-impl<'a, const O: u8> PWR_MODE_W<'a, O> {
+pub type PWR_MODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PWR_MODE_A>;
+impl<'a, REG, const O: u8> PWR_MODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "precharge before clock stop (default after reset)"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PWR_MODE_A::VALUE1)
     }
     #[doc = "auto-precharge before clock stop"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PWR_MODE_A::VALUE2)
     }
     #[doc = "active power down (stop clock without precharge)"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(PWR_MODE_A::VALUE3)
     }
     #[doc = "clock stop power down"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(PWR_MODE_A::VALUE4)
     }
 }
@@ -513,28 +500,31 @@ impl SDCMSEL_R {
             false => SDCMSEL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "clock disabled between accesses"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SDCMSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "clock continuously runs"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SDCMSEL_A::VALUE2
     }
 }
 #[doc = "Field `SDCMSEL` writer - SDRAM clock mode select"]
-pub type SDCMSEL_W<'a, const O: u8> = crate::BitWriter<'a, SDRMCON_SPEC, O, SDCMSEL_A>;
-impl<'a, const O: u8> SDCMSEL_W<'a, O> {
+pub type SDCMSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SDCMSEL_A>;
+impl<'a, REG, const O: u8> SDCMSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "clock disabled between accesses"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SDCMSEL_A::VALUE1)
     }
     #[doc = "clock continuously runs"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SDCMSEL_A::VALUE2)
     }
 }
@@ -609,100 +599,97 @@ impl W {
     #[doc = "Bits 0:3 - Row to precharge delay counter"]
     #[inline(always)]
     #[must_use]
-    pub fn cras(&mut self) -> CRAS_W<0> {
+    pub fn cras(&mut self) -> CRAS_W<SDRMCON_SPEC, 0> {
         CRAS_W::new(self)
     }
     #[doc = "Bits 4:7 - Initialization refresh commands counter"]
     #[inline(always)]
     #[must_use]
-    pub fn crfsh(&mut self) -> CRFSH_W<4> {
+    pub fn crfsh(&mut self) -> CRFSH_W<SDRMCON_SPEC, 4> {
         CRFSH_W::new(self)
     }
     #[doc = "Bits 8:9 - Mode register set-up time"]
     #[inline(always)]
     #[must_use]
-    pub fn crsc(&mut self) -> CRSC_W<8> {
+    pub fn crsc(&mut self) -> CRSC_W<SDRMCON_SPEC, 8> {
         CRSC_W::new(self)
     }
     #[doc = "Bits 10:11 - Row precharge time counter"]
     #[inline(always)]
     #[must_use]
-    pub fn crp(&mut self) -> CRP_W<10> {
+    pub fn crp(&mut self) -> CRP_W<SDRMCON_SPEC, 10> {
         CRP_W::new(self)
     }
     #[doc = "Bits 12:13 - Width of column address"]
     #[inline(always)]
     #[must_use]
-    pub fn awidth(&mut self) -> AWIDTH_W<12> {
+    pub fn awidth(&mut self) -> AWIDTH_W<SDRMCON_SPEC, 12> {
         AWIDTH_W::new(self)
     }
     #[doc = "Bits 14:15 - Row to column delay counter"]
     #[inline(always)]
     #[must_use]
-    pub fn crcd(&mut self) -> CRCD_W<14> {
+    pub fn crcd(&mut self) -> CRCD_W<SDRMCON_SPEC, 14> {
         CRCD_W::new(self)
     }
     #[doc = "Bits 16:18 - Row cycle time counter"]
     #[inline(always)]
     #[must_use]
-    pub fn crc(&mut self) -> CRC_W<16> {
+    pub fn crc(&mut self) -> CRC_W<SDRMCON_SPEC, 16> {
         CRC_W::new(self)
     }
     #[doc = "Bits 19:21 - Mask for row tag"]
     #[inline(always)]
     #[must_use]
-    pub fn rowm(&mut self) -> ROWM_W<19> {
+    pub fn rowm(&mut self) -> ROWM_W<SDRMCON_SPEC, 19> {
         ROWM_W::new(self)
     }
     #[doc = "Bits 22:24 - Mask for bank tag"]
     #[inline(always)]
     #[must_use]
-    pub fn bankm(&mut self) -> BANKM_W<22> {
+    pub fn bankm(&mut self) -> BANKM_W<SDRMCON_SPEC, 22> {
         BANKM_W::new(self)
     }
     #[doc = "Bits 25:27 - Row cycle time counter extension"]
     #[inline(always)]
     #[must_use]
-    pub fn crce(&mut self) -> CRCE_W<25> {
+    pub fn crce(&mut self) -> CRCE_W<SDRMCON_SPEC, 25> {
         CRCE_W::new(self)
     }
     #[doc = "Bit 28 - Disable SDRAM clock output"]
     #[inline(always)]
     #[must_use]
-    pub fn clkdis(&mut self) -> CLKDIS_W<28> {
+    pub fn clkdis(&mut self) -> CLKDIS_W<SDRMCON_SPEC, 28> {
         CLKDIS_W::new(self)
     }
     #[doc = "Bits 29:30 - Power Save Mode used for gated clock mode"]
     #[inline(always)]
     #[must_use]
-    pub fn pwr_mode(&mut self) -> PWR_MODE_W<29> {
+    pub fn pwr_mode(&mut self) -> PWR_MODE_W<SDRMCON_SPEC, 29> {
         PWR_MODE_W::new(self)
     }
     #[doc = "Bit 31 - SDRAM clock mode select"]
     #[inline(always)]
     #[must_use]
-    pub fn sdcmsel(&mut self) -> SDCMSEL_W<31> {
+    pub fn sdcmsel(&mut self) -> SDCMSEL_W<SDRMCON_SPEC, 31> {
         SDCMSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EBU SDRAM Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sdrmcon](index.html) module"]
+#[doc = "EBU SDRAM Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sdrmcon::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sdrmcon::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SDRMCON_SPEC;
 impl crate::RegisterSpec for SDRMCON_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sdrmcon::R](R) reader structure"]
-impl crate::Readable for SDRMCON_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sdrmcon::W](W) writer structure"]
+#[doc = "`read()` method returns [`sdrmcon::R`](R) reader structure"]
+impl crate::Readable for SDRMCON_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`sdrmcon::W`](W) writer structure"]
 impl crate::Writable for SDRMCON_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

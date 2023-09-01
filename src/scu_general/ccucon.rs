@@ -1,39 +1,7 @@
 #[doc = "Register `CCUCON` reader"]
-pub struct R(crate::R<CCUCON_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CCUCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CCUCON_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CCUCON_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CCUCON_SPEC>;
 #[doc = "Register `CCUCON` writer"]
-pub struct W(crate::W<CCUCON_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CCUCON_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CCUCON_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CCUCON_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CCUCON_SPEC>;
 #[doc = "Field `GSC40` reader - Global Start Control CCU40"]
 pub type GSC40_R = crate::BitReader<GSC40_A>;
 #[doc = "Global Start Control CCU40\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl GSC40_R {
             true => GSC40_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == GSC40_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == GSC40_A::VALUE2
     }
 }
 #[doc = "Field `GSC40` writer - Global Start Control CCU40"]
-pub type GSC40_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O, GSC40_A>;
-impl<'a, const O: u8> GSC40_W<'a, O> {
+pub type GSC40_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GSC40_A>;
+impl<'a, REG, const O: u8> GSC40_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(GSC40_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(GSC40_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl GSC41_R {
             true => GSC41_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == GSC41_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == GSC41_A::VALUE2
     }
 }
 #[doc = "Field `GSC41` writer - Global Start Control CCU41"]
-pub type GSC41_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O, GSC41_A>;
-impl<'a, const O: u8> GSC41_W<'a, O> {
+pub type GSC41_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GSC41_A>;
+impl<'a, REG, const O: u8> GSC41_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(GSC41_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(GSC41_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl GSC42_R {
             true => GSC42_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == GSC42_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == GSC42_A::VALUE2
     }
 }
 #[doc = "Field `GSC42` writer - Global Start Control CCU42"]
-pub type GSC42_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O, GSC42_A>;
-impl<'a, const O: u8> GSC42_W<'a, O> {
+pub type GSC42_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GSC42_A>;
+impl<'a, REG, const O: u8> GSC42_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(GSC42_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(GSC42_A::VALUE2)
     }
 }
@@ -209,28 +186,31 @@ impl GSC43_R {
             true => GSC43_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == GSC43_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == GSC43_A::VALUE2
     }
 }
 #[doc = "Field `GSC43` writer - Global Start Control CCU43"]
-pub type GSC43_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O, GSC43_A>;
-impl<'a, const O: u8> GSC43_W<'a, O> {
+pub type GSC43_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GSC43_A>;
+impl<'a, REG, const O: u8> GSC43_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(GSC43_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(GSC43_A::VALUE2)
     }
 }
@@ -259,28 +239,31 @@ impl GSC80_R {
             true => GSC80_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == GSC80_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == GSC80_A::VALUE2
     }
 }
 #[doc = "Field `GSC80` writer - Global Start Control CCU80"]
-pub type GSC80_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O, GSC80_A>;
-impl<'a, const O: u8> GSC80_W<'a, O> {
+pub type GSC80_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GSC80_A>;
+impl<'a, REG, const O: u8> GSC80_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(GSC80_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(GSC80_A::VALUE2)
     }
 }
@@ -309,28 +292,31 @@ impl GSC81_R {
             true => GSC81_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == GSC81_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == GSC81_A::VALUE2
     }
 }
 #[doc = "Field `GSC81` writer - Global Start Control CCU81"]
-pub type GSC81_W<'a, const O: u8> = crate::BitWriter<'a, CCUCON_SPEC, O, GSC81_A>;
-impl<'a, const O: u8> GSC81_W<'a, O> {
+pub type GSC81_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GSC81_A>;
+impl<'a, REG, const O: u8> GSC81_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(GSC81_A::VALUE1)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(GSC81_A::VALUE2)
     }
 }
@@ -370,58 +356,55 @@ impl W {
     #[doc = "Bit 0 - Global Start Control CCU40"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc40(&mut self) -> GSC40_W<0> {
+    pub fn gsc40(&mut self) -> GSC40_W<CCUCON_SPEC, 0> {
         GSC40_W::new(self)
     }
     #[doc = "Bit 1 - Global Start Control CCU41"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc41(&mut self) -> GSC41_W<1> {
+    pub fn gsc41(&mut self) -> GSC41_W<CCUCON_SPEC, 1> {
         GSC41_W::new(self)
     }
     #[doc = "Bit 2 - Global Start Control CCU42"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc42(&mut self) -> GSC42_W<2> {
+    pub fn gsc42(&mut self) -> GSC42_W<CCUCON_SPEC, 2> {
         GSC42_W::new(self)
     }
     #[doc = "Bit 3 - Global Start Control CCU43"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc43(&mut self) -> GSC43_W<3> {
+    pub fn gsc43(&mut self) -> GSC43_W<CCUCON_SPEC, 3> {
         GSC43_W::new(self)
     }
     #[doc = "Bit 8 - Global Start Control CCU80"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc80(&mut self) -> GSC80_W<8> {
+    pub fn gsc80(&mut self) -> GSC80_W<CCUCON_SPEC, 8> {
         GSC80_W::new(self)
     }
     #[doc = "Bit 9 - Global Start Control CCU81"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc81(&mut self) -> GSC81_W<9> {
+    pub fn gsc81(&mut self) -> GSC81_W<CCUCON_SPEC, 9> {
         GSC81_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "CCU Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ccucon](index.html) module"]
+#[doc = "CCU Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccucon::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ccucon::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CCUCON_SPEC;
 impl crate::RegisterSpec for CCUCON_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ccucon::R](R) reader structure"]
-impl crate::Readable for CCUCON_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ccucon::W](W) writer structure"]
+#[doc = "`read()` method returns [`ccucon::R`](R) reader structure"]
+impl crate::Readable for CCUCON_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ccucon::W`](W) writer structure"]
 impl crate::Writable for CCUCON_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

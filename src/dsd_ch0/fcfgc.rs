@@ -1,43 +1,11 @@
 #[doc = "Register `FCFGC` reader"]
-pub struct R(crate::R<FCFGC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FCFGC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FCFGC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FCFGC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FCFGC_SPEC>;
 #[doc = "Register `FCFGC` writer"]
-pub struct W(crate::W<FCFGC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FCFGC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FCFGC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FCFGC_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<FCFGC_SPEC>;
 #[doc = "Field `CFMDF` reader - CIC Filter (Main Chain) Decimation Factor"]
 pub type CFMDF_R = crate::FieldReader;
 #[doc = "Field `CFMDF` writer - CIC Filter (Main Chain) Decimation Factor"]
-pub type CFMDF_W<'a, const O: u8> = crate::FieldWriter<'a, FCFGC_SPEC, 8, O>;
+pub type CFMDF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `CFMC` reader - CIC Filter (Main Chain) Configuration"]
 pub type CFMC_R = crate::FieldReader<CFMC_A>;
 #[doc = "CIC Filter (Main Chain) Configuration\n\nValue on reset: 0"]
@@ -74,48 +42,52 @@ impl CFMC_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "CIC1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CFMC_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "CIC2"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CFMC_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "CIC3"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CFMC_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "CICF"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CFMC_A::VALUE4
     }
 }
 #[doc = "Field `CFMC` writer - CIC Filter (Main Chain) Configuration"]
-pub type CFMC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, FCFGC_SPEC, 2, O, CFMC_A>;
-impl<'a, const O: u8> CFMC_W<'a, O> {
+pub type CFMC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CFMC_A>;
+impl<'a, REG, const O: u8> CFMC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "CIC1"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CFMC_A::VALUE1)
     }
     #[doc = "CIC2"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CFMC_A::VALUE2)
     }
     #[doc = "CIC3"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CFMC_A::VALUE3)
     }
     #[doc = "CICF"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CFMC_A::VALUE4)
     }
 }
@@ -144,28 +116,31 @@ impl CFEN_R {
             true => CFEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "CIC filter disabled and bypassed"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CFEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Enable CIC filter"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CFEN_A::VALUE2
     }
 }
 #[doc = "Field `CFEN` writer - CIC Filter Enable"]
-pub type CFEN_W<'a, const O: u8> = crate::BitWriter<'a, FCFGC_SPEC, O, CFEN_A>;
-impl<'a, const O: u8> CFEN_W<'a, O> {
+pub type CFEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CFEN_A>;
+impl<'a, REG, const O: u8> CFEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "CIC filter disabled and bypassed"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CFEN_A::VALUE1)
     }
     #[doc = "Enable CIC filter"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CFEN_A::VALUE2)
     }
 }
@@ -199,35 +174,39 @@ impl SRGM_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Never, service requests disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SRGM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Always, for each new result value"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == SRGM_A::VALUE4
     }
 }
 #[doc = "Field `SRGM` writer - Service Request Generation Main Chain"]
-pub type SRGM_W<'a, const O: u8> = crate::FieldWriter<'a, FCFGC_SPEC, 2, O, SRGM_A>;
-impl<'a, const O: u8> SRGM_W<'a, O> {
+pub type SRGM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SRGM_A>;
+impl<'a, REG, const O: u8> SRGM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Never, service requests disabled"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SRGM_A::VALUE1)
     }
     #[doc = "Always, for each new result value"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(SRGM_A::VALUE4)
     }
 }
 #[doc = "Field `CFMSV` reader - CIC Filter (Main Chain) Start Value"]
 pub type CFMSV_R = crate::FieldReader;
 #[doc = "Field `CFMSV` writer - CIC Filter (Main Chain) Start Value"]
-pub type CFMSV_W<'a, const O: u8> = crate::FieldWriter<'a, FCFGC_SPEC, 8, O>;
+pub type CFMSV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `CFMDCNT` reader - CIC Filter (Main Chain) Decimation Counter"]
 pub type CFMDCNT_R = crate::FieldReader;
 impl R {
@@ -266,52 +245,49 @@ impl W {
     #[doc = "Bits 0:7 - CIC Filter (Main Chain) Decimation Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn cfmdf(&mut self) -> CFMDF_W<0> {
+    pub fn cfmdf(&mut self) -> CFMDF_W<FCFGC_SPEC, 0> {
         CFMDF_W::new(self)
     }
     #[doc = "Bits 8:9 - CIC Filter (Main Chain) Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn cfmc(&mut self) -> CFMC_W<8> {
+    pub fn cfmc(&mut self) -> CFMC_W<FCFGC_SPEC, 8> {
         CFMC_W::new(self)
     }
     #[doc = "Bit 10 - CIC Filter Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cfen(&mut self) -> CFEN_W<10> {
+    pub fn cfen(&mut self) -> CFEN_W<FCFGC_SPEC, 10> {
         CFEN_W::new(self)
     }
     #[doc = "Bits 14:15 - Service Request Generation Main Chain"]
     #[inline(always)]
     #[must_use]
-    pub fn srgm(&mut self) -> SRGM_W<14> {
+    pub fn srgm(&mut self) -> SRGM_W<FCFGC_SPEC, 14> {
         SRGM_W::new(self)
     }
     #[doc = "Bits 16:23 - CIC Filter (Main Chain) Start Value"]
     #[inline(always)]
     #[must_use]
-    pub fn cfmsv(&mut self) -> CFMSV_W<16> {
+    pub fn cfmsv(&mut self) -> CFMSV_W<FCFGC_SPEC, 16> {
         CFMSV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Filter Configuration Register, Main CIC Filter\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fcfgc](index.html) module"]
+#[doc = "Filter Configuration Register, Main CIC Filter\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fcfgc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fcfgc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FCFGC_SPEC;
 impl crate::RegisterSpec for FCFGC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fcfgc::R](R) reader structure"]
-impl crate::Readable for FCFGC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [fcfgc::W](W) writer structure"]
+#[doc = "`read()` method returns [`fcfgc::R`](R) reader structure"]
+impl crate::Readable for FCFGC_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`fcfgc::W`](W) writer structure"]
 impl crate::Writable for FCFGC_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

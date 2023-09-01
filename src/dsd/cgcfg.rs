@@ -1,39 +1,7 @@
 #[doc = "Register `CGCFG` reader"]
-pub struct R(crate::R<CGCFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CGCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CGCFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CGCFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CGCFG_SPEC>;
 #[doc = "Register `CGCFG` writer"]
-pub struct W(crate::W<CGCFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CGCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CGCFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CGCFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CGCFG_SPEC>;
 #[doc = "Field `CGMOD` reader - Carrier Generator Operating Mode"]
 pub type CGMOD_R = crate::FieldReader<CGMOD_A>;
 #[doc = "Carrier Generator Operating Mode\n\nValue on reset: 0"]
@@ -70,48 +38,52 @@ impl CGMOD_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Stopped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CGMOD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Square wave"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CGMOD_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Triangle"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == CGMOD_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Sine wave"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == CGMOD_A::VALUE4
     }
 }
 #[doc = "Field `CGMOD` writer - Carrier Generator Operating Mode"]
-pub type CGMOD_W<'a, const O: u8> = crate::FieldWriterSafe<'a, CGCFG_SPEC, 2, O, CGMOD_A>;
-impl<'a, const O: u8> CGMOD_W<'a, O> {
+pub type CGMOD_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CGMOD_A>;
+impl<'a, REG, const O: u8> CGMOD_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Stopped"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CGMOD_A::VALUE1)
     }
     #[doc = "Square wave"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CGMOD_A::VALUE2)
     }
     #[doc = "Triangle"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(CGMOD_A::VALUE3)
     }
     #[doc = "Sine wave"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(CGMOD_A::VALUE4)
     }
 }
@@ -140,28 +112,31 @@ impl BREV_R {
             true => BREV_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BREV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Bit-reverse mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BREV_A::VALUE2
     }
 }
 #[doc = "Field `BREV` writer - Bit-Reverse PWM Generation"]
-pub type BREV_W<'a, const O: u8> = crate::BitWriter<'a, CGCFG_SPEC, O, BREV_A>;
-impl<'a, const O: u8> BREV_W<'a, O> {
+pub type BREV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BREV_A>;
+impl<'a, REG, const O: u8> BREV_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal mode"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BREV_A::VALUE1)
     }
     #[doc = "Bit-reverse mode"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BREV_A::VALUE2)
     }
 }
@@ -190,28 +165,31 @@ impl SIGPOL_R {
             true => SIGPOL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Normal: carrier signal begins with +1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SIGPOL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Inverted: carrier signal begins with -1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SIGPOL_A::VALUE2
     }
 }
 #[doc = "Field `SIGPOL` writer - Signal Polarity"]
-pub type SIGPOL_W<'a, const O: u8> = crate::BitWriter<'a, CGCFG_SPEC, O, SIGPOL_A>;
-impl<'a, const O: u8> SIGPOL_W<'a, O> {
+pub type SIGPOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIGPOL_A>;
+impl<'a, REG, const O: u8> SIGPOL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal: carrier signal begins with +1"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SIGPOL_A::VALUE1)
     }
     #[doc = "Inverted: carrier signal begins with -1"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SIGPOL_A::VALUE2)
     }
 }
@@ -251,48 +229,52 @@ impl DIVCG_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "fCG = fCLK / 2"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DIVCG_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "fCG = fCLK / 4"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DIVCG_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "fCG = fCLK / 6"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == DIVCG_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "fCG = fCLK / 32"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == DIVCG_A::VALUE4
     }
 }
 #[doc = "Field `DIVCG` writer - Divider Factor for the PWM Pattern Signal Generator"]
-pub type DIVCG_W<'a, const O: u8> = crate::FieldWriter<'a, CGCFG_SPEC, 4, O, DIVCG_A>;
-impl<'a, const O: u8> DIVCG_W<'a, O> {
+pub type DIVCG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, DIVCG_A>;
+impl<'a, REG, const O: u8> DIVCG_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "fCG = fCLK / 2"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DIVCG_A::VALUE1)
     }
     #[doc = "fCG = fCLK / 4"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DIVCG_A::VALUE2)
     }
     #[doc = "fCG = fCLK / 6"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(DIVCG_A::VALUE3)
     }
     #[doc = "fCG = fCLK / 32"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(DIVCG_A::VALUE4)
     }
 }
@@ -321,12 +303,12 @@ impl RUN_R {
             true => RUN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Stopped (cleared at the end of a period)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == RUN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Running"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == RUN_A::VALUE2
@@ -361,12 +343,12 @@ impl STEPS_R {
             true => STEPS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Step counter value is positive"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == STEPS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Step counter value is negative"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == STEPS_A::VALUE2
@@ -397,12 +379,12 @@ impl STEPD_R {
             true => STEPD_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Step counter is counting up"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == STEPD_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Step counter is counting down"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == STEPD_A::VALUE2
@@ -433,12 +415,12 @@ impl SGNCG_R {
             true => SGNCG_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Positive values"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SGNCG_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Negative values"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SGNCG_A::VALUE2
@@ -500,46 +482,43 @@ impl W {
     #[doc = "Bits 0:1 - Carrier Generator Operating Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn cgmod(&mut self) -> CGMOD_W<0> {
+    pub fn cgmod(&mut self) -> CGMOD_W<CGCFG_SPEC, 0> {
         CGMOD_W::new(self)
     }
     #[doc = "Bit 2 - Bit-Reverse PWM Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn brev(&mut self) -> BREV_W<2> {
+    pub fn brev(&mut self) -> BREV_W<CGCFG_SPEC, 2> {
         BREV_W::new(self)
     }
     #[doc = "Bit 3 - Signal Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn sigpol(&mut self) -> SIGPOL_W<3> {
+    pub fn sigpol(&mut self) -> SIGPOL_W<CGCFG_SPEC, 3> {
         SIGPOL_W::new(self)
     }
     #[doc = "Bits 4:7 - Divider Factor for the PWM Pattern Signal Generator"]
     #[inline(always)]
     #[must_use]
-    pub fn divcg(&mut self) -> DIVCG_W<4> {
+    pub fn divcg(&mut self) -> DIVCG_W<CGCFG_SPEC, 4> {
         DIVCG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Carrier Generator Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgcfg](index.html) module"]
+#[doc = "Carrier Generator Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cgcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cgcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CGCFG_SPEC;
 impl crate::RegisterSpec for CGCFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cgcfg::R](R) reader structure"]
-impl crate::Readable for CGCFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cgcfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`cgcfg::R`](R) reader structure"]
+impl crate::Readable for CGCFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cgcfg::W`](W) writer structure"]
 impl crate::Writable for CGCFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

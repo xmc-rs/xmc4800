@@ -1,43 +1,11 @@
 #[doc = "Register `CLKCALCONST` reader"]
-pub struct R(crate::R<CLKCALCONST_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CLKCALCONST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CLKCALCONST_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CLKCALCONST_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CLKCALCONST_SPEC>;
 #[doc = "Register `CLKCALCONST` writer"]
-pub struct W(crate::W<CLKCALCONST_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CLKCALCONST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CLKCALCONST_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CLKCALCONST_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CLKCALCONST_SPEC>;
 #[doc = "Field `CALIBCONST` reader - Clock Calibration Constant Value"]
 pub type CALIBCONST_R = crate::FieldReader;
 #[doc = "Field `CALIBCONST` writer - Clock Calibration Constant Value"]
-pub type CALIBCONST_W<'a, const O: u8> = crate::FieldWriter<'a, CLKCALCONST_SPEC, 4, O>;
+pub type CALIBCONST_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Clock Calibration Constant Value"]
     #[inline(always)]
@@ -49,28 +17,25 @@ impl W {
     #[doc = "Bits 0:3 - Clock Calibration Constant Value"]
     #[inline(always)]
     #[must_use]
-    pub fn calibconst(&mut self) -> CALIBCONST_W<0> {
+    pub fn calibconst(&mut self) -> CALIBCONST_W<CLKCALCONST_SPEC, 0> {
         CALIBCONST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Clock Calibration Constant Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clkcalconst](index.html) module"]
+#[doc = "Clock Calibration Constant Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkcalconst::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clkcalconst::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CLKCALCONST_SPEC;
 impl crate::RegisterSpec for CLKCALCONST_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [clkcalconst::R](R) reader structure"]
-impl crate::Readable for CLKCALCONST_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [clkcalconst::W](W) writer structure"]
+#[doc = "`read()` method returns [`clkcalconst::R`](R) reader structure"]
+impl crate::Readable for CLKCALCONST_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`clkcalconst::W`](W) writer structure"]
 impl crate::Writable for CLKCALCONST_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,18 +1,5 @@
 #[doc = "Register `PLLSTAT` reader"]
-pub struct R(crate::R<PLLSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PLLSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PLLSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PLLSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PLLSTAT_SPEC>;
 #[doc = "Field `VCOBYST` reader - VCO Bypass Status"]
 pub type VCOBYST_R = crate::BitReader<VCOBYST_A>;
 #[doc = "VCO Bypass Status\n\nValue on reset: 0"]
@@ -38,12 +25,12 @@ impl VCOBYST_R {
             true => VCOBYST_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Free-running / Normal Mode is entered"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VCOBYST_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Prescaler Mode is entered"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VCOBYST_A::VALUE2
@@ -74,12 +61,12 @@ impl PWDSTAT_R {
             true => PWDSTAT_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "PLL Power-saving Mode was not entered"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PWDSTAT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "PLL Power-saving Mode was entered"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PWDSTAT_A::VALUE2
@@ -110,12 +97,12 @@ impl VCOLOCK_R {
             true => VCOLOCK_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "PLL not locked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == VCOLOCK_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "PLL locked"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == VCOLOCK_A::VALUE2
@@ -146,12 +133,12 @@ impl K1RDY_R {
             true => K1RDY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "K1-Divider does not operate with the new value"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == K1RDY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "K1-Divider operate with the new value"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == K1RDY_A::VALUE2
@@ -182,12 +169,12 @@ impl K2RDY_R {
             true => K2RDY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "K2-Divider does not operate with the new value"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == K2RDY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "K2-Divider operate with the new value"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == K2RDY_A::VALUE2
@@ -218,12 +205,12 @@ impl BY_R {
             true => BY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Bypass Mode is not entered"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Bypass Mode is entered. Input fOSC is selected as output fPLL."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BY_A::VALUE2
@@ -254,12 +241,12 @@ impl PLLLV_R {
             true => PLLLV_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The OSC frequency is not usable. Frequency fREF is too low."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PLLLV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The OSC frequency is usable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PLLLV_A::VALUE2
@@ -290,12 +277,12 @@ impl PLLHV_R {
             true => PLLHV_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The OSC frequency is not usable. Frequency fOSC is too high."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PLLHV_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The OSC frequency is usable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PLLHV_A::VALUE2
@@ -326,12 +313,12 @@ impl PLLSP_R {
             true => PLLSP_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The OSC frequency is not usable. Spikes are detected that disturb a locked operation"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PLLSP_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The OSC frequency is usable"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PLLSP_A::VALUE2
@@ -384,15 +371,13 @@ impl R {
         PLLSP_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
-#[doc = "PLL Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pllstat](index.html) module"]
+#[doc = "PLL Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pllstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PLLSTAT_SPEC;
 impl crate::RegisterSpec for PLLSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pllstat::R](R) reader structure"]
-impl crate::Readable for PLLSTAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`pllstat::R`](R) reader structure"]
+impl crate::Readable for PLLSTAT_SPEC {}
 #[doc = "`reset()` method sets PLLSTAT to value 0x02"]
 impl crate::Resettable for PLLSTAT_SPEC {
     const RESET_VALUE: Self::Ux = 0x02;

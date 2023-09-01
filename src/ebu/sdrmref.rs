@@ -1,79 +1,47 @@
 #[doc = "Register `SDRMREF` reader"]
-pub struct R(crate::R<SDRMREF_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SDRMREF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SDRMREF_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SDRMREF_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SDRMREF_SPEC>;
 #[doc = "Register `SDRMREF` writer"]
-pub struct W(crate::W<SDRMREF_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SDRMREF_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SDRMREF_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SDRMREF_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SDRMREF_SPEC>;
 #[doc = "Field `REFRESHC` reader - Refresh counter period"]
 pub type REFRESHC_R = crate::FieldReader;
 #[doc = "Field `REFRESHC` writer - Refresh counter period"]
-pub type REFRESHC_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMREF_SPEC, 6, O>;
+pub type REFRESHC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 #[doc = "Field `REFRESHR` reader - Number of refresh commands"]
 pub type REFRESHR_R = crate::FieldReader;
 #[doc = "Field `REFRESHR` writer - Number of refresh commands"]
-pub type REFRESHR_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMREF_SPEC, 3, O>;
+pub type REFRESHR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 #[doc = "Field `SELFREXST` reader - Self Refresh Exit Status."]
 pub type SELFREXST_R = crate::BitReader;
 #[doc = "Field `SELFREX` reader - Self Refresh Exit (Power Up)."]
 pub type SELFREX_R = crate::BitReader;
 #[doc = "Field `SELFREX` writer - Self Refresh Exit (Power Up)."]
-pub type SELFREX_W<'a, const O: u8> = crate::BitWriter<'a, SDRMREF_SPEC, O>;
+pub type SELFREX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `SELFRENST` reader - Self Refresh Entry Status."]
 pub type SELFRENST_R = crate::BitReader;
 #[doc = "Field `SELFREN` reader - Self Refresh Entry"]
 pub type SELFREN_R = crate::BitReader;
 #[doc = "Field `SELFREN` writer - Self Refresh Entry"]
-pub type SELFREN_W<'a, const O: u8> = crate::BitWriter<'a, SDRMREF_SPEC, O>;
+pub type SELFREN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `AUTOSELFR` reader - Automatic Self Refresh"]
 pub type AUTOSELFR_R = crate::BitReader;
 #[doc = "Field `AUTOSELFR` writer - Automatic Self Refresh"]
-pub type AUTOSELFR_W<'a, const O: u8> = crate::BitWriter<'a, SDRMREF_SPEC, O>;
+pub type AUTOSELFR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `ERFSHC` reader - Extended Refresh Counter Period"]
 pub type ERFSHC_R = crate::FieldReader;
 #[doc = "Field `ERFSHC` writer - Extended Refresh Counter Period"]
-pub type ERFSHC_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMREF_SPEC, 2, O>;
+pub type ERFSHC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
 #[doc = "Field `SELFREX_DLY` reader - Self Refresh Exit Delay"]
 pub type SELFREX_DLY_R = crate::FieldReader;
 #[doc = "Field `SELFREX_DLY` writer - Self Refresh Exit Delay"]
-pub type SELFREX_DLY_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMREF_SPEC, 8, O>;
+pub type SELFREX_DLY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `ARFSH` reader - Auto Refresh on Self refresh Exit"]
 pub type ARFSH_R = crate::BitReader;
 #[doc = "Field `ARFSH` writer - Auto Refresh on Self refresh Exit"]
-pub type ARFSH_W<'a, const O: u8> = crate::BitWriter<'a, SDRMREF_SPEC, O>;
+pub type ARFSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `RES_DLY` reader - Delay on Power Down Exit"]
 pub type RES_DLY_R = crate::FieldReader;
 #[doc = "Field `RES_DLY` writer - Delay on Power Down Exit"]
-pub type RES_DLY_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMREF_SPEC, 3, O>;
+pub type RES_DLY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
 impl R {
     #[doc = "Bits 0:5 - Refresh counter period"]
     #[inline(always)]
@@ -135,76 +103,73 @@ impl W {
     #[doc = "Bits 0:5 - Refresh counter period"]
     #[inline(always)]
     #[must_use]
-    pub fn refreshc(&mut self) -> REFRESHC_W<0> {
+    pub fn refreshc(&mut self) -> REFRESHC_W<SDRMREF_SPEC, 0> {
         REFRESHC_W::new(self)
     }
     #[doc = "Bits 6:8 - Number of refresh commands"]
     #[inline(always)]
     #[must_use]
-    pub fn refreshr(&mut self) -> REFRESHR_W<6> {
+    pub fn refreshr(&mut self) -> REFRESHR_W<SDRMREF_SPEC, 6> {
         REFRESHR_W::new(self)
     }
     #[doc = "Bit 10 - Self Refresh Exit (Power Up)."]
     #[inline(always)]
     #[must_use]
-    pub fn selfrex(&mut self) -> SELFREX_W<10> {
+    pub fn selfrex(&mut self) -> SELFREX_W<SDRMREF_SPEC, 10> {
         SELFREX_W::new(self)
     }
     #[doc = "Bit 12 - Self Refresh Entry"]
     #[inline(always)]
     #[must_use]
-    pub fn selfren(&mut self) -> SELFREN_W<12> {
+    pub fn selfren(&mut self) -> SELFREN_W<SDRMREF_SPEC, 12> {
         SELFREN_W::new(self)
     }
     #[doc = "Bit 13 - Automatic Self Refresh"]
     #[inline(always)]
     #[must_use]
-    pub fn autoselfr(&mut self) -> AUTOSELFR_W<13> {
+    pub fn autoselfr(&mut self) -> AUTOSELFR_W<SDRMREF_SPEC, 13> {
         AUTOSELFR_W::new(self)
     }
     #[doc = "Bits 14:15 - Extended Refresh Counter Period"]
     #[inline(always)]
     #[must_use]
-    pub fn erfshc(&mut self) -> ERFSHC_W<14> {
+    pub fn erfshc(&mut self) -> ERFSHC_W<SDRMREF_SPEC, 14> {
         ERFSHC_W::new(self)
     }
     #[doc = "Bits 16:23 - Self Refresh Exit Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn selfrex_dly(&mut self) -> SELFREX_DLY_W<16> {
+    pub fn selfrex_dly(&mut self) -> SELFREX_DLY_W<SDRMREF_SPEC, 16> {
         SELFREX_DLY_W::new(self)
     }
     #[doc = "Bit 24 - Auto Refresh on Self refresh Exit"]
     #[inline(always)]
     #[must_use]
-    pub fn arfsh(&mut self) -> ARFSH_W<24> {
+    pub fn arfsh(&mut self) -> ARFSH_W<SDRMREF_SPEC, 24> {
         ARFSH_W::new(self)
     }
     #[doc = "Bits 25:27 - Delay on Power Down Exit"]
     #[inline(always)]
     #[must_use]
-    pub fn res_dly(&mut self) -> RES_DLY_W<25> {
+    pub fn res_dly(&mut self) -> RES_DLY_W<SDRMREF_SPEC, 25> {
         RES_DLY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EBU SDRAM Refresh Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sdrmref](index.html) module"]
+#[doc = "EBU SDRAM Refresh Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sdrmref::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sdrmref::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SDRMREF_SPEC;
 impl crate::RegisterSpec for SDRMREF_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sdrmref::R](R) reader structure"]
-impl crate::Readable for SDRMREF_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sdrmref::W](W) writer structure"]
+#[doc = "`read()` method returns [`sdrmref::R`](R) reader structure"]
+impl crate::Readable for SDRMREF_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`sdrmref::W`](W) writer structure"]
 impl crate::Writable for SDRMREF_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `IWCTR` reader"]
-pub struct R(crate::R<IWCTR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IWCTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IWCTR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IWCTR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IWCTR_SPEC>;
 #[doc = "Register `IWCTR` writer"]
-pub struct W(crate::W<IWCTR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IWCTR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IWCTR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IWCTR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<IWCTR_SPEC>;
 #[doc = "Field `NVALCNT` reader - Number of Values Counted"]
 pub type NVALCNT_R = crate::FieldReader;
 #[doc = "Field `INTEN` reader - Integration Enable"]
@@ -61,12 +29,12 @@ impl INTEN_R {
             true => INTEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Integration stopped. INTEN is cleared at the end of the integration window, i.e. upon the inverse trigger event transition of the external trigger signal."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == INTEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Integration enabled. INTEN is set upon the defined trigger event."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == INTEN_A::VALUE2
@@ -77,11 +45,11 @@ pub type REPCNT_R = crate::FieldReader;
 #[doc = "Field `REPVAL` reader - Number of Integration Cycles"]
 pub type REPVAL_R = crate::FieldReader;
 #[doc = "Field `REPVAL` writer - Number of Integration Cycles"]
-pub type REPVAL_W<'a, const O: u8> = crate::FieldWriter<'a, IWCTR_SPEC, 4, O>;
+pub type REPVAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 #[doc = "Field `NVALDIS` reader - Number of Values Discarded"]
 pub type NVALDIS_R = crate::FieldReader;
 #[doc = "Field `NVALDIS` writer - Number of Values Discarded"]
-pub type NVALDIS_W<'a, const O: u8> = crate::FieldWriter<'a, IWCTR_SPEC, 6, O>;
+pub type NVALDIS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 #[doc = "Field `IWS` reader - Integration Window SIze"]
 pub type IWS_R = crate::BitReader<IWS_A>;
 #[doc = "Integration Window SIze\n\nValue on reset: 0"]
@@ -107,35 +75,38 @@ impl IWS_R {
             true => IWS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Internal control: stop integrator after REPVAL+1 integration cycles"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == IWS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "External control: stop integrator when bit INTEN becomes 0"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == IWS_A::VALUE2
     }
 }
 #[doc = "Field `IWS` writer - Integration Window SIze"]
-pub type IWS_W<'a, const O: u8> = crate::BitWriter<'a, IWCTR_SPEC, O, IWS_A>;
-impl<'a, const O: u8> IWS_W<'a, O> {
+pub type IWS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IWS_A>;
+impl<'a, REG, const O: u8> IWS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Internal control: stop integrator after REPVAL+1 integration cycles"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(IWS_A::VALUE1)
     }
     #[doc = "External control: stop integrator when bit INTEN becomes 0"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(IWS_A::VALUE2)
     }
 }
 #[doc = "Field `NVALINT` reader - Number of Values Integrated"]
 pub type NVALINT_R = crate::FieldReader;
 #[doc = "Field `NVALINT` writer - Number of Values Integrated"]
-pub type NVALINT_W<'a, const O: u8> = crate::FieldWriter<'a, IWCTR_SPEC, 6, O>;
+pub type NVALINT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - Number of Values Counted"]
     #[inline(always)]
@@ -177,46 +148,43 @@ impl W {
     #[doc = "Bits 12:15 - Number of Integration Cycles"]
     #[inline(always)]
     #[must_use]
-    pub fn repval(&mut self) -> REPVAL_W<12> {
+    pub fn repval(&mut self) -> REPVAL_W<IWCTR_SPEC, 12> {
         REPVAL_W::new(self)
     }
     #[doc = "Bits 16:21 - Number of Values Discarded"]
     #[inline(always)]
     #[must_use]
-    pub fn nvaldis(&mut self) -> NVALDIS_W<16> {
+    pub fn nvaldis(&mut self) -> NVALDIS_W<IWCTR_SPEC, 16> {
         NVALDIS_W::new(self)
     }
     #[doc = "Bit 23 - Integration Window SIze"]
     #[inline(always)]
     #[must_use]
-    pub fn iws(&mut self) -> IWS_W<23> {
+    pub fn iws(&mut self) -> IWS_W<IWCTR_SPEC, 23> {
         IWS_W::new(self)
     }
     #[doc = "Bits 24:29 - Number of Values Integrated"]
     #[inline(always)]
     #[must_use]
-    pub fn nvalint(&mut self) -> NVALINT_W<24> {
+    pub fn nvalint(&mut self) -> NVALINT_W<IWCTR_SPEC, 24> {
         NVALINT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Integration Window Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iwctr](index.html) module"]
+#[doc = "Integration Window Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`iwctr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`iwctr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IWCTR_SPEC;
 impl crate::RegisterSpec for IWCTR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [iwctr::R](R) reader structure"]
-impl crate::Readable for IWCTR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [iwctr::W](W) writer structure"]
+#[doc = "`read()` method returns [`iwctr::R`](R) reader structure"]
+impl crate::Readable for IWCTR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`iwctr::W`](W) writer structure"]
 impl crate::Writable for IWCTR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

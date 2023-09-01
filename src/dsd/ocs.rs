@@ -1,39 +1,7 @@
 #[doc = "Register `OCS` reader"]
-pub struct R(crate::R<OCS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<OCS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<OCS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<OCS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<OCS_SPEC>;
 #[doc = "Register `OCS` writer"]
-pub struct W(crate::W<OCS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<OCS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<OCS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<OCS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<OCS_SPEC>;
 #[doc = "Field `SUS` reader - OCDS Suspend Control"]
 pub type SUS_R = crate::FieldReader<SUS_A>;
 #[doc = "OCDS Suspend Control\n\nValue on reset: 0"]
@@ -73,63 +41,67 @@ impl SUS_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Will not suspend"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SUS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Hard suspend: Clock is switched off immediately."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SUS_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "Soft suspend channel 0"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == SUS_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "Soft suspend channel 1"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == SUS_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "Soft suspend channel 3"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == SUS_A::VALUE5
     }
 }
 #[doc = "Field `SUS` writer - OCDS Suspend Control"]
-pub type SUS_W<'a, const O: u8> = crate::FieldWriter<'a, OCS_SPEC, 4, O, SUS_A>;
-impl<'a, const O: u8> SUS_W<'a, O> {
+pub type SUS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, SUS_A>;
+impl<'a, REG, const O: u8> SUS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Will not suspend"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SUS_A::VALUE1)
     }
     #[doc = "Hard suspend: Clock is switched off immediately."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SUS_A::VALUE2)
     }
     #[doc = "Soft suspend channel 0"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(SUS_A::VALUE3)
     }
     #[doc = "Soft suspend channel 1"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(SUS_A::VALUE4)
     }
     #[doc = "Soft suspend channel 3"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(SUS_A::VALUE5)
     }
 }
 #[doc = "Field `SUS_P` writer - SUS Write Protection"]
-pub type SUS_P_W<'a, const O: u8> = crate::BitWriter<'a, OCS_SPEC, O>;
+pub type SUS_P_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `SUSSTA` reader - Suspend State"]
 pub type SUSSTA_R = crate::BitReader<SUSSTA_A>;
 #[doc = "Suspend State\n\nValue on reset: 0"]
@@ -155,12 +127,12 @@ impl SUSSTA_R {
             true => SUSSTA_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Module is not (yet) suspended"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SUSSTA_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Module is suspended"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SUSSTA_A::VALUE2
@@ -182,34 +154,31 @@ impl W {
     #[doc = "Bits 24:27 - OCDS Suspend Control"]
     #[inline(always)]
     #[must_use]
-    pub fn sus(&mut self) -> SUS_W<24> {
+    pub fn sus(&mut self) -> SUS_W<OCS_SPEC, 24> {
         SUS_W::new(self)
     }
     #[doc = "Bit 28 - SUS Write Protection"]
     #[inline(always)]
     #[must_use]
-    pub fn sus_p(&mut self) -> SUS_P_W<28> {
+    pub fn sus_p(&mut self) -> SUS_P_W<OCS_SPEC, 28> {
         SUS_P_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "OCDS Control and Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ocs](index.html) module"]
+#[doc = "OCDS Control and Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ocs::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ocs::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OCS_SPEC;
 impl crate::RegisterSpec for OCS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ocs::R](R) reader structure"]
-impl crate::Readable for OCS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ocs::W](W) writer structure"]
+#[doc = "`read()` method returns [`ocs::R`](R) reader structure"]
+impl crate::Readable for OCS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ocs::W`](W) writer structure"]
 impl crate::Writable for OCS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

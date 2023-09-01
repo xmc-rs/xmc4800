@@ -1,47 +1,15 @@
 #[doc = "Register `BOUNDSEL` reader"]
-pub struct R(crate::R<BOUNDSEL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<BOUNDSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<BOUNDSEL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<BOUNDSEL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<BOUNDSEL_SPEC>;
 #[doc = "Register `BOUNDSEL` writer"]
-pub struct W(crate::W<BOUNDSEL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<BOUNDSEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<BOUNDSEL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<BOUNDSEL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<BOUNDSEL_SPEC>;
 #[doc = "Field `BOUNDARYL` reader - Lower Boundary Value for Limit Checking"]
 pub type BOUNDARYL_R = crate::FieldReader<u16>;
 #[doc = "Field `BOUNDARYL` writer - Lower Boundary Value for Limit Checking"]
-pub type BOUNDARYL_W<'a, const O: u8> = crate::FieldWriter<'a, BOUNDSEL_SPEC, 16, O, u16>;
+pub type BOUNDARYL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 #[doc = "Field `BOUNDARYU` reader - Upper Boundary Value for Limit Checking"]
 pub type BOUNDARYU_R = crate::FieldReader<u16>;
 #[doc = "Field `BOUNDARYU` writer - Upper Boundary Value for Limit Checking"]
-pub type BOUNDARYU_W<'a, const O: u8> = crate::FieldWriter<'a, BOUNDSEL_SPEC, 16, O, u16>;
+pub type BOUNDARYU_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
 impl R {
     #[doc = "Bits 0:15 - Lower Boundary Value for Limit Checking"]
     #[inline(always)]
@@ -58,34 +26,31 @@ impl W {
     #[doc = "Bits 0:15 - Lower Boundary Value for Limit Checking"]
     #[inline(always)]
     #[must_use]
-    pub fn boundaryl(&mut self) -> BOUNDARYL_W<0> {
+    pub fn boundaryl(&mut self) -> BOUNDARYL_W<BOUNDSEL_SPEC, 0> {
         BOUNDARYL_W::new(self)
     }
     #[doc = "Bits 16:31 - Upper Boundary Value for Limit Checking"]
     #[inline(always)]
     #[must_use]
-    pub fn boundaryu(&mut self) -> BOUNDARYU_W<16> {
+    pub fn boundaryu(&mut self) -> BOUNDARYU_W<BOUNDSEL_SPEC, 16> {
         BOUNDARYU_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Boundary Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [boundsel](index.html) module"]
+#[doc = "Boundary Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`boundsel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`boundsel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct BOUNDSEL_SPEC;
 impl crate::RegisterSpec for BOUNDSEL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [boundsel::R](R) reader structure"]
-impl crate::Readable for BOUNDSEL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [boundsel::W](W) writer structure"]
+#[doc = "`read()` method returns [`boundsel::R`](R) reader structure"]
+impl crate::Readable for BOUNDSEL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`boundsel::W`](W) writer structure"]
 impl crate::Writable for BOUNDSEL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

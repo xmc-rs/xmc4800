@@ -1,39 +1,7 @@
 #[doc = "Register `MODCFG` reader"]
-pub struct R(crate::R<MODCFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MODCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MODCFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MODCFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MODCFG_SPEC>;
 #[doc = "Register `MODCFG` writer"]
-pub struct W(crate::W<MODCFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MODCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MODCFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MODCFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MODCFG_SPEC>;
 #[doc = "Field `DIVM` reader - Divider Factor for Modulator Clock"]
 pub type DIVM_R = crate::FieldReader<DIVM_A>;
 #[doc = "Divider Factor for Modulator Clock\n\nValue on reset: 0"]
@@ -70,48 +38,52 @@ impl DIVM_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "fMOD = fCLK / 2"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DIVM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "fMOD = fCLK / 4"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DIVM_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "fMOD = fCLK / 6"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == DIVM_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "fMOD = fCLK / 32"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == DIVM_A::VALUE4
     }
 }
 #[doc = "Field `DIVM` writer - Divider Factor for Modulator Clock"]
-pub type DIVM_W<'a, const O: u8> = crate::FieldWriter<'a, MODCFG_SPEC, 4, O, DIVM_A>;
-impl<'a, const O: u8> DIVM_W<'a, O> {
+pub type DIVM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, DIVM_A>;
+impl<'a, REG, const O: u8> DIVM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "fMOD = fCLK / 2"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DIVM_A::VALUE1)
     }
     #[doc = "fMOD = fCLK / 4"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DIVM_A::VALUE2)
     }
     #[doc = "fMOD = fCLK / 6"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(DIVM_A::VALUE3)
     }
     #[doc = "fMOD = fCLK / 32"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(DIVM_A::VALUE4)
     }
 }
@@ -130,16 +102,19 @@ impl From<DWC_AW> for bool {
     }
 }
 #[doc = "Field `DWC` writer - Write Control for Divider Factor"]
-pub type DWC_W<'a, const O: u8> = crate::BitWriter<'a, MODCFG_SPEC, O, DWC_AW>;
-impl<'a, const O: u8> DWC_W<'a, O> {
+pub type DWC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DWC_AW>;
+impl<'a, REG, const O: u8> DWC_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No write access to divider factor"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(DWC_AW::VALUE1)
     }
     #[doc = "Bitfield DIVM can be written"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(DWC_AW::VALUE2)
     }
 }
@@ -154,34 +129,31 @@ impl W {
     #[doc = "Bits 16:19 - Divider Factor for Modulator Clock"]
     #[inline(always)]
     #[must_use]
-    pub fn divm(&mut self) -> DIVM_W<16> {
+    pub fn divm(&mut self) -> DIVM_W<MODCFG_SPEC, 16> {
         DIVM_W::new(self)
     }
     #[doc = "Bit 23 - Write Control for Divider Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn dwc(&mut self) -> DWC_W<23> {
+    pub fn dwc(&mut self) -> DWC_W<MODCFG_SPEC, 23> {
         DWC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Modulator Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [modcfg](index.html) module"]
+#[doc = "Modulator Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`modcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`modcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MODCFG_SPEC;
 impl crate::RegisterSpec for MODCFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [modcfg::R](R) reader structure"]
-impl crate::Readable for MODCFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [modcfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`modcfg::R`](R) reader structure"]
+impl crate::Readable for MODCFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`modcfg::W`](W) writer structure"]
 impl crate::Writable for MODCFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

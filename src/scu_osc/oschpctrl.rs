@@ -1,39 +1,7 @@
 #[doc = "Register `OSCHPCTRL` reader"]
-pub struct R(crate::R<OSCHPCTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<OSCHPCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<OSCHPCTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<OSCHPCTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<OSCHPCTRL_SPEC>;
 #[doc = "Register `OSCHPCTRL` writer"]
-pub struct W(crate::W<OSCHPCTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<OSCHPCTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<OSCHPCTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<OSCHPCTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<OSCHPCTRL_SPEC>;
 #[doc = "Field `X1DEN` reader - XTAL1 Data Enable"]
 pub type X1DEN_R = crate::BitReader<X1DEN_A>;
 #[doc = "XTAL1 Data Enable\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl X1DEN_R {
             true => X1DEN_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Bit X1D is not updated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == X1DEN_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Bit X1D can be updated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == X1DEN_A::VALUE2
     }
 }
 #[doc = "Field `X1DEN` writer - XTAL1 Data Enable"]
-pub type X1DEN_W<'a, const O: u8> = crate::BitWriter<'a, OSCHPCTRL_SPEC, O, X1DEN_A>;
-impl<'a, const O: u8> X1DEN_W<'a, O> {
+pub type X1DEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, X1DEN_A>;
+impl<'a, REG, const O: u8> X1DEN_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Bit X1D is not updated"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(X1DEN_A::VALUE1)
     }
     #[doc = "Bit X1D can be updated"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(X1DEN_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl SHBY_R {
             true => SHBY_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The shaper is not bypassed"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == SHBY_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The shaper is bypassed"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == SHBY_A::VALUE2
     }
 }
 #[doc = "Field `SHBY` writer - Shaper Bypass"]
-pub type SHBY_W<'a, const O: u8> = crate::BitWriter<'a, OSCHPCTRL_SPEC, O, SHBY_A>;
-impl<'a, const O: u8> SHBY_W<'a, O> {
+pub type SHBY_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SHBY_A>;
+impl<'a, REG, const O: u8> SHBY_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The shaper is not bypassed"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(SHBY_A::VALUE1)
     }
     #[doc = "The shaper is bypassed"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(SHBY_A::VALUE2)
     }
 }
@@ -170,48 +144,52 @@ impl GAINSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "The gain control is configured for frequencies from 4 MHz to 8 MHz"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == GAINSEL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "The gain control is configured for frequencies from 4 MHz to 16 MHz"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == GAINSEL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "The gain control is configured for frequencies from 4 MHz to 20 MHz"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == GAINSEL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "The gain control is configured for frequencies from 4 MHz to 25 MHz"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == GAINSEL_A::VALUE4
     }
 }
 #[doc = "Field `GAINSEL` writer - Oscillator Gain Selection"]
-pub type GAINSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, OSCHPCTRL_SPEC, 2, O, GAINSEL_A>;
-impl<'a, const O: u8> GAINSEL_W<'a, O> {
+pub type GAINSEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, GAINSEL_A>;
+impl<'a, REG, const O: u8> GAINSEL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "The gain control is configured for frequencies from 4 MHz to 8 MHz"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(GAINSEL_A::VALUE1)
     }
     #[doc = "The gain control is configured for frequencies from 4 MHz to 16 MHz"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(GAINSEL_A::VALUE2)
     }
     #[doc = "The gain control is configured for frequencies from 4 MHz to 20 MHz"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(GAINSEL_A::VALUE3)
     }
     #[doc = "The gain control is configured for frequencies from 4 MHz to 25 MHz"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(GAINSEL_A::VALUE4)
     }
 }
@@ -251,55 +229,59 @@ impl MODE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "External Crystal Mode and External Input Clock Mode. The oscillator Power-Saving Mode is not entered."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == MODE_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "OSC is disabled. The oscillator Power-Saving Mode is not entered."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == MODE_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "External Input Clock Mode and the oscillator Power-Saving Mode is entered"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == MODE_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "OSC is disabled. The oscillator Power-Saving Mode is entered."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == MODE_A::VALUE4
     }
 }
 #[doc = "Field `MODE` writer - Oscillator Mode"]
-pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, OSCHPCTRL_SPEC, 2, O, MODE_A>;
-impl<'a, const O: u8> MODE_W<'a, O> {
+pub type MODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, MODE_A>;
+impl<'a, REG, const O: u8> MODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "External Crystal Mode and External Input Clock Mode. The oscillator Power-Saving Mode is not entered."]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE1)
     }
     #[doc = "OSC is disabled. The oscillator Power-Saving Mode is not entered."]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE2)
     }
     #[doc = "External Input Clock Mode and the oscillator Power-Saving Mode is entered"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE3)
     }
     #[doc = "OSC is disabled. The oscillator Power-Saving Mode is entered."]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::VALUE4)
     }
 }
 #[doc = "Field `OSCVAL` reader - OSC Frequency Value"]
 pub type OSCVAL_R = crate::FieldReader;
 #[doc = "Field `OSCVAL` writer - OSC Frequency Value"]
-pub type OSCVAL_W<'a, const O: u8> = crate::FieldWriter<'a, OSCHPCTRL_SPEC, 4, O>;
+pub type OSCVAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 impl R {
     #[doc = "Bit 0 - XTAL1 Data Enable"]
     #[inline(always)]
@@ -331,52 +313,49 @@ impl W {
     #[doc = "Bit 0 - XTAL1 Data Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn x1den(&mut self) -> X1DEN_W<0> {
+    pub fn x1den(&mut self) -> X1DEN_W<OSCHPCTRL_SPEC, 0> {
         X1DEN_W::new(self)
     }
     #[doc = "Bit 1 - Shaper Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn shby(&mut self) -> SHBY_W<1> {
+    pub fn shby(&mut self) -> SHBY_W<OSCHPCTRL_SPEC, 1> {
         SHBY_W::new(self)
     }
     #[doc = "Bits 2:3 - Oscillator Gain Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn gainsel(&mut self) -> GAINSEL_W<2> {
+    pub fn gainsel(&mut self) -> GAINSEL_W<OSCHPCTRL_SPEC, 2> {
         GAINSEL_W::new(self)
     }
     #[doc = "Bits 4:5 - Oscillator Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<4> {
+    pub fn mode(&mut self) -> MODE_W<OSCHPCTRL_SPEC, 4> {
         MODE_W::new(self)
     }
     #[doc = "Bits 16:19 - OSC Frequency Value"]
     #[inline(always)]
     #[must_use]
-    pub fn oscval(&mut self) -> OSCVAL_W<16> {
+    pub fn oscval(&mut self) -> OSCVAL_W<OSCHPCTRL_SPEC, 16> {
         OSCVAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "OSC_HP Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [oschpctrl](index.html) module"]
+#[doc = "OSC_HP Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`oschpctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`oschpctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OSCHPCTRL_SPEC;
 impl crate::RegisterSpec for OSCHPCTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [oschpctrl::R](R) reader structure"]
-impl crate::Readable for OSCHPCTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [oschpctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`oschpctrl::R`](R) reader structure"]
+impl crate::Readable for OSCHPCTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`oschpctrl::W`](W) writer structure"]
 impl crate::Writable for OSCHPCTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

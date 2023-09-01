@@ -1,18 +1,5 @@
 #[doc = "Register `HALP` reader"]
-pub struct R(crate::R<HALP_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HALP_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HALP_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HALP_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HALP_SPEC>;
 #[doc = "Field `HCP` reader - Hall Current Pattern"]
 pub type HCP_R = crate::FieldReader;
 #[doc = "Field `HEP` reader - Hall Expected Pattern"]
@@ -29,15 +16,13 @@ impl R {
         HEP_R::new(((self.bits >> 3) & 7) as u8)
     }
 }
-#[doc = "Hall Sensor Patterns\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [halp](index.html) module"]
+#[doc = "Hall Sensor Patterns\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`halp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HALP_SPEC;
 impl crate::RegisterSpec for HALP_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [halp::R](R) reader structure"]
-impl crate::Readable for HALP_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`halp::R`](R) reader structure"]
+impl crate::Readable for HALP_SPEC {}
 #[doc = "`reset()` method sets HALP to value 0"]
 impl crate::Resettable for HALP_SPEC {
     const RESET_VALUE: Self::Ux = 0;

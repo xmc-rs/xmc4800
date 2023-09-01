@@ -1,39 +1,7 @@
 #[doc = "Register `CGSYNC` reader"]
-pub struct R(crate::R<CGSYNC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CGSYNC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CGSYNC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CGSYNC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CGSYNC_SPEC>;
 #[doc = "Register `CGSYNC` writer"]
-pub struct W(crate::W<CGSYNC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CGSYNC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CGSYNC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CGSYNC_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CGSYNC_SPEC>;
 #[doc = "Field `SDCOUNT` reader - Sign Delay Counter"]
 pub type SDCOUNT_R = crate::FieldReader;
 #[doc = "Field `SDCAP` reader - Sign Delay Capture Value"]
@@ -41,11 +9,11 @@ pub type SDCAP_R = crate::FieldReader;
 #[doc = "Field `SDPOS` reader - Sign Delay Value for Positive Halfwave"]
 pub type SDPOS_R = crate::FieldReader;
 #[doc = "Field `SDPOS` writer - Sign Delay Value for Positive Halfwave"]
-pub type SDPOS_W<'a, const O: u8> = crate::FieldWriter<'a, CGSYNC_SPEC, 8, O>;
+pub type SDPOS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 #[doc = "Field `SDNEG` reader - Sign Delay Value for Negative Halfwave"]
 pub type SDNEG_R = crate::FieldReader;
 #[doc = "Field `SDNEG` writer - Sign Delay Value for Negative Halfwave"]
-pub type SDNEG_W<'a, const O: u8> = crate::FieldWriter<'a, CGSYNC_SPEC, 8, O>;
+pub type SDNEG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Sign Delay Counter"]
     #[inline(always)]
@@ -72,34 +40,31 @@ impl W {
     #[doc = "Bits 16:23 - Sign Delay Value for Positive Halfwave"]
     #[inline(always)]
     #[must_use]
-    pub fn sdpos(&mut self) -> SDPOS_W<16> {
+    pub fn sdpos(&mut self) -> SDPOS_W<CGSYNC_SPEC, 16> {
         SDPOS_W::new(self)
     }
     #[doc = "Bits 24:31 - Sign Delay Value for Negative Halfwave"]
     #[inline(always)]
     #[must_use]
-    pub fn sdneg(&mut self) -> SDNEG_W<24> {
+    pub fn sdneg(&mut self) -> SDNEG_W<CGSYNC_SPEC, 24> {
         SDNEG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Carrier Generator Synchronization Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgsync](index.html) module"]
+#[doc = "Carrier Generator Synchronization Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cgsync::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cgsync::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CGSYNC_SPEC;
 impl crate::RegisterSpec for CGSYNC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cgsync::R](R) reader structure"]
-impl crate::Readable for CGSYNC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cgsync::W](W) writer structure"]
+#[doc = "`read()` method returns [`cgsync::R`](R) reader structure"]
+impl crate::Readable for CGSYNC_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cgsync::W`](W) writer structure"]
 impl crate::Writable for CGSYNC_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

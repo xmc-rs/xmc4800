@@ -1,55 +1,23 @@
 #[doc = "Register `RAWBLOCK` reader"]
-pub struct R(crate::R<RAWBLOCK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RAWBLOCK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RAWBLOCK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RAWBLOCK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RAWBLOCK_SPEC>;
 #[doc = "Register `RAWBLOCK` writer"]
-pub struct W(crate::W<RAWBLOCK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RAWBLOCK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RAWBLOCK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RAWBLOCK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<RAWBLOCK_SPEC>;
 #[doc = "Field `CH0` reader - Raw Interrupt Status for channel 0"]
 pub type CH0_R = crate::BitReader;
 #[doc = "Field `CH0` writer - Raw Interrupt Status for channel 0"]
-pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, RAWBLOCK_SPEC, O>;
+pub type CH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CH1` reader - Raw Interrupt Status for channel 1"]
 pub type CH1_R = crate::BitReader;
 #[doc = "Field `CH1` writer - Raw Interrupt Status for channel 1"]
-pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, RAWBLOCK_SPEC, O>;
+pub type CH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CH2` reader - Raw Interrupt Status for channel 2"]
 pub type CH2_R = crate::BitReader;
 #[doc = "Field `CH2` writer - Raw Interrupt Status for channel 2"]
-pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, RAWBLOCK_SPEC, O>;
+pub type CH2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `CH3` reader - Raw Interrupt Status for channel 3"]
 pub type CH3_R = crate::BitReader;
 #[doc = "Field `CH3` writer - Raw Interrupt Status for channel 3"]
-pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, RAWBLOCK_SPEC, O>;
+pub type CH3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 impl R {
     #[doc = "Bit 0 - Raw Interrupt Status for channel 0"]
     #[inline(always)]
@@ -76,46 +44,43 @@ impl W {
     #[doc = "Bit 0 - Raw Interrupt Status for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0(&mut self) -> CH0_W<0> {
+    pub fn ch0(&mut self) -> CH0_W<RAWBLOCK_SPEC, 0> {
         CH0_W::new(self)
     }
     #[doc = "Bit 1 - Raw Interrupt Status for channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1(&mut self) -> CH1_W<1> {
+    pub fn ch1(&mut self) -> CH1_W<RAWBLOCK_SPEC, 1> {
         CH1_W::new(self)
     }
     #[doc = "Bit 2 - Raw Interrupt Status for channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn ch2(&mut self) -> CH2_W<2> {
+    pub fn ch2(&mut self) -> CH2_W<RAWBLOCK_SPEC, 2> {
         CH2_W::new(self)
     }
     #[doc = "Bit 3 - Raw Interrupt Status for channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ch3(&mut self) -> CH3_W<3> {
+    pub fn ch3(&mut self) -> CH3_W<RAWBLOCK_SPEC, 3> {
         CH3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Raw IntBlock Status\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rawblock](index.html) module"]
+#[doc = "Raw IntBlock Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rawblock::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rawblock::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RAWBLOCK_SPEC;
 impl crate::RegisterSpec for RAWBLOCK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rawblock::R](R) reader structure"]
-impl crate::Readable for RAWBLOCK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [rawblock::W](W) writer structure"]
+#[doc = "`read()` method returns [`rawblock::R`](R) reader structure"]
+impl crate::Readable for RAWBLOCK_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`rawblock::W`](W) writer structure"]
 impl crate::Writable for RAWBLOCK_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

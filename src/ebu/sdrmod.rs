@@ -1,39 +1,7 @@
 #[doc = "Register `SDRMOD` reader"]
-pub struct R(crate::R<SDRMOD_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SDRMOD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SDRMOD_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SDRMOD_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SDRMOD_SPEC>;
 #[doc = "Register `SDRMOD` writer"]
-pub struct W(crate::W<SDRMOD_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SDRMOD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SDRMOD_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SDRMOD_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SDRMOD_SPEC>;
 #[doc = "Field `BURSTL` reader - Burst length"]
 pub type BURSTL_R = crate::FieldReader<BURSTL_A>;
 #[doc = "Burst length\n\nValue on reset: 0"]
@@ -73,58 +41,62 @@ impl BURSTL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "1 (default after reset)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BURSTL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "2"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == BURSTL_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "4"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == BURSTL_A::VALUE3
     }
-    #[doc = "Checks if the value of the field is `VALUE4`"]
+    #[doc = "8"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
         *self == BURSTL_A::VALUE4
     }
-    #[doc = "Checks if the value of the field is `VALUE5`"]
+    #[doc = "16"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
         *self == BURSTL_A::VALUE5
     }
 }
 #[doc = "Field `BURSTL` writer - Burst length"]
-pub type BURSTL_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMOD_SPEC, 3, O, BURSTL_A>;
-impl<'a, const O: u8> BURSTL_W<'a, O> {
+pub type BURSTL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, BURSTL_A>;
+impl<'a, REG, const O: u8> BURSTL_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "1 (default after reset)"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BURSTL_A::VALUE1)
     }
     #[doc = "2"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(BURSTL_A::VALUE2)
     }
     #[doc = "4"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(BURSTL_A::VALUE3)
     }
     #[doc = "8"]
     #[inline(always)]
-    pub fn value4(self) -> &'a mut W {
+    pub fn value4(self) -> &'a mut crate::W<REG> {
         self.variant(BURSTL_A::VALUE4)
     }
     #[doc = "16"]
     #[inline(always)]
-    pub fn value5(self) -> &'a mut W {
+    pub fn value5(self) -> &'a mut crate::W<REG> {
         self.variant(BURSTL_A::VALUE5)
     }
 }
@@ -151,18 +123,21 @@ impl BTYP_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Only this value should be written (default after reset)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == BTYP_A::VALUE1
     }
 }
 #[doc = "Field `BTYP` writer - Burst type"]
-pub type BTYP_W<'a, const O: u8> = crate::BitWriter<'a, SDRMOD_SPEC, O, BTYP_A>;
-impl<'a, const O: u8> BTYP_W<'a, O> {
+pub type BTYP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BTYP_A>;
+impl<'a, REG, const O: u8> BTYP_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Only this value should be written (default after reset)"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(BTYP_A::VALUE1)
     }
 }
@@ -196,28 +171,32 @@ impl CASLAT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Two clocks (default after reset)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == CASLAT_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Three clocks"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == CASLAT_A::VALUE2
     }
 }
 #[doc = "Field `CASLAT` writer - CAS latency"]
-pub type CASLAT_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMOD_SPEC, 3, O, CASLAT_A>;
-impl<'a, const O: u8> CASLAT_W<'a, O> {
+pub type CASLAT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, CASLAT_A>;
+impl<'a, REG, const O: u8> CASLAT_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Two clocks (default after reset)"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(CASLAT_A::VALUE1)
     }
     #[doc = "Three clocks"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(CASLAT_A::VALUE2)
     }
 }
@@ -248,31 +227,35 @@ impl OPMODE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Only this value must be written (default after reset)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == OPMODE_A::VALUE1
     }
 }
 #[doc = "Field `OPMODE` writer - Operation Mode"]
-pub type OPMODE_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMOD_SPEC, 7, O, OPMODE_A>;
-impl<'a, const O: u8> OPMODE_W<'a, O> {
+pub type OPMODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O, OPMODE_A>;
+impl<'a, REG, const O: u8> OPMODE_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Only this value must be written (default after reset)"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(OPMODE_A::VALUE1)
     }
 }
 #[doc = "Field `COLDSTART` writer - SDRAM coldstart"]
-pub type COLDSTART_W<'a, const O: u8> = crate::BitWriter<'a, SDRMOD_SPEC, O>;
+pub type COLDSTART_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
 #[doc = "Field `XOPM` reader - Extended Operation Mode"]
 pub type XOPM_R = crate::FieldReader<u16>;
 #[doc = "Field `XOPM` writer - Extended Operation Mode"]
-pub type XOPM_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMOD_SPEC, 12, O, u16>;
+pub type XOPM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
 #[doc = "Field `XBA` reader - Extended Operation Bank Select"]
 pub type XBA_R = crate::FieldReader;
 #[doc = "Field `XBA` writer - Extended Operation Bank Select"]
-pub type XBA_W<'a, const O: u8> = crate::FieldWriter<'a, SDRMOD_SPEC, 4, O>;
+pub type XBA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
 impl R {
     #[doc = "Bits 0:2 - Burst length"]
     #[inline(always)]
@@ -309,64 +292,61 @@ impl W {
     #[doc = "Bits 0:2 - Burst length"]
     #[inline(always)]
     #[must_use]
-    pub fn burstl(&mut self) -> BURSTL_W<0> {
+    pub fn burstl(&mut self) -> BURSTL_W<SDRMOD_SPEC, 0> {
         BURSTL_W::new(self)
     }
     #[doc = "Bit 3 - Burst type"]
     #[inline(always)]
     #[must_use]
-    pub fn btyp(&mut self) -> BTYP_W<3> {
+    pub fn btyp(&mut self) -> BTYP_W<SDRMOD_SPEC, 3> {
         BTYP_W::new(self)
     }
     #[doc = "Bits 4:6 - CAS latency"]
     #[inline(always)]
     #[must_use]
-    pub fn caslat(&mut self) -> CASLAT_W<4> {
+    pub fn caslat(&mut self) -> CASLAT_W<SDRMOD_SPEC, 4> {
         CASLAT_W::new(self)
     }
     #[doc = "Bits 7:13 - Operation Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn opmode(&mut self) -> OPMODE_W<7> {
+    pub fn opmode(&mut self) -> OPMODE_W<SDRMOD_SPEC, 7> {
         OPMODE_W::new(self)
     }
     #[doc = "Bit 15 - SDRAM coldstart"]
     #[inline(always)]
     #[must_use]
-    pub fn coldstart(&mut self) -> COLDSTART_W<15> {
+    pub fn coldstart(&mut self) -> COLDSTART_W<SDRMOD_SPEC, 15> {
         COLDSTART_W::new(self)
     }
     #[doc = "Bits 16:27 - Extended Operation Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn xopm(&mut self) -> XOPM_W<16> {
+    pub fn xopm(&mut self) -> XOPM_W<SDRMOD_SPEC, 16> {
         XOPM_W::new(self)
     }
     #[doc = "Bits 28:31 - Extended Operation Bank Select"]
     #[inline(always)]
     #[must_use]
-    pub fn xba(&mut self) -> XBA_W<28> {
+    pub fn xba(&mut self) -> XBA_W<SDRMOD_SPEC, 28> {
         XBA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EBU SDRAM Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sdrmod](index.html) module"]
+#[doc = "EBU SDRAM Mode Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sdrmod::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sdrmod::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SDRMOD_SPEC;
 impl crate::RegisterSpec for SDRMOD_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sdrmod::R](R) reader structure"]
-impl crate::Readable for SDRMOD_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sdrmod::W](W) writer structure"]
+#[doc = "`read()` method returns [`sdrmod::R`](R) reader structure"]
+impl crate::Readable for SDRMOD_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`sdrmod::W`](W) writer structure"]
 impl crate::Writable for SDRMOD_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `QDC` reader"]
-pub struct R(crate::R<QDC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<QDC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<QDC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<QDC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<QDC_SPEC>;
 #[doc = "Register `QDC` writer"]
-pub struct W(crate::W<QDC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<QDC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<QDC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<QDC_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<QDC_SPEC>;
 #[doc = "Field `PALS` reader - Phase A Level selector"]
 pub type PALS_R = crate::BitReader<PALS_A>;
 #[doc = "Phase A Level selector\n\nValue on reset: 0"]
@@ -59,28 +27,31 @@ impl PALS_R {
             true => PALS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Phase A is active HIGH"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PALS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Phase A is active LOW"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PALS_A::VALUE2
     }
 }
 #[doc = "Field `PALS` writer - Phase A Level selector"]
-pub type PALS_W<'a, const O: u8> = crate::BitWriter<'a, QDC_SPEC, O, PALS_A>;
-impl<'a, const O: u8> PALS_W<'a, O> {
+pub type PALS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PALS_A>;
+impl<'a, REG, const O: u8> PALS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Phase A is active HIGH"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PALS_A::VALUE1)
     }
     #[doc = "Phase A is active LOW"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PALS_A::VALUE2)
     }
 }
@@ -109,28 +80,31 @@ impl PBLS_R {
             true => PBLS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Phase B is active HIGH"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PBLS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Phase B is active LOW"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PBLS_A::VALUE2
     }
 }
 #[doc = "Field `PBLS` writer - Phase B Level selector"]
-pub type PBLS_W<'a, const O: u8> = crate::BitWriter<'a, QDC_SPEC, O, PBLS_A>;
-impl<'a, const O: u8> PBLS_W<'a, O> {
+pub type PBLS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PBLS_A>;
+impl<'a, REG, const O: u8> PBLS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Phase B is active HIGH"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PBLS_A::VALUE1)
     }
     #[doc = "Phase B is active LOW"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PBLS_A::VALUE2)
     }
 }
@@ -159,28 +133,31 @@ impl PHS_R {
             true => PHS_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Phase A is the leading signal for clockwise rotation"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == PHS_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Phase B is the leading signal for clockwise rotation"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == PHS_A::VALUE2
     }
 }
 #[doc = "Field `PHS` writer - Phase signals swap"]
-pub type PHS_W<'a, const O: u8> = crate::BitWriter<'a, QDC_SPEC, O, PHS_A>;
-impl<'a, const O: u8> PHS_W<'a, O> {
+pub type PHS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PHS_A>;
+impl<'a, REG, const O: u8> PHS_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Phase A is the leading signal for clockwise rotation"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(PHS_A::VALUE1)
     }
     #[doc = "Phase B is the leading signal for clockwise rotation"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(PHS_A::VALUE2)
     }
 }
@@ -217,38 +194,42 @@ impl ICM_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "No index marker generation on POSIFx.OUT3"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == ICM_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Only first index occurrence generated on POSIFx.OUT3"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == ICM_A::VALUE2
     }
-    #[doc = "Checks if the value of the field is `VALUE3`"]
+    #[doc = "All index occurrences generated on POSIFx.OUT3"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
         *self == ICM_A::VALUE3
     }
 }
 #[doc = "Field `ICM` writer - Index Marker generations control"]
-pub type ICM_W<'a, const O: u8> = crate::FieldWriter<'a, QDC_SPEC, 2, O, ICM_A>;
-impl<'a, const O: u8> ICM_W<'a, O> {
+pub type ICM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, ICM_A>;
+impl<'a, REG, const O: u8> ICM_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No index marker generation on POSIFx.OUT3"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(ICM_A::VALUE1)
     }
     #[doc = "Only first index occurrence generated on POSIFx.OUT3"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(ICM_A::VALUE2)
     }
     #[doc = "All index occurrences generated on POSIFx.OUT3"]
     #[inline(always)]
-    pub fn value3(self) -> &'a mut W {
+    pub fn value3(self) -> &'a mut crate::W<REG> {
         self.variant(ICM_A::VALUE3)
     }
 }
@@ -277,12 +258,12 @@ impl DVAL_R {
             true => DVAL_A::VALUE2,
         }
     }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[doc = "Counterclockwise rotation"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == DVAL_A::VALUE1
     }
-    #[doc = "Checks if the value of the field is `VALUE2`"]
+    #[doc = "Clockwise rotation"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == DVAL_A::VALUE2
@@ -319,46 +300,43 @@ impl W {
     #[doc = "Bit 0 - Phase A Level selector"]
     #[inline(always)]
     #[must_use]
-    pub fn pals(&mut self) -> PALS_W<0> {
+    pub fn pals(&mut self) -> PALS_W<QDC_SPEC, 0> {
         PALS_W::new(self)
     }
     #[doc = "Bit 1 - Phase B Level selector"]
     #[inline(always)]
     #[must_use]
-    pub fn pbls(&mut self) -> PBLS_W<1> {
+    pub fn pbls(&mut self) -> PBLS_W<QDC_SPEC, 1> {
         PBLS_W::new(self)
     }
     #[doc = "Bit 2 - Phase signals swap"]
     #[inline(always)]
     #[must_use]
-    pub fn phs(&mut self) -> PHS_W<2> {
+    pub fn phs(&mut self) -> PHS_W<QDC_SPEC, 2> {
         PHS_W::new(self)
     }
     #[doc = "Bits 4:5 - Index Marker generations control"]
     #[inline(always)]
     #[must_use]
-    pub fn icm(&mut self) -> ICM_W<4> {
+    pub fn icm(&mut self) -> ICM_W<QDC_SPEC, 4> {
         ICM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Quadrature Decoder Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [qdc](index.html) module"]
+#[doc = "Quadrature Decoder Control\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`qdc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`qdc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct QDC_SPEC;
 impl crate::RegisterSpec for QDC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [qdc::R](R) reader structure"]
-impl crate::Readable for QDC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [qdc::W](W) writer structure"]
+#[doc = "`read()` method returns [`qdc::R`](R) reader structure"]
+impl crate::Readable for QDC_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`qdc::W`](W) writer structure"]
 impl crate::Writable for QDC_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,24 +1,5 @@
 #[doc = "Register `CGATCLR3` writer"]
-pub struct W(crate::W<CGATCLR3_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CGATCLR3_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CGATCLR3_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CGATCLR3_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CGATCLR3_SPEC>;
 #[doc = "EBU Gating Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EBU_AW {
@@ -34,16 +15,19 @@ impl From<EBU_AW> for bool {
     }
 }
 #[doc = "Field `EBU` writer - EBU Gating Clear"]
-pub type EBU_W<'a, const O: u8> = crate::BitWriter<'a, CGATCLR3_SPEC, O, EBU_AW>;
-impl<'a, const O: u8> EBU_W<'a, O> {
+pub type EBU_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EBU_AW>;
+impl<'a, REG, const O: u8> EBU_W<'a, REG, O>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "No effect"]
     #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
+    pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EBU_AW::VALUE1)
     }
     #[doc = "Disable gating"]
     #[inline(always)]
-    pub fn value2(self) -> &'a mut W {
+    pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EBU_AW::VALUE2)
     }
 }
@@ -51,24 +35,23 @@ impl W {
     #[doc = "Bit 2 - EBU Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ebu(&mut self) -> EBU_W<2> {
+    pub fn ebu(&mut self) -> EBU_W<CGATCLR3_SPEC, 2> {
         EBU_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Peripheral 3 Clock Gating Clear\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cgatclr3](index.html) module"]
+#[doc = "Peripheral 3 Clock Gating Clear\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cgatclr3::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CGATCLR3_SPEC;
 impl crate::RegisterSpec for CGATCLR3_SPEC {
     type Ux = u32;
 }
-#[doc = "`write(|w| ..)` method takes [cgatclr3::W](W) writer structure"]
+#[doc = "`write(|w| ..)` method takes [`cgatclr3::W`](W) writer structure"]
 impl crate::Writable for CGATCLR3_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
