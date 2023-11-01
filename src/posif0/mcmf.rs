@@ -19,7 +19,7 @@ impl From<MSS_A> for bool {
 impl MSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MSS_A {
+    pub const fn variant(&self) -> MSS_A {
         match self.bits {
             false => MSS_A::VALUE1,
             true => MSS_A::VALUE2,

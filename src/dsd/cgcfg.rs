@@ -29,7 +29,7 @@ impl crate::FieldSpec for CGMOD_A {
 impl CGMOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CGMOD_A {
+    pub const fn variant(&self) -> CGMOD_A {
         match self.bits {
             0 => CGMOD_A::VALUE1,
             1 => CGMOD_A::VALUE2,
@@ -106,7 +106,7 @@ impl From<BREV_A> for bool {
 impl BREV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BREV_A {
+    pub const fn variant(&self) -> BREV_A {
         match self.bits {
             false => BREV_A::VALUE1,
             true => BREV_A::VALUE2,
@@ -159,7 +159,7 @@ impl From<SIGPOL_A> for bool {
 impl SIGPOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SIGPOL_A {
+    pub const fn variant(&self) -> SIGPOL_A {
         match self.bits {
             false => SIGPOL_A::VALUE1,
             true => SIGPOL_A::VALUE2,
@@ -220,7 +220,7 @@ impl crate::FieldSpec for DIVCG_A {
 impl DIVCG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DIVCG_A> {
+    pub const fn variant(&self) -> Option<DIVCG_A> {
         match self.bits {
             0 => Some(DIVCG_A::VALUE1),
             1 => Some(DIVCG_A::VALUE2),
@@ -297,7 +297,7 @@ impl From<RUN_A> for bool {
 impl RUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RUN_A {
+    pub const fn variant(&self) -> RUN_A {
         match self.bits {
             false => RUN_A::VALUE1,
             true => RUN_A::VALUE2,
@@ -337,7 +337,7 @@ impl From<STEPS_A> for bool {
 impl STEPS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STEPS_A {
+    pub const fn variant(&self) -> STEPS_A {
         match self.bits {
             false => STEPS_A::VALUE1,
             true => STEPS_A::VALUE2,
@@ -373,7 +373,7 @@ impl From<STEPD_A> for bool {
 impl STEPD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STEPD_A {
+    pub const fn variant(&self) -> STEPD_A {
         match self.bits {
             false => STEPD_A::VALUE1,
             true => STEPD_A::VALUE2,
@@ -409,7 +409,7 @@ impl From<SGNCG_A> for bool {
 impl SGNCG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SGNCG_A {
+    pub const fn variant(&self) -> SGNCG_A {
         match self.bits {
             false => SGNCG_A::VALUE1,
             true => SGNCG_A::VALUE2,
@@ -503,7 +503,11 @@ impl W {
     pub fn divcg(&mut self) -> DIVCG_W<CGCFG_SPEC, 4> {
         DIVCG_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

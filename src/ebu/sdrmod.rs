@@ -31,7 +31,7 @@ impl crate::FieldSpec for BURSTL_A {
 impl BURSTL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BURSTL_A> {
+    pub const fn variant(&self) -> Option<BURSTL_A> {
         match self.bits {
             0 => Some(BURSTL_A::VALUE1),
             1 => Some(BURSTL_A::VALUE2),
@@ -117,7 +117,7 @@ impl From<BTYP_A> for bool {
 impl BTYP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BTYP_A> {
+    pub const fn variant(&self) -> Option<BTYP_A> {
         match self.bits {
             false => Some(BTYP_A::VALUE1),
             _ => None,
@@ -164,7 +164,7 @@ impl crate::FieldSpec for CASLAT_A {
 impl CASLAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CASLAT_A> {
+    pub const fn variant(&self) -> Option<CASLAT_A> {
         match self.bits {
             2 => Some(CASLAT_A::VALUE1),
             3 => Some(CASLAT_A::VALUE2),
@@ -221,7 +221,7 @@ impl crate::FieldSpec for OPMODE_A {
 impl OPMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<OPMODE_A> {
+    pub const fn variant(&self) -> Option<OPMODE_A> {
         match self.bits {
             0 => Some(OPMODE_A::VALUE1),
             _ => None,
@@ -331,7 +331,11 @@ impl W {
     pub fn xba(&mut self) -> XBA_W<SDRMOD_SPEC, 28> {
         XBA_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -33,7 +33,7 @@ impl crate::FieldSpec for CFMC_A {
 impl CFMC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CFMC_A {
+    pub const fn variant(&self) -> CFMC_A {
         match self.bits {
             0 => CFMC_A::VALUE1,
             1 => CFMC_A::VALUE2,
@@ -110,7 +110,7 @@ impl From<CFEN_A> for bool {
 impl CFEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CFEN_A {
+    pub const fn variant(&self) -> CFEN_A {
         match self.bits {
             false => CFEN_A::VALUE1,
             true => CFEN_A::VALUE2,
@@ -167,7 +167,7 @@ impl crate::FieldSpec for SRGM_A {
 impl SRGM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SRGM_A> {
+    pub const fn variant(&self) -> Option<SRGM_A> {
         match self.bits {
             0 => Some(SRGM_A::VALUE1),
             3 => Some(SRGM_A::VALUE4),
@@ -272,7 +272,11 @@ impl W {
     pub fn cfmsv(&mut self) -> CFMSV_W<FCFGC_SPEC, 16> {
         CFMSV_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

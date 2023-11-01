@@ -45,7 +45,7 @@ impl crate::FieldSpec for AWIDTH_A {
 impl AWIDTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AWIDTH_A {
+    pub const fn variant(&self) -> AWIDTH_A {
         match self.bits {
             0 => AWIDTH_A::VALUE1,
             1 => AWIDTH_A::VALUE2,
@@ -140,7 +140,7 @@ impl crate::FieldSpec for ROWM_A {
 impl ROWM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ROWM_A> {
+    pub const fn variant(&self) -> Option<ROWM_A> {
         match self.bits {
             1 => Some(ROWM_A::VALUE2),
             2 => Some(ROWM_A::VALUE3),
@@ -242,7 +242,7 @@ impl crate::FieldSpec for BANKM_A {
 impl BANKM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BANKM_A> {
+    pub const fn variant(&self) -> Option<BANKM_A> {
         match self.bits {
             1 => Some(BANKM_A::VALUE2),
             2 => Some(BANKM_A::VALUE3),
@@ -356,7 +356,7 @@ impl From<CLKDIS_A> for bool {
 impl CLKDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLKDIS_A {
+    pub const fn variant(&self) -> CLKDIS_A {
         match self.bits {
             false => CLKDIS_A::VALUE1,
             true => CLKDIS_A::VALUE2,
@@ -417,7 +417,7 @@ impl crate::FieldSpec for PWR_MODE_A {
 impl PWR_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PWR_MODE_A {
+    pub const fn variant(&self) -> PWR_MODE_A {
         match self.bits {
             0 => PWR_MODE_A::VALUE1,
             1 => PWR_MODE_A::VALUE2,
@@ -494,7 +494,7 @@ impl From<SDCMSEL_A> for bool {
 impl SDCMSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SDCMSEL_A {
+    pub const fn variant(&self) -> SDCMSEL_A {
         match self.bits {
             true => SDCMSEL_A::VALUE1,
             false => SDCMSEL_A::VALUE2,
@@ -674,7 +674,11 @@ impl W {
     pub fn sdcmsel(&mut self) -> SDCMSEL_W<SDRMCON_SPEC, 31> {
         SDCMSEL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

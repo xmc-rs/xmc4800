@@ -19,7 +19,7 @@ impl From<HIBEN_A> for bool {
 impl HIBEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HIBEN_A {
+    pub const fn variant(&self) -> HIBEN_A {
         match self.bits {
             false => HIBEN_A::VALUE1,
             true => HIBEN_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<USBPHYPDQ_A> for bool {
 impl USBPHYPDQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USBPHYPDQ_A {
+    pub const fn variant(&self) -> USBPHYPDQ_A {
         match self.bits {
             false => USBPHYPDQ_A::VALUE1,
             true => USBPHYPDQ_A::VALUE2,
@@ -91,7 +91,7 @@ impl From<USBOTGEN_A> for bool {
 impl USBOTGEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USBOTGEN_A {
+    pub const fn variant(&self) -> USBOTGEN_A {
         match self.bits {
             false => USBOTGEN_A::VALUE1,
             true => USBOTGEN_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<USBPUWQ_A> for bool {
 impl USBPUWQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USBPUWQ_A {
+    pub const fn variant(&self) -> USBPUWQ_A {
         match self.bits {
             false => USBPUWQ_A::VALUE1,
             true => USBPUWQ_A::VALUE2,

@@ -21,7 +21,7 @@ impl From<ECHE_A> for bool {
 impl ECHE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ECHE_A {
+    pub const fn variant(&self) -> ECHE_A {
         match self.bits {
             false => ECHE_A::VALUE1,
             true => ECHE_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<EWHE_A> for bool {
 impl EWHE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EWHE_A {
+    pub const fn variant(&self) -> EWHE_A {
         match self.bits {
             false => EWHE_A::VALUE1,
             true => EWHE_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<EHIE_A> for bool {
 impl EHIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EHIE_A {
+    pub const fn variant(&self) -> EHIE_A {
         match self.bits {
             false => EHIE_A::VALUE1,
             true => EHIE_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<EMST_A> for bool {
 impl EMST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EMST_A {
+    pub const fn variant(&self) -> EMST_A {
         match self.bits {
             false => EMST_A::VALUE1,
             true => EMST_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<EINDX_A> for bool {
 impl EINDX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EINDX_A {
+    pub const fn variant(&self) -> EINDX_A {
         match self.bits {
             false => EINDX_A::VALUE1,
             true => EINDX_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<EERR_A> for bool {
 impl EERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EERR_A {
+    pub const fn variant(&self) -> EERR_A {
         match self.bits {
             false => EERR_A::VALUE1,
             true => EERR_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<ECNT_A> for bool {
 impl ECNT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ECNT_A {
+    pub const fn variant(&self) -> ECNT_A {
         match self.bits {
             false => ECNT_A::VALUE1,
             true => ECNT_A::VALUE2,
@@ -392,7 +392,7 @@ impl From<EDIR_A> for bool {
 impl EDIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EDIR_A {
+    pub const fn variant(&self) -> EDIR_A {
         match self.bits {
             false => EDIR_A::VALUE1,
             true => EDIR_A::VALUE2,
@@ -445,7 +445,7 @@ impl From<EPCLK_A> for bool {
 impl EPCLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPCLK_A {
+    pub const fn variant(&self) -> EPCLK_A {
         match self.bits {
             false => EPCLK_A::VALUE1,
             true => EPCLK_A::VALUE2,
@@ -498,7 +498,7 @@ impl From<CHESEL_A> for bool {
 impl CHESEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHESEL_A {
+    pub const fn variant(&self) -> CHESEL_A {
         match self.bits {
             false => CHESEL_A::VALUE1,
             true => CHESEL_A::VALUE2,
@@ -551,7 +551,7 @@ impl From<WHESEL_A> for bool {
 impl WHESEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WHESEL_A {
+    pub const fn variant(&self) -> WHESEL_A {
         match self.bits {
             false => WHESEL_A::VALUE1,
             true => WHESEL_A::VALUE2,
@@ -604,7 +604,7 @@ impl From<HIESEL_A> for bool {
 impl HIESEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HIESEL_A {
+    pub const fn variant(&self) -> HIESEL_A {
         match self.bits {
             false => HIESEL_A::VALUE1,
             true => HIESEL_A::VALUE2,
@@ -657,7 +657,7 @@ impl From<MSTSEL_A> for bool {
 impl MSTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MSTSEL_A {
+    pub const fn variant(&self) -> MSTSEL_A {
         match self.bits {
             false => MSTSEL_A::VALUE1,
             true => MSTSEL_A::VALUE2,
@@ -710,7 +710,7 @@ impl From<INDSEL_A> for bool {
 impl INDSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INDSEL_A {
+    pub const fn variant(&self) -> INDSEL_A {
         match self.bits {
             false => INDSEL_A::VALUE1,
             true => INDSEL_A::VALUE2,
@@ -763,7 +763,7 @@ impl From<ERRSEL_A> for bool {
 impl ERRSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERRSEL_A {
+    pub const fn variant(&self) -> ERRSEL_A {
         match self.bits {
             false => ERRSEL_A::VALUE1,
             true => ERRSEL_A::VALUE2,
@@ -816,7 +816,7 @@ impl From<CNTSEL_A> for bool {
 impl CNTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CNTSEL_A {
+    pub const fn variant(&self) -> CNTSEL_A {
         match self.bits {
             false => CNTSEL_A::VALUE1,
             true => CNTSEL_A::VALUE2,
@@ -869,7 +869,7 @@ impl From<DIRSEL_A> for bool {
 impl DIRSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIRSEL_A {
+    pub const fn variant(&self) -> DIRSEL_A {
         match self.bits {
             false => DIRSEL_A::VALUE1,
             true => DIRSEL_A::VALUE2,
@@ -922,7 +922,7 @@ impl From<PCLSEL_A> for bool {
 impl PCLSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PCLSEL_A {
+    pub const fn variant(&self) -> PCLSEL_A {
         match self.bits {
             false => PCLSEL_A::VALUE1,
             true => PCLSEL_A::VALUE2,
@@ -1157,7 +1157,11 @@ impl W {
     pub fn pclsel(&mut self) -> PCLSEL_W<PFLGE_SPEC, 28> {
         PCLSEL_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

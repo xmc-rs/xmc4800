@@ -31,7 +31,7 @@ impl crate::FieldSpec for SUS_A {
 impl SUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SUS_A> {
+    pub const fn variant(&self) -> Option<SUS_A> {
         match self.bits {
             0 => Some(SUS_A::VALUE1),
             1 => Some(SUS_A::VALUE2),
@@ -121,7 +121,7 @@ impl From<SUSSTA_A> for bool {
 impl SUSSTA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SUSSTA_A {
+    pub const fn variant(&self) -> SUSSTA_A {
         match self.bits {
             false => SUSSTA_A::VALUE1,
             true => SUSSTA_A::VALUE2,
@@ -163,7 +163,11 @@ impl W {
     pub fn sus_p(&mut self) -> SUS_P_W<OCS_SPEC, 28> {
         SUS_P_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

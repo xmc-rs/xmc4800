@@ -21,7 +21,7 @@ impl From<PEENPS_A> for bool {
 impl PEENPS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENPS_A {
+    pub const fn variant(&self) -> PEENPS_A {
         match self.bits {
             false => PEENPS_A::VALUE1,
             true => PEENPS_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<PEENDS1_A> for bool {
 impl PEENDS1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENDS1_A {
+    pub const fn variant(&self) -> PEENDS1_A {
         match self.bits {
             false => PEENDS1_A::VALUE1,
             true => PEENDS1_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<PEENDS2_A> for bool {
 impl PEENDS2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENDS2_A {
+    pub const fn variant(&self) -> PEENDS2_A {
         match self.bits {
             false => PEENDS2_A::VALUE1,
             true => PEENDS2_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<PEENU0_A> for bool {
 impl PEENU0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENU0_A {
+    pub const fn variant(&self) -> PEENU0_A {
         match self.bits {
             false => PEENU0_A::VALUE1,
             true => PEENU0_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<PEENU1_A> for bool {
 impl PEENU1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENU1_A {
+    pub const fn variant(&self) -> PEENU1_A {
         match self.bits {
             false => PEENU1_A::VALUE1,
             true => PEENU1_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<PEENU2_A> for bool {
 impl PEENU2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENU2_A {
+    pub const fn variant(&self) -> PEENU2_A {
         match self.bits {
             false => PEENU2_A::VALUE1,
             true => PEENU2_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<PEENMC_A> for bool {
 impl PEENMC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENMC_A {
+    pub const fn variant(&self) -> PEENMC_A {
         match self.bits {
             false => PEENMC_A::VALUE1,
             true => PEENMC_A::VALUE2,
@@ -392,7 +392,7 @@ impl From<PEENPPRF_A> for bool {
 impl PEENPPRF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENPPRF_A {
+    pub const fn variant(&self) -> PEENPPRF_A {
         match self.bits {
             false => PEENPPRF_A::VALUE1,
             true => PEENPPRF_A::VALUE2,
@@ -445,7 +445,7 @@ impl From<PEENUSB_A> for bool {
 impl PEENUSB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENUSB_A {
+    pub const fn variant(&self) -> PEENUSB_A {
         match self.bits {
             false => PEENUSB_A::VALUE1,
             true => PEENUSB_A::VALUE2,
@@ -498,7 +498,7 @@ impl From<PEENETH0TX_A> for bool {
 impl PEENETH0TX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENETH0TX_A {
+    pub const fn variant(&self) -> PEENETH0TX_A {
         match self.bits {
             false => PEENETH0TX_A::VALUE1,
             true => PEENETH0TX_A::VALUE2,
@@ -551,7 +551,7 @@ impl From<PEENETH0RX_A> for bool {
 impl PEENETH0RX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENETH0RX_A {
+    pub const fn variant(&self) -> PEENETH0RX_A {
         match self.bits {
             false => PEENETH0RX_A::VALUE1,
             true => PEENETH0RX_A::VALUE2,
@@ -604,7 +604,7 @@ impl From<PEENSD0_A> for bool {
 impl PEENSD0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENSD0_A {
+    pub const fn variant(&self) -> PEENSD0_A {
         match self.bits {
             false => PEENSD0_A::VALUE1,
             true => PEENSD0_A::VALUE2,
@@ -657,7 +657,7 @@ impl From<PEENSD1_A> for bool {
 impl PEENSD1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENSD1_A {
+    pub const fn variant(&self) -> PEENSD1_A {
         match self.bits {
             false => PEENSD1_A::VALUE1,
             true => PEENSD1_A::VALUE2,
@@ -710,7 +710,7 @@ impl From<PEENECAT0_A> for bool {
 impl PEENECAT0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEENECAT0_A {
+    pub const fn variant(&self) -> PEENECAT0_A {
         match self.bits {
             false => PEENECAT0_A::VALUE1,
             true => PEENECAT0_A::VALUE2,
@@ -901,7 +901,11 @@ impl W {
     pub fn peenecat0(&mut self) -> PEENECAT0_W<PEEN_SPEC, 24> {
         PEENECAT0_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -19,7 +19,7 @@ impl From<REFERR_A> for bool {
 impl REFERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REFERR_A {
+    pub const fn variant(&self) -> REFERR_A {
         match self.bits {
             false => REFERR_A::VALUE1,
             true => REFERR_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<SDRMBUSY_A> for bool {
 impl SDRMBUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SDRMBUSY_A {
+    pub const fn variant(&self) -> SDRMBUSY_A {
         match self.bits {
             false => SDRMBUSY_A::VALUE1,
             true => SDRMBUSY_A::VALUE2,
@@ -91,7 +91,7 @@ impl From<SDERR_A> for bool {
 impl SDERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SDERR_A {
+    pub const fn variant(&self) -> SDERR_A {
         match self.bits {
             false => SDERR_A::VALUE1,
             true => SDERR_A::VALUE2,

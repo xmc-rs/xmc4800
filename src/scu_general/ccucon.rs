@@ -21,7 +21,7 @@ impl From<GSC40_A> for bool {
 impl GSC40_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GSC40_A {
+    pub const fn variant(&self) -> GSC40_A {
         match self.bits {
             false => GSC40_A::VALUE1,
             true => GSC40_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<GSC41_A> for bool {
 impl GSC41_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GSC41_A {
+    pub const fn variant(&self) -> GSC41_A {
         match self.bits {
             false => GSC41_A::VALUE1,
             true => GSC41_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<GSC42_A> for bool {
 impl GSC42_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GSC42_A {
+    pub const fn variant(&self) -> GSC42_A {
         match self.bits {
             false => GSC42_A::VALUE1,
             true => GSC42_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<GSC43_A> for bool {
 impl GSC43_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GSC43_A {
+    pub const fn variant(&self) -> GSC43_A {
         match self.bits {
             false => GSC43_A::VALUE1,
             true => GSC43_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<GSC80_A> for bool {
 impl GSC80_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GSC80_A {
+    pub const fn variant(&self) -> GSC80_A {
         match self.bits {
             false => GSC80_A::VALUE1,
             true => GSC80_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<GSC81_A> for bool {
 impl GSC81_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GSC81_A {
+    pub const fn variant(&self) -> GSC81_A {
         match self.bits {
             false => GSC81_A::VALUE1,
             true => GSC81_A::VALUE2,
@@ -389,7 +389,11 @@ impl W {
     pub fn gsc81(&mut self) -> GSC81_W<CCUCON_SPEC, 9> {
         GSC81_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

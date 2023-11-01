@@ -19,7 +19,7 @@ impl From<EBURS_A> for bool {
 impl EBURS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EBURS_A {
+    pub const fn variant(&self) -> EBURS_A {
         match self.bits {
             false => EBURS_A::VALUE1,
             true => EBURS_A::VALUE2,
