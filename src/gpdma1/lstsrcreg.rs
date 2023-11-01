@@ -21,7 +21,7 @@ impl From<CH0_A> for bool {
 impl CH0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH0_A {
+    pub const fn variant(&self) -> CH0_A {
         match self.bits {
             false => CH0_A::VALUE1,
             true => CH0_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<CH1_A> for bool {
 impl CH1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH1_A {
+    pub const fn variant(&self) -> CH1_A {
         match self.bits {
             false => CH1_A::VALUE1,
             true => CH1_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<CH2_A> for bool {
 impl CH2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH2_A {
+    pub const fn variant(&self) -> CH2_A {
         match self.bits {
             false => CH2_A::VALUE1,
             true => CH2_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<CH3_A> for bool {
 impl CH3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH3_A {
+    pub const fn variant(&self) -> CH3_A {
         match self.bits {
             false => CH3_A::VALUE1,
             true => CH3_A::VALUE2,
@@ -409,7 +409,11 @@ impl W {
     pub fn we_ch3(&mut self) -> WE_CH3_W<LSTSRCREG_SPEC, 11> {
         WE_CH3_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

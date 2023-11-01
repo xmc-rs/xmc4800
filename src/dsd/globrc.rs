@@ -21,7 +21,7 @@ impl From<CH0RUN_A> for bool {
 impl CH0RUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH0RUN_A {
+    pub const fn variant(&self) -> CH0RUN_A {
         match self.bits {
             false => CH0RUN_A::VALUE1,
             true => CH0RUN_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<CH1RUN_A> for bool {
 impl CH1RUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH1RUN_A {
+    pub const fn variant(&self) -> CH1RUN_A {
         match self.bits {
             false => CH1RUN_A::VALUE1,
             true => CH1RUN_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<CH2RUN_A> for bool {
 impl CH2RUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH2RUN_A {
+    pub const fn variant(&self) -> CH2RUN_A {
         match self.bits {
             false => CH2RUN_A::VALUE1,
             true => CH2RUN_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<CH3RUN_A> for bool {
 impl CH3RUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CH3RUN_A {
+    pub const fn variant(&self) -> CH3RUN_A {
         match self.bits {
             false => CH3RUN_A::VALUE1,
             true => CH3RUN_A::VALUE2,
@@ -261,7 +261,11 @@ impl W {
     pub fn ch3run(&mut self) -> CH3RUN_W<GLOBRC_SPEC, 3> {
         CH3RUN_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

@@ -21,7 +21,7 @@ impl From<LN0_A> for bool {
 impl LN0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LN0_A {
+    pub const fn variant(&self) -> LN0_A {
         match self.bits {
             false => LN0_A::VALUE1,
             true => LN0_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<LN1_A> for bool {
 impl LN1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LN1_A {
+    pub const fn variant(&self) -> LN1_A {
         match self.bits {
             false => LN1_A::VALUE1,
             true => LN1_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<LN2_A> for bool {
 impl LN2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LN2_A {
+    pub const fn variant(&self) -> LN2_A {
         match self.bits {
             false => LN2_A::VALUE1,
             true => LN2_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<LN3_A> for bool {
 impl LN3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LN3_A {
+    pub const fn variant(&self) -> LN3_A {
         match self.bits {
             false => LN3_A::VALUE1,
             true => LN3_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<LN4_A> for bool {
 impl LN4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LN4_A {
+    pub const fn variant(&self) -> LN4_A {
         match self.bits {
             false => LN4_A::VALUE1,
             true => LN4_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<LN5_A> for bool {
 impl LN5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LN5_A {
+    pub const fn variant(&self) -> LN5_A {
         match self.bits {
             false => LN5_A::VALUE1,
             true => LN5_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<LN6_A> for bool {
 impl LN6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LN6_A {
+    pub const fn variant(&self) -> LN6_A {
         match self.bits {
             false => LN6_A::VALUE1,
             true => LN6_A::VALUE2,
@@ -392,7 +392,7 @@ impl From<LN7_A> for bool {
 impl LN7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LN7_A {
+    pub const fn variant(&self) -> LN7_A {
         match self.bits {
             false => LN7_A::VALUE1,
             true => LN7_A::VALUE2,
@@ -445,7 +445,7 @@ impl From<LN8_A> for bool {
 impl LN8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LN8_A {
+    pub const fn variant(&self) -> LN8_A {
         match self.bits {
             false => LN8_A::VALUE1,
             true => LN8_A::VALUE2,
@@ -498,7 +498,7 @@ impl From<LN9_A> for bool {
 impl LN9_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LN9_A {
+    pub const fn variant(&self) -> LN9_A {
         match self.bits {
             false => LN9_A::VALUE1,
             true => LN9_A::VALUE2,
@@ -551,7 +551,7 @@ impl From<LN10_A> for bool {
 impl LN10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LN10_A {
+    pub const fn variant(&self) -> LN10_A {
         match self.bits {
             false => LN10_A::VALUE1,
             true => LN10_A::VALUE2,
@@ -604,7 +604,7 @@ impl From<LN11_A> for bool {
 impl LN11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LN11_A {
+    pub const fn variant(&self) -> LN11_A {
         match self.bits {
             false => LN11_A::VALUE1,
             true => LN11_A::VALUE2,
@@ -773,7 +773,11 @@ impl W {
     pub fn ln11(&mut self) -> LN11_W<LNEN_SPEC, 11> {
         LN11_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

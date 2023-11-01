@@ -21,7 +21,7 @@ impl From<DISR_A> for bool {
 impl DISR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DISR_A {
+    pub const fn variant(&self) -> DISR_A {
         match self.bits {
             false => DISR_A::VALUE1,
             true => DISR_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<DISS_A> for bool {
 impl DISS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DISS_A {
+    pub const fn variant(&self) -> DISS_A {
         match self.bits {
             false => DISS_A::VALUE1,
             true => DISS_A::VALUE2,
@@ -110,7 +110,7 @@ impl From<SYNC_A> for bool {
 impl SYNC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SYNC_A {
+    pub const fn variant(&self) -> SYNC_A {
         match self.bits {
             false => SYNC_A::VALUE1,
             true => SYNC_A::VALUE2,
@@ -163,7 +163,7 @@ impl From<DIV2_A> for bool {
 impl DIV2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIV2_A {
+    pub const fn variant(&self) -> DIV2_A {
         match self.bits {
             false => DIV2_A::VALUE1,
             true => DIV2_A::VALUE2,
@@ -224,7 +224,7 @@ impl crate::FieldSpec for EBUDIV_A {
 impl EBUDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EBUDIV_A {
+    pub const fn variant(&self) -> EBUDIV_A {
         match self.bits {
             0 => EBUDIV_A::VALUE1,
             1 => EBUDIV_A::VALUE2,
@@ -301,7 +301,7 @@ impl From<SYNCACK_A> for bool {
 impl SYNCACK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SYNCACK_A {
+    pub const fn variant(&self) -> SYNCACK_A {
         match self.bits {
             false => SYNCACK_A::VALUE1,
             true => SYNCACK_A::VALUE2,
@@ -337,7 +337,7 @@ impl From<DIV2ACK_A> for bool {
 impl DIV2ACK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIV2ACK_A {
+    pub const fn variant(&self) -> DIV2ACK_A {
         match self.bits {
             false => DIV2ACK_A::VALUE1,
             true => DIV2ACK_A::VALUE2,
@@ -381,7 +381,7 @@ impl crate::FieldSpec for EBUDIVACK_A {
 impl EBUDIVACK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EBUDIVACK_A {
+    pub const fn variant(&self) -> EBUDIVACK_A {
         match self.bits {
             0 => EBUDIVACK_A::VALUE1,
             1 => EBUDIVACK_A::VALUE2,
@@ -478,7 +478,11 @@ impl W {
     pub fn ebudiv(&mut self) -> EBUDIV_W<CLC_SPEC, 18> {
         EBUDIV_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

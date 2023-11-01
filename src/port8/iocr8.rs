@@ -57,7 +57,7 @@ impl crate::FieldSpec for PC8_A {
 impl PC8_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PC8_A> {
+    pub const fn variant(&self) -> Option<PC8_A> {
         match self.bits {
             0 => Some(PC8_A::VALUE1),
             1 => Some(PC8_A::VALUE2),
@@ -324,7 +324,7 @@ impl crate::FieldSpec for PC9_A {
 impl PC9_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PC9_A> {
+    pub const fn variant(&self) -> Option<PC9_A> {
         match self.bits {
             0 => Some(PC9_A::VALUE1),
             1 => Some(PC9_A::VALUE2),
@@ -591,7 +591,7 @@ impl crate::FieldSpec for PC10_A {
 impl PC10_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PC10_A> {
+    pub const fn variant(&self) -> Option<PC10_A> {
         match self.bits {
             0 => Some(PC10_A::VALUE1),
             1 => Some(PC10_A::VALUE2),
@@ -858,7 +858,7 @@ impl crate::FieldSpec for PC11_A {
 impl PC11_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PC11_A> {
+    pub const fn variant(&self) -> Option<PC11_A> {
         match self.bits {
             0 => Some(PC11_A::VALUE1),
             1 => Some(PC11_A::VALUE2),
@@ -1117,7 +1117,11 @@ impl W {
     pub fn pc11(&mut self) -> PC11_W<IOCR8_SPEC, 27> {
         PC11_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

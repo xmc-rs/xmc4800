@@ -33,7 +33,7 @@ impl crate::FieldSpec for CFAC_A {
 impl CFAC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CFAC_A {
+    pub const fn variant(&self) -> CFAC_A {
         match self.bits {
             0 => CFAC_A::VALUE1,
             1 => CFAC_A::VALUE2,
@@ -116,7 +116,7 @@ impl crate::FieldSpec for SRGA_A {
 impl SRGA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SRGA_A> {
+    pub const fn variant(&self) -> Option<SRGA_A> {
         match self.bits {
             0 => Some(SRGA_A::VALUE1),
             1 => Some(SRGA_A::VALUE2),
@@ -188,7 +188,7 @@ impl crate::FieldSpec for ESEL_A {
 impl ESEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ESEL_A> {
+    pub const fn variant(&self) -> Option<ESEL_A> {
         match self.bits {
             0 => Some(ESEL_A::VALUE1),
             1 => Some(ESEL_A::VALUE2),
@@ -254,7 +254,7 @@ impl From<EGT_A> for bool {
 impl EGT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EGT_A {
+    pub const fn variant(&self) -> EGT_A {
         match self.bits {
             false => EGT_A::VALUE1,
             true => EGT_A::VALUE2,
@@ -353,7 +353,11 @@ impl W {
     pub fn egt(&mut self) -> EGT_W<FCFGA_SPEC, 14> {
         EGT_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

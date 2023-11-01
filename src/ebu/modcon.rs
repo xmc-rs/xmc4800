@@ -25,7 +25,7 @@ impl From<SDTRI_A> for bool {
 impl SDTRI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SDTRI_A {
+    pub const fn variant(&self) -> SDTRI_A {
         match self.bits {
             false => SDTRI_A::VALUE1,
             true => SDTRI_A::VALUE2,
@@ -78,7 +78,7 @@ impl From<EXTLOCK_A> for bool {
 impl EXTLOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXTLOCK_A {
+    pub const fn variant(&self) -> EXTLOCK_A {
         match self.bits {
             false => EXTLOCK_A::VALUE1,
             true => EXTLOCK_A::VALUE2,
@@ -131,7 +131,7 @@ impl From<ARBSYNC_A> for bool {
 impl ARBSYNC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ARBSYNC_A {
+    pub const fn variant(&self) -> ARBSYNC_A {
         match self.bits {
             false => ARBSYNC_A::VALUE1,
             true => ARBSYNC_A::VALUE2,
@@ -192,7 +192,7 @@ impl crate::FieldSpec for ARBMODE_A {
 impl ARBMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ARBMODE_A {
+    pub const fn variant(&self) -> ARBMODE_A {
         match self.bits {
             0 => ARBMODE_A::VALUE1,
             1 => ARBMODE_A::VALUE2,
@@ -275,7 +275,7 @@ impl crate::FieldSpec for TIMEOUTC_A {
 impl TIMEOUTC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TIMEOUTC_A> {
+    pub const fn variant(&self) -> Option<TIMEOUTC_A> {
         match self.bits {
             0 => Some(TIMEOUTC_A::VALUE1),
             1 => Some(TIMEOUTC_A::VALUE2),
@@ -355,7 +355,7 @@ impl From<ALE_A> for bool {
 impl ALE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ALE_A {
+    pub const fn variant(&self) -> ALE_A {
         match self.bits {
             false => ALE_A::VALUE1,
             true => ALE_A::VALUE2,
@@ -506,7 +506,11 @@ impl W {
     pub fn ale(&mut self) -> ALE_W<MODCON_SPEC, 31> {
         ALE_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

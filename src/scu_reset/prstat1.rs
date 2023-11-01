@@ -19,7 +19,7 @@ impl From<CCU43RS_A> for bool {
 impl CCU43RS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CCU43RS_A {
+    pub const fn variant(&self) -> CCU43RS_A {
         match self.bits {
             false => CCU43RS_A::VALUE1,
             true => CCU43RS_A::VALUE2,
@@ -55,7 +55,7 @@ impl From<LEDTSCU0RS_A> for bool {
 impl LEDTSCU0RS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LEDTSCU0RS_A {
+    pub const fn variant(&self) -> LEDTSCU0RS_A {
         match self.bits {
             false => LEDTSCU0RS_A::VALUE1,
             true => LEDTSCU0RS_A::VALUE2,
@@ -91,7 +91,7 @@ impl From<MCAN0RS_A> for bool {
 impl MCAN0RS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MCAN0RS_A {
+    pub const fn variant(&self) -> MCAN0RS_A {
         match self.bits {
             false => MCAN0RS_A::VALUE1,
             true => MCAN0RS_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<DACRS_A> for bool {
 impl DACRS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DACRS_A {
+    pub const fn variant(&self) -> DACRS_A {
         match self.bits {
             false => DACRS_A::VALUE1,
             true => DACRS_A::VALUE2,
@@ -163,7 +163,7 @@ impl From<MMCIRS_A> for bool {
 impl MMCIRS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MMCIRS_A {
+    pub const fn variant(&self) -> MMCIRS_A {
         match self.bits {
             false => MMCIRS_A::VALUE1,
             true => MMCIRS_A::VALUE2,
@@ -199,7 +199,7 @@ impl From<USIC1RS_A> for bool {
 impl USIC1RS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USIC1RS_A {
+    pub const fn variant(&self) -> USIC1RS_A {
         match self.bits {
             false => USIC1RS_A::VALUE1,
             true => USIC1RS_A::VALUE2,
@@ -235,7 +235,7 @@ impl From<USIC2RS_A> for bool {
 impl USIC2RS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USIC2RS_A {
+    pub const fn variant(&self) -> USIC2RS_A {
         match self.bits {
             false => USIC2RS_A::VALUE1,
             true => USIC2RS_A::VALUE2,
@@ -271,7 +271,7 @@ impl From<PPORTSRS_A> for bool {
 impl PPORTSRS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PPORTSRS_A {
+    pub const fn variant(&self) -> PPORTSRS_A {
         match self.bits {
             false => PPORTSRS_A::VALUE1,
             true => PPORTSRS_A::VALUE2,

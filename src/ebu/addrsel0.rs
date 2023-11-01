@@ -21,7 +21,7 @@ impl From<REGENAB_A> for bool {
 impl REGENAB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> REGENAB_A {
+    pub const fn variant(&self) -> REGENAB_A {
         match self.bits {
             false => REGENAB_A::VALUE1,
             true => REGENAB_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<ALTENAB_A> for bool {
 impl ALTENAB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ALTENAB_A {
+    pub const fn variant(&self) -> ALTENAB_A {
         match self.bits {
             false => ALTENAB_A::VALUE1,
             true => ALTENAB_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<WPROT_A> for bool {
 impl WPROT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WPROT_A {
+    pub const fn variant(&self) -> WPROT_A {
         match self.bits {
             false => WPROT_A::VALUE1,
             true => WPROT_A::VALUE2,
@@ -197,7 +197,11 @@ impl W {
     pub fn wprot(&mut self) -> WPROT_W<ADDRSEL0_SPEC, 2> {
         WPROT_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

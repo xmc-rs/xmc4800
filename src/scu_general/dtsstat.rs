@@ -21,7 +21,7 @@ impl From<RDY_A> for bool {
 impl RDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RDY_A {
+    pub const fn variant(&self) -> RDY_A {
         match self.bits {
             false => RDY_A::VALUE1,
             true => RDY_A::VALUE2,
@@ -57,7 +57,7 @@ impl From<BUSY_A> for bool {
 impl BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUSY_A {
+    pub const fn variant(&self) -> BUSY_A {
         match self.bits {
             false => BUSY_A::VALUE1,
             true => BUSY_A::VALUE2,

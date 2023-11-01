@@ -21,7 +21,7 @@ impl From<VCOBYP_A> for bool {
 impl VCOBYP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOBYP_A {
+    pub const fn variant(&self) -> VCOBYP_A {
         match self.bits {
             false => VCOBYP_A::VALUE1,
             true => VCOBYP_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<VCOPWD_A> for bool {
 impl VCOPWD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOPWD_A {
+    pub const fn variant(&self) -> VCOPWD_A {
         match self.bits {
             false => VCOPWD_A::VALUE1,
             true => VCOPWD_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<VCOTR_A> for bool {
 impl VCOTR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCOTR_A {
+    pub const fn variant(&self) -> VCOTR_A {
         match self.bits {
             false => VCOTR_A::VALUE1,
             true => VCOTR_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<FINDIS_A> for bool {
 impl FINDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FINDIS_A {
+    pub const fn variant(&self) -> FINDIS_A {
         match self.bits {
             false => FINDIS_A::VALUE1,
             true => FINDIS_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<OSCDISCDIS_A> for bool {
 impl OSCDISCDIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OSCDISCDIS_A {
+    pub const fn variant(&self) -> OSCDISCDIS_A {
         match self.bits {
             false => OSCDISCDIS_A::VALUE1,
             true => OSCDISCDIS_A::VALUE2,
@@ -290,7 +290,7 @@ impl From<PLLPWD_A> for bool {
 impl PLLPWD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PLLPWD_A {
+    pub const fn variant(&self) -> PLLPWD_A {
         match self.bits {
             false => PLLPWD_A::VALUE1,
             true => PLLPWD_A::VALUE2,
@@ -427,7 +427,11 @@ impl W {
     pub fn pdiv(&mut self) -> PDIV_W<USBPLLCON_SPEC, 24> {
         PDIV_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

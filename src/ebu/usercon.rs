@@ -29,7 +29,7 @@ impl crate::FieldSpec for ADDIO_A {
 impl ADDIO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ADDIO_A> {
+    pub const fn variant(&self) -> Option<ADDIO_A> {
         match self.bits {
             0 => Some(ADDIO_A::VALUE1),
             1 => Some(ADDIO_A::VALUE2),
@@ -84,7 +84,7 @@ impl From<ADVIO_A> for bool {
 impl ADVIO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADVIO_A {
+    pub const fn variant(&self) -> ADVIO_A {
         match self.bits {
             false => ADVIO_A::VALUE1,
             true => ADVIO_A::VALUE2,
@@ -154,7 +154,11 @@ impl W {
     pub fn advio(&mut self) -> ADVIO_W<USERCON_SPEC, 25> {
         ADVIO_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

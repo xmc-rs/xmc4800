@@ -37,7 +37,7 @@ impl crate::FieldSpec for PD0_A {
 impl PD0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PD0_A {
+    pub const fn variant(&self) -> PD0_A {
         match self.bits {
             2 => PD0_A::SD_SOE,
             3 => PD0_A::SD_SLE,
@@ -174,7 +174,7 @@ impl crate::FieldSpec for PD1_A {
 impl PD1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PD1_A {
+    pub const fn variant(&self) -> PD1_A {
         match self.bits {
             2 => PD1_A::SD_SOE,
             3 => PD1_A::SD_SLE,
@@ -311,7 +311,7 @@ impl crate::FieldSpec for PD2_A {
 impl PD2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PD2_A {
+    pub const fn variant(&self) -> PD2_A {
         match self.bits {
             2 => PD2_A::SD_SOE,
             3 => PD2_A::SD_SLE,
@@ -442,7 +442,7 @@ impl crate::FieldSpec for PD3_A {
 impl PD3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PD3_A> {
+    pub const fn variant(&self) -> Option<PD3_A> {
         match self.bits {
             0 => Some(PD3_A::SD_SHE),
             1 => Some(PD3_A::SD_MEE),
@@ -540,7 +540,7 @@ impl crate::FieldSpec for PD4_A {
 impl PD4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PD4_A> {
+    pub const fn variant(&self) -> Option<PD4_A> {
         match self.bits {
             0 => Some(PD4_A::SD_SHE),
             1 => Some(PD4_A::SD_MEE),
@@ -638,7 +638,7 @@ impl crate::FieldSpec for PD5_A {
 impl PD5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PD5_A> {
+    pub const fn variant(&self) -> Option<PD5_A> {
         match self.bits {
             0 => Some(PD5_A::SD_SHE),
             1 => Some(PD5_A::SD_MEE),
@@ -736,7 +736,7 @@ impl crate::FieldSpec for PD6_A {
 impl PD6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PD6_A> {
+    pub const fn variant(&self) -> Option<PD6_A> {
         match self.bits {
             0 => Some(PD6_A::SD_SHE),
             1 => Some(PD6_A::SD_MEE),
@@ -840,7 +840,7 @@ impl crate::FieldSpec for PD7_A {
 impl PD7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PD7_A {
+    pub const fn variant(&self) -> PD7_A {
         match self.bits {
             2 => PD7_A::SD_SOE,
             3 => PD7_A::SD_SLE,
@@ -1033,7 +1033,11 @@ impl W {
     pub fn pd7(&mut self) -> PD7_W<PDR0_SPEC, 28> {
         PD7_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

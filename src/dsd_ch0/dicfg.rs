@@ -31,7 +31,7 @@ impl crate::FieldSpec for DSRC_A {
 impl DSRC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DSRC_A> {
+    pub const fn variant(&self) -> Option<DSRC_A> {
         match self.bits {
             0 => Some(DSRC_A::VALUE1),
             2 => Some(DSRC_A::VALUE2),
@@ -158,7 +158,7 @@ impl crate::FieldSpec for ITRMODE_A {
 impl ITRMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ITRMODE_A {
+    pub const fn variant(&self) -> ITRMODE_A {
         match self.bits {
             0 => ITRMODE_A::VALUE1,
             1 => ITRMODE_A::VALUE2,
@@ -243,7 +243,7 @@ impl crate::FieldSpec for TSTRMODE_A {
 impl TSTRMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TSTRMODE_A {
+    pub const fn variant(&self) -> TSTRMODE_A {
         match self.bits {
             0 => TSTRMODE_A::VALUE1,
             1 => TSTRMODE_A::VALUE2,
@@ -365,7 +365,7 @@ impl crate::FieldSpec for CSRC_A {
 impl CSRC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CSRC_A> {
+    pub const fn variant(&self) -> Option<CSRC_A> {
         match self.bits {
             1 => Some(CSRC_A::VALUE2),
             2 => Some(CSRC_A::VALUE3),
@@ -465,7 +465,7 @@ impl crate::FieldSpec for STROBE_A {
 impl STROBE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<STROBE_A> {
+    pub const fn variant(&self) -> Option<STROBE_A> {
         match self.bits {
             0 => Some(STROBE_A::VALUE1),
             1 => Some(STROBE_A::VALUE2),
@@ -663,7 +663,11 @@ impl W {
     pub fn scwc(&mut self) -> SCWC_W<DICFG_SPEC, 31> {
         SCWC_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

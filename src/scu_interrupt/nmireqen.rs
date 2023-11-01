@@ -21,7 +21,7 @@ impl From<PRWARN_A> for bool {
 impl PRWARN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRWARN_A {
+    pub const fn variant(&self) -> PRWARN_A {
         match self.bits {
             false => PRWARN_A::VALUE1,
             true => PRWARN_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<PI_A> for bool {
 impl PI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PI_A {
+    pub const fn variant(&self) -> PI_A {
         match self.bits {
             false => PI_A::VALUE1,
             true => PI_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<AI_A> for bool {
 impl AI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AI_A {
+    pub const fn variant(&self) -> AI_A {
         match self.bits {
             false => AI_A::VALUE1,
             true => AI_A::VALUE2,
@@ -180,7 +180,7 @@ impl From<ERU00_A> for bool {
 impl ERU00_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERU00_A {
+    pub const fn variant(&self) -> ERU00_A {
         match self.bits {
             false => ERU00_A::VALUE1,
             true => ERU00_A::VALUE2,
@@ -233,7 +233,7 @@ impl From<ERU01_A> for bool {
 impl ERU01_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERU01_A {
+    pub const fn variant(&self) -> ERU01_A {
         match self.bits {
             false => ERU01_A::VALUE1,
             true => ERU01_A::VALUE2,
@@ -286,7 +286,7 @@ impl From<ERU02_A> for bool {
 impl ERU02_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERU02_A {
+    pub const fn variant(&self) -> ERU02_A {
         match self.bits {
             false => ERU02_A::VALUE1,
             true => ERU02_A::VALUE2,
@@ -339,7 +339,7 @@ impl From<ERU03_A> for bool {
 impl ERU03_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERU03_A {
+    pub const fn variant(&self) -> ERU03_A {
         match self.bits {
             false => ERU03_A::VALUE1,
             true => ERU03_A::VALUE2,
@@ -453,7 +453,11 @@ impl W {
     pub fn eru03(&mut self) -> ERU03_W<NMIREQEN_SPEC, 19> {
         ERU03_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

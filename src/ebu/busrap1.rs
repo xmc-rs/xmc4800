@@ -29,7 +29,7 @@ impl crate::FieldSpec for RDDTACS_A {
 impl RDDTACS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RDDTACS_A> {
+    pub const fn variant(&self) -> Option<RDDTACS_A> {
         match self.bits {
             0 => Some(RDDTACS_A::VALUE1),
             1 => Some(RDDTACS_A::VALUE2),
@@ -114,7 +114,7 @@ impl crate::FieldSpec for RDRECOVC_A {
 impl RDRECOVC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RDRECOVC_A> {
+    pub const fn variant(&self) -> Option<RDRECOVC_A> {
         match self.bits {
             0 => Some(RDRECOVC_A::VALUE1),
             1 => Some(RDRECOVC_A::VALUE2),
@@ -201,7 +201,7 @@ impl crate::FieldSpec for WAITRDC_A {
 impl WAITRDC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<WAITRDC_A> {
+    pub const fn variant(&self) -> Option<WAITRDC_A> {
         match self.bits {
             0 => Some(WAITRDC_A::VALUE1),
             1 => Some(WAITRDC_A::VALUE2),
@@ -301,7 +301,7 @@ impl crate::FieldSpec for EXTCLOCK_A {
 impl EXTCLOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXTCLOCK_A {
+    pub const fn variant(&self) -> EXTCLOCK_A {
         match self.bits {
             0 => EXTCLOCK_A::VALUE1,
             1 => EXTCLOCK_A::VALUE2,
@@ -386,7 +386,7 @@ impl crate::FieldSpec for EXTDATA_A {
 impl EXTDATA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EXTDATA_A {
+    pub const fn variant(&self) -> EXTDATA_A {
         match self.bits {
             0 => EXTDATA_A::VALUE1,
             1 => EXTDATA_A::VALUE2,
@@ -471,7 +471,7 @@ impl crate::FieldSpec for CMDDELAY_A {
 impl CMDDELAY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CMDDELAY_A> {
+    pub const fn variant(&self) -> Option<CMDDELAY_A> {
         match self.bits {
             0 => Some(CMDDELAY_A::VALUE1),
             1 => Some(CMDDELAY_A::VALUE2),
@@ -556,7 +556,7 @@ impl crate::FieldSpec for AHOLDC_A {
 impl AHOLDC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<AHOLDC_A> {
+    pub const fn variant(&self) -> Option<AHOLDC_A> {
         match self.bits {
             0 => Some(AHOLDC_A::VALUE1),
             1 => Some(AHOLDC_A::VALUE2),
@@ -641,7 +641,7 @@ impl crate::FieldSpec for ADDRC_A {
 impl ADDRC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ADDRC_A> {
+    pub const fn variant(&self) -> Option<ADDRC_A> {
         match self.bits {
             0 => Some(ADDRC_A::VALUE1),
             1 => Some(ADDRC_A::VALUE2),
@@ -801,7 +801,11 @@ impl W {
     pub fn addrc(&mut self) -> ADDRC_W<BUSRAP1_SPEC, 28> {
         ADDRC_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

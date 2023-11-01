@@ -21,7 +21,7 @@ impl From<PALS_A> for bool {
 impl PALS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PALS_A {
+    pub const fn variant(&self) -> PALS_A {
         match self.bits {
             false => PALS_A::VALUE1,
             true => PALS_A::VALUE2,
@@ -74,7 +74,7 @@ impl From<PBLS_A> for bool {
 impl PBLS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PBLS_A {
+    pub const fn variant(&self) -> PBLS_A {
         match self.bits {
             false => PBLS_A::VALUE1,
             true => PBLS_A::VALUE2,
@@ -127,7 +127,7 @@ impl From<PHS_A> for bool {
 impl PHS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PHS_A {
+    pub const fn variant(&self) -> PHS_A {
         match self.bits {
             false => PHS_A::VALUE1,
             true => PHS_A::VALUE2,
@@ -186,7 +186,7 @@ impl crate::FieldSpec for ICM_A {
 impl ICM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ICM_A> {
+    pub const fn variant(&self) -> Option<ICM_A> {
         match self.bits {
             0 => Some(ICM_A::VALUE1),
             1 => Some(ICM_A::VALUE2),
@@ -252,7 +252,7 @@ impl From<DVAL_A> for bool {
 impl DVAL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DVAL_A {
+    pub const fn variant(&self) -> DVAL_A {
         match self.bits {
             false => DVAL_A::VALUE1,
             true => DVAL_A::VALUE2,
@@ -321,7 +321,11 @@ impl W {
     pub fn icm(&mut self) -> ICM_W<QDC_SPEC, 4> {
         ICM_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;

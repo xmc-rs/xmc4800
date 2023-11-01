@@ -29,7 +29,7 @@ impl crate::FieldSpec for QSUS_A {
 impl QSUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> QSUS_A {
+    pub const fn variant(&self) -> QSUS_A {
         match self.bits {
             0 => QSUS_A::VALUE1,
             1 => QSUS_A::VALUE2,
@@ -114,7 +114,7 @@ impl crate::FieldSpec for MSUS_A {
 impl MSUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MSUS_A {
+    pub const fn variant(&self) -> MSUS_A {
         match self.bits {
             0 => MSUS_A::VALUE1,
             1 => MSUS_A::VALUE2,
@@ -197,7 +197,11 @@ impl W {
     pub fn msus(&mut self) -> MSUS_W<PSUS_SPEC, 2> {
         MSUS_W::new(self)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.bits = bits;
