@@ -5,19 +5,19 @@ pub type W = crate::W<SDRMCON_SPEC>;
 #[doc = "Field `CRAS` reader - Row to precharge delay counter"]
 pub type CRAS_R = crate::FieldReader;
 #[doc = "Field `CRAS` writer - Row to precharge delay counter"]
-pub type CRAS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CRAS_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CRFSH` reader - Initialization refresh commands counter"]
 pub type CRFSH_R = crate::FieldReader;
 #[doc = "Field `CRFSH` writer - Initialization refresh commands counter"]
-pub type CRFSH_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CRFSH_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `CRSC` reader - Mode register set-up time"]
 pub type CRSC_R = crate::FieldReader;
 #[doc = "Field `CRSC` writer - Mode register set-up time"]
-pub type CRSC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type CRSC_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `CRP` reader - Row precharge time counter"]
 pub type CRP_R = crate::FieldReader;
 #[doc = "Field `CRP` writer - Row precharge time counter"]
-pub type CRP_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type CRP_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `AWIDTH` reader - Width of column address"]
 pub type AWIDTH_R = crate::FieldReader<AWIDTH_A>;
 #[doc = "Width of column address\n\nValue on reset: 0"]
@@ -76,8 +76,8 @@ impl AWIDTH_R {
     }
 }
 #[doc = "Field `AWIDTH` writer - Width of column address"]
-pub type AWIDTH_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, AWIDTH_A>;
-impl<'a, REG, const O: u8> AWIDTH_W<'a, REG, O>
+pub type AWIDTH_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, AWIDTH_A>;
+impl<'a, REG> AWIDTH_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -106,11 +106,11 @@ where
 #[doc = "Field `CRCD` reader - Row to column delay counter"]
 pub type CRCD_R = crate::FieldReader;
 #[doc = "Field `CRCD` writer - Row to column delay counter"]
-pub type CRCD_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type CRCD_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `CRC` reader - Row cycle time counter"]
 pub type CRC_R = crate::FieldReader;
 #[doc = "Field `CRC` writer - Row cycle time counter"]
-pub type CRC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type CRC_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `ROWM` reader - Mask for row tag"]
 pub type ROWM_R = crate::FieldReader<ROWM_A>;
 #[doc = "Mask for row tag\n\nValue on reset: 0"]
@@ -177,8 +177,8 @@ impl ROWM_R {
     }
 }
 #[doc = "Field `ROWM` writer - Mask for row tag"]
-pub type ROWM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, ROWM_A>;
-impl<'a, REG, const O: u8> ROWM_W<'a, REG, O>
+pub type ROWM_W<'a, REG> = crate::FieldWriter<'a, REG, 3, ROWM_A>;
+impl<'a, REG> ROWM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -291,8 +291,8 @@ impl BANKM_R {
     }
 }
 #[doc = "Field `BANKM` writer - Mask for bank tag"]
-pub type BANKM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, BANKM_A>;
-impl<'a, REG, const O: u8> BANKM_W<'a, REG, O>
+pub type BANKM_W<'a, REG> = crate::FieldWriter<'a, REG, 3, BANKM_A>;
+impl<'a, REG> BANKM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -336,7 +336,7 @@ where
 #[doc = "Field `CRCE` reader - Row cycle time counter extension"]
 pub type CRCE_R = crate::FieldReader;
 #[doc = "Field `CRCE` writer - Row cycle time counter extension"]
-pub type CRCE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type CRCE_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `CLKDIS` reader - Disable SDRAM clock output"]
 pub type CLKDIS_R = crate::BitReader<CLKDIS_A>;
 #[doc = "Disable SDRAM clock output\n\nValue on reset: 0"]
@@ -374,8 +374,8 @@ impl CLKDIS_R {
     }
 }
 #[doc = "Field `CLKDIS` writer - Disable SDRAM clock output"]
-pub type CLKDIS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CLKDIS_A>;
-impl<'a, REG, const O: u8> CLKDIS_W<'a, REG, O>
+pub type CLKDIS_W<'a, REG> = crate::BitWriter<'a, REG, CLKDIS_A>;
+impl<'a, REG> CLKDIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -448,8 +448,8 @@ impl PWR_MODE_R {
     }
 }
 #[doc = "Field `PWR_MODE` writer - Power Save Mode used for gated clock mode"]
-pub type PWR_MODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, PWR_MODE_A>;
-impl<'a, REG, const O: u8> PWR_MODE_W<'a, REG, O>
+pub type PWR_MODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PWR_MODE_A>;
+impl<'a, REG> PWR_MODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -512,8 +512,8 @@ impl SDCMSEL_R {
     }
 }
 #[doc = "Field `SDCMSEL` writer - SDRAM clock mode select"]
-pub type SDCMSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SDCMSEL_A>;
-impl<'a, REG, const O: u8> SDCMSEL_W<'a, REG, O>
+pub type SDCMSEL_W<'a, REG> = crate::BitWriter<'a, REG, SDCMSEL_A>;
+impl<'a, REG> SDCMSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -599,80 +599,80 @@ impl W {
     #[doc = "Bits 0:3 - Row to precharge delay counter"]
     #[inline(always)]
     #[must_use]
-    pub fn cras(&mut self) -> CRAS_W<SDRMCON_SPEC, 0> {
-        CRAS_W::new(self)
+    pub fn cras(&mut self) -> CRAS_W<SDRMCON_SPEC> {
+        CRAS_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Initialization refresh commands counter"]
     #[inline(always)]
     #[must_use]
-    pub fn crfsh(&mut self) -> CRFSH_W<SDRMCON_SPEC, 4> {
-        CRFSH_W::new(self)
+    pub fn crfsh(&mut self) -> CRFSH_W<SDRMCON_SPEC> {
+        CRFSH_W::new(self, 4)
     }
     #[doc = "Bits 8:9 - Mode register set-up time"]
     #[inline(always)]
     #[must_use]
-    pub fn crsc(&mut self) -> CRSC_W<SDRMCON_SPEC, 8> {
-        CRSC_W::new(self)
+    pub fn crsc(&mut self) -> CRSC_W<SDRMCON_SPEC> {
+        CRSC_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Row precharge time counter"]
     #[inline(always)]
     #[must_use]
-    pub fn crp(&mut self) -> CRP_W<SDRMCON_SPEC, 10> {
-        CRP_W::new(self)
+    pub fn crp(&mut self) -> CRP_W<SDRMCON_SPEC> {
+        CRP_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Width of column address"]
     #[inline(always)]
     #[must_use]
-    pub fn awidth(&mut self) -> AWIDTH_W<SDRMCON_SPEC, 12> {
-        AWIDTH_W::new(self)
+    pub fn awidth(&mut self) -> AWIDTH_W<SDRMCON_SPEC> {
+        AWIDTH_W::new(self, 12)
     }
     #[doc = "Bits 14:15 - Row to column delay counter"]
     #[inline(always)]
     #[must_use]
-    pub fn crcd(&mut self) -> CRCD_W<SDRMCON_SPEC, 14> {
-        CRCD_W::new(self)
+    pub fn crcd(&mut self) -> CRCD_W<SDRMCON_SPEC> {
+        CRCD_W::new(self, 14)
     }
     #[doc = "Bits 16:18 - Row cycle time counter"]
     #[inline(always)]
     #[must_use]
-    pub fn crc(&mut self) -> CRC_W<SDRMCON_SPEC, 16> {
-        CRC_W::new(self)
+    pub fn crc(&mut self) -> CRC_W<SDRMCON_SPEC> {
+        CRC_W::new(self, 16)
     }
     #[doc = "Bits 19:21 - Mask for row tag"]
     #[inline(always)]
     #[must_use]
-    pub fn rowm(&mut self) -> ROWM_W<SDRMCON_SPEC, 19> {
-        ROWM_W::new(self)
+    pub fn rowm(&mut self) -> ROWM_W<SDRMCON_SPEC> {
+        ROWM_W::new(self, 19)
     }
     #[doc = "Bits 22:24 - Mask for bank tag"]
     #[inline(always)]
     #[must_use]
-    pub fn bankm(&mut self) -> BANKM_W<SDRMCON_SPEC, 22> {
-        BANKM_W::new(self)
+    pub fn bankm(&mut self) -> BANKM_W<SDRMCON_SPEC> {
+        BANKM_W::new(self, 22)
     }
     #[doc = "Bits 25:27 - Row cycle time counter extension"]
     #[inline(always)]
     #[must_use]
-    pub fn crce(&mut self) -> CRCE_W<SDRMCON_SPEC, 25> {
-        CRCE_W::new(self)
+    pub fn crce(&mut self) -> CRCE_W<SDRMCON_SPEC> {
+        CRCE_W::new(self, 25)
     }
     #[doc = "Bit 28 - Disable SDRAM clock output"]
     #[inline(always)]
     #[must_use]
-    pub fn clkdis(&mut self) -> CLKDIS_W<SDRMCON_SPEC, 28> {
-        CLKDIS_W::new(self)
+    pub fn clkdis(&mut self) -> CLKDIS_W<SDRMCON_SPEC> {
+        CLKDIS_W::new(self, 28)
     }
     #[doc = "Bits 29:30 - Power Save Mode used for gated clock mode"]
     #[inline(always)]
     #[must_use]
-    pub fn pwr_mode(&mut self) -> PWR_MODE_W<SDRMCON_SPEC, 29> {
-        PWR_MODE_W::new(self)
+    pub fn pwr_mode(&mut self) -> PWR_MODE_W<SDRMCON_SPEC> {
+        PWR_MODE_W::new(self, 29)
     }
     #[doc = "Bit 31 - SDRAM clock mode select"]
     #[inline(always)]
     #[must_use]
-    pub fn sdcmsel(&mut self) -> SDCMSEL_W<SDRMCON_SPEC, 31> {
-        SDCMSEL_W::new(self)
+    pub fn sdcmsel(&mut self) -> SDCMSEL_W<SDRMCON_SPEC> {
+        SDCMSEL_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

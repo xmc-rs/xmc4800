@@ -39,8 +39,8 @@ impl PALS_R {
     }
 }
 #[doc = "Field `PALS` writer - Phase A Level selector"]
-pub type PALS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PALS_A>;
-impl<'a, REG, const O: u8> PALS_W<'a, REG, O>
+pub type PALS_W<'a, REG> = crate::BitWriter<'a, REG, PALS_A>;
+impl<'a, REG> PALS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl PBLS_R {
     }
 }
 #[doc = "Field `PBLS` writer - Phase B Level selector"]
-pub type PBLS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PBLS_A>;
-impl<'a, REG, const O: u8> PBLS_W<'a, REG, O>
+pub type PBLS_W<'a, REG> = crate::BitWriter<'a, REG, PBLS_A>;
+impl<'a, REG> PBLS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl PHS_R {
     }
 }
 #[doc = "Field `PHS` writer - Phase signals swap"]
-pub type PHS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PHS_A>;
-impl<'a, REG, const O: u8> PHS_W<'a, REG, O>
+pub type PHS_W<'a, REG> = crate::BitWriter<'a, REG, PHS_A>;
+impl<'a, REG> PHS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -211,8 +211,8 @@ impl ICM_R {
     }
 }
 #[doc = "Field `ICM` writer - Index Marker generations control"]
-pub type ICM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, ICM_A>;
-impl<'a, REG, const O: u8> ICM_W<'a, REG, O>
+pub type ICM_W<'a, REG> = crate::FieldWriter<'a, REG, 2, ICM_A>;
+impl<'a, REG> ICM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -300,26 +300,26 @@ impl W {
     #[doc = "Bit 0 - Phase A Level selector"]
     #[inline(always)]
     #[must_use]
-    pub fn pals(&mut self) -> PALS_W<QDC_SPEC, 0> {
-        PALS_W::new(self)
+    pub fn pals(&mut self) -> PALS_W<QDC_SPEC> {
+        PALS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Phase B Level selector"]
     #[inline(always)]
     #[must_use]
-    pub fn pbls(&mut self) -> PBLS_W<QDC_SPEC, 1> {
-        PBLS_W::new(self)
+    pub fn pbls(&mut self) -> PBLS_W<QDC_SPEC> {
+        PBLS_W::new(self, 1)
     }
     #[doc = "Bit 2 - Phase signals swap"]
     #[inline(always)]
     #[must_use]
-    pub fn phs(&mut self) -> PHS_W<QDC_SPEC, 2> {
-        PHS_W::new(self)
+    pub fn phs(&mut self) -> PHS_W<QDC_SPEC> {
+        PHS_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Index Marker generations control"]
     #[inline(always)]
     #[must_use]
-    pub fn icm(&mut self) -> ICM_W<QDC_SPEC, 4> {
-        ICM_W::new(self)
+    pub fn icm(&mut self) -> ICM_W<QDC_SPEC> {
+        ICM_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

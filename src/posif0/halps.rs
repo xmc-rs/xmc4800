@@ -5,11 +5,11 @@ pub type W = crate::W<HALPS_SPEC>;
 #[doc = "Field `HCPS` reader - Shadow Hall Current Pattern"]
 pub type HCPS_R = crate::FieldReader;
 #[doc = "Field `HCPS` writer - Shadow Hall Current Pattern"]
-pub type HCPS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type HCPS_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `HEPS` reader - Shadow Hall expected Pattern"]
 pub type HEPS_R = crate::FieldReader;
 #[doc = "Field `HEPS` writer - Shadow Hall expected Pattern"]
-pub type HEPS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type HEPS_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:2 - Shadow Hall Current Pattern"]
     #[inline(always)]
@@ -26,14 +26,14 @@ impl W {
     #[doc = "Bits 0:2 - Shadow Hall Current Pattern"]
     #[inline(always)]
     #[must_use]
-    pub fn hcps(&mut self) -> HCPS_W<HALPS_SPEC, 0> {
-        HCPS_W::new(self)
+    pub fn hcps(&mut self) -> HCPS_W<HALPS_SPEC> {
+        HCPS_W::new(self, 0)
     }
     #[doc = "Bits 3:5 - Shadow Hall expected Pattern"]
     #[inline(always)]
     #[must_use]
-    pub fn heps(&mut self) -> HEPS_W<HALPS_SPEC, 3> {
-        HEPS_W::new(self)
+    pub fn heps(&mut self) -> HEPS_W<HALPS_SPEC> {
+        HEPS_W::new(self, 3)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

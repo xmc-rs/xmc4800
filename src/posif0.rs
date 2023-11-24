@@ -1,50 +1,128 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - POSIF configuration"]
-    pub pconf: PCONF,
-    #[doc = "0x04 - POSIF Suspend Config"]
-    pub psus: PSUS,
-    #[doc = "0x08 - POSIF Run Bit Set"]
-    pub pruns: PRUNS,
-    #[doc = "0x0c - POSIF Run Bit Clear"]
-    pub prunc: PRUNC,
-    #[doc = "0x10 - POSIF Run Bit Status"]
-    pub prun: PRUN,
+    pconf: PCONF,
+    psus: PSUS,
+    pruns: PRUNS,
+    prunc: PRUNC,
+    prun: PRUN,
     _reserved5: [u8; 0x0c],
-    #[doc = "0x20 - Module Identification register"]
-    pub midr: MIDR,
+    midr: MIDR,
     _reserved6: [u8; 0x0c],
-    #[doc = "0x30 - Hall Sensor Patterns"]
-    pub halp: HALP,
-    #[doc = "0x34 - Hall Sensor Shadow Patterns"]
-    pub halps: HALPS,
+    halp: HALP,
+    halps: HALPS,
     _reserved8: [u8; 0x08],
-    #[doc = "0x40 - Multi-Channel Pattern"]
-    pub mcm: MCM,
-    #[doc = "0x44 - Multi-Channel Shadow Pattern"]
-    pub mcsm: MCSM,
-    #[doc = "0x48 - Multi-Channel Pattern Control set"]
-    pub mcms: MCMS,
-    #[doc = "0x4c - Multi-Channel Pattern Control clear"]
-    pub mcmc: MCMC,
-    #[doc = "0x50 - Multi-Channel Pattern Control flag"]
-    pub mcmf: MCMF,
+    mcm: MCM,
+    mcsm: MCSM,
+    mcms: MCMS,
+    mcmc: MCMC,
+    mcmf: MCMF,
     _reserved13: [u8; 0x0c],
-    #[doc = "0x60 - Quadrature Decoder Control"]
-    pub qdc: QDC,
+    qdc: QDC,
     _reserved14: [u8; 0x0c],
-    #[doc = "0x70 - POSIF Interrupt Flags"]
-    pub pflg: PFLG,
-    #[doc = "0x74 - POSIF Interrupt Enable"]
-    pub pflge: PFLGE,
-    #[doc = "0x78 - POSIF Interrupt Set"]
-    pub spflg: SPFLG,
-    #[doc = "0x7c - POSIF Interrupt Clear"]
-    pub rpflg: RPFLG,
+    pflg: PFLG,
+    pflge: PFLGE,
+    spflg: SPFLG,
+    rpflg: RPFLG,
     _reserved18: [u8; 0x80],
+    pdbg: PDBG,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - POSIF configuration"]
+    #[inline(always)]
+    pub const fn pconf(&self) -> &PCONF {
+        &self.pconf
+    }
+    #[doc = "0x04 - POSIF Suspend Config"]
+    #[inline(always)]
+    pub const fn psus(&self) -> &PSUS {
+        &self.psus
+    }
+    #[doc = "0x08 - POSIF Run Bit Set"]
+    #[inline(always)]
+    pub const fn pruns(&self) -> &PRUNS {
+        &self.pruns
+    }
+    #[doc = "0x0c - POSIF Run Bit Clear"]
+    #[inline(always)]
+    pub const fn prunc(&self) -> &PRUNC {
+        &self.prunc
+    }
+    #[doc = "0x10 - POSIF Run Bit Status"]
+    #[inline(always)]
+    pub const fn prun(&self) -> &PRUN {
+        &self.prun
+    }
+    #[doc = "0x20 - Module Identification register"]
+    #[inline(always)]
+    pub const fn midr(&self) -> &MIDR {
+        &self.midr
+    }
+    #[doc = "0x30 - Hall Sensor Patterns"]
+    #[inline(always)]
+    pub const fn halp(&self) -> &HALP {
+        &self.halp
+    }
+    #[doc = "0x34 - Hall Sensor Shadow Patterns"]
+    #[inline(always)]
+    pub const fn halps(&self) -> &HALPS {
+        &self.halps
+    }
+    #[doc = "0x40 - Multi-Channel Pattern"]
+    #[inline(always)]
+    pub const fn mcm(&self) -> &MCM {
+        &self.mcm
+    }
+    #[doc = "0x44 - Multi-Channel Shadow Pattern"]
+    #[inline(always)]
+    pub const fn mcsm(&self) -> &MCSM {
+        &self.mcsm
+    }
+    #[doc = "0x48 - Multi-Channel Pattern Control set"]
+    #[inline(always)]
+    pub const fn mcms(&self) -> &MCMS {
+        &self.mcms
+    }
+    #[doc = "0x4c - Multi-Channel Pattern Control clear"]
+    #[inline(always)]
+    pub const fn mcmc(&self) -> &MCMC {
+        &self.mcmc
+    }
+    #[doc = "0x50 - Multi-Channel Pattern Control flag"]
+    #[inline(always)]
+    pub const fn mcmf(&self) -> &MCMF {
+        &self.mcmf
+    }
+    #[doc = "0x60 - Quadrature Decoder Control"]
+    #[inline(always)]
+    pub const fn qdc(&self) -> &QDC {
+        &self.qdc
+    }
+    #[doc = "0x70 - POSIF Interrupt Flags"]
+    #[inline(always)]
+    pub const fn pflg(&self) -> &PFLG {
+        &self.pflg
+    }
+    #[doc = "0x74 - POSIF Interrupt Enable"]
+    #[inline(always)]
+    pub const fn pflge(&self) -> &PFLGE {
+        &self.pflge
+    }
+    #[doc = "0x78 - POSIF Interrupt Set"]
+    #[inline(always)]
+    pub const fn spflg(&self) -> &SPFLG {
+        &self.spflg
+    }
+    #[doc = "0x7c - POSIF Interrupt Clear"]
+    #[inline(always)]
+    pub const fn rpflg(&self) -> &RPFLG {
+        &self.rpflg
+    }
     #[doc = "0x100 - POSIF Debug register"]
-    pub pdbg: PDBG,
+    #[inline(always)]
+    pub const fn pdbg(&self) -> &PDBG {
+        &self.pdbg
+    }
 }
 #[doc = "PCONF (rw) register accessor: POSIF configuration\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pconf::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pconf::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@pconf`]
 module"]

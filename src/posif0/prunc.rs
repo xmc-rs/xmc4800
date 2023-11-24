@@ -1,21 +1,21 @@
 #[doc = "Register `PRUNC` writer"]
 pub type W = crate::W<PRUNC_SPEC>;
 #[doc = "Field `CRB` writer - Clear Run bit"]
-pub type CRB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CRB_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CSM` writer - Clear Current internal status"]
-pub type CSM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CSM_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Clear Run bit"]
     #[inline(always)]
     #[must_use]
-    pub fn crb(&mut self) -> CRB_W<PRUNC_SPEC, 0> {
-        CRB_W::new(self)
+    pub fn crb(&mut self) -> CRB_W<PRUNC_SPEC> {
+        CRB_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Current internal status"]
     #[inline(always)]
     #[must_use]
-    pub fn csm(&mut self) -> CSM_W<PRUNC_SPEC, 1> {
-        CSM_W::new(self)
+    pub fn csm(&mut self) -> CSM_W<PRUNC_SPEC> {
+        CSM_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

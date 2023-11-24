@@ -39,8 +39,8 @@ impl DISR_R {
     }
 }
 #[doc = "Field `DISR` writer - EBU Disable Request Bit"]
-pub type DISR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DISR_A>;
-impl<'a, REG, const O: u8> DISR_W<'a, REG, O>
+pub type DISR_W<'a, REG> = crate::BitWriter<'a, REG, DISR_A>;
+impl<'a, REG> DISR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -128,8 +128,8 @@ impl SYNC_R {
     }
 }
 #[doc = "Field `SYNC` writer - EBU Clocking Mode"]
-pub type SYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SYNC_A>;
-impl<'a, REG, const O: u8> SYNC_W<'a, REG, O>
+pub type SYNC_W<'a, REG> = crate::BitWriter<'a, REG, SYNC_A>;
+impl<'a, REG> SYNC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -181,8 +181,8 @@ impl DIV2_R {
     }
 }
 #[doc = "Field `DIV2` writer - DIV2 Clocking Mode"]
-pub type DIV2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DIV2_A>;
-impl<'a, REG, const O: u8> DIV2_W<'a, REG, O>
+pub type DIV2_W<'a, REG> = crate::BitWriter<'a, REG, DIV2_A>;
+impl<'a, REG> DIV2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -255,8 +255,8 @@ impl EBUDIV_R {
     }
 }
 #[doc = "Field `EBUDIV` writer - EBU Clock Divide Ratio"]
-pub type EBUDIV_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EBUDIV_A>;
-impl<'a, REG, const O: u8> EBUDIV_W<'a, REG, O>
+pub type EBUDIV_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EBUDIV_A>;
+impl<'a, REG> EBUDIV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -457,26 +457,26 @@ impl W {
     #[doc = "Bit 0 - EBU Disable Request Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn disr(&mut self) -> DISR_W<CLC_SPEC, 0> {
-        DISR_W::new(self)
+    pub fn disr(&mut self) -> DISR_W<CLC_SPEC> {
+        DISR_W::new(self, 0)
     }
     #[doc = "Bit 16 - EBU Clocking Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn sync(&mut self) -> SYNC_W<CLC_SPEC, 16> {
-        SYNC_W::new(self)
+    pub fn sync(&mut self) -> SYNC_W<CLC_SPEC> {
+        SYNC_W::new(self, 16)
     }
     #[doc = "Bit 17 - DIV2 Clocking Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn div2(&mut self) -> DIV2_W<CLC_SPEC, 17> {
-        DIV2_W::new(self)
+    pub fn div2(&mut self) -> DIV2_W<CLC_SPEC> {
+        DIV2_W::new(self, 17)
     }
     #[doc = "Bits 18:19 - EBU Clock Divide Ratio"]
     #[inline(always)]
     #[must_use]
-    pub fn ebudiv(&mut self) -> EBUDIV_W<CLC_SPEC, 18> {
-        EBUDIV_W::new(self)
+    pub fn ebudiv(&mut self) -> EBUDIV_W<CLC_SPEC> {
+        EBUDIV_W::new(self, 18)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

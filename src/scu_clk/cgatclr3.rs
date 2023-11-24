@@ -15,8 +15,8 @@ impl From<EBU_AW> for bool {
     }
 }
 #[doc = "Field `EBU` writer - EBU Gating Clear"]
-pub type EBU_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EBU_AW>;
-impl<'a, REG, const O: u8> EBU_W<'a, REG, O>
+pub type EBU_W<'a, REG> = crate::BitWriter<'a, REG, EBU_AW>;
+impl<'a, REG> EBU_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -35,8 +35,8 @@ impl W {
     #[doc = "Bit 2 - EBU Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ebu(&mut self) -> EBU_W<CGATCLR3_SPEC, 2> {
-        EBU_W::new(self)
+    pub fn ebu(&mut self) -> EBU_W<CGATCLR3_SPEC> {
+        EBU_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

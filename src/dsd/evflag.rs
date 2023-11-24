@@ -39,8 +39,8 @@ impl RESEV0_R {
     }
 }
 #[doc = "Field `RESEV0` writer - Result Event"]
-pub type RESEV0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESEV0_A>;
-impl<'a, REG, const O: u8> RESEV0_W<'a, REG, O>
+pub type RESEV0_W<'a, REG> = crate::BitWriter<'a, REG, RESEV0_A>;
+impl<'a, REG> RESEV0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl RESEV1_R {
     }
 }
 #[doc = "Field `RESEV1` writer - Result Event"]
-pub type RESEV1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESEV1_A>;
-impl<'a, REG, const O: u8> RESEV1_W<'a, REG, O>
+pub type RESEV1_W<'a, REG> = crate::BitWriter<'a, REG, RESEV1_A>;
+impl<'a, REG> RESEV1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl RESEV2_R {
     }
 }
 #[doc = "Field `RESEV2` writer - Result Event"]
-pub type RESEV2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESEV2_A>;
-impl<'a, REG, const O: u8> RESEV2_W<'a, REG, O>
+pub type RESEV2_W<'a, REG> = crate::BitWriter<'a, REG, RESEV2_A>;
+impl<'a, REG> RESEV2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl RESEV3_R {
     }
 }
 #[doc = "Field `RESEV3` writer - Result Event"]
-pub type RESEV3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESEV3_A>;
-impl<'a, REG, const O: u8> RESEV3_W<'a, REG, O>
+pub type RESEV3_W<'a, REG> = crate::BitWriter<'a, REG, RESEV3_A>;
+impl<'a, REG> RESEV3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl ALEV0_R {
     }
 }
 #[doc = "Field `ALEV0` writer - Alarm Event"]
-pub type ALEV0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALEV0_A>;
-impl<'a, REG, const O: u8> ALEV0_W<'a, REG, O>
+pub type ALEV0_W<'a, REG> = crate::BitWriter<'a, REG, ALEV0_A>;
+impl<'a, REG> ALEV0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl ALEV1_R {
     }
 }
 #[doc = "Field `ALEV1` writer - Alarm Event"]
-pub type ALEV1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALEV1_A>;
-impl<'a, REG, const O: u8> ALEV1_W<'a, REG, O>
+pub type ALEV1_W<'a, REG> = crate::BitWriter<'a, REG, ALEV1_A>;
+impl<'a, REG> ALEV1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl ALEV2_R {
     }
 }
 #[doc = "Field `ALEV2` writer - Alarm Event"]
-pub type ALEV2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALEV2_A>;
-impl<'a, REG, const O: u8> ALEV2_W<'a, REG, O>
+pub type ALEV2_W<'a, REG> = crate::BitWriter<'a, REG, ALEV2_A>;
+impl<'a, REG> ALEV2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl ALEV3_R {
     }
 }
 #[doc = "Field `ALEV3` writer - Alarm Event"]
-pub type ALEV3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALEV3_A>;
-impl<'a, REG, const O: u8> ALEV3_W<'a, REG, O>
+pub type ALEV3_W<'a, REG> = crate::BitWriter<'a, REG, ALEV3_A>;
+impl<'a, REG> ALEV3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -472,50 +472,50 @@ impl W {
     #[doc = "Bit 0 - Result Event"]
     #[inline(always)]
     #[must_use]
-    pub fn resev0(&mut self) -> RESEV0_W<EVFLAG_SPEC, 0> {
-        RESEV0_W::new(self)
+    pub fn resev0(&mut self) -> RESEV0_W<EVFLAG_SPEC> {
+        RESEV0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Result Event"]
     #[inline(always)]
     #[must_use]
-    pub fn resev1(&mut self) -> RESEV1_W<EVFLAG_SPEC, 1> {
-        RESEV1_W::new(self)
+    pub fn resev1(&mut self) -> RESEV1_W<EVFLAG_SPEC> {
+        RESEV1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Result Event"]
     #[inline(always)]
     #[must_use]
-    pub fn resev2(&mut self) -> RESEV2_W<EVFLAG_SPEC, 2> {
-        RESEV2_W::new(self)
+    pub fn resev2(&mut self) -> RESEV2_W<EVFLAG_SPEC> {
+        RESEV2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Result Event"]
     #[inline(always)]
     #[must_use]
-    pub fn resev3(&mut self) -> RESEV3_W<EVFLAG_SPEC, 3> {
-        RESEV3_W::new(self)
+    pub fn resev3(&mut self) -> RESEV3_W<EVFLAG_SPEC> {
+        RESEV3_W::new(self, 3)
     }
     #[doc = "Bit 16 - Alarm Event"]
     #[inline(always)]
     #[must_use]
-    pub fn alev0(&mut self) -> ALEV0_W<EVFLAG_SPEC, 16> {
-        ALEV0_W::new(self)
+    pub fn alev0(&mut self) -> ALEV0_W<EVFLAG_SPEC> {
+        ALEV0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Alarm Event"]
     #[inline(always)]
     #[must_use]
-    pub fn alev1(&mut self) -> ALEV1_W<EVFLAG_SPEC, 17> {
-        ALEV1_W::new(self)
+    pub fn alev1(&mut self) -> ALEV1_W<EVFLAG_SPEC> {
+        ALEV1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Alarm Event"]
     #[inline(always)]
     #[must_use]
-    pub fn alev2(&mut self) -> ALEV2_W<EVFLAG_SPEC, 18> {
-        ALEV2_W::new(self)
+    pub fn alev2(&mut self) -> ALEV2_W<EVFLAG_SPEC> {
+        ALEV2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Alarm Event"]
     #[inline(always)]
     #[must_use]
-    pub fn alev3(&mut self) -> ALEV3_W<EVFLAG_SPEC, 19> {
-        ALEV3_W::new(self)
+    pub fn alev3(&mut self) -> ALEV3_W<EVFLAG_SPEC> {
+        ALEV3_W::new(self, 19)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

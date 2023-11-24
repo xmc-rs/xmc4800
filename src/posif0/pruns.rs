@@ -1,13 +1,13 @@
 #[doc = "Register `PRUNS` writer"]
 pub type W = crate::W<PRUNS_SPEC>;
 #[doc = "Field `SRB` writer - Set Run bit"]
-pub type SRB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SRB_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Set Run bit"]
     #[inline(always)]
     #[must_use]
-    pub fn srb(&mut self) -> SRB_W<PRUNS_SPEC, 0> {
-        SRB_W::new(self)
+    pub fn srb(&mut self) -> SRB_W<PRUNS_SPEC> {
+        SRB_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

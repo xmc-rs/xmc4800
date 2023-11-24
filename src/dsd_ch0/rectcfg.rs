@@ -39,8 +39,8 @@ impl RFEN_R {
     }
 }
 #[doc = "Field `RFEN` writer - Rectification Enable"]
-pub type RFEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RFEN_A>;
-impl<'a, REG, const O: u8> RFEN_W<'a, REG, O>
+pub type RFEN_W<'a, REG> = crate::BitWriter<'a, REG, RFEN_A>;
+impl<'a, REG> RFEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -113,8 +113,8 @@ impl SSRC_R {
     }
 }
 #[doc = "Field `SSRC` writer - Sign Source"]
-pub type SSRC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, SSRC_A>;
-impl<'a, REG, const O: u8> SSRC_W<'a, REG, O>
+pub type SSRC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SSRC_A>;
+impl<'a, REG> SSRC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -279,14 +279,14 @@ impl W {
     #[doc = "Bit 0 - Rectification Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rfen(&mut self) -> RFEN_W<RECTCFG_SPEC, 0> {
-        RFEN_W::new(self)
+    pub fn rfen(&mut self) -> RFEN_W<RECTCFG_SPEC> {
+        RFEN_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Sign Source"]
     #[inline(always)]
     #[must_use]
-    pub fn ssrc(&mut self) -> SSRC_W<RECTCFG_SPEC, 4> {
-        SSRC_W::new(self)
+    pub fn ssrc(&mut self) -> SSRC_W<RECTCFG_SPEC> {
+        SSRC_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -1,63 +1,177 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - EBU Clock Control Register"]
-    pub clc: CLC,
-    #[doc = "0x04 - EBU Configuration Register"]
-    pub modcon: MODCON,
-    #[doc = "0x08 - EBU Module Identification Register"]
-    pub id: ID,
-    #[doc = "0x0c - EBU Test/Control Configuration Register"]
-    pub usercon: USERCON,
+    clc: CLC,
+    modcon: MODCON,
+    id: ID,
+    usercon: USERCON,
     _reserved4: [u8; 0x08],
+    addrsel0: ADDRSEL0,
+    addrsel1: ADDRSEL1,
+    addrsel2: ADDRSEL2,
+    addrsel3: ADDRSEL3,
+    busrcon0: BUSRCON0,
+    busrap0: BUSRAP0,
+    buswcon0: BUSWCON0,
+    buswap0: BUSWAP0,
+    busrcon1: BUSRCON1,
+    busrap1: BUSRAP1,
+    buswcon1: BUSWCON1,
+    buswap1: BUSWAP1,
+    busrcon2: BUSRCON2,
+    busrap2: BUSRAP2,
+    buswcon2: BUSWCON2,
+    buswap2: BUSWAP2,
+    busrcon3: BUSRCON3,
+    busrap3: BUSRAP3,
+    buswcon3: BUSWCON3,
+    buswap3: BUSWAP3,
+    sdrmcon: SDRMCON,
+    sdrmod: SDRMOD,
+    sdrmref: SDRMREF,
+    sdrstat: SDRSTAT,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - EBU Clock Control Register"]
+    #[inline(always)]
+    pub const fn clc(&self) -> &CLC {
+        &self.clc
+    }
+    #[doc = "0x04 - EBU Configuration Register"]
+    #[inline(always)]
+    pub const fn modcon(&self) -> &MODCON {
+        &self.modcon
+    }
+    #[doc = "0x08 - EBU Module Identification Register"]
+    #[inline(always)]
+    pub const fn id(&self) -> &ID {
+        &self.id
+    }
+    #[doc = "0x0c - EBU Test/Control Configuration Register"]
+    #[inline(always)]
+    pub const fn usercon(&self) -> &USERCON {
+        &self.usercon
+    }
     #[doc = "0x18 - EBU Address Select Register 0"]
-    pub addrsel0: ADDRSEL0,
+    #[inline(always)]
+    pub const fn addrsel0(&self) -> &ADDRSEL0 {
+        &self.addrsel0
+    }
     #[doc = "0x1c - EBU Address Select Register 1"]
-    pub addrsel1: ADDRSEL1,
+    #[inline(always)]
+    pub const fn addrsel1(&self) -> &ADDRSEL1 {
+        &self.addrsel1
+    }
     #[doc = "0x20 - EBU Address Select Register 2"]
-    pub addrsel2: ADDRSEL2,
+    #[inline(always)]
+    pub const fn addrsel2(&self) -> &ADDRSEL2 {
+        &self.addrsel2
+    }
     #[doc = "0x24 - EBU Address Select Register 3"]
-    pub addrsel3: ADDRSEL3,
+    #[inline(always)]
+    pub const fn addrsel3(&self) -> &ADDRSEL3 {
+        &self.addrsel3
+    }
     #[doc = "0x28 - EBU Bus Configuration Register"]
-    pub busrcon0: BUSRCON0,
+    #[inline(always)]
+    pub const fn busrcon0(&self) -> &BUSRCON0 {
+        &self.busrcon0
+    }
     #[doc = "0x2c - EBU Bus Read Access Parameter Register"]
-    pub busrap0: BUSRAP0,
+    #[inline(always)]
+    pub const fn busrap0(&self) -> &BUSRAP0 {
+        &self.busrap0
+    }
     #[doc = "0x30 - EBU Bus Write Configuration Register"]
-    pub buswcon0: BUSWCON0,
+    #[inline(always)]
+    pub const fn buswcon0(&self) -> &BUSWCON0 {
+        &self.buswcon0
+    }
     #[doc = "0x34 - EBU Bus Write Access Parameter Register"]
-    pub buswap0: BUSWAP0,
+    #[inline(always)]
+    pub const fn buswap0(&self) -> &BUSWAP0 {
+        &self.buswap0
+    }
     #[doc = "0x38 - EBU Bus Configuration Register"]
-    pub busrcon1: BUSRCON1,
+    #[inline(always)]
+    pub const fn busrcon1(&self) -> &BUSRCON1 {
+        &self.busrcon1
+    }
     #[doc = "0x3c - EBU Bus Read Access Parameter Register"]
-    pub busrap1: BUSRAP1,
+    #[inline(always)]
+    pub const fn busrap1(&self) -> &BUSRAP1 {
+        &self.busrap1
+    }
     #[doc = "0x40 - EBU Bus Write Configuration Register"]
-    pub buswcon1: BUSWCON1,
+    #[inline(always)]
+    pub const fn buswcon1(&self) -> &BUSWCON1 {
+        &self.buswcon1
+    }
     #[doc = "0x44 - EBU Bus Write Access Parameter Register"]
-    pub buswap1: BUSWAP1,
+    #[inline(always)]
+    pub const fn buswap1(&self) -> &BUSWAP1 {
+        &self.buswap1
+    }
     #[doc = "0x48 - EBU Bus Configuration Register"]
-    pub busrcon2: BUSRCON2,
+    #[inline(always)]
+    pub const fn busrcon2(&self) -> &BUSRCON2 {
+        &self.busrcon2
+    }
     #[doc = "0x4c - EBU Bus Read Access Parameter Register"]
-    pub busrap2: BUSRAP2,
+    #[inline(always)]
+    pub const fn busrap2(&self) -> &BUSRAP2 {
+        &self.busrap2
+    }
     #[doc = "0x50 - EBU Bus Write Configuration Register"]
-    pub buswcon2: BUSWCON2,
+    #[inline(always)]
+    pub const fn buswcon2(&self) -> &BUSWCON2 {
+        &self.buswcon2
+    }
     #[doc = "0x54 - EBU Bus Write Access Parameter Register"]
-    pub buswap2: BUSWAP2,
+    #[inline(always)]
+    pub const fn buswap2(&self) -> &BUSWAP2 {
+        &self.buswap2
+    }
     #[doc = "0x58 - EBU Bus Configuration Register"]
-    pub busrcon3: BUSRCON3,
+    #[inline(always)]
+    pub const fn busrcon3(&self) -> &BUSRCON3 {
+        &self.busrcon3
+    }
     #[doc = "0x5c - EBU Bus Read Access Parameter Register"]
-    pub busrap3: BUSRAP3,
+    #[inline(always)]
+    pub const fn busrap3(&self) -> &BUSRAP3 {
+        &self.busrap3
+    }
     #[doc = "0x60 - EBU Bus Write Configuration Register"]
-    pub buswcon3: BUSWCON3,
+    #[inline(always)]
+    pub const fn buswcon3(&self) -> &BUSWCON3 {
+        &self.buswcon3
+    }
     #[doc = "0x64 - EBU Bus Write Access Parameter Register"]
-    pub buswap3: BUSWAP3,
+    #[inline(always)]
+    pub const fn buswap3(&self) -> &BUSWAP3 {
+        &self.buswap3
+    }
     #[doc = "0x68 - EBU SDRAM Control Register"]
-    pub sdrmcon: SDRMCON,
+    #[inline(always)]
+    pub const fn sdrmcon(&self) -> &SDRMCON {
+        &self.sdrmcon
+    }
     #[doc = "0x6c - EBU SDRAM Mode Register"]
-    pub sdrmod: SDRMOD,
+    #[inline(always)]
+    pub const fn sdrmod(&self) -> &SDRMOD {
+        &self.sdrmod
+    }
     #[doc = "0x70 - EBU SDRAM Refresh Control Register"]
-    pub sdrmref: SDRMREF,
+    #[inline(always)]
+    pub const fn sdrmref(&self) -> &SDRMREF {
+        &self.sdrmref
+    }
     #[doc = "0x74 - EBU SDRAM Status Register"]
-    pub sdrstat: SDRSTAT,
+    #[inline(always)]
+    pub const fn sdrstat(&self) -> &SDRSTAT {
+        &self.sdrstat
+    }
 }
 #[doc = "CLC (rw) register accessor: EBU Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clc::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clc::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clc`]
 module"]

@@ -45,11 +45,11 @@ pub type REPCNT_R = crate::FieldReader;
 #[doc = "Field `REPVAL` reader - Number of Integration Cycles"]
 pub type REPVAL_R = crate::FieldReader;
 #[doc = "Field `REPVAL` writer - Number of Integration Cycles"]
-pub type REPVAL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type REPVAL_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `NVALDIS` reader - Number of Values Discarded"]
 pub type NVALDIS_R = crate::FieldReader;
 #[doc = "Field `NVALDIS` writer - Number of Values Discarded"]
-pub type NVALDIS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type NVALDIS_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `IWS` reader - Integration Window SIze"]
 pub type IWS_R = crate::BitReader<IWS_A>;
 #[doc = "Integration Window SIze\n\nValue on reset: 0"]
@@ -87,8 +87,8 @@ impl IWS_R {
     }
 }
 #[doc = "Field `IWS` writer - Integration Window SIze"]
-pub type IWS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, IWS_A>;
-impl<'a, REG, const O: u8> IWS_W<'a, REG, O>
+pub type IWS_W<'a, REG> = crate::BitWriter<'a, REG, IWS_A>;
+impl<'a, REG> IWS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -106,7 +106,7 @@ where
 #[doc = "Field `NVALINT` reader - Number of Values Integrated"]
 pub type NVALINT_R = crate::FieldReader;
 #[doc = "Field `NVALINT` writer - Number of Values Integrated"]
-pub type NVALINT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type NVALINT_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     #[doc = "Bits 0:5 - Number of Values Counted"]
     #[inline(always)]
@@ -148,26 +148,26 @@ impl W {
     #[doc = "Bits 12:15 - Number of Integration Cycles"]
     #[inline(always)]
     #[must_use]
-    pub fn repval(&mut self) -> REPVAL_W<IWCTR_SPEC, 12> {
-        REPVAL_W::new(self)
+    pub fn repval(&mut self) -> REPVAL_W<IWCTR_SPEC> {
+        REPVAL_W::new(self, 12)
     }
     #[doc = "Bits 16:21 - Number of Values Discarded"]
     #[inline(always)]
     #[must_use]
-    pub fn nvaldis(&mut self) -> NVALDIS_W<IWCTR_SPEC, 16> {
-        NVALDIS_W::new(self)
+    pub fn nvaldis(&mut self) -> NVALDIS_W<IWCTR_SPEC> {
+        NVALDIS_W::new(self, 16)
     }
     #[doc = "Bit 23 - Integration Window SIze"]
     #[inline(always)]
     #[must_use]
-    pub fn iws(&mut self) -> IWS_W<IWCTR_SPEC, 23> {
-        IWS_W::new(self)
+    pub fn iws(&mut self) -> IWS_W<IWCTR_SPEC> {
+        IWS_W::new(self, 23)
     }
     #[doc = "Bits 24:29 - Number of Values Integrated"]
     #[inline(always)]
     #[must_use]
-    pub fn nvalint(&mut self) -> NVALINT_W<IWCTR_SPEC, 24> {
-        NVALINT_W::new(self)
+    pub fn nvalint(&mut self) -> NVALINT_W<IWCTR_SPEC> {
+        NVALINT_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

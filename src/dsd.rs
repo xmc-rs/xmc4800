@@ -1,28 +1,62 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Clock Control Register"]
-    pub clc: CLC,
+    clc: CLC,
     _reserved1: [u8; 0x04],
-    #[doc = "0x08 - Module Identification Register"]
-    pub id: ID,
+    id: ID,
     _reserved2: [u8; 0x1c],
-    #[doc = "0x28 - OCDS Control and Status Register"]
-    pub ocs: OCS,
+    ocs: OCS,
     _reserved3: [u8; 0x54],
-    #[doc = "0x80 - Global Configuration Register"]
-    pub globcfg: GLOBCFG,
+    globcfg: GLOBCFG,
     _reserved4: [u8; 0x04],
-    #[doc = "0x88 - Global Run Control Register"]
-    pub globrc: GLOBRC,
+    globrc: GLOBRC,
     _reserved5: [u8; 0x14],
-    #[doc = "0xa0 - Carrier Generator Configuration Register"]
-    pub cgcfg: CGCFG,
+    cgcfg: CGCFG,
     _reserved6: [u8; 0x3c],
+    evflag: EVFLAG,
+    evflagclr: EVFLAGCLR,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Clock Control Register"]
+    #[inline(always)]
+    pub const fn clc(&self) -> &CLC {
+        &self.clc
+    }
+    #[doc = "0x08 - Module Identification Register"]
+    #[inline(always)]
+    pub const fn id(&self) -> &ID {
+        &self.id
+    }
+    #[doc = "0x28 - OCDS Control and Status Register"]
+    #[inline(always)]
+    pub const fn ocs(&self) -> &OCS {
+        &self.ocs
+    }
+    #[doc = "0x80 - Global Configuration Register"]
+    #[inline(always)]
+    pub const fn globcfg(&self) -> &GLOBCFG {
+        &self.globcfg
+    }
+    #[doc = "0x88 - Global Run Control Register"]
+    #[inline(always)]
+    pub const fn globrc(&self) -> &GLOBRC {
+        &self.globrc
+    }
+    #[doc = "0xa0 - Carrier Generator Configuration Register"]
+    #[inline(always)]
+    pub const fn cgcfg(&self) -> &CGCFG {
+        &self.cgcfg
+    }
     #[doc = "0xe0 - Event Flag Register"]
-    pub evflag: EVFLAG,
+    #[inline(always)]
+    pub const fn evflag(&self) -> &EVFLAG {
+        &self.evflag
+    }
     #[doc = "0xe4 - Event Flag Clear Register"]
-    pub evflagclr: EVFLAGCLR,
+    #[inline(always)]
+    pub const fn evflagclr(&self) -> &EVFLAGCLR {
+        &self.evflagclr
+    }
 }
 #[doc = "CLC (rw) register accessor: Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clc::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`clc::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@clc`]
 module"]

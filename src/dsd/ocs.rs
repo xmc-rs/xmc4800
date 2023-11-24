@@ -68,8 +68,8 @@ impl SUS_R {
     }
 }
 #[doc = "Field `SUS` writer - OCDS Suspend Control"]
-pub type SUS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, SUS_A>;
-impl<'a, REG, const O: u8> SUS_W<'a, REG, O>
+pub type SUS_W<'a, REG> = crate::FieldWriter<'a, REG, 4, SUS_A>;
+impl<'a, REG> SUS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -101,7 +101,7 @@ where
     }
 }
 #[doc = "Field `SUS_P` writer - SUS Write Protection"]
-pub type SUS_P_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SUS_P_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SUSSTA` reader - Suspend State"]
 pub type SUSSTA_R = crate::BitReader<SUSSTA_A>;
 #[doc = "Suspend State\n\nValue on reset: 0"]
@@ -154,14 +154,14 @@ impl W {
     #[doc = "Bits 24:27 - OCDS Suspend Control"]
     #[inline(always)]
     #[must_use]
-    pub fn sus(&mut self) -> SUS_W<OCS_SPEC, 24> {
-        SUS_W::new(self)
+    pub fn sus(&mut self) -> SUS_W<OCS_SPEC> {
+        SUS_W::new(self, 24)
     }
     #[doc = "Bit 28 - SUS Write Protection"]
     #[inline(always)]
     #[must_use]
-    pub fn sus_p(&mut self) -> SUS_P_W<OCS_SPEC, 28> {
-        SUS_P_W::new(self)
+    pub fn sus_p(&mut self) -> SUS_P_W<OCS_SPEC> {
+        SUS_P_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -15,8 +15,8 @@ impl From<VADCRS_AW> for bool {
     }
 }
 #[doc = "Field `VADCRS` writer - VADC Reset Clear"]
-pub type VADCRS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VADCRS_AW>;
-impl<'a, REG, const O: u8> VADCRS_W<'a, REG, O>
+pub type VADCRS_W<'a, REG> = crate::BitWriter<'a, REG, VADCRS_AW>;
+impl<'a, REG> VADCRS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<DSDRS_AW> for bool {
     }
 }
 #[doc = "Field `DSDRS` writer - DSD Reset Clear"]
-pub type DSDRS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DSDRS_AW>;
-impl<'a, REG, const O: u8> DSDRS_W<'a, REG, O>
+pub type DSDRS_W<'a, REG> = crate::BitWriter<'a, REG, DSDRS_AW>;
+impl<'a, REG> DSDRS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<CCU40RS_AW> for bool {
     }
 }
 #[doc = "Field `CCU40RS` writer - CCU40 Reset Clear"]
-pub type CCU40RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCU40RS_AW>;
-impl<'a, REG, const O: u8> CCU40RS_W<'a, REG, O>
+pub type CCU40RS_W<'a, REG> = crate::BitWriter<'a, REG, CCU40RS_AW>;
+impl<'a, REG> CCU40RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<CCU41RS_AW> for bool {
     }
 }
 #[doc = "Field `CCU41RS` writer - CCU41 Reset Clear"]
-pub type CCU41RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCU41RS_AW>;
-impl<'a, REG, const O: u8> CCU41RS_W<'a, REG, O>
+pub type CCU41RS_W<'a, REG> = crate::BitWriter<'a, REG, CCU41RS_AW>;
+impl<'a, REG> CCU41RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<CCU42RS_AW> for bool {
     }
 }
 #[doc = "Field `CCU42RS` writer - CCU42 Reset Clear"]
-pub type CCU42RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCU42RS_AW>;
-impl<'a, REG, const O: u8> CCU42RS_W<'a, REG, O>
+pub type CCU42RS_W<'a, REG> = crate::BitWriter<'a, REG, CCU42RS_AW>;
+impl<'a, REG> CCU42RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<CCU80RS_AW> for bool {
     }
 }
 #[doc = "Field `CCU80RS` writer - CCU80 Reset Clear"]
-pub type CCU80RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCU80RS_AW>;
-impl<'a, REG, const O: u8> CCU80RS_W<'a, REG, O>
+pub type CCU80RS_W<'a, REG> = crate::BitWriter<'a, REG, CCU80RS_AW>;
+impl<'a, REG> CCU80RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -201,8 +201,8 @@ impl From<CCU81RS_AW> for bool {
     }
 }
 #[doc = "Field `CCU81RS` writer - CCU81 Reset Clear"]
-pub type CCU81RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCU81RS_AW>;
-impl<'a, REG, const O: u8> CCU81RS_W<'a, REG, O>
+pub type CCU81RS_W<'a, REG> = crate::BitWriter<'a, REG, CCU81RS_AW>;
+impl<'a, REG> CCU81RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -232,8 +232,8 @@ impl From<POSIF0RS_AW> for bool {
     }
 }
 #[doc = "Field `POSIF0RS` writer - POSIF0 Reset Clear"]
-pub type POSIF0RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, POSIF0RS_AW>;
-impl<'a, REG, const O: u8> POSIF0RS_W<'a, REG, O>
+pub type POSIF0RS_W<'a, REG> = crate::BitWriter<'a, REG, POSIF0RS_AW>;
+impl<'a, REG> POSIF0RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -263,8 +263,8 @@ impl From<POSIF1RS_AW> for bool {
     }
 }
 #[doc = "Field `POSIF1RS` writer - POSIF1 Reset Clear"]
-pub type POSIF1RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, POSIF1RS_AW>;
-impl<'a, REG, const O: u8> POSIF1RS_W<'a, REG, O>
+pub type POSIF1RS_W<'a, REG> = crate::BitWriter<'a, REG, POSIF1RS_AW>;
+impl<'a, REG> POSIF1RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -294,8 +294,8 @@ impl From<USIC0RS_AW> for bool {
     }
 }
 #[doc = "Field `USIC0RS` writer - USIC0 Reset Clear"]
-pub type USIC0RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USIC0RS_AW>;
-impl<'a, REG, const O: u8> USIC0RS_W<'a, REG, O>
+pub type USIC0RS_W<'a, REG> = crate::BitWriter<'a, REG, USIC0RS_AW>;
+impl<'a, REG> USIC0RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -325,8 +325,8 @@ impl From<ERU1RS_AW> for bool {
     }
 }
 #[doc = "Field `ERU1RS` writer - ERU1 Reset Clear"]
-pub type ERU1RS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ERU1RS_AW>;
-impl<'a, REG, const O: u8> ERU1RS_W<'a, REG, O>
+pub type ERU1RS_W<'a, REG> = crate::BitWriter<'a, REG, ERU1RS_AW>;
+impl<'a, REG> ERU1RS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -345,68 +345,68 @@ impl W {
     #[doc = "Bit 0 - VADC Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn vadcrs(&mut self) -> VADCRS_W<PRCLR0_SPEC, 0> {
-        VADCRS_W::new(self)
+    pub fn vadcrs(&mut self) -> VADCRS_W<PRCLR0_SPEC> {
+        VADCRS_W::new(self, 0)
     }
     #[doc = "Bit 1 - DSD Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn dsdrs(&mut self) -> DSDRS_W<PRCLR0_SPEC, 1> {
-        DSDRS_W::new(self)
+    pub fn dsdrs(&mut self) -> DSDRS_W<PRCLR0_SPEC> {
+        DSDRS_W::new(self, 1)
     }
     #[doc = "Bit 2 - CCU40 Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ccu40rs(&mut self) -> CCU40RS_W<PRCLR0_SPEC, 2> {
-        CCU40RS_W::new(self)
+    pub fn ccu40rs(&mut self) -> CCU40RS_W<PRCLR0_SPEC> {
+        CCU40RS_W::new(self, 2)
     }
     #[doc = "Bit 3 - CCU41 Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ccu41rs(&mut self) -> CCU41RS_W<PRCLR0_SPEC, 3> {
-        CCU41RS_W::new(self)
+    pub fn ccu41rs(&mut self) -> CCU41RS_W<PRCLR0_SPEC> {
+        CCU41RS_W::new(self, 3)
     }
     #[doc = "Bit 4 - CCU42 Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ccu42rs(&mut self) -> CCU42RS_W<PRCLR0_SPEC, 4> {
-        CCU42RS_W::new(self)
+    pub fn ccu42rs(&mut self) -> CCU42RS_W<PRCLR0_SPEC> {
+        CCU42RS_W::new(self, 4)
     }
     #[doc = "Bit 7 - CCU80 Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ccu80rs(&mut self) -> CCU80RS_W<PRCLR0_SPEC, 7> {
-        CCU80RS_W::new(self)
+    pub fn ccu80rs(&mut self) -> CCU80RS_W<PRCLR0_SPEC> {
+        CCU80RS_W::new(self, 7)
     }
     #[doc = "Bit 8 - CCU81 Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ccu81rs(&mut self) -> CCU81RS_W<PRCLR0_SPEC, 8> {
-        CCU81RS_W::new(self)
+    pub fn ccu81rs(&mut self) -> CCU81RS_W<PRCLR0_SPEC> {
+        CCU81RS_W::new(self, 8)
     }
     #[doc = "Bit 9 - POSIF0 Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn posif0rs(&mut self) -> POSIF0RS_W<PRCLR0_SPEC, 9> {
-        POSIF0RS_W::new(self)
+    pub fn posif0rs(&mut self) -> POSIF0RS_W<PRCLR0_SPEC> {
+        POSIF0RS_W::new(self, 9)
     }
     #[doc = "Bit 10 - POSIF1 Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn posif1rs(&mut self) -> POSIF1RS_W<PRCLR0_SPEC, 10> {
-        POSIF1RS_W::new(self)
+    pub fn posif1rs(&mut self) -> POSIF1RS_W<PRCLR0_SPEC> {
+        POSIF1RS_W::new(self, 10)
     }
     #[doc = "Bit 11 - USIC0 Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn usic0rs(&mut self) -> USIC0RS_W<PRCLR0_SPEC, 11> {
-        USIC0RS_W::new(self)
+    pub fn usic0rs(&mut self) -> USIC0RS_W<PRCLR0_SPEC> {
+        USIC0RS_W::new(self, 11)
     }
     #[doc = "Bit 16 - ERU1 Reset Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn eru1rs(&mut self) -> ERU1RS_W<PRCLR0_SPEC, 16> {
-        ERU1RS_W::new(self)
+    pub fn eru1rs(&mut self) -> ERU1RS_W<PRCLR0_SPEC> {
+        ERU1RS_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

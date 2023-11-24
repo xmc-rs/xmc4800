@@ -39,8 +39,8 @@ impl REGENAB_R {
     }
 }
 #[doc = "Field `REGENAB` writer - Memory Region Enable"]
-pub type REGENAB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, REGENAB_A>;
-impl<'a, REG, const O: u8> REGENAB_W<'a, REG, O>
+pub type REGENAB_W<'a, REG> = crate::BitWriter<'a, REG, REGENAB_A>;
+impl<'a, REG> REGENAB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl ALTENAB_R {
     }
 }
 #[doc = "Field `ALTENAB` writer - Alternate Region Enable"]
-pub type ALTENAB_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALTENAB_A>;
-impl<'a, REG, const O: u8> ALTENAB_W<'a, REG, O>
+pub type ALTENAB_W<'a, REG> = crate::BitWriter<'a, REG, ALTENAB_A>;
+impl<'a, REG> ALTENAB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl WPROT_R {
     }
 }
 #[doc = "Field `WPROT` writer - Memory Region Write Protect"]
-pub type WPROT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WPROT_A>;
-impl<'a, REG, const O: u8> WPROT_W<'a, REG, O>
+pub type WPROT_W<'a, REG> = crate::BitWriter<'a, REG, WPROT_A>;
+impl<'a, REG> WPROT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -182,20 +182,20 @@ impl W {
     #[doc = "Bit 0 - Memory Region Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn regenab(&mut self) -> REGENAB_W<ADDRSEL3_SPEC, 0> {
-        REGENAB_W::new(self)
+    pub fn regenab(&mut self) -> REGENAB_W<ADDRSEL3_SPEC> {
+        REGENAB_W::new(self, 0)
     }
     #[doc = "Bit 1 - Alternate Region Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn altenab(&mut self) -> ALTENAB_W<ADDRSEL3_SPEC, 1> {
-        ALTENAB_W::new(self)
+    pub fn altenab(&mut self) -> ALTENAB_W<ADDRSEL3_SPEC> {
+        ALTENAB_W::new(self, 1)
     }
     #[doc = "Bit 2 - Memory Region Write Protect"]
     #[inline(always)]
     #[must_use]
-    pub fn wprot(&mut self) -> WPROT_W<ADDRSEL3_SPEC, 2> {
-        WPROT_W::new(self)
+    pub fn wprot(&mut self) -> WPROT_W<ADDRSEL3_SPEC> {
+        WPROT_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

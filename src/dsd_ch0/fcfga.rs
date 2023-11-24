@@ -5,7 +5,7 @@ pub type W = crate::W<FCFGA_SPEC>;
 #[doc = "Field `CFADF` reader - CIC Filter (Auxiliary) Decimation Factor"]
 pub type CFADF_R = crate::FieldReader;
 #[doc = "Field `CFADF` writer - CIC Filter (Auxiliary) Decimation Factor"]
-pub type CFADF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CFADF_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CFAC` reader - CIC Filter (Auxiliary) Configuration"]
 pub type CFAC_R = crate::FieldReader<CFAC_A>;
 #[doc = "CIC Filter (Auxiliary) Configuration\n\nValue on reset: 0"]
@@ -64,8 +64,8 @@ impl CFAC_R {
     }
 }
 #[doc = "Field `CFAC` writer - CIC Filter (Auxiliary) Configuration"]
-pub type CFAC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CFAC_A>;
-impl<'a, REG, const O: u8> CFAC_W<'a, REG, O>
+pub type CFAC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CFAC_A>;
+impl<'a, REG> CFAC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -141,8 +141,8 @@ impl SRGA_R {
     }
 }
 #[doc = "Field `SRGA` writer - Service Request Generation Auxiliary Filter"]
-pub type SRGA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SRGA_A>;
-impl<'a, REG, const O: u8> SRGA_W<'a, REG, O>
+pub type SRGA_W<'a, REG> = crate::FieldWriter<'a, REG, 2, SRGA_A>;
+impl<'a, REG> SRGA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -213,8 +213,8 @@ impl ESEL_R {
     }
 }
 #[doc = "Field `ESEL` writer - Event Select"]
-pub type ESEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, ESEL_A>;
-impl<'a, REG, const O: u8> ESEL_W<'a, REG, O>
+pub type ESEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, ESEL_A>;
+impl<'a, REG> ESEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -272,8 +272,8 @@ impl EGT_R {
     }
 }
 #[doc = "Field `EGT` writer - Event Gating"]
-pub type EGT_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EGT_A>;
-impl<'a, REG, const O: u8> EGT_W<'a, REG, O>
+pub type EGT_W<'a, REG> = crate::BitWriter<'a, REG, EGT_A>;
+impl<'a, REG> EGT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -326,32 +326,32 @@ impl W {
     #[doc = "Bits 0:7 - CIC Filter (Auxiliary) Decimation Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn cfadf(&mut self) -> CFADF_W<FCFGA_SPEC, 0> {
-        CFADF_W::new(self)
+    pub fn cfadf(&mut self) -> CFADF_W<FCFGA_SPEC> {
+        CFADF_W::new(self, 0)
     }
     #[doc = "Bits 8:9 - CIC Filter (Auxiliary) Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn cfac(&mut self) -> CFAC_W<FCFGA_SPEC, 8> {
-        CFAC_W::new(self)
+    pub fn cfac(&mut self) -> CFAC_W<FCFGA_SPEC> {
+        CFAC_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Service Request Generation Auxiliary Filter"]
     #[inline(always)]
     #[must_use]
-    pub fn srga(&mut self) -> SRGA_W<FCFGA_SPEC, 10> {
-        SRGA_W::new(self)
+    pub fn srga(&mut self) -> SRGA_W<FCFGA_SPEC> {
+        SRGA_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Event Select"]
     #[inline(always)]
     #[must_use]
-    pub fn esel(&mut self) -> ESEL_W<FCFGA_SPEC, 12> {
-        ESEL_W::new(self)
+    pub fn esel(&mut self) -> ESEL_W<FCFGA_SPEC> {
+        ESEL_W::new(self, 12)
     }
     #[doc = "Bit 14 - Event Gating"]
     #[inline(always)]
     #[must_use]
-    pub fn egt(&mut self) -> EGT_W<FCFGA_SPEC, 14> {
-        EGT_W::new(self)
+    pub fn egt(&mut self) -> EGT_W<FCFGA_SPEC> {
+        EGT_W::new(self, 14)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
