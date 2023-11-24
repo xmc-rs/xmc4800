@@ -60,8 +60,8 @@ impl RDDTACS_R {
     }
 }
 #[doc = "Field `RDDTACS` writer - Recovery Cycles between Different Regions"]
-pub type RDDTACS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, RDDTACS_A>;
-impl<'a, REG, const O: u8> RDDTACS_W<'a, REG, O>
+pub type RDDTACS_W<'a, REG> = crate::FieldWriter<'a, REG, 4, RDDTACS_A>;
+impl<'a, REG> RDDTACS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,8 +145,8 @@ impl RDRECOVC_R {
     }
 }
 #[doc = "Field `RDRECOVC` writer - Recovery Cycles after Read Accesses"]
-pub type RDRECOVC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, RDRECOVC_A>;
-impl<'a, REG, const O: u8> RDRECOVC_W<'a, REG, O>
+pub type RDRECOVC_W<'a, REG> = crate::FieldWriter<'a, REG, 3, RDRECOVC_A>;
+impl<'a, REG> RDRECOVC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -238,8 +238,8 @@ impl WAITRDC_R {
     }
 }
 #[doc = "Field `WAITRDC` writer - Programmed Wait States for read accesses"]
-pub type WAITRDC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 5, O, WAITRDC_A>;
-impl<'a, REG, const O: u8> WAITRDC_W<'a, REG, O>
+pub type WAITRDC_W<'a, REG> = crate::FieldWriter<'a, REG, 5, WAITRDC_A>;
+impl<'a, REG> WAITRDC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -273,7 +273,7 @@ where
 #[doc = "Field `DATAC` reader - Data Hold Cycles for Read Accesses"]
 pub type DATAC_R = crate::FieldReader;
 #[doc = "Field `DATAC` writer - Data Hold Cycles for Read Accesses"]
-pub type DATAC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type DATAC_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `EXTCLOCK` reader - Frequency of external clock at pin BFCLKO"]
 pub type EXTCLOCK_R = crate::FieldReader<EXTCLOCK_A>;
 #[doc = "Frequency of external clock at pin BFCLKO\n\nValue on reset: 3"]
@@ -332,8 +332,8 @@ impl EXTCLOCK_R {
     }
 }
 #[doc = "Field `EXTCLOCK` writer - Frequency of external clock at pin BFCLKO"]
-pub type EXTCLOCK_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EXTCLOCK_A>;
-impl<'a, REG, const O: u8> EXTCLOCK_W<'a, REG, O>
+pub type EXTCLOCK_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EXTCLOCK_A>;
+impl<'a, REG> EXTCLOCK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -417,8 +417,8 @@ impl EXTDATA_R {
     }
 }
 #[doc = "Field `EXTDATA` writer - Extended data"]
-pub type EXTDATA_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EXTDATA_A>;
-impl<'a, REG, const O: u8> EXTDATA_W<'a, REG, O>
+pub type EXTDATA_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EXTDATA_A>;
+impl<'a, REG> EXTDATA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -502,8 +502,8 @@ impl CMDDELAY_R {
     }
 }
 #[doc = "Field `CMDDELAY` writer - Command Delay Cycles"]
-pub type CMDDELAY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CMDDELAY_A>;
-impl<'a, REG, const O: u8> CMDDELAY_W<'a, REG, O>
+pub type CMDDELAY_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CMDDELAY_A>;
+impl<'a, REG> CMDDELAY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -587,8 +587,8 @@ impl AHOLDC_R {
     }
 }
 #[doc = "Field `AHOLDC` writer - Address Hold Cycles"]
-pub type AHOLDC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, AHOLDC_A>;
-impl<'a, REG, const O: u8> AHOLDC_W<'a, REG, O>
+pub type AHOLDC_W<'a, REG> = crate::FieldWriter<'a, REG, 4, AHOLDC_A>;
+impl<'a, REG> AHOLDC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -672,8 +672,8 @@ impl ADDRC_R {
     }
 }
 #[doc = "Field `ADDRC` writer - Address Cycles"]
-pub type ADDRC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, ADDRC_A>;
-impl<'a, REG, const O: u8> ADDRC_W<'a, REG, O>
+pub type ADDRC_W<'a, REG> = crate::FieldWriter<'a, REG, 4, ADDRC_A>;
+impl<'a, REG> ADDRC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -750,56 +750,56 @@ impl W {
     #[doc = "Bits 0:3 - Recovery Cycles between Different Regions"]
     #[inline(always)]
     #[must_use]
-    pub fn rddtacs(&mut self) -> RDDTACS_W<BUSRAP3_SPEC, 0> {
-        RDDTACS_W::new(self)
+    pub fn rddtacs(&mut self) -> RDDTACS_W<BUSRAP3_SPEC> {
+        RDDTACS_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Recovery Cycles after Read Accesses"]
     #[inline(always)]
     #[must_use]
-    pub fn rdrecovc(&mut self) -> RDRECOVC_W<BUSRAP3_SPEC, 4> {
-        RDRECOVC_W::new(self)
+    pub fn rdrecovc(&mut self) -> RDRECOVC_W<BUSRAP3_SPEC> {
+        RDRECOVC_W::new(self, 4)
     }
     #[doc = "Bits 7:11 - Programmed Wait States for read accesses"]
     #[inline(always)]
     #[must_use]
-    pub fn waitrdc(&mut self) -> WAITRDC_W<BUSRAP3_SPEC, 7> {
-        WAITRDC_W::new(self)
+    pub fn waitrdc(&mut self) -> WAITRDC_W<BUSRAP3_SPEC> {
+        WAITRDC_W::new(self, 7)
     }
     #[doc = "Bits 12:15 - Data Hold Cycles for Read Accesses"]
     #[inline(always)]
     #[must_use]
-    pub fn datac(&mut self) -> DATAC_W<BUSRAP3_SPEC, 12> {
-        DATAC_W::new(self)
+    pub fn datac(&mut self) -> DATAC_W<BUSRAP3_SPEC> {
+        DATAC_W::new(self, 12)
     }
     #[doc = "Bits 16:17 - Frequency of external clock at pin BFCLKO"]
     #[inline(always)]
     #[must_use]
-    pub fn extclock(&mut self) -> EXTCLOCK_W<BUSRAP3_SPEC, 16> {
-        EXTCLOCK_W::new(self)
+    pub fn extclock(&mut self) -> EXTCLOCK_W<BUSRAP3_SPEC> {
+        EXTCLOCK_W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Extended data"]
     #[inline(always)]
     #[must_use]
-    pub fn extdata(&mut self) -> EXTDATA_W<BUSRAP3_SPEC, 18> {
-        EXTDATA_W::new(self)
+    pub fn extdata(&mut self) -> EXTDATA_W<BUSRAP3_SPEC> {
+        EXTDATA_W::new(self, 18)
     }
     #[doc = "Bits 20:23 - Command Delay Cycles"]
     #[inline(always)]
     #[must_use]
-    pub fn cmddelay(&mut self) -> CMDDELAY_W<BUSRAP3_SPEC, 20> {
-        CMDDELAY_W::new(self)
+    pub fn cmddelay(&mut self) -> CMDDELAY_W<BUSRAP3_SPEC> {
+        CMDDELAY_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Address Hold Cycles"]
     #[inline(always)]
     #[must_use]
-    pub fn aholdc(&mut self) -> AHOLDC_W<BUSRAP3_SPEC, 24> {
-        AHOLDC_W::new(self)
+    pub fn aholdc(&mut self) -> AHOLDC_W<BUSRAP3_SPEC> {
+        AHOLDC_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Address Cycles"]
     #[inline(always)]
     #[must_use]
-    pub fn addrc(&mut self) -> ADDRC_W<BUSRAP3_SPEC, 28> {
-        ADDRC_W::new(self)
+    pub fn addrc(&mut self) -> ADDRC_W<BUSRAP3_SPEC> {
+        ADDRC_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

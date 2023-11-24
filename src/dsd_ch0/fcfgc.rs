@@ -5,7 +5,7 @@ pub type W = crate::W<FCFGC_SPEC>;
 #[doc = "Field `CFMDF` reader - CIC Filter (Main Chain) Decimation Factor"]
 pub type CFMDF_R = crate::FieldReader;
 #[doc = "Field `CFMDF` writer - CIC Filter (Main Chain) Decimation Factor"]
-pub type CFMDF_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CFMDF_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CFMC` reader - CIC Filter (Main Chain) Configuration"]
 pub type CFMC_R = crate::FieldReader<CFMC_A>;
 #[doc = "CIC Filter (Main Chain) Configuration\n\nValue on reset: 0"]
@@ -64,8 +64,8 @@ impl CFMC_R {
     }
 }
 #[doc = "Field `CFMC` writer - CIC Filter (Main Chain) Configuration"]
-pub type CFMC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CFMC_A>;
-impl<'a, REG, const O: u8> CFMC_W<'a, REG, O>
+pub type CFMC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CFMC_A>;
+impl<'a, REG> CFMC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -128,8 +128,8 @@ impl CFEN_R {
     }
 }
 #[doc = "Field `CFEN` writer - CIC Filter Enable"]
-pub type CFEN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CFEN_A>;
-impl<'a, REG, const O: u8> CFEN_W<'a, REG, O>
+pub type CFEN_W<'a, REG> = crate::BitWriter<'a, REG, CFEN_A>;
+impl<'a, REG> CFEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -186,8 +186,8 @@ impl SRGM_R {
     }
 }
 #[doc = "Field `SRGM` writer - Service Request Generation Main Chain"]
-pub type SRGM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SRGM_A>;
-impl<'a, REG, const O: u8> SRGM_W<'a, REG, O>
+pub type SRGM_W<'a, REG> = crate::FieldWriter<'a, REG, 2, SRGM_A>;
+impl<'a, REG> SRGM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -206,7 +206,7 @@ where
 #[doc = "Field `CFMSV` reader - CIC Filter (Main Chain) Start Value"]
 pub type CFMSV_R = crate::FieldReader;
 #[doc = "Field `CFMSV` writer - CIC Filter (Main Chain) Start Value"]
-pub type CFMSV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type CFMSV_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `CFMDCNT` reader - CIC Filter (Main Chain) Decimation Counter"]
 pub type CFMDCNT_R = crate::FieldReader;
 impl R {
@@ -245,32 +245,32 @@ impl W {
     #[doc = "Bits 0:7 - CIC Filter (Main Chain) Decimation Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn cfmdf(&mut self) -> CFMDF_W<FCFGC_SPEC, 0> {
-        CFMDF_W::new(self)
+    pub fn cfmdf(&mut self) -> CFMDF_W<FCFGC_SPEC> {
+        CFMDF_W::new(self, 0)
     }
     #[doc = "Bits 8:9 - CIC Filter (Main Chain) Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn cfmc(&mut self) -> CFMC_W<FCFGC_SPEC, 8> {
-        CFMC_W::new(self)
+    pub fn cfmc(&mut self) -> CFMC_W<FCFGC_SPEC> {
+        CFMC_W::new(self, 8)
     }
     #[doc = "Bit 10 - CIC Filter Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn cfen(&mut self) -> CFEN_W<FCFGC_SPEC, 10> {
-        CFEN_W::new(self)
+    pub fn cfen(&mut self) -> CFEN_W<FCFGC_SPEC> {
+        CFEN_W::new(self, 10)
     }
     #[doc = "Bits 14:15 - Service Request Generation Main Chain"]
     #[inline(always)]
     #[must_use]
-    pub fn srgm(&mut self) -> SRGM_W<FCFGC_SPEC, 14> {
-        SRGM_W::new(self)
+    pub fn srgm(&mut self) -> SRGM_W<FCFGC_SPEC> {
+        SRGM_W::new(self, 14)
     }
     #[doc = "Bits 16:23 - CIC Filter (Main Chain) Start Value"]
     #[inline(always)]
     #[must_use]
-    pub fn cfmsv(&mut self) -> CFMSV_W<FCFGC_SPEC, 16> {
-        CFMSV_W::new(self)
+    pub fn cfmsv(&mut self) -> CFMSV_W<FCFGC_SPEC> {
+        CFMSV_W::new(self, 16)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

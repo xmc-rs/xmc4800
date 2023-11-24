@@ -15,8 +15,8 @@ impl From<RESEC0_AW> for bool {
     }
 }
 #[doc = "Field `RESEC0` writer - Result Event Clear"]
-pub type RESEC0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESEC0_AW>;
-impl<'a, REG, const O: u8> RESEC0_W<'a, REG, O>
+pub type RESEC0_W<'a, REG> = crate::BitWriter<'a, REG, RESEC0_AW>;
+impl<'a, REG> RESEC0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -46,8 +46,8 @@ impl From<RESEC1_AW> for bool {
     }
 }
 #[doc = "Field `RESEC1` writer - Result Event Clear"]
-pub type RESEC1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESEC1_AW>;
-impl<'a, REG, const O: u8> RESEC1_W<'a, REG, O>
+pub type RESEC1_W<'a, REG> = crate::BitWriter<'a, REG, RESEC1_AW>;
+impl<'a, REG> RESEC1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -77,8 +77,8 @@ impl From<RESEC2_AW> for bool {
     }
 }
 #[doc = "Field `RESEC2` writer - Result Event Clear"]
-pub type RESEC2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESEC2_AW>;
-impl<'a, REG, const O: u8> RESEC2_W<'a, REG, O>
+pub type RESEC2_W<'a, REG> = crate::BitWriter<'a, REG, RESEC2_AW>;
+impl<'a, REG> RESEC2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -108,8 +108,8 @@ impl From<RESEC3_AW> for bool {
     }
 }
 #[doc = "Field `RESEC3` writer - Result Event Clear"]
-pub type RESEC3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, RESEC3_AW>;
-impl<'a, REG, const O: u8> RESEC3_W<'a, REG, O>
+pub type RESEC3_W<'a, REG> = crate::BitWriter<'a, REG, RESEC3_AW>;
+impl<'a, REG> RESEC3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,8 +139,8 @@ impl From<ALEC0_AW> for bool {
     }
 }
 #[doc = "Field `ALEC0` writer - Alarm Event Clear"]
-pub type ALEC0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALEC0_AW>;
-impl<'a, REG, const O: u8> ALEC0_W<'a, REG, O>
+pub type ALEC0_W<'a, REG> = crate::BitWriter<'a, REG, ALEC0_AW>;
+impl<'a, REG> ALEC0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -170,8 +170,8 @@ impl From<ALEC1_AW> for bool {
     }
 }
 #[doc = "Field `ALEC1` writer - Alarm Event Clear"]
-pub type ALEC1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALEC1_AW>;
-impl<'a, REG, const O: u8> ALEC1_W<'a, REG, O>
+pub type ALEC1_W<'a, REG> = crate::BitWriter<'a, REG, ALEC1_AW>;
+impl<'a, REG> ALEC1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -201,8 +201,8 @@ impl From<ALEC2_AW> for bool {
     }
 }
 #[doc = "Field `ALEC2` writer - Alarm Event Clear"]
-pub type ALEC2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALEC2_AW>;
-impl<'a, REG, const O: u8> ALEC2_W<'a, REG, O>
+pub type ALEC2_W<'a, REG> = crate::BitWriter<'a, REG, ALEC2_AW>;
+impl<'a, REG> ALEC2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -232,8 +232,8 @@ impl From<ALEC3_AW> for bool {
     }
 }
 #[doc = "Field `ALEC3` writer - Alarm Event Clear"]
-pub type ALEC3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALEC3_AW>;
-impl<'a, REG, const O: u8> ALEC3_W<'a, REG, O>
+pub type ALEC3_W<'a, REG> = crate::BitWriter<'a, REG, ALEC3_AW>;
+impl<'a, REG> ALEC3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -252,50 +252,50 @@ impl W {
     #[doc = "Bit 0 - Result Event Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn resec0(&mut self) -> RESEC0_W<EVFLAGCLR_SPEC, 0> {
-        RESEC0_W::new(self)
+    pub fn resec0(&mut self) -> RESEC0_W<EVFLAGCLR_SPEC> {
+        RESEC0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Result Event Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn resec1(&mut self) -> RESEC1_W<EVFLAGCLR_SPEC, 1> {
-        RESEC1_W::new(self)
+    pub fn resec1(&mut self) -> RESEC1_W<EVFLAGCLR_SPEC> {
+        RESEC1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Result Event Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn resec2(&mut self) -> RESEC2_W<EVFLAGCLR_SPEC, 2> {
-        RESEC2_W::new(self)
+    pub fn resec2(&mut self) -> RESEC2_W<EVFLAGCLR_SPEC> {
+        RESEC2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Result Event Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn resec3(&mut self) -> RESEC3_W<EVFLAGCLR_SPEC, 3> {
-        RESEC3_W::new(self)
+    pub fn resec3(&mut self) -> RESEC3_W<EVFLAGCLR_SPEC> {
+        RESEC3_W::new(self, 3)
     }
     #[doc = "Bit 16 - Alarm Event Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn alec0(&mut self) -> ALEC0_W<EVFLAGCLR_SPEC, 16> {
-        ALEC0_W::new(self)
+    pub fn alec0(&mut self) -> ALEC0_W<EVFLAGCLR_SPEC> {
+        ALEC0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Alarm Event Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn alec1(&mut self) -> ALEC1_W<EVFLAGCLR_SPEC, 17> {
-        ALEC1_W::new(self)
+    pub fn alec1(&mut self) -> ALEC1_W<EVFLAGCLR_SPEC> {
+        ALEC1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Alarm Event Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn alec2(&mut self) -> ALEC2_W<EVFLAGCLR_SPEC, 18> {
-        ALEC2_W::new(self)
+    pub fn alec2(&mut self) -> ALEC2_W<EVFLAGCLR_SPEC> {
+        ALEC2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Alarm Event Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn alec3(&mut self) -> ALEC3_W<EVFLAGCLR_SPEC, 19> {
-        ALEC3_W::new(self)
+    pub fn alec3(&mut self) -> ALEC3_W<EVFLAGCLR_SPEC> {
+        ALEC3_W::new(self, 19)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

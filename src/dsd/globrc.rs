@@ -39,8 +39,8 @@ impl CH0RUN_R {
     }
 }
 #[doc = "Field `CH0RUN` writer - Channel 0 Run Control"]
-pub type CH0RUN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH0RUN_A>;
-impl<'a, REG, const O: u8> CH0RUN_W<'a, REG, O>
+pub type CH0RUN_W<'a, REG> = crate::BitWriter<'a, REG, CH0RUN_A>;
+impl<'a, REG> CH0RUN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl CH1RUN_R {
     }
 }
 #[doc = "Field `CH1RUN` writer - Channel 1 Run Control"]
-pub type CH1RUN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH1RUN_A>;
-impl<'a, REG, const O: u8> CH1RUN_W<'a, REG, O>
+pub type CH1RUN_W<'a, REG> = crate::BitWriter<'a, REG, CH1RUN_A>;
+impl<'a, REG> CH1RUN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl CH2RUN_R {
     }
 }
 #[doc = "Field `CH2RUN` writer - Channel 2 Run Control"]
-pub type CH2RUN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH2RUN_A>;
-impl<'a, REG, const O: u8> CH2RUN_W<'a, REG, O>
+pub type CH2RUN_W<'a, REG> = crate::BitWriter<'a, REG, CH2RUN_A>;
+impl<'a, REG> CH2RUN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl CH3RUN_R {
     }
 }
 #[doc = "Field `CH3RUN` writer - Channel 3 Run Control"]
-pub type CH3RUN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH3RUN_A>;
-impl<'a, REG, const O: u8> CH3RUN_W<'a, REG, O>
+pub type CH3RUN_W<'a, REG> = crate::BitWriter<'a, REG, CH3RUN_A>;
+impl<'a, REG> CH3RUN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -240,26 +240,26 @@ impl W {
     #[doc = "Bit 0 - Channel 0 Run Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0run(&mut self) -> CH0RUN_W<GLOBRC_SPEC, 0> {
-        CH0RUN_W::new(self)
+    pub fn ch0run(&mut self) -> CH0RUN_W<GLOBRC_SPEC> {
+        CH0RUN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel 1 Run Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1run(&mut self) -> CH1RUN_W<GLOBRC_SPEC, 1> {
-        CH1RUN_W::new(self)
+    pub fn ch1run(&mut self) -> CH1RUN_W<GLOBRC_SPEC> {
+        CH1RUN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channel 2 Run Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ch2run(&mut self) -> CH2RUN_W<GLOBRC_SPEC, 2> {
-        CH2RUN_W::new(self)
+    pub fn ch2run(&mut self) -> CH2RUN_W<GLOBRC_SPEC> {
+        CH2RUN_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channel 3 Run Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ch3run(&mut self) -> CH3RUN_W<GLOBRC_SPEC, 3> {
-        CH3RUN_W::new(self)
+    pub fn ch3run(&mut self) -> CH3RUN_W<GLOBRC_SPEC> {
+        CH3RUN_W::new(self, 3)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

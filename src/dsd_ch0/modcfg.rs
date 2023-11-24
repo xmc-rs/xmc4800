@@ -60,8 +60,8 @@ impl DIVM_R {
     }
 }
 #[doc = "Field `DIVM` writer - Divider Factor for Modulator Clock"]
-pub type DIVM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, DIVM_A>;
-impl<'a, REG, const O: u8> DIVM_W<'a, REG, O>
+pub type DIVM_W<'a, REG> = crate::FieldWriter<'a, REG, 4, DIVM_A>;
+impl<'a, REG> DIVM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -102,8 +102,8 @@ impl From<DWC_AW> for bool {
     }
 }
 #[doc = "Field `DWC` writer - Write Control for Divider Factor"]
-pub type DWC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DWC_AW>;
-impl<'a, REG, const O: u8> DWC_W<'a, REG, O>
+pub type DWC_W<'a, REG> = crate::BitWriter<'a, REG, DWC_AW>;
+impl<'a, REG> DWC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -129,14 +129,14 @@ impl W {
     #[doc = "Bits 16:19 - Divider Factor for Modulator Clock"]
     #[inline(always)]
     #[must_use]
-    pub fn divm(&mut self) -> DIVM_W<MODCFG_SPEC, 16> {
-        DIVM_W::new(self)
+    pub fn divm(&mut self) -> DIVM_W<MODCFG_SPEC> {
+        DIVM_W::new(self, 16)
     }
     #[doc = "Bit 23 - Write Control for Divider Factor"]
     #[inline(always)]
     #[must_use]
-    pub fn dwc(&mut self) -> DWC_W<MODCFG_SPEC, 23> {
-        DWC_W::new(self)
+    pub fn dwc(&mut self) -> DWC_W<MODCFG_SPEC> {
+        DWC_W::new(self, 23)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

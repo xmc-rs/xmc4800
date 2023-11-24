@@ -5,7 +5,7 @@ pub type W = crate::W<USERCON_SPEC>;
 #[doc = "Field `DIP` reader - Disable Internal Pipelining"]
 pub type DIP_R = crate::BitReader;
 #[doc = "Field `DIP` writer - Disable Internal Pipelining"]
-pub type DIP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type DIP_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ADDIO` reader - Address Pins to GPIO Mode"]
 pub type ADDIO_R = crate::FieldReader<ADDIO_A>;
 #[doc = "Address Pins to GPIO Mode\n\nValue on reset: 0"]
@@ -48,8 +48,8 @@ impl ADDIO_R {
     }
 }
 #[doc = "Field `ADDIO` writer - Address Pins to GPIO Mode"]
-pub type ADDIO_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 9, O, ADDIO_A>;
-impl<'a, REG, const O: u8> ADDIO_W<'a, REG, O>
+pub type ADDIO_W<'a, REG> = crate::FieldWriter<'a, REG, 9, ADDIO_A>;
+impl<'a, REG> ADDIO_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u16>,
@@ -102,8 +102,8 @@ impl ADVIO_R {
     }
 }
 #[doc = "Field `ADVIO` writer - ADV Pin to GPIO Mode"]
-pub type ADVIO_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ADVIO_A>;
-impl<'a, REG, const O: u8> ADVIO_W<'a, REG, O>
+pub type ADVIO_W<'a, REG> = crate::BitWriter<'a, REG, ADVIO_A>;
+impl<'a, REG> ADVIO_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -139,20 +139,20 @@ impl W {
     #[doc = "Bit 0 - Disable Internal Pipelining"]
     #[inline(always)]
     #[must_use]
-    pub fn dip(&mut self) -> DIP_W<USERCON_SPEC, 0> {
-        DIP_W::new(self)
+    pub fn dip(&mut self) -> DIP_W<USERCON_SPEC> {
+        DIP_W::new(self, 0)
     }
     #[doc = "Bits 16:24 - Address Pins to GPIO Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn addio(&mut self) -> ADDIO_W<USERCON_SPEC, 16> {
-        ADDIO_W::new(self)
+    pub fn addio(&mut self) -> ADDIO_W<USERCON_SPEC> {
+        ADDIO_W::new(self, 16)
     }
     #[doc = "Bit 25 - ADV Pin to GPIO Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn advio(&mut self) -> ADVIO_W<USERCON_SPEC, 25> {
-        ADVIO_W::new(self)
+    pub fn advio(&mut self) -> ADVIO_W<USERCON_SPEC> {
+        ADVIO_W::new(self, 25)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

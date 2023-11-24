@@ -39,8 +39,8 @@ impl GSC40_R {
     }
 }
 #[doc = "Field `GSC40` writer - Global Start Control CCU40"]
-pub type GSC40_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GSC40_A>;
-impl<'a, REG, const O: u8> GSC40_W<'a, REG, O>
+pub type GSC40_W<'a, REG> = crate::BitWriter<'a, REG, GSC40_A>;
+impl<'a, REG> GSC40_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl GSC41_R {
     }
 }
 #[doc = "Field `GSC41` writer - Global Start Control CCU41"]
-pub type GSC41_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GSC41_A>;
-impl<'a, REG, const O: u8> GSC41_W<'a, REG, O>
+pub type GSC41_W<'a, REG> = crate::BitWriter<'a, REG, GSC41_A>;
+impl<'a, REG> GSC41_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl GSC42_R {
     }
 }
 #[doc = "Field `GSC42` writer - Global Start Control CCU42"]
-pub type GSC42_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GSC42_A>;
-impl<'a, REG, const O: u8> GSC42_W<'a, REG, O>
+pub type GSC42_W<'a, REG> = crate::BitWriter<'a, REG, GSC42_A>;
+impl<'a, REG> GSC42_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl GSC43_R {
     }
 }
 #[doc = "Field `GSC43` writer - Global Start Control CCU43"]
-pub type GSC43_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GSC43_A>;
-impl<'a, REG, const O: u8> GSC43_W<'a, REG, O>
+pub type GSC43_W<'a, REG> = crate::BitWriter<'a, REG, GSC43_A>;
+impl<'a, REG> GSC43_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl GSC80_R {
     }
 }
 #[doc = "Field `GSC80` writer - Global Start Control CCU80"]
-pub type GSC80_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GSC80_A>;
-impl<'a, REG, const O: u8> GSC80_W<'a, REG, O>
+pub type GSC80_W<'a, REG> = crate::BitWriter<'a, REG, GSC80_A>;
+impl<'a, REG> GSC80_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl GSC81_R {
     }
 }
 #[doc = "Field `GSC81` writer - Global Start Control CCU81"]
-pub type GSC81_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, GSC81_A>;
-impl<'a, REG, const O: u8> GSC81_W<'a, REG, O>
+pub type GSC81_W<'a, REG> = crate::BitWriter<'a, REG, GSC81_A>;
+impl<'a, REG> GSC81_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -356,38 +356,38 @@ impl W {
     #[doc = "Bit 0 - Global Start Control CCU40"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc40(&mut self) -> GSC40_W<CCUCON_SPEC, 0> {
-        GSC40_W::new(self)
+    pub fn gsc40(&mut self) -> GSC40_W<CCUCON_SPEC> {
+        GSC40_W::new(self, 0)
     }
     #[doc = "Bit 1 - Global Start Control CCU41"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc41(&mut self) -> GSC41_W<CCUCON_SPEC, 1> {
-        GSC41_W::new(self)
+    pub fn gsc41(&mut self) -> GSC41_W<CCUCON_SPEC> {
+        GSC41_W::new(self, 1)
     }
     #[doc = "Bit 2 - Global Start Control CCU42"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc42(&mut self) -> GSC42_W<CCUCON_SPEC, 2> {
-        GSC42_W::new(self)
+    pub fn gsc42(&mut self) -> GSC42_W<CCUCON_SPEC> {
+        GSC42_W::new(self, 2)
     }
     #[doc = "Bit 3 - Global Start Control CCU43"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc43(&mut self) -> GSC43_W<CCUCON_SPEC, 3> {
-        GSC43_W::new(self)
+    pub fn gsc43(&mut self) -> GSC43_W<CCUCON_SPEC> {
+        GSC43_W::new(self, 3)
     }
     #[doc = "Bit 8 - Global Start Control CCU80"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc80(&mut self) -> GSC80_W<CCUCON_SPEC, 8> {
-        GSC80_W::new(self)
+    pub fn gsc80(&mut self) -> GSC80_W<CCUCON_SPEC> {
+        GSC80_W::new(self, 8)
     }
     #[doc = "Bit 9 - Global Start Control CCU81"]
     #[inline(always)]
     #[must_use]
-    pub fn gsc81(&mut self) -> GSC81_W<CCUCON_SPEC, 9> {
-        GSC81_W::new(self)
+    pub fn gsc81(&mut self) -> GSC81_W<CCUCON_SPEC> {
+        GSC81_W::new(self, 9)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

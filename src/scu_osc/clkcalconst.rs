@@ -5,7 +5,7 @@ pub type W = crate::W<CLKCALCONST_SPEC>;
 #[doc = "Field `CALIBCONST` reader - Clock Calibration Constant Value"]
 pub type CALIBCONST_R = crate::FieldReader;
 #[doc = "Field `CALIBCONST` writer - Clock Calibration Constant Value"]
-pub type CALIBCONST_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type CALIBCONST_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3 - Clock Calibration Constant Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:3 - Clock Calibration Constant Value"]
     #[inline(always)]
     #[must_use]
-    pub fn calibconst(&mut self) -> CALIBCONST_W<CLKCALCONST_SPEC, 0> {
-        CALIBCONST_W::new(self)
+    pub fn calibconst(&mut self) -> CALIBCONST_W<CLKCALCONST_SPEC> {
+        CALIBCONST_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

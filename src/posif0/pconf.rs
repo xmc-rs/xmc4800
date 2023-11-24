@@ -60,8 +60,8 @@ impl FSEL_R {
     }
 }
 #[doc = "Field `FSEL` writer - Function Selector"]
-pub type FSEL_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, FSEL_A>;
-impl<'a, REG, const O: u8> FSEL_W<'a, REG, O>
+pub type FSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, FSEL_A>;
+impl<'a, REG> FSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -124,8 +124,8 @@ impl QDCM_R {
     }
 }
 #[doc = "Field `QDCM` writer - Position Decoder Mode selection"]
-pub type QDCM_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, QDCM_A>;
-impl<'a, REG, const O: u8> QDCM_W<'a, REG, O>
+pub type QDCM_W<'a, REG> = crate::BitWriter<'a, REG, QDCM_A>;
+impl<'a, REG> QDCM_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -143,7 +143,7 @@ where
 #[doc = "Field `HIDG` reader - Idle generation enable"]
 pub type HIDG_R = crate::BitReader;
 #[doc = "Field `HIDG` writer - Idle generation enable"]
-pub type HIDG_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type HIDG_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MCUE` reader - Multi-Channel Pattern SW update enable"]
 pub type MCUE_R = crate::BitReader<MCUE_A>;
 #[doc = "Multi-Channel Pattern SW update enable\n\nValue on reset: 0"]
@@ -181,8 +181,8 @@ impl MCUE_R {
     }
 }
 #[doc = "Field `MCUE` writer - Multi-Channel Pattern SW update enable"]
-pub type MCUE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MCUE_A>;
-impl<'a, REG, const O: u8> MCUE_W<'a, REG, O>
+pub type MCUE_W<'a, REG> = crate::BitWriter<'a, REG, MCUE_A>;
+impl<'a, REG> MCUE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -255,8 +255,8 @@ impl INSEL0_R {
     }
 }
 #[doc = "Field `INSEL0` writer - PhaseA/Hal input 1 selector"]
-pub type INSEL0_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, INSEL0_A>;
-impl<'a, REG, const O: u8> INSEL0_W<'a, REG, O>
+pub type INSEL0_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, INSEL0_A>;
+impl<'a, REG> INSEL0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -340,8 +340,8 @@ impl INSEL1_R {
     }
 }
 #[doc = "Field `INSEL1` writer - PhaseB/Hall input 2 selector"]
-pub type INSEL1_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, INSEL1_A>;
-impl<'a, REG, const O: u8> INSEL1_W<'a, REG, O>
+pub type INSEL1_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, INSEL1_A>;
+impl<'a, REG> INSEL1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -425,8 +425,8 @@ impl INSEL2_R {
     }
 }
 #[doc = "Field `INSEL2` writer - Index/Hall input 3 selector"]
-pub type INSEL2_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, INSEL2_A>;
-impl<'a, REG, const O: u8> INSEL2_W<'a, REG, O>
+pub type INSEL2_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, INSEL2_A>;
+impl<'a, REG> INSEL2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -489,8 +489,8 @@ impl DSEL_R {
     }
 }
 #[doc = "Field `DSEL` writer - Delay Pin selector"]
-pub type DSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DSEL_A>;
-impl<'a, REG, const O: u8> DSEL_W<'a, REG, O>
+pub type DSEL_W<'a, REG> = crate::BitWriter<'a, REG, DSEL_A>;
+impl<'a, REG> DSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -542,8 +542,8 @@ impl SPES_R {
     }
 }
 #[doc = "Field `SPES` writer - Edge selector for the sampling trigger"]
-pub type SPES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SPES_A>;
-impl<'a, REG, const O: u8> SPES_W<'a, REG, O>
+pub type SPES_W<'a, REG> = crate::BitWriter<'a, REG, SPES_A>;
+impl<'a, REG> SPES_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -648,8 +648,8 @@ impl MSETS_R {
     }
 }
 #[doc = "Field `MSETS` writer - Pattern update signal select"]
-pub type MSETS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, MSETS_A>;
-impl<'a, REG, const O: u8> MSETS_W<'a, REG, O>
+pub type MSETS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, MSETS_A>;
+impl<'a, REG> MSETS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -732,8 +732,8 @@ impl MSES_R {
     }
 }
 #[doc = "Field `MSES` writer - Multi-Channel pattern update trigger edge"]
-pub type MSES_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MSES_A>;
-impl<'a, REG, const O: u8> MSES_W<'a, REG, O>
+pub type MSES_W<'a, REG> = crate::BitWriter<'a, REG, MSES_A>;
+impl<'a, REG> MSES_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -806,8 +806,8 @@ impl MSYNS_R {
     }
 }
 #[doc = "Field `MSYNS` writer - PWM synchronization signal selector"]
-pub type MSYNS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, MSYNS_A>;
-impl<'a, REG, const O: u8> MSYNS_W<'a, REG, O>
+pub type MSYNS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, MSYNS_A>;
+impl<'a, REG> MSYNS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -891,8 +891,8 @@ impl EWIS_R {
     }
 }
 #[doc = "Field `EWIS` writer - Wrong Hall Event selection"]
-pub type EWIS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, EWIS_A>;
-impl<'a, REG, const O: u8> EWIS_W<'a, REG, O>
+pub type EWIS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EWIS_A>;
+impl<'a, REG> EWIS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -955,8 +955,8 @@ impl EWIE_R {
     }
 }
 #[doc = "Field `EWIE` writer - External Wrong Hall Event enable"]
-pub type EWIE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EWIE_A>;
-impl<'a, REG, const O: u8> EWIE_W<'a, REG, O>
+pub type EWIE_W<'a, REG> = crate::BitWriter<'a, REG, EWIE_A>;
+impl<'a, REG> EWIE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1012,8 +1012,8 @@ signal is active LOW"]
     }
 }
 #[doc = "Field `EWIL` writer - External Wrong Hall Event active level"]
-pub type EWIL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EWIL_A>;
-impl<'a, REG, const O: u8> EWIL_W<'a, REG, O>
+pub type EWIL_W<'a, REG> = crate::BitWriter<'a, REG, EWIL_A>;
+impl<'a, REG> EWIL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -1120,8 +1120,8 @@ impl LPC_R {
     }
 }
 #[doc = "Field `LPC` writer - Low Pass Filters Configuration"]
-pub type LPC_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, LPC_A>;
-impl<'a, REG, const O: u8> LPC_W<'a, REG, O>
+pub type LPC_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, LPC_A>;
+impl<'a, REG> LPC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1253,98 +1253,98 @@ impl W {
     #[doc = "Bits 0:1 - Function Selector"]
     #[inline(always)]
     #[must_use]
-    pub fn fsel(&mut self) -> FSEL_W<PCONF_SPEC, 0> {
-        FSEL_W::new(self)
+    pub fn fsel(&mut self) -> FSEL_W<PCONF_SPEC> {
+        FSEL_W::new(self, 0)
     }
     #[doc = "Bit 2 - Position Decoder Mode selection"]
     #[inline(always)]
     #[must_use]
-    pub fn qdcm(&mut self) -> QDCM_W<PCONF_SPEC, 2> {
-        QDCM_W::new(self)
+    pub fn qdcm(&mut self) -> QDCM_W<PCONF_SPEC> {
+        QDCM_W::new(self, 2)
     }
     #[doc = "Bit 4 - Idle generation enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hidg(&mut self) -> HIDG_W<PCONF_SPEC, 4> {
-        HIDG_W::new(self)
+    pub fn hidg(&mut self) -> HIDG_W<PCONF_SPEC> {
+        HIDG_W::new(self, 4)
     }
     #[doc = "Bit 5 - Multi-Channel Pattern SW update enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mcue(&mut self) -> MCUE_W<PCONF_SPEC, 5> {
-        MCUE_W::new(self)
+    pub fn mcue(&mut self) -> MCUE_W<PCONF_SPEC> {
+        MCUE_W::new(self, 5)
     }
     #[doc = "Bits 8:9 - PhaseA/Hal input 1 selector"]
     #[inline(always)]
     #[must_use]
-    pub fn insel0(&mut self) -> INSEL0_W<PCONF_SPEC, 8> {
-        INSEL0_W::new(self)
+    pub fn insel0(&mut self) -> INSEL0_W<PCONF_SPEC> {
+        INSEL0_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - PhaseB/Hall input 2 selector"]
     #[inline(always)]
     #[must_use]
-    pub fn insel1(&mut self) -> INSEL1_W<PCONF_SPEC, 10> {
-        INSEL1_W::new(self)
+    pub fn insel1(&mut self) -> INSEL1_W<PCONF_SPEC> {
+        INSEL1_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Index/Hall input 3 selector"]
     #[inline(always)]
     #[must_use]
-    pub fn insel2(&mut self) -> INSEL2_W<PCONF_SPEC, 12> {
-        INSEL2_W::new(self)
+    pub fn insel2(&mut self) -> INSEL2_W<PCONF_SPEC> {
+        INSEL2_W::new(self, 12)
     }
     #[doc = "Bit 16 - Delay Pin selector"]
     #[inline(always)]
     #[must_use]
-    pub fn dsel(&mut self) -> DSEL_W<PCONF_SPEC, 16> {
-        DSEL_W::new(self)
+    pub fn dsel(&mut self) -> DSEL_W<PCONF_SPEC> {
+        DSEL_W::new(self, 16)
     }
     #[doc = "Bit 17 - Edge selector for the sampling trigger"]
     #[inline(always)]
     #[must_use]
-    pub fn spes(&mut self) -> SPES_W<PCONF_SPEC, 17> {
-        SPES_W::new(self)
+    pub fn spes(&mut self) -> SPES_W<PCONF_SPEC> {
+        SPES_W::new(self, 17)
     }
     #[doc = "Bits 18:20 - Pattern update signal select"]
     #[inline(always)]
     #[must_use]
-    pub fn msets(&mut self) -> MSETS_W<PCONF_SPEC, 18> {
-        MSETS_W::new(self)
+    pub fn msets(&mut self) -> MSETS_W<PCONF_SPEC> {
+        MSETS_W::new(self, 18)
     }
     #[doc = "Bit 21 - Multi-Channel pattern update trigger edge"]
     #[inline(always)]
     #[must_use]
-    pub fn mses(&mut self) -> MSES_W<PCONF_SPEC, 21> {
-        MSES_W::new(self)
+    pub fn mses(&mut self) -> MSES_W<PCONF_SPEC> {
+        MSES_W::new(self, 21)
     }
     #[doc = "Bits 22:23 - PWM synchronization signal selector"]
     #[inline(always)]
     #[must_use]
-    pub fn msyns(&mut self) -> MSYNS_W<PCONF_SPEC, 22> {
-        MSYNS_W::new(self)
+    pub fn msyns(&mut self) -> MSYNS_W<PCONF_SPEC> {
+        MSYNS_W::new(self, 22)
     }
     #[doc = "Bits 24:25 - Wrong Hall Event selection"]
     #[inline(always)]
     #[must_use]
-    pub fn ewis(&mut self) -> EWIS_W<PCONF_SPEC, 24> {
-        EWIS_W::new(self)
+    pub fn ewis(&mut self) -> EWIS_W<PCONF_SPEC> {
+        EWIS_W::new(self, 24)
     }
     #[doc = "Bit 26 - External Wrong Hall Event enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ewie(&mut self) -> EWIE_W<PCONF_SPEC, 26> {
-        EWIE_W::new(self)
+    pub fn ewie(&mut self) -> EWIE_W<PCONF_SPEC> {
+        EWIE_W::new(self, 26)
     }
     #[doc = "Bit 27 - External Wrong Hall Event active level"]
     #[inline(always)]
     #[must_use]
-    pub fn ewil(&mut self) -> EWIL_W<PCONF_SPEC, 27> {
-        EWIL_W::new(self)
+    pub fn ewil(&mut self) -> EWIL_W<PCONF_SPEC> {
+        EWIL_W::new(self, 27)
     }
     #[doc = "Bits 28:30 - Low Pass Filters Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn lpc(&mut self) -> LPC_W<PCONF_SPEC, 28> {
-        LPC_W::new(self)
+    pub fn lpc(&mut self) -> LPC_W<PCONF_SPEC> {
+        LPC_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

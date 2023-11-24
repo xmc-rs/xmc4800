@@ -5,43 +5,43 @@ pub type W = crate::W<SDRMREF_SPEC>;
 #[doc = "Field `REFRESHC` reader - Refresh counter period"]
 pub type REFRESHC_R = crate::FieldReader;
 #[doc = "Field `REFRESHC` writer - Refresh counter period"]
-pub type REFRESHC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type REFRESHC_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `REFRESHR` reader - Number of refresh commands"]
 pub type REFRESHR_R = crate::FieldReader;
 #[doc = "Field `REFRESHR` writer - Number of refresh commands"]
-pub type REFRESHR_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type REFRESHR_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `SELFREXST` reader - Self Refresh Exit Status."]
 pub type SELFREXST_R = crate::BitReader;
 #[doc = "Field `SELFREX` reader - Self Refresh Exit (Power Up)."]
 pub type SELFREX_R = crate::BitReader;
 #[doc = "Field `SELFREX` writer - Self Refresh Exit (Power Up)."]
-pub type SELFREX_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SELFREX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `SELFRENST` reader - Self Refresh Entry Status."]
 pub type SELFRENST_R = crate::BitReader;
 #[doc = "Field `SELFREN` reader - Self Refresh Entry"]
 pub type SELFREN_R = crate::BitReader;
 #[doc = "Field `SELFREN` writer - Self Refresh Entry"]
-pub type SELFREN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type SELFREN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `AUTOSELFR` reader - Automatic Self Refresh"]
 pub type AUTOSELFR_R = crate::BitReader;
 #[doc = "Field `AUTOSELFR` writer - Automatic Self Refresh"]
-pub type AUTOSELFR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type AUTOSELFR_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ERFSHC` reader - Extended Refresh Counter Period"]
 pub type ERFSHC_R = crate::FieldReader;
 #[doc = "Field `ERFSHC` writer - Extended Refresh Counter Period"]
-pub type ERFSHC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type ERFSHC_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `SELFREX_DLY` reader - Self Refresh Exit Delay"]
 pub type SELFREX_DLY_R = crate::FieldReader;
 #[doc = "Field `SELFREX_DLY` writer - Self Refresh Exit Delay"]
-pub type SELFREX_DLY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SELFREX_DLY_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `ARFSH` reader - Auto Refresh on Self refresh Exit"]
 pub type ARFSH_R = crate::BitReader;
 #[doc = "Field `ARFSH` writer - Auto Refresh on Self refresh Exit"]
-pub type ARFSH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ARFSH_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `RES_DLY` reader - Delay on Power Down Exit"]
 pub type RES_DLY_R = crate::FieldReader;
 #[doc = "Field `RES_DLY` writer - Delay on Power Down Exit"]
-pub type RES_DLY_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type RES_DLY_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 0:5 - Refresh counter period"]
     #[inline(always)]
@@ -103,56 +103,56 @@ impl W {
     #[doc = "Bits 0:5 - Refresh counter period"]
     #[inline(always)]
     #[must_use]
-    pub fn refreshc(&mut self) -> REFRESHC_W<SDRMREF_SPEC, 0> {
-        REFRESHC_W::new(self)
+    pub fn refreshc(&mut self) -> REFRESHC_W<SDRMREF_SPEC> {
+        REFRESHC_W::new(self, 0)
     }
     #[doc = "Bits 6:8 - Number of refresh commands"]
     #[inline(always)]
     #[must_use]
-    pub fn refreshr(&mut self) -> REFRESHR_W<SDRMREF_SPEC, 6> {
-        REFRESHR_W::new(self)
+    pub fn refreshr(&mut self) -> REFRESHR_W<SDRMREF_SPEC> {
+        REFRESHR_W::new(self, 6)
     }
     #[doc = "Bit 10 - Self Refresh Exit (Power Up)."]
     #[inline(always)]
     #[must_use]
-    pub fn selfrex(&mut self) -> SELFREX_W<SDRMREF_SPEC, 10> {
-        SELFREX_W::new(self)
+    pub fn selfrex(&mut self) -> SELFREX_W<SDRMREF_SPEC> {
+        SELFREX_W::new(self, 10)
     }
     #[doc = "Bit 12 - Self Refresh Entry"]
     #[inline(always)]
     #[must_use]
-    pub fn selfren(&mut self) -> SELFREN_W<SDRMREF_SPEC, 12> {
-        SELFREN_W::new(self)
+    pub fn selfren(&mut self) -> SELFREN_W<SDRMREF_SPEC> {
+        SELFREN_W::new(self, 12)
     }
     #[doc = "Bit 13 - Automatic Self Refresh"]
     #[inline(always)]
     #[must_use]
-    pub fn autoselfr(&mut self) -> AUTOSELFR_W<SDRMREF_SPEC, 13> {
-        AUTOSELFR_W::new(self)
+    pub fn autoselfr(&mut self) -> AUTOSELFR_W<SDRMREF_SPEC> {
+        AUTOSELFR_W::new(self, 13)
     }
     #[doc = "Bits 14:15 - Extended Refresh Counter Period"]
     #[inline(always)]
     #[must_use]
-    pub fn erfshc(&mut self) -> ERFSHC_W<SDRMREF_SPEC, 14> {
-        ERFSHC_W::new(self)
+    pub fn erfshc(&mut self) -> ERFSHC_W<SDRMREF_SPEC> {
+        ERFSHC_W::new(self, 14)
     }
     #[doc = "Bits 16:23 - Self Refresh Exit Delay"]
     #[inline(always)]
     #[must_use]
-    pub fn selfrex_dly(&mut self) -> SELFREX_DLY_W<SDRMREF_SPEC, 16> {
-        SELFREX_DLY_W::new(self)
+    pub fn selfrex_dly(&mut self) -> SELFREX_DLY_W<SDRMREF_SPEC> {
+        SELFREX_DLY_W::new(self, 16)
     }
     #[doc = "Bit 24 - Auto Refresh on Self refresh Exit"]
     #[inline(always)]
     #[must_use]
-    pub fn arfsh(&mut self) -> ARFSH_W<SDRMREF_SPEC, 24> {
-        ARFSH_W::new(self)
+    pub fn arfsh(&mut self) -> ARFSH_W<SDRMREF_SPEC> {
+        ARFSH_W::new(self, 24)
     }
     #[doc = "Bits 25:27 - Delay on Power Down Exit"]
     #[inline(always)]
     #[must_use]
-    pub fn res_dly(&mut self) -> RES_DLY_W<SDRMREF_SPEC, 25> {
-        RES_DLY_W::new(self)
+    pub fn res_dly(&mut self) -> RES_DLY_W<SDRMREF_SPEC> {
+        RES_DLY_W::new(self, 25)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

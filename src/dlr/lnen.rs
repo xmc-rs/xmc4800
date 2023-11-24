@@ -39,8 +39,8 @@ impl LN0_R {
     }
 }
 #[doc = "Field `LN0` writer - Line 0 Enable"]
-pub type LN0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN0_A>;
-impl<'a, REG, const O: u8> LN0_W<'a, REG, O>
+pub type LN0_W<'a, REG> = crate::BitWriter<'a, REG, LN0_A>;
+impl<'a, REG> LN0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl LN1_R {
     }
 }
 #[doc = "Field `LN1` writer - Line 1 Enable"]
-pub type LN1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN1_A>;
-impl<'a, REG, const O: u8> LN1_W<'a, REG, O>
+pub type LN1_W<'a, REG> = crate::BitWriter<'a, REG, LN1_A>;
+impl<'a, REG> LN1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl LN2_R {
     }
 }
 #[doc = "Field `LN2` writer - Line 2 Enable"]
-pub type LN2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN2_A>;
-impl<'a, REG, const O: u8> LN2_W<'a, REG, O>
+pub type LN2_W<'a, REG> = crate::BitWriter<'a, REG, LN2_A>;
+impl<'a, REG> LN2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl LN3_R {
     }
 }
 #[doc = "Field `LN3` writer - Line 3 Enable"]
-pub type LN3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN3_A>;
-impl<'a, REG, const O: u8> LN3_W<'a, REG, O>
+pub type LN3_W<'a, REG> = crate::BitWriter<'a, REG, LN3_A>;
+impl<'a, REG> LN3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl LN4_R {
     }
 }
 #[doc = "Field `LN4` writer - Line 4 Enable"]
-pub type LN4_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN4_A>;
-impl<'a, REG, const O: u8> LN4_W<'a, REG, O>
+pub type LN4_W<'a, REG> = crate::BitWriter<'a, REG, LN4_A>;
+impl<'a, REG> LN4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -304,8 +304,8 @@ impl LN5_R {
     }
 }
 #[doc = "Field `LN5` writer - Line 5 Enable"]
-pub type LN5_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN5_A>;
-impl<'a, REG, const O: u8> LN5_W<'a, REG, O>
+pub type LN5_W<'a, REG> = crate::BitWriter<'a, REG, LN5_A>;
+impl<'a, REG> LN5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -357,8 +357,8 @@ impl LN6_R {
     }
 }
 #[doc = "Field `LN6` writer - Line 6 Enable"]
-pub type LN6_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN6_A>;
-impl<'a, REG, const O: u8> LN6_W<'a, REG, O>
+pub type LN6_W<'a, REG> = crate::BitWriter<'a, REG, LN6_A>;
+impl<'a, REG> LN6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -410,8 +410,8 @@ impl LN7_R {
     }
 }
 #[doc = "Field `LN7` writer - Line 7 Enable"]
-pub type LN7_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN7_A>;
-impl<'a, REG, const O: u8> LN7_W<'a, REG, O>
+pub type LN7_W<'a, REG> = crate::BitWriter<'a, REG, LN7_A>;
+impl<'a, REG> LN7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -463,8 +463,8 @@ impl LN8_R {
     }
 }
 #[doc = "Field `LN8` writer - Line 8 Enable"]
-pub type LN8_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN8_A>;
-impl<'a, REG, const O: u8> LN8_W<'a, REG, O>
+pub type LN8_W<'a, REG> = crate::BitWriter<'a, REG, LN8_A>;
+impl<'a, REG> LN8_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -516,8 +516,8 @@ impl LN9_R {
     }
 }
 #[doc = "Field `LN9` writer - Line 9 Enable"]
-pub type LN9_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN9_A>;
-impl<'a, REG, const O: u8> LN9_W<'a, REG, O>
+pub type LN9_W<'a, REG> = crate::BitWriter<'a, REG, LN9_A>;
+impl<'a, REG> LN9_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -569,8 +569,8 @@ impl LN10_R {
     }
 }
 #[doc = "Field `LN10` writer - Line 10 Enable"]
-pub type LN10_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN10_A>;
-impl<'a, REG, const O: u8> LN10_W<'a, REG, O>
+pub type LN10_W<'a, REG> = crate::BitWriter<'a, REG, LN10_A>;
+impl<'a, REG> LN10_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -622,8 +622,8 @@ impl LN11_R {
     }
 }
 #[doc = "Field `LN11` writer - Line 11 Enable"]
-pub type LN11_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LN11_A>;
-impl<'a, REG, const O: u8> LN11_W<'a, REG, O>
+pub type LN11_W<'a, REG> = crate::BitWriter<'a, REG, LN11_A>;
+impl<'a, REG> LN11_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -704,74 +704,74 @@ impl W {
     #[doc = "Bit 0 - Line 0 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln0(&mut self) -> LN0_W<LNEN_SPEC, 0> {
-        LN0_W::new(self)
+    pub fn ln0(&mut self) -> LN0_W<LNEN_SPEC> {
+        LN0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Line 1 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln1(&mut self) -> LN1_W<LNEN_SPEC, 1> {
-        LN1_W::new(self)
+    pub fn ln1(&mut self) -> LN1_W<LNEN_SPEC> {
+        LN1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Line 2 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln2(&mut self) -> LN2_W<LNEN_SPEC, 2> {
-        LN2_W::new(self)
+    pub fn ln2(&mut self) -> LN2_W<LNEN_SPEC> {
+        LN2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Line 3 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln3(&mut self) -> LN3_W<LNEN_SPEC, 3> {
-        LN3_W::new(self)
+    pub fn ln3(&mut self) -> LN3_W<LNEN_SPEC> {
+        LN3_W::new(self, 3)
     }
     #[doc = "Bit 4 - Line 4 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln4(&mut self) -> LN4_W<LNEN_SPEC, 4> {
-        LN4_W::new(self)
+    pub fn ln4(&mut self) -> LN4_W<LNEN_SPEC> {
+        LN4_W::new(self, 4)
     }
     #[doc = "Bit 5 - Line 5 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln5(&mut self) -> LN5_W<LNEN_SPEC, 5> {
-        LN5_W::new(self)
+    pub fn ln5(&mut self) -> LN5_W<LNEN_SPEC> {
+        LN5_W::new(self, 5)
     }
     #[doc = "Bit 6 - Line 6 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln6(&mut self) -> LN6_W<LNEN_SPEC, 6> {
-        LN6_W::new(self)
+    pub fn ln6(&mut self) -> LN6_W<LNEN_SPEC> {
+        LN6_W::new(self, 6)
     }
     #[doc = "Bit 7 - Line 7 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln7(&mut self) -> LN7_W<LNEN_SPEC, 7> {
-        LN7_W::new(self)
+    pub fn ln7(&mut self) -> LN7_W<LNEN_SPEC> {
+        LN7_W::new(self, 7)
     }
     #[doc = "Bit 8 - Line 8 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln8(&mut self) -> LN8_W<LNEN_SPEC, 8> {
-        LN8_W::new(self)
+    pub fn ln8(&mut self) -> LN8_W<LNEN_SPEC> {
+        LN8_W::new(self, 8)
     }
     #[doc = "Bit 9 - Line 9 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln9(&mut self) -> LN9_W<LNEN_SPEC, 9> {
-        LN9_W::new(self)
+    pub fn ln9(&mut self) -> LN9_W<LNEN_SPEC> {
+        LN9_W::new(self, 9)
     }
     #[doc = "Bit 10 - Line 10 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln10(&mut self) -> LN10_W<LNEN_SPEC, 10> {
-        LN10_W::new(self)
+    pub fn ln10(&mut self) -> LN10_W<LNEN_SPEC> {
+        LN10_W::new(self, 10)
     }
     #[doc = "Bit 11 - Line 11 Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ln11(&mut self) -> LN11_W<LNEN_SPEC, 11> {
-        LN11_W::new(self)
+    pub fn ln11(&mut self) -> LN11_W<LNEN_SPEC> {
+        LN11_W::new(self, 11)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

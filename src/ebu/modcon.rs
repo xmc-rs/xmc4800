@@ -43,8 +43,8 @@ impl SDTRI_R {
     }
 }
 #[doc = "Field `SDTRI` writer - SDRAM Tristate"]
-pub type SDTRI_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SDTRI_A>;
-impl<'a, REG, const O: u8> SDTRI_W<'a, REG, O>
+pub type SDTRI_W<'a, REG> = crate::BitWriter<'a, REG, SDTRI_A>;
+impl<'a, REG> SDTRI_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -96,8 +96,8 @@ impl EXTLOCK_R {
     }
 }
 #[doc = "Field `EXTLOCK` writer - External Bus Lock Control"]
-pub type EXTLOCK_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EXTLOCK_A>;
-impl<'a, REG, const O: u8> EXTLOCK_W<'a, REG, O>
+pub type EXTLOCK_W<'a, REG> = crate::BitWriter<'a, REG, EXTLOCK_A>;
+impl<'a, REG> EXTLOCK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -149,8 +149,8 @@ impl ARBSYNC_R {
     }
 }
 #[doc = "Field `ARBSYNC` writer - Arbitration Signal Synchronization Control"]
-pub type ARBSYNC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ARBSYNC_A>;
-impl<'a, REG, const O: u8> ARBSYNC_W<'a, REG, O>
+pub type ARBSYNC_W<'a, REG> = crate::BitWriter<'a, REG, ARBSYNC_A>;
+impl<'a, REG> ARBSYNC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -223,8 +223,8 @@ impl ARBMODE_R {
     }
 }
 #[doc = "Field `ARBMODE` writer - Arbitration Mode Selection"]
-pub type ARBMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ARBMODE_A>;
-impl<'a, REG, const O: u8> ARBMODE_W<'a, REG, O>
+pub type ARBMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ARBMODE_A>;
+impl<'a, REG> ARBMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -300,8 +300,8 @@ impl TIMEOUTC_R {
     }
 }
 #[doc = "Field `TIMEOUTC` writer - Bus Time-out Control"]
-pub type TIMEOUTC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O, TIMEOUTC_A>;
-impl<'a, REG, const O: u8> TIMEOUTC_W<'a, REG, O>
+pub type TIMEOUTC_W<'a, REG> = crate::FieldWriter<'a, REG, 8, TIMEOUTC_A>;
+impl<'a, REG> TIMEOUTC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -325,15 +325,15 @@ where
 #[doc = "Field `LOCKTIMEOUT` reader - Lock Timeout Counter Preload"]
 pub type LOCKTIMEOUT_R = crate::FieldReader;
 #[doc = "Field `LOCKTIMEOUT` writer - Lock Timeout Counter Preload"]
-pub type LOCKTIMEOUT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type LOCKTIMEOUT_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `GLOBALCS` reader - Global Chip Select Enable"]
 pub type GLOBALCS_R = crate::FieldReader;
 #[doc = "Field `GLOBALCS` writer - Global Chip Select Enable"]
-pub type GLOBALCS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type GLOBALCS_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `ACCSINH` reader - Access Inhibit request"]
 pub type ACCSINH_R = crate::BitReader;
 #[doc = "Field `ACCSINH` writer - Access Inhibit request"]
-pub type ACCSINH_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type ACCSINH_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ACCSINHACK` reader - Access inhibit acknowledge"]
 pub type ACCSINHACK_R = crate::BitReader;
 #[doc = "Field `ALE` reader - ALE Mode"]
@@ -373,8 +373,8 @@ impl ALE_R {
     }
 }
 #[doc = "Field `ALE` writer - ALE Mode"]
-pub type ALE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ALE_A>;
-impl<'a, REG, const O: u8> ALE_W<'a, REG, O>
+pub type ALE_W<'a, REG> = crate::BitWriter<'a, REG, ALE_A>;
+impl<'a, REG> ALE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -455,56 +455,56 @@ impl W {
     #[doc = "Bit 2 - SDRAM Tristate"]
     #[inline(always)]
     #[must_use]
-    pub fn sdtri(&mut self) -> SDTRI_W<MODCON_SPEC, 2> {
-        SDTRI_W::new(self)
+    pub fn sdtri(&mut self) -> SDTRI_W<MODCON_SPEC> {
+        SDTRI_W::new(self, 2)
     }
     #[doc = "Bit 4 - External Bus Lock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn extlock(&mut self) -> EXTLOCK_W<MODCON_SPEC, 4> {
-        EXTLOCK_W::new(self)
+    pub fn extlock(&mut self) -> EXTLOCK_W<MODCON_SPEC> {
+        EXTLOCK_W::new(self, 4)
     }
     #[doc = "Bit 5 - Arbitration Signal Synchronization Control"]
     #[inline(always)]
     #[must_use]
-    pub fn arbsync(&mut self) -> ARBSYNC_W<MODCON_SPEC, 5> {
-        ARBSYNC_W::new(self)
+    pub fn arbsync(&mut self) -> ARBSYNC_W<MODCON_SPEC> {
+        ARBSYNC_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Arbitration Mode Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn arbmode(&mut self) -> ARBMODE_W<MODCON_SPEC, 6> {
-        ARBMODE_W::new(self)
+    pub fn arbmode(&mut self) -> ARBMODE_W<MODCON_SPEC> {
+        ARBMODE_W::new(self, 6)
     }
     #[doc = "Bits 8:15 - Bus Time-out Control"]
     #[inline(always)]
     #[must_use]
-    pub fn timeoutc(&mut self) -> TIMEOUTC_W<MODCON_SPEC, 8> {
-        TIMEOUTC_W::new(self)
+    pub fn timeoutc(&mut self) -> TIMEOUTC_W<MODCON_SPEC> {
+        TIMEOUTC_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Lock Timeout Counter Preload"]
     #[inline(always)]
     #[must_use]
-    pub fn locktimeout(&mut self) -> LOCKTIMEOUT_W<MODCON_SPEC, 16> {
-        LOCKTIMEOUT_W::new(self)
+    pub fn locktimeout(&mut self) -> LOCKTIMEOUT_W<MODCON_SPEC> {
+        LOCKTIMEOUT_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - Global Chip Select Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn globalcs(&mut self) -> GLOBALCS_W<MODCON_SPEC, 24> {
-        GLOBALCS_W::new(self)
+    pub fn globalcs(&mut self) -> GLOBALCS_W<MODCON_SPEC> {
+        GLOBALCS_W::new(self, 24)
     }
     #[doc = "Bit 28 - Access Inhibit request"]
     #[inline(always)]
     #[must_use]
-    pub fn accsinh(&mut self) -> ACCSINH_W<MODCON_SPEC, 28> {
-        ACCSINH_W::new(self)
+    pub fn accsinh(&mut self) -> ACCSINH_W<MODCON_SPEC> {
+        ACCSINH_W::new(self, 28)
     }
     #[doc = "Bit 31 - ALE Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ale(&mut self) -> ALE_W<MODCON_SPEC, 31> {
-        ALE_W::new(self)
+    pub fn ale(&mut self) -> ALE_W<MODCON_SPEC> {
+        ALE_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

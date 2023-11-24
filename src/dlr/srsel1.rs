@@ -5,19 +5,19 @@ pub type W = crate::W<SRSEL1_SPEC>;
 #[doc = "Field `RS8` reader - Request Source for Line 8"]
 pub type RS8_R = crate::FieldReader;
 #[doc = "Field `RS8` writer - Request Source for Line 8"]
-pub type RS8_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type RS8_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `RS9` reader - Request Source for Line 9"]
 pub type RS9_R = crate::FieldReader;
 #[doc = "Field `RS9` writer - Request Source for Line 9"]
-pub type RS9_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type RS9_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `RS10` reader - Request Source for Line 10"]
 pub type RS10_R = crate::FieldReader;
 #[doc = "Field `RS10` writer - Request Source for Line 10"]
-pub type RS10_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type RS10_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `RS11` reader - Request Source for Line 11"]
 pub type RS11_R = crate::FieldReader;
 #[doc = "Field `RS11` writer - Request Source for Line 11"]
-pub type RS11_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type RS11_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:3 - Request Source for Line 8"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bits 0:3 - Request Source for Line 8"]
     #[inline(always)]
     #[must_use]
-    pub fn rs8(&mut self) -> RS8_W<SRSEL1_SPEC, 0> {
-        RS8_W::new(self)
+    pub fn rs8(&mut self) -> RS8_W<SRSEL1_SPEC> {
+        RS8_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Request Source for Line 9"]
     #[inline(always)]
     #[must_use]
-    pub fn rs9(&mut self) -> RS9_W<SRSEL1_SPEC, 4> {
-        RS9_W::new(self)
+    pub fn rs9(&mut self) -> RS9_W<SRSEL1_SPEC> {
+        RS9_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Request Source for Line 10"]
     #[inline(always)]
     #[must_use]
-    pub fn rs10(&mut self) -> RS10_W<SRSEL1_SPEC, 8> {
-        RS10_W::new(self)
+    pub fn rs10(&mut self) -> RS10_W<SRSEL1_SPEC> {
+        RS10_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Request Source for Line 11"]
     #[inline(always)]
     #[must_use]
-    pub fn rs11(&mut self) -> RS11_W<SRSEL1_SPEC, 12> {
-        RS11_W::new(self)
+    pub fn rs11(&mut self) -> RS11_W<SRSEL1_SPEC> {
+        RS11_W::new(self, 12)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

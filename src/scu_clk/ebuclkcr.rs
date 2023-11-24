@@ -5,7 +5,7 @@ pub type W = crate::W<EBUCLKCR_SPEC>;
 #[doc = "Field `EBUDIV` reader - EBU Clock Divider Value"]
 pub type EBUDIV_R = crate::FieldReader;
 #[doc = "Field `EBUDIV` writer - EBU Clock Divider Value"]
-pub type EBUDIV_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 6, O>;
+pub type EBUDIV_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 impl R {
     #[doc = "Bits 0:5 - EBU Clock Divider Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:5 - EBU Clock Divider Value"]
     #[inline(always)]
     #[must_use]
-    pub fn ebudiv(&mut self) -> EBUDIV_W<EBUCLKCR_SPEC, 0> {
-        EBUDIV_W::new(self)
+    pub fn ebudiv(&mut self) -> EBUDIV_W<EBUCLKCR_SPEC> {
+        EBUDIV_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

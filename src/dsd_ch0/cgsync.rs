@@ -9,11 +9,11 @@ pub type SDCAP_R = crate::FieldReader;
 #[doc = "Field `SDPOS` reader - Sign Delay Value for Positive Halfwave"]
 pub type SDPOS_R = crate::FieldReader;
 #[doc = "Field `SDPOS` writer - Sign Delay Value for Positive Halfwave"]
-pub type SDPOS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SDPOS_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `SDNEG` reader - Sign Delay Value for Negative Halfwave"]
 pub type SDNEG_R = crate::FieldReader;
 #[doc = "Field `SDNEG` writer - Sign Delay Value for Negative Halfwave"]
-pub type SDNEG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 8, O>;
+pub type SDNEG_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7 - Sign Delay Counter"]
     #[inline(always)]
@@ -40,14 +40,14 @@ impl W {
     #[doc = "Bits 16:23 - Sign Delay Value for Positive Halfwave"]
     #[inline(always)]
     #[must_use]
-    pub fn sdpos(&mut self) -> SDPOS_W<CGSYNC_SPEC, 16> {
-        SDPOS_W::new(self)
+    pub fn sdpos(&mut self) -> SDPOS_W<CGSYNC_SPEC> {
+        SDPOS_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Sign Delay Value for Negative Halfwave"]
     #[inline(always)]
     #[must_use]
-    pub fn sdneg(&mut self) -> SDNEG_W<CGSYNC_SPEC, 24> {
-        SDNEG_W::new(self)
+    pub fn sdneg(&mut self) -> SDNEG_W<CGSYNC_SPEC> {
+        SDNEG_W::new(self, 24)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

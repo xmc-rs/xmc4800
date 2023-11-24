@@ -5,19 +5,19 @@ pub type W = crate::W<RAWTFR_SPEC>;
 #[doc = "Field `CH0` reader - Raw Interrupt Status for channel 0"]
 pub type CH0_R = crate::BitReader;
 #[doc = "Field `CH0` writer - Raw Interrupt Status for channel 0"]
-pub type CH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH0_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH1` reader - Raw Interrupt Status for channel 1"]
 pub type CH1_R = crate::BitReader;
 #[doc = "Field `CH1` writer - Raw Interrupt Status for channel 1"]
-pub type CH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH1_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH2` reader - Raw Interrupt Status for channel 2"]
 pub type CH2_R = crate::BitReader;
 #[doc = "Field `CH2` writer - Raw Interrupt Status for channel 2"]
-pub type CH2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH2_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `CH3` reader - Raw Interrupt Status for channel 3"]
 pub type CH3_R = crate::BitReader;
 #[doc = "Field `CH3` writer - Raw Interrupt Status for channel 3"]
-pub type CH3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type CH3_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - Raw Interrupt Status for channel 0"]
     #[inline(always)]
@@ -44,26 +44,26 @@ impl W {
     #[doc = "Bit 0 - Raw Interrupt Status for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0(&mut self) -> CH0_W<RAWTFR_SPEC, 0> {
-        CH0_W::new(self)
+    pub fn ch0(&mut self) -> CH0_W<RAWTFR_SPEC> {
+        CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Raw Interrupt Status for channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1(&mut self) -> CH1_W<RAWTFR_SPEC, 1> {
-        CH1_W::new(self)
+    pub fn ch1(&mut self) -> CH1_W<RAWTFR_SPEC> {
+        CH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Raw Interrupt Status for channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn ch2(&mut self) -> CH2_W<RAWTFR_SPEC, 2> {
-        CH2_W::new(self)
+    pub fn ch2(&mut self) -> CH2_W<RAWTFR_SPEC> {
+        CH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Raw Interrupt Status for channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ch3(&mut self) -> CH3_W<RAWTFR_SPEC, 3> {
-        CH3_W::new(self)
+    pub fn ch3(&mut self) -> CH3_W<RAWTFR_SPEC> {
+        CH3_W::new(self, 3)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

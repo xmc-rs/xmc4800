@@ -1,21 +1,21 @@
 #[doc = "Register `MCMC` writer"]
 pub type W = crate::W<MCMC_SPEC>;
 #[doc = "Field `MNPC` writer - Multi-Channel Pattern Update Enable Clear"]
-pub type MNPC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MNPC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `MPC` writer - Multi-Channel Pattern clear"]
-pub type MPC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type MPC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Multi-Channel Pattern Update Enable Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn mnpc(&mut self) -> MNPC_W<MCMC_SPEC, 0> {
-        MNPC_W::new(self)
+    pub fn mnpc(&mut self) -> MNPC_W<MCMC_SPEC> {
+        MNPC_W::new(self, 0)
     }
     #[doc = "Bit 1 - Multi-Channel Pattern clear"]
     #[inline(always)]
     #[must_use]
-    pub fn mpc(&mut self) -> MPC_W<MCMC_SPEC, 1> {
-        MPC_W::new(self)
+    pub fn mpc(&mut self) -> MPC_W<MCMC_SPEC> {
+        MPC_W::new(self, 1)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

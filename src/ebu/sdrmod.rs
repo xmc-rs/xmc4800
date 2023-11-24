@@ -68,8 +68,8 @@ impl BURSTL_R {
     }
 }
 #[doc = "Field `BURSTL` writer - Burst length"]
-pub type BURSTL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, BURSTL_A>;
-impl<'a, REG, const O: u8> BURSTL_W<'a, REG, O>
+pub type BURSTL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, BURSTL_A>;
+impl<'a, REG> BURSTL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -130,8 +130,8 @@ impl BTYP_R {
     }
 }
 #[doc = "Field `BTYP` writer - Burst type"]
-pub type BTYP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BTYP_A>;
-impl<'a, REG, const O: u8> BTYP_W<'a, REG, O>
+pub type BTYP_W<'a, REG> = crate::BitWriter<'a, REG, BTYP_A>;
+impl<'a, REG> BTYP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -183,8 +183,8 @@ impl CASLAT_R {
     }
 }
 #[doc = "Field `CASLAT` writer - CAS latency"]
-pub type CASLAT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, CASLAT_A>;
-impl<'a, REG, const O: u8> CASLAT_W<'a, REG, O>
+pub type CASLAT_W<'a, REG> = crate::FieldWriter<'a, REG, 3, CASLAT_A>;
+impl<'a, REG> CASLAT_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -234,8 +234,8 @@ impl OPMODE_R {
     }
 }
 #[doc = "Field `OPMODE` writer - Operation Mode"]
-pub type OPMODE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 7, O, OPMODE_A>;
-impl<'a, REG, const O: u8> OPMODE_W<'a, REG, O>
+pub type OPMODE_W<'a, REG> = crate::FieldWriter<'a, REG, 7, OPMODE_A>;
+impl<'a, REG> OPMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -247,15 +247,15 @@ where
     }
 }
 #[doc = "Field `COLDSTART` writer - SDRAM coldstart"]
-pub type COLDSTART_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O>;
+pub type COLDSTART_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `XOPM` reader - Extended Operation Mode"]
 pub type XOPM_R = crate::FieldReader<u16>;
 #[doc = "Field `XOPM` writer - Extended Operation Mode"]
-pub type XOPM_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 12, O, u16>;
+pub type XOPM_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "Field `XBA` reader - Extended Operation Bank Select"]
 pub type XBA_R = crate::FieldReader;
 #[doc = "Field `XBA` writer - Extended Operation Bank Select"]
-pub type XBA_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type XBA_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:2 - Burst length"]
     #[inline(always)]
@@ -292,44 +292,44 @@ impl W {
     #[doc = "Bits 0:2 - Burst length"]
     #[inline(always)]
     #[must_use]
-    pub fn burstl(&mut self) -> BURSTL_W<SDRMOD_SPEC, 0> {
-        BURSTL_W::new(self)
+    pub fn burstl(&mut self) -> BURSTL_W<SDRMOD_SPEC> {
+        BURSTL_W::new(self, 0)
     }
     #[doc = "Bit 3 - Burst type"]
     #[inline(always)]
     #[must_use]
-    pub fn btyp(&mut self) -> BTYP_W<SDRMOD_SPEC, 3> {
-        BTYP_W::new(self)
+    pub fn btyp(&mut self) -> BTYP_W<SDRMOD_SPEC> {
+        BTYP_W::new(self, 3)
     }
     #[doc = "Bits 4:6 - CAS latency"]
     #[inline(always)]
     #[must_use]
-    pub fn caslat(&mut self) -> CASLAT_W<SDRMOD_SPEC, 4> {
-        CASLAT_W::new(self)
+    pub fn caslat(&mut self) -> CASLAT_W<SDRMOD_SPEC> {
+        CASLAT_W::new(self, 4)
     }
     #[doc = "Bits 7:13 - Operation Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn opmode(&mut self) -> OPMODE_W<SDRMOD_SPEC, 7> {
-        OPMODE_W::new(self)
+    pub fn opmode(&mut self) -> OPMODE_W<SDRMOD_SPEC> {
+        OPMODE_W::new(self, 7)
     }
     #[doc = "Bit 15 - SDRAM coldstart"]
     #[inline(always)]
     #[must_use]
-    pub fn coldstart(&mut self) -> COLDSTART_W<SDRMOD_SPEC, 15> {
-        COLDSTART_W::new(self)
+    pub fn coldstart(&mut self) -> COLDSTART_W<SDRMOD_SPEC> {
+        COLDSTART_W::new(self, 15)
     }
     #[doc = "Bits 16:27 - Extended Operation Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn xopm(&mut self) -> XOPM_W<SDRMOD_SPEC, 16> {
-        XOPM_W::new(self)
+    pub fn xopm(&mut self) -> XOPM_W<SDRMOD_SPEC> {
+        XOPM_W::new(self, 16)
     }
     #[doc = "Bits 28:31 - Extended Operation Bank Select"]
     #[inline(always)]
     #[must_use]
-    pub fn xba(&mut self) -> XBA_W<SDRMOD_SPEC, 28> {
-        XBA_W::new(self)
+    pub fn xba(&mut self) -> XBA_W<SDRMOD_SPEC> {
+        XBA_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

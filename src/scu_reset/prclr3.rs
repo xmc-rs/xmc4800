@@ -15,8 +15,8 @@ impl From<EBURS_AW> for bool {
     }
 }
 #[doc = "Field `EBURS` writer - EBU Reset Assert"]
-pub type EBURS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EBURS_AW>;
-impl<'a, REG, const O: u8> EBURS_W<'a, REG, O>
+pub type EBURS_W<'a, REG> = crate::BitWriter<'a, REG, EBURS_AW>;
+impl<'a, REG> EBURS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -35,8 +35,8 @@ impl W {
     #[doc = "Bit 2 - EBU Reset Assert"]
     #[inline(always)]
     #[must_use]
-    pub fn eburs(&mut self) -> EBURS_W<PRCLR3_SPEC, 2> {
-        EBURS_W::new(self)
+    pub fn eburs(&mut self) -> EBURS_W<PRCLR3_SPEC> {
+        EBURS_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

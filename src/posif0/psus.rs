@@ -60,8 +60,8 @@ impl QSUS_R {
     }
 }
 #[doc = "Field `QSUS` writer - Quadrature Mode Suspend Config"]
-pub type QSUS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, QSUS_A>;
-impl<'a, REG, const O: u8> QSUS_W<'a, REG, O>
+pub type QSUS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, QSUS_A>;
+impl<'a, REG> QSUS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -145,8 +145,8 @@ impl MSUS_R {
     }
 }
 #[doc = "Field `MSUS` writer - Multi-Channel Mode Suspend Config"]
-pub type MSUS_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, MSUS_A>;
-impl<'a, REG, const O: u8> MSUS_W<'a, REG, O>
+pub type MSUS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, MSUS_A>;
+impl<'a, REG> MSUS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -188,14 +188,14 @@ impl W {
     #[doc = "Bits 0:1 - Quadrature Mode Suspend Config"]
     #[inline(always)]
     #[must_use]
-    pub fn qsus(&mut self) -> QSUS_W<PSUS_SPEC, 0> {
-        QSUS_W::new(self)
+    pub fn qsus(&mut self) -> QSUS_W<PSUS_SPEC> {
+        QSUS_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Multi-Channel Mode Suspend Config"]
     #[inline(always)]
     #[must_use]
-    pub fn msus(&mut self) -> MSUS_W<PSUS_SPEC, 2> {
-        MSUS_W::new(self)
+    pub fn msus(&mut self) -> MSUS_W<PSUS_SPEC> {
+        MSUS_W::new(self, 2)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

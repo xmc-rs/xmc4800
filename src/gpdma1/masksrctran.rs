@@ -39,8 +39,8 @@ impl CH0_R {
     }
 }
 #[doc = "Field `CH0` writer - Mask bit for channel 0"]
-pub type CH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH0_A>;
-impl<'a, REG, const O: u8> CH0_W<'a, REG, O>
+pub type CH0_W<'a, REG> = crate::BitWriter<'a, REG, CH0_A>;
+impl<'a, REG> CH0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -92,8 +92,8 @@ impl CH1_R {
     }
 }
 #[doc = "Field `CH1` writer - Mask bit for channel 1"]
-pub type CH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH1_A>;
-impl<'a, REG, const O: u8> CH1_W<'a, REG, O>
+pub type CH1_W<'a, REG> = crate::BitWriter<'a, REG, CH1_A>;
+impl<'a, REG> CH1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -145,8 +145,8 @@ impl CH2_R {
     }
 }
 #[doc = "Field `CH2` writer - Mask bit for channel 2"]
-pub type CH2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH2_A>;
-impl<'a, REG, const O: u8> CH2_W<'a, REG, O>
+pub type CH2_W<'a, REG> = crate::BitWriter<'a, REG, CH2_A>;
+impl<'a, REG> CH2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -198,8 +198,8 @@ impl CH3_R {
     }
 }
 #[doc = "Field `CH3` writer - Mask bit for channel 3"]
-pub type CH3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CH3_A>;
-impl<'a, REG, const O: u8> CH3_W<'a, REG, O>
+pub type CH3_W<'a, REG> = crate::BitWriter<'a, REG, CH3_A>;
+impl<'a, REG> CH3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -229,8 +229,8 @@ impl From<WE_CH0_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH0` writer - Write enable for mask bit of channel 0"]
-pub type WE_CH0_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WE_CH0_AW>;
-impl<'a, REG, const O: u8> WE_CH0_W<'a, REG, O>
+pub type WE_CH0_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH0_AW>;
+impl<'a, REG> WE_CH0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -260,8 +260,8 @@ impl From<WE_CH1_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH1` writer - Write enable for mask bit of channel 1"]
-pub type WE_CH1_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WE_CH1_AW>;
-impl<'a, REG, const O: u8> WE_CH1_W<'a, REG, O>
+pub type WE_CH1_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH1_AW>;
+impl<'a, REG> WE_CH1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -291,8 +291,8 @@ impl From<WE_CH2_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH2` writer - Write enable for mask bit of channel 2"]
-pub type WE_CH2_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WE_CH2_AW>;
-impl<'a, REG, const O: u8> WE_CH2_W<'a, REG, O>
+pub type WE_CH2_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH2_AW>;
+impl<'a, REG> WE_CH2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -322,8 +322,8 @@ impl From<WE_CH3_AW> for bool {
     }
 }
 #[doc = "Field `WE_CH3` writer - Write enable for mask bit of channel 3"]
-pub type WE_CH3_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WE_CH3_AW>;
-impl<'a, REG, const O: u8> WE_CH3_W<'a, REG, O>
+pub type WE_CH3_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH3_AW>;
+impl<'a, REG> WE_CH3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -364,50 +364,50 @@ impl W {
     #[doc = "Bit 0 - Mask bit for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0(&mut self) -> CH0_W<MASKSRCTRAN_SPEC, 0> {
-        CH0_W::new(self)
+    pub fn ch0(&mut self) -> CH0_W<MASKSRCTRAN_SPEC> {
+        CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Mask bit for channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1(&mut self) -> CH1_W<MASKSRCTRAN_SPEC, 1> {
-        CH1_W::new(self)
+    pub fn ch1(&mut self) -> CH1_W<MASKSRCTRAN_SPEC> {
+        CH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Mask bit for channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn ch2(&mut self) -> CH2_W<MASKSRCTRAN_SPEC, 2> {
-        CH2_W::new(self)
+    pub fn ch2(&mut self) -> CH2_W<MASKSRCTRAN_SPEC> {
+        CH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Mask bit for channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ch3(&mut self) -> CH3_W<MASKSRCTRAN_SPEC, 3> {
-        CH3_W::new(self)
+    pub fn ch3(&mut self) -> CH3_W<MASKSRCTRAN_SPEC> {
+        CH3_W::new(self, 3)
     }
     #[doc = "Bit 8 - Write enable for mask bit of channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch0(&mut self) -> WE_CH0_W<MASKSRCTRAN_SPEC, 8> {
-        WE_CH0_W::new(self)
+    pub fn we_ch0(&mut self) -> WE_CH0_W<MASKSRCTRAN_SPEC> {
+        WE_CH0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Write enable for mask bit of channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch1(&mut self) -> WE_CH1_W<MASKSRCTRAN_SPEC, 9> {
-        WE_CH1_W::new(self)
+    pub fn we_ch1(&mut self) -> WE_CH1_W<MASKSRCTRAN_SPEC> {
+        WE_CH1_W::new(self, 9)
     }
     #[doc = "Bit 10 - Write enable for mask bit of channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch2(&mut self) -> WE_CH2_W<MASKSRCTRAN_SPEC, 10> {
-        WE_CH2_W::new(self)
+    pub fn we_ch2(&mut self) -> WE_CH2_W<MASKSRCTRAN_SPEC> {
+        WE_CH2_W::new(self, 10)
     }
     #[doc = "Bit 11 - Write enable for mask bit of channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch3(&mut self) -> WE_CH3_W<MASKSRCTRAN_SPEC, 11> {
-        WE_CH3_W::new(self)
+    pub fn we_ch3(&mut self) -> WE_CH3_W<MASKSRCTRAN_SPEC> {
+        WE_CH3_W::new(self, 11)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

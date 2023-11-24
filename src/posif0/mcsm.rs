@@ -5,7 +5,7 @@ pub type W = crate::W<MCSM_SPEC>;
 #[doc = "Field `MCMPS` reader - Shadow Multi-Channel Pattern"]
 pub type MCMPS_R = crate::FieldReader<u16>;
 #[doc = "Field `MCMPS` writer - Shadow Multi-Channel Pattern"]
-pub type MCMPS_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type MCMPS_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Shadow Multi-Channel Pattern"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Shadow Multi-Channel Pattern"]
     #[inline(always)]
     #[must_use]
-    pub fn mcmps(&mut self) -> MCMPS_W<MCSM_SPEC, 0> {
-        MCMPS_W::new(self)
+    pub fn mcmps(&mut self) -> MCMPS_W<MCSM_SPEC> {
+        MCMPS_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

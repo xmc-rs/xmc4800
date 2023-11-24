@@ -60,8 +60,8 @@ impl FETBLEN_R {
     }
 }
 #[doc = "Field `FETBLEN` writer - Burst Length for Synchronous Burst"]
-pub type FETBLEN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, FETBLEN_A>;
-impl<'a, REG, const O: u8> FETBLEN_W<'a, REG, O>
+pub type FETBLEN_W<'a, REG> = crate::FieldWriter<'a, REG, 3, FETBLEN_A>;
+impl<'a, REG> FETBLEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -124,8 +124,8 @@ impl FBBMSEL_R {
     }
 }
 #[doc = "Field `FBBMSEL` writer - Synchronous burst buffer mode select"]
-pub type FBBMSEL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FBBMSEL_A>;
-impl<'a, REG, const O: u8> FBBMSEL_W<'a, REG, O>
+pub type FBBMSEL_W<'a, REG> = crate::BitWriter<'a, REG, FBBMSEL_A>;
+impl<'a, REG> FBBMSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -179,8 +179,8 @@ impl ECSE_R {
     }
 }
 #[doc = "Field `ECSE` writer - Early Chip Select for Synchronous Burst"]
-pub type ECSE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ECSE_A>;
-impl<'a, REG, const O: u8> ECSE_W<'a, REG, O>
+pub type ECSE_W<'a, REG> = crate::BitWriter<'a, REG, ECSE_A>;
+impl<'a, REG> ECSE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -232,8 +232,8 @@ impl EBSE_R {
     }
 }
 #[doc = "Field `EBSE` writer - Early Burst Signal Enable for Synchronous Burst"]
-pub type EBSE_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EBSE_A>;
-impl<'a, REG, const O: u8> EBSE_W<'a, REG, O>
+pub type EBSE_W<'a, REG> = crate::BitWriter<'a, REG, EBSE_A>;
+impl<'a, REG> EBSE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -285,8 +285,8 @@ impl WAITINV_R {
     }
 }
 #[doc = "Field `WAITINV` writer - Reversed polarity at WAIT"]
-pub type WAITINV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WAITINV_A>;
-impl<'a, REG, const O: u8> WAITINV_W<'a, REG, O>
+pub type WAITINV_W<'a, REG> = crate::BitWriter<'a, REG, WAITINV_A>;
+impl<'a, REG> WAITINV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -351,8 +351,8 @@ impl BCGEN_R {
     }
 }
 #[doc = "Field `BCGEN` writer - Byte Control Signal Control"]
-pub type BCGEN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, BCGEN_A>;
-impl<'a, REG, const O: u8> BCGEN_W<'a, REG, O>
+pub type BCGEN_W<'a, REG> = crate::FieldWriter<'a, REG, 2, BCGEN_A>;
+impl<'a, REG> BCGEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -378,7 +378,7 @@ pub type PORTW_R = crate::FieldReader;
 #[doc = "Field `WAIT` reader - External Wait Control: 0=OFF (default after reset)., 1=Asynchronous input at WAIT., 2=Synchronous input at WAIT., 3=reserved., 0=OFF (default after reset)., 1=Wait for page load (Early WAIT)., 2=Wait for page load (WAIT with data)., 3=Abort and retry access.,"]
 pub type WAIT_R = crate::FieldReader;
 #[doc = "Field `WAIT` writer - External Wait Control: 0=OFF (default after reset)., 1=Asynchronous input at WAIT., 2=Synchronous input at WAIT., 3=reserved., 0=OFF (default after reset)., 1=Wait for page load (Early WAIT)., 2=Wait for page load (WAIT with data)., 3=Abort and retry access.,"]
-pub type WAIT_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O>;
+pub type WAIT_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `AAP` reader - Asynchronous Address phase:"]
 pub type AAP_R = crate::BitReader<AAP_A>;
 #[doc = "Asynchronous Address phase:\n\nValue on reset: 0"]
@@ -416,8 +416,8 @@ impl AAP_R {
     }
 }
 #[doc = "Field `AAP` writer - Asynchronous Address phase:"]
-pub type AAP_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, AAP_A>;
-impl<'a, REG, const O: u8> AAP_W<'a, REG, O>
+pub type AAP_W<'a, REG> = crate::BitWriter<'a, REG, AAP_A>;
+impl<'a, REG> AAP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -469,8 +469,8 @@ impl LOCKCS_R {
     }
 }
 #[doc = "Field `LOCKCS` writer - Lock Chip Select"]
-pub type LOCKCS_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, LOCKCS_A>;
-impl<'a, REG, const O: u8> LOCKCS_W<'a, REG, O>
+pub type LOCKCS_W<'a, REG> = crate::BitWriter<'a, REG, LOCKCS_A>;
+impl<'a, REG> LOCKCS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -488,7 +488,7 @@ where
 #[doc = "Field `AGEN` reader - Device Type for Region"]
 pub type AGEN_R = crate::FieldReader;
 #[doc = "Field `AGEN` writer - Device Type for Region"]
-pub type AGEN_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O>;
+pub type AGEN_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:2 - Burst Length for Synchronous Burst"]
     #[inline(always)]
@@ -555,62 +555,62 @@ impl W {
     #[doc = "Bits 0:2 - Burst Length for Synchronous Burst"]
     #[inline(always)]
     #[must_use]
-    pub fn fetblen(&mut self) -> FETBLEN_W<BUSWCON1_SPEC, 0> {
-        FETBLEN_W::new(self)
+    pub fn fetblen(&mut self) -> FETBLEN_W<BUSWCON1_SPEC> {
+        FETBLEN_W::new(self, 0)
     }
     #[doc = "Bit 3 - Synchronous burst buffer mode select"]
     #[inline(always)]
     #[must_use]
-    pub fn fbbmsel(&mut self) -> FBBMSEL_W<BUSWCON1_SPEC, 3> {
-        FBBMSEL_W::new(self)
+    pub fn fbbmsel(&mut self) -> FBBMSEL_W<BUSWCON1_SPEC> {
+        FBBMSEL_W::new(self, 3)
     }
     #[doc = "Bit 16 - Early Chip Select for Synchronous Burst"]
     #[inline(always)]
     #[must_use]
-    pub fn ecse(&mut self) -> ECSE_W<BUSWCON1_SPEC, 16> {
-        ECSE_W::new(self)
+    pub fn ecse(&mut self) -> ECSE_W<BUSWCON1_SPEC> {
+        ECSE_W::new(self, 16)
     }
     #[doc = "Bit 17 - Early Burst Signal Enable for Synchronous Burst"]
     #[inline(always)]
     #[must_use]
-    pub fn ebse(&mut self) -> EBSE_W<BUSWCON1_SPEC, 17> {
-        EBSE_W::new(self)
+    pub fn ebse(&mut self) -> EBSE_W<BUSWCON1_SPEC> {
+        EBSE_W::new(self, 17)
     }
     #[doc = "Bit 19 - Reversed polarity at WAIT"]
     #[inline(always)]
     #[must_use]
-    pub fn waitinv(&mut self) -> WAITINV_W<BUSWCON1_SPEC, 19> {
-        WAITINV_W::new(self)
+    pub fn waitinv(&mut self) -> WAITINV_W<BUSWCON1_SPEC> {
+        WAITINV_W::new(self, 19)
     }
     #[doc = "Bits 20:21 - Byte Control Signal Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bcgen(&mut self) -> BCGEN_W<BUSWCON1_SPEC, 20> {
-        BCGEN_W::new(self)
+    pub fn bcgen(&mut self) -> BCGEN_W<BUSWCON1_SPEC> {
+        BCGEN_W::new(self, 20)
     }
     #[doc = "Bits 24:25 - External Wait Control: 0=OFF (default after reset)., 1=Asynchronous input at WAIT., 2=Synchronous input at WAIT., 3=reserved., 0=OFF (default after reset)., 1=Wait for page load (Early WAIT)., 2=Wait for page load (WAIT with data)., 3=Abort and retry access.,"]
     #[inline(always)]
     #[must_use]
-    pub fn wait(&mut self) -> WAIT_W<BUSWCON1_SPEC, 24> {
-        WAIT_W::new(self)
+    pub fn wait(&mut self) -> WAIT_W<BUSWCON1_SPEC> {
+        WAIT_W::new(self, 24)
     }
     #[doc = "Bit 26 - Asynchronous Address phase:"]
     #[inline(always)]
     #[must_use]
-    pub fn aap(&mut self) -> AAP_W<BUSWCON1_SPEC, 26> {
-        AAP_W::new(self)
+    pub fn aap(&mut self) -> AAP_W<BUSWCON1_SPEC> {
+        AAP_W::new(self, 26)
     }
     #[doc = "Bit 27 - Lock Chip Select"]
     #[inline(always)]
     #[must_use]
-    pub fn lockcs(&mut self) -> LOCKCS_W<BUSWCON1_SPEC, 27> {
-        LOCKCS_W::new(self)
+    pub fn lockcs(&mut self) -> LOCKCS_W<BUSWCON1_SPEC> {
+        LOCKCS_W::new(self, 27)
     }
     #[doc = "Bits 28:31 - Device Type for Region"]
     #[inline(always)]
     #[must_use]
-    pub fn agen(&mut self) -> AGEN_W<BUSWCON1_SPEC, 28> {
-        AGEN_W::new(self)
+    pub fn agen(&mut self) -> AGEN_W<BUSWCON1_SPEC> {
+        AGEN_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

@@ -5,7 +5,7 @@ pub type W = crate::W<OFFM_SPEC>;
 #[doc = "Field `OFFSET` reader - Offset Value"]
 pub type OFFSET_R = crate::FieldReader<u16>;
 #[doc = "Field `OFFSET` writer - Offset Value"]
-pub type OFFSET_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 16, O, u16>;
+pub type OFFSET_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15 - Offset Value"]
     #[inline(always)]
@@ -17,8 +17,8 @@ impl W {
     #[doc = "Bits 0:15 - Offset Value"]
     #[inline(always)]
     #[must_use]
-    pub fn offset(&mut self) -> OFFSET_W<OFFM_SPEC, 0> {
-        OFFSET_W::new(self)
+    pub fn offset(&mut self) -> OFFSET_W<OFFM_SPEC> {
+        OFFSET_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

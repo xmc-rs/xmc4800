@@ -44,8 +44,8 @@ impl MCSEL_R {
     }
 }
 #[doc = "Field `MCSEL` writer - Modulator Clock Select"]
-pub type MCSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, MCSEL_A>;
-impl<'a, REG, const O: u8> MCSEL_W<'a, REG, O>
+pub type MCSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, MCSEL_A>;
+impl<'a, REG> MCSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -72,8 +72,8 @@ impl W {
     #[doc = "Bits 0:2 - Modulator Clock Select"]
     #[inline(always)]
     #[must_use]
-    pub fn mcsel(&mut self) -> MCSEL_W<GLOBCFG_SPEC, 0> {
-        MCSEL_W::new(self)
+    pub fn mcsel(&mut self) -> MCSEL_W<GLOBCFG_SPEC> {
+        MCSEL_W::new(self, 0)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

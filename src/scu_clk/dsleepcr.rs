@@ -44,8 +44,8 @@ impl SYSSEL_R {
     }
 }
 #[doc = "Field `SYSSEL` writer - System Clock Selection Value"]
-pub type SYSSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 2, O, SYSSEL_A>;
-impl<'a, REG, const O: u8> SYSSEL_W<'a, REG, O>
+pub type SYSSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, SYSSEL_A>;
+impl<'a, REG> SYSSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -98,8 +98,8 @@ impl FPDN_R {
     }
 }
 #[doc = "Field `FPDN` writer - Flash Power Down"]
-pub type FPDN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, FPDN_A>;
-impl<'a, REG, const O: u8> FPDN_W<'a, REG, O>
+pub type FPDN_W<'a, REG> = crate::BitWriter<'a, REG, FPDN_A>;
+impl<'a, REG> FPDN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -151,8 +151,8 @@ impl PLLPDN_R {
     }
 }
 #[doc = "Field `PLLPDN` writer - PLL Power Down"]
-pub type PLLPDN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, PLLPDN_A>;
-impl<'a, REG, const O: u8> PLLPDN_W<'a, REG, O>
+pub type PLLPDN_W<'a, REG> = crate::BitWriter<'a, REG, PLLPDN_A>;
+impl<'a, REG> PLLPDN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -204,8 +204,8 @@ impl VCOPDN_R {
     }
 }
 #[doc = "Field `VCOPDN` writer - VCO Power Down"]
-pub type VCOPDN_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, VCOPDN_A>;
-impl<'a, REG, const O: u8> VCOPDN_W<'a, REG, O>
+pub type VCOPDN_W<'a, REG> = crate::BitWriter<'a, REG, VCOPDN_A>;
+impl<'a, REG> VCOPDN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -257,8 +257,8 @@ impl USBCR_R {
     }
 }
 #[doc = "Field `USBCR` writer - USB Clock Control"]
-pub type USBCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, USBCR_A>;
-impl<'a, REG, const O: u8> USBCR_W<'a, REG, O>
+pub type USBCR_W<'a, REG> = crate::BitWriter<'a, REG, USBCR_A>;
+impl<'a, REG> USBCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -310,8 +310,8 @@ impl MMCCR_R {
     }
 }
 #[doc = "Field `MMCCR` writer - MMC Clock Control"]
-pub type MMCCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, MMCCR_A>;
-impl<'a, REG, const O: u8> MMCCR_W<'a, REG, O>
+pub type MMCCR_W<'a, REG> = crate::BitWriter<'a, REG, MMCCR_A>;
+impl<'a, REG> MMCCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -363,8 +363,8 @@ impl ETH0CR_R {
     }
 }
 #[doc = "Field `ETH0CR` writer - Ethernet Clock Control"]
-pub type ETH0CR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, ETH0CR_A>;
-impl<'a, REG, const O: u8> ETH0CR_W<'a, REG, O>
+pub type ETH0CR_W<'a, REG> = crate::BitWriter<'a, REG, ETH0CR_A>;
+impl<'a, REG> ETH0CR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -416,8 +416,8 @@ impl EBUCR_R {
     }
 }
 #[doc = "Field `EBUCR` writer - EBU Clock Control"]
-pub type EBUCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, EBUCR_A>;
-impl<'a, REG, const O: u8> EBUCR_W<'a, REG, O>
+pub type EBUCR_W<'a, REG> = crate::BitWriter<'a, REG, EBUCR_A>;
+impl<'a, REG> EBUCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -469,8 +469,8 @@ impl CCUCR_R {
     }
 }
 #[doc = "Field `CCUCR` writer - CCU Clock Control"]
-pub type CCUCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, CCUCR_A>;
-impl<'a, REG, const O: u8> CCUCR_W<'a, REG, O>
+pub type CCUCR_W<'a, REG> = crate::BitWriter<'a, REG, CCUCR_A>;
+impl<'a, REG> CCUCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -522,8 +522,8 @@ impl WDTCR_R {
     }
 }
 #[doc = "Field `WDTCR` writer - WDT Clock Control"]
-pub type WDTCR_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, WDTCR_A>;
-impl<'a, REG, const O: u8> WDTCR_W<'a, REG, O>
+pub type WDTCR_W<'a, REG> = crate::BitWriter<'a, REG, WDTCR_A>;
+impl<'a, REG> WDTCR_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -594,62 +594,62 @@ impl W {
     #[doc = "Bits 0:1 - System Clock Selection Value"]
     #[inline(always)]
     #[must_use]
-    pub fn syssel(&mut self) -> SYSSEL_W<DSLEEPCR_SPEC, 0> {
-        SYSSEL_W::new(self)
+    pub fn syssel(&mut self) -> SYSSEL_W<DSLEEPCR_SPEC> {
+        SYSSEL_W::new(self, 0)
     }
     #[doc = "Bit 11 - Flash Power Down"]
     #[inline(always)]
     #[must_use]
-    pub fn fpdn(&mut self) -> FPDN_W<DSLEEPCR_SPEC, 11> {
-        FPDN_W::new(self)
+    pub fn fpdn(&mut self) -> FPDN_W<DSLEEPCR_SPEC> {
+        FPDN_W::new(self, 11)
     }
     #[doc = "Bit 12 - PLL Power Down"]
     #[inline(always)]
     #[must_use]
-    pub fn pllpdn(&mut self) -> PLLPDN_W<DSLEEPCR_SPEC, 12> {
-        PLLPDN_W::new(self)
+    pub fn pllpdn(&mut self) -> PLLPDN_W<DSLEEPCR_SPEC> {
+        PLLPDN_W::new(self, 12)
     }
     #[doc = "Bit 13 - VCO Power Down"]
     #[inline(always)]
     #[must_use]
-    pub fn vcopdn(&mut self) -> VCOPDN_W<DSLEEPCR_SPEC, 13> {
-        VCOPDN_W::new(self)
+    pub fn vcopdn(&mut self) -> VCOPDN_W<DSLEEPCR_SPEC> {
+        VCOPDN_W::new(self, 13)
     }
     #[doc = "Bit 16 - USB Clock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn usbcr(&mut self) -> USBCR_W<DSLEEPCR_SPEC, 16> {
-        USBCR_W::new(self)
+    pub fn usbcr(&mut self) -> USBCR_W<DSLEEPCR_SPEC> {
+        USBCR_W::new(self, 16)
     }
     #[doc = "Bit 17 - MMC Clock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn mmccr(&mut self) -> MMCCR_W<DSLEEPCR_SPEC, 17> {
-        MMCCR_W::new(self)
+    pub fn mmccr(&mut self) -> MMCCR_W<DSLEEPCR_SPEC> {
+        MMCCR_W::new(self, 17)
     }
     #[doc = "Bit 18 - Ethernet Clock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn eth0cr(&mut self) -> ETH0CR_W<DSLEEPCR_SPEC, 18> {
-        ETH0CR_W::new(self)
+    pub fn eth0cr(&mut self) -> ETH0CR_W<DSLEEPCR_SPEC> {
+        ETH0CR_W::new(self, 18)
     }
     #[doc = "Bit 19 - EBU Clock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ebucr(&mut self) -> EBUCR_W<DSLEEPCR_SPEC, 19> {
-        EBUCR_W::new(self)
+    pub fn ebucr(&mut self) -> EBUCR_W<DSLEEPCR_SPEC> {
+        EBUCR_W::new(self, 19)
     }
     #[doc = "Bit 20 - CCU Clock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ccucr(&mut self) -> CCUCR_W<DSLEEPCR_SPEC, 20> {
-        CCUCR_W::new(self)
+    pub fn ccucr(&mut self) -> CCUCR_W<DSLEEPCR_SPEC> {
+        CCUCR_W::new(self, 20)
     }
     #[doc = "Bit 21 - WDT Clock Control"]
     #[inline(always)]
     #[must_use]
-    pub fn wdtcr(&mut self) -> WDTCR_W<DSLEEPCR_SPEC, 21> {
-        WDTCR_W::new(self)
+    pub fn wdtcr(&mut self) -> WDTCR_W<DSLEEPCR_SPEC> {
+        WDTCR_W::new(self, 21)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

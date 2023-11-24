@@ -68,8 +68,8 @@ impl DSRC_R {
     }
 }
 #[doc = "Field `DSRC` writer - Input Data Source Select"]
-pub type DSRC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, DSRC_A>;
-impl<'a, REG, const O: u8> DSRC_W<'a, REG, O>
+pub type DSRC_W<'a, REG> = crate::FieldWriter<'a, REG, 4, DSRC_A>;
+impl<'a, REG> DSRC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -115,8 +115,8 @@ impl From<DSWC_AW> for bool {
     }
 }
 #[doc = "Field `DSWC` writer - Write Control for Data Selection"]
-pub type DSWC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, DSWC_AW>;
-impl<'a, REG, const O: u8> DSWC_W<'a, REG, O>
+pub type DSWC_W<'a, REG> = crate::BitWriter<'a, REG, DSWC_AW>;
+impl<'a, REG> DSWC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -189,8 +189,8 @@ impl ITRMODE_R {
     }
 }
 #[doc = "Field `ITRMODE` writer - Integrator Trigger Mode"]
-pub type ITRMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, ITRMODE_A>;
-impl<'a, REG, const O: u8> ITRMODE_W<'a, REG, O>
+pub type ITRMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ITRMODE_A>;
+impl<'a, REG> ITRMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -274,8 +274,8 @@ impl TSTRMODE_R {
     }
 }
 #[doc = "Field `TSTRMODE` writer - Timestamp Trigger Mode"]
-pub type TSTRMODE_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, TSTRMODE_A>;
-impl<'a, REG, const O: u8> TSTRMODE_W<'a, REG, O>
+pub type TSTRMODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, TSTRMODE_A>;
+impl<'a, REG> TSTRMODE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -304,7 +304,7 @@ where
 #[doc = "Field `TRSEL` reader - Trigger Select"]
 pub type TRSEL_R = crate::FieldReader;
 #[doc = "Field `TRSEL` writer - Trigger Select"]
-pub type TRSEL_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O>;
+pub type TRSEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Write Control for Trigger Parameters\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRWC_AW {
@@ -320,8 +320,8 @@ impl From<TRWC_AW> for bool {
     }
 }
 #[doc = "Field `TRWC` writer - Write Control for Trigger Parameters"]
-pub type TRWC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, TRWC_AW>;
-impl<'a, REG, const O: u8> TRWC_W<'a, REG, O>
+pub type TRWC_W<'a, REG> = crate::BitWriter<'a, REG, TRWC_AW>;
+impl<'a, REG> TRWC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -402,8 +402,8 @@ impl CSRC_R {
     }
 }
 #[doc = "Field `CSRC` writer - Sample Clock Source Select"]
-pub type CSRC_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, CSRC_A>;
-impl<'a, REG, const O: u8> CSRC_W<'a, REG, O>
+pub type CSRC_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CSRC_A>;
+impl<'a, REG> CSRC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -508,8 +508,8 @@ impl STROBE_R {
     }
 }
 #[doc = "Field `STROBE` writer - Data Strobe Generatoion Mode"]
-pub type STROBE_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, STROBE_A>;
-impl<'a, REG, const O: u8> STROBE_W<'a, REG, O>
+pub type STROBE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, STROBE_A>;
+impl<'a, REG> STROBE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -560,8 +560,8 @@ impl From<SCWC_AW> for bool {
     }
 }
 #[doc = "Field `SCWC` writer - Write Control for Strobe/Clock Selection"]
-pub type SCWC_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SCWC_AW>;
-impl<'a, REG, const O: u8> SCWC_W<'a, REG, O>
+pub type SCWC_W<'a, REG> = crate::BitWriter<'a, REG, SCWC_AW>;
+impl<'a, REG> SCWC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -612,56 +612,56 @@ impl W {
     #[doc = "Bits 0:3 - Input Data Source Select"]
     #[inline(always)]
     #[must_use]
-    pub fn dsrc(&mut self) -> DSRC_W<DICFG_SPEC, 0> {
-        DSRC_W::new(self)
+    pub fn dsrc(&mut self) -> DSRC_W<DICFG_SPEC> {
+        DSRC_W::new(self, 0)
     }
     #[doc = "Bit 7 - Write Control for Data Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn dswc(&mut self) -> DSWC_W<DICFG_SPEC, 7> {
-        DSWC_W::new(self)
+    pub fn dswc(&mut self) -> DSWC_W<DICFG_SPEC> {
+        DSWC_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Integrator Trigger Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn itrmode(&mut self) -> ITRMODE_W<DICFG_SPEC, 8> {
-        ITRMODE_W::new(self)
+    pub fn itrmode(&mut self) -> ITRMODE_W<DICFG_SPEC> {
+        ITRMODE_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Timestamp Trigger Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tstrmode(&mut self) -> TSTRMODE_W<DICFG_SPEC, 10> {
-        TSTRMODE_W::new(self)
+    pub fn tstrmode(&mut self) -> TSTRMODE_W<DICFG_SPEC> {
+        TSTRMODE_W::new(self, 10)
     }
     #[doc = "Bits 12:14 - Trigger Select"]
     #[inline(always)]
     #[must_use]
-    pub fn trsel(&mut self) -> TRSEL_W<DICFG_SPEC, 12> {
-        TRSEL_W::new(self)
+    pub fn trsel(&mut self) -> TRSEL_W<DICFG_SPEC> {
+        TRSEL_W::new(self, 12)
     }
     #[doc = "Bit 15 - Write Control for Trigger Parameters"]
     #[inline(always)]
     #[must_use]
-    pub fn trwc(&mut self) -> TRWC_W<DICFG_SPEC, 15> {
-        TRWC_W::new(self)
+    pub fn trwc(&mut self) -> TRWC_W<DICFG_SPEC> {
+        TRWC_W::new(self, 15)
     }
     #[doc = "Bits 16:19 - Sample Clock Source Select"]
     #[inline(always)]
     #[must_use]
-    pub fn csrc(&mut self) -> CSRC_W<DICFG_SPEC, 16> {
-        CSRC_W::new(self)
+    pub fn csrc(&mut self) -> CSRC_W<DICFG_SPEC> {
+        CSRC_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Data Strobe Generatoion Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn strobe(&mut self) -> STROBE_W<DICFG_SPEC, 20> {
-        STROBE_W::new(self)
+    pub fn strobe(&mut self) -> STROBE_W<DICFG_SPEC> {
+        STROBE_W::new(self, 20)
     }
     #[doc = "Bit 31 - Write Control for Strobe/Clock Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn scwc(&mut self) -> SCWC_W<DICFG_SPEC, 31> {
-        SCWC_W::new(self)
+    pub fn scwc(&mut self) -> SCWC_W<DICFG_SPEC> {
+        SCWC_W::new(self, 31)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

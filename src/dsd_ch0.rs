@@ -1,40 +1,90 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Modulator Configuration Register"]
-    pub modcfg: MODCFG,
+    modcfg: MODCFG,
     _reserved1: [u8; 0x04],
-    #[doc = "0x08 - Demodulator Input Configuration Register"]
-    pub dicfg: DICFG,
+    dicfg: DICFG,
     _reserved2: [u8; 0x08],
-    #[doc = "0x14 - Filter Configuration Register, Main CIC Filter"]
-    pub fcfgc: FCFGC,
-    #[doc = "0x18 - Filter Configuration Register, Auxiliary Filter"]
-    pub fcfga: FCFGA,
+    fcfgc: FCFGC,
+    fcfga: FCFGA,
     _reserved4: [u8; 0x04],
-    #[doc = "0x20 - Integration Window Control Register"]
-    pub iwctr: IWCTR,
+    iwctr: IWCTR,
     _reserved5: [u8; 0x04],
-    #[doc = "0x28 - Boundary Select Register"]
-    pub boundsel: BOUNDSEL,
+    boundsel: BOUNDSEL,
     _reserved6: [u8; 0x04],
-    #[doc = "0x30 - Result Register, Main Filter"]
-    pub resm: RESM,
+    resm: RESM,
     _reserved7: [u8; 0x04],
-    #[doc = "0x38 - Offset Register, Main Filter"]
-    pub offm: OFFM,
+    offm: OFFM,
     _reserved8: [u8; 0x04],
-    #[doc = "0x40 - Result Register, Auxiliary Filter"]
-    pub resa: RESA,
+    resa: RESA,
     _reserved9: [u8; 0x0c],
-    #[doc = "0x50 - Time-Stamp Register"]
-    pub tstmp: TSTMP,
+    tstmp: TSTMP,
     _reserved10: [u8; 0x4c],
-    #[doc = "0xa0 - Carrier Generator Synchronization Register"]
-    pub cgsync: CGSYNC,
+    cgsync: CGSYNC,
     _reserved11: [u8; 0x04],
+    rectcfg: RECTCFG,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - Modulator Configuration Register"]
+    #[inline(always)]
+    pub const fn modcfg(&self) -> &MODCFG {
+        &self.modcfg
+    }
+    #[doc = "0x08 - Demodulator Input Configuration Register"]
+    #[inline(always)]
+    pub const fn dicfg(&self) -> &DICFG {
+        &self.dicfg
+    }
+    #[doc = "0x14 - Filter Configuration Register, Main CIC Filter"]
+    #[inline(always)]
+    pub const fn fcfgc(&self) -> &FCFGC {
+        &self.fcfgc
+    }
+    #[doc = "0x18 - Filter Configuration Register, Auxiliary Filter"]
+    #[inline(always)]
+    pub const fn fcfga(&self) -> &FCFGA {
+        &self.fcfga
+    }
+    #[doc = "0x20 - Integration Window Control Register"]
+    #[inline(always)]
+    pub const fn iwctr(&self) -> &IWCTR {
+        &self.iwctr
+    }
+    #[doc = "0x28 - Boundary Select Register"]
+    #[inline(always)]
+    pub const fn boundsel(&self) -> &BOUNDSEL {
+        &self.boundsel
+    }
+    #[doc = "0x30 - Result Register, Main Filter"]
+    #[inline(always)]
+    pub const fn resm(&self) -> &RESM {
+        &self.resm
+    }
+    #[doc = "0x38 - Offset Register, Main Filter"]
+    #[inline(always)]
+    pub const fn offm(&self) -> &OFFM {
+        &self.offm
+    }
+    #[doc = "0x40 - Result Register, Auxiliary Filter"]
+    #[inline(always)]
+    pub const fn resa(&self) -> &RESA {
+        &self.resa
+    }
+    #[doc = "0x50 - Time-Stamp Register"]
+    #[inline(always)]
+    pub const fn tstmp(&self) -> &TSTMP {
+        &self.tstmp
+    }
+    #[doc = "0xa0 - Carrier Generator Synchronization Register"]
+    #[inline(always)]
+    pub const fn cgsync(&self) -> &CGSYNC {
+        &self.cgsync
+    }
     #[doc = "0xa8 - Rectification Configuration Register"]
-    pub rectcfg: RECTCFG,
+    #[inline(always)]
+    pub const fn rectcfg(&self) -> &RECTCFG {
+        &self.rectcfg
+    }
 }
 #[doc = "MODCFG (rw) register accessor: Modulator Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`modcfg::R`].  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`modcfg::W`]. You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@modcfg`]
 module"]

@@ -60,8 +60,8 @@ impl CGMOD_R {
     }
 }
 #[doc = "Field `CGMOD` writer - Carrier Generator Operating Mode"]
-pub type CGMOD_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 2, O, CGMOD_A>;
-impl<'a, REG, const O: u8> CGMOD_W<'a, REG, O>
+pub type CGMOD_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, CGMOD_A>;
+impl<'a, REG> CGMOD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -124,8 +124,8 @@ impl BREV_R {
     }
 }
 #[doc = "Field `BREV` writer - Bit-Reverse PWM Generation"]
-pub type BREV_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, BREV_A>;
-impl<'a, REG, const O: u8> BREV_W<'a, REG, O>
+pub type BREV_W<'a, REG> = crate::BitWriter<'a, REG, BREV_A>;
+impl<'a, REG> BREV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -177,8 +177,8 @@ impl SIGPOL_R {
     }
 }
 #[doc = "Field `SIGPOL` writer - Signal Polarity"]
-pub type SIGPOL_W<'a, REG, const O: u8> = crate::BitWriter<'a, REG, O, SIGPOL_A>;
-impl<'a, REG, const O: u8> SIGPOL_W<'a, REG, O>
+pub type SIGPOL_W<'a, REG> = crate::BitWriter<'a, REG, SIGPOL_A>;
+impl<'a, REG> SIGPOL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -251,8 +251,8 @@ impl DIVCG_R {
     }
 }
 #[doc = "Field `DIVCG` writer - Divider Factor for the PWM Pattern Signal Generator"]
-pub type DIVCG_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 4, O, DIVCG_A>;
-impl<'a, REG, const O: u8> DIVCG_W<'a, REG, O>
+pub type DIVCG_W<'a, REG> = crate::FieldWriter<'a, REG, 4, DIVCG_A>;
+impl<'a, REG> DIVCG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -482,26 +482,26 @@ impl W {
     #[doc = "Bits 0:1 - Carrier Generator Operating Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn cgmod(&mut self) -> CGMOD_W<CGCFG_SPEC, 0> {
-        CGMOD_W::new(self)
+    pub fn cgmod(&mut self) -> CGMOD_W<CGCFG_SPEC> {
+        CGMOD_W::new(self, 0)
     }
     #[doc = "Bit 2 - Bit-Reverse PWM Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn brev(&mut self) -> BREV_W<CGCFG_SPEC, 2> {
-        BREV_W::new(self)
+    pub fn brev(&mut self) -> BREV_W<CGCFG_SPEC> {
+        BREV_W::new(self, 2)
     }
     #[doc = "Bit 3 - Signal Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn sigpol(&mut self) -> SIGPOL_W<CGCFG_SPEC, 3> {
-        SIGPOL_W::new(self)
+    pub fn sigpol(&mut self) -> SIGPOL_W<CGCFG_SPEC> {
+        SIGPOL_W::new(self, 3)
     }
     #[doc = "Bits 4:7 - Divider Factor for the PWM Pattern Signal Generator"]
     #[inline(always)]
     #[must_use]
-    pub fn divcg(&mut self) -> DIVCG_W<CGCFG_SPEC, 4> {
-        DIVCG_W::new(self)
+    pub fn divcg(&mut self) -> DIVCG_W<CGCFG_SPEC> {
+        DIVCG_W::new(self, 4)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]

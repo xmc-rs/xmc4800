@@ -92,8 +92,8 @@ impl PD8_R {
     }
 }
 #[doc = "Field `PD8` writer - Pad Driver Mode for Pn.8"]
-pub type PD8_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PD8_A>;
-impl<'a, REG, const O: u8> PD8_W<'a, REG, O>
+pub type PD8_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, PD8_A>;
+impl<'a, REG> PD8_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -229,8 +229,8 @@ impl PD9_R {
     }
 }
 #[doc = "Field `PD9` writer - Pad Driver Mode for Pn.9"]
-pub type PD9_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PD9_A>;
-impl<'a, REG, const O: u8> PD9_W<'a, REG, O>
+pub type PD9_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, PD9_A>;
+impl<'a, REG> PD9_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -366,8 +366,8 @@ impl PD10_R {
     }
 }
 #[doc = "Field `PD10` writer - Pad Driver Mode for Pn.10"]
-pub type PD10_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PD10_A>;
-impl<'a, REG, const O: u8> PD10_W<'a, REG, O>
+pub type PD10_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, PD10_A>;
+impl<'a, REG> PD10_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -503,8 +503,8 @@ impl PD11_R {
     }
 }
 #[doc = "Field `PD11` writer - Pad Driver Mode for Pn.11"]
-pub type PD11_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PD11_A>;
-impl<'a, REG, const O: u8> PD11_W<'a, REG, O>
+pub type PD11_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, PD11_A>;
+impl<'a, REG> PD11_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -616,8 +616,8 @@ impl PD12_R {
     }
 }
 #[doc = "Field `PD12` writer - Pad Driver Mode for Pn.12"]
-pub type PD12_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PD12_A>;
-impl<'a, REG, const O: u8> PD12_W<'a, REG, O>
+pub type PD12_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PD12_A>;
+impl<'a, REG> PD12_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -714,8 +714,8 @@ impl PD13_R {
     }
 }
 #[doc = "Field `PD13` writer - Pad Driver Mode for Pn.13"]
-pub type PD13_W<'a, REG, const O: u8> = crate::FieldWriter<'a, REG, 3, O, PD13_A>;
-impl<'a, REG, const O: u8> PD13_W<'a, REG, O>
+pub type PD13_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PD13_A>;
+impl<'a, REG> PD13_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -836,8 +836,8 @@ impl PD14_R {
     }
 }
 #[doc = "Field `PD14` writer - Pad Driver Mode for Pn.14"]
-pub type PD14_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PD14_A>;
-impl<'a, REG, const O: u8> PD14_W<'a, REG, O>
+pub type PD14_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, PD14_A>;
+impl<'a, REG> PD14_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -973,8 +973,8 @@ impl PD15_R {
     }
 }
 #[doc = "Field `PD15` writer - Pad Driver Mode for Pn.15"]
-pub type PD15_W<'a, REG, const O: u8> = crate::FieldWriterSafe<'a, REG, 3, O, PD15_A>;
-impl<'a, REG, const O: u8> PD15_W<'a, REG, O>
+pub type PD15_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, PD15_A>;
+impl<'a, REG> PD15_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -1066,50 +1066,50 @@ impl W {
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.8"]
     #[inline(always)]
     #[must_use]
-    pub fn pd8(&mut self) -> PD8_W<PDR1_SPEC, 0> {
-        PD8_W::new(self)
+    pub fn pd8(&mut self) -> PD8_W<PDR1_SPEC> {
+        PD8_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Pad Driver Mode for Pn.9"]
     #[inline(always)]
     #[must_use]
-    pub fn pd9(&mut self) -> PD9_W<PDR1_SPEC, 4> {
-        PD9_W::new(self)
+    pub fn pd9(&mut self) -> PD9_W<PDR1_SPEC> {
+        PD9_W::new(self, 4)
     }
     #[doc = "Bits 8:10 - Pad Driver Mode for Pn.10"]
     #[inline(always)]
     #[must_use]
-    pub fn pd10(&mut self) -> PD10_W<PDR1_SPEC, 8> {
-        PD10_W::new(self)
+    pub fn pd10(&mut self) -> PD10_W<PDR1_SPEC> {
+        PD10_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - Pad Driver Mode for Pn.11"]
     #[inline(always)]
     #[must_use]
-    pub fn pd11(&mut self) -> PD11_W<PDR1_SPEC, 12> {
-        PD11_W::new(self)
+    pub fn pd11(&mut self) -> PD11_W<PDR1_SPEC> {
+        PD11_W::new(self, 12)
     }
     #[doc = "Bits 16:18 - Pad Driver Mode for Pn.12"]
     #[inline(always)]
     #[must_use]
-    pub fn pd12(&mut self) -> PD12_W<PDR1_SPEC, 16> {
-        PD12_W::new(self)
+    pub fn pd12(&mut self) -> PD12_W<PDR1_SPEC> {
+        PD12_W::new(self, 16)
     }
     #[doc = "Bits 20:22 - Pad Driver Mode for Pn.13"]
     #[inline(always)]
     #[must_use]
-    pub fn pd13(&mut self) -> PD13_W<PDR1_SPEC, 20> {
-        PD13_W::new(self)
+    pub fn pd13(&mut self) -> PD13_W<PDR1_SPEC> {
+        PD13_W::new(self, 20)
     }
     #[doc = "Bits 24:26 - Pad Driver Mode for Pn.14"]
     #[inline(always)]
     #[must_use]
-    pub fn pd14(&mut self) -> PD14_W<PDR1_SPEC, 24> {
-        PD14_W::new(self)
+    pub fn pd14(&mut self) -> PD14_W<PDR1_SPEC> {
+        PD14_W::new(self, 24)
     }
     #[doc = "Bits 28:30 - Pad Driver Mode for Pn.15"]
     #[inline(always)]
     #[must_use]
-    pub fn pd15(&mut self) -> PD15_W<PDR1_SPEC, 28> {
-        PD15_W::new(self)
+    pub fn pd15(&mut self) -> PD15_W<PDR1_SPEC> {
+        PD15_W::new(self, 28)
     }
     #[doc = r" Writes raw bits to the register."]
     #[doc = r""]
