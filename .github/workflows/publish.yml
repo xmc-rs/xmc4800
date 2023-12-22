@@ -1,35 +1,51 @@
-on:
-  workflow_dispatch:
-    inputs:
-      version:
-          description: Version to release
-          required: true
-          type: string
-
-permissions:
-  # TODO: once `releases: write` is supported, use it instead.
-  contents: write
-
 name: Publish
 
+on:
+  workflow_run:
+    workflows: Rust
+    branches: master
+    types: completed
+
+env:
+  CARGO_TERM_COLOR: always
+
 jobs:
-  publish:
-    name: Publish
+  release-please:
+    name: Execute release chores
+
+    permissions:
+      contents: write
+      pull-requests: write
+
     runs-on: ubuntu-latest
+
+    outputs:
+      created: ${{ steps.release.outputs.release_created }}
+
     steps:
-      - uses: actions/checkout@v4.1.1
-      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - uses: google-github-actions/release-please-action@v4
+        id: release
         with:
-          toolchain: stable
-      - run: cargo install cargo-release
-      - uses: tibdex/github-app-token@v2.1.0
-        id: generate-token
-        with:
-          app_id: ${{ secrets.APP_ID }}
-          private_key: ${{ secrets.APP_SECRET_KEY }}
-      - uses: oleksiyrudenko/gha-git-credentials@v2.1.1
-        with:
-          token: ${{ steps.generate-token.outputs.token }}
-      - run: cargo release ${{ inputs.version }} --execute --verbose --no-confirm
-        env:
-          CARGO_REGISTRY_TOKEN: ${{ secrets.CRATES_TOKEN }}
+          release-type: rust
+          token: ${{ secrets.GH_PERSONAL_TOKEN }}
+
+  publish:
+    name: Publish to crates.io
+
+    runs-on: ubuntu-latest
+    needs: release-please
+    if: needs.release-please.outputs.created
+
+    environment: crates.io
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: swatinem/rust-cache@v2
+
+      - name: Publish
+      # https://doc.rust-lang.org/cargo/reference/config.html?highlight=CARGO_REGISTRY_TOKEN#credentials
+        run: >
+          cargo publish
+          --verbose
+          --locked
+          --token ${{ secrets.CRATES_TOKEN }}
