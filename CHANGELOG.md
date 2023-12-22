@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.5.0](https://github.com/xmc-rs/xmc4800/compare/v0.4.0...v0.5.0) (2023-12-22)
+## [0.7.0](https://github.com/xmc-rs/xmc4800/compare/v0.6.0...v0.7.0) (2023-12-22)
 
 
 ### Features
