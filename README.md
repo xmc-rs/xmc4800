@@ -1,6 +1,6 @@
 # XMC4800
 
-> THIS IS A WORK IN PROGRESS AND MUCH IS UNTESED
+> THIS IS A WORK IN PROGRESS AND MUCH IS UNTESTED
 
 [![crates.io](https://img.shields.io/crates/v/xmc4800.svg)](https://crates.io/crates/xmc4800)
 [![rust](https://github.com/xmc-rs/xmc4800/workflows/Rust/badge.svg)](https://github.com/xmc-rs/xmc4800/workflows/Rust/badge.svg)
@@ -19,5 +19,3 @@ rustup component add rustfmt
 
 svd.sh # Generates code from crate and formats to rustfmt
 ```
-
-The inclusion of EtherCAT has been removed from `src/lib.rs`. This is due to an issue either with the SVD file or the generation of the code using svd2rust. There is no support at this time until a fix can be made. This has not been tested on hardware to ensure that nothing else has been impacted.
