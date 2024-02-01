@@ -18,5 +18,5 @@ impl crate::RegisterSpec for RESA_SPEC {
 impl crate::Readable for RESA_SPEC {}
 #[doc = "`reset()` method sets RESA to value 0"]
 impl crate::Resettable for RESA_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

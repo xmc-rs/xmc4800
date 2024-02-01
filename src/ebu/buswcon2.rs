@@ -632,10 +632,10 @@ impl crate::RegisterSpec for BUSWCON2_SPEC {
 impl crate::Readable for BUSWCON2_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`buswcon2::W`](W) writer structure"]
 impl crate::Writable for BUSWCON2_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BUSWCON2 to value 0x00d3_0000"]
 impl crate::Resettable for BUSWCON2_SPEC {
-    const RESET_VALUE: Self::Ux = 0x00d3_0000;
+    const RESET_VALUE: u32 = 0x00d3_0000;
 }
