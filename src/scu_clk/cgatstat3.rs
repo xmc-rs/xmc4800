@@ -52,5 +52,5 @@ impl crate::RegisterSpec for CGATSTAT3_SPEC {
 impl crate::Readable for CGATSTAT3_SPEC {}
 #[doc = "`reset()` method sets CGATSTAT3 to value 0"]
 impl crate::Resettable for CGATSTAT3_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

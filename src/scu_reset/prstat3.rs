@@ -52,5 +52,5 @@ impl crate::RegisterSpec for PRSTAT3_SPEC {
 impl crate::Readable for PRSTAT3_SPEC {}
 #[doc = "`reset()` method sets PRSTAT3 to value 0x04"]
 impl crate::Resettable for PRSTAT3_SPEC {
-    const RESET_VALUE: Self::Ux = 0x04;
+    const RESET_VALUE: u32 = 0x04;
 }

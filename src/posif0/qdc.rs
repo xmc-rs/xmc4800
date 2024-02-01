@@ -341,10 +341,10 @@ impl crate::RegisterSpec for QDC_SPEC {
 impl crate::Readable for QDC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`qdc::W`](W) writer structure"]
 impl crate::Writable for QDC_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets QDC to value 0"]
 impl crate::Resettable for QDC_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

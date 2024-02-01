@@ -32,5 +32,5 @@ impl crate::RegisterSpec for TSTMP_SPEC {
 impl crate::Readable for TSTMP_SPEC {}
 #[doc = "`reset()` method sets TSTMP to value 0"]
 impl crate::Resettable for TSTMP_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }
