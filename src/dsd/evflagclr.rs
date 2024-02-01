@@ -315,10 +315,10 @@ impl crate::RegisterSpec for EVFLAGCLR_SPEC {
 }
 #[doc = "`write(|w| ..)` method takes [`evflagclr::W`](W) writer structure"]
 impl crate::Writable for EVFLAGCLR_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets EVFLAGCLR to value 0"]
 impl crate::Resettable for EVFLAGCLR_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

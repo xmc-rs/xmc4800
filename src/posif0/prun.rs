@@ -52,5 +52,5 @@ impl crate::RegisterSpec for PRUN_SPEC {
 impl crate::Readable for PRUN_SPEC {}
 #[doc = "`reset()` method sets PRUN to value 0"]
 impl crate::Resettable for PRUN_SPEC {
-    const RESET_VALUE: Self::Ux = 0;
+    const RESET_VALUE: u32 = 0;
 }

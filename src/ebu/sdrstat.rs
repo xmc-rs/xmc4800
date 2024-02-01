@@ -134,5 +134,5 @@ impl crate::RegisterSpec for SDRSTAT_SPEC {
 impl crate::Readable for SDRSTAT_SPEC {}
 #[doc = "`reset()` method sets SDRSTAT to value 0x0001_0000"]
 impl crate::Resettable for SDRSTAT_SPEC {
-    const RESET_VALUE: Self::Ux = 0x0001_0000;
+    const RESET_VALUE: u32 = 0x0001_0000;
 }

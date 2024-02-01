@@ -821,10 +821,10 @@ impl crate::RegisterSpec for BUSRAP1_SPEC {
 impl crate::Readable for BUSRAP1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`busrap1::W`](W) writer structure"]
 impl crate::Writable for BUSRAP1_SPEC {
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BUSRAP1 to value 0xffff_ffff"]
 impl crate::Resettable for BUSRAP1_SPEC {
-    const RESET_VALUE: Self::Ux = 0xffff_ffff;
+    const RESET_VALUE: u32 = 0xffff_ffff;
 }
