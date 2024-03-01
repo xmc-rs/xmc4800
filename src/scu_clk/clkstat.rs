@@ -1,261 +1,261 @@
 #[doc = "Register `CLKSTAT` reader"]
-pub type R = crate::R<CLKSTAT_SPEC>;
-#[doc = "Field `USBCST` reader - USB Clock Status"]
-pub type USBCST_R = crate::BitReader<USBCST_A>;
+pub type R = crate::R<ClkstatSpec>;
 #[doc = "USB Clock Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum USBCST_A {
+pub enum Usbcst {
     #[doc = "0: Clock disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Clock enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<USBCST_A> for bool {
+impl From<Usbcst> for bool {
     #[inline(always)]
-    fn from(variant: USBCST_A) -> Self {
+    fn from(variant: Usbcst) -> Self {
         variant as u8 != 0
     }
 }
-impl USBCST_R {
+#[doc = "Field `USBCST` reader - USB Clock Status"]
+pub type UsbcstR = crate::BitReader<Usbcst>;
+impl UsbcstR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> USBCST_A {
+    pub const fn variant(&self) -> Usbcst {
         match self.bits {
-            false => USBCST_A::VALUE1,
-            true => USBCST_A::VALUE2,
+            false => Usbcst::Value1,
+            true => Usbcst::Value2,
         }
     }
     #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == USBCST_A::VALUE1
+        *self == Usbcst::Value1
     }
     #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == USBCST_A::VALUE2
+        *self == Usbcst::Value2
+    }
+}
+#[doc = "MMC Clock Status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Mmccst {
+    #[doc = "0: Clock disabled"]
+    Value1 = 0,
+    #[doc = "1: Clock enabled"]
+    Value2 = 1,
+}
+impl From<Mmccst> for bool {
+    #[inline(always)]
+    fn from(variant: Mmccst) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `MMCCST` reader - MMC Clock Status"]
-pub type MMCCST_R = crate::BitReader<MMCCST_A>;
-#[doc = "MMC Clock Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum MMCCST_A {
-    #[doc = "0: Clock disabled"]
-    VALUE1 = 0,
-    #[doc = "1: Clock enabled"]
-    VALUE2 = 1,
-}
-impl From<MMCCST_A> for bool {
-    #[inline(always)]
-    fn from(variant: MMCCST_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl MMCCST_R {
+pub type MmccstR = crate::BitReader<Mmccst>;
+impl MmccstR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> MMCCST_A {
+    pub const fn variant(&self) -> Mmccst {
         match self.bits {
-            false => MMCCST_A::VALUE1,
-            true => MMCCST_A::VALUE2,
+            false => Mmccst::Value1,
+            true => Mmccst::Value2,
         }
     }
     #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == MMCCST_A::VALUE1
+        *self == Mmccst::Value1
     }
     #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == MMCCST_A::VALUE2
+        *self == Mmccst::Value2
+    }
+}
+#[doc = "Ethernet Clock Status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Eth0cst {
+    #[doc = "0: Clock disabled"]
+    Value1 = 0,
+    #[doc = "1: Clock enabled"]
+    Value2 = 1,
+}
+impl From<Eth0cst> for bool {
+    #[inline(always)]
+    fn from(variant: Eth0cst) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `ETH0CST` reader - Ethernet Clock Status"]
-pub type ETH0CST_R = crate::BitReader<ETH0CST_A>;
-#[doc = "Ethernet Clock Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ETH0CST_A {
-    #[doc = "0: Clock disabled"]
-    VALUE1 = 0,
-    #[doc = "1: Clock enabled"]
-    VALUE2 = 1,
-}
-impl From<ETH0CST_A> for bool {
-    #[inline(always)]
-    fn from(variant: ETH0CST_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl ETH0CST_R {
+pub type Eth0cstR = crate::BitReader<Eth0cst>;
+impl Eth0cstR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ETH0CST_A {
+    pub const fn variant(&self) -> Eth0cst {
         match self.bits {
-            false => ETH0CST_A::VALUE1,
-            true => ETH0CST_A::VALUE2,
+            false => Eth0cst::Value1,
+            true => Eth0cst::Value2,
         }
     }
     #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ETH0CST_A::VALUE1
+        *self == Eth0cst::Value1
     }
     #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ETH0CST_A::VALUE2
+        *self == Eth0cst::Value2
+    }
+}
+#[doc = "EBU Clock Status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ebucst {
+    #[doc = "0: Clock disabled"]
+    Value1 = 0,
+    #[doc = "1: Clock enabled"]
+    Value2 = 1,
+}
+impl From<Ebucst> for bool {
+    #[inline(always)]
+    fn from(variant: Ebucst) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `EBUCST` reader - EBU Clock Status"]
-pub type EBUCST_R = crate::BitReader<EBUCST_A>;
-#[doc = "EBU Clock Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum EBUCST_A {
-    #[doc = "0: Clock disabled"]
-    VALUE1 = 0,
-    #[doc = "1: Clock enabled"]
-    VALUE2 = 1,
-}
-impl From<EBUCST_A> for bool {
-    #[inline(always)]
-    fn from(variant: EBUCST_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl EBUCST_R {
+pub type EbucstR = crate::BitReader<Ebucst>;
+impl EbucstR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> EBUCST_A {
+    pub const fn variant(&self) -> Ebucst {
         match self.bits {
-            false => EBUCST_A::VALUE1,
-            true => EBUCST_A::VALUE2,
+            false => Ebucst::Value1,
+            true => Ebucst::Value2,
         }
     }
     #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EBUCST_A::VALUE1
+        *self == Ebucst::Value1
     }
     #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == EBUCST_A::VALUE2
+        *self == Ebucst::Value2
+    }
+}
+#[doc = "CCU Clock Status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Ccucst {
+    #[doc = "0: Clock disabled"]
+    Value1 = 0,
+    #[doc = "1: Clock enabled"]
+    Value2 = 1,
+}
+impl From<Ccucst> for bool {
+    #[inline(always)]
+    fn from(variant: Ccucst) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `CCUCST` reader - CCU Clock Status"]
-pub type CCUCST_R = crate::BitReader<CCUCST_A>;
-#[doc = "CCU Clock Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CCUCST_A {
-    #[doc = "0: Clock disabled"]
-    VALUE1 = 0,
-    #[doc = "1: Clock enabled"]
-    VALUE2 = 1,
-}
-impl From<CCUCST_A> for bool {
-    #[inline(always)]
-    fn from(variant: CCUCST_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl CCUCST_R {
+pub type CcucstR = crate::BitReader<Ccucst>;
+impl CcucstR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CCUCST_A {
+    pub const fn variant(&self) -> Ccucst {
         match self.bits {
-            false => CCUCST_A::VALUE1,
-            true => CCUCST_A::VALUE2,
+            false => Ccucst::Value1,
+            true => Ccucst::Value2,
         }
     }
     #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CCUCST_A::VALUE1
+        *self == Ccucst::Value1
     }
     #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CCUCST_A::VALUE2
+        *self == Ccucst::Value2
+    }
+}
+#[doc = "WDT Clock Status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Wdtcst {
+    #[doc = "0: Clock disabled"]
+    Value1 = 0,
+    #[doc = "1: Clock enabled"]
+    Value2 = 1,
+}
+impl From<Wdtcst> for bool {
+    #[inline(always)]
+    fn from(variant: Wdtcst) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `WDTCST` reader - WDT Clock Status"]
-pub type WDTCST_R = crate::BitReader<WDTCST_A>;
-#[doc = "WDT Clock Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WDTCST_A {
-    #[doc = "0: Clock disabled"]
-    VALUE1 = 0,
-    #[doc = "1: Clock enabled"]
-    VALUE2 = 1,
-}
-impl From<WDTCST_A> for bool {
-    #[inline(always)]
-    fn from(variant: WDTCST_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl WDTCST_R {
+pub type WdtcstR = crate::BitReader<Wdtcst>;
+impl WdtcstR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WDTCST_A {
+    pub const fn variant(&self) -> Wdtcst {
         match self.bits {
-            false => WDTCST_A::VALUE1,
-            true => WDTCST_A::VALUE2,
+            false => Wdtcst::Value1,
+            true => Wdtcst::Value2,
         }
     }
     #[doc = "Clock disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WDTCST_A::VALUE1
+        *self == Wdtcst::Value1
     }
     #[doc = "Clock enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WDTCST_A::VALUE2
+        *self == Wdtcst::Value2
     }
 }
 impl R {
     #[doc = "Bit 0 - USB Clock Status"]
     #[inline(always)]
-    pub fn usbcst(&self) -> USBCST_R {
-        USBCST_R::new((self.bits & 1) != 0)
+    pub fn usbcst(&self) -> UsbcstR {
+        UsbcstR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - MMC Clock Status"]
     #[inline(always)]
-    pub fn mmccst(&self) -> MMCCST_R {
-        MMCCST_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn mmccst(&self) -> MmccstR {
+        MmccstR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Ethernet Clock Status"]
     #[inline(always)]
-    pub fn eth0cst(&self) -> ETH0CST_R {
-        ETH0CST_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn eth0cst(&self) -> Eth0cstR {
+        Eth0cstR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - EBU Clock Status"]
     #[inline(always)]
-    pub fn ebucst(&self) -> EBUCST_R {
-        EBUCST_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn ebucst(&self) -> EbucstR {
+        EbucstR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - CCU Clock Status"]
     #[inline(always)]
-    pub fn ccucst(&self) -> CCUCST_R {
-        CCUCST_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn ccucst(&self) -> CcucstR {
+        CcucstR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - WDT Clock Status"]
     #[inline(always)]
-    pub fn wdtcst(&self) -> WDTCST_R {
-        WDTCST_R::new(((self.bits >> 5) & 1) != 0)
+    pub fn wdtcst(&self) -> WdtcstR {
+        WdtcstR::new(((self.bits >> 5) & 1) != 0)
     }
 }
 #[doc = "Clock Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`clkstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CLKSTAT_SPEC;
-impl crate::RegisterSpec for CLKSTAT_SPEC {
+pub struct ClkstatSpec;
+impl crate::RegisterSpec for ClkstatSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`clkstat::R`](R) reader structure"]
-impl crate::Readable for CLKSTAT_SPEC {}
+impl crate::Readable for ClkstatSpec {}
 #[doc = "`reset()` method sets CLKSTAT to value 0"]
-impl crate::Resettable for CLKSTAT_SPEC {
+impl crate::Resettable for ClkstatSpec {
     const RESET_VALUE: u32 = 0;
 }

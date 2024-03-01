@@ -1,138 +1,138 @@
 #[doc = "Register `SDRSTAT` reader"]
-pub type R = crate::R<SDRSTAT_SPEC>;
-#[doc = "Field `REFERR` reader - SDRAM Refresh Error"]
-pub type REFERR_R = crate::BitReader<REFERR_A>;
+pub type R = crate::R<SdrstatSpec>;
 #[doc = "SDRAM Refresh Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum REFERR_A {
+pub enum Referr {
     #[doc = "0: No refresh error."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Refresh error occurred."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<REFERR_A> for bool {
+impl From<Referr> for bool {
     #[inline(always)]
-    fn from(variant: REFERR_A) -> Self {
+    fn from(variant: Referr) -> Self {
         variant as u8 != 0
     }
 }
-impl REFERR_R {
+#[doc = "Field `REFERR` reader - SDRAM Refresh Error"]
+pub type ReferrR = crate::BitReader<Referr>;
+impl ReferrR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> REFERR_A {
+    pub const fn variant(&self) -> Referr {
         match self.bits {
-            false => REFERR_A::VALUE1,
-            true => REFERR_A::VALUE2,
+            false => Referr::Value1,
+            true => Referr::Value2,
         }
     }
     #[doc = "No refresh error."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == REFERR_A::VALUE1
+        *self == Referr::Value1
     }
     #[doc = "Refresh error occurred."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == REFERR_A::VALUE2
+        *self == Referr::Value2
     }
 }
-#[doc = "Field `SDRMBUSY` reader - SDRAM Busy"]
-pub type SDRMBUSY_R = crate::BitReader<SDRMBUSY_A>;
 #[doc = "SDRAM Busy\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SDRMBUSY_A {
+pub enum Sdrmbusy {
     #[doc = "0: Power-up initialization sequence is not running"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Power-up initialization sequence is running"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<SDRMBUSY_A> for bool {
+impl From<Sdrmbusy> for bool {
     #[inline(always)]
-    fn from(variant: SDRMBUSY_A) -> Self {
+    fn from(variant: Sdrmbusy) -> Self {
         variant as u8 != 0
     }
 }
-impl SDRMBUSY_R {
+#[doc = "Field `SDRMBUSY` reader - SDRAM Busy"]
+pub type SdrmbusyR = crate::BitReader<Sdrmbusy>;
+impl SdrmbusyR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SDRMBUSY_A {
+    pub const fn variant(&self) -> Sdrmbusy {
         match self.bits {
-            false => SDRMBUSY_A::VALUE1,
-            true => SDRMBUSY_A::VALUE2,
+            false => Sdrmbusy::Value1,
+            true => Sdrmbusy::Value2,
         }
     }
     #[doc = "Power-up initialization sequence is not running"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SDRMBUSY_A::VALUE1
+        *self == Sdrmbusy::Value1
     }
     #[doc = "Power-up initialization sequence is running"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SDRMBUSY_A::VALUE2
+        *self == Sdrmbusy::Value2
     }
 }
-#[doc = "Field `SDERR` reader - SDRAM read error"]
-pub type SDERR_R = crate::BitReader<SDERR_A>;
 #[doc = "SDRAM read error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum SDERR_A {
+pub enum Sderr {
     #[doc = "0: Reads running successfully"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Read error condition has been detected"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<SDERR_A> for bool {
+impl From<Sderr> for bool {
     #[inline(always)]
-    fn from(variant: SDERR_A) -> Self {
+    fn from(variant: Sderr) -> Self {
         variant as u8 != 0
     }
 }
-impl SDERR_R {
+#[doc = "Field `SDERR` reader - SDRAM read error"]
+pub type SderrR = crate::BitReader<Sderr>;
+impl SderrR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> SDERR_A {
+    pub const fn variant(&self) -> Sderr {
         match self.bits {
-            false => SDERR_A::VALUE1,
-            true => SDERR_A::VALUE2,
+            false => Sderr::Value1,
+            true => Sderr::Value2,
         }
     }
     #[doc = "Reads running successfully"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SDERR_A::VALUE1
+        *self == Sderr::Value1
     }
     #[doc = "Read error condition has been detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SDERR_A::VALUE2
+        *self == Sderr::Value2
     }
 }
 impl R {
     #[doc = "Bit 0 - SDRAM Refresh Error"]
     #[inline(always)]
-    pub fn referr(&self) -> REFERR_R {
-        REFERR_R::new((self.bits & 1) != 0)
+    pub fn referr(&self) -> ReferrR {
+        ReferrR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - SDRAM Busy"]
     #[inline(always)]
-    pub fn sdrmbusy(&self) -> SDRMBUSY_R {
-        SDRMBUSY_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn sdrmbusy(&self) -> SdrmbusyR {
+        SdrmbusyR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - SDRAM read error"]
     #[inline(always)]
-    pub fn sderr(&self) -> SDERR_R {
-        SDERR_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn sderr(&self) -> SderrR {
+        SderrR::new(((self.bits >> 2) & 1) != 0)
     }
 }
 #[doc = "EBU SDRAM Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sdrstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct SDRSTAT_SPEC;
-impl crate::RegisterSpec for SDRSTAT_SPEC {
+pub struct SdrstatSpec;
+impl crate::RegisterSpec for SdrstatSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`sdrstat::R`](R) reader structure"]
-impl crate::Readable for SDRSTAT_SPEC {}
+impl crate::Readable for SdrstatSpec {}
 #[doc = "`reset()` method sets SDRSTAT to value 0x0001_0000"]
-impl crate::Resettable for SDRSTAT_SPEC {
+impl crate::Resettable for SdrstatSpec {
     const RESET_VALUE: u32 = 0x0001_0000;
 }
