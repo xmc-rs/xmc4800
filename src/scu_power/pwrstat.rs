@@ -1,179 +1,179 @@
 #[doc = "Register `PWRSTAT` reader"]
-pub type R = crate::R<PWRSTAT_SPEC>;
-#[doc = "Field `HIBEN` reader - Hibernate Domain Enable Status"]
-pub type HIBEN_R = crate::BitReader<HIBEN_A>;
+pub type R = crate::R<PwrstatSpec>;
 #[doc = "Hibernate Domain Enable Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum HIBEN_A {
+pub enum Hiben {
     #[doc = "0: Inactive"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Active"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<HIBEN_A> for bool {
+impl From<Hiben> for bool {
     #[inline(always)]
-    fn from(variant: HIBEN_A) -> Self {
+    fn from(variant: Hiben) -> Self {
         variant as u8 != 0
     }
 }
-impl HIBEN_R {
+#[doc = "Field `HIBEN` reader - Hibernate Domain Enable Status"]
+pub type HibenR = crate::BitReader<Hiben>;
+impl HibenR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> HIBEN_A {
+    pub const fn variant(&self) -> Hiben {
         match self.bits {
-            false => HIBEN_A::VALUE1,
-            true => HIBEN_A::VALUE2,
+            false => Hiben::Value1,
+            true => Hiben::Value2,
         }
     }
     #[doc = "Inactive"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == HIBEN_A::VALUE1
+        *self == Hiben::Value1
     }
     #[doc = "Active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == HIBEN_A::VALUE2
+        *self == Hiben::Value2
+    }
+}
+#[doc = "USB PHY Transceiver State\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Usbphypdq {
+    #[doc = "0: Power-down"]
+    Value1 = 0,
+    #[doc = "1: Active"]
+    Value2 = 1,
+}
+impl From<Usbphypdq> for bool {
+    #[inline(always)]
+    fn from(variant: Usbphypdq) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `USBPHYPDQ` reader - USB PHY Transceiver State"]
-pub type USBPHYPDQ_R = crate::BitReader<USBPHYPDQ_A>;
-#[doc = "USB PHY Transceiver State\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum USBPHYPDQ_A {
-    #[doc = "0: Power-down"]
-    VALUE1 = 0,
-    #[doc = "1: Active"]
-    VALUE2 = 1,
-}
-impl From<USBPHYPDQ_A> for bool {
-    #[inline(always)]
-    fn from(variant: USBPHYPDQ_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl USBPHYPDQ_R {
+pub type UsbphypdqR = crate::BitReader<Usbphypdq>;
+impl UsbphypdqR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> USBPHYPDQ_A {
+    pub const fn variant(&self) -> Usbphypdq {
         match self.bits {
-            false => USBPHYPDQ_A::VALUE1,
-            true => USBPHYPDQ_A::VALUE2,
+            false => Usbphypdq::Value1,
+            true => Usbphypdq::Value2,
         }
     }
     #[doc = "Power-down"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == USBPHYPDQ_A::VALUE1
+        *self == Usbphypdq::Value1
     }
     #[doc = "Active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == USBPHYPDQ_A::VALUE2
+        *self == Usbphypdq::Value2
+    }
+}
+#[doc = "USB On-The-Go Comparators State\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Usbotgen {
+    #[doc = "0: Power-down"]
+    Value1 = 0,
+    #[doc = "1: Active"]
+    Value2 = 1,
+}
+impl From<Usbotgen> for bool {
+    #[inline(always)]
+    fn from(variant: Usbotgen) -> Self {
+        variant as u8 != 0
     }
 }
 #[doc = "Field `USBOTGEN` reader - USB On-The-Go Comparators State"]
-pub type USBOTGEN_R = crate::BitReader<USBOTGEN_A>;
-#[doc = "USB On-The-Go Comparators State\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum USBOTGEN_A {
-    #[doc = "0: Power-down"]
-    VALUE1 = 0,
-    #[doc = "1: Active"]
-    VALUE2 = 1,
-}
-impl From<USBOTGEN_A> for bool {
-    #[inline(always)]
-    fn from(variant: USBOTGEN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-impl USBOTGEN_R {
+pub type UsbotgenR = crate::BitReader<Usbotgen>;
+impl UsbotgenR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> USBOTGEN_A {
+    pub const fn variant(&self) -> Usbotgen {
         match self.bits {
-            false => USBOTGEN_A::VALUE1,
-            true => USBOTGEN_A::VALUE2,
+            false => Usbotgen::Value1,
+            true => Usbotgen::Value2,
         }
     }
     #[doc = "Power-down"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == USBOTGEN_A::VALUE1
+        *self == Usbotgen::Value1
     }
     #[doc = "Active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == USBOTGEN_A::VALUE2
+        *self == Usbotgen::Value2
     }
 }
-#[doc = "Field `USBPUWQ` reader - USB Weak Pull-Up at PADN State"]
-pub type USBPUWQ_R = crate::BitReader<USBPUWQ_A>;
 #[doc = "USB Weak Pull-Up at PADN State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum USBPUWQ_A {
+pub enum Usbpuwq {
     #[doc = "0: Pull-up active"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Pull-up not active"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<USBPUWQ_A> for bool {
+impl From<Usbpuwq> for bool {
     #[inline(always)]
-    fn from(variant: USBPUWQ_A) -> Self {
+    fn from(variant: Usbpuwq) -> Self {
         variant as u8 != 0
     }
 }
-impl USBPUWQ_R {
+#[doc = "Field `USBPUWQ` reader - USB Weak Pull-Up at PADN State"]
+pub type UsbpuwqR = crate::BitReader<Usbpuwq>;
+impl UsbpuwqR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> USBPUWQ_A {
+    pub const fn variant(&self) -> Usbpuwq {
         match self.bits {
-            false => USBPUWQ_A::VALUE1,
-            true => USBPUWQ_A::VALUE2,
+            false => Usbpuwq::Value1,
+            true => Usbpuwq::Value2,
         }
     }
     #[doc = "Pull-up active"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == USBPUWQ_A::VALUE1
+        *self == Usbpuwq::Value1
     }
     #[doc = "Pull-up not active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == USBPUWQ_A::VALUE2
+        *self == Usbpuwq::Value2
     }
 }
 impl R {
     #[doc = "Bit 0 - Hibernate Domain Enable Status"]
     #[inline(always)]
-    pub fn hiben(&self) -> HIBEN_R {
-        HIBEN_R::new((self.bits & 1) != 0)
+    pub fn hiben(&self) -> HibenR {
+        HibenR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 16 - USB PHY Transceiver State"]
     #[inline(always)]
-    pub fn usbphypdq(&self) -> USBPHYPDQ_R {
-        USBPHYPDQ_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn usbphypdq(&self) -> UsbphypdqR {
+        UsbphypdqR::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - USB On-The-Go Comparators State"]
     #[inline(always)]
-    pub fn usbotgen(&self) -> USBOTGEN_R {
-        USBOTGEN_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn usbotgen(&self) -> UsbotgenR {
+        UsbotgenR::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - USB Weak Pull-Up at PADN State"]
     #[inline(always)]
-    pub fn usbpuwq(&self) -> USBPUWQ_R {
-        USBPUWQ_R::new(((self.bits >> 18) & 1) != 0)
+    pub fn usbpuwq(&self) -> UsbpuwqR {
+        UsbpuwqR::new(((self.bits >> 18) & 1) != 0)
     }
 }
 #[doc = "PCU Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pwrstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PWRSTAT_SPEC;
-impl crate::RegisterSpec for PWRSTAT_SPEC {
+pub struct PwrstatSpec;
+impl crate::RegisterSpec for PwrstatSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`pwrstat::R`](R) reader structure"]
-impl crate::Readable for PWRSTAT_SPEC {}
+impl crate::Readable for PwrstatSpec {}
 #[doc = "`reset()` method sets PWRSTAT to value 0"]
-impl crate::Resettable for PWRSTAT_SPEC {
+impl crate::Resettable for PwrstatSpec {
     const RESET_VALUE: u32 = 0;
 }
