@@ -77,6 +77,7 @@ impl From<Ssrc> for u8 {
 impl crate::FieldSpec for Ssrc {
     type Ux = u8;
 }
+impl crate::IsEnum for Ssrc {}
 #[doc = "Field `SSRC` reader - Sign Source"]
 pub type SsrcR = crate::FieldReader<Ssrc>;
 impl SsrcR {
@@ -113,7 +114,7 @@ impl SsrcR {
     }
 }
 #[doc = "Field `SSRC` writer - Sign Source"]
-pub type SsrcW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ssrc>;
+pub type SsrcW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ssrc, crate::Safe>;
 impl<'a, REG> SsrcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

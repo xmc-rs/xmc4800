@@ -24,6 +24,7 @@ impl From<Fetblen> for u8 {
 impl crate::FieldSpec for Fetblen {
     type Ux = u8;
 }
+impl crate::IsEnum for Fetblen {}
 #[doc = "Field `FETBLEN` reader - Burst Length for Synchronous Burst"]
 pub type FetblenR = crate::FieldReader<Fetblen>;
 impl FetblenR {
@@ -535,6 +536,7 @@ impl From<Bcgen> for u8 {
 impl crate::FieldSpec for Bcgen {
     type Ux = u8;
 }
+impl crate::IsEnum for Bcgen {}
 #[doc = "Field `BCGEN` reader - Byte Control Signal Control"]
 pub type BcgenR = crate::FieldReader<Bcgen>;
 impl BcgenR {

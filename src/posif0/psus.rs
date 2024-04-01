@@ -24,6 +24,7 @@ impl From<Qsus> for u8 {
 impl crate::FieldSpec for Qsus {
     type Ux = u8;
 }
+impl crate::IsEnum for Qsus {}
 #[doc = "Field `QSUS` reader - Quadrature Mode Suspend Config"]
 pub type QsusR = crate::FieldReader<Qsus>;
 impl QsusR {
@@ -60,7 +61,7 @@ impl QsusR {
     }
 }
 #[doc = "Field `QSUS` writer - Quadrature Mode Suspend Config"]
-pub type QsusW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Qsus>;
+pub type QsusW<'a, REG> = crate::FieldWriter<'a, REG, 2, Qsus, crate::Safe>;
 impl<'a, REG> QsusW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -109,6 +110,7 @@ impl From<Msus> for u8 {
 impl crate::FieldSpec for Msus {
     type Ux = u8;
 }
+impl crate::IsEnum for Msus {}
 #[doc = "Field `MSUS` reader - Multi-Channel Mode Suspend Config"]
 pub type MsusR = crate::FieldReader<Msus>;
 impl MsusR {
@@ -145,7 +147,7 @@ impl MsusR {
     }
 }
 #[doc = "Field `MSUS` writer - Multi-Channel Mode Suspend Config"]
-pub type MsusW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Msus>;
+pub type MsusW<'a, REG> = crate::FieldWriter<'a, REG, 2, Msus, crate::Safe>;
 impl<'a, REG> MsusW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

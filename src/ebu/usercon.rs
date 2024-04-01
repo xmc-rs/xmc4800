@@ -24,6 +24,7 @@ impl From<Addio> for u16 {
 impl crate::FieldSpec for Addio {
     type Ux = u16;
 }
+impl crate::IsEnum for Addio {}
 #[doc = "Field `ADDIO` reader - Address Pins to GPIO Mode"]
 pub type AddioR = crate::FieldReader<Addio>;
 impl AddioR {

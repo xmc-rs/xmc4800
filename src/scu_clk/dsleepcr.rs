@@ -20,6 +20,7 @@ impl From<Syssel> for u8 {
 impl crate::FieldSpec for Syssel {
     type Ux = u8;
 }
+impl crate::IsEnum for Syssel {}
 #[doc = "Field `SYSSEL` reader - System Clock Selection Value"]
 pub type SysselR = crate::FieldReader<Syssel>;
 impl SysselR {

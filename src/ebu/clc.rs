@@ -219,6 +219,7 @@ impl From<Ebudiv> for u8 {
 impl crate::FieldSpec for Ebudiv {
     type Ux = u8;
 }
+impl crate::IsEnum for Ebudiv {}
 #[doc = "Field `EBUDIV` reader - EBU Clock Divide Ratio"]
 pub type EbudivR = crate::FieldReader<Ebudiv>;
 impl EbudivR {
@@ -255,7 +256,7 @@ impl EbudivR {
     }
 }
 #[doc = "Field `EBUDIV` writer - EBU Clock Divide Ratio"]
-pub type EbudivW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ebudiv>;
+pub type EbudivW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ebudiv, crate::Safe>;
 impl<'a, REG> EbudivW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -376,6 +377,7 @@ impl From<Ebudivack> for u8 {
 impl crate::FieldSpec for Ebudivack {
     type Ux = u8;
 }
+impl crate::IsEnum for Ebudivack {}
 #[doc = "Field `EBUDIVACK` reader - EBU Clock Divide Ratio Status"]
 pub type EbudivackR = crate::FieldReader<Ebudivack>;
 impl EbudivackR {

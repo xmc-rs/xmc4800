@@ -187,6 +187,7 @@ impl From<Arbmode> for u8 {
 impl crate::FieldSpec for Arbmode {
     type Ux = u8;
 }
+impl crate::IsEnum for Arbmode {}
 #[doc = "Field `ARBMODE` reader - Arbitration Mode Selection"]
 pub type ArbmodeR = crate::FieldReader<Arbmode>;
 impl ArbmodeR {
@@ -223,7 +224,7 @@ impl ArbmodeR {
     }
 }
 #[doc = "Field `ARBMODE` writer - Arbitration Mode Selection"]
-pub type ArbmodeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Arbmode>;
+pub type ArbmodeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Arbmode, crate::Safe>;
 impl<'a, REG> ArbmodeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -270,6 +271,7 @@ impl From<Timeoutc> for u8 {
 impl crate::FieldSpec for Timeoutc {
     type Ux = u8;
 }
+impl crate::IsEnum for Timeoutc {}
 #[doc = "Field `TIMEOUTC` reader - Bus Time-out Control"]
 pub type TimeoutcR = crate::FieldReader<Timeoutc>;
 impl TimeoutcR {

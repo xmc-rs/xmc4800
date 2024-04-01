@@ -20,6 +20,7 @@ impl From<Mcsel> for u8 {
 impl crate::FieldSpec for Mcsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Mcsel {}
 #[doc = "Field `MCSEL` reader - Modulator Clock Select"]
 pub type McselR = crate::FieldReader<Mcsel>;
 impl McselR {

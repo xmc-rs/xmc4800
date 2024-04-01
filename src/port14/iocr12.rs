@@ -52,6 +52,7 @@ impl From<Pc12> for u8 {
 impl crate::FieldSpec for Pc12 {
     type Ux = u8;
 }
+impl crate::IsEnum for Pc12 {}
 #[doc = "Field `PC12` reader - Port Control for Port n Pin 12 to 15"]
 pub type Pc12R = crate::FieldReader<Pc12>;
 impl Pc12R {
@@ -319,6 +320,7 @@ impl From<Pc13> for u8 {
 impl crate::FieldSpec for Pc13 {
     type Ux = u8;
 }
+impl crate::IsEnum for Pc13 {}
 #[doc = "Field `PC13` reader - Port Control for Port n Pin 12 to 15"]
 pub type Pc13R = crate::FieldReader<Pc13>;
 impl Pc13R {
@@ -586,6 +588,7 @@ impl From<Pc14> for u8 {
 impl crate::FieldSpec for Pc14 {
     type Ux = u8;
 }
+impl crate::IsEnum for Pc14 {}
 #[doc = "Field `PC14` reader - Port Control for Port n Pin 12 to 15"]
 pub type Pc14R = crate::FieldReader<Pc14>;
 impl Pc14R {
@@ -853,6 +856,7 @@ impl From<Pc15> for u8 {
 impl crate::FieldSpec for Pc15 {
     type Ux = u8;
 }
+impl crate::IsEnum for Pc15 {}
 #[doc = "Field `PC15` reader - Port Control for Port n Pin 12 to 15"]
 pub type Pc15R = crate::FieldReader<Pc15>;
 impl Pc15R {
