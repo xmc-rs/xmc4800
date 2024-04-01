@@ -24,6 +24,7 @@ impl From<Divm> for u8 {
 impl crate::FieldSpec for Divm {
     type Ux = u8;
 }
+impl crate::IsEnum for Divm {}
 #[doc = "Field `DIVM` reader - Divider Factor for Modulator Clock"]
 pub type DivmR = crate::FieldReader<Divm>;
 impl DivmR {

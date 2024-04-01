@@ -40,6 +40,7 @@ impl From<Awidth> for u8 {
 impl crate::FieldSpec for Awidth {
     type Ux = u8;
 }
+impl crate::IsEnum for Awidth {}
 #[doc = "Field `AWIDTH` reader - Width of column address"]
 pub type AwidthR = crate::FieldReader<Awidth>;
 impl AwidthR {
@@ -76,7 +77,7 @@ impl AwidthR {
     }
 }
 #[doc = "Field `AWIDTH` writer - Width of column address"]
-pub type AwidthW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Awidth>;
+pub type AwidthW<'a, REG> = crate::FieldWriter<'a, REG, 2, Awidth, crate::Safe>;
 impl<'a, REG> AwidthW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -135,6 +136,7 @@ impl From<Rowm> for u8 {
 impl crate::FieldSpec for Rowm {
     type Ux = u8;
 }
+impl crate::IsEnum for Rowm {}
 #[doc = "Field `ROWM` reader - Mask for row tag"]
 pub type RowmR = crate::FieldReader<Rowm>;
 impl RowmR {
@@ -237,6 +239,7 @@ impl From<Bankm> for u8 {
 impl crate::FieldSpec for Bankm {
     type Ux = u8;
 }
+impl crate::IsEnum for Bankm {}
 #[doc = "Field `BANKM` reader - Mask for bank tag"]
 pub type BankmR = crate::FieldReader<Bankm>;
 impl BankmR {
@@ -412,6 +415,7 @@ impl From<PwrMode> for u8 {
 impl crate::FieldSpec for PwrMode {
     type Ux = u8;
 }
+impl crate::IsEnum for PwrMode {}
 #[doc = "Field `PWR_MODE` reader - Power Save Mode used for gated clock mode"]
 pub type PwrModeR = crate::FieldReader<PwrMode>;
 impl PwrModeR {
@@ -448,7 +452,7 @@ impl PwrModeR {
     }
 }
 #[doc = "Field `PWR_MODE` writer - Power Save Mode used for gated clock mode"]
-pub type PwrModeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PwrMode>;
+pub type PwrModeW<'a, REG> = crate::FieldWriter<'a, REG, 2, PwrMode, crate::Safe>;
 impl<'a, REG> PwrModeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

@@ -26,6 +26,7 @@ impl From<Pd8> for u8 {
 impl crate::FieldSpec for Pd8 {
     type Ux = u8;
 }
+impl crate::IsEnum for Pd8 {}
 #[doc = "Field `PD8` reader - Pad Driver Mode for Pn.8"]
 pub type Pd8R = crate::FieldReader<Pd8>;
 impl Pd8R {
@@ -124,6 +125,7 @@ impl From<Pd9> for u8 {
 impl crate::FieldSpec for Pd9 {
     type Ux = u8;
 }
+impl crate::IsEnum for Pd9 {}
 #[doc = "Field `PD9` reader - Pad Driver Mode for Pn.9"]
 pub type Pd9R = crate::FieldReader<Pd9>;
 impl Pd9R {
@@ -228,6 +230,7 @@ impl From<Pd10> for u8 {
 impl crate::FieldSpec for Pd10 {
     type Ux = u8;
 }
+impl crate::IsEnum for Pd10 {}
 #[doc = "Field `PD10` reader - Pad Driver Mode for Pn.10"]
 pub type Pd10R = crate::FieldReader<Pd10>;
 impl Pd10R {
@@ -288,7 +291,7 @@ impl Pd10R {
     }
 }
 #[doc = "Field `PD10` writer - Pad Driver Mode for Pn.10"]
-pub type Pd10W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Pd10>;
+pub type Pd10W<'a, REG> = crate::FieldWriter<'a, REG, 3, Pd10, crate::Safe>;
 impl<'a, REG> Pd10W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -365,6 +368,7 @@ impl From<Pd11> for u8 {
 impl crate::FieldSpec for Pd11 {
     type Ux = u8;
 }
+impl crate::IsEnum for Pd11 {}
 #[doc = "Field `PD11` reader - Pad Driver Mode for Pn.11"]
 pub type Pd11R = crate::FieldReader<Pd11>;
 impl Pd11R {
@@ -425,7 +429,7 @@ impl Pd11R {
     }
 }
 #[doc = "Field `PD11` writer - Pad Driver Mode for Pn.11"]
-pub type Pd11W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Pd11>;
+pub type Pd11W<'a, REG> = crate::FieldWriter<'a, REG, 3, Pd11, crate::Safe>;
 impl<'a, REG> Pd11W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -496,6 +500,7 @@ impl From<Pd12> for u8 {
 impl crate::FieldSpec for Pd12 {
     type Ux = u8;
 }
+impl crate::IsEnum for Pd12 {}
 #[doc = "Field `PD12` reader - Pad Driver Mode for Pn.12"]
 pub type Pd12R = crate::FieldReader<Pd12>;
 impl Pd12R {
@@ -594,6 +599,7 @@ impl From<Pd13> for u8 {
 impl crate::FieldSpec for Pd13 {
     type Ux = u8;
 }
+impl crate::IsEnum for Pd13 {}
 #[doc = "Field `PD13` reader - Pad Driver Mode for Pn.13"]
 pub type Pd13R = crate::FieldReader<Pd13>;
 impl Pd13R {
@@ -692,6 +698,7 @@ impl From<Pd14> for u8 {
 impl crate::FieldSpec for Pd14 {
     type Ux = u8;
 }
+impl crate::IsEnum for Pd14 {}
 #[doc = "Field `PD14` reader - Pad Driver Mode for Pn.14"]
 pub type Pd14R = crate::FieldReader<Pd14>;
 impl Pd14R {
@@ -790,6 +797,7 @@ impl From<Pd15> for u8 {
 impl crate::FieldSpec for Pd15 {
     type Ux = u8;
 }
+impl crate::IsEnum for Pd15 {}
 #[doc = "Field `PD15` reader - Pad Driver Mode for Pn.15"]
 pub type Pd15R = crate::FieldReader<Pd15>;
 impl Pd15R {

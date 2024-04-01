@@ -24,6 +24,7 @@ impl From<Fsel> for u8 {
 impl crate::FieldSpec for Fsel {
     type Ux = u8;
 }
+impl crate::IsEnum for Fsel {}
 #[doc = "Field `FSEL` reader - Function Selector"]
 pub type FselR = crate::FieldReader<Fsel>;
 impl FselR {
@@ -60,7 +61,7 @@ impl FselR {
     }
 }
 #[doc = "Field `FSEL` writer - Function Selector"]
-pub type FselW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Fsel>;
+pub type FselW<'a, REG> = crate::FieldWriter<'a, REG, 2, Fsel, crate::Safe>;
 impl<'a, REG> FselW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -219,6 +220,7 @@ impl From<Insel0> for u8 {
 impl crate::FieldSpec for Insel0 {
     type Ux = u8;
 }
+impl crate::IsEnum for Insel0 {}
 #[doc = "Field `INSEL0` reader - PhaseA/Hal input 1 selector"]
 pub type Insel0R = crate::FieldReader<Insel0>;
 impl Insel0R {
@@ -255,7 +257,7 @@ impl Insel0R {
     }
 }
 #[doc = "Field `INSEL0` writer - PhaseA/Hal input 1 selector"]
-pub type Insel0W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Insel0>;
+pub type Insel0W<'a, REG> = crate::FieldWriter<'a, REG, 2, Insel0, crate::Safe>;
 impl<'a, REG> Insel0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -304,6 +306,7 @@ impl From<Insel1> for u8 {
 impl crate::FieldSpec for Insel1 {
     type Ux = u8;
 }
+impl crate::IsEnum for Insel1 {}
 #[doc = "Field `INSEL1` reader - PhaseB/Hall input 2 selector"]
 pub type Insel1R = crate::FieldReader<Insel1>;
 impl Insel1R {
@@ -340,7 +343,7 @@ impl Insel1R {
     }
 }
 #[doc = "Field `INSEL1` writer - PhaseB/Hall input 2 selector"]
-pub type Insel1W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Insel1>;
+pub type Insel1W<'a, REG> = crate::FieldWriter<'a, REG, 2, Insel1, crate::Safe>;
 impl<'a, REG> Insel1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -389,6 +392,7 @@ impl From<Insel2> for u8 {
 impl crate::FieldSpec for Insel2 {
     type Ux = u8;
 }
+impl crate::IsEnum for Insel2 {}
 #[doc = "Field `INSEL2` reader - Index/Hall input 3 selector"]
 pub type Insel2R = crate::FieldReader<Insel2>;
 impl Insel2R {
@@ -425,7 +429,7 @@ impl Insel2R {
     }
 }
 #[doc = "Field `INSEL2` writer - Index/Hall input 3 selector"]
-pub type Insel2W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Insel2>;
+pub type Insel2W<'a, REG> = crate::FieldWriter<'a, REG, 2, Insel2, crate::Safe>;
 impl<'a, REG> Insel2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -588,6 +592,7 @@ impl From<Msets> for u8 {
 impl crate::FieldSpec for Msets {
     type Ux = u8;
 }
+impl crate::IsEnum for Msets {}
 #[doc = "Field `MSETS` reader - Pattern update signal select"]
 pub type MsetsR = crate::FieldReader<Msets>;
 impl MsetsR {
@@ -648,7 +653,7 @@ impl MsetsR {
     }
 }
 #[doc = "Field `MSETS` writer - Pattern update signal select"]
-pub type MsetsW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Msets>;
+pub type MsetsW<'a, REG> = crate::FieldWriter<'a, REG, 3, Msets, crate::Safe>;
 impl<'a, REG> MsetsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -770,6 +775,7 @@ impl From<Msyns> for u8 {
 impl crate::FieldSpec for Msyns {
     type Ux = u8;
 }
+impl crate::IsEnum for Msyns {}
 #[doc = "Field `MSYNS` reader - PWM synchronization signal selector"]
 pub type MsynsR = crate::FieldReader<Msyns>;
 impl MsynsR {
@@ -806,7 +812,7 @@ impl MsynsR {
     }
 }
 #[doc = "Field `MSYNS` writer - PWM synchronization signal selector"]
-pub type MsynsW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Msyns>;
+pub type MsynsW<'a, REG> = crate::FieldWriter<'a, REG, 2, Msyns, crate::Safe>;
 impl<'a, REG> MsynsW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -855,6 +861,7 @@ impl From<Ewis> for u8 {
 impl crate::FieldSpec for Ewis {
     type Ux = u8;
 }
+impl crate::IsEnum for Ewis {}
 #[doc = "Field `EWIS` reader - Wrong Hall Event selection"]
 pub type EwisR = crate::FieldReader<Ewis>;
 impl EwisR {
@@ -891,7 +898,7 @@ impl EwisR {
     }
 }
 #[doc = "Field `EWIS` writer - Wrong Hall Event selection"]
-pub type EwisW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Ewis>;
+pub type EwisW<'a, REG> = crate::FieldWriter<'a, REG, 2, Ewis, crate::Safe>;
 impl<'a, REG> EwisW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -1060,6 +1067,7 @@ impl From<Lpc> for u8 {
 impl crate::FieldSpec for Lpc {
     type Ux = u8;
 }
+impl crate::IsEnum for Lpc {}
 #[doc = "Field `LPC` reader - Low Pass Filters Configuration"]
 pub type LpcR = crate::FieldReader<Lpc>;
 impl LpcR {
@@ -1120,7 +1128,7 @@ impl LpcR {
     }
 }
 #[doc = "Field `LPC` writer - Low Pass Filters Configuration"]
-pub type LpcW<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, Lpc>;
+pub type LpcW<'a, REG> = crate::FieldWriter<'a, REG, 3, Lpc, crate::Safe>;
 impl<'a, REG> LpcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,

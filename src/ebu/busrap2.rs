@@ -24,6 +24,7 @@ impl From<Rddtacs> for u8 {
 impl crate::FieldSpec for Rddtacs {
     type Ux = u8;
 }
+impl crate::IsEnum for Rddtacs {}
 #[doc = "Field `RDDTACS` reader - Recovery Cycles between Different Regions"]
 pub type RddtacsR = crate::FieldReader<Rddtacs>;
 impl RddtacsR {
@@ -109,6 +110,7 @@ impl From<Rdrecovc> for u8 {
 impl crate::FieldSpec for Rdrecovc {
     type Ux = u8;
 }
+impl crate::IsEnum for Rdrecovc {}
 #[doc = "Field `RDRECOVC` reader - Recovery Cycles after Read Accesses"]
 pub type RdrecovcR = crate::FieldReader<Rdrecovc>;
 impl RdrecovcR {
@@ -196,6 +198,7 @@ impl From<Waitrdc> for u8 {
 impl crate::FieldSpec for Waitrdc {
     type Ux = u8;
 }
+impl crate::IsEnum for Waitrdc {}
 #[doc = "Field `WAITRDC` reader - Programmed Wait States for read accesses"]
 pub type WaitrdcR = crate::FieldReader<Waitrdc>;
 impl WaitrdcR {
@@ -296,6 +299,7 @@ impl From<Extclock> for u8 {
 impl crate::FieldSpec for Extclock {
     type Ux = u8;
 }
+impl crate::IsEnum for Extclock {}
 #[doc = "Field `EXTCLOCK` reader - Frequency of external clock at pin BFCLKO"]
 pub type ExtclockR = crate::FieldReader<Extclock>;
 impl ExtclockR {
@@ -332,7 +336,7 @@ impl ExtclockR {
     }
 }
 #[doc = "Field `EXTCLOCK` writer - Frequency of external clock at pin BFCLKO"]
-pub type ExtclockW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Extclock>;
+pub type ExtclockW<'a, REG> = crate::FieldWriter<'a, REG, 2, Extclock, crate::Safe>;
 impl<'a, REG> ExtclockW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -381,6 +385,7 @@ impl From<Extdata> for u8 {
 impl crate::FieldSpec for Extdata {
     type Ux = u8;
 }
+impl crate::IsEnum for Extdata {}
 #[doc = "Field `EXTDATA` reader - Extended data"]
 pub type ExtdataR = crate::FieldReader<Extdata>;
 impl ExtdataR {
@@ -417,7 +422,7 @@ impl ExtdataR {
     }
 }
 #[doc = "Field `EXTDATA` writer - Extended data"]
-pub type ExtdataW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Extdata>;
+pub type ExtdataW<'a, REG> = crate::FieldWriter<'a, REG, 2, Extdata, crate::Safe>;
 impl<'a, REG> ExtdataW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -466,6 +471,7 @@ impl From<Cmddelay> for u8 {
 impl crate::FieldSpec for Cmddelay {
     type Ux = u8;
 }
+impl crate::IsEnum for Cmddelay {}
 #[doc = "Field `CMDDELAY` reader - Command Delay Cycles"]
 pub type CmddelayR = crate::FieldReader<Cmddelay>;
 impl CmddelayR {
@@ -551,6 +557,7 @@ impl From<Aholdc> for u8 {
 impl crate::FieldSpec for Aholdc {
     type Ux = u8;
 }
+impl crate::IsEnum for Aholdc {}
 #[doc = "Field `AHOLDC` reader - Address Hold Cycles"]
 pub type AholdcR = crate::FieldReader<Aholdc>;
 impl AholdcR {
@@ -636,6 +643,7 @@ impl From<Addrc> for u8 {
 impl crate::FieldSpec for Addrc {
     type Ux = u8;
 }
+impl crate::IsEnum for Addrc {}
 #[doc = "Field `ADDRC` reader - Address Cycles"]
 pub type AddrcR = crate::FieldReader<Addrc>;
 impl AddrcR {

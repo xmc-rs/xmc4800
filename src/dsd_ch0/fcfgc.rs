@@ -28,6 +28,7 @@ impl From<Cfmc> for u8 {
 impl crate::FieldSpec for Cfmc {
     type Ux = u8;
 }
+impl crate::IsEnum for Cfmc {}
 #[doc = "Field `CFMC` reader - CIC Filter (Main Chain) Configuration"]
 pub type CfmcR = crate::FieldReader<Cfmc>;
 impl CfmcR {
@@ -64,7 +65,7 @@ impl CfmcR {
     }
 }
 #[doc = "Field `CFMC` writer - CIC Filter (Main Chain) Configuration"]
-pub type CfmcW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Cfmc>;
+pub type CfmcW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cfmc, crate::Safe>;
 impl<'a, REG> CfmcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -162,6 +163,7 @@ impl From<Srgm> for u8 {
 impl crate::FieldSpec for Srgm {
     type Ux = u8;
 }
+impl crate::IsEnum for Srgm {}
 #[doc = "Field `SRGM` reader - Service Request Generation Main Chain"]
 pub type SrgmR = crate::FieldReader<Srgm>;
 impl SrgmR {

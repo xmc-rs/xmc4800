@@ -24,6 +24,7 @@ impl From<Cgmod> for u8 {
 impl crate::FieldSpec for Cgmod {
     type Ux = u8;
 }
+impl crate::IsEnum for Cgmod {}
 #[doc = "Field `CGMOD` reader - Carrier Generator Operating Mode"]
 pub type CgmodR = crate::FieldReader<Cgmod>;
 impl CgmodR {
@@ -60,7 +61,7 @@ impl CgmodR {
     }
 }
 #[doc = "Field `CGMOD` writer - Carrier Generator Operating Mode"]
-pub type CgmodW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Cgmod>;
+pub type CgmodW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cgmod, crate::Safe>;
 impl<'a, REG> CgmodW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -215,6 +216,7 @@ impl From<Divcg> for u8 {
 impl crate::FieldSpec for Divcg {
     type Ux = u8;
 }
+impl crate::IsEnum for Divcg {}
 #[doc = "Field `DIVCG` reader - Divider Factor for the PWM Pattern Signal Generator"]
 pub type DivcgR = crate::FieldReader<Divcg>;
 impl DivcgR {

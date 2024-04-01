@@ -26,6 +26,7 @@ impl From<Burstl> for u8 {
 impl crate::FieldSpec for Burstl {
     type Ux = u8;
 }
+impl crate::IsEnum for Burstl {}
 #[doc = "Field `BURSTL` reader - Burst length"]
 pub type BurstlR = crate::FieldReader<Burstl>;
 impl BurstlR {
@@ -159,6 +160,7 @@ impl From<Caslat> for u8 {
 impl crate::FieldSpec for Caslat {
     type Ux = u8;
 }
+impl crate::IsEnum for Caslat {}
 #[doc = "Field `CASLAT` reader - CAS latency"]
 pub type CaslatR = crate::FieldReader<Caslat>;
 impl CaslatR {
@@ -216,6 +218,7 @@ impl From<Opmode> for u8 {
 impl crate::FieldSpec for Opmode {
     type Ux = u8;
 }
+impl crate::IsEnum for Opmode {}
 #[doc = "Field `OPMODE` reader - Operation Mode"]
 pub type OpmodeR = crate::FieldReader<Opmode>;
 impl OpmodeR {

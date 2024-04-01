@@ -28,6 +28,7 @@ impl From<Cfac> for u8 {
 impl crate::FieldSpec for Cfac {
     type Ux = u8;
 }
+impl crate::IsEnum for Cfac {}
 #[doc = "Field `CFAC` reader - CIC Filter (Auxiliary) Configuration"]
 pub type CfacR = crate::FieldReader<Cfac>;
 impl CfacR {
@@ -64,7 +65,7 @@ impl CfacR {
     }
 }
 #[doc = "Field `CFAC` writer - CIC Filter (Auxiliary) Configuration"]
-pub type CfacW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Cfac>;
+pub type CfacW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cfac, crate::Safe>;
 impl<'a, REG> CfacW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -111,6 +112,7 @@ impl From<Srga> for u8 {
 impl crate::FieldSpec for Srga {
     type Ux = u8;
 }
+impl crate::IsEnum for Srga {}
 #[doc = "Field `SRGA` reader - Service Request Generation Auxiliary Filter"]
 pub type SrgaR = crate::FieldReader<Srga>;
 impl SrgaR {
@@ -183,6 +185,7 @@ impl From<Esel> for u8 {
 impl crate::FieldSpec for Esel {
     type Ux = u8;
 }
+impl crate::IsEnum for Esel {}
 #[doc = "Field `ESEL` reader - Event Select"]
 pub type EselR = crate::FieldReader<Esel>;
 impl EselR {

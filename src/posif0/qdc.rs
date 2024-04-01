@@ -181,6 +181,7 @@ impl From<Icm> for u8 {
 impl crate::FieldSpec for Icm {
     type Ux = u8;
 }
+impl crate::IsEnum for Icm {}
 #[doc = "Field `ICM` reader - Index Marker generations control"]
 pub type IcmR = crate::FieldReader<Icm>;
 impl IcmR {

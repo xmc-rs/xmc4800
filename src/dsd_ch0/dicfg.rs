@@ -26,6 +26,7 @@ impl From<Dsrc> for u8 {
 impl crate::FieldSpec for Dsrc {
     type Ux = u8;
 }
+impl crate::IsEnum for Dsrc {}
 #[doc = "Field `DSRC` reader - Input Data Source Select"]
 pub type DsrcR = crate::FieldReader<Dsrc>;
 impl DsrcR {
@@ -153,6 +154,7 @@ impl From<Itrmode> for u8 {
 impl crate::FieldSpec for Itrmode {
     type Ux = u8;
 }
+impl crate::IsEnum for Itrmode {}
 #[doc = "Field `ITRMODE` reader - Integrator Trigger Mode"]
 pub type ItrmodeR = crate::FieldReader<Itrmode>;
 impl ItrmodeR {
@@ -189,7 +191,7 @@ impl ItrmodeR {
     }
 }
 #[doc = "Field `ITRMODE` writer - Integrator Trigger Mode"]
-pub type ItrmodeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Itrmode>;
+pub type ItrmodeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Itrmode, crate::Safe>;
 impl<'a, REG> ItrmodeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -238,6 +240,7 @@ impl From<Tstrmode> for u8 {
 impl crate::FieldSpec for Tstrmode {
     type Ux = u8;
 }
+impl crate::IsEnum for Tstrmode {}
 #[doc = "Field `TSTRMODE` reader - Timestamp Trigger Mode"]
 pub type TstrmodeR = crate::FieldReader<Tstrmode>;
 impl TstrmodeR {
@@ -274,7 +277,7 @@ impl TstrmodeR {
     }
 }
 #[doc = "Field `TSTRMODE` writer - Timestamp Trigger Mode"]
-pub type TstrmodeW<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, Tstrmode>;
+pub type TstrmodeW<'a, REG> = crate::FieldWriter<'a, REG, 2, Tstrmode, crate::Safe>;
 impl<'a, REG> TstrmodeW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
@@ -360,6 +363,7 @@ impl From<Csrc> for u8 {
 impl crate::FieldSpec for Csrc {
     type Ux = u8;
 }
+impl crate::IsEnum for Csrc {}
 #[doc = "Field `CSRC` reader - Sample Clock Source Select"]
 pub type CsrcR = crate::FieldReader<Csrc>;
 impl CsrcR {
@@ -460,6 +464,7 @@ impl From<Strobe> for u8 {
 impl crate::FieldSpec for Strobe {
     type Ux = u8;
 }
+impl crate::IsEnum for Strobe {}
 #[doc = "Field `STROBE` reader - Data Strobe Generatoion Mode"]
 pub type StrobeR = crate::FieldReader<Strobe>;
 impl StrobeR {
