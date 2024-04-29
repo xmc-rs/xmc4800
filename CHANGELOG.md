@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.1](https://github.com/xmc-rs/xmc4800/compare/v0.11.0...v0.11.1) (2024-04-29)
+
+
+### Bug Fixes
+
+* regenerating code with new format ([aea0f9d](https://github.com/xmc-rs/xmc4800/commit/aea0f9dd8919c3184e0dc30da750936e3db6f1ad))
+
 ## [0.11.0](https://github.com/xmc-rs/xmc4800/compare/v0.10.0...v0.11.0) (2024-04-01)
 
 
