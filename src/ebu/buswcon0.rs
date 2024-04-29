@@ -1,68 +1,68 @@
 #[doc = "Register `BUSWCON0` reader"]
-pub type R = crate::R<Buswcon0Spec>;
+pub type R = crate::R<BUSWCON0_SPEC>;
 #[doc = "Register `BUSWCON0` writer"]
-pub type W = crate::W<Buswcon0Spec>;
+pub type W = crate::W<BUSWCON0_SPEC>;
 #[doc = "Burst Length for Synchronous Burst\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Fetblen {
+pub enum FETBLEN_A {
     #[doc = "0: 1 data access (default after reset)."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 2 data accesses."]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: 4 data accesses."]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: 8 data accesses."]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Fetblen> for u8 {
+impl From<FETBLEN_A> for u8 {
     #[inline(always)]
-    fn from(variant: Fetblen) -> Self {
+    fn from(variant: FETBLEN_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Fetblen {
+impl crate::FieldSpec for FETBLEN_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Fetblen {}
+impl crate::IsEnum for FETBLEN_A {}
 #[doc = "Field `FETBLEN` reader - Burst Length for Synchronous Burst"]
-pub type FetblenR = crate::FieldReader<Fetblen>;
-impl FetblenR {
+pub type FETBLEN_R = crate::FieldReader<FETBLEN_A>;
+impl FETBLEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Fetblen> {
+    pub const fn variant(&self) -> Option<FETBLEN_A> {
         match self.bits {
-            0 => Some(Fetblen::Value1),
-            1 => Some(Fetblen::Value2),
-            2 => Some(Fetblen::Value3),
-            3 => Some(Fetblen::Value4),
+            0 => Some(FETBLEN_A::VALUE1),
+            1 => Some(FETBLEN_A::VALUE2),
+            2 => Some(FETBLEN_A::VALUE3),
+            3 => Some(FETBLEN_A::VALUE4),
             _ => None,
         }
     }
     #[doc = "1 data access (default after reset)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Fetblen::Value1
+        *self == FETBLEN_A::VALUE1
     }
     #[doc = "2 data accesses."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Fetblen::Value2
+        *self == FETBLEN_A::VALUE2
     }
     #[doc = "4 data accesses."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Fetblen::Value3
+        *self == FETBLEN_A::VALUE3
     }
     #[doc = "8 data accesses."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Fetblen::Value4
+        *self == FETBLEN_A::VALUE4
     }
 }
 #[doc = "Field `FETBLEN` writer - Burst Length for Synchronous Burst"]
-pub type FetblenW<'a, REG> = crate::FieldWriter<'a, REG, 3, Fetblen>;
-impl<'a, REG> FetblenW<'a, REG>
+pub type FETBLEN_W<'a, REG> = crate::FieldWriter<'a, REG, 3, FETBLEN_A>;
+impl<'a, REG> FETBLEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -70,291 +70,291 @@ where
     #[doc = "1 data access (default after reset)."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Fetblen::Value1)
+        self.variant(FETBLEN_A::VALUE1)
     }
     #[doc = "2 data accesses."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Fetblen::Value2)
+        self.variant(FETBLEN_A::VALUE2)
     }
     #[doc = "4 data accesses."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Fetblen::Value3)
+        self.variant(FETBLEN_A::VALUE3)
     }
     #[doc = "8 data accesses."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Fetblen::Value4)
+        self.variant(FETBLEN_A::VALUE4)
     }
 }
 #[doc = "Synchronous burst buffer mode select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Fbbmsel {
+pub enum FBBMSEL_A {
     #[doc = "0: Burst buffer length defined by value in FETBLEN (default after reset)."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Continuous mode. All data required for transaction transferred in single burst"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Fbbmsel> for bool {
+impl From<FBBMSEL_A> for bool {
     #[inline(always)]
-    fn from(variant: Fbbmsel) -> Self {
+    fn from(variant: FBBMSEL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `FBBMSEL` reader - Synchronous burst buffer mode select"]
-pub type FbbmselR = crate::BitReader<Fbbmsel>;
-impl FbbmselR {
+pub type FBBMSEL_R = crate::BitReader<FBBMSEL_A>;
+impl FBBMSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Fbbmsel {
+    pub const fn variant(&self) -> FBBMSEL_A {
         match self.bits {
-            false => Fbbmsel::Value1,
-            true => Fbbmsel::Value2,
+            false => FBBMSEL_A::VALUE1,
+            true => FBBMSEL_A::VALUE2,
         }
     }
     #[doc = "Burst buffer length defined by value in FETBLEN (default after reset)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Fbbmsel::Value1
+        *self == FBBMSEL_A::VALUE1
     }
     #[doc = "Continuous mode. All data required for transaction transferred in single burst"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Fbbmsel::Value2
+        *self == FBBMSEL_A::VALUE2
     }
 }
 #[doc = "Field `FBBMSEL` writer - Synchronous burst buffer mode select"]
-pub type FbbmselW<'a, REG> = crate::BitWriter<'a, REG, Fbbmsel>;
-impl<'a, REG> FbbmselW<'a, REG>
+pub type FBBMSEL_W<'a, REG> = crate::BitWriter<'a, REG, FBBMSEL_A>;
+impl<'a, REG> FBBMSEL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Burst buffer length defined by value in FETBLEN (default after reset)."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Fbbmsel::Value1)
+        self.variant(FBBMSEL_A::VALUE1)
     }
     #[doc = "Continuous mode. All data required for transaction transferred in single burst"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Fbbmsel::Value2)
+        self.variant(FBBMSEL_A::VALUE2)
     }
 }
 #[doc = "Field `NAA` reader - Enable flash non-array access workaround"]
-pub type NaaR = crate::BitReader;
+pub type NAA_R = crate::BitReader;
 #[doc = "Early Chip Select for Synchronous Burst\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ecse {
+pub enum ECSE_A {
     #[doc = "0: CS is delayed."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: CS is not delayed."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ecse> for bool {
+impl From<ECSE_A> for bool {
     #[inline(always)]
-    fn from(variant: Ecse) -> Self {
+    fn from(variant: ECSE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ECSE` reader - Early Chip Select for Synchronous Burst"]
-pub type EcseR = crate::BitReader<Ecse>;
-impl EcseR {
+pub type ECSE_R = crate::BitReader<ECSE_A>;
+impl ECSE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ecse {
+    pub const fn variant(&self) -> ECSE_A {
         match self.bits {
-            false => Ecse::Value1,
-            true => Ecse::Value2,
+            false => ECSE_A::VALUE1,
+            true => ECSE_A::VALUE2,
         }
     }
     #[doc = "CS is delayed."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ecse::Value1
+        *self == ECSE_A::VALUE1
     }
     #[doc = "CS is not delayed."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ecse::Value2
+        *self == ECSE_A::VALUE2
     }
 }
 #[doc = "Field `ECSE` writer - Early Chip Select for Synchronous Burst"]
-pub type EcseW<'a, REG> = crate::BitWriter<'a, REG, Ecse>;
-impl<'a, REG> EcseW<'a, REG>
+pub type ECSE_W<'a, REG> = crate::BitWriter<'a, REG, ECSE_A>;
+impl<'a, REG> ECSE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "CS is delayed."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ecse::Value1)
+        self.variant(ECSE_A::VALUE1)
     }
     #[doc = "CS is not delayed."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ecse::Value2)
+        self.variant(ECSE_A::VALUE2)
     }
 }
 #[doc = "Early Burst Signal Enable for Synchronous Burst\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ebse {
+pub enum EBSE_A {
     #[doc = "0: ADV is delayed."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: ADV is not delayed."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ebse> for bool {
+impl From<EBSE_A> for bool {
     #[inline(always)]
-    fn from(variant: Ebse) -> Self {
+    fn from(variant: EBSE_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EBSE` reader - Early Burst Signal Enable for Synchronous Burst"]
-pub type EbseR = crate::BitReader<Ebse>;
-impl EbseR {
+pub type EBSE_R = crate::BitReader<EBSE_A>;
+impl EBSE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ebse {
+    pub const fn variant(&self) -> EBSE_A {
         match self.bits {
-            false => Ebse::Value1,
-            true => Ebse::Value2,
+            false => EBSE_A::VALUE1,
+            true => EBSE_A::VALUE2,
         }
     }
     #[doc = "ADV is delayed."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ebse::Value1
+        *self == EBSE_A::VALUE1
     }
     #[doc = "ADV is not delayed."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ebse::Value2
+        *self == EBSE_A::VALUE2
     }
 }
 #[doc = "Field `EBSE` writer - Early Burst Signal Enable for Synchronous Burst"]
-pub type EbseW<'a, REG> = crate::BitWriter<'a, REG, Ebse>;
-impl<'a, REG> EbseW<'a, REG>
+pub type EBSE_W<'a, REG> = crate::BitWriter<'a, REG, EBSE_A>;
+impl<'a, REG> EBSE_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "ADV is delayed."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ebse::Value1)
+        self.variant(EBSE_A::VALUE1)
     }
     #[doc = "ADV is not delayed."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ebse::Value2)
+        self.variant(EBSE_A::VALUE2)
     }
 }
 #[doc = "Reversed polarity at WAIT\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Waitinv {
+pub enum WAITINV_A {
     #[doc = "0: input at WAIT pin is active low (default after reset)."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: input at WAIT pin is active high."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Waitinv> for bool {
+impl From<WAITINV_A> for bool {
     #[inline(always)]
-    fn from(variant: Waitinv) -> Self {
+    fn from(variant: WAITINV_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WAITINV` reader - Reversed polarity at WAIT"]
-pub type WaitinvR = crate::BitReader<Waitinv>;
-impl WaitinvR {
+pub type WAITINV_R = crate::BitReader<WAITINV_A>;
+impl WAITINV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Waitinv {
+    pub const fn variant(&self) -> WAITINV_A {
         match self.bits {
-            false => Waitinv::Value1,
-            true => Waitinv::Value2,
+            false => WAITINV_A::VALUE1,
+            true => WAITINV_A::VALUE2,
         }
     }
     #[doc = "input at WAIT pin is active low (default after reset)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Waitinv::Value1
+        *self == WAITINV_A::VALUE1
     }
     #[doc = "input at WAIT pin is active high."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Waitinv::Value2
+        *self == WAITINV_A::VALUE2
     }
 }
 #[doc = "Field `WAITINV` writer - Reversed polarity at WAIT"]
-pub type WaitinvW<'a, REG> = crate::BitWriter<'a, REG, Waitinv>;
-impl<'a, REG> WaitinvW<'a, REG>
+pub type WAITINV_W<'a, REG> = crate::BitWriter<'a, REG, WAITINV_A>;
+impl<'a, REG> WAITINV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "input at WAIT pin is active low (default after reset)."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Waitinv::Value1)
+        self.variant(WAITINV_A::VALUE1)
     }
     #[doc = "input at WAIT pin is active high."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Waitinv::Value2)
+        self.variant(WAITINV_A::VALUE2)
     }
 }
 #[doc = "Byte Control Signal Control\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Bcgen {
+pub enum BCGEN_A {
     #[doc = "0: Byte control signals follow chip select timing."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Byte control signals follow control signal timing (RD, RD/WR) (default after reset)."]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Byte control signals follow write enable signal timing (RD/WR only)."]
-    Value3 = 2,
+    VALUE3 = 2,
 }
-impl From<Bcgen> for u8 {
+impl From<BCGEN_A> for u8 {
     #[inline(always)]
-    fn from(variant: Bcgen) -> Self {
+    fn from(variant: BCGEN_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Bcgen {
+impl crate::FieldSpec for BCGEN_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Bcgen {}
+impl crate::IsEnum for BCGEN_A {}
 #[doc = "Field `BCGEN` reader - Byte Control Signal Control"]
-pub type BcgenR = crate::FieldReader<Bcgen>;
-impl BcgenR {
+pub type BCGEN_R = crate::FieldReader<BCGEN_A>;
+impl BCGEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Bcgen> {
+    pub const fn variant(&self) -> Option<BCGEN_A> {
         match self.bits {
-            0 => Some(Bcgen::Value1),
-            1 => Some(Bcgen::Value2),
-            2 => Some(Bcgen::Value3),
+            0 => Some(BCGEN_A::VALUE1),
+            1 => Some(BCGEN_A::VALUE2),
+            2 => Some(BCGEN_A::VALUE3),
             _ => None,
         }
     }
     #[doc = "Byte control signals follow chip select timing."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Bcgen::Value1
+        *self == BCGEN_A::VALUE1
     }
     #[doc = "Byte control signals follow control signal timing (RD, RD/WR) (default after reset)."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Bcgen::Value2
+        *self == BCGEN_A::VALUE2
     }
     #[doc = "Byte control signals follow write enable signal timing (RD/WR only)."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Bcgen::Value3
+        *self == BCGEN_A::VALUE3
     }
 }
 #[doc = "Field `BCGEN` writer - Byte Control Signal Control"]
-pub type BcgenW<'a, REG> = crate::FieldWriter<'a, REG, 2, Bcgen>;
-impl<'a, REG> BcgenW<'a, REG>
+pub type BCGEN_W<'a, REG> = crate::FieldWriter<'a, REG, 2, BCGEN_A>;
+impl<'a, REG> BCGEN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -362,273 +362,273 @@ where
     #[doc = "Byte control signals follow chip select timing."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Bcgen::Value1)
+        self.variant(BCGEN_A::VALUE1)
     }
     #[doc = "Byte control signals follow control signal timing (RD, RD/WR) (default after reset)."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Bcgen::Value2)
+        self.variant(BCGEN_A::VALUE2)
     }
     #[doc = "Byte control signals follow write enable signal timing (RD/WR only)."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Bcgen::Value3)
+        self.variant(BCGEN_A::VALUE3)
     }
 }
 #[doc = "Field `PORTW` reader - Device Addressing Mode"]
-pub type PortwR = crate::FieldReader;
+pub type PORTW_R = crate::FieldReader;
 #[doc = "Field `WAIT` reader - External Wait Control: 0=OFF (default after reset)., 1=Asynchronous input at WAIT., 2=Synchronous input at WAIT., 3=reserved., 0=OFF (default after reset)., 1=Wait for page load (Early WAIT)., 2=Wait for page load (WAIT with data)., 3=Abort and retry access.,"]
-pub type WaitR = crate::FieldReader;
+pub type WAIT_R = crate::FieldReader;
 #[doc = "Field `WAIT` writer - External Wait Control: 0=OFF (default after reset)., 1=Asynchronous input at WAIT., 2=Synchronous input at WAIT., 3=reserved., 0=OFF (default after reset)., 1=Wait for page load (Early WAIT)., 2=Wait for page load (WAIT with data)., 3=Abort and retry access.,"]
-pub type WaitW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
+pub type WAIT_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Asynchronous Address phase:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Aap {
+pub enum AAP_A {
     #[doc = "0: Clock is enabled at beginning of access."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Clock is enabled at after address phase."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Aap> for bool {
+impl From<AAP_A> for bool {
     #[inline(always)]
-    fn from(variant: Aap) -> Self {
+    fn from(variant: AAP_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `AAP` reader - Asynchronous Address phase:"]
-pub type AapR = crate::BitReader<Aap>;
-impl AapR {
+pub type AAP_R = crate::BitReader<AAP_A>;
+impl AAP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Aap {
+    pub const fn variant(&self) -> AAP_A {
         match self.bits {
-            false => Aap::Value1,
-            true => Aap::Value2,
+            false => AAP_A::VALUE1,
+            true => AAP_A::VALUE2,
         }
     }
     #[doc = "Clock is enabled at beginning of access."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Aap::Value1
+        *self == AAP_A::VALUE1
     }
     #[doc = "Clock is enabled at after address phase."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Aap::Value2
+        *self == AAP_A::VALUE2
     }
 }
 #[doc = "Field `AAP` writer - Asynchronous Address phase:"]
-pub type AapW<'a, REG> = crate::BitWriter<'a, REG, Aap>;
-impl<'a, REG> AapW<'a, REG>
+pub type AAP_W<'a, REG> = crate::BitWriter<'a, REG, AAP_A>;
+impl<'a, REG> AAP_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Clock is enabled at beginning of access."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Aap::Value1)
+        self.variant(AAP_A::VALUE1)
     }
     #[doc = "Clock is enabled at after address phase."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Aap::Value2)
+        self.variant(AAP_A::VALUE2)
     }
 }
 #[doc = "Lock Chip Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Lockcs {
+pub enum LOCKCS_A {
     #[doc = "0: Chip Select cannot be locked (default after reset)."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Chip Select will be automatically locked when written to from the processor data port."]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Lockcs> for bool {
+impl From<LOCKCS_A> for bool {
     #[inline(always)]
-    fn from(variant: Lockcs) -> Self {
+    fn from(variant: LOCKCS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LOCKCS` reader - Lock Chip Select"]
-pub type LockcsR = crate::BitReader<Lockcs>;
-impl LockcsR {
+pub type LOCKCS_R = crate::BitReader<LOCKCS_A>;
+impl LOCKCS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Lockcs {
+    pub const fn variant(&self) -> LOCKCS_A {
         match self.bits {
-            false => Lockcs::Value1,
-            true => Lockcs::Value2,
+            false => LOCKCS_A::VALUE1,
+            true => LOCKCS_A::VALUE2,
         }
     }
     #[doc = "Chip Select cannot be locked (default after reset)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Lockcs::Value1
+        *self == LOCKCS_A::VALUE1
     }
     #[doc = "Chip Select will be automatically locked when written to from the processor data port."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Lockcs::Value2
+        *self == LOCKCS_A::VALUE2
     }
 }
 #[doc = "Field `LOCKCS` writer - Lock Chip Select"]
-pub type LockcsW<'a, REG> = crate::BitWriter<'a, REG, Lockcs>;
-impl<'a, REG> LockcsW<'a, REG>
+pub type LOCKCS_W<'a, REG> = crate::BitWriter<'a, REG, LOCKCS_A>;
+impl<'a, REG> LOCKCS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Chip Select cannot be locked (default after reset)."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Lockcs::Value1)
+        self.variant(LOCKCS_A::VALUE1)
     }
     #[doc = "Chip Select will be automatically locked when written to from the processor data port."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Lockcs::Value2)
+        self.variant(LOCKCS_A::VALUE2)
     }
 }
 #[doc = "Field `AGEN` reader - Device Type for Region"]
-pub type AgenR = crate::FieldReader;
+pub type AGEN_R = crate::FieldReader;
 #[doc = "Field `AGEN` writer - Device Type for Region"]
-pub type AgenW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type AGEN_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:2 - Burst Length for Synchronous Burst"]
     #[inline(always)]
-    pub fn fetblen(&self) -> FetblenR {
-        FetblenR::new((self.bits & 7) as u8)
+    pub fn fetblen(&self) -> FETBLEN_R {
+        FETBLEN_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 3 - Synchronous burst buffer mode select"]
     #[inline(always)]
-    pub fn fbbmsel(&self) -> FbbmselR {
-        FbbmselR::new(((self.bits >> 3) & 1) != 0)
+    pub fn fbbmsel(&self) -> FBBMSEL_R {
+        FBBMSEL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 7 - Enable flash non-array access workaround"]
     #[inline(always)]
-    pub fn naa(&self) -> NaaR {
-        NaaR::new(((self.bits >> 7) & 1) != 0)
+    pub fn naa(&self) -> NAA_R {
+        NAA_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 16 - Early Chip Select for Synchronous Burst"]
     #[inline(always)]
-    pub fn ecse(&self) -> EcseR {
-        EcseR::new(((self.bits >> 16) & 1) != 0)
+    pub fn ecse(&self) -> ECSE_R {
+        ECSE_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Early Burst Signal Enable for Synchronous Burst"]
     #[inline(always)]
-    pub fn ebse(&self) -> EbseR {
-        EbseR::new(((self.bits >> 17) & 1) != 0)
+    pub fn ebse(&self) -> EBSE_R {
+        EBSE_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 19 - Reversed polarity at WAIT"]
     #[inline(always)]
-    pub fn waitinv(&self) -> WaitinvR {
-        WaitinvR::new(((self.bits >> 19) & 1) != 0)
+    pub fn waitinv(&self) -> WAITINV_R {
+        WAITINV_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bits 20:21 - Byte Control Signal Control"]
     #[inline(always)]
-    pub fn bcgen(&self) -> BcgenR {
-        BcgenR::new(((self.bits >> 20) & 3) as u8)
+    pub fn bcgen(&self) -> BCGEN_R {
+        BCGEN_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 22:23 - Device Addressing Mode"]
     #[inline(always)]
-    pub fn portw(&self) -> PortwR {
-        PortwR::new(((self.bits >> 22) & 3) as u8)
+    pub fn portw(&self) -> PORTW_R {
+        PORTW_R::new(((self.bits >> 22) & 3) as u8)
     }
     #[doc = "Bits 24:25 - External Wait Control: 0=OFF (default after reset)., 1=Asynchronous input at WAIT., 2=Synchronous input at WAIT., 3=reserved., 0=OFF (default after reset)., 1=Wait for page load (Early WAIT)., 2=Wait for page load (WAIT with data)., 3=Abort and retry access.,"]
     #[inline(always)]
-    pub fn wait(&self) -> WaitR {
-        WaitR::new(((self.bits >> 24) & 3) as u8)
+    pub fn wait(&self) -> WAIT_R {
+        WAIT_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bit 26 - Asynchronous Address phase:"]
     #[inline(always)]
-    pub fn aap(&self) -> AapR {
-        AapR::new(((self.bits >> 26) & 1) != 0)
+    pub fn aap(&self) -> AAP_R {
+        AAP_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - Lock Chip Select"]
     #[inline(always)]
-    pub fn lockcs(&self) -> LockcsR {
-        LockcsR::new(((self.bits >> 27) & 1) != 0)
+    pub fn lockcs(&self) -> LOCKCS_R {
+        LOCKCS_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bits 28:31 - Device Type for Region"]
     #[inline(always)]
-    pub fn agen(&self) -> AgenR {
-        AgenR::new(((self.bits >> 28) & 0x0f) as u8)
+    pub fn agen(&self) -> AGEN_R {
+        AGEN_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Burst Length for Synchronous Burst"]
     #[inline(always)]
     #[must_use]
-    pub fn fetblen(&mut self) -> FetblenW<Buswcon0Spec> {
-        FetblenW::new(self, 0)
+    pub fn fetblen(&mut self) -> FETBLEN_W<BUSWCON0_SPEC> {
+        FETBLEN_W::new(self, 0)
     }
     #[doc = "Bit 3 - Synchronous burst buffer mode select"]
     #[inline(always)]
     #[must_use]
-    pub fn fbbmsel(&mut self) -> FbbmselW<Buswcon0Spec> {
-        FbbmselW::new(self, 3)
+    pub fn fbbmsel(&mut self) -> FBBMSEL_W<BUSWCON0_SPEC> {
+        FBBMSEL_W::new(self, 3)
     }
     #[doc = "Bit 16 - Early Chip Select for Synchronous Burst"]
     #[inline(always)]
     #[must_use]
-    pub fn ecse(&mut self) -> EcseW<Buswcon0Spec> {
-        EcseW::new(self, 16)
+    pub fn ecse(&mut self) -> ECSE_W<BUSWCON0_SPEC> {
+        ECSE_W::new(self, 16)
     }
     #[doc = "Bit 17 - Early Burst Signal Enable for Synchronous Burst"]
     #[inline(always)]
     #[must_use]
-    pub fn ebse(&mut self) -> EbseW<Buswcon0Spec> {
-        EbseW::new(self, 17)
+    pub fn ebse(&mut self) -> EBSE_W<BUSWCON0_SPEC> {
+        EBSE_W::new(self, 17)
     }
     #[doc = "Bit 19 - Reversed polarity at WAIT"]
     #[inline(always)]
     #[must_use]
-    pub fn waitinv(&mut self) -> WaitinvW<Buswcon0Spec> {
-        WaitinvW::new(self, 19)
+    pub fn waitinv(&mut self) -> WAITINV_W<BUSWCON0_SPEC> {
+        WAITINV_W::new(self, 19)
     }
     #[doc = "Bits 20:21 - Byte Control Signal Control"]
     #[inline(always)]
     #[must_use]
-    pub fn bcgen(&mut self) -> BcgenW<Buswcon0Spec> {
-        BcgenW::new(self, 20)
+    pub fn bcgen(&mut self) -> BCGEN_W<BUSWCON0_SPEC> {
+        BCGEN_W::new(self, 20)
     }
     #[doc = "Bits 24:25 - External Wait Control: 0=OFF (default after reset)., 1=Asynchronous input at WAIT., 2=Synchronous input at WAIT., 3=reserved., 0=OFF (default after reset)., 1=Wait for page load (Early WAIT)., 2=Wait for page load (WAIT with data)., 3=Abort and retry access.,"]
     #[inline(always)]
     #[must_use]
-    pub fn wait(&mut self) -> WaitW<Buswcon0Spec> {
-        WaitW::new(self, 24)
+    pub fn wait(&mut self) -> WAIT_W<BUSWCON0_SPEC> {
+        WAIT_W::new(self, 24)
     }
     #[doc = "Bit 26 - Asynchronous Address phase:"]
     #[inline(always)]
     #[must_use]
-    pub fn aap(&mut self) -> AapW<Buswcon0Spec> {
-        AapW::new(self, 26)
+    pub fn aap(&mut self) -> AAP_W<BUSWCON0_SPEC> {
+        AAP_W::new(self, 26)
     }
     #[doc = "Bit 27 - Lock Chip Select"]
     #[inline(always)]
     #[must_use]
-    pub fn lockcs(&mut self) -> LockcsW<Buswcon0Spec> {
-        LockcsW::new(self, 27)
+    pub fn lockcs(&mut self) -> LOCKCS_W<BUSWCON0_SPEC> {
+        LOCKCS_W::new(self, 27)
     }
     #[doc = "Bits 28:31 - Device Type for Region"]
     #[inline(always)]
     #[must_use]
-    pub fn agen(&mut self) -> AgenW<Buswcon0Spec> {
-        AgenW::new(self, 28)
+    pub fn agen(&mut self) -> AGEN_W<BUSWCON0_SPEC> {
+        AGEN_W::new(self, 28)
     }
 }
 #[doc = "EBU Bus Write Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`buswcon0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`buswcon0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct Buswcon0Spec;
-impl crate::RegisterSpec for Buswcon0Spec {
+pub struct BUSWCON0_SPEC;
+impl crate::RegisterSpec for BUSWCON0_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`buswcon0::R`](R) reader structure"]
-impl crate::Readable for Buswcon0Spec {}
+impl crate::Readable for BUSWCON0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`buswcon0::W`](W) writer structure"]
-impl crate::Writable for Buswcon0Spec {
+impl crate::Writable for BUSWCON0_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BUSWCON0 to value 0x00d3_0000"]
-impl crate::Resettable for Buswcon0Spec {
+impl crate::Resettable for BUSWCON0_SPEC {
     const RESET_VALUE: u32 = 0x00d3_0000;
 }

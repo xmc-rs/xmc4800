@@ -1,220 +1,220 @@
 #[doc = "Register `HDSTAT` reader"]
-pub type R = crate::R<HdstatSpec>;
+pub type R = crate::R<HDSTAT_SPEC>;
 #[doc = "Wake-up Pin Event Positive Edge\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Epev {
+pub enum EPEV_A {
     #[doc = "0: Wake-up on positive edge pin event inactive"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Wake-up on positive edge pin event active"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Epev> for bool {
+impl From<EPEV_A> for bool {
     #[inline(always)]
-    fn from(variant: Epev) -> Self {
+    fn from(variant: EPEV_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `EPEV` reader - Wake-up Pin Event Positive Edge"]
-pub type EpevR = crate::BitReader<Epev>;
-impl EpevR {
+pub type EPEV_R = crate::BitReader<EPEV_A>;
+impl EPEV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Epev {
+    pub const fn variant(&self) -> EPEV_A {
         match self.bits {
-            false => Epev::Value1,
-            true => Epev::Value2,
+            false => EPEV_A::VALUE1,
+            true => EPEV_A::VALUE2,
         }
     }
     #[doc = "Wake-up on positive edge pin event inactive"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Epev::Value1
+        *self == EPEV_A::VALUE1
     }
     #[doc = "Wake-up on positive edge pin event active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Epev::Value2
+        *self == EPEV_A::VALUE2
     }
 }
 #[doc = "Wake-up Pin Event Negative Edge\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Enev {
+pub enum ENEV_A {
     #[doc = "0: Wake-up on negative edge pin event inactive"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Wake-up on negative edge pin event active"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Enev> for bool {
+impl From<ENEV_A> for bool {
     #[inline(always)]
-    fn from(variant: Enev) -> Self {
+    fn from(variant: ENEV_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ENEV` reader - Wake-up Pin Event Negative Edge"]
-pub type EnevR = crate::BitReader<Enev>;
-impl EnevR {
+pub type ENEV_R = crate::BitReader<ENEV_A>;
+impl ENEV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Enev {
+    pub const fn variant(&self) -> ENEV_A {
         match self.bits {
-            false => Enev::Value1,
-            true => Enev::Value2,
+            false => ENEV_A::VALUE1,
+            true => ENEV_A::VALUE2,
         }
     }
     #[doc = "Wake-up on negative edge pin event inactive"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Enev::Value1
+        *self == ENEV_A::VALUE1
     }
     #[doc = "Wake-up on negative edge pin event active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Enev::Value2
+        *self == ENEV_A::VALUE2
     }
 }
 #[doc = "RTC Event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Rtcev {
+pub enum RTCEV_A {
     #[doc = "0: Wake-up on RTC event inactive"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Wake-up on RTC event active"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Rtcev> for bool {
+impl From<RTCEV_A> for bool {
     #[inline(always)]
-    fn from(variant: Rtcev) -> Self {
+    fn from(variant: RTCEV_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RTCEV` reader - RTC Event"]
-pub type RtcevR = crate::BitReader<Rtcev>;
-impl RtcevR {
+pub type RTCEV_R = crate::BitReader<RTCEV_A>;
+impl RTCEV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Rtcev {
+    pub const fn variant(&self) -> RTCEV_A {
         match self.bits {
-            false => Rtcev::Value1,
-            true => Rtcev::Value2,
+            false => RTCEV_A::VALUE1,
+            true => RTCEV_A::VALUE2,
         }
     }
     #[doc = "Wake-up on RTC event inactive"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rtcev::Value1
+        *self == RTCEV_A::VALUE1
     }
     #[doc = "Wake-up on RTC event active"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rtcev::Value2
+        *self == RTCEV_A::VALUE2
     }
 }
 #[doc = "ULP WDG Alarm Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ulpwdg {
+pub enum ULPWDG_A {
     #[doc = "0: Watchdog alarm did not occur"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Watchdog alarm occurred"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ulpwdg> for bool {
+impl From<ULPWDG_A> for bool {
     #[inline(always)]
-    fn from(variant: Ulpwdg) -> Self {
+    fn from(variant: ULPWDG_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ULPWDG` reader - ULP WDG Alarm Status"]
-pub type UlpwdgR = crate::BitReader<Ulpwdg>;
-impl UlpwdgR {
+pub type ULPWDG_R = crate::BitReader<ULPWDG_A>;
+impl ULPWDG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ulpwdg {
+    pub const fn variant(&self) -> ULPWDG_A {
         match self.bits {
-            false => Ulpwdg::Value1,
-            true => Ulpwdg::Value2,
+            false => ULPWDG_A::VALUE1,
+            true => ULPWDG_A::VALUE2,
         }
     }
     #[doc = "Watchdog alarm did not occur"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ulpwdg::Value1
+        *self == ULPWDG_A::VALUE1
     }
     #[doc = "Watchdog alarm occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ulpwdg::Value2
+        *self == ULPWDG_A::VALUE2
     }
 }
 #[doc = "Hibernate Control Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Hibnout {
+pub enum HIBNOUT_A {
     #[doc = "0: Hibernate not driven active to pads"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Hibernate driven active to pads"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Hibnout> for bool {
+impl From<HIBNOUT_A> for bool {
     #[inline(always)]
-    fn from(variant: Hibnout) -> Self {
+    fn from(variant: HIBNOUT_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `HIBNOUT` reader - Hibernate Control Status"]
-pub type HibnoutR = crate::BitReader<Hibnout>;
-impl HibnoutR {
+pub type HIBNOUT_R = crate::BitReader<HIBNOUT_A>;
+impl HIBNOUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Hibnout {
+    pub const fn variant(&self) -> HIBNOUT_A {
         match self.bits {
-            false => Hibnout::Value1,
-            true => Hibnout::Value2,
+            false => HIBNOUT_A::VALUE1,
+            true => HIBNOUT_A::VALUE2,
         }
     }
     #[doc = "Hibernate not driven active to pads"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Hibnout::Value1
+        *self == HIBNOUT_A::VALUE1
     }
     #[doc = "Hibernate driven active to pads"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Hibnout::Value2
+        *self == HIBNOUT_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - Wake-up Pin Event Positive Edge"]
     #[inline(always)]
-    pub fn epev(&self) -> EpevR {
-        EpevR::new((self.bits & 1) != 0)
+    pub fn epev(&self) -> EPEV_R {
+        EPEV_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Wake-up Pin Event Negative Edge"]
     #[inline(always)]
-    pub fn enev(&self) -> EnevR {
-        EnevR::new(((self.bits >> 1) & 1) != 0)
+    pub fn enev(&self) -> ENEV_R {
+        ENEV_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - RTC Event"]
     #[inline(always)]
-    pub fn rtcev(&self) -> RtcevR {
-        RtcevR::new(((self.bits >> 2) & 1) != 0)
+    pub fn rtcev(&self) -> RTCEV_R {
+        RTCEV_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - ULP WDG Alarm Status"]
     #[inline(always)]
-    pub fn ulpwdg(&self) -> UlpwdgR {
-        UlpwdgR::new(((self.bits >> 3) & 1) != 0)
+    pub fn ulpwdg(&self) -> ULPWDG_R {
+        ULPWDG_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Hibernate Control Status"]
     #[inline(always)]
-    pub fn hibnout(&self) -> HibnoutR {
-        HibnoutR::new(((self.bits >> 4) & 1) != 0)
+    pub fn hibnout(&self) -> HIBNOUT_R {
+        HIBNOUT_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 #[doc = "Hibernate Domain Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hdstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct HdstatSpec;
-impl crate::RegisterSpec for HdstatSpec {
+pub struct HDSTAT_SPEC;
+impl crate::RegisterSpec for HDSTAT_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`hdstat::R`](R) reader structure"]
-impl crate::Readable for HdstatSpec {}
+impl crate::Readable for HDSTAT_SPEC {}
 #[doc = "`reset()` method sets HDSTAT to value 0"]
-impl crate::Resettable for HdstatSpec {
+impl crate::Resettable for HDSTAT_SPEC {
     const RESET_VALUE: u32 = 0;
 }

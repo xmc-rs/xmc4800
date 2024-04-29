@@ -1,68 +1,68 @@
 #[doc = "Register `CGCFG` reader"]
-pub type R = crate::R<CgcfgSpec>;
+pub type R = crate::R<CGCFG_SPEC>;
 #[doc = "Register `CGCFG` writer"]
-pub type W = crate::W<CgcfgSpec>;
+pub type W = crate::W<CGCFG_SPEC>;
 #[doc = "Carrier Generator Operating Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Cgmod {
+pub enum CGMOD_A {
     #[doc = "0: Stopped"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Square wave"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: Triangle"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: Sine wave"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Cgmod> for u8 {
+impl From<CGMOD_A> for u8 {
     #[inline(always)]
-    fn from(variant: Cgmod) -> Self {
+    fn from(variant: CGMOD_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Cgmod {
+impl crate::FieldSpec for CGMOD_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Cgmod {}
+impl crate::IsEnum for CGMOD_A {}
 #[doc = "Field `CGMOD` reader - Carrier Generator Operating Mode"]
-pub type CgmodR = crate::FieldReader<Cgmod>;
-impl CgmodR {
+pub type CGMOD_R = crate::FieldReader<CGMOD_A>;
+impl CGMOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Cgmod {
+    pub const fn variant(&self) -> CGMOD_A {
         match self.bits {
-            0 => Cgmod::Value1,
-            1 => Cgmod::Value2,
-            2 => Cgmod::Value3,
-            3 => Cgmod::Value4,
+            0 => CGMOD_A::VALUE1,
+            1 => CGMOD_A::VALUE2,
+            2 => CGMOD_A::VALUE3,
+            3 => CGMOD_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Stopped"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Cgmod::Value1
+        *self == CGMOD_A::VALUE1
     }
     #[doc = "Square wave"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Cgmod::Value2
+        *self == CGMOD_A::VALUE2
     }
     #[doc = "Triangle"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Cgmod::Value3
+        *self == CGMOD_A::VALUE3
     }
     #[doc = "Sine wave"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Cgmod::Value4
+        *self == CGMOD_A::VALUE4
     }
 }
 #[doc = "Field `CGMOD` writer - Carrier Generator Operating Mode"]
-pub type CgmodW<'a, REG> = crate::FieldWriter<'a, REG, 2, Cgmod, crate::Safe>;
-impl<'a, REG> CgmodW<'a, REG>
+pub type CGMOD_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CGMOD_A, crate::Safe>;
+impl<'a, REG> CGMOD_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -70,191 +70,191 @@ where
     #[doc = "Stopped"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cgmod::Value1)
+        self.variant(CGMOD_A::VALUE1)
     }
     #[doc = "Square wave"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cgmod::Value2)
+        self.variant(CGMOD_A::VALUE2)
     }
     #[doc = "Triangle"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Cgmod::Value3)
+        self.variant(CGMOD_A::VALUE3)
     }
     #[doc = "Sine wave"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Cgmod::Value4)
+        self.variant(CGMOD_A::VALUE4)
     }
 }
 #[doc = "Bit-Reverse PWM Generation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Brev {
+pub enum BREV_A {
     #[doc = "0: Normal mode"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Bit-reverse mode"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Brev> for bool {
+impl From<BREV_A> for bool {
     #[inline(always)]
-    fn from(variant: Brev) -> Self {
+    fn from(variant: BREV_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `BREV` reader - Bit-Reverse PWM Generation"]
-pub type BrevR = crate::BitReader<Brev>;
-impl BrevR {
+pub type BREV_R = crate::BitReader<BREV_A>;
+impl BREV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Brev {
+    pub const fn variant(&self) -> BREV_A {
         match self.bits {
-            false => Brev::Value1,
-            true => Brev::Value2,
+            false => BREV_A::VALUE1,
+            true => BREV_A::VALUE2,
         }
     }
     #[doc = "Normal mode"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Brev::Value1
+        *self == BREV_A::VALUE1
     }
     #[doc = "Bit-reverse mode"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Brev::Value2
+        *self == BREV_A::VALUE2
     }
 }
 #[doc = "Field `BREV` writer - Bit-Reverse PWM Generation"]
-pub type BrevW<'a, REG> = crate::BitWriter<'a, REG, Brev>;
-impl<'a, REG> BrevW<'a, REG>
+pub type BREV_W<'a, REG> = crate::BitWriter<'a, REG, BREV_A>;
+impl<'a, REG> BREV_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Normal mode"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Brev::Value1)
+        self.variant(BREV_A::VALUE1)
     }
     #[doc = "Bit-reverse mode"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Brev::Value2)
+        self.variant(BREV_A::VALUE2)
     }
 }
 #[doc = "Signal Polarity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Sigpol {
+pub enum SIGPOL_A {
     #[doc = "0: Normal: carrier signal begins with +1"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Inverted: carrier signal begins with -1"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Sigpol> for bool {
+impl From<SIGPOL_A> for bool {
     #[inline(always)]
-    fn from(variant: Sigpol) -> Self {
+    fn from(variant: SIGPOL_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SIGPOL` reader - Signal Polarity"]
-pub type SigpolR = crate::BitReader<Sigpol>;
-impl SigpolR {
+pub type SIGPOL_R = crate::BitReader<SIGPOL_A>;
+impl SIGPOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Sigpol {
+    pub const fn variant(&self) -> SIGPOL_A {
         match self.bits {
-            false => Sigpol::Value1,
-            true => Sigpol::Value2,
+            false => SIGPOL_A::VALUE1,
+            true => SIGPOL_A::VALUE2,
         }
     }
     #[doc = "Normal: carrier signal begins with +1"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Sigpol::Value1
+        *self == SIGPOL_A::VALUE1
     }
     #[doc = "Inverted: carrier signal begins with -1"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Sigpol::Value2
+        *self == SIGPOL_A::VALUE2
     }
 }
 #[doc = "Field `SIGPOL` writer - Signal Polarity"]
-pub type SigpolW<'a, REG> = crate::BitWriter<'a, REG, Sigpol>;
-impl<'a, REG> SigpolW<'a, REG>
+pub type SIGPOL_W<'a, REG> = crate::BitWriter<'a, REG, SIGPOL_A>;
+impl<'a, REG> SIGPOL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Normal: carrier signal begins with +1"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Sigpol::Value1)
+        self.variant(SIGPOL_A::VALUE1)
     }
     #[doc = "Inverted: carrier signal begins with -1"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Sigpol::Value2)
+        self.variant(SIGPOL_A::VALUE2)
     }
 }
 #[doc = "Divider Factor for the PWM Pattern Signal Generator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Divcg {
+pub enum DIVCG_A {
     #[doc = "0: fCG = fCLK / 2"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: fCG = fCLK / 4"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: fCG = fCLK / 6"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "15: fCG = fCLK / 32"]
-    Value4 = 15,
+    VALUE4 = 15,
 }
-impl From<Divcg> for u8 {
+impl From<DIVCG_A> for u8 {
     #[inline(always)]
-    fn from(variant: Divcg) -> Self {
+    fn from(variant: DIVCG_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Divcg {
+impl crate::FieldSpec for DIVCG_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Divcg {}
+impl crate::IsEnum for DIVCG_A {}
 #[doc = "Field `DIVCG` reader - Divider Factor for the PWM Pattern Signal Generator"]
-pub type DivcgR = crate::FieldReader<Divcg>;
-impl DivcgR {
+pub type DIVCG_R = crate::FieldReader<DIVCG_A>;
+impl DIVCG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Divcg> {
+    pub const fn variant(&self) -> Option<DIVCG_A> {
         match self.bits {
-            0 => Some(Divcg::Value1),
-            1 => Some(Divcg::Value2),
-            2 => Some(Divcg::Value3),
-            15 => Some(Divcg::Value4),
+            0 => Some(DIVCG_A::VALUE1),
+            1 => Some(DIVCG_A::VALUE2),
+            2 => Some(DIVCG_A::VALUE3),
+            15 => Some(DIVCG_A::VALUE4),
             _ => None,
         }
     }
     #[doc = "fCG = fCLK / 2"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Divcg::Value1
+        *self == DIVCG_A::VALUE1
     }
     #[doc = "fCG = fCLK / 4"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Divcg::Value2
+        *self == DIVCG_A::VALUE2
     }
     #[doc = "fCG = fCLK / 6"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Divcg::Value3
+        *self == DIVCG_A::VALUE3
     }
     #[doc = "fCG = fCLK / 32"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Divcg::Value4
+        *self == DIVCG_A::VALUE4
     }
 }
 #[doc = "Field `DIVCG` writer - Divider Factor for the PWM Pattern Signal Generator"]
-pub type DivcgW<'a, REG> = crate::FieldWriter<'a, REG, 4, Divcg>;
-impl<'a, REG> DivcgW<'a, REG>
+pub type DIVCG_W<'a, REG> = crate::FieldWriter<'a, REG, 4, DIVCG_A>;
+impl<'a, REG> DIVCG_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -262,264 +262,264 @@ where
     #[doc = "fCG = fCLK / 2"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Divcg::Value1)
+        self.variant(DIVCG_A::VALUE1)
     }
     #[doc = "fCG = fCLK / 4"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Divcg::Value2)
+        self.variant(DIVCG_A::VALUE2)
     }
     #[doc = "fCG = fCLK / 6"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Divcg::Value3)
+        self.variant(DIVCG_A::VALUE3)
     }
     #[doc = "fCG = fCLK / 32"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Divcg::Value4)
+        self.variant(DIVCG_A::VALUE4)
     }
 }
 #[doc = "Run Indicator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Run {
+pub enum RUN_A {
     #[doc = "0: Stopped (cleared at the end of a period)"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Running"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Run> for bool {
+impl From<RUN_A> for bool {
     #[inline(always)]
-    fn from(variant: Run) -> Self {
+    fn from(variant: RUN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `RUN` reader - Run Indicator"]
-pub type RunR = crate::BitReader<Run>;
-impl RunR {
+pub type RUN_R = crate::BitReader<RUN_A>;
+impl RUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Run {
+    pub const fn variant(&self) -> RUN_A {
         match self.bits {
-            false => Run::Value1,
-            true => Run::Value2,
+            false => RUN_A::VALUE1,
+            true => RUN_A::VALUE2,
         }
     }
     #[doc = "Stopped (cleared at the end of a period)"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Run::Value1
+        *self == RUN_A::VALUE1
     }
     #[doc = "Running"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Run::Value2
+        *self == RUN_A::VALUE2
     }
 }
 #[doc = "Field `BITCOUNT` reader - Bit Counter"]
-pub type BitcountR = crate::FieldReader;
+pub type BITCOUNT_R = crate::FieldReader;
 #[doc = "Field `STEPCOUNT` reader - Step Counter"]
-pub type StepcountR = crate::FieldReader;
+pub type STEPCOUNT_R = crate::FieldReader;
 #[doc = "Step Counter Sign\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Steps {
+pub enum STEPS_A {
     #[doc = "0: Step counter value is positive"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Step counter value is negative"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Steps> for bool {
+impl From<STEPS_A> for bool {
     #[inline(always)]
-    fn from(variant: Steps) -> Self {
+    fn from(variant: STEPS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `STEPS` reader - Step Counter Sign"]
-pub type StepsR = crate::BitReader<Steps>;
-impl StepsR {
+pub type STEPS_R = crate::BitReader<STEPS_A>;
+impl STEPS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Steps {
+    pub const fn variant(&self) -> STEPS_A {
         match self.bits {
-            false => Steps::Value1,
-            true => Steps::Value2,
+            false => STEPS_A::VALUE1,
+            true => STEPS_A::VALUE2,
         }
     }
     #[doc = "Step counter value is positive"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Steps::Value1
+        *self == STEPS_A::VALUE1
     }
     #[doc = "Step counter value is negative"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Steps::Value2
+        *self == STEPS_A::VALUE2
     }
 }
 #[doc = "Step Counter Direction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Stepd {
+pub enum STEPD_A {
     #[doc = "0: Step counter is counting up"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Step counter is counting down"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Stepd> for bool {
+impl From<STEPD_A> for bool {
     #[inline(always)]
-    fn from(variant: Stepd) -> Self {
+    fn from(variant: STEPD_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `STEPD` reader - Step Counter Direction"]
-pub type StepdR = crate::BitReader<Stepd>;
-impl StepdR {
+pub type STEPD_R = crate::BitReader<STEPD_A>;
+impl STEPD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Stepd {
+    pub const fn variant(&self) -> STEPD_A {
         match self.bits {
-            false => Stepd::Value1,
-            true => Stepd::Value2,
+            false => STEPD_A::VALUE1,
+            true => STEPD_A::VALUE2,
         }
     }
     #[doc = "Step counter is counting up"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Stepd::Value1
+        *self == STEPD_A::VALUE1
     }
     #[doc = "Step counter is counting down"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Stepd::Value2
+        *self == STEPD_A::VALUE2
     }
 }
 #[doc = "Sign Signal from Carrier Generator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Sgncg {
+pub enum SGNCG_A {
     #[doc = "0: Positive values"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Negative values"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Sgncg> for bool {
+impl From<SGNCG_A> for bool {
     #[inline(always)]
-    fn from(variant: Sgncg) -> Self {
+    fn from(variant: SGNCG_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `SGNCG` reader - Sign Signal from Carrier Generator"]
-pub type SgncgR = crate::BitReader<Sgncg>;
-impl SgncgR {
+pub type SGNCG_R = crate::BitReader<SGNCG_A>;
+impl SGNCG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Sgncg {
+    pub const fn variant(&self) -> SGNCG_A {
         match self.bits {
-            false => Sgncg::Value1,
-            true => Sgncg::Value2,
+            false => SGNCG_A::VALUE1,
+            true => SGNCG_A::VALUE2,
         }
     }
     #[doc = "Positive values"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Sgncg::Value1
+        *self == SGNCG_A::VALUE1
     }
     #[doc = "Negative values"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Sgncg::Value2
+        *self == SGNCG_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bits 0:1 - Carrier Generator Operating Mode"]
     #[inline(always)]
-    pub fn cgmod(&self) -> CgmodR {
-        CgmodR::new((self.bits & 3) as u8)
+    pub fn cgmod(&self) -> CGMOD_R {
+        CGMOD_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - Bit-Reverse PWM Generation"]
     #[inline(always)]
-    pub fn brev(&self) -> BrevR {
-        BrevR::new(((self.bits >> 2) & 1) != 0)
+    pub fn brev(&self) -> BREV_R {
+        BREV_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Signal Polarity"]
     #[inline(always)]
-    pub fn sigpol(&self) -> SigpolR {
-        SigpolR::new(((self.bits >> 3) & 1) != 0)
+    pub fn sigpol(&self) -> SIGPOL_R {
+        SIGPOL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:7 - Divider Factor for the PWM Pattern Signal Generator"]
     #[inline(always)]
-    pub fn divcg(&self) -> DivcgR {
-        DivcgR::new(((self.bits >> 4) & 0x0f) as u8)
+    pub fn divcg(&self) -> DIVCG_R {
+        DIVCG_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bit 15 - Run Indicator"]
     #[inline(always)]
-    pub fn run(&self) -> RunR {
-        RunR::new(((self.bits >> 15) & 1) != 0)
+    pub fn run(&self) -> RUN_R {
+        RUN_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 16:20 - Bit Counter"]
     #[inline(always)]
-    pub fn bitcount(&self) -> BitcountR {
-        BitcountR::new(((self.bits >> 16) & 0x1f) as u8)
+    pub fn bitcount(&self) -> BITCOUNT_R {
+        BITCOUNT_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
     #[doc = "Bits 24:27 - Step Counter"]
     #[inline(always)]
-    pub fn stepcount(&self) -> StepcountR {
-        StepcountR::new(((self.bits >> 24) & 0x0f) as u8)
+    pub fn stepcount(&self) -> STEPCOUNT_R {
+        STEPCOUNT_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
     #[doc = "Bit 28 - Step Counter Sign"]
     #[inline(always)]
-    pub fn steps(&self) -> StepsR {
-        StepsR::new(((self.bits >> 28) & 1) != 0)
+    pub fn steps(&self) -> STEPS_R {
+        STEPS_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - Step Counter Direction"]
     #[inline(always)]
-    pub fn stepd(&self) -> StepdR {
-        StepdR::new(((self.bits >> 29) & 1) != 0)
+    pub fn stepd(&self) -> STEPD_R {
+        STEPD_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - Sign Signal from Carrier Generator"]
     #[inline(always)]
-    pub fn sgncg(&self) -> SgncgR {
-        SgncgR::new(((self.bits >> 30) & 1) != 0)
+    pub fn sgncg(&self) -> SGNCG_R {
+        SGNCG_R::new(((self.bits >> 30) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Carrier Generator Operating Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn cgmod(&mut self) -> CgmodW<CgcfgSpec> {
-        CgmodW::new(self, 0)
+    pub fn cgmod(&mut self) -> CGMOD_W<CGCFG_SPEC> {
+        CGMOD_W::new(self, 0)
     }
     #[doc = "Bit 2 - Bit-Reverse PWM Generation"]
     #[inline(always)]
     #[must_use]
-    pub fn brev(&mut self) -> BrevW<CgcfgSpec> {
-        BrevW::new(self, 2)
+    pub fn brev(&mut self) -> BREV_W<CGCFG_SPEC> {
+        BREV_W::new(self, 2)
     }
     #[doc = "Bit 3 - Signal Polarity"]
     #[inline(always)]
     #[must_use]
-    pub fn sigpol(&mut self) -> SigpolW<CgcfgSpec> {
-        SigpolW::new(self, 3)
+    pub fn sigpol(&mut self) -> SIGPOL_W<CGCFG_SPEC> {
+        SIGPOL_W::new(self, 3)
     }
     #[doc = "Bits 4:7 - Divider Factor for the PWM Pattern Signal Generator"]
     #[inline(always)]
     #[must_use]
-    pub fn divcg(&mut self) -> DivcgW<CgcfgSpec> {
-        DivcgW::new(self, 4)
+    pub fn divcg(&mut self) -> DIVCG_W<CGCFG_SPEC> {
+        DIVCG_W::new(self, 4)
     }
 }
 #[doc = "Carrier Generator Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cgcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cgcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CgcfgSpec;
-impl crate::RegisterSpec for CgcfgSpec {
+pub struct CGCFG_SPEC;
+impl crate::RegisterSpec for CGCFG_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`cgcfg::R`](R) reader structure"]
-impl crate::Readable for CgcfgSpec {}
+impl crate::Readable for CGCFG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`cgcfg::W`](W) writer structure"]
-impl crate::Writable for CgcfgSpec {
+impl crate::Writable for CGCFG_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CGCFG to value 0x0710_0000"]
-impl crate::Resettable for CgcfgSpec {
+impl crate::Resettable for CGCFG_SPEC {
     const RESET_VALUE: u32 = 0x0710_0000;
 }
