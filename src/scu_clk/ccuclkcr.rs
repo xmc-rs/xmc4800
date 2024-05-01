@@ -1,89 +1,89 @@
 #[doc = "Register `CCUCLKCR` reader"]
-pub type R = crate::R<CCUCLKCR_SPEC>;
+pub type R = crate::R<CcuclkcrSpec>;
 #[doc = "Register `CCUCLKCR` writer"]
-pub type W = crate::W<CCUCLKCR_SPEC>;
+pub type W = crate::W<CcuclkcrSpec>;
 #[doc = "CCU Clock Divider Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CCUDIV_A {
+pub enum Ccudiv {
     #[doc = "0: fCCU = fSYS"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: fCCU = fSYS / 2"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CCUDIV_A> for bool {
+impl From<Ccudiv> for bool {
     #[inline(always)]
-    fn from(variant: CCUDIV_A) -> Self {
+    fn from(variant: Ccudiv) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CCUDIV` reader - CCU Clock Divider Enable"]
-pub type CCUDIV_R = crate::BitReader<CCUDIV_A>;
-impl CCUDIV_R {
+pub type CcudivR = crate::BitReader<Ccudiv>;
+impl CcudivR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CCUDIV_A {
+    pub const fn variant(&self) -> Ccudiv {
         match self.bits {
-            false => CCUDIV_A::VALUE1,
-            true => CCUDIV_A::VALUE2,
+            false => Ccudiv::Value1,
+            true => Ccudiv::Value2,
         }
     }
     #[doc = "fCCU = fSYS"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CCUDIV_A::VALUE1
+        *self == Ccudiv::Value1
     }
     #[doc = "fCCU = fSYS / 2"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CCUDIV_A::VALUE2
+        *self == Ccudiv::Value2
     }
 }
 #[doc = "Field `CCUDIV` writer - CCU Clock Divider Enable"]
-pub type CCUDIV_W<'a, REG> = crate::BitWriter<'a, REG, CCUDIV_A>;
-impl<'a, REG> CCUDIV_W<'a, REG>
+pub type CcudivW<'a, REG> = crate::BitWriter<'a, REG, Ccudiv>;
+impl<'a, REG> CcudivW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "fCCU = fSYS"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CCUDIV_A::VALUE1)
+        self.variant(Ccudiv::Value1)
     }
     #[doc = "fCCU = fSYS / 2"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CCUDIV_A::VALUE2)
+        self.variant(Ccudiv::Value2)
     }
 }
 impl R {
     #[doc = "Bit 0 - CCU Clock Divider Enable"]
     #[inline(always)]
-    pub fn ccudiv(&self) -> CCUDIV_R {
-        CCUDIV_R::new((self.bits & 1) != 0)
+    pub fn ccudiv(&self) -> CcudivR {
+        CcudivR::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - CCU Clock Divider Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ccudiv(&mut self) -> CCUDIV_W<CCUCLKCR_SPEC> {
-        CCUDIV_W::new(self, 0)
+    pub fn ccudiv(&mut self) -> CcudivW<CcuclkcrSpec> {
+        CcudivW::new(self, 0)
     }
 }
 #[doc = "CCU Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccuclkcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ccuclkcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CCUCLKCR_SPEC;
-impl crate::RegisterSpec for CCUCLKCR_SPEC {
+pub struct CcuclkcrSpec;
+impl crate::RegisterSpec for CcuclkcrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`ccuclkcr::R`](R) reader structure"]
-impl crate::Readable for CCUCLKCR_SPEC {}
+impl crate::Readable for CcuclkcrSpec {}
 #[doc = "`write(|w| ..)` method takes [`ccuclkcr::W`](W) writer structure"]
-impl crate::Writable for CCUCLKCR_SPEC {
+impl crate::Writable for CcuclkcrSpec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CCUCLKCR to value 0"]
-impl crate::Resettable for CCUCLKCR_SPEC {
+impl crate::Resettable for CcuclkcrSpec {
     const RESET_VALUE: u32 = 0;
 }

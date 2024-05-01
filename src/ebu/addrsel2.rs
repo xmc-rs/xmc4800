@@ -1,217 +1,217 @@
 #[doc = "Register `ADDRSEL2` reader"]
-pub type R = crate::R<ADDRSEL2_SPEC>;
+pub type R = crate::R<Addrsel2Spec>;
 #[doc = "Register `ADDRSEL2` writer"]
-pub type W = crate::W<ADDRSEL2_SPEC>;
+pub type W = crate::W<Addrsel2Spec>;
 #[doc = "Memory Region Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum REGENAB_A {
+pub enum Regenab {
     #[doc = "0: Memory region is disabled (default after reset)."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Memory region is enabled."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<REGENAB_A> for bool {
+impl From<Regenab> for bool {
     #[inline(always)]
-    fn from(variant: REGENAB_A) -> Self {
+    fn from(variant: Regenab) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `REGENAB` reader - Memory Region Enable"]
-pub type REGENAB_R = crate::BitReader<REGENAB_A>;
-impl REGENAB_R {
+pub type RegenabR = crate::BitReader<Regenab>;
+impl RegenabR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> REGENAB_A {
+    pub const fn variant(&self) -> Regenab {
         match self.bits {
-            false => REGENAB_A::VALUE1,
-            true => REGENAB_A::VALUE2,
+            false => Regenab::Value1,
+            true => Regenab::Value2,
         }
     }
     #[doc = "Memory region is disabled (default after reset)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == REGENAB_A::VALUE1
+        *self == Regenab::Value1
     }
     #[doc = "Memory region is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == REGENAB_A::VALUE2
+        *self == Regenab::Value2
     }
 }
 #[doc = "Field `REGENAB` writer - Memory Region Enable"]
-pub type REGENAB_W<'a, REG> = crate::BitWriter<'a, REG, REGENAB_A>;
-impl<'a, REG> REGENAB_W<'a, REG>
+pub type RegenabW<'a, REG> = crate::BitWriter<'a, REG, Regenab>;
+impl<'a, REG> RegenabW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Memory region is disabled (default after reset)."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(REGENAB_A::VALUE1)
+        self.variant(Regenab::Value1)
     }
     #[doc = "Memory region is enabled."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(REGENAB_A::VALUE2)
+        self.variant(Regenab::Value2)
     }
 }
 #[doc = "Alternate Region Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ALTENAB_A {
+pub enum Altenab {
     #[doc = "0: Memory region is disabled (default after reset)."]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Memory region is enabled."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<ALTENAB_A> for bool {
+impl From<Altenab> for bool {
     #[inline(always)]
-    fn from(variant: ALTENAB_A) -> Self {
+    fn from(variant: Altenab) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ALTENAB` reader - Alternate Region Enable"]
-pub type ALTENAB_R = crate::BitReader<ALTENAB_A>;
-impl ALTENAB_R {
+pub type AltenabR = crate::BitReader<Altenab>;
+impl AltenabR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ALTENAB_A {
+    pub const fn variant(&self) -> Altenab {
         match self.bits {
-            false => ALTENAB_A::VALUE1,
-            true => ALTENAB_A::VALUE2,
+            false => Altenab::Value1,
+            true => Altenab::Value2,
         }
     }
     #[doc = "Memory region is disabled (default after reset)."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ALTENAB_A::VALUE1
+        *self == Altenab::Value1
     }
     #[doc = "Memory region is enabled."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ALTENAB_A::VALUE2
+        *self == Altenab::Value2
     }
 }
 #[doc = "Field `ALTENAB` writer - Alternate Region Enable"]
-pub type ALTENAB_W<'a, REG> = crate::BitWriter<'a, REG, ALTENAB_A>;
-impl<'a, REG> ALTENAB_W<'a, REG>
+pub type AltenabW<'a, REG> = crate::BitWriter<'a, REG, Altenab>;
+impl<'a, REG> AltenabW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Memory region is disabled (default after reset)."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(ALTENAB_A::VALUE1)
+        self.variant(Altenab::Value1)
     }
     #[doc = "Memory region is enabled."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(ALTENAB_A::VALUE2)
+        self.variant(Altenab::Value2)
     }
 }
 #[doc = "Memory Region Write Protect\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WPROT_A {
+pub enum Wprot {
     #[doc = "0: Region is enabled for write accesses"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Region is write protected."]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WPROT_A> for bool {
+impl From<Wprot> for bool {
     #[inline(always)]
-    fn from(variant: WPROT_A) -> Self {
+    fn from(variant: Wprot) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WPROT` reader - Memory Region Write Protect"]
-pub type WPROT_R = crate::BitReader<WPROT_A>;
-impl WPROT_R {
+pub type WprotR = crate::BitReader<Wprot>;
+impl WprotR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> WPROT_A {
+    pub const fn variant(&self) -> Wprot {
         match self.bits {
-            false => WPROT_A::VALUE1,
-            true => WPROT_A::VALUE2,
+            false => Wprot::Value1,
+            true => Wprot::Value2,
         }
     }
     #[doc = "Region is enabled for write accesses"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == WPROT_A::VALUE1
+        *self == Wprot::Value1
     }
     #[doc = "Region is write protected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == WPROT_A::VALUE2
+        *self == Wprot::Value2
     }
 }
 #[doc = "Field `WPROT` writer - Memory Region Write Protect"]
-pub type WPROT_W<'a, REG> = crate::BitWriter<'a, REG, WPROT_A>;
-impl<'a, REG> WPROT_W<'a, REG>
+pub type WprotW<'a, REG> = crate::BitWriter<'a, REG, Wprot>;
+impl<'a, REG> WprotW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Region is enabled for write accesses"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WPROT_A::VALUE1)
+        self.variant(Wprot::Value1)
     }
     #[doc = "Region is write protected."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WPROT_A::VALUE2)
+        self.variant(Wprot::Value2)
     }
 }
 impl R {
     #[doc = "Bit 0 - Memory Region Enable"]
     #[inline(always)]
-    pub fn regenab(&self) -> REGENAB_R {
-        REGENAB_R::new((self.bits & 1) != 0)
+    pub fn regenab(&self) -> RegenabR {
+        RegenabR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Alternate Region Enable"]
     #[inline(always)]
-    pub fn altenab(&self) -> ALTENAB_R {
-        ALTENAB_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn altenab(&self) -> AltenabR {
+        AltenabR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Memory Region Write Protect"]
     #[inline(always)]
-    pub fn wprot(&self) -> WPROT_R {
-        WPROT_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn wprot(&self) -> WprotR {
+        WprotR::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Memory Region Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn regenab(&mut self) -> REGENAB_W<ADDRSEL2_SPEC> {
-        REGENAB_W::new(self, 0)
+    pub fn regenab(&mut self) -> RegenabW<Addrsel2Spec> {
+        RegenabW::new(self, 0)
     }
     #[doc = "Bit 1 - Alternate Region Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn altenab(&mut self) -> ALTENAB_W<ADDRSEL2_SPEC> {
-        ALTENAB_W::new(self, 1)
+    pub fn altenab(&mut self) -> AltenabW<Addrsel2Spec> {
+        AltenabW::new(self, 1)
     }
     #[doc = "Bit 2 - Memory Region Write Protect"]
     #[inline(always)]
     #[must_use]
-    pub fn wprot(&mut self) -> WPROT_W<ADDRSEL2_SPEC> {
-        WPROT_W::new(self, 2)
+    pub fn wprot(&mut self) -> WprotW<Addrsel2Spec> {
+        WprotW::new(self, 2)
     }
 }
 #[doc = "EBU Address Select Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`addrsel2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`addrsel2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct ADDRSEL2_SPEC;
-impl crate::RegisterSpec for ADDRSEL2_SPEC {
+pub struct Addrsel2Spec;
+impl crate::RegisterSpec for Addrsel2Spec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`addrsel2::R`](R) reader structure"]
-impl crate::Readable for ADDRSEL2_SPEC {}
+impl crate::Readable for Addrsel2Spec {}
 #[doc = "`write(|w| ..)` method takes [`addrsel2::W`](W) writer structure"]
-impl crate::Writable for ADDRSEL2_SPEC {
+impl crate::Writable for Addrsel2Spec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ADDRSEL2 to value 0"]
-impl crate::Resettable for ADDRSEL2_SPEC {
+impl crate::Resettable for Addrsel2Spec {
     const RESET_VALUE: u32 = 0;
 }

@@ -1,429 +1,429 @@
 #[doc = "Register `MASKERR` reader"]
-pub type R = crate::R<MASKERR_SPEC>;
+pub type R = crate::R<MaskerrSpec>;
 #[doc = "Register `MASKERR` writer"]
-pub type W = crate::W<MASKERR_SPEC>;
+pub type W = crate::W<MaskerrSpec>;
 #[doc = "Mask bit for channel 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH0_A {
+pub enum Ch0 {
     #[doc = "0: masked"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: unmasked"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CH0_A> for bool {
+impl From<Ch0> for bool {
     #[inline(always)]
-    fn from(variant: CH0_A) -> Self {
+    fn from(variant: Ch0) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH0` reader - Mask bit for channel 0"]
-pub type CH0_R = crate::BitReader<CH0_A>;
-impl CH0_R {
+pub type Ch0R = crate::BitReader<Ch0>;
+impl Ch0R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CH0_A {
+    pub const fn variant(&self) -> Ch0 {
         match self.bits {
-            false => CH0_A::VALUE1,
-            true => CH0_A::VALUE2,
+            false => Ch0::Value1,
+            true => Ch0::Value2,
         }
     }
     #[doc = "masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH0_A::VALUE1
+        *self == Ch0::Value1
     }
     #[doc = "unmasked"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH0_A::VALUE2
+        *self == Ch0::Value2
     }
 }
 #[doc = "Field `CH0` writer - Mask bit for channel 0"]
-pub type CH0_W<'a, REG> = crate::BitWriter<'a, REG, CH0_A>;
-impl<'a, REG> CH0_W<'a, REG>
+pub type Ch0W<'a, REG> = crate::BitWriter<'a, REG, Ch0>;
+impl<'a, REG> Ch0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "masked"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CH0_A::VALUE1)
+        self.variant(Ch0::Value1)
     }
     #[doc = "unmasked"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CH0_A::VALUE2)
+        self.variant(Ch0::Value2)
     }
 }
 #[doc = "Mask bit for channel 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH1_A {
+pub enum Ch1 {
     #[doc = "0: masked"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: unmasked"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CH1_A> for bool {
+impl From<Ch1> for bool {
     #[inline(always)]
-    fn from(variant: CH1_A) -> Self {
+    fn from(variant: Ch1) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH1` reader - Mask bit for channel 1"]
-pub type CH1_R = crate::BitReader<CH1_A>;
-impl CH1_R {
+pub type Ch1R = crate::BitReader<Ch1>;
+impl Ch1R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CH1_A {
+    pub const fn variant(&self) -> Ch1 {
         match self.bits {
-            false => CH1_A::VALUE1,
-            true => CH1_A::VALUE2,
+            false => Ch1::Value1,
+            true => Ch1::Value2,
         }
     }
     #[doc = "masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH1_A::VALUE1
+        *self == Ch1::Value1
     }
     #[doc = "unmasked"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH1_A::VALUE2
+        *self == Ch1::Value2
     }
 }
 #[doc = "Field `CH1` writer - Mask bit for channel 1"]
-pub type CH1_W<'a, REG> = crate::BitWriter<'a, REG, CH1_A>;
-impl<'a, REG> CH1_W<'a, REG>
+pub type Ch1W<'a, REG> = crate::BitWriter<'a, REG, Ch1>;
+impl<'a, REG> Ch1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "masked"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CH1_A::VALUE1)
+        self.variant(Ch1::Value1)
     }
     #[doc = "unmasked"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CH1_A::VALUE2)
+        self.variant(Ch1::Value2)
     }
 }
 #[doc = "Mask bit for channel 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH2_A {
+pub enum Ch2 {
     #[doc = "0: masked"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: unmasked"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CH2_A> for bool {
+impl From<Ch2> for bool {
     #[inline(always)]
-    fn from(variant: CH2_A) -> Self {
+    fn from(variant: Ch2) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH2` reader - Mask bit for channel 2"]
-pub type CH2_R = crate::BitReader<CH2_A>;
-impl CH2_R {
+pub type Ch2R = crate::BitReader<Ch2>;
+impl Ch2R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CH2_A {
+    pub const fn variant(&self) -> Ch2 {
         match self.bits {
-            false => CH2_A::VALUE1,
-            true => CH2_A::VALUE2,
+            false => Ch2::Value1,
+            true => Ch2::Value2,
         }
     }
     #[doc = "masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH2_A::VALUE1
+        *self == Ch2::Value1
     }
     #[doc = "unmasked"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH2_A::VALUE2
+        *self == Ch2::Value2
     }
 }
 #[doc = "Field `CH2` writer - Mask bit for channel 2"]
-pub type CH2_W<'a, REG> = crate::BitWriter<'a, REG, CH2_A>;
-impl<'a, REG> CH2_W<'a, REG>
+pub type Ch2W<'a, REG> = crate::BitWriter<'a, REG, Ch2>;
+impl<'a, REG> Ch2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "masked"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CH2_A::VALUE1)
+        self.variant(Ch2::Value1)
     }
     #[doc = "unmasked"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CH2_A::VALUE2)
+        self.variant(Ch2::Value2)
     }
 }
 #[doc = "Mask bit for channel 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CH3_A {
+pub enum Ch3 {
     #[doc = "0: masked"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: unmasked"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CH3_A> for bool {
+impl From<Ch3> for bool {
     #[inline(always)]
-    fn from(variant: CH3_A) -> Self {
+    fn from(variant: Ch3) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH3` reader - Mask bit for channel 3"]
-pub type CH3_R = crate::BitReader<CH3_A>;
-impl CH3_R {
+pub type Ch3R = crate::BitReader<Ch3>;
+impl Ch3R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> CH3_A {
+    pub const fn variant(&self) -> Ch3 {
         match self.bits {
-            false => CH3_A::VALUE1,
-            true => CH3_A::VALUE2,
+            false => Ch3::Value1,
+            true => Ch3::Value2,
         }
     }
     #[doc = "masked"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == CH3_A::VALUE1
+        *self == Ch3::Value1
     }
     #[doc = "unmasked"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == CH3_A::VALUE2
+        *self == Ch3::Value2
     }
 }
 #[doc = "Field `CH3` writer - Mask bit for channel 3"]
-pub type CH3_W<'a, REG> = crate::BitWriter<'a, REG, CH3_A>;
-impl<'a, REG> CH3_W<'a, REG>
+pub type Ch3W<'a, REG> = crate::BitWriter<'a, REG, Ch3>;
+impl<'a, REG> Ch3W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "masked"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CH3_A::VALUE1)
+        self.variant(Ch3::Value1)
     }
     #[doc = "unmasked"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CH3_A::VALUE2)
+        self.variant(Ch3::Value2)
     }
 }
 #[doc = "Write enable for mask bit of channel 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WE_CH0_A {
+pub enum WeCh0 {
     #[doc = "0: write disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WE_CH0_A> for bool {
+impl From<WeCh0> for bool {
     #[inline(always)]
-    fn from(variant: WE_CH0_A) -> Self {
+    fn from(variant: WeCh0) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WE_CH0` writer - Write enable for mask bit of channel 0"]
-pub type WE_CH0_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH0_A>;
-impl<'a, REG> WE_CH0_W<'a, REG>
+pub type WeCh0W<'a, REG> = crate::BitWriter<'a, REG, WeCh0>;
+impl<'a, REG> WeCh0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "write disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH0_A::VALUE1)
+        self.variant(WeCh0::Value1)
     }
     #[doc = "write enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH0_A::VALUE2)
+        self.variant(WeCh0::Value2)
     }
 }
 #[doc = "Write enable for mask bit of channel 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WE_CH1_A {
+pub enum WeCh1 {
     #[doc = "0: write disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WE_CH1_A> for bool {
+impl From<WeCh1> for bool {
     #[inline(always)]
-    fn from(variant: WE_CH1_A) -> Self {
+    fn from(variant: WeCh1) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WE_CH1` writer - Write enable for mask bit of channel 1"]
-pub type WE_CH1_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH1_A>;
-impl<'a, REG> WE_CH1_W<'a, REG>
+pub type WeCh1W<'a, REG> = crate::BitWriter<'a, REG, WeCh1>;
+impl<'a, REG> WeCh1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "write disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH1_A::VALUE1)
+        self.variant(WeCh1::Value1)
     }
     #[doc = "write enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH1_A::VALUE2)
+        self.variant(WeCh1::Value2)
     }
 }
 #[doc = "Write enable for mask bit of channel 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WE_CH2_A {
+pub enum WeCh2 {
     #[doc = "0: write disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WE_CH2_A> for bool {
+impl From<WeCh2> for bool {
     #[inline(always)]
-    fn from(variant: WE_CH2_A) -> Self {
+    fn from(variant: WeCh2) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WE_CH2` writer - Write enable for mask bit of channel 2"]
-pub type WE_CH2_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH2_A>;
-impl<'a, REG> WE_CH2_W<'a, REG>
+pub type WeCh2W<'a, REG> = crate::BitWriter<'a, REG, WeCh2>;
+impl<'a, REG> WeCh2W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "write disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH2_A::VALUE1)
+        self.variant(WeCh2::Value1)
     }
     #[doc = "write enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH2_A::VALUE2)
+        self.variant(WeCh2::Value2)
     }
 }
 #[doc = "Write enable for mask bit of channel 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum WE_CH3_A {
+pub enum WeCh3 {
     #[doc = "0: write disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: write enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<WE_CH3_A> for bool {
+impl From<WeCh3> for bool {
     #[inline(always)]
-    fn from(variant: WE_CH3_A) -> Self {
+    fn from(variant: WeCh3) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WE_CH3` writer - Write enable for mask bit of channel 3"]
-pub type WE_CH3_W<'a, REG> = crate::BitWriter<'a, REG, WE_CH3_A>;
-impl<'a, REG> WE_CH3_W<'a, REG>
+pub type WeCh3W<'a, REG> = crate::BitWriter<'a, REG, WeCh3>;
+impl<'a, REG> WeCh3W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "write disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH3_A::VALUE1)
+        self.variant(WeCh3::Value1)
     }
     #[doc = "write enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(WE_CH3_A::VALUE2)
+        self.variant(WeCh3::Value2)
     }
 }
 impl R {
     #[doc = "Bit 0 - Mask bit for channel 0"]
     #[inline(always)]
-    pub fn ch0(&self) -> CH0_R {
-        CH0_R::new((self.bits & 1) != 0)
+    pub fn ch0(&self) -> Ch0R {
+        Ch0R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Mask bit for channel 1"]
     #[inline(always)]
-    pub fn ch1(&self) -> CH1_R {
-        CH1_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn ch1(&self) -> Ch1R {
+        Ch1R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Mask bit for channel 2"]
     #[inline(always)]
-    pub fn ch2(&self) -> CH2_R {
-        CH2_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn ch2(&self) -> Ch2R {
+        Ch2R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Mask bit for channel 3"]
     #[inline(always)]
-    pub fn ch3(&self) -> CH3_R {
-        CH3_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn ch3(&self) -> Ch3R {
+        Ch3R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Mask bit for channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0(&mut self) -> CH0_W<MASKERR_SPEC> {
-        CH0_W::new(self, 0)
+    pub fn ch0(&mut self) -> Ch0W<MaskerrSpec> {
+        Ch0W::new(self, 0)
     }
     #[doc = "Bit 1 - Mask bit for channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1(&mut self) -> CH1_W<MASKERR_SPEC> {
-        CH1_W::new(self, 1)
+    pub fn ch1(&mut self) -> Ch1W<MaskerrSpec> {
+        Ch1W::new(self, 1)
     }
     #[doc = "Bit 2 - Mask bit for channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn ch2(&mut self) -> CH2_W<MASKERR_SPEC> {
-        CH2_W::new(self, 2)
+    pub fn ch2(&mut self) -> Ch2W<MaskerrSpec> {
+        Ch2W::new(self, 2)
     }
     #[doc = "Bit 3 - Mask bit for channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ch3(&mut self) -> CH3_W<MASKERR_SPEC> {
-        CH3_W::new(self, 3)
+    pub fn ch3(&mut self) -> Ch3W<MaskerrSpec> {
+        Ch3W::new(self, 3)
     }
     #[doc = "Bit 8 - Write enable for mask bit of channel 0"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch0(&mut self) -> WE_CH0_W<MASKERR_SPEC> {
-        WE_CH0_W::new(self, 8)
+    pub fn we_ch0(&mut self) -> WeCh0W<MaskerrSpec> {
+        WeCh0W::new(self, 8)
     }
     #[doc = "Bit 9 - Write enable for mask bit of channel 1"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch1(&mut self) -> WE_CH1_W<MASKERR_SPEC> {
-        WE_CH1_W::new(self, 9)
+    pub fn we_ch1(&mut self) -> WeCh1W<MaskerrSpec> {
+        WeCh1W::new(self, 9)
     }
     #[doc = "Bit 10 - Write enable for mask bit of channel 2"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch2(&mut self) -> WE_CH2_W<MASKERR_SPEC> {
-        WE_CH2_W::new(self, 10)
+    pub fn we_ch2(&mut self) -> WeCh2W<MaskerrSpec> {
+        WeCh2W::new(self, 10)
     }
     #[doc = "Bit 11 - Write enable for mask bit of channel 3"]
     #[inline(always)]
     #[must_use]
-    pub fn we_ch3(&mut self) -> WE_CH3_W<MASKERR_SPEC> {
-        WE_CH3_W::new(self, 11)
+    pub fn we_ch3(&mut self) -> WeCh3W<MaskerrSpec> {
+        WeCh3W::new(self, 11)
     }
 }
 #[doc = "Mask for Raw IntErr Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`maskerr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`maskerr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct MASKERR_SPEC;
-impl crate::RegisterSpec for MASKERR_SPEC {
+pub struct MaskerrSpec;
+impl crate::RegisterSpec for MaskerrSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`maskerr::R`](R) reader structure"]
-impl crate::Readable for MASKERR_SPEC {}
+impl crate::Readable for MaskerrSpec {}
 #[doc = "`write(|w| ..)` method takes [`maskerr::W`](W) writer structure"]
-impl crate::Writable for MASKERR_SPEC {
+impl crate::Writable for MaskerrSpec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MASKERR to value 0"]
-impl crate::Resettable for MASKERR_SPEC {
+impl crate::Resettable for MaskerrSpec {
     const RESET_VALUE: u32 = 0;
 }
