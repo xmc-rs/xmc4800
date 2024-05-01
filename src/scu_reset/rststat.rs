@@ -1,266 +1,266 @@
 #[doc = "Register `RSTSTAT` reader"]
-pub type R = crate::R<RSTSTAT_SPEC>;
+pub type R = crate::R<RststatSpec>;
 #[doc = "Reset Status Information\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum RSTSTAT_A {
+pub enum Rststat {
     #[doc = "1: PORST reset"]
-    VALUE1 = 1,
+    Value1 = 1,
     #[doc = "2: SWD reset"]
-    VALUE2 = 2,
+    Value2 = 2,
     #[doc = "4: PV reset"]
-    VALUE3 = 4,
+    Value3 = 4,
     #[doc = "8: CPU system reset"]
-    VALUE4 = 8,
+    Value4 = 8,
     #[doc = "16: CPU lockup reset"]
-    VALUE5 = 16,
+    Value5 = 16,
     #[doc = "32: WDT reset"]
-    VALUE6 = 32,
+    Value6 = 32,
     #[doc = "128: Parity Error reset"]
-    VALUE8 = 128,
+    Value8 = 128,
 }
-impl From<RSTSTAT_A> for u8 {
+impl From<Rststat> for u8 {
     #[inline(always)]
-    fn from(variant: RSTSTAT_A) -> Self {
+    fn from(variant: Rststat) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for RSTSTAT_A {
+impl crate::FieldSpec for Rststat {
     type Ux = u8;
 }
-impl crate::IsEnum for RSTSTAT_A {}
+impl crate::IsEnum for Rststat {}
 #[doc = "Field `RSTSTAT` reader - Reset Status Information"]
-pub type RSTSTAT_R = crate::FieldReader<RSTSTAT_A>;
-impl RSTSTAT_R {
+pub type RststatR = crate::FieldReader<Rststat>;
+impl RststatR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<RSTSTAT_A> {
+    pub const fn variant(&self) -> Option<Rststat> {
         match self.bits {
-            1 => Some(RSTSTAT_A::VALUE1),
-            2 => Some(RSTSTAT_A::VALUE2),
-            4 => Some(RSTSTAT_A::VALUE3),
-            8 => Some(RSTSTAT_A::VALUE4),
-            16 => Some(RSTSTAT_A::VALUE5),
-            32 => Some(RSTSTAT_A::VALUE6),
-            128 => Some(RSTSTAT_A::VALUE8),
+            1 => Some(Rststat::Value1),
+            2 => Some(Rststat::Value2),
+            4 => Some(Rststat::Value3),
+            8 => Some(Rststat::Value4),
+            16 => Some(Rststat::Value5),
+            32 => Some(Rststat::Value6),
+            128 => Some(Rststat::Value8),
             _ => None,
         }
     }
     #[doc = "PORST reset"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RSTSTAT_A::VALUE1
+        *self == Rststat::Value1
     }
     #[doc = "SWD reset"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == RSTSTAT_A::VALUE2
+        *self == Rststat::Value2
     }
     #[doc = "PV reset"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == RSTSTAT_A::VALUE3
+        *self == Rststat::Value3
     }
     #[doc = "CPU system reset"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == RSTSTAT_A::VALUE4
+        *self == Rststat::Value4
     }
     #[doc = "CPU lockup reset"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == RSTSTAT_A::VALUE5
+        *self == Rststat::Value5
     }
     #[doc = "WDT reset"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == RSTSTAT_A::VALUE6
+        *self == Rststat::Value6
     }
     #[doc = "Parity Error reset"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        *self == RSTSTAT_A::VALUE8
+        *self == Rststat::Value8
     }
 }
 #[doc = "Hibernate Wake-up Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum HIBWK_A {
+pub enum Hibwk {
     #[doc = "0: No Wake-up"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Wake-up event"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<HIBWK_A> for bool {
+impl From<Hibwk> for bool {
     #[inline(always)]
-    fn from(variant: HIBWK_A) -> Self {
+    fn from(variant: Hibwk) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `HIBWK` reader - Hibernate Wake-up Status"]
-pub type HIBWK_R = crate::BitReader<HIBWK_A>;
-impl HIBWK_R {
+pub type HibwkR = crate::BitReader<Hibwk>;
+impl HibwkR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> HIBWK_A {
+    pub const fn variant(&self) -> Hibwk {
         match self.bits {
-            false => HIBWK_A::VALUE1,
-            true => HIBWK_A::VALUE2,
+            false => Hibwk::Value1,
+            true => Hibwk::Value2,
         }
     }
     #[doc = "No Wake-up"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == HIBWK_A::VALUE1
+        *self == Hibwk::Value1
     }
     #[doc = "Wake-up event"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == HIBWK_A::VALUE2
+        *self == Hibwk::Value2
     }
 }
 #[doc = "Hibernate Reset Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum HIBRS_A {
+pub enum Hibrs {
     #[doc = "0: Reset de-asserted"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Reset asserted"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<HIBRS_A> for bool {
+impl From<Hibrs> for bool {
     #[inline(always)]
-    fn from(variant: HIBRS_A) -> Self {
+    fn from(variant: Hibrs) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `HIBRS` reader - Hibernate Reset Status"]
-pub type HIBRS_R = crate::BitReader<HIBRS_A>;
-impl HIBRS_R {
+pub type HibrsR = crate::BitReader<Hibrs>;
+impl HibrsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> HIBRS_A {
+    pub const fn variant(&self) -> Hibrs {
         match self.bits {
-            false => HIBRS_A::VALUE1,
-            true => HIBRS_A::VALUE2,
+            false => Hibrs::Value1,
+            true => Hibrs::Value2,
         }
     }
     #[doc = "Reset de-asserted"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == HIBRS_A::VALUE1
+        *self == Hibrs::Value1
     }
     #[doc = "Reset asserted"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == HIBRS_A::VALUE2
+        *self == Hibrs::Value2
     }
 }
 #[doc = "Enable Lockup Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum LCKEN_A {
+pub enum Lcken {
     #[doc = "0: Reset by Lockup disabled"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Reset by Lockup enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<LCKEN_A> for bool {
+impl From<Lcken> for bool {
     #[inline(always)]
-    fn from(variant: LCKEN_A) -> Self {
+    fn from(variant: Lcken) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `LCKEN` reader - Enable Lockup Status"]
-pub type LCKEN_R = crate::BitReader<LCKEN_A>;
-impl LCKEN_R {
+pub type LckenR = crate::BitReader<Lcken>;
+impl LckenR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> LCKEN_A {
+    pub const fn variant(&self) -> Lcken {
         match self.bits {
-            false => LCKEN_A::VALUE1,
-            true => LCKEN_A::VALUE2,
+            false => Lcken::Value1,
+            true => Lcken::Value2,
         }
     }
     #[doc = "Reset by Lockup disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == LCKEN_A::VALUE1
+        *self == Lcken::Value1
     }
     #[doc = "Reset by Lockup enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == LCKEN_A::VALUE2
+        *self == Lcken::Value2
     }
 }
 #[doc = "ECAT0 Reset Status Information\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ECAT0RS_A {
+pub enum Ecat0rs {
     #[doc = "0: Reset did not occur"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Reset occurred"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<ECAT0RS_A> for bool {
+impl From<Ecat0rs> for bool {
     #[inline(always)]
-    fn from(variant: ECAT0RS_A) -> Self {
+    fn from(variant: Ecat0rs) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ECAT0RS` reader - ECAT0 Reset Status Information"]
-pub type ECAT0RS_R = crate::BitReader<ECAT0RS_A>;
-impl ECAT0RS_R {
+pub type Ecat0rsR = crate::BitReader<Ecat0rs>;
+impl Ecat0rsR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> ECAT0RS_A {
+    pub const fn variant(&self) -> Ecat0rs {
         match self.bits {
-            false => ECAT0RS_A::VALUE1,
-            true => ECAT0RS_A::VALUE2,
+            false => Ecat0rs::Value1,
+            true => Ecat0rs::Value2,
         }
     }
     #[doc = "Reset did not occur"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == ECAT0RS_A::VALUE1
+        *self == Ecat0rs::Value1
     }
     #[doc = "Reset occurred"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == ECAT0RS_A::VALUE2
+        *self == Ecat0rs::Value2
     }
 }
 impl R {
     #[doc = "Bits 0:7 - Reset Status Information"]
     #[inline(always)]
-    pub fn rststat(&self) -> RSTSTAT_R {
-        RSTSTAT_R::new((self.bits & 0xff) as u8)
+    pub fn rststat(&self) -> RststatR {
+        RststatR::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bit 8 - Hibernate Wake-up Status"]
     #[inline(always)]
-    pub fn hibwk(&self) -> HIBWK_R {
-        HIBWK_R::new(((self.bits >> 8) & 1) != 0)
+    pub fn hibwk(&self) -> HibwkR {
+        HibwkR::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Hibernate Reset Status"]
     #[inline(always)]
-    pub fn hibrs(&self) -> HIBRS_R {
-        HIBRS_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn hibrs(&self) -> HibrsR {
+        HibrsR::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Enable Lockup Status"]
     #[inline(always)]
-    pub fn lcken(&self) -> LCKEN_R {
-        LCKEN_R::new(((self.bits >> 10) & 1) != 0)
+    pub fn lcken(&self) -> LckenR {
+        LckenR::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 12 - ECAT0 Reset Status Information"]
     #[inline(always)]
-    pub fn ecat0rs(&self) -> ECAT0RS_R {
-        ECAT0RS_R::new(((self.bits >> 12) & 1) != 0)
+    pub fn ecat0rs(&self) -> Ecat0rsR {
+        Ecat0rsR::new(((self.bits >> 12) & 1) != 0)
     }
 }
 #[doc = "RCU Reset Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rststat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct RSTSTAT_SPEC;
-impl crate::RegisterSpec for RSTSTAT_SPEC {
+pub struct RststatSpec;
+impl crate::RegisterSpec for RststatSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`rststat::R`](R) reader structure"]
-impl crate::Readable for RSTSTAT_SPEC {}
+impl crate::Readable for RststatSpec {}
 #[doc = "`reset()` method sets RSTSTAT to value 0"]
-impl crate::Resettable for RSTSTAT_SPEC {
+impl crate::Resettable for RststatSpec {
     const RESET_VALUE: u32 = 0;
 }

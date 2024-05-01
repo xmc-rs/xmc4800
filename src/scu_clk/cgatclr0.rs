@@ -1,426 +1,426 @@
 #[doc = "Register `CGATCLR0` writer"]
-pub type W = crate::W<CGATCLR0_SPEC>;
+pub type W = crate::W<Cgatclr0Spec>;
 #[doc = "VADC Gating Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum VADC_A {
+pub enum Vadc {
     #[doc = "0: No effect"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<VADC_A> for bool {
+impl From<Vadc> for bool {
     #[inline(always)]
-    fn from(variant: VADC_A) -> Self {
+    fn from(variant: Vadc) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `VADC` writer - VADC Gating Clear"]
-pub type VADC_W<'a, REG> = crate::BitWriter<'a, REG, VADC_A>;
-impl<'a, REG> VADC_W<'a, REG>
+pub type VadcW<'a, REG> = crate::BitWriter<'a, REG, Vadc>;
+impl<'a, REG> VadcW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(VADC_A::VALUE1)
+        self.variant(Vadc::Value1)
     }
     #[doc = "Disable gating"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(VADC_A::VALUE2)
+        self.variant(Vadc::Value2)
     }
 }
 #[doc = "DSD Gating Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DSD_A {
+pub enum Dsd {
     #[doc = "0: No effect"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<DSD_A> for bool {
+impl From<Dsd> for bool {
     #[inline(always)]
-    fn from(variant: DSD_A) -> Self {
+    fn from(variant: Dsd) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DSD` writer - DSD Gating Clear"]
-pub type DSD_W<'a, REG> = crate::BitWriter<'a, REG, DSD_A>;
-impl<'a, REG> DSD_W<'a, REG>
+pub type DsdW<'a, REG> = crate::BitWriter<'a, REG, Dsd>;
+impl<'a, REG> DsdW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(DSD_A::VALUE1)
+        self.variant(Dsd::Value1)
     }
     #[doc = "Disable gating"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(DSD_A::VALUE2)
+        self.variant(Dsd::Value2)
     }
 }
 #[doc = "CCU40 Gating Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CCU40_A {
+pub enum Ccu40 {
     #[doc = "0: No effect"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CCU40_A> for bool {
+impl From<Ccu40> for bool {
     #[inline(always)]
-    fn from(variant: CCU40_A) -> Self {
+    fn from(variant: Ccu40) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CCU40` writer - CCU40 Gating Clear"]
-pub type CCU40_W<'a, REG> = crate::BitWriter<'a, REG, CCU40_A>;
-impl<'a, REG> CCU40_W<'a, REG>
+pub type Ccu40W<'a, REG> = crate::BitWriter<'a, REG, Ccu40>;
+impl<'a, REG> Ccu40W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CCU40_A::VALUE1)
+        self.variant(Ccu40::Value1)
     }
     #[doc = "Disable gating"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CCU40_A::VALUE2)
+        self.variant(Ccu40::Value2)
     }
 }
 #[doc = "CCU41 Gating Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CCU41_A {
+pub enum Ccu41 {
     #[doc = "0: No effect"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CCU41_A> for bool {
+impl From<Ccu41> for bool {
     #[inline(always)]
-    fn from(variant: CCU41_A) -> Self {
+    fn from(variant: Ccu41) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CCU41` writer - CCU41 Gating Clear"]
-pub type CCU41_W<'a, REG> = crate::BitWriter<'a, REG, CCU41_A>;
-impl<'a, REG> CCU41_W<'a, REG>
+pub type Ccu41W<'a, REG> = crate::BitWriter<'a, REG, Ccu41>;
+impl<'a, REG> Ccu41W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CCU41_A::VALUE1)
+        self.variant(Ccu41::Value1)
     }
     #[doc = "Disable gating"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CCU41_A::VALUE2)
+        self.variant(Ccu41::Value2)
     }
 }
 #[doc = "CCU42 Gating Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CCU42_A {
+pub enum Ccu42 {
     #[doc = "0: No effect"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CCU42_A> for bool {
+impl From<Ccu42> for bool {
     #[inline(always)]
-    fn from(variant: CCU42_A) -> Self {
+    fn from(variant: Ccu42) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CCU42` writer - CCU42 Gating Clear"]
-pub type CCU42_W<'a, REG> = crate::BitWriter<'a, REG, CCU42_A>;
-impl<'a, REG> CCU42_W<'a, REG>
+pub type Ccu42W<'a, REG> = crate::BitWriter<'a, REG, Ccu42>;
+impl<'a, REG> Ccu42W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CCU42_A::VALUE1)
+        self.variant(Ccu42::Value1)
     }
     #[doc = "Disable gating"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CCU42_A::VALUE2)
+        self.variant(Ccu42::Value2)
     }
 }
 #[doc = "CCU80 Gating Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CCU80_A {
+pub enum Ccu80 {
     #[doc = "0: No effect"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CCU80_A> for bool {
+impl From<Ccu80> for bool {
     #[inline(always)]
-    fn from(variant: CCU80_A) -> Self {
+    fn from(variant: Ccu80) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CCU80` writer - CCU80 Gating Clear"]
-pub type CCU80_W<'a, REG> = crate::BitWriter<'a, REG, CCU80_A>;
-impl<'a, REG> CCU80_W<'a, REG>
+pub type Ccu80W<'a, REG> = crate::BitWriter<'a, REG, Ccu80>;
+impl<'a, REG> Ccu80W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CCU80_A::VALUE1)
+        self.variant(Ccu80::Value1)
     }
     #[doc = "Disable gating"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CCU80_A::VALUE2)
+        self.variant(Ccu80::Value2)
     }
 }
 #[doc = "CCU81 Gating Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum CCU81_A {
+pub enum Ccu81 {
     #[doc = "0: No effect"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<CCU81_A> for bool {
+impl From<Ccu81> for bool {
     #[inline(always)]
-    fn from(variant: CCU81_A) -> Self {
+    fn from(variant: Ccu81) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CCU81` writer - CCU81 Gating Clear"]
-pub type CCU81_W<'a, REG> = crate::BitWriter<'a, REG, CCU81_A>;
-impl<'a, REG> CCU81_W<'a, REG>
+pub type Ccu81W<'a, REG> = crate::BitWriter<'a, REG, Ccu81>;
+impl<'a, REG> Ccu81W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(CCU81_A::VALUE1)
+        self.variant(Ccu81::Value1)
     }
     #[doc = "Disable gating"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(CCU81_A::VALUE2)
+        self.variant(Ccu81::Value2)
     }
 }
 #[doc = "POSIF0 Gating Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum POSIF0_A {
+pub enum Posif0 {
     #[doc = "0: No effect"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<POSIF0_A> for bool {
+impl From<Posif0> for bool {
     #[inline(always)]
-    fn from(variant: POSIF0_A) -> Self {
+    fn from(variant: Posif0) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `POSIF0` writer - POSIF0 Gating Clear"]
-pub type POSIF0_W<'a, REG> = crate::BitWriter<'a, REG, POSIF0_A>;
-impl<'a, REG> POSIF0_W<'a, REG>
+pub type Posif0W<'a, REG> = crate::BitWriter<'a, REG, Posif0>;
+impl<'a, REG> Posif0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(POSIF0_A::VALUE1)
+        self.variant(Posif0::Value1)
     }
     #[doc = "Disable gating"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(POSIF0_A::VALUE2)
+        self.variant(Posif0::Value2)
     }
 }
 #[doc = "POSIF1 Gating Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum POSIF1_A {
+pub enum Posif1 {
     #[doc = "0: No effect"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<POSIF1_A> for bool {
+impl From<Posif1> for bool {
     #[inline(always)]
-    fn from(variant: POSIF1_A) -> Self {
+    fn from(variant: Posif1) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `POSIF1` writer - POSIF1 Gating Clear"]
-pub type POSIF1_W<'a, REG> = crate::BitWriter<'a, REG, POSIF1_A>;
-impl<'a, REG> POSIF1_W<'a, REG>
+pub type Posif1W<'a, REG> = crate::BitWriter<'a, REG, Posif1>;
+impl<'a, REG> Posif1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(POSIF1_A::VALUE1)
+        self.variant(Posif1::Value1)
     }
     #[doc = "Disable gating"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(POSIF1_A::VALUE2)
+        self.variant(Posif1::Value2)
     }
 }
 #[doc = "USIC0 Gating Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum USIC0_A {
+pub enum Usic0 {
     #[doc = "0: No effect"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<USIC0_A> for bool {
+impl From<Usic0> for bool {
     #[inline(always)]
-    fn from(variant: USIC0_A) -> Self {
+    fn from(variant: Usic0) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `USIC0` writer - USIC0 Gating Clear"]
-pub type USIC0_W<'a, REG> = crate::BitWriter<'a, REG, USIC0_A>;
-impl<'a, REG> USIC0_W<'a, REG>
+pub type Usic0W<'a, REG> = crate::BitWriter<'a, REG, Usic0>;
+impl<'a, REG> Usic0W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(USIC0_A::VALUE1)
+        self.variant(Usic0::Value1)
     }
     #[doc = "Disable gating"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(USIC0_A::VALUE2)
+        self.variant(Usic0::Value2)
     }
 }
 #[doc = "ERU1 Gating Clear\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ERU1_A {
+pub enum Eru1 {
     #[doc = "0: No effect"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Disable gating"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<ERU1_A> for bool {
+impl From<Eru1> for bool {
     #[inline(always)]
-    fn from(variant: ERU1_A) -> Self {
+    fn from(variant: Eru1) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ERU1` writer - ERU1 Gating Clear"]
-pub type ERU1_W<'a, REG> = crate::BitWriter<'a, REG, ERU1_A>;
-impl<'a, REG> ERU1_W<'a, REG>
+pub type Eru1W<'a, REG> = crate::BitWriter<'a, REG, Eru1>;
+impl<'a, REG> Eru1W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(ERU1_A::VALUE1)
+        self.variant(Eru1::Value1)
     }
     #[doc = "Disable gating"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(ERU1_A::VALUE2)
+        self.variant(Eru1::Value2)
     }
 }
 impl W {
     #[doc = "Bit 0 - VADC Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn vadc(&mut self) -> VADC_W<CGATCLR0_SPEC> {
-        VADC_W::new(self, 0)
+    pub fn vadc(&mut self) -> VadcW<Cgatclr0Spec> {
+        VadcW::new(self, 0)
     }
     #[doc = "Bit 1 - DSD Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn dsd(&mut self) -> DSD_W<CGATCLR0_SPEC> {
-        DSD_W::new(self, 1)
+    pub fn dsd(&mut self) -> DsdW<Cgatclr0Spec> {
+        DsdW::new(self, 1)
     }
     #[doc = "Bit 2 - CCU40 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ccu40(&mut self) -> CCU40_W<CGATCLR0_SPEC> {
-        CCU40_W::new(self, 2)
+    pub fn ccu40(&mut self) -> Ccu40W<Cgatclr0Spec> {
+        Ccu40W::new(self, 2)
     }
     #[doc = "Bit 3 - CCU41 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ccu41(&mut self) -> CCU41_W<CGATCLR0_SPEC> {
-        CCU41_W::new(self, 3)
+    pub fn ccu41(&mut self) -> Ccu41W<Cgatclr0Spec> {
+        Ccu41W::new(self, 3)
     }
     #[doc = "Bit 4 - CCU42 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ccu42(&mut self) -> CCU42_W<CGATCLR0_SPEC> {
-        CCU42_W::new(self, 4)
+    pub fn ccu42(&mut self) -> Ccu42W<Cgatclr0Spec> {
+        Ccu42W::new(self, 4)
     }
     #[doc = "Bit 7 - CCU80 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ccu80(&mut self) -> CCU80_W<CGATCLR0_SPEC> {
-        CCU80_W::new(self, 7)
+    pub fn ccu80(&mut self) -> Ccu80W<Cgatclr0Spec> {
+        Ccu80W::new(self, 7)
     }
     #[doc = "Bit 8 - CCU81 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn ccu81(&mut self) -> CCU81_W<CGATCLR0_SPEC> {
-        CCU81_W::new(self, 8)
+    pub fn ccu81(&mut self) -> Ccu81W<Cgatclr0Spec> {
+        Ccu81W::new(self, 8)
     }
     #[doc = "Bit 9 - POSIF0 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn posif0(&mut self) -> POSIF0_W<CGATCLR0_SPEC> {
-        POSIF0_W::new(self, 9)
+    pub fn posif0(&mut self) -> Posif0W<Cgatclr0Spec> {
+        Posif0W::new(self, 9)
     }
     #[doc = "Bit 10 - POSIF1 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn posif1(&mut self) -> POSIF1_W<CGATCLR0_SPEC> {
-        POSIF1_W::new(self, 10)
+    pub fn posif1(&mut self) -> Posif1W<Cgatclr0Spec> {
+        Posif1W::new(self, 10)
     }
     #[doc = "Bit 11 - USIC0 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn usic0(&mut self) -> USIC0_W<CGATCLR0_SPEC> {
-        USIC0_W::new(self, 11)
+    pub fn usic0(&mut self) -> Usic0W<Cgatclr0Spec> {
+        Usic0W::new(self, 11)
     }
     #[doc = "Bit 16 - ERU1 Gating Clear"]
     #[inline(always)]
     #[must_use]
-    pub fn eru1(&mut self) -> ERU1_W<CGATCLR0_SPEC> {
-        ERU1_W::new(self, 16)
+    pub fn eru1(&mut self) -> Eru1W<Cgatclr0Spec> {
+        Eru1W::new(self, 16)
     }
 }
 #[doc = "Peripheral 0 Clock Gating Clear\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cgatclr0::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct CGATCLR0_SPEC;
-impl crate::RegisterSpec for CGATCLR0_SPEC {
+pub struct Cgatclr0Spec;
+impl crate::RegisterSpec for Cgatclr0Spec {
     type Ux = u32;
 }
 #[doc = "`write(|w| ..)` method takes [`cgatclr0::W`](W) writer structure"]
-impl crate::Writable for CGATCLR0_SPEC {
+impl crate::Writable for Cgatclr0Spec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CGATCLR0 to value 0"]
-impl crate::Resettable for CGATCLR0_SPEC {
+impl crate::Resettable for Cgatclr0Spec {
     const RESET_VALUE: u32 = 0;
 }

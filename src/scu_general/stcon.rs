@@ -1,158 +1,158 @@
 #[doc = "Register `STCON` reader"]
-pub type R = crate::R<STCON_SPEC>;
+pub type R = crate::R<StconSpec>;
 #[doc = "Register `STCON` writer"]
-pub type W = crate::W<STCON_SPEC>;
+pub type W = crate::W<StconSpec>;
 #[doc = "HW Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum HWCON_A {
+pub enum Hwcon {
     #[doc = "0: Normal mode, JTAG"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: ASC BSL enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
     #[doc = "2: BMI customized boot enabled"]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: CAN BSL enabled"]
-    VALUE4 = 3,
+    Value4 = 3,
 }
-impl From<HWCON_A> for u8 {
+impl From<Hwcon> for u8 {
     #[inline(always)]
-    fn from(variant: HWCON_A) -> Self {
+    fn from(variant: Hwcon) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for HWCON_A {
+impl crate::FieldSpec for Hwcon {
     type Ux = u8;
 }
-impl crate::IsEnum for HWCON_A {}
+impl crate::IsEnum for Hwcon {}
 #[doc = "Field `HWCON` reader - HW Configuration"]
-pub type HWCON_R = crate::FieldReader<HWCON_A>;
-impl HWCON_R {
+pub type HwconR = crate::FieldReader<Hwcon>;
+impl HwconR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> HWCON_A {
+    pub const fn variant(&self) -> Hwcon {
         match self.bits {
-            0 => HWCON_A::VALUE1,
-            1 => HWCON_A::VALUE2,
-            2 => HWCON_A::VALUE3,
-            3 => HWCON_A::VALUE4,
+            0 => Hwcon::Value1,
+            1 => Hwcon::Value2,
+            2 => Hwcon::Value3,
+            3 => Hwcon::Value4,
             _ => unreachable!(),
         }
     }
     #[doc = "Normal mode, JTAG"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == HWCON_A::VALUE1
+        *self == Hwcon::Value1
     }
     #[doc = "ASC BSL enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == HWCON_A::VALUE2
+        *self == Hwcon::Value2
     }
     #[doc = "BMI customized boot enabled"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == HWCON_A::VALUE3
+        *self == Hwcon::Value3
     }
     #[doc = "CAN BSL enabled"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == HWCON_A::VALUE4
+        *self == Hwcon::Value4
     }
 }
 #[doc = "SW Configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum SWCON_A {
+pub enum Swcon {
     #[doc = "0: Normal mode, boot from Boot ROM"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: ASC BSL enabled"]
-    VALUE2 = 1,
+    Value2 = 1,
     #[doc = "2: BMI customized boot enabled"]
-    VALUE3 = 2,
+    Value3 = 2,
     #[doc = "3: CAN BSL enabled"]
-    VALUE4 = 3,
+    Value4 = 3,
     #[doc = "4: Boot from Code SRAM"]
-    VALUE5 = 4,
+    Value5 = 4,
     #[doc = "8: Boot from alternate Flash Address 0"]
-    VALUE6 = 8,
+    Value6 = 8,
     #[doc = "12: Boot from alternate Flash Address 1"]
-    VALUE7 = 12,
+    Value7 = 12,
     #[doc = "14: Enable fallback Alternate Boot Mode (ABM)"]
-    VALUE8 = 14,
+    Value8 = 14,
 }
-impl From<SWCON_A> for u8 {
+impl From<Swcon> for u8 {
     #[inline(always)]
-    fn from(variant: SWCON_A) -> Self {
+    fn from(variant: Swcon) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for SWCON_A {
+impl crate::FieldSpec for Swcon {
     type Ux = u8;
 }
-impl crate::IsEnum for SWCON_A {}
+impl crate::IsEnum for Swcon {}
 #[doc = "Field `SWCON` reader - SW Configuration"]
-pub type SWCON_R = crate::FieldReader<SWCON_A>;
-impl SWCON_R {
+pub type SwconR = crate::FieldReader<Swcon>;
+impl SwconR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<SWCON_A> {
+    pub const fn variant(&self) -> Option<Swcon> {
         match self.bits {
-            0 => Some(SWCON_A::VALUE1),
-            1 => Some(SWCON_A::VALUE2),
-            2 => Some(SWCON_A::VALUE3),
-            3 => Some(SWCON_A::VALUE4),
-            4 => Some(SWCON_A::VALUE5),
-            8 => Some(SWCON_A::VALUE6),
-            12 => Some(SWCON_A::VALUE7),
-            14 => Some(SWCON_A::VALUE8),
+            0 => Some(Swcon::Value1),
+            1 => Some(Swcon::Value2),
+            2 => Some(Swcon::Value3),
+            3 => Some(Swcon::Value4),
+            4 => Some(Swcon::Value5),
+            8 => Some(Swcon::Value6),
+            12 => Some(Swcon::Value7),
+            14 => Some(Swcon::Value8),
             _ => None,
         }
     }
     #[doc = "Normal mode, boot from Boot ROM"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == SWCON_A::VALUE1
+        *self == Swcon::Value1
     }
     #[doc = "ASC BSL enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == SWCON_A::VALUE2
+        *self == Swcon::Value2
     }
     #[doc = "BMI customized boot enabled"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == SWCON_A::VALUE3
+        *self == Swcon::Value3
     }
     #[doc = "CAN BSL enabled"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == SWCON_A::VALUE4
+        *self == Swcon::Value4
     }
     #[doc = "Boot from Code SRAM"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == SWCON_A::VALUE5
+        *self == Swcon::Value5
     }
     #[doc = "Boot from alternate Flash Address 0"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == SWCON_A::VALUE6
+        *self == Swcon::Value6
     }
     #[doc = "Boot from alternate Flash Address 1"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == SWCON_A::VALUE7
+        *self == Swcon::Value7
     }
     #[doc = "Enable fallback Alternate Boot Mode (ABM)"]
     #[inline(always)]
     pub fn is_value8(&self) -> bool {
-        *self == SWCON_A::VALUE8
+        *self == Swcon::Value8
     }
 }
 #[doc = "Field `SWCON` writer - SW Configuration"]
-pub type SWCON_W<'a, REG> = crate::FieldWriter<'a, REG, 4, SWCON_A>;
-impl<'a, REG> SWCON_W<'a, REG>
+pub type SwconW<'a, REG> = crate::FieldWriter<'a, REG, 4, Swcon>;
+impl<'a, REG> SwconW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -160,78 +160,78 @@ where
     #[doc = "Normal mode, boot from Boot ROM"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(SWCON_A::VALUE1)
+        self.variant(Swcon::Value1)
     }
     #[doc = "ASC BSL enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(SWCON_A::VALUE2)
+        self.variant(Swcon::Value2)
     }
     #[doc = "BMI customized boot enabled"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(SWCON_A::VALUE3)
+        self.variant(Swcon::Value3)
     }
     #[doc = "CAN BSL enabled"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(SWCON_A::VALUE4)
+        self.variant(Swcon::Value4)
     }
     #[doc = "Boot from Code SRAM"]
     #[inline(always)]
     pub fn value5(self) -> &'a mut crate::W<REG> {
-        self.variant(SWCON_A::VALUE5)
+        self.variant(Swcon::Value5)
     }
     #[doc = "Boot from alternate Flash Address 0"]
     #[inline(always)]
     pub fn value6(self) -> &'a mut crate::W<REG> {
-        self.variant(SWCON_A::VALUE6)
+        self.variant(Swcon::Value6)
     }
     #[doc = "Boot from alternate Flash Address 1"]
     #[inline(always)]
     pub fn value7(self) -> &'a mut crate::W<REG> {
-        self.variant(SWCON_A::VALUE7)
+        self.variant(Swcon::Value7)
     }
     #[doc = "Enable fallback Alternate Boot Mode (ABM)"]
     #[inline(always)]
     pub fn value8(self) -> &'a mut crate::W<REG> {
-        self.variant(SWCON_A::VALUE8)
+        self.variant(Swcon::Value8)
     }
 }
 impl R {
     #[doc = "Bits 0:1 - HW Configuration"]
     #[inline(always)]
-    pub fn hwcon(&self) -> HWCON_R {
-        HWCON_R::new((self.bits & 3) as u8)
+    pub fn hwcon(&self) -> HwconR {
+        HwconR::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 8:11 - SW Configuration"]
     #[inline(always)]
-    pub fn swcon(&self) -> SWCON_R {
-        SWCON_R::new(((self.bits >> 8) & 0x0f) as u8)
+    pub fn swcon(&self) -> SwconR {
+        SwconR::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 8:11 - SW Configuration"]
     #[inline(always)]
     #[must_use]
-    pub fn swcon(&mut self) -> SWCON_W<STCON_SPEC> {
-        SWCON_W::new(self, 8)
+    pub fn swcon(&mut self) -> SwconW<StconSpec> {
+        SwconW::new(self, 8)
     }
 }
 #[doc = "Startup Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`stcon::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`stcon::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct STCON_SPEC;
-impl crate::RegisterSpec for STCON_SPEC {
+pub struct StconSpec;
+impl crate::RegisterSpec for StconSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`stcon::R`](R) reader structure"]
-impl crate::Readable for STCON_SPEC {}
+impl crate::Readable for StconSpec {}
 #[doc = "`write(|w| ..)` method takes [`stcon::W`](W) writer structure"]
-impl crate::Writable for STCON_SPEC {
+impl crate::Writable for StconSpec {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets STCON to value 0"]
-impl crate::Resettable for STCON_SPEC {
+impl crate::Resettable for StconSpec {
     const RESET_VALUE: u32 = 0;
 }

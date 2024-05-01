@@ -1,56 +1,56 @@
 #[doc = "Register `EVRSTAT` reader"]
-pub type R = crate::R<EVRSTAT_SPEC>;
+pub type R = crate::R<EvrstatSpec>;
 #[doc = "Regulator Overvoltage for 1.3 V\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum OV13_A {
+pub enum Ov13 {
     #[doc = "0: No overvoltage condition"]
-    VALUE1 = 0,
+    Value1 = 0,
     #[doc = "1: Regulator is in overvoltage"]
-    VALUE2 = 1,
+    Value2 = 1,
 }
-impl From<OV13_A> for bool {
+impl From<Ov13> for bool {
     #[inline(always)]
-    fn from(variant: OV13_A) -> Self {
+    fn from(variant: Ov13) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `OV13` reader - Regulator Overvoltage for 1.3 V"]
-pub type OV13_R = crate::BitReader<OV13_A>;
-impl OV13_R {
+pub type Ov13R = crate::BitReader<Ov13>;
+impl Ov13R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> OV13_A {
+    pub const fn variant(&self) -> Ov13 {
         match self.bits {
-            false => OV13_A::VALUE1,
-            true => OV13_A::VALUE2,
+            false => Ov13::Value1,
+            true => Ov13::Value2,
         }
     }
     #[doc = "No overvoltage condition"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == OV13_A::VALUE1
+        *self == Ov13::Value1
     }
     #[doc = "Regulator is in overvoltage"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == OV13_A::VALUE2
+        *self == Ov13::Value2
     }
 }
 impl R {
     #[doc = "Bit 1 - Regulator Overvoltage for 1.3 V"]
     #[inline(always)]
-    pub fn ov13(&self) -> OV13_R {
-        OV13_R::new(((self.bits >> 1) & 1) != 0)
+    pub fn ov13(&self) -> Ov13R {
+        Ov13R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[doc = "EVR Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`evrstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct EVRSTAT_SPEC;
-impl crate::RegisterSpec for EVRSTAT_SPEC {
+pub struct EvrstatSpec;
+impl crate::RegisterSpec for EvrstatSpec {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`evrstat::R`](R) reader structure"]
-impl crate::Readable for EVRSTAT_SPEC {}
+impl crate::Readable for EvrstatSpec {}
 #[doc = "`reset()` method sets EVRSTAT to value 0"]
-impl crate::Resettable for EVRSTAT_SPEC {
+impl crate::Resettable for EvrstatSpec {
     const RESET_VALUE: u32 = 0;
 }
