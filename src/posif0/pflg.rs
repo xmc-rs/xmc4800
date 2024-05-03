@@ -1,384 +1,384 @@
 #[doc = "Register `PFLG` reader"]
-pub type R = crate::R<PflgSpec>;
+pub type R = crate::R<PFLG_SPEC>;
 #[doc = "Correct Hall Event Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ches {
+pub enum CHES_A {
     #[doc = "0: Correct Hall Event not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Correct Hall Event detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ches> for bool {
+impl From<CHES_A> for bool {
     #[inline(always)]
-    fn from(variant: Ches) -> Self {
+    fn from(variant: CHES_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CHES` reader - Correct Hall Event Status"]
-pub type ChesR = crate::BitReader<Ches>;
-impl ChesR {
+pub type CHES_R = crate::BitReader<CHES_A>;
+impl CHES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ches {
+    pub const fn variant(&self) -> CHES_A {
         match self.bits {
-            false => Ches::Value1,
-            true => Ches::Value2,
+            false => CHES_A::VALUE1,
+            true => CHES_A::VALUE2,
         }
     }
     #[doc = "Correct Hall Event not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ches::Value1
+        *self == CHES_A::VALUE1
     }
     #[doc = "Correct Hall Event detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ches::Value2
+        *self == CHES_A::VALUE2
     }
 }
 #[doc = "Wrong Hall Event Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Whes {
+pub enum WHES_A {
     #[doc = "0: Wrong Hall Event not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Wrong Hall Event detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Whes> for bool {
+impl From<WHES_A> for bool {
     #[inline(always)]
-    fn from(variant: Whes) -> Self {
+    fn from(variant: WHES_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `WHES` reader - Wrong Hall Event Status"]
-pub type WhesR = crate::BitReader<Whes>;
-impl WhesR {
+pub type WHES_R = crate::BitReader<WHES_A>;
+impl WHES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Whes {
+    pub const fn variant(&self) -> WHES_A {
         match self.bits {
-            false => Whes::Value1,
-            true => Whes::Value2,
+            false => WHES_A::VALUE1,
+            true => WHES_A::VALUE2,
         }
     }
     #[doc = "Wrong Hall Event not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Whes::Value1
+        *self == WHES_A::VALUE1
     }
     #[doc = "Wrong Hall Event detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Whes::Value2
+        *self == WHES_A::VALUE2
     }
 }
 #[doc = "Hall Inputs Update Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Hies {
+pub enum HIES_A {
     #[doc = "0: Transition on the Hall Inputs not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Transition on the Hall Inputs detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Hies> for bool {
+impl From<HIES_A> for bool {
     #[inline(always)]
-    fn from(variant: Hies) -> Self {
+    fn from(variant: HIES_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `HIES` reader - Hall Inputs Update Status"]
-pub type HiesR = crate::BitReader<Hies>;
-impl HiesR {
+pub type HIES_R = crate::BitReader<HIES_A>;
+impl HIES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Hies {
+    pub const fn variant(&self) -> HIES_A {
         match self.bits {
-            false => Hies::Value1,
-            true => Hies::Value2,
+            false => HIES_A::VALUE1,
+            true => HIES_A::VALUE2,
         }
     }
     #[doc = "Transition on the Hall Inputs not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Hies::Value1
+        *self == HIES_A::VALUE1
     }
     #[doc = "Transition on the Hall Inputs detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Hies::Value2
+        *self == HIES_A::VALUE2
     }
 }
 #[doc = "Multi-Channel pattern shadow transfer status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Msts {
+pub enum MSTS_A {
     #[doc = "0: Shadow transfer not done"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Shadow transfer done"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Msts> for bool {
+impl From<MSTS_A> for bool {
     #[inline(always)]
-    fn from(variant: Msts) -> Self {
+    fn from(variant: MSTS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `MSTS` reader - Multi-Channel pattern shadow transfer status"]
-pub type MstsR = crate::BitReader<Msts>;
-impl MstsR {
+pub type MSTS_R = crate::BitReader<MSTS_A>;
+impl MSTS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Msts {
+    pub const fn variant(&self) -> MSTS_A {
         match self.bits {
-            false => Msts::Value1,
-            true => Msts::Value2,
+            false => MSTS_A::VALUE1,
+            true => MSTS_A::VALUE2,
         }
     }
     #[doc = "Shadow transfer not done"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Msts::Value1
+        *self == MSTS_A::VALUE1
     }
     #[doc = "Shadow transfer done"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Msts::Value2
+        *self == MSTS_A::VALUE2
     }
 }
 #[doc = "Quadrature Index Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Indxs {
+pub enum INDXS_A {
     #[doc = "0: Index event not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Index event detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Indxs> for bool {
+impl From<INDXS_A> for bool {
     #[inline(always)]
-    fn from(variant: Indxs) -> Self {
+    fn from(variant: INDXS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `INDXS` reader - Quadrature Index Status"]
-pub type IndxsR = crate::BitReader<Indxs>;
-impl IndxsR {
+pub type INDXS_R = crate::BitReader<INDXS_A>;
+impl INDXS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Indxs {
+    pub const fn variant(&self) -> INDXS_A {
         match self.bits {
-            false => Indxs::Value1,
-            true => Indxs::Value2,
+            false => INDXS_A::VALUE1,
+            true => INDXS_A::VALUE2,
         }
     }
     #[doc = "Index event not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Indxs::Value1
+        *self == INDXS_A::VALUE1
     }
     #[doc = "Index event detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Indxs::Value2
+        *self == INDXS_A::VALUE2
     }
 }
 #[doc = "Quadrature Phase Error Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Errs {
+pub enum ERRS_A {
     #[doc = "0: Phase Error event not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Phase Error event detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Errs> for bool {
+impl From<ERRS_A> for bool {
     #[inline(always)]
-    fn from(variant: Errs) -> Self {
+    fn from(variant: ERRS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `ERRS` reader - Quadrature Phase Error Status"]
-pub type ErrsR = crate::BitReader<Errs>;
-impl ErrsR {
+pub type ERRS_R = crate::BitReader<ERRS_A>;
+impl ERRS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Errs {
+    pub const fn variant(&self) -> ERRS_A {
         match self.bits {
-            false => Errs::Value1,
-            true => Errs::Value2,
+            false => ERRS_A::VALUE1,
+            true => ERRS_A::VALUE2,
         }
     }
     #[doc = "Phase Error event not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Errs::Value1
+        *self == ERRS_A::VALUE1
     }
     #[doc = "Phase Error event detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Errs::Value2
+        *self == ERRS_A::VALUE2
     }
 }
 #[doc = "Quadrature CLK Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Cnts {
+pub enum CNTS_A {
     #[doc = "0: Quadrature clock not generated"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Quadrature clock generated"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Cnts> for bool {
+impl From<CNTS_A> for bool {
     #[inline(always)]
-    fn from(variant: Cnts) -> Self {
+    fn from(variant: CNTS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CNTS` reader - Quadrature CLK Status"]
-pub type CntsR = crate::BitReader<Cnts>;
-impl CntsR {
+pub type CNTS_R = crate::BitReader<CNTS_A>;
+impl CNTS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Cnts {
+    pub const fn variant(&self) -> CNTS_A {
         match self.bits {
-            false => Cnts::Value1,
-            true => Cnts::Value2,
+            false => CNTS_A::VALUE1,
+            true => CNTS_A::VALUE2,
         }
     }
     #[doc = "Quadrature clock not generated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Cnts::Value1
+        *self == CNTS_A::VALUE1
     }
     #[doc = "Quadrature clock generated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Cnts::Value2
+        *self == CNTS_A::VALUE2
     }
 }
 #[doc = "Quadrature Direction Change\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Dirs {
+pub enum DIRS_A {
     #[doc = "0: Change on direction not detected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Change on direction detected"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Dirs> for bool {
+impl From<DIRS_A> for bool {
     #[inline(always)]
-    fn from(variant: Dirs) -> Self {
+    fn from(variant: DIRS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `DIRS` reader - Quadrature Direction Change"]
-pub type DirsR = crate::BitReader<Dirs>;
-impl DirsR {
+pub type DIRS_R = crate::BitReader<DIRS_A>;
+impl DIRS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Dirs {
+    pub const fn variant(&self) -> DIRS_A {
         match self.bits {
-            false => Dirs::Value1,
-            true => Dirs::Value2,
+            false => DIRS_A::VALUE1,
+            true => DIRS_A::VALUE2,
         }
     }
     #[doc = "Change on direction not detected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Dirs::Value1
+        *self == DIRS_A::VALUE1
     }
     #[doc = "Change on direction detected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Dirs::Value2
+        *self == DIRS_A::VALUE2
     }
 }
 #[doc = "Quadrature Period Clk Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Pclks {
+pub enum PCLKS_A {
     #[doc = "0: Period clock not generated"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Period clock generated"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Pclks> for bool {
+impl From<PCLKS_A> for bool {
     #[inline(always)]
-    fn from(variant: Pclks) -> Self {
+    fn from(variant: PCLKS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PCLKS` reader - Quadrature Period Clk Status"]
-pub type PclksR = crate::BitReader<Pclks>;
-impl PclksR {
+pub type PCLKS_R = crate::BitReader<PCLKS_A>;
+impl PCLKS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pclks {
+    pub const fn variant(&self) -> PCLKS_A {
         match self.bits {
-            false => Pclks::Value1,
-            true => Pclks::Value2,
+            false => PCLKS_A::VALUE1,
+            true => PCLKS_A::VALUE2,
         }
     }
     #[doc = "Period clock not generated"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Pclks::Value1
+        *self == PCLKS_A::VALUE1
     }
     #[doc = "Period clock generated"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Pclks::Value2
+        *self == PCLKS_A::VALUE2
     }
 }
 impl R {
     #[doc = "Bit 0 - Correct Hall Event Status"]
     #[inline(always)]
-    pub fn ches(&self) -> ChesR {
-        ChesR::new((self.bits & 1) != 0)
+    pub fn ches(&self) -> CHES_R {
+        CHES_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Wrong Hall Event Status"]
     #[inline(always)]
-    pub fn whes(&self) -> WhesR {
-        WhesR::new(((self.bits >> 1) & 1) != 0)
+    pub fn whes(&self) -> WHES_R {
+        WHES_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Hall Inputs Update Status"]
     #[inline(always)]
-    pub fn hies(&self) -> HiesR {
-        HiesR::new(((self.bits >> 2) & 1) != 0)
+    pub fn hies(&self) -> HIES_R {
+        HIES_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 4 - Multi-Channel pattern shadow transfer status"]
     #[inline(always)]
-    pub fn msts(&self) -> MstsR {
-        MstsR::new(((self.bits >> 4) & 1) != 0)
+    pub fn msts(&self) -> MSTS_R {
+        MSTS_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 8 - Quadrature Index Status"]
     #[inline(always)]
-    pub fn indxs(&self) -> IndxsR {
-        IndxsR::new(((self.bits >> 8) & 1) != 0)
+    pub fn indxs(&self) -> INDXS_R {
+        INDXS_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Quadrature Phase Error Status"]
     #[inline(always)]
-    pub fn errs(&self) -> ErrsR {
-        ErrsR::new(((self.bits >> 9) & 1) != 0)
+    pub fn errs(&self) -> ERRS_R {
+        ERRS_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Quadrature CLK Status"]
     #[inline(always)]
-    pub fn cnts(&self) -> CntsR {
-        CntsR::new(((self.bits >> 10) & 1) != 0)
+    pub fn cnts(&self) -> CNTS_R {
+        CNTS_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Quadrature Direction Change"]
     #[inline(always)]
-    pub fn dirs(&self) -> DirsR {
-        DirsR::new(((self.bits >> 11) & 1) != 0)
+    pub fn dirs(&self) -> DIRS_R {
+        DIRS_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Quadrature Period Clk Status"]
     #[inline(always)]
-    pub fn pclks(&self) -> PclksR {
-        PclksR::new(((self.bits >> 12) & 1) != 0)
+    pub fn pclks(&self) -> PCLKS_R {
+        PCLKS_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 #[doc = "POSIF Interrupt Flags\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pflg::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PflgSpec;
-impl crate::RegisterSpec for PflgSpec {
+pub struct PFLG_SPEC;
+impl crate::RegisterSpec for PFLG_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`pflg::R`](R) reader structure"]
-impl crate::Readable for PflgSpec {}
+impl crate::Readable for PFLG_SPEC {}
 #[doc = "`reset()` method sets PFLG to value 0"]
-impl crate::Resettable for PflgSpec {
+impl crate::Resettable for PFLG_SPEC {
     const RESET_VALUE: u32 = 0;
 }

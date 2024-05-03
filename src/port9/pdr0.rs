@@ -1,100 +1,100 @@
 #[doc = "Register `PDR0` reader"]
-pub type R = crate::R<Pdr0Spec>;
+pub type R = crate::R<PDR0_SPEC>;
 #[doc = "Register `PDR0` writer"]
-pub type W = crate::W<Pdr0Spec>;
+pub type W = crate::W<PDR0_SPEC>;
 #[doc = "Pad Driver Mode for Pn.0\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Pd0 {
+pub enum PD0_A {
     #[doc = "2: A1+ strong driver, soft edge"]
-    SdSoe = 2,
+    SD_SOE = 2,
     #[doc = "3: A1+ strong driver, slow edge"]
-    SdSle = 3,
+    SD_SLE = 3,
     #[doc = "4: A1+ medium driver"]
-    Md = 4,
+    MD = 4,
     #[doc = "7: A1+ weak driver"]
-    Wd = 7,
+    WD = 7,
     #[doc = "0: A1+ strong driver, soft edge (alternate value)"]
-    SdSoeAlt = 0,
+    SD_SOE_ALT = 0,
     #[doc = "1: A1+ strong driver, slow edge (alternate value)"]
-    SdSleAlt = 1,
+    SD_SLE_ALT = 1,
     #[doc = "6: A1+ medium driver (alternate value)"]
-    MdAlt = 6,
+    MD_ALT = 6,
     #[doc = "5: A1+ weak driver (alternate value)"]
-    WdAlt = 5,
+    WD_ALT = 5,
 }
-impl From<Pd0> for u8 {
+impl From<PD0_A> for u8 {
     #[inline(always)]
-    fn from(variant: Pd0) -> Self {
+    fn from(variant: PD0_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Pd0 {
+impl crate::FieldSpec for PD0_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Pd0 {}
+impl crate::IsEnum for PD0_A {}
 #[doc = "Field `PD0` reader - Pad Driver Mode for Pn.0"]
-pub type Pd0R = crate::FieldReader<Pd0>;
-impl Pd0R {
+pub type PD0_R = crate::FieldReader<PD0_A>;
+impl PD0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pd0 {
+    pub const fn variant(&self) -> PD0_A {
         match self.bits {
-            2 => Pd0::SdSoe,
-            3 => Pd0::SdSle,
-            4 => Pd0::Md,
-            7 => Pd0::Wd,
-            0 => Pd0::SdSoeAlt,
-            1 => Pd0::SdSleAlt,
-            6 => Pd0::MdAlt,
-            5 => Pd0::WdAlt,
+            2 => PD0_A::SD_SOE,
+            3 => PD0_A::SD_SLE,
+            4 => PD0_A::MD,
+            7 => PD0_A::WD,
+            0 => PD0_A::SD_SOE_ALT,
+            1 => PD0_A::SD_SLE_ALT,
+            6 => PD0_A::MD_ALT,
+            5 => PD0_A::WD_ALT,
             _ => unreachable!(),
         }
     }
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == Pd0::SdSoe
+        *self == PD0_A::SD_SOE
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
-        *self == Pd0::SdSle
+        *self == PD0_A::SD_SLE
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == Pd0::Md
+        *self == PD0_A::MD
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == Pd0::Wd
+        *self == PD0_A::WD
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
-        *self == Pd0::SdSoeAlt
+        *self == PD0_A::SD_SOE_ALT
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
-        *self == Pd0::SdSleAlt
+        *self == PD0_A::SD_SLE_ALT
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
-        *self == Pd0::MdAlt
+        *self == PD0_A::MD_ALT
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
-        *self == Pd0::WdAlt
+        *self == PD0_A::WD_ALT
     }
 }
 #[doc = "Field `PD0` writer - Pad Driver Mode for Pn.0"]
-pub type Pd0W<'a, REG> = crate::FieldWriter<'a, REG, 3, Pd0, crate::Safe>;
-impl<'a, REG> Pd0W<'a, REG>
+pub type PD0_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PD0_A, crate::Safe>;
+impl<'a, REG> PD0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -102,137 +102,137 @@ where
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn sd_soe(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd0::SdSoe)
+        self.variant(PD0_A::SD_SOE)
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn sd_sle(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd0::SdSle)
+        self.variant(PD0_A::SD_SLE)
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn md(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd0::Md)
+        self.variant(PD0_A::MD)
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn wd(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd0::Wd)
+        self.variant(PD0_A::WD)
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn sd_soe_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd0::SdSoeAlt)
+        self.variant(PD0_A::SD_SOE_ALT)
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn sd_sle_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd0::SdSleAlt)
+        self.variant(PD0_A::SD_SLE_ALT)
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn md_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd0::MdAlt)
+        self.variant(PD0_A::MD_ALT)
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn wd_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd0::WdAlt)
+        self.variant(PD0_A::WD_ALT)
     }
 }
 #[doc = "Pad Driver Mode for Pn.1\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Pd1 {
+pub enum PD1_A {
     #[doc = "2: A1+ strong driver, soft edge"]
-    SdSoe = 2,
+    SD_SOE = 2,
     #[doc = "3: A1+ strong driver, slow edge"]
-    SdSle = 3,
+    SD_SLE = 3,
     #[doc = "4: A1+ medium driver"]
-    Md = 4,
+    MD = 4,
     #[doc = "7: A1+ weak driver"]
-    Wd = 7,
+    WD = 7,
     #[doc = "0: A1+ strong driver, soft edge (alternate value)"]
-    SdSoeAlt = 0,
+    SD_SOE_ALT = 0,
     #[doc = "1: A1+ strong driver, slow edge (alternate value)"]
-    SdSleAlt = 1,
+    SD_SLE_ALT = 1,
     #[doc = "6: A1+ medium driver (alternate value)"]
-    MdAlt = 6,
+    MD_ALT = 6,
     #[doc = "5: A1+ weak driver (alternate value)"]
-    WdAlt = 5,
+    WD_ALT = 5,
 }
-impl From<Pd1> for u8 {
+impl From<PD1_A> for u8 {
     #[inline(always)]
-    fn from(variant: Pd1) -> Self {
+    fn from(variant: PD1_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Pd1 {
+impl crate::FieldSpec for PD1_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Pd1 {}
+impl crate::IsEnum for PD1_A {}
 #[doc = "Field `PD1` reader - Pad Driver Mode for Pn.1"]
-pub type Pd1R = crate::FieldReader<Pd1>;
-impl Pd1R {
+pub type PD1_R = crate::FieldReader<PD1_A>;
+impl PD1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pd1 {
+    pub const fn variant(&self) -> PD1_A {
         match self.bits {
-            2 => Pd1::SdSoe,
-            3 => Pd1::SdSle,
-            4 => Pd1::Md,
-            7 => Pd1::Wd,
-            0 => Pd1::SdSoeAlt,
-            1 => Pd1::SdSleAlt,
-            6 => Pd1::MdAlt,
-            5 => Pd1::WdAlt,
+            2 => PD1_A::SD_SOE,
+            3 => PD1_A::SD_SLE,
+            4 => PD1_A::MD,
+            7 => PD1_A::WD,
+            0 => PD1_A::SD_SOE_ALT,
+            1 => PD1_A::SD_SLE_ALT,
+            6 => PD1_A::MD_ALT,
+            5 => PD1_A::WD_ALT,
             _ => unreachable!(),
         }
     }
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == Pd1::SdSoe
+        *self == PD1_A::SD_SOE
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
-        *self == Pd1::SdSle
+        *self == PD1_A::SD_SLE
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == Pd1::Md
+        *self == PD1_A::MD
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == Pd1::Wd
+        *self == PD1_A::WD
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
-        *self == Pd1::SdSoeAlt
+        *self == PD1_A::SD_SOE_ALT
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
-        *self == Pd1::SdSleAlt
+        *self == PD1_A::SD_SLE_ALT
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
-        *self == Pd1::MdAlt
+        *self == PD1_A::MD_ALT
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
-        *self == Pd1::WdAlt
+        *self == PD1_A::WD_ALT
     }
 }
 #[doc = "Field `PD1` writer - Pad Driver Mode for Pn.1"]
-pub type Pd1W<'a, REG> = crate::FieldWriter<'a, REG, 3, Pd1, crate::Safe>;
-impl<'a, REG> Pd1W<'a, REG>
+pub type PD1_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PD1_A, crate::Safe>;
+impl<'a, REG> PD1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -240,137 +240,137 @@ where
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn sd_soe(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd1::SdSoe)
+        self.variant(PD1_A::SD_SOE)
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn sd_sle(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd1::SdSle)
+        self.variant(PD1_A::SD_SLE)
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn md(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd1::Md)
+        self.variant(PD1_A::MD)
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn wd(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd1::Wd)
+        self.variant(PD1_A::WD)
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn sd_soe_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd1::SdSoeAlt)
+        self.variant(PD1_A::SD_SOE_ALT)
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn sd_sle_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd1::SdSleAlt)
+        self.variant(PD1_A::SD_SLE_ALT)
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn md_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd1::MdAlt)
+        self.variant(PD1_A::MD_ALT)
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn wd_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd1::WdAlt)
+        self.variant(PD1_A::WD_ALT)
     }
 }
 #[doc = "Pad Driver Mode for Pn.2\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Pd2 {
+pub enum PD2_A {
     #[doc = "2: A1+ strong driver, soft edge"]
-    SdSoe = 2,
+    SD_SOE = 2,
     #[doc = "3: A1+ strong driver, slow edge"]
-    SdSle = 3,
+    SD_SLE = 3,
     #[doc = "4: A1+ medium driver"]
-    Md = 4,
+    MD = 4,
     #[doc = "7: A1+ weak driver"]
-    Wd = 7,
+    WD = 7,
     #[doc = "0: A1+ strong driver, soft edge (alternate value)"]
-    SdSoeAlt = 0,
+    SD_SOE_ALT = 0,
     #[doc = "1: A1+ strong driver, slow edge (alternate value)"]
-    SdSleAlt = 1,
+    SD_SLE_ALT = 1,
     #[doc = "6: A1+ medium driver (alternate value)"]
-    MdAlt = 6,
+    MD_ALT = 6,
     #[doc = "5: A1+ weak driver (alternate value)"]
-    WdAlt = 5,
+    WD_ALT = 5,
 }
-impl From<Pd2> for u8 {
+impl From<PD2_A> for u8 {
     #[inline(always)]
-    fn from(variant: Pd2) -> Self {
+    fn from(variant: PD2_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Pd2 {
+impl crate::FieldSpec for PD2_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Pd2 {}
+impl crate::IsEnum for PD2_A {}
 #[doc = "Field `PD2` reader - Pad Driver Mode for Pn.2"]
-pub type Pd2R = crate::FieldReader<Pd2>;
-impl Pd2R {
+pub type PD2_R = crate::FieldReader<PD2_A>;
+impl PD2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pd2 {
+    pub const fn variant(&self) -> PD2_A {
         match self.bits {
-            2 => Pd2::SdSoe,
-            3 => Pd2::SdSle,
-            4 => Pd2::Md,
-            7 => Pd2::Wd,
-            0 => Pd2::SdSoeAlt,
-            1 => Pd2::SdSleAlt,
-            6 => Pd2::MdAlt,
-            5 => Pd2::WdAlt,
+            2 => PD2_A::SD_SOE,
+            3 => PD2_A::SD_SLE,
+            4 => PD2_A::MD,
+            7 => PD2_A::WD,
+            0 => PD2_A::SD_SOE_ALT,
+            1 => PD2_A::SD_SLE_ALT,
+            6 => PD2_A::MD_ALT,
+            5 => PD2_A::WD_ALT,
             _ => unreachable!(),
         }
     }
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == Pd2::SdSoe
+        *self == PD2_A::SD_SOE
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
-        *self == Pd2::SdSle
+        *self == PD2_A::SD_SLE
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == Pd2::Md
+        *self == PD2_A::MD
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == Pd2::Wd
+        *self == PD2_A::WD
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
-        *self == Pd2::SdSoeAlt
+        *self == PD2_A::SD_SOE_ALT
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
-        *self == Pd2::SdSleAlt
+        *self == PD2_A::SD_SLE_ALT
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
-        *self == Pd2::MdAlt
+        *self == PD2_A::MD_ALT
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
-        *self == Pd2::WdAlt
+        *self == PD2_A::WD_ALT
     }
 }
 #[doc = "Field `PD2` writer - Pad Driver Mode for Pn.2"]
-pub type Pd2W<'a, REG> = crate::FieldWriter<'a, REG, 3, Pd2, crate::Safe>;
-impl<'a, REG> Pd2W<'a, REG>
+pub type PD2_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PD2_A, crate::Safe>;
+impl<'a, REG> PD2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -378,113 +378,113 @@ where
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn sd_soe(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd2::SdSoe)
+        self.variant(PD2_A::SD_SOE)
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn sd_sle(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd2::SdSle)
+        self.variant(PD2_A::SD_SLE)
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn md(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd2::Md)
+        self.variant(PD2_A::MD)
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn wd(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd2::Wd)
+        self.variant(PD2_A::WD)
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn sd_soe_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd2::SdSoeAlt)
+        self.variant(PD2_A::SD_SOE_ALT)
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn sd_sle_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd2::SdSleAlt)
+        self.variant(PD2_A::SD_SLE_ALT)
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn md_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd2::MdAlt)
+        self.variant(PD2_A::MD_ALT)
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn wd_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd2::WdAlt)
+        self.variant(PD2_A::WD_ALT)
     }
 }
 #[doc = "Pad Driver Mode for Pn.3\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Pd3 {
+pub enum PD3_A {
     #[doc = "0: A2 strong driver, sharp edge"]
-    SdShe = 0,
+    SD_SHE = 0,
     #[doc = "1: A2 strong driver, medium edge"]
-    SdMee = 1,
+    SD_MEE = 1,
     #[doc = "2: A2 strong driver, soft edge"]
-    SdSoe = 2,
+    SD_SOE = 2,
     #[doc = "4: A2 medium driver"]
-    Md = 4,
+    MD = 4,
     #[doc = "7: A2 weak driver"]
-    Wd = 7,
+    WD = 7,
 }
-impl From<Pd3> for u8 {
+impl From<PD3_A> for u8 {
     #[inline(always)]
-    fn from(variant: Pd3) -> Self {
+    fn from(variant: PD3_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Pd3 {
+impl crate::FieldSpec for PD3_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Pd3 {}
+impl crate::IsEnum for PD3_A {}
 #[doc = "Field `PD3` reader - Pad Driver Mode for Pn.3"]
-pub type Pd3R = crate::FieldReader<Pd3>;
-impl Pd3R {
+pub type PD3_R = crate::FieldReader<PD3_A>;
+impl PD3_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Pd3> {
+    pub const fn variant(&self) -> Option<PD3_A> {
         match self.bits {
-            0 => Some(Pd3::SdShe),
-            1 => Some(Pd3::SdMee),
-            2 => Some(Pd3::SdSoe),
-            4 => Some(Pd3::Md),
-            7 => Some(Pd3::Wd),
+            0 => Some(PD3_A::SD_SHE),
+            1 => Some(PD3_A::SD_MEE),
+            2 => Some(PD3_A::SD_SOE),
+            4 => Some(PD3_A::MD),
+            7 => Some(PD3_A::WD),
             _ => None,
         }
     }
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        *self == Pd3::SdShe
+        *self == PD3_A::SD_SHE
     }
     #[doc = "A2 strong driver, medium edge"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        *self == Pd3::SdMee
+        *self == PD3_A::SD_MEE
     }
     #[doc = "A2 strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == Pd3::SdSoe
+        *self == PD3_A::SD_SOE
     }
     #[doc = "A2 medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == Pd3::Md
+        *self == PD3_A::MD
     }
     #[doc = "A2 weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == Pd3::Wd
+        *self == PD3_A::WD
     }
 }
 #[doc = "Field `PD3` writer - Pad Driver Mode for Pn.3"]
-pub type Pd3W<'a, REG> = crate::FieldWriter<'a, REG, 3, Pd3>;
-impl<'a, REG> Pd3W<'a, REG>
+pub type PD3_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PD3_A>;
+impl<'a, REG> PD3_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -492,98 +492,98 @@ where
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn sd_she(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd3::SdShe)
+        self.variant(PD3_A::SD_SHE)
     }
     #[doc = "A2 strong driver, medium edge"]
     #[inline(always)]
     pub fn sd_mee(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd3::SdMee)
+        self.variant(PD3_A::SD_MEE)
     }
     #[doc = "A2 strong driver, soft edge"]
     #[inline(always)]
     pub fn sd_soe(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd3::SdSoe)
+        self.variant(PD3_A::SD_SOE)
     }
     #[doc = "A2 medium driver"]
     #[inline(always)]
     pub fn md(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd3::Md)
+        self.variant(PD3_A::MD)
     }
     #[doc = "A2 weak driver"]
     #[inline(always)]
     pub fn wd(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd3::Wd)
+        self.variant(PD3_A::WD)
     }
 }
 #[doc = "Pad Driver Mode for Pn.4\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Pd4 {
+pub enum PD4_A {
     #[doc = "0: A2 strong driver, sharp edge"]
-    SdShe = 0,
+    SD_SHE = 0,
     #[doc = "1: A2 strong driver, medium edge"]
-    SdMee = 1,
+    SD_MEE = 1,
     #[doc = "2: A2 strong driver, soft edge"]
-    SdSoe = 2,
+    SD_SOE = 2,
     #[doc = "4: A2 medium driver"]
-    Md = 4,
+    MD = 4,
     #[doc = "7: A2 weak driver"]
-    Wd = 7,
+    WD = 7,
 }
-impl From<Pd4> for u8 {
+impl From<PD4_A> for u8 {
     #[inline(always)]
-    fn from(variant: Pd4) -> Self {
+    fn from(variant: PD4_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Pd4 {
+impl crate::FieldSpec for PD4_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Pd4 {}
+impl crate::IsEnum for PD4_A {}
 #[doc = "Field `PD4` reader - Pad Driver Mode for Pn.4"]
-pub type Pd4R = crate::FieldReader<Pd4>;
-impl Pd4R {
+pub type PD4_R = crate::FieldReader<PD4_A>;
+impl PD4_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Pd4> {
+    pub const fn variant(&self) -> Option<PD4_A> {
         match self.bits {
-            0 => Some(Pd4::SdShe),
-            1 => Some(Pd4::SdMee),
-            2 => Some(Pd4::SdSoe),
-            4 => Some(Pd4::Md),
-            7 => Some(Pd4::Wd),
+            0 => Some(PD4_A::SD_SHE),
+            1 => Some(PD4_A::SD_MEE),
+            2 => Some(PD4_A::SD_SOE),
+            4 => Some(PD4_A::MD),
+            7 => Some(PD4_A::WD),
             _ => None,
         }
     }
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        *self == Pd4::SdShe
+        *self == PD4_A::SD_SHE
     }
     #[doc = "A2 strong driver, medium edge"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        *self == Pd4::SdMee
+        *self == PD4_A::SD_MEE
     }
     #[doc = "A2 strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == Pd4::SdSoe
+        *self == PD4_A::SD_SOE
     }
     #[doc = "A2 medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == Pd4::Md
+        *self == PD4_A::MD
     }
     #[doc = "A2 weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == Pd4::Wd
+        *self == PD4_A::WD
     }
 }
 #[doc = "Field `PD4` writer - Pad Driver Mode for Pn.4"]
-pub type Pd4W<'a, REG> = crate::FieldWriter<'a, REG, 3, Pd4>;
-impl<'a, REG> Pd4W<'a, REG>
+pub type PD4_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PD4_A>;
+impl<'a, REG> PD4_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -591,98 +591,98 @@ where
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn sd_she(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd4::SdShe)
+        self.variant(PD4_A::SD_SHE)
     }
     #[doc = "A2 strong driver, medium edge"]
     #[inline(always)]
     pub fn sd_mee(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd4::SdMee)
+        self.variant(PD4_A::SD_MEE)
     }
     #[doc = "A2 strong driver, soft edge"]
     #[inline(always)]
     pub fn sd_soe(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd4::SdSoe)
+        self.variant(PD4_A::SD_SOE)
     }
     #[doc = "A2 medium driver"]
     #[inline(always)]
     pub fn md(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd4::Md)
+        self.variant(PD4_A::MD)
     }
     #[doc = "A2 weak driver"]
     #[inline(always)]
     pub fn wd(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd4::Wd)
+        self.variant(PD4_A::WD)
     }
 }
 #[doc = "Pad Driver Mode for Pn.5\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Pd5 {
+pub enum PD5_A {
     #[doc = "0: A2 strong driver, sharp edge"]
-    SdShe = 0,
+    SD_SHE = 0,
     #[doc = "1: A2 strong driver, medium edge"]
-    SdMee = 1,
+    SD_MEE = 1,
     #[doc = "2: A2 strong driver, soft edge"]
-    SdSoe = 2,
+    SD_SOE = 2,
     #[doc = "4: A2 medium driver"]
-    Md = 4,
+    MD = 4,
     #[doc = "7: A2 weak driver"]
-    Wd = 7,
+    WD = 7,
 }
-impl From<Pd5> for u8 {
+impl From<PD5_A> for u8 {
     #[inline(always)]
-    fn from(variant: Pd5) -> Self {
+    fn from(variant: PD5_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Pd5 {
+impl crate::FieldSpec for PD5_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Pd5 {}
+impl crate::IsEnum for PD5_A {}
 #[doc = "Field `PD5` reader - Pad Driver Mode for Pn.5"]
-pub type Pd5R = crate::FieldReader<Pd5>;
-impl Pd5R {
+pub type PD5_R = crate::FieldReader<PD5_A>;
+impl PD5_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Pd5> {
+    pub const fn variant(&self) -> Option<PD5_A> {
         match self.bits {
-            0 => Some(Pd5::SdShe),
-            1 => Some(Pd5::SdMee),
-            2 => Some(Pd5::SdSoe),
-            4 => Some(Pd5::Md),
-            7 => Some(Pd5::Wd),
+            0 => Some(PD5_A::SD_SHE),
+            1 => Some(PD5_A::SD_MEE),
+            2 => Some(PD5_A::SD_SOE),
+            4 => Some(PD5_A::MD),
+            7 => Some(PD5_A::WD),
             _ => None,
         }
     }
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        *self == Pd5::SdShe
+        *self == PD5_A::SD_SHE
     }
     #[doc = "A2 strong driver, medium edge"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        *self == Pd5::SdMee
+        *self == PD5_A::SD_MEE
     }
     #[doc = "A2 strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == Pd5::SdSoe
+        *self == PD5_A::SD_SOE
     }
     #[doc = "A2 medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == Pd5::Md
+        *self == PD5_A::MD
     }
     #[doc = "A2 weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == Pd5::Wd
+        *self == PD5_A::WD
     }
 }
 #[doc = "Field `PD5` writer - Pad Driver Mode for Pn.5"]
-pub type Pd5W<'a, REG> = crate::FieldWriter<'a, REG, 3, Pd5>;
-impl<'a, REG> Pd5W<'a, REG>
+pub type PD5_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PD5_A>;
+impl<'a, REG> PD5_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -690,98 +690,98 @@ where
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn sd_she(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd5::SdShe)
+        self.variant(PD5_A::SD_SHE)
     }
     #[doc = "A2 strong driver, medium edge"]
     #[inline(always)]
     pub fn sd_mee(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd5::SdMee)
+        self.variant(PD5_A::SD_MEE)
     }
     #[doc = "A2 strong driver, soft edge"]
     #[inline(always)]
     pub fn sd_soe(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd5::SdSoe)
+        self.variant(PD5_A::SD_SOE)
     }
     #[doc = "A2 medium driver"]
     #[inline(always)]
     pub fn md(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd5::Md)
+        self.variant(PD5_A::MD)
     }
     #[doc = "A2 weak driver"]
     #[inline(always)]
     pub fn wd(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd5::Wd)
+        self.variant(PD5_A::WD)
     }
 }
 #[doc = "Pad Driver Mode for Pn.6\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Pd6 {
+pub enum PD6_A {
     #[doc = "0: A2 strong driver, sharp edge"]
-    SdShe = 0,
+    SD_SHE = 0,
     #[doc = "1: A2 strong driver, medium edge"]
-    SdMee = 1,
+    SD_MEE = 1,
     #[doc = "2: A2 strong driver, soft edge"]
-    SdSoe = 2,
+    SD_SOE = 2,
     #[doc = "4: A2 medium driver"]
-    Md = 4,
+    MD = 4,
     #[doc = "7: A2 weak driver"]
-    Wd = 7,
+    WD = 7,
 }
-impl From<Pd6> for u8 {
+impl From<PD6_A> for u8 {
     #[inline(always)]
-    fn from(variant: Pd6) -> Self {
+    fn from(variant: PD6_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Pd6 {
+impl crate::FieldSpec for PD6_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Pd6 {}
+impl crate::IsEnum for PD6_A {}
 #[doc = "Field `PD6` reader - Pad Driver Mode for Pn.6"]
-pub type Pd6R = crate::FieldReader<Pd6>;
-impl Pd6R {
+pub type PD6_R = crate::FieldReader<PD6_A>;
+impl PD6_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Pd6> {
+    pub const fn variant(&self) -> Option<PD6_A> {
         match self.bits {
-            0 => Some(Pd6::SdShe),
-            1 => Some(Pd6::SdMee),
-            2 => Some(Pd6::SdSoe),
-            4 => Some(Pd6::Md),
-            7 => Some(Pd6::Wd),
+            0 => Some(PD6_A::SD_SHE),
+            1 => Some(PD6_A::SD_MEE),
+            2 => Some(PD6_A::SD_SOE),
+            4 => Some(PD6_A::MD),
+            7 => Some(PD6_A::WD),
             _ => None,
         }
     }
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn is_sd_she(&self) -> bool {
-        *self == Pd6::SdShe
+        *self == PD6_A::SD_SHE
     }
     #[doc = "A2 strong driver, medium edge"]
     #[inline(always)]
     pub fn is_sd_mee(&self) -> bool {
-        *self == Pd6::SdMee
+        *self == PD6_A::SD_MEE
     }
     #[doc = "A2 strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == Pd6::SdSoe
+        *self == PD6_A::SD_SOE
     }
     #[doc = "A2 medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == Pd6::Md
+        *self == PD6_A::MD
     }
     #[doc = "A2 weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == Pd6::Wd
+        *self == PD6_A::WD
     }
 }
 #[doc = "Field `PD6` writer - Pad Driver Mode for Pn.6"]
-pub type Pd6W<'a, REG> = crate::FieldWriter<'a, REG, 3, Pd6>;
-impl<'a, REG> Pd6W<'a, REG>
+pub type PD6_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PD6_A>;
+impl<'a, REG> PD6_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -789,122 +789,122 @@ where
     #[doc = "A2 strong driver, sharp edge"]
     #[inline(always)]
     pub fn sd_she(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd6::SdShe)
+        self.variant(PD6_A::SD_SHE)
     }
     #[doc = "A2 strong driver, medium edge"]
     #[inline(always)]
     pub fn sd_mee(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd6::SdMee)
+        self.variant(PD6_A::SD_MEE)
     }
     #[doc = "A2 strong driver, soft edge"]
     #[inline(always)]
     pub fn sd_soe(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd6::SdSoe)
+        self.variant(PD6_A::SD_SOE)
     }
     #[doc = "A2 medium driver"]
     #[inline(always)]
     pub fn md(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd6::Md)
+        self.variant(PD6_A::MD)
     }
     #[doc = "A2 weak driver"]
     #[inline(always)]
     pub fn wd(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd6::Wd)
+        self.variant(PD6_A::WD)
     }
 }
 #[doc = "Pad Driver Mode for Pn.7\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Pd7 {
+pub enum PD7_A {
     #[doc = "2: A1+ strong driver, soft edge"]
-    SdSoe = 2,
+    SD_SOE = 2,
     #[doc = "3: A1+ strong driver, slow edge"]
-    SdSle = 3,
+    SD_SLE = 3,
     #[doc = "4: A1+ medium driver"]
-    Md = 4,
+    MD = 4,
     #[doc = "7: A1+ weak driver"]
-    Wd = 7,
+    WD = 7,
     #[doc = "0: A1+ strong driver, soft edge (alternate value)"]
-    SdSoeAlt = 0,
+    SD_SOE_ALT = 0,
     #[doc = "1: A1+ strong driver, slow edge (alternate value)"]
-    SdSleAlt = 1,
+    SD_SLE_ALT = 1,
     #[doc = "6: A1+ medium driver (alternate value)"]
-    MdAlt = 6,
+    MD_ALT = 6,
     #[doc = "5: A1+ weak driver (alternate value)"]
-    WdAlt = 5,
+    WD_ALT = 5,
 }
-impl From<Pd7> for u8 {
+impl From<PD7_A> for u8 {
     #[inline(always)]
-    fn from(variant: Pd7) -> Self {
+    fn from(variant: PD7_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Pd7 {
+impl crate::FieldSpec for PD7_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Pd7 {}
+impl crate::IsEnum for PD7_A {}
 #[doc = "Field `PD7` reader - Pad Driver Mode for Pn.7"]
-pub type Pd7R = crate::FieldReader<Pd7>;
-impl Pd7R {
+pub type PD7_R = crate::FieldReader<PD7_A>;
+impl PD7_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Pd7 {
+    pub const fn variant(&self) -> PD7_A {
         match self.bits {
-            2 => Pd7::SdSoe,
-            3 => Pd7::SdSle,
-            4 => Pd7::Md,
-            7 => Pd7::Wd,
-            0 => Pd7::SdSoeAlt,
-            1 => Pd7::SdSleAlt,
-            6 => Pd7::MdAlt,
-            5 => Pd7::WdAlt,
+            2 => PD7_A::SD_SOE,
+            3 => PD7_A::SD_SLE,
+            4 => PD7_A::MD,
+            7 => PD7_A::WD,
+            0 => PD7_A::SD_SOE_ALT,
+            1 => PD7_A::SD_SLE_ALT,
+            6 => PD7_A::MD_ALT,
+            5 => PD7_A::WD_ALT,
             _ => unreachable!(),
         }
     }
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn is_sd_soe(&self) -> bool {
-        *self == Pd7::SdSoe
+        *self == PD7_A::SD_SOE
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn is_sd_sle(&self) -> bool {
-        *self == Pd7::SdSle
+        *self == PD7_A::SD_SLE
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn is_md(&self) -> bool {
-        *self == Pd7::Md
+        *self == PD7_A::MD
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn is_wd(&self) -> bool {
-        *self == Pd7::Wd
+        *self == PD7_A::WD
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_soe_alt(&self) -> bool {
-        *self == Pd7::SdSoeAlt
+        *self == PD7_A::SD_SOE_ALT
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn is_sd_sle_alt(&self) -> bool {
-        *self == Pd7::SdSleAlt
+        *self == PD7_A::SD_SLE_ALT
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn is_md_alt(&self) -> bool {
-        *self == Pd7::MdAlt
+        *self == PD7_A::MD_ALT
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn is_wd_alt(&self) -> bool {
-        *self == Pd7::WdAlt
+        *self == PD7_A::WD_ALT
     }
 }
 #[doc = "Field `PD7` writer - Pad Driver Mode for Pn.7"]
-pub type Pd7W<'a, REG> = crate::FieldWriter<'a, REG, 3, Pd7, crate::Safe>;
-impl<'a, REG> Pd7W<'a, REG>
+pub type PD7_W<'a, REG> = crate::FieldWriter<'a, REG, 3, PD7_A, crate::Safe>;
+impl<'a, REG> PD7_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -912,150 +912,150 @@ where
     #[doc = "A1+ strong driver, soft edge"]
     #[inline(always)]
     pub fn sd_soe(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd7::SdSoe)
+        self.variant(PD7_A::SD_SOE)
     }
     #[doc = "A1+ strong driver, slow edge"]
     #[inline(always)]
     pub fn sd_sle(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd7::SdSle)
+        self.variant(PD7_A::SD_SLE)
     }
     #[doc = "A1+ medium driver"]
     #[inline(always)]
     pub fn md(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd7::Md)
+        self.variant(PD7_A::MD)
     }
     #[doc = "A1+ weak driver"]
     #[inline(always)]
     pub fn wd(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd7::Wd)
+        self.variant(PD7_A::WD)
     }
     #[doc = "A1+ strong driver, soft edge (alternate value)"]
     #[inline(always)]
     pub fn sd_soe_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd7::SdSoeAlt)
+        self.variant(PD7_A::SD_SOE_ALT)
     }
     #[doc = "A1+ strong driver, slow edge (alternate value)"]
     #[inline(always)]
     pub fn sd_sle_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd7::SdSleAlt)
+        self.variant(PD7_A::SD_SLE_ALT)
     }
     #[doc = "A1+ medium driver (alternate value)"]
     #[inline(always)]
     pub fn md_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd7::MdAlt)
+        self.variant(PD7_A::MD_ALT)
     }
     #[doc = "A1+ weak driver (alternate value)"]
     #[inline(always)]
     pub fn wd_alt(self) -> &'a mut crate::W<REG> {
-        self.variant(Pd7::WdAlt)
+        self.variant(PD7_A::WD_ALT)
     }
 }
 impl R {
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.0"]
     #[inline(always)]
-    pub fn pd0(&self) -> Pd0R {
-        Pd0R::new((self.bits & 7) as u8)
+    pub fn pd0(&self) -> PD0_R {
+        PD0_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 4:6 - Pad Driver Mode for Pn.1"]
     #[inline(always)]
-    pub fn pd1(&self) -> Pd1R {
-        Pd1R::new(((self.bits >> 4) & 7) as u8)
+    pub fn pd1(&self) -> PD1_R {
+        PD1_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bits 8:10 - Pad Driver Mode for Pn.2"]
     #[inline(always)]
-    pub fn pd2(&self) -> Pd2R {
-        Pd2R::new(((self.bits >> 8) & 7) as u8)
+    pub fn pd2(&self) -> PD2_R {
+        PD2_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bits 12:14 - Pad Driver Mode for Pn.3"]
     #[inline(always)]
-    pub fn pd3(&self) -> Pd3R {
-        Pd3R::new(((self.bits >> 12) & 7) as u8)
+    pub fn pd3(&self) -> PD3_R {
+        PD3_R::new(((self.bits >> 12) & 7) as u8)
     }
     #[doc = "Bits 16:18 - Pad Driver Mode for Pn.4"]
     #[inline(always)]
-    pub fn pd4(&self) -> Pd4R {
-        Pd4R::new(((self.bits >> 16) & 7) as u8)
+    pub fn pd4(&self) -> PD4_R {
+        PD4_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 20:22 - Pad Driver Mode for Pn.5"]
     #[inline(always)]
-    pub fn pd5(&self) -> Pd5R {
-        Pd5R::new(((self.bits >> 20) & 7) as u8)
+    pub fn pd5(&self) -> PD5_R {
+        PD5_R::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bits 24:26 - Pad Driver Mode for Pn.6"]
     #[inline(always)]
-    pub fn pd6(&self) -> Pd6R {
-        Pd6R::new(((self.bits >> 24) & 7) as u8)
+    pub fn pd6(&self) -> PD6_R {
+        PD6_R::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bits 28:30 - Pad Driver Mode for Pn.7"]
     #[inline(always)]
-    pub fn pd7(&self) -> Pd7R {
-        Pd7R::new(((self.bits >> 28) & 7) as u8)
+    pub fn pd7(&self) -> PD7_R {
+        PD7_R::new(((self.bits >> 28) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Pad Driver Mode for Pn.0"]
     #[inline(always)]
     #[must_use]
-    pub fn pd0(&mut self) -> Pd0W<Pdr0Spec> {
-        Pd0W::new(self, 0)
+    pub fn pd0(&mut self) -> PD0_W<PDR0_SPEC> {
+        PD0_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Pad Driver Mode for Pn.1"]
     #[inline(always)]
     #[must_use]
-    pub fn pd1(&mut self) -> Pd1W<Pdr0Spec> {
-        Pd1W::new(self, 4)
+    pub fn pd1(&mut self) -> PD1_W<PDR0_SPEC> {
+        PD1_W::new(self, 4)
     }
     #[doc = "Bits 8:10 - Pad Driver Mode for Pn.2"]
     #[inline(always)]
     #[must_use]
-    pub fn pd2(&mut self) -> Pd2W<Pdr0Spec> {
-        Pd2W::new(self, 8)
+    pub fn pd2(&mut self) -> PD2_W<PDR0_SPEC> {
+        PD2_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - Pad Driver Mode for Pn.3"]
     #[inline(always)]
     #[must_use]
-    pub fn pd3(&mut self) -> Pd3W<Pdr0Spec> {
-        Pd3W::new(self, 12)
+    pub fn pd3(&mut self) -> PD3_W<PDR0_SPEC> {
+        PD3_W::new(self, 12)
     }
     #[doc = "Bits 16:18 - Pad Driver Mode for Pn.4"]
     #[inline(always)]
     #[must_use]
-    pub fn pd4(&mut self) -> Pd4W<Pdr0Spec> {
-        Pd4W::new(self, 16)
+    pub fn pd4(&mut self) -> PD4_W<PDR0_SPEC> {
+        PD4_W::new(self, 16)
     }
     #[doc = "Bits 20:22 - Pad Driver Mode for Pn.5"]
     #[inline(always)]
     #[must_use]
-    pub fn pd5(&mut self) -> Pd5W<Pdr0Spec> {
-        Pd5W::new(self, 20)
+    pub fn pd5(&mut self) -> PD5_W<PDR0_SPEC> {
+        PD5_W::new(self, 20)
     }
     #[doc = "Bits 24:26 - Pad Driver Mode for Pn.6"]
     #[inline(always)]
     #[must_use]
-    pub fn pd6(&mut self) -> Pd6W<Pdr0Spec> {
-        Pd6W::new(self, 24)
+    pub fn pd6(&mut self) -> PD6_W<PDR0_SPEC> {
+        PD6_W::new(self, 24)
     }
     #[doc = "Bits 28:30 - Pad Driver Mode for Pn.7"]
     #[inline(always)]
     #[must_use]
-    pub fn pd7(&mut self) -> Pd7W<Pdr0Spec> {
-        Pd7W::new(self, 28)
+    pub fn pd7(&mut self) -> PD7_W<PDR0_SPEC> {
+        PD7_W::new(self, 28)
     }
 }
 #[doc = "Port 9 Pad Driver Mode 0 Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdr0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pdr0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct Pdr0Spec;
-impl crate::RegisterSpec for Pdr0Spec {
+pub struct PDR0_SPEC;
+impl crate::RegisterSpec for PDR0_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`pdr0::R`](R) reader structure"]
-impl crate::Readable for Pdr0Spec {}
+impl crate::Readable for PDR0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pdr0::W`](W) writer structure"]
-impl crate::Writable for Pdr0Spec {
+impl crate::Writable for PDR0_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PDR0 to value 0x2222_2222"]
-impl crate::Resettable for Pdr0Spec {
+impl crate::Resettable for PDR0_SPEC {
     const RESET_VALUE: u32 = 0x2222_2222;
 }
