@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.12.0](https://github.com/xmc-rs/xmc4800/compare/v0.11.1...v0.12.0) (2024-05-03)
+
+
+### Features
+
+* updating from newer svd2rust ([#66](https://github.com/xmc-rs/xmc4800/issues/66)) ([0ca8ecd](https://github.com/xmc-rs/xmc4800/commit/0ca8ecdc08c72d539fe8072f6943ad358ae71c80))
+* updating from newer svd2rust ([#68](https://github.com/xmc-rs/xmc4800/issues/68)) ([3ca7b61](https://github.com/xmc-rs/xmc4800/commit/3ca7b61ea2a8a7f29e7310e16ddba11c3a5bf1ea))
+
 ## [0.11.1](https://github.com/xmc-rs/xmc4800/compare/v0.11.0...v0.11.1) (2024-04-29)
 
 
