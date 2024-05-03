@@ -1,281 +1,281 @@
 #[doc = "Register `GLOBRC` reader"]
-pub type R = crate::R<GlobrcSpec>;
+pub type R = crate::R<GLOBRC_SPEC>;
 #[doc = "Register `GLOBRC` writer"]
-pub type W = crate::W<GlobrcSpec>;
+pub type W = crate::W<GLOBRC_SPEC>;
 #[doc = "Channel 0 Run Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch0run {
+pub enum CH0RUN_A {
     #[doc = "0: Stop channel x"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Demodulator channel x is enabled and runs"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ch0run> for bool {
+impl From<CH0RUN_A> for bool {
     #[inline(always)]
-    fn from(variant: Ch0run) -> Self {
+    fn from(variant: CH0RUN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH0RUN` reader - Channel 0 Run Control"]
-pub type Ch0runR = crate::BitReader<Ch0run>;
-impl Ch0runR {
+pub type CH0RUN_R = crate::BitReader<CH0RUN_A>;
+impl CH0RUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch0run {
+    pub const fn variant(&self) -> CH0RUN_A {
         match self.bits {
-            false => Ch0run::Value1,
-            true => Ch0run::Value2,
+            false => CH0RUN_A::VALUE1,
+            true => CH0RUN_A::VALUE2,
         }
     }
     #[doc = "Stop channel x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ch0run::Value1
+        *self == CH0RUN_A::VALUE1
     }
     #[doc = "Demodulator channel x is enabled and runs"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ch0run::Value2
+        *self == CH0RUN_A::VALUE2
     }
 }
 #[doc = "Field `CH0RUN` writer - Channel 0 Run Control"]
-pub type Ch0runW<'a, REG> = crate::BitWriter<'a, REG, Ch0run>;
-impl<'a, REG> Ch0runW<'a, REG>
+pub type CH0RUN_W<'a, REG> = crate::BitWriter<'a, REG, CH0RUN_A>;
+impl<'a, REG> CH0RUN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Stop channel x"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch0run::Value1)
+        self.variant(CH0RUN_A::VALUE1)
     }
     #[doc = "Demodulator channel x is enabled and runs"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch0run::Value2)
+        self.variant(CH0RUN_A::VALUE2)
     }
 }
 #[doc = "Channel 1 Run Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch1run {
+pub enum CH1RUN_A {
     #[doc = "0: Stop channel x"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Demodulator channel x is enabled and runs"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ch1run> for bool {
+impl From<CH1RUN_A> for bool {
     #[inline(always)]
-    fn from(variant: Ch1run) -> Self {
+    fn from(variant: CH1RUN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH1RUN` reader - Channel 1 Run Control"]
-pub type Ch1runR = crate::BitReader<Ch1run>;
-impl Ch1runR {
+pub type CH1RUN_R = crate::BitReader<CH1RUN_A>;
+impl CH1RUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch1run {
+    pub const fn variant(&self) -> CH1RUN_A {
         match self.bits {
-            false => Ch1run::Value1,
-            true => Ch1run::Value2,
+            false => CH1RUN_A::VALUE1,
+            true => CH1RUN_A::VALUE2,
         }
     }
     #[doc = "Stop channel x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ch1run::Value1
+        *self == CH1RUN_A::VALUE1
     }
     #[doc = "Demodulator channel x is enabled and runs"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ch1run::Value2
+        *self == CH1RUN_A::VALUE2
     }
 }
 #[doc = "Field `CH1RUN` writer - Channel 1 Run Control"]
-pub type Ch1runW<'a, REG> = crate::BitWriter<'a, REG, Ch1run>;
-impl<'a, REG> Ch1runW<'a, REG>
+pub type CH1RUN_W<'a, REG> = crate::BitWriter<'a, REG, CH1RUN_A>;
+impl<'a, REG> CH1RUN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Stop channel x"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch1run::Value1)
+        self.variant(CH1RUN_A::VALUE1)
     }
     #[doc = "Demodulator channel x is enabled and runs"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch1run::Value2)
+        self.variant(CH1RUN_A::VALUE2)
     }
 }
 #[doc = "Channel 2 Run Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch2run {
+pub enum CH2RUN_A {
     #[doc = "0: Stop channel x"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Demodulator channel x is enabled and runs"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ch2run> for bool {
+impl From<CH2RUN_A> for bool {
     #[inline(always)]
-    fn from(variant: Ch2run) -> Self {
+    fn from(variant: CH2RUN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH2RUN` reader - Channel 2 Run Control"]
-pub type Ch2runR = crate::BitReader<Ch2run>;
-impl Ch2runR {
+pub type CH2RUN_R = crate::BitReader<CH2RUN_A>;
+impl CH2RUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch2run {
+    pub const fn variant(&self) -> CH2RUN_A {
         match self.bits {
-            false => Ch2run::Value1,
-            true => Ch2run::Value2,
+            false => CH2RUN_A::VALUE1,
+            true => CH2RUN_A::VALUE2,
         }
     }
     #[doc = "Stop channel x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ch2run::Value1
+        *self == CH2RUN_A::VALUE1
     }
     #[doc = "Demodulator channel x is enabled and runs"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ch2run::Value2
+        *self == CH2RUN_A::VALUE2
     }
 }
 #[doc = "Field `CH2RUN` writer - Channel 2 Run Control"]
-pub type Ch2runW<'a, REG> = crate::BitWriter<'a, REG, Ch2run>;
-impl<'a, REG> Ch2runW<'a, REG>
+pub type CH2RUN_W<'a, REG> = crate::BitWriter<'a, REG, CH2RUN_A>;
+impl<'a, REG> CH2RUN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Stop channel x"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch2run::Value1)
+        self.variant(CH2RUN_A::VALUE1)
     }
     #[doc = "Demodulator channel x is enabled and runs"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch2run::Value2)
+        self.variant(CH2RUN_A::VALUE2)
     }
 }
 #[doc = "Channel 3 Run Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Ch3run {
+pub enum CH3RUN_A {
     #[doc = "0: Stop channel x"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Demodulator channel x is enabled and runs"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Ch3run> for bool {
+impl From<CH3RUN_A> for bool {
     #[inline(always)]
-    fn from(variant: Ch3run) -> Self {
+    fn from(variant: CH3RUN_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `CH3RUN` reader - Channel 3 Run Control"]
-pub type Ch3runR = crate::BitReader<Ch3run>;
-impl Ch3runR {
+pub type CH3RUN_R = crate::BitReader<CH3RUN_A>;
+impl CH3RUN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Ch3run {
+    pub const fn variant(&self) -> CH3RUN_A {
         match self.bits {
-            false => Ch3run::Value1,
-            true => Ch3run::Value2,
+            false => CH3RUN_A::VALUE1,
+            true => CH3RUN_A::VALUE2,
         }
     }
     #[doc = "Stop channel x"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Ch3run::Value1
+        *self == CH3RUN_A::VALUE1
     }
     #[doc = "Demodulator channel x is enabled and runs"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Ch3run::Value2
+        *self == CH3RUN_A::VALUE2
     }
 }
 #[doc = "Field `CH3RUN` writer - Channel 3 Run Control"]
-pub type Ch3runW<'a, REG> = crate::BitWriter<'a, REG, Ch3run>;
-impl<'a, REG> Ch3runW<'a, REG>
+pub type CH3RUN_W<'a, REG> = crate::BitWriter<'a, REG, CH3RUN_A>;
+impl<'a, REG> CH3RUN_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Stop channel x"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch3run::Value1)
+        self.variant(CH3RUN_A::VALUE1)
     }
     #[doc = "Demodulator channel x is enabled and runs"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Ch3run::Value2)
+        self.variant(CH3RUN_A::VALUE2)
     }
 }
 impl R {
     #[doc = "Bit 0 - Channel 0 Run Control"]
     #[inline(always)]
-    pub fn ch0run(&self) -> Ch0runR {
-        Ch0runR::new((self.bits & 1) != 0)
+    pub fn ch0run(&self) -> CH0RUN_R {
+        CH0RUN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Channel 1 Run Control"]
     #[inline(always)]
-    pub fn ch1run(&self) -> Ch1runR {
-        Ch1runR::new(((self.bits >> 1) & 1) != 0)
+    pub fn ch1run(&self) -> CH1RUN_R {
+        CH1RUN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Channel 2 Run Control"]
     #[inline(always)]
-    pub fn ch2run(&self) -> Ch2runR {
-        Ch2runR::new(((self.bits >> 2) & 1) != 0)
+    pub fn ch2run(&self) -> CH2RUN_R {
+        CH2RUN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Channel 3 Run Control"]
     #[inline(always)]
-    pub fn ch3run(&self) -> Ch3runR {
-        Ch3runR::new(((self.bits >> 3) & 1) != 0)
+    pub fn ch3run(&self) -> CH3RUN_R {
+        CH3RUN_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Channel 0 Run Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0run(&mut self) -> Ch0runW<GlobrcSpec> {
-        Ch0runW::new(self, 0)
+    pub fn ch0run(&mut self) -> CH0RUN_W<GLOBRC_SPEC> {
+        CH0RUN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel 1 Run Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1run(&mut self) -> Ch1runW<GlobrcSpec> {
-        Ch1runW::new(self, 1)
+    pub fn ch1run(&mut self) -> CH1RUN_W<GLOBRC_SPEC> {
+        CH1RUN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channel 2 Run Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ch2run(&mut self) -> Ch2runW<GlobrcSpec> {
-        Ch2runW::new(self, 2)
+    pub fn ch2run(&mut self) -> CH2RUN_W<GLOBRC_SPEC> {
+        CH2RUN_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channel 3 Run Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ch3run(&mut self) -> Ch3runW<GlobrcSpec> {
-        Ch3runW::new(self, 3)
+    pub fn ch3run(&mut self) -> CH3RUN_W<GLOBRC_SPEC> {
+        CH3RUN_W::new(self, 3)
     }
 }
 #[doc = "Global Run Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`globrc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`globrc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct GlobrcSpec;
-impl crate::RegisterSpec for GlobrcSpec {
+pub struct GLOBRC_SPEC;
+impl crate::RegisterSpec for GLOBRC_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`globrc::R`](R) reader structure"]
-impl crate::Readable for GlobrcSpec {}
+impl crate::Readable for GLOBRC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`globrc::W`](W) writer structure"]
-impl crate::Writable for GlobrcSpec {
+impl crate::Writable for GLOBRC_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GLOBRC to value 0"]
-impl crate::Resettable for GlobrcSpec {
+impl crate::Resettable for GLOBRC_SPEC {
     const RESET_VALUE: u32 = 0;
 }

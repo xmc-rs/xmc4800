@@ -1,68 +1,68 @@
 #[doc = "Register `BUSRAP1` reader"]
-pub type R = crate::R<Busrap1Spec>;
+pub type R = crate::R<BUSRAP1_SPEC>;
 #[doc = "Register `BUSRAP1` writer"]
-pub type W = crate::W<Busrap1Spec>;
+pub type W = crate::W<BUSRAP1_SPEC>;
 #[doc = "Recovery Cycles between Different Regions\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Rddtacs {
+pub enum RDDTACS_A {
     #[doc = "0: No Recovery Phase clock cycles available."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 1 clock cycle selected."]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "14: 14 clock cycles selected."]
-    Value3 = 14,
+    VALUE3 = 14,
     #[doc = "15: 15 clock cycles selected."]
-    Value4 = 15,
+    VALUE4 = 15,
 }
-impl From<Rddtacs> for u8 {
+impl From<RDDTACS_A> for u8 {
     #[inline(always)]
-    fn from(variant: Rddtacs) -> Self {
+    fn from(variant: RDDTACS_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Rddtacs {
+impl crate::FieldSpec for RDDTACS_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Rddtacs {}
+impl crate::IsEnum for RDDTACS_A {}
 #[doc = "Field `RDDTACS` reader - Recovery Cycles between Different Regions"]
-pub type RddtacsR = crate::FieldReader<Rddtacs>;
-impl RddtacsR {
+pub type RDDTACS_R = crate::FieldReader<RDDTACS_A>;
+impl RDDTACS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Rddtacs> {
+    pub const fn variant(&self) -> Option<RDDTACS_A> {
         match self.bits {
-            0 => Some(Rddtacs::Value1),
-            1 => Some(Rddtacs::Value2),
-            14 => Some(Rddtacs::Value3),
-            15 => Some(Rddtacs::Value4),
+            0 => Some(RDDTACS_A::VALUE1),
+            1 => Some(RDDTACS_A::VALUE2),
+            14 => Some(RDDTACS_A::VALUE3),
+            15 => Some(RDDTACS_A::VALUE4),
             _ => None,
         }
     }
     #[doc = "No Recovery Phase clock cycles available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rddtacs::Value1
+        *self == RDDTACS_A::VALUE1
     }
     #[doc = "1 clock cycle selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rddtacs::Value2
+        *self == RDDTACS_A::VALUE2
     }
     #[doc = "14 clock cycles selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Rddtacs::Value3
+        *self == RDDTACS_A::VALUE3
     }
     #[doc = "15 clock cycles selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Rddtacs::Value4
+        *self == RDDTACS_A::VALUE4
     }
 }
 #[doc = "Field `RDDTACS` writer - Recovery Cycles between Different Regions"]
-pub type RddtacsW<'a, REG> = crate::FieldWriter<'a, REG, 4, Rddtacs>;
-impl<'a, REG> RddtacsW<'a, REG>
+pub type RDDTACS_W<'a, REG> = crate::FieldWriter<'a, REG, 4, RDDTACS_A>;
+impl<'a, REG> RDDTACS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -70,85 +70,85 @@ where
     #[doc = "No Recovery Phase clock cycles available."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rddtacs::Value1)
+        self.variant(RDDTACS_A::VALUE1)
     }
     #[doc = "1 clock cycle selected."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rddtacs::Value2)
+        self.variant(RDDTACS_A::VALUE2)
     }
     #[doc = "14 clock cycles selected."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Rddtacs::Value3)
+        self.variant(RDDTACS_A::VALUE3)
     }
     #[doc = "15 clock cycles selected."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Rddtacs::Value4)
+        self.variant(RDDTACS_A::VALUE4)
     }
 }
 #[doc = "Recovery Cycles after Read Accesses\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Rdrecovc {
+pub enum RDRECOVC_A {
     #[doc = "0: No Recovery Phase clock cycles available."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 1 clock cycle selected."]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "6: 6 clock cycles selected."]
-    Value3 = 6,
+    VALUE3 = 6,
     #[doc = "7: 7 clock cycles selected."]
-    Value4 = 7,
+    VALUE4 = 7,
 }
-impl From<Rdrecovc> for u8 {
+impl From<RDRECOVC_A> for u8 {
     #[inline(always)]
-    fn from(variant: Rdrecovc) -> Self {
+    fn from(variant: RDRECOVC_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Rdrecovc {
+impl crate::FieldSpec for RDRECOVC_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Rdrecovc {}
+impl crate::IsEnum for RDRECOVC_A {}
 #[doc = "Field `RDRECOVC` reader - Recovery Cycles after Read Accesses"]
-pub type RdrecovcR = crate::FieldReader<Rdrecovc>;
-impl RdrecovcR {
+pub type RDRECOVC_R = crate::FieldReader<RDRECOVC_A>;
+impl RDRECOVC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Rdrecovc> {
+    pub const fn variant(&self) -> Option<RDRECOVC_A> {
         match self.bits {
-            0 => Some(Rdrecovc::Value1),
-            1 => Some(Rdrecovc::Value2),
-            6 => Some(Rdrecovc::Value3),
-            7 => Some(Rdrecovc::Value4),
+            0 => Some(RDRECOVC_A::VALUE1),
+            1 => Some(RDRECOVC_A::VALUE2),
+            6 => Some(RDRECOVC_A::VALUE3),
+            7 => Some(RDRECOVC_A::VALUE4),
             _ => None,
         }
     }
     #[doc = "No Recovery Phase clock cycles available."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Rdrecovc::Value1
+        *self == RDRECOVC_A::VALUE1
     }
     #[doc = "1 clock cycle selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Rdrecovc::Value2
+        *self == RDRECOVC_A::VALUE2
     }
     #[doc = "6 clock cycles selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Rdrecovc::Value3
+        *self == RDRECOVC_A::VALUE3
     }
     #[doc = "7 clock cycles selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Rdrecovc::Value4
+        *self == RDRECOVC_A::VALUE4
     }
 }
 #[doc = "Field `RDRECOVC` writer - Recovery Cycles after Read Accesses"]
-pub type RdrecovcW<'a, REG> = crate::FieldWriter<'a, REG, 3, Rdrecovc>;
-impl<'a, REG> RdrecovcW<'a, REG>
+pub type RDRECOVC_W<'a, REG> = crate::FieldWriter<'a, REG, 3, RDRECOVC_A>;
+impl<'a, REG> RDRECOVC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -156,93 +156,93 @@ where
     #[doc = "No Recovery Phase clock cycles available."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Rdrecovc::Value1)
+        self.variant(RDRECOVC_A::VALUE1)
     }
     #[doc = "1 clock cycle selected."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Rdrecovc::Value2)
+        self.variant(RDRECOVC_A::VALUE2)
     }
     #[doc = "6 clock cycles selected."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Rdrecovc::Value3)
+        self.variant(RDRECOVC_A::VALUE3)
     }
     #[doc = "7 clock cycles selected."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Rdrecovc::Value4)
+        self.variant(RDRECOVC_A::VALUE4)
     }
 }
 #[doc = "Programmed Wait States for read accesses\n\nValue on reset: 31"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Waitrdc {
+pub enum WAITRDC_A {
     #[doc = "0: 1 wait state."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 1 wait states."]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: 2 wait state."]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "30: 30 wait states."]
-    Value4 = 30,
+    VALUE4 = 30,
     #[doc = "31: 31 wait states."]
-    Value5 = 31,
+    VALUE5 = 31,
 }
-impl From<Waitrdc> for u8 {
+impl From<WAITRDC_A> for u8 {
     #[inline(always)]
-    fn from(variant: Waitrdc) -> Self {
+    fn from(variant: WAITRDC_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Waitrdc {
+impl crate::FieldSpec for WAITRDC_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Waitrdc {}
+impl crate::IsEnum for WAITRDC_A {}
 #[doc = "Field `WAITRDC` reader - Programmed Wait States for read accesses"]
-pub type WaitrdcR = crate::FieldReader<Waitrdc>;
-impl WaitrdcR {
+pub type WAITRDC_R = crate::FieldReader<WAITRDC_A>;
+impl WAITRDC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Waitrdc> {
+    pub const fn variant(&self) -> Option<WAITRDC_A> {
         match self.bits {
-            0 => Some(Waitrdc::Value1),
-            1 => Some(Waitrdc::Value2),
-            2 => Some(Waitrdc::Value3),
-            30 => Some(Waitrdc::Value4),
-            31 => Some(Waitrdc::Value5),
+            0 => Some(WAITRDC_A::VALUE1),
+            1 => Some(WAITRDC_A::VALUE2),
+            2 => Some(WAITRDC_A::VALUE3),
+            30 => Some(WAITRDC_A::VALUE4),
+            31 => Some(WAITRDC_A::VALUE5),
             _ => None,
         }
     }
     #[doc = "1 wait state."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Waitrdc::Value1
+        *self == WAITRDC_A::VALUE1
     }
     #[doc = "1 wait states."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Waitrdc::Value2
+        *self == WAITRDC_A::VALUE2
     }
     #[doc = "2 wait state."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Waitrdc::Value3
+        *self == WAITRDC_A::VALUE3
     }
     #[doc = "30 wait states."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Waitrdc::Value4
+        *self == WAITRDC_A::VALUE4
     }
     #[doc = "31 wait states."]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == Waitrdc::Value5
+        *self == WAITRDC_A::VALUE5
     }
 }
 #[doc = "Field `WAITRDC` writer - Programmed Wait States for read accesses"]
-pub type WaitrdcW<'a, REG> = crate::FieldWriter<'a, REG, 5, Waitrdc>;
-impl<'a, REG> WaitrdcW<'a, REG>
+pub type WAITRDC_W<'a, REG> = crate::FieldWriter<'a, REG, 5, WAITRDC_A>;
+impl<'a, REG> WAITRDC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -250,94 +250,94 @@ where
     #[doc = "1 wait state."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Waitrdc::Value1)
+        self.variant(WAITRDC_A::VALUE1)
     }
     #[doc = "1 wait states."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Waitrdc::Value2)
+        self.variant(WAITRDC_A::VALUE2)
     }
     #[doc = "2 wait state."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Waitrdc::Value3)
+        self.variant(WAITRDC_A::VALUE3)
     }
     #[doc = "30 wait states."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Waitrdc::Value4)
+        self.variant(WAITRDC_A::VALUE4)
     }
     #[doc = "31 wait states."]
     #[inline(always)]
     pub fn value5(self) -> &'a mut crate::W<REG> {
-        self.variant(Waitrdc::Value5)
+        self.variant(WAITRDC_A::VALUE5)
     }
 }
 #[doc = "Field `DATAC` reader - Data Hold Cycles for Read Accesses"]
-pub type DatacR = crate::FieldReader;
+pub type DATAC_R = crate::FieldReader;
 #[doc = "Field `DATAC` writer - Data Hold Cycles for Read Accesses"]
-pub type DatacW<'a, REG> = crate::FieldWriter<'a, REG, 4>;
+pub type DATAC_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Frequency of external clock at pin BFCLKO\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Extclock {
+pub enum EXTCLOCK_A {
     #[doc = "0: Equal to INT_CLK frequency."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 1/2 of INT_CLK frequency."]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: 1/3 of INT_CLK frequency."]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: 1/4 of INT_CLK frequency (default after reset)."]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Extclock> for u8 {
+impl From<EXTCLOCK_A> for u8 {
     #[inline(always)]
-    fn from(variant: Extclock) -> Self {
+    fn from(variant: EXTCLOCK_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Extclock {
+impl crate::FieldSpec for EXTCLOCK_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Extclock {}
+impl crate::IsEnum for EXTCLOCK_A {}
 #[doc = "Field `EXTCLOCK` reader - Frequency of external clock at pin BFCLKO"]
-pub type ExtclockR = crate::FieldReader<Extclock>;
-impl ExtclockR {
+pub type EXTCLOCK_R = crate::FieldReader<EXTCLOCK_A>;
+impl EXTCLOCK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Extclock {
+    pub const fn variant(&self) -> EXTCLOCK_A {
         match self.bits {
-            0 => Extclock::Value1,
-            1 => Extclock::Value2,
-            2 => Extclock::Value3,
-            3 => Extclock::Value4,
+            0 => EXTCLOCK_A::VALUE1,
+            1 => EXTCLOCK_A::VALUE2,
+            2 => EXTCLOCK_A::VALUE3,
+            3 => EXTCLOCK_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "Equal to INT_CLK frequency."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Extclock::Value1
+        *self == EXTCLOCK_A::VALUE1
     }
     #[doc = "1/2 of INT_CLK frequency."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Extclock::Value2
+        *self == EXTCLOCK_A::VALUE2
     }
     #[doc = "1/3 of INT_CLK frequency."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Extclock::Value3
+        *self == EXTCLOCK_A::VALUE3
     }
     #[doc = "1/4 of INT_CLK frequency (default after reset)."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Extclock::Value4
+        *self == EXTCLOCK_A::VALUE4
     }
 }
 #[doc = "Field `EXTCLOCK` writer - Frequency of external clock at pin BFCLKO"]
-pub type ExtclockW<'a, REG> = crate::FieldWriter<'a, REG, 2, Extclock, crate::Safe>;
-impl<'a, REG> ExtclockW<'a, REG>
+pub type EXTCLOCK_W<'a, REG> = crate::FieldWriter<'a, REG, 2, EXTCLOCK_A, crate::Safe>;
+impl<'a, REG> EXTCLOCK_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -345,85 +345,85 @@ where
     #[doc = "Equal to INT_CLK frequency."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Extclock::Value1)
+        self.variant(EXTCLOCK_A::VALUE1)
     }
     #[doc = "1/2 of INT_CLK frequency."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Extclock::Value2)
+        self.variant(EXTCLOCK_A::VALUE2)
     }
     #[doc = "1/3 of INT_CLK frequency."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Extclock::Value3)
+        self.variant(EXTCLOCK_A::VALUE3)
     }
     #[doc = "1/4 of INT_CLK frequency (default after reset)."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Extclock::Value4)
+        self.variant(EXTCLOCK_A::VALUE4)
     }
 }
 #[doc = "Extended data\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Extdata {
+pub enum EXTDATA_A {
     #[doc = "0: external memory outputs data every BFCLK cycle"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: external memory outputs data every two BFCLK cycles"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "2: external memory outputs data every four BFCLK cycles"]
-    Value3 = 2,
+    VALUE3 = 2,
     #[doc = "3: external memory outputs data every eight BFCLK cycles"]
-    Value4 = 3,
+    VALUE4 = 3,
 }
-impl From<Extdata> for u8 {
+impl From<EXTDATA_A> for u8 {
     #[inline(always)]
-    fn from(variant: Extdata) -> Self {
+    fn from(variant: EXTDATA_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Extdata {
+impl crate::FieldSpec for EXTDATA_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Extdata {}
+impl crate::IsEnum for EXTDATA_A {}
 #[doc = "Field `EXTDATA` reader - Extended data"]
-pub type ExtdataR = crate::FieldReader<Extdata>;
-impl ExtdataR {
+pub type EXTDATA_R = crate::FieldReader<EXTDATA_A>;
+impl EXTDATA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Extdata {
+    pub const fn variant(&self) -> EXTDATA_A {
         match self.bits {
-            0 => Extdata::Value1,
-            1 => Extdata::Value2,
-            2 => Extdata::Value3,
-            3 => Extdata::Value4,
+            0 => EXTDATA_A::VALUE1,
+            1 => EXTDATA_A::VALUE2,
+            2 => EXTDATA_A::VALUE3,
+            3 => EXTDATA_A::VALUE4,
             _ => unreachable!(),
         }
     }
     #[doc = "external memory outputs data every BFCLK cycle"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Extdata::Value1
+        *self == EXTDATA_A::VALUE1
     }
     #[doc = "external memory outputs data every two BFCLK cycles"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Extdata::Value2
+        *self == EXTDATA_A::VALUE2
     }
     #[doc = "external memory outputs data every four BFCLK cycles"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Extdata::Value3
+        *self == EXTDATA_A::VALUE3
     }
     #[doc = "external memory outputs data every eight BFCLK cycles"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Extdata::Value4
+        *self == EXTDATA_A::VALUE4
     }
 }
 #[doc = "Field `EXTDATA` writer - Extended data"]
-pub type ExtdataW<'a, REG> = crate::FieldWriter<'a, REG, 2, Extdata, crate::Safe>;
-impl<'a, REG> ExtdataW<'a, REG>
+pub type EXTDATA_W<'a, REG> = crate::FieldWriter<'a, REG, 2, EXTDATA_A, crate::Safe>;
+impl<'a, REG> EXTDATA_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -431,85 +431,85 @@ where
     #[doc = "external memory outputs data every BFCLK cycle"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Extdata::Value1)
+        self.variant(EXTDATA_A::VALUE1)
     }
     #[doc = "external memory outputs data every two BFCLK cycles"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Extdata::Value2)
+        self.variant(EXTDATA_A::VALUE2)
     }
     #[doc = "external memory outputs data every four BFCLK cycles"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Extdata::Value3)
+        self.variant(EXTDATA_A::VALUE3)
     }
     #[doc = "external memory outputs data every eight BFCLK cycles"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Extdata::Value4)
+        self.variant(EXTDATA_A::VALUE4)
     }
 }
 #[doc = "Command Delay Cycles\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Cmddelay {
+pub enum CMDDELAY_A {
     #[doc = "0: 0 clock cycle selected."]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 1 clock cycle selected."]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "14: 14 clock cycles selected."]
-    Value3 = 14,
+    VALUE3 = 14,
     #[doc = "15: 15 clock cycles selected."]
-    Value4 = 15,
+    VALUE4 = 15,
 }
-impl From<Cmddelay> for u8 {
+impl From<CMDDELAY_A> for u8 {
     #[inline(always)]
-    fn from(variant: Cmddelay) -> Self {
+    fn from(variant: CMDDELAY_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Cmddelay {
+impl crate::FieldSpec for CMDDELAY_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Cmddelay {}
+impl crate::IsEnum for CMDDELAY_A {}
 #[doc = "Field `CMDDELAY` reader - Command Delay Cycles"]
-pub type CmddelayR = crate::FieldReader<Cmddelay>;
-impl CmddelayR {
+pub type CMDDELAY_R = crate::FieldReader<CMDDELAY_A>;
+impl CMDDELAY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Cmddelay> {
+    pub const fn variant(&self) -> Option<CMDDELAY_A> {
         match self.bits {
-            0 => Some(Cmddelay::Value1),
-            1 => Some(Cmddelay::Value2),
-            14 => Some(Cmddelay::Value3),
-            15 => Some(Cmddelay::Value4),
+            0 => Some(CMDDELAY_A::VALUE1),
+            1 => Some(CMDDELAY_A::VALUE2),
+            14 => Some(CMDDELAY_A::VALUE3),
+            15 => Some(CMDDELAY_A::VALUE4),
             _ => None,
         }
     }
     #[doc = "0 clock cycle selected."]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Cmddelay::Value1
+        *self == CMDDELAY_A::VALUE1
     }
     #[doc = "1 clock cycle selected."]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Cmddelay::Value2
+        *self == CMDDELAY_A::VALUE2
     }
     #[doc = "14 clock cycles selected."]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Cmddelay::Value3
+        *self == CMDDELAY_A::VALUE3
     }
     #[doc = "15 clock cycles selected."]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Cmddelay::Value4
+        *self == CMDDELAY_A::VALUE4
     }
 }
 #[doc = "Field `CMDDELAY` writer - Command Delay Cycles"]
-pub type CmddelayW<'a, REG> = crate::FieldWriter<'a, REG, 4, Cmddelay>;
-impl<'a, REG> CmddelayW<'a, REG>
+pub type CMDDELAY_W<'a, REG> = crate::FieldWriter<'a, REG, 4, CMDDELAY_A>;
+impl<'a, REG> CMDDELAY_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -517,85 +517,85 @@ where
     #[doc = "0 clock cycle selected."]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Cmddelay::Value1)
+        self.variant(CMDDELAY_A::VALUE1)
     }
     #[doc = "1 clock cycle selected."]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Cmddelay::Value2)
+        self.variant(CMDDELAY_A::VALUE2)
     }
     #[doc = "14 clock cycles selected."]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Cmddelay::Value3)
+        self.variant(CMDDELAY_A::VALUE3)
     }
     #[doc = "15 clock cycles selected."]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Cmddelay::Value4)
+        self.variant(CMDDELAY_A::VALUE4)
     }
 }
 #[doc = "Address Hold Cycles\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Aholdc {
+pub enum AHOLDC_A {
     #[doc = "0: 0 clock cycle selected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 1 clock cycle selected"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "14: 14 clock cycles selected"]
-    Value3 = 14,
+    VALUE3 = 14,
     #[doc = "15: 15 clock cycles selected"]
-    Value4 = 15,
+    VALUE4 = 15,
 }
-impl From<Aholdc> for u8 {
+impl From<AHOLDC_A> for u8 {
     #[inline(always)]
-    fn from(variant: Aholdc) -> Self {
+    fn from(variant: AHOLDC_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Aholdc {
+impl crate::FieldSpec for AHOLDC_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Aholdc {}
+impl crate::IsEnum for AHOLDC_A {}
 #[doc = "Field `AHOLDC` reader - Address Hold Cycles"]
-pub type AholdcR = crate::FieldReader<Aholdc>;
-impl AholdcR {
+pub type AHOLDC_R = crate::FieldReader<AHOLDC_A>;
+impl AHOLDC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Aholdc> {
+    pub const fn variant(&self) -> Option<AHOLDC_A> {
         match self.bits {
-            0 => Some(Aholdc::Value1),
-            1 => Some(Aholdc::Value2),
-            14 => Some(Aholdc::Value3),
-            15 => Some(Aholdc::Value4),
+            0 => Some(AHOLDC_A::VALUE1),
+            1 => Some(AHOLDC_A::VALUE2),
+            14 => Some(AHOLDC_A::VALUE3),
+            15 => Some(AHOLDC_A::VALUE4),
             _ => None,
         }
     }
     #[doc = "0 clock cycle selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Aholdc::Value1
+        *self == AHOLDC_A::VALUE1
     }
     #[doc = "1 clock cycle selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Aholdc::Value2
+        *self == AHOLDC_A::VALUE2
     }
     #[doc = "14 clock cycles selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Aholdc::Value3
+        *self == AHOLDC_A::VALUE3
     }
     #[doc = "15 clock cycles selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Aholdc::Value4
+        *self == AHOLDC_A::VALUE4
     }
 }
 #[doc = "Field `AHOLDC` writer - Address Hold Cycles"]
-pub type AholdcW<'a, REG> = crate::FieldWriter<'a, REG, 4, Aholdc>;
-impl<'a, REG> AholdcW<'a, REG>
+pub type AHOLDC_W<'a, REG> = crate::FieldWriter<'a, REG, 4, AHOLDC_A>;
+impl<'a, REG> AHOLDC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -603,85 +603,85 @@ where
     #[doc = "0 clock cycle selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Aholdc::Value1)
+        self.variant(AHOLDC_A::VALUE1)
     }
     #[doc = "1 clock cycle selected"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Aholdc::Value2)
+        self.variant(AHOLDC_A::VALUE2)
     }
     #[doc = "14 clock cycles selected"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Aholdc::Value3)
+        self.variant(AHOLDC_A::VALUE3)
     }
     #[doc = "15 clock cycles selected"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Aholdc::Value4)
+        self.variant(AHOLDC_A::VALUE4)
     }
 }
 #[doc = "Address Cycles\n\nValue on reset: 15"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
-pub enum Addrc {
+pub enum ADDRC_A {
     #[doc = "0: 1 clock cycle selected"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: 1 clock cycle selected"]
-    Value2 = 1,
+    VALUE2 = 1,
     #[doc = "14: 14 clock cycles selected"]
-    Value3 = 14,
+    VALUE3 = 14,
     #[doc = "15: 15 clock cycles selected"]
-    Value4 = 15,
+    VALUE4 = 15,
 }
-impl From<Addrc> for u8 {
+impl From<ADDRC_A> for u8 {
     #[inline(always)]
-    fn from(variant: Addrc) -> Self {
+    fn from(variant: ADDRC_A) -> Self {
         variant as _
     }
 }
-impl crate::FieldSpec for Addrc {
+impl crate::FieldSpec for ADDRC_A {
     type Ux = u8;
 }
-impl crate::IsEnum for Addrc {}
+impl crate::IsEnum for ADDRC_A {}
 #[doc = "Field `ADDRC` reader - Address Cycles"]
-pub type AddrcR = crate::FieldReader<Addrc>;
-impl AddrcR {
+pub type ADDRC_R = crate::FieldReader<ADDRC_A>;
+impl ADDRC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Option<Addrc> {
+    pub const fn variant(&self) -> Option<ADDRC_A> {
         match self.bits {
-            0 => Some(Addrc::Value1),
-            1 => Some(Addrc::Value2),
-            14 => Some(Addrc::Value3),
-            15 => Some(Addrc::Value4),
+            0 => Some(ADDRC_A::VALUE1),
+            1 => Some(ADDRC_A::VALUE2),
+            14 => Some(ADDRC_A::VALUE3),
+            15 => Some(ADDRC_A::VALUE4),
             _ => None,
         }
     }
     #[doc = "1 clock cycle selected"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Addrc::Value1
+        *self == ADDRC_A::VALUE1
     }
     #[doc = "1 clock cycle selected"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Addrc::Value2
+        *self == ADDRC_A::VALUE2
     }
     #[doc = "14 clock cycles selected"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == Addrc::Value3
+        *self == ADDRC_A::VALUE3
     }
     #[doc = "15 clock cycles selected"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == Addrc::Value4
+        *self == ADDRC_A::VALUE4
     }
 }
 #[doc = "Field `ADDRC` writer - Address Cycles"]
-pub type AddrcW<'a, REG> = crate::FieldWriter<'a, REG, 4, Addrc>;
-impl<'a, REG> AddrcW<'a, REG>
+pub type ADDRC_W<'a, REG> = crate::FieldWriter<'a, REG, 4, ADDRC_A>;
+impl<'a, REG> ADDRC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
     REG::Ux: From<u8>,
@@ -689,141 +689,141 @@ where
     #[doc = "1 clock cycle selected"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Addrc::Value1)
+        self.variant(ADDRC_A::VALUE1)
     }
     #[doc = "1 clock cycle selected"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Addrc::Value2)
+        self.variant(ADDRC_A::VALUE2)
     }
     #[doc = "14 clock cycles selected"]
     #[inline(always)]
     pub fn value3(self) -> &'a mut crate::W<REG> {
-        self.variant(Addrc::Value3)
+        self.variant(ADDRC_A::VALUE3)
     }
     #[doc = "15 clock cycles selected"]
     #[inline(always)]
     pub fn value4(self) -> &'a mut crate::W<REG> {
-        self.variant(Addrc::Value4)
+        self.variant(ADDRC_A::VALUE4)
     }
 }
 impl R {
     #[doc = "Bits 0:3 - Recovery Cycles between Different Regions"]
     #[inline(always)]
-    pub fn rddtacs(&self) -> RddtacsR {
-        RddtacsR::new((self.bits & 0x0f) as u8)
+    pub fn rddtacs(&self) -> RDDTACS_R {
+        RDDTACS_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:6 - Recovery Cycles after Read Accesses"]
     #[inline(always)]
-    pub fn rdrecovc(&self) -> RdrecovcR {
-        RdrecovcR::new(((self.bits >> 4) & 7) as u8)
+    pub fn rdrecovc(&self) -> RDRECOVC_R {
+        RDRECOVC_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bits 7:11 - Programmed Wait States for read accesses"]
     #[inline(always)]
-    pub fn waitrdc(&self) -> WaitrdcR {
-        WaitrdcR::new(((self.bits >> 7) & 0x1f) as u8)
+    pub fn waitrdc(&self) -> WAITRDC_R {
+        WAITRDC_R::new(((self.bits >> 7) & 0x1f) as u8)
     }
     #[doc = "Bits 12:15 - Data Hold Cycles for Read Accesses"]
     #[inline(always)]
-    pub fn datac(&self) -> DatacR {
-        DatacR::new(((self.bits >> 12) & 0x0f) as u8)
+    pub fn datac(&self) -> DATAC_R {
+        DATAC_R::new(((self.bits >> 12) & 0x0f) as u8)
     }
     #[doc = "Bits 16:17 - Frequency of external clock at pin BFCLKO"]
     #[inline(always)]
-    pub fn extclock(&self) -> ExtclockR {
-        ExtclockR::new(((self.bits >> 16) & 3) as u8)
+    pub fn extclock(&self) -> EXTCLOCK_R {
+        EXTCLOCK_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 18:19 - Extended data"]
     #[inline(always)]
-    pub fn extdata(&self) -> ExtdataR {
-        ExtdataR::new(((self.bits >> 18) & 3) as u8)
+    pub fn extdata(&self) -> EXTDATA_R {
+        EXTDATA_R::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bits 20:23 - Command Delay Cycles"]
     #[inline(always)]
-    pub fn cmddelay(&self) -> CmddelayR {
-        CmddelayR::new(((self.bits >> 20) & 0x0f) as u8)
+    pub fn cmddelay(&self) -> CMDDELAY_R {
+        CMDDELAY_R::new(((self.bits >> 20) & 0x0f) as u8)
     }
     #[doc = "Bits 24:27 - Address Hold Cycles"]
     #[inline(always)]
-    pub fn aholdc(&self) -> AholdcR {
-        AholdcR::new(((self.bits >> 24) & 0x0f) as u8)
+    pub fn aholdc(&self) -> AHOLDC_R {
+        AHOLDC_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
     #[doc = "Bits 28:31 - Address Cycles"]
     #[inline(always)]
-    pub fn addrc(&self) -> AddrcR {
-        AddrcR::new(((self.bits >> 28) & 0x0f) as u8)
+    pub fn addrc(&self) -> ADDRC_R {
+        ADDRC_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:3 - Recovery Cycles between Different Regions"]
     #[inline(always)]
     #[must_use]
-    pub fn rddtacs(&mut self) -> RddtacsW<Busrap1Spec> {
-        RddtacsW::new(self, 0)
+    pub fn rddtacs(&mut self) -> RDDTACS_W<BUSRAP1_SPEC> {
+        RDDTACS_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Recovery Cycles after Read Accesses"]
     #[inline(always)]
     #[must_use]
-    pub fn rdrecovc(&mut self) -> RdrecovcW<Busrap1Spec> {
-        RdrecovcW::new(self, 4)
+    pub fn rdrecovc(&mut self) -> RDRECOVC_W<BUSRAP1_SPEC> {
+        RDRECOVC_W::new(self, 4)
     }
     #[doc = "Bits 7:11 - Programmed Wait States for read accesses"]
     #[inline(always)]
     #[must_use]
-    pub fn waitrdc(&mut self) -> WaitrdcW<Busrap1Spec> {
-        WaitrdcW::new(self, 7)
+    pub fn waitrdc(&mut self) -> WAITRDC_W<BUSRAP1_SPEC> {
+        WAITRDC_W::new(self, 7)
     }
     #[doc = "Bits 12:15 - Data Hold Cycles for Read Accesses"]
     #[inline(always)]
     #[must_use]
-    pub fn datac(&mut self) -> DatacW<Busrap1Spec> {
-        DatacW::new(self, 12)
+    pub fn datac(&mut self) -> DATAC_W<BUSRAP1_SPEC> {
+        DATAC_W::new(self, 12)
     }
     #[doc = "Bits 16:17 - Frequency of external clock at pin BFCLKO"]
     #[inline(always)]
     #[must_use]
-    pub fn extclock(&mut self) -> ExtclockW<Busrap1Spec> {
-        ExtclockW::new(self, 16)
+    pub fn extclock(&mut self) -> EXTCLOCK_W<BUSRAP1_SPEC> {
+        EXTCLOCK_W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Extended data"]
     #[inline(always)]
     #[must_use]
-    pub fn extdata(&mut self) -> ExtdataW<Busrap1Spec> {
-        ExtdataW::new(self, 18)
+    pub fn extdata(&mut self) -> EXTDATA_W<BUSRAP1_SPEC> {
+        EXTDATA_W::new(self, 18)
     }
     #[doc = "Bits 20:23 - Command Delay Cycles"]
     #[inline(always)]
     #[must_use]
-    pub fn cmddelay(&mut self) -> CmddelayW<Busrap1Spec> {
-        CmddelayW::new(self, 20)
+    pub fn cmddelay(&mut self) -> CMDDELAY_W<BUSRAP1_SPEC> {
+        CMDDELAY_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Address Hold Cycles"]
     #[inline(always)]
     #[must_use]
-    pub fn aholdc(&mut self) -> AholdcW<Busrap1Spec> {
-        AholdcW::new(self, 24)
+    pub fn aholdc(&mut self) -> AHOLDC_W<BUSRAP1_SPEC> {
+        AHOLDC_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Address Cycles"]
     #[inline(always)]
     #[must_use]
-    pub fn addrc(&mut self) -> AddrcW<Busrap1Spec> {
-        AddrcW::new(self, 28)
+    pub fn addrc(&mut self) -> ADDRC_W<BUSRAP1_SPEC> {
+        ADDRC_W::new(self, 28)
     }
 }
 #[doc = "EBU Bus Read Access Parameter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`busrap1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`busrap1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct Busrap1Spec;
-impl crate::RegisterSpec for Busrap1Spec {
+pub struct BUSRAP1_SPEC;
+impl crate::RegisterSpec for BUSRAP1_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`busrap1::R`](R) reader structure"]
-impl crate::Readable for Busrap1Spec {}
+impl crate::Readable for BUSRAP1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`busrap1::W`](W) writer structure"]
-impl crate::Writable for Busrap1Spec {
+impl crate::Writable for BUSRAP1_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BUSRAP1 to value 0xffff_ffff"]
-impl crate::Resettable for Busrap1Spec {
+impl crate::Resettable for BUSRAP1_SPEC {
     const RESET_VALUE: u32 = 0xffff_ffff;
 }

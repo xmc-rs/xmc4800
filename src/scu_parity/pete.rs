@@ -1,921 +1,921 @@
 #[doc = "Register `PETE` reader"]
-pub type R = crate::R<PeteSpec>;
+pub type R = crate::R<PETE_SPEC>;
 #[doc = "Register `PETE` writer"]
-pub type W = crate::W<PeteSpec>;
+pub type W = crate::W<PETE_SPEC>;
 #[doc = "Parity Error Trap Enable for PSRAM\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Peteps {
+pub enum PETEPS_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Peteps> for bool {
+impl From<PETEPS_A> for bool {
     #[inline(always)]
-    fn from(variant: Peteps) -> Self {
+    fn from(variant: PETEPS_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETEPS` reader - Parity Error Trap Enable for PSRAM"]
-pub type PetepsR = crate::BitReader<Peteps>;
-impl PetepsR {
+pub type PETEPS_R = crate::BitReader<PETEPS_A>;
+impl PETEPS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Peteps {
+    pub const fn variant(&self) -> PETEPS_A {
         match self.bits {
-            false => Peteps::Value1,
-            true => Peteps::Value2,
+            false => PETEPS_A::VALUE1,
+            true => PETEPS_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Peteps::Value1
+        *self == PETEPS_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Peteps::Value2
+        *self == PETEPS_A::VALUE2
     }
 }
 #[doc = "Field `PETEPS` writer - Parity Error Trap Enable for PSRAM"]
-pub type PetepsW<'a, REG> = crate::BitWriter<'a, REG, Peteps>;
-impl<'a, REG> PetepsW<'a, REG>
+pub type PETEPS_W<'a, REG> = crate::BitWriter<'a, REG, PETEPS_A>;
+impl<'a, REG> PETEPS_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteps::Value1)
+        self.variant(PETEPS_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteps::Value2)
+        self.variant(PETEPS_A::VALUE2)
     }
 }
 #[doc = "Parity Error Trap Enable for DSRAM1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Peteds1 {
+pub enum PETEDS1_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Peteds1> for bool {
+impl From<PETEDS1_A> for bool {
     #[inline(always)]
-    fn from(variant: Peteds1) -> Self {
+    fn from(variant: PETEDS1_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETEDS1` reader - Parity Error Trap Enable for DSRAM1"]
-pub type Peteds1R = crate::BitReader<Peteds1>;
-impl Peteds1R {
+pub type PETEDS1_R = crate::BitReader<PETEDS1_A>;
+impl PETEDS1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Peteds1 {
+    pub const fn variant(&self) -> PETEDS1_A {
         match self.bits {
-            false => Peteds1::Value1,
-            true => Peteds1::Value2,
+            false => PETEDS1_A::VALUE1,
+            true => PETEDS1_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Peteds1::Value1
+        *self == PETEDS1_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Peteds1::Value2
+        *self == PETEDS1_A::VALUE2
     }
 }
 #[doc = "Field `PETEDS1` writer - Parity Error Trap Enable for DSRAM1"]
-pub type Peteds1W<'a, REG> = crate::BitWriter<'a, REG, Peteds1>;
-impl<'a, REG> Peteds1W<'a, REG>
+pub type PETEDS1_W<'a, REG> = crate::BitWriter<'a, REG, PETEDS1_A>;
+impl<'a, REG> PETEDS1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteds1::Value1)
+        self.variant(PETEDS1_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteds1::Value2)
+        self.variant(PETEDS1_A::VALUE2)
     }
 }
 #[doc = "Parity Error Trap Enable for DSRAM2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Peteds2 {
+pub enum PETEDS2_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Peteds2> for bool {
+impl From<PETEDS2_A> for bool {
     #[inline(always)]
-    fn from(variant: Peteds2) -> Self {
+    fn from(variant: PETEDS2_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETEDS2` reader - Parity Error Trap Enable for DSRAM2"]
-pub type Peteds2R = crate::BitReader<Peteds2>;
-impl Peteds2R {
+pub type PETEDS2_R = crate::BitReader<PETEDS2_A>;
+impl PETEDS2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Peteds2 {
+    pub const fn variant(&self) -> PETEDS2_A {
         match self.bits {
-            false => Peteds2::Value1,
-            true => Peteds2::Value2,
+            false => PETEDS2_A::VALUE1,
+            true => PETEDS2_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Peteds2::Value1
+        *self == PETEDS2_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Peteds2::Value2
+        *self == PETEDS2_A::VALUE2
     }
 }
 #[doc = "Field `PETEDS2` writer - Parity Error Trap Enable for DSRAM2"]
-pub type Peteds2W<'a, REG> = crate::BitWriter<'a, REG, Peteds2>;
-impl<'a, REG> Peteds2W<'a, REG>
+pub type PETEDS2_W<'a, REG> = crate::BitWriter<'a, REG, PETEDS2_A>;
+impl<'a, REG> PETEDS2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteds2::Value1)
+        self.variant(PETEDS2_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteds2::Value2)
+        self.variant(PETEDS2_A::VALUE2)
     }
 }
 #[doc = "Parity Error Trap Enable for USIC0 Memory\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Peteu0 {
+pub enum PETEU0_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Peteu0> for bool {
+impl From<PETEU0_A> for bool {
     #[inline(always)]
-    fn from(variant: Peteu0) -> Self {
+    fn from(variant: PETEU0_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETEU0` reader - Parity Error Trap Enable for USIC0 Memory"]
-pub type Peteu0R = crate::BitReader<Peteu0>;
-impl Peteu0R {
+pub type PETEU0_R = crate::BitReader<PETEU0_A>;
+impl PETEU0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Peteu0 {
+    pub const fn variant(&self) -> PETEU0_A {
         match self.bits {
-            false => Peteu0::Value1,
-            true => Peteu0::Value2,
+            false => PETEU0_A::VALUE1,
+            true => PETEU0_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Peteu0::Value1
+        *self == PETEU0_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Peteu0::Value2
+        *self == PETEU0_A::VALUE2
     }
 }
 #[doc = "Field `PETEU0` writer - Parity Error Trap Enable for USIC0 Memory"]
-pub type Peteu0W<'a, REG> = crate::BitWriter<'a, REG, Peteu0>;
-impl<'a, REG> Peteu0W<'a, REG>
+pub type PETEU0_W<'a, REG> = crate::BitWriter<'a, REG, PETEU0_A>;
+impl<'a, REG> PETEU0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteu0::Value1)
+        self.variant(PETEU0_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteu0::Value2)
+        self.variant(PETEU0_A::VALUE2)
     }
 }
 #[doc = "Parity Error Trap Enable for USIC1 Memory\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Peteu1 {
+pub enum PETEU1_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Peteu1> for bool {
+impl From<PETEU1_A> for bool {
     #[inline(always)]
-    fn from(variant: Peteu1) -> Self {
+    fn from(variant: PETEU1_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETEU1` reader - Parity Error Trap Enable for USIC1 Memory"]
-pub type Peteu1R = crate::BitReader<Peteu1>;
-impl Peteu1R {
+pub type PETEU1_R = crate::BitReader<PETEU1_A>;
+impl PETEU1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Peteu1 {
+    pub const fn variant(&self) -> PETEU1_A {
         match self.bits {
-            false => Peteu1::Value1,
-            true => Peteu1::Value2,
+            false => PETEU1_A::VALUE1,
+            true => PETEU1_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Peteu1::Value1
+        *self == PETEU1_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Peteu1::Value2
+        *self == PETEU1_A::VALUE2
     }
 }
 #[doc = "Field `PETEU1` writer - Parity Error Trap Enable for USIC1 Memory"]
-pub type Peteu1W<'a, REG> = crate::BitWriter<'a, REG, Peteu1>;
-impl<'a, REG> Peteu1W<'a, REG>
+pub type PETEU1_W<'a, REG> = crate::BitWriter<'a, REG, PETEU1_A>;
+impl<'a, REG> PETEU1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteu1::Value1)
+        self.variant(PETEU1_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteu1::Value2)
+        self.variant(PETEU1_A::VALUE2)
     }
 }
 #[doc = "Parity Error Trap Enable for USIC2 Memory\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Peteu2 {
+pub enum PETEU2_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Peteu2> for bool {
+impl From<PETEU2_A> for bool {
     #[inline(always)]
-    fn from(variant: Peteu2) -> Self {
+    fn from(variant: PETEU2_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETEU2` reader - Parity Error Trap Enable for USIC2 Memory"]
-pub type Peteu2R = crate::BitReader<Peteu2>;
-impl Peteu2R {
+pub type PETEU2_R = crate::BitReader<PETEU2_A>;
+impl PETEU2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Peteu2 {
+    pub const fn variant(&self) -> PETEU2_A {
         match self.bits {
-            false => Peteu2::Value1,
-            true => Peteu2::Value2,
+            false => PETEU2_A::VALUE1,
+            true => PETEU2_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Peteu2::Value1
+        *self == PETEU2_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Peteu2::Value2
+        *self == PETEU2_A::VALUE2
     }
 }
 #[doc = "Field `PETEU2` writer - Parity Error Trap Enable for USIC2 Memory"]
-pub type Peteu2W<'a, REG> = crate::BitWriter<'a, REG, Peteu2>;
-impl<'a, REG> Peteu2W<'a, REG>
+pub type PETEU2_W<'a, REG> = crate::BitWriter<'a, REG, PETEU2_A>;
+impl<'a, REG> PETEU2_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteu2::Value1)
+        self.variant(PETEU2_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteu2::Value2)
+        self.variant(PETEU2_A::VALUE2)
     }
 }
 #[doc = "Parity Error Trap Enable for MultiCAN Memory\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Petemc {
+pub enum PETEMC_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Petemc> for bool {
+impl From<PETEMC_A> for bool {
     #[inline(always)]
-    fn from(variant: Petemc) -> Self {
+    fn from(variant: PETEMC_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETEMC` reader - Parity Error Trap Enable for MultiCAN Memory"]
-pub type PetemcR = crate::BitReader<Petemc>;
-impl PetemcR {
+pub type PETEMC_R = crate::BitReader<PETEMC_A>;
+impl PETEMC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Petemc {
+    pub const fn variant(&self) -> PETEMC_A {
         match self.bits {
-            false => Petemc::Value1,
-            true => Petemc::Value2,
+            false => PETEMC_A::VALUE1,
+            true => PETEMC_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Petemc::Value1
+        *self == PETEMC_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Petemc::Value2
+        *self == PETEMC_A::VALUE2
     }
 }
 #[doc = "Field `PETEMC` writer - Parity Error Trap Enable for MultiCAN Memory"]
-pub type PetemcW<'a, REG> = crate::BitWriter<'a, REG, Petemc>;
-impl<'a, REG> PetemcW<'a, REG>
+pub type PETEMC_W<'a, REG> = crate::BitWriter<'a, REG, PETEMC_A>;
+impl<'a, REG> PETEMC_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Petemc::Value1)
+        self.variant(PETEMC_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Petemc::Value2)
+        self.variant(PETEMC_A::VALUE2)
     }
 }
 #[doc = "Parity Error Trap Enable for PMU Prefetch Memory\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Petepprf {
+pub enum PETEPPRF_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Petepprf> for bool {
+impl From<PETEPPRF_A> for bool {
     #[inline(always)]
-    fn from(variant: Petepprf) -> Self {
+    fn from(variant: PETEPPRF_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETEPPRF` reader - Parity Error Trap Enable for PMU Prefetch Memory"]
-pub type PetepprfR = crate::BitReader<Petepprf>;
-impl PetepprfR {
+pub type PETEPPRF_R = crate::BitReader<PETEPPRF_A>;
+impl PETEPPRF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Petepprf {
+    pub const fn variant(&self) -> PETEPPRF_A {
         match self.bits {
-            false => Petepprf::Value1,
-            true => Petepprf::Value2,
+            false => PETEPPRF_A::VALUE1,
+            true => PETEPPRF_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Petepprf::Value1
+        *self == PETEPPRF_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Petepprf::Value2
+        *self == PETEPPRF_A::VALUE2
     }
 }
 #[doc = "Field `PETEPPRF` writer - Parity Error Trap Enable for PMU Prefetch Memory"]
-pub type PetepprfW<'a, REG> = crate::BitWriter<'a, REG, Petepprf>;
-impl<'a, REG> PetepprfW<'a, REG>
+pub type PETEPPRF_W<'a, REG> = crate::BitWriter<'a, REG, PETEPPRF_A>;
+impl<'a, REG> PETEPPRF_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Petepprf::Value1)
+        self.variant(PETEPPRF_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Petepprf::Value2)
+        self.variant(PETEPPRF_A::VALUE2)
     }
 }
 #[doc = "Parity Error Trap Enable for USB Memory\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Peteusb {
+pub enum PETEUSB_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Peteusb> for bool {
+impl From<PETEUSB_A> for bool {
     #[inline(always)]
-    fn from(variant: Peteusb) -> Self {
+    fn from(variant: PETEUSB_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETEUSB` reader - Parity Error Trap Enable for USB Memory"]
-pub type PeteusbR = crate::BitReader<Peteusb>;
-impl PeteusbR {
+pub type PETEUSB_R = crate::BitReader<PETEUSB_A>;
+impl PETEUSB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Peteusb {
+    pub const fn variant(&self) -> PETEUSB_A {
         match self.bits {
-            false => Peteusb::Value1,
-            true => Peteusb::Value2,
+            false => PETEUSB_A::VALUE1,
+            true => PETEUSB_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Peteusb::Value1
+        *self == PETEUSB_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Peteusb::Value2
+        *self == PETEUSB_A::VALUE2
     }
 }
 #[doc = "Field `PETEUSB` writer - Parity Error Trap Enable for USB Memory"]
-pub type PeteusbW<'a, REG> = crate::BitWriter<'a, REG, Peteusb>;
-impl<'a, REG> PeteusbW<'a, REG>
+pub type PETEUSB_W<'a, REG> = crate::BitWriter<'a, REG, PETEUSB_A>;
+impl<'a, REG> PETEUSB_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteusb::Value1)
+        self.variant(PETEUSB_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteusb::Value2)
+        self.variant(PETEUSB_A::VALUE2)
     }
 }
 #[doc = "Parity Error Trap Enable for ETH 0TX Memory\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Peteeth0tx {
+pub enum PETEETH0TX_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Peteeth0tx> for bool {
+impl From<PETEETH0TX_A> for bool {
     #[inline(always)]
-    fn from(variant: Peteeth0tx) -> Self {
+    fn from(variant: PETEETH0TX_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETEETH0TX` reader - Parity Error Trap Enable for ETH 0TX Memory"]
-pub type Peteeth0txR = crate::BitReader<Peteeth0tx>;
-impl Peteeth0txR {
+pub type PETEETH0TX_R = crate::BitReader<PETEETH0TX_A>;
+impl PETEETH0TX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Peteeth0tx {
+    pub const fn variant(&self) -> PETEETH0TX_A {
         match self.bits {
-            false => Peteeth0tx::Value1,
-            true => Peteeth0tx::Value2,
+            false => PETEETH0TX_A::VALUE1,
+            true => PETEETH0TX_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Peteeth0tx::Value1
+        *self == PETEETH0TX_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Peteeth0tx::Value2
+        *self == PETEETH0TX_A::VALUE2
     }
 }
 #[doc = "Field `PETEETH0TX` writer - Parity Error Trap Enable for ETH 0TX Memory"]
-pub type Peteeth0txW<'a, REG> = crate::BitWriter<'a, REG, Peteeth0tx>;
-impl<'a, REG> Peteeth0txW<'a, REG>
+pub type PETEETH0TX_W<'a, REG> = crate::BitWriter<'a, REG, PETEETH0TX_A>;
+impl<'a, REG> PETEETH0TX_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteeth0tx::Value1)
+        self.variant(PETEETH0TX_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteeth0tx::Value2)
+        self.variant(PETEETH0TX_A::VALUE2)
     }
 }
 #[doc = "Parity Error Trap Enable for ETH0 RX Memory\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Peteeth0rx {
+pub enum PETEETH0RX_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Peteeth0rx> for bool {
+impl From<PETEETH0RX_A> for bool {
     #[inline(always)]
-    fn from(variant: Peteeth0rx) -> Self {
+    fn from(variant: PETEETH0RX_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETEETH0RX` reader - Parity Error Trap Enable for ETH0 RX Memory"]
-pub type Peteeth0rxR = crate::BitReader<Peteeth0rx>;
-impl Peteeth0rxR {
+pub type PETEETH0RX_R = crate::BitReader<PETEETH0RX_A>;
+impl PETEETH0RX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Peteeth0rx {
+    pub const fn variant(&self) -> PETEETH0RX_A {
         match self.bits {
-            false => Peteeth0rx::Value1,
-            true => Peteeth0rx::Value2,
+            false => PETEETH0RX_A::VALUE1,
+            true => PETEETH0RX_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Peteeth0rx::Value1
+        *self == PETEETH0RX_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Peteeth0rx::Value2
+        *self == PETEETH0RX_A::VALUE2
     }
 }
 #[doc = "Field `PETEETH0RX` writer - Parity Error Trap Enable for ETH0 RX Memory"]
-pub type Peteeth0rxW<'a, REG> = crate::BitWriter<'a, REG, Peteeth0rx>;
-impl<'a, REG> Peteeth0rxW<'a, REG>
+pub type PETEETH0RX_W<'a, REG> = crate::BitWriter<'a, REG, PETEETH0RX_A>;
+impl<'a, REG> PETEETH0RX_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteeth0rx::Value1)
+        self.variant(PETEETH0RX_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteeth0rx::Value2)
+        self.variant(PETEETH0RX_A::VALUE2)
     }
 }
 #[doc = "Parity Error Trap Enable for SDMMC SRAM 0 Memory\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Petesd0 {
+pub enum PETESD0_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Petesd0> for bool {
+impl From<PETESD0_A> for bool {
     #[inline(always)]
-    fn from(variant: Petesd0) -> Self {
+    fn from(variant: PETESD0_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETESD0` reader - Parity Error Trap Enable for SDMMC SRAM 0 Memory"]
-pub type Petesd0R = crate::BitReader<Petesd0>;
-impl Petesd0R {
+pub type PETESD0_R = crate::BitReader<PETESD0_A>;
+impl PETESD0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Petesd0 {
+    pub const fn variant(&self) -> PETESD0_A {
         match self.bits {
-            false => Petesd0::Value1,
-            true => Petesd0::Value2,
+            false => PETESD0_A::VALUE1,
+            true => PETESD0_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Petesd0::Value1
+        *self == PETESD0_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Petesd0::Value2
+        *self == PETESD0_A::VALUE2
     }
 }
 #[doc = "Field `PETESD0` writer - Parity Error Trap Enable for SDMMC SRAM 0 Memory"]
-pub type Petesd0W<'a, REG> = crate::BitWriter<'a, REG, Petesd0>;
-impl<'a, REG> Petesd0W<'a, REG>
+pub type PETESD0_W<'a, REG> = crate::BitWriter<'a, REG, PETESD0_A>;
+impl<'a, REG> PETESD0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Petesd0::Value1)
+        self.variant(PETESD0_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Petesd0::Value2)
+        self.variant(PETESD0_A::VALUE2)
     }
 }
 #[doc = "Parity Error Trap Enable for SDMMC SRAM 1 Memory\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Petesd1 {
+pub enum PETESD1_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Petesd1> for bool {
+impl From<PETESD1_A> for bool {
     #[inline(always)]
-    fn from(variant: Petesd1) -> Self {
+    fn from(variant: PETESD1_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETESD1` reader - Parity Error Trap Enable for SDMMC SRAM 1 Memory"]
-pub type Petesd1R = crate::BitReader<Petesd1>;
-impl Petesd1R {
+pub type PETESD1_R = crate::BitReader<PETESD1_A>;
+impl PETESD1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Petesd1 {
+    pub const fn variant(&self) -> PETESD1_A {
         match self.bits {
-            false => Petesd1::Value1,
-            true => Petesd1::Value2,
+            false => PETESD1_A::VALUE1,
+            true => PETESD1_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Petesd1::Value1
+        *self == PETESD1_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Petesd1::Value2
+        *self == PETESD1_A::VALUE2
     }
 }
 #[doc = "Field `PETESD1` writer - Parity Error Trap Enable for SDMMC SRAM 1 Memory"]
-pub type Petesd1W<'a, REG> = crate::BitWriter<'a, REG, Petesd1>;
-impl<'a, REG> Petesd1W<'a, REG>
+pub type PETESD1_W<'a, REG> = crate::BitWriter<'a, REG, PETESD1_A>;
+impl<'a, REG> PETESD1_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Petesd1::Value1)
+        self.variant(PETESD1_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Petesd1::Value2)
+        self.variant(PETESD1_A::VALUE2)
     }
 }
 #[doc = "Parity Error Trap Enable for ECAT0 SRAM Memory\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Peteecat0 {
+pub enum PETEECAT0_A {
     #[doc = "0: Disabled"]
-    Value1 = 0,
+    VALUE1 = 0,
     #[doc = "1: Enabled"]
-    Value2 = 1,
+    VALUE2 = 1,
 }
-impl From<Peteecat0> for bool {
+impl From<PETEECAT0_A> for bool {
     #[inline(always)]
-    fn from(variant: Peteecat0) -> Self {
+    fn from(variant: PETEECAT0_A) -> Self {
         variant as u8 != 0
     }
 }
 #[doc = "Field `PETEECAT0` reader - Parity Error Trap Enable for ECAT0 SRAM Memory"]
-pub type Peteecat0R = crate::BitReader<Peteecat0>;
-impl Peteecat0R {
+pub type PETEECAT0_R = crate::BitReader<PETEECAT0_A>;
+impl PETEECAT0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Peteecat0 {
+    pub const fn variant(&self) -> PETEECAT0_A {
         match self.bits {
-            false => Peteecat0::Value1,
-            true => Peteecat0::Value2,
+            false => PETEECAT0_A::VALUE1,
+            true => PETEECAT0_A::VALUE2,
         }
     }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == Peteecat0::Value1
+        *self == PETEECAT0_A::VALUE1
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == Peteecat0::Value2
+        *self == PETEECAT0_A::VALUE2
     }
 }
 #[doc = "Field `PETEECAT0` writer - Parity Error Trap Enable for ECAT0 SRAM Memory"]
-pub type Peteecat0W<'a, REG> = crate::BitWriter<'a, REG, Peteecat0>;
-impl<'a, REG> Peteecat0W<'a, REG>
+pub type PETEECAT0_W<'a, REG> = crate::BitWriter<'a, REG, PETEECAT0_A>;
+impl<'a, REG> PETEECAT0_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteecat0::Value1)
+        self.variant(PETEECAT0_A::VALUE1)
     }
     #[doc = "Enabled"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
-        self.variant(Peteecat0::Value2)
+        self.variant(PETEECAT0_A::VALUE2)
     }
 }
 impl R {
     #[doc = "Bit 0 - Parity Error Trap Enable for PSRAM"]
     #[inline(always)]
-    pub fn peteps(&self) -> PetepsR {
-        PetepsR::new((self.bits & 1) != 0)
+    pub fn peteps(&self) -> PETEPS_R {
+        PETEPS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Parity Error Trap Enable for DSRAM1"]
     #[inline(always)]
-    pub fn peteds1(&self) -> Peteds1R {
-        Peteds1R::new(((self.bits >> 1) & 1) != 0)
+    pub fn peteds1(&self) -> PETEDS1_R {
+        PETEDS1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Parity Error Trap Enable for DSRAM2"]
     #[inline(always)]
-    pub fn peteds2(&self) -> Peteds2R {
-        Peteds2R::new(((self.bits >> 2) & 1) != 0)
+    pub fn peteds2(&self) -> PETEDS2_R {
+        PETEDS2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 8 - Parity Error Trap Enable for USIC0 Memory"]
     #[inline(always)]
-    pub fn peteu0(&self) -> Peteu0R {
-        Peteu0R::new(((self.bits >> 8) & 1) != 0)
+    pub fn peteu0(&self) -> PETEU0_R {
+        PETEU0_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Parity Error Trap Enable for USIC1 Memory"]
     #[inline(always)]
-    pub fn peteu1(&self) -> Peteu1R {
-        Peteu1R::new(((self.bits >> 9) & 1) != 0)
+    pub fn peteu1(&self) -> PETEU1_R {
+        PETEU1_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Parity Error Trap Enable for USIC2 Memory"]
     #[inline(always)]
-    pub fn peteu2(&self) -> Peteu2R {
-        Peteu2R::new(((self.bits >> 10) & 1) != 0)
+    pub fn peteu2(&self) -> PETEU2_R {
+        PETEU2_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 12 - Parity Error Trap Enable for MultiCAN Memory"]
     #[inline(always)]
-    pub fn petemc(&self) -> PetemcR {
-        PetemcR::new(((self.bits >> 12) & 1) != 0)
+    pub fn petemc(&self) -> PETEMC_R {
+        PETEMC_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Parity Error Trap Enable for PMU Prefetch Memory"]
     #[inline(always)]
-    pub fn petepprf(&self) -> PetepprfR {
-        PetepprfR::new(((self.bits >> 13) & 1) != 0)
+    pub fn petepprf(&self) -> PETEPPRF_R {
+        PETEPPRF_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 16 - Parity Error Trap Enable for USB Memory"]
     #[inline(always)]
-    pub fn peteusb(&self) -> PeteusbR {
-        PeteusbR::new(((self.bits >> 16) & 1) != 0)
+    pub fn peteusb(&self) -> PETEUSB_R {
+        PETEUSB_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Parity Error Trap Enable for ETH 0TX Memory"]
     #[inline(always)]
-    pub fn peteeth0tx(&self) -> Peteeth0txR {
-        Peteeth0txR::new(((self.bits >> 17) & 1) != 0)
+    pub fn peteeth0tx(&self) -> PETEETH0TX_R {
+        PETEETH0TX_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Parity Error Trap Enable for ETH0 RX Memory"]
     #[inline(always)]
-    pub fn peteeth0rx(&self) -> Peteeth0rxR {
-        Peteeth0rxR::new(((self.bits >> 18) & 1) != 0)
+    pub fn peteeth0rx(&self) -> PETEETH0RX_R {
+        PETEETH0RX_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Parity Error Trap Enable for SDMMC SRAM 0 Memory"]
     #[inline(always)]
-    pub fn petesd0(&self) -> Petesd0R {
-        Petesd0R::new(((self.bits >> 19) & 1) != 0)
+    pub fn petesd0(&self) -> PETESD0_R {
+        PETESD0_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - Parity Error Trap Enable for SDMMC SRAM 1 Memory"]
     #[inline(always)]
-    pub fn petesd1(&self) -> Petesd1R {
-        Petesd1R::new(((self.bits >> 20) & 1) != 0)
+    pub fn petesd1(&self) -> PETESD1_R {
+        PETESD1_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 24 - Parity Error Trap Enable for ECAT0 SRAM Memory"]
     #[inline(always)]
-    pub fn peteecat0(&self) -> Peteecat0R {
-        Peteecat0R::new(((self.bits >> 24) & 1) != 0)
+    pub fn peteecat0(&self) -> PETEECAT0_R {
+        PETEECAT0_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Parity Error Trap Enable for PSRAM"]
     #[inline(always)]
     #[must_use]
-    pub fn peteps(&mut self) -> PetepsW<PeteSpec> {
-        PetepsW::new(self, 0)
+    pub fn peteps(&mut self) -> PETEPS_W<PETE_SPEC> {
+        PETEPS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Parity Error Trap Enable for DSRAM1"]
     #[inline(always)]
     #[must_use]
-    pub fn peteds1(&mut self) -> Peteds1W<PeteSpec> {
-        Peteds1W::new(self, 1)
+    pub fn peteds1(&mut self) -> PETEDS1_W<PETE_SPEC> {
+        PETEDS1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Parity Error Trap Enable for DSRAM2"]
     #[inline(always)]
     #[must_use]
-    pub fn peteds2(&mut self) -> Peteds2W<PeteSpec> {
-        Peteds2W::new(self, 2)
+    pub fn peteds2(&mut self) -> PETEDS2_W<PETE_SPEC> {
+        PETEDS2_W::new(self, 2)
     }
     #[doc = "Bit 8 - Parity Error Trap Enable for USIC0 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peteu0(&mut self) -> Peteu0W<PeteSpec> {
-        Peteu0W::new(self, 8)
+    pub fn peteu0(&mut self) -> PETEU0_W<PETE_SPEC> {
+        PETEU0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Parity Error Trap Enable for USIC1 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peteu1(&mut self) -> Peteu1W<PeteSpec> {
-        Peteu1W::new(self, 9)
+    pub fn peteu1(&mut self) -> PETEU1_W<PETE_SPEC> {
+        PETEU1_W::new(self, 9)
     }
     #[doc = "Bit 10 - Parity Error Trap Enable for USIC2 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peteu2(&mut self) -> Peteu2W<PeteSpec> {
-        Peteu2W::new(self, 10)
+    pub fn peteu2(&mut self) -> PETEU2_W<PETE_SPEC> {
+        PETEU2_W::new(self, 10)
     }
     #[doc = "Bit 12 - Parity Error Trap Enable for MultiCAN Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn petemc(&mut self) -> PetemcW<PeteSpec> {
-        PetemcW::new(self, 12)
+    pub fn petemc(&mut self) -> PETEMC_W<PETE_SPEC> {
+        PETEMC_W::new(self, 12)
     }
     #[doc = "Bit 13 - Parity Error Trap Enable for PMU Prefetch Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn petepprf(&mut self) -> PetepprfW<PeteSpec> {
-        PetepprfW::new(self, 13)
+    pub fn petepprf(&mut self) -> PETEPPRF_W<PETE_SPEC> {
+        PETEPPRF_W::new(self, 13)
     }
     #[doc = "Bit 16 - Parity Error Trap Enable for USB Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peteusb(&mut self) -> PeteusbW<PeteSpec> {
-        PeteusbW::new(self, 16)
+    pub fn peteusb(&mut self) -> PETEUSB_W<PETE_SPEC> {
+        PETEUSB_W::new(self, 16)
     }
     #[doc = "Bit 17 - Parity Error Trap Enable for ETH 0TX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peteeth0tx(&mut self) -> Peteeth0txW<PeteSpec> {
-        Peteeth0txW::new(self, 17)
+    pub fn peteeth0tx(&mut self) -> PETEETH0TX_W<PETE_SPEC> {
+        PETEETH0TX_W::new(self, 17)
     }
     #[doc = "Bit 18 - Parity Error Trap Enable for ETH0 RX Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peteeth0rx(&mut self) -> Peteeth0rxW<PeteSpec> {
-        Peteeth0rxW::new(self, 18)
+    pub fn peteeth0rx(&mut self) -> PETEETH0RX_W<PETE_SPEC> {
+        PETEETH0RX_W::new(self, 18)
     }
     #[doc = "Bit 19 - Parity Error Trap Enable for SDMMC SRAM 0 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn petesd0(&mut self) -> Petesd0W<PeteSpec> {
-        Petesd0W::new(self, 19)
+    pub fn petesd0(&mut self) -> PETESD0_W<PETE_SPEC> {
+        PETESD0_W::new(self, 19)
     }
     #[doc = "Bit 20 - Parity Error Trap Enable for SDMMC SRAM 1 Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn petesd1(&mut self) -> Petesd1W<PeteSpec> {
-        Petesd1W::new(self, 20)
+    pub fn petesd1(&mut self) -> PETESD1_W<PETE_SPEC> {
+        PETESD1_W::new(self, 20)
     }
     #[doc = "Bit 24 - Parity Error Trap Enable for ECAT0 SRAM Memory"]
     #[inline(always)]
     #[must_use]
-    pub fn peteecat0(&mut self) -> Peteecat0W<PeteSpec> {
-        Peteecat0W::new(self, 24)
+    pub fn peteecat0(&mut self) -> PETEECAT0_W<PETE_SPEC> {
+        PETEECAT0_W::new(self, 24)
     }
 }
 #[doc = "Parity Error Trap Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pete::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pete::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
-pub struct PeteSpec;
-impl crate::RegisterSpec for PeteSpec {
+pub struct PETE_SPEC;
+impl crate::RegisterSpec for PETE_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [`pete::R`](R) reader structure"]
-impl crate::Readable for PeteSpec {}
+impl crate::Readable for PETE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pete::W`](W) writer structure"]
-impl crate::Writable for PeteSpec {
+impl crate::Writable for PETE_SPEC {
     type Safety = crate::Unsafe;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PETE to value 0"]
-impl crate::Resettable for PeteSpec {
+impl crate::Resettable for PETE_SPEC {
     const RESET_VALUE: u32 = 0;
 }
