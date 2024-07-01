@@ -43,7 +43,7 @@ impl R {
         EBU_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "Peripheral 3 Clock Gating Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cgatstat3::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Peripheral 3 Clock Gating Status\n\nYou can [`read`](crate::Reg::read) this register and get [`cgatstat3::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CGATSTAT3_SPEC;
 impl crate::RegisterSpec for CGATSTAT3_SPEC {
     type Ux = u32;

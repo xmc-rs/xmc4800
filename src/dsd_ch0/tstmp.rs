@@ -23,7 +23,7 @@ impl R {
         NVALCNT_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
 }
-#[doc = "Time-Stamp Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tstmp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Time-Stamp Register\n\nYou can [`read`](crate::Reg::read) this register and get [`tstmp::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TSTMP_SPEC;
 impl crate::RegisterSpec for TSTMP_SPEC {
     type Ux = u32;

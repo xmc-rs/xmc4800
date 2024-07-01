@@ -43,7 +43,7 @@ impl R {
         RB_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "POSIF Run Bit Status\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`prun::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "POSIF Run Bit Status\n\nYou can [`read`](crate::Reg::read) this register and get [`prun::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRUN_SPEC;
 impl crate::RegisterSpec for PRUN_SPEC {
     type Ux = u32;

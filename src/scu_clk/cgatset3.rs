@@ -39,7 +39,7 @@ impl W {
         EBU_W::new(self, 2)
     }
 }
-#[doc = "Peripheral 3 Clock Gating Set\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cgatset3::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Peripheral 3 Clock Gating Set\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cgatset3::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CGATSET3_SPEC;
 impl crate::RegisterSpec for CGATSET3_SPEC {
     type Ux = u32;

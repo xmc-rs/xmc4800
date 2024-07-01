@@ -18,7 +18,7 @@ impl W {
         MPC_W::new(self, 1)
     }
 }
-#[doc = "Multi-Channel Pattern Control clear\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mcmc::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Multi-Channel Pattern Control clear\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mcmc::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MCMC_SPEC;
 impl crate::RegisterSpec for MCMC_SPEC {
     type Ux = u32;

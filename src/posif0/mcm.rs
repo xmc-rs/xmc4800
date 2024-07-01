@@ -9,7 +9,7 @@ impl R {
         MCMP_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Multi-Channel Pattern\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mcm::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Multi-Channel Pattern\n\nYou can [`read`](crate::Reg::read) this register and get [`mcm::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MCM_SPEC;
 impl crate::RegisterSpec for MCM_SPEC {
     type Ux = u32;

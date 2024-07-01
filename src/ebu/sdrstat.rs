@@ -125,7 +125,7 @@ impl R {
         SDERR_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
-#[doc = "EBU SDRAM Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sdrstat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "EBU SDRAM Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sdrstat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SDRSTAT_SPEC;
 impl crate::RegisterSpec for SDRSTAT_SPEC {
     type Ux = u32;
