@@ -51,7 +51,7 @@ impl R {
         LPP2_R::new(((self.bits >> 22) & 0x3f) as u8)
     }
 }
-#[doc = "POSIF Debug register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdbg::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "POSIF Debug register\n\nYou can [`read`](crate::Reg::read) this register and get [`pdbg::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PDBG_SPEC;
 impl crate::RegisterSpec for PDBG_SPEC {
     type Ux = u32;

@@ -371,7 +371,7 @@ impl R {
         PCLKS_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
-#[doc = "POSIF Interrupt Flags\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pflg::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "POSIF Interrupt Flags\n\nYou can [`read`](crate::Reg::read) this register and get [`pflg::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PFLG_SPEC;
 impl crate::RegisterSpec for PFLG_SPEC {
     type Ux = u32;

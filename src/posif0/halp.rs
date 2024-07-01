@@ -16,7 +16,7 @@ impl R {
         HEP_R::new(((self.bits >> 3) & 7) as u8)
     }
 }
-#[doc = "Hall Sensor Patterns\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`halp::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Hall Sensor Patterns\n\nYou can [`read`](crate::Reg::read) this register and get [`halp::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HALP_SPEC;
 impl crate::RegisterSpec for HALP_SPEC {
     type Ux = u32;

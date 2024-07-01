@@ -39,7 +39,7 @@ impl W {
         EBURS_W::new(self, 2)
     }
 }
-#[doc = "RCU Peripheral 3 Reset Clear\n\nYou can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prclr3::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "RCU Peripheral 3 Reset Clear\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`prclr3::W`](W). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRCLR3_SPEC;
 impl crate::RegisterSpec for PRCLR3_SPEC {
     type Ux = u32;

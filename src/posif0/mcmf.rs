@@ -43,7 +43,7 @@ impl R {
         MSS_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Multi-Channel Pattern Control flag\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mcmf::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Multi-Channel Pattern Control flag\n\nYou can [`read`](crate::Reg::read) this register and get [`mcmf::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MCMF_SPEC;
 impl crate::RegisterSpec for MCMF_SPEC {
     type Ux = u32;

@@ -9,7 +9,7 @@ impl R {
         RESULT_R::new((self.bits & 0xffff) as u16)
     }
 }
-#[doc = "Result Register, Main Filter\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`resm::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "Result Register, Main Filter\n\nYou can [`read`](crate::Reg::read) this register and get [`resm::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RESM_SPEC;
 impl crate::RegisterSpec for RESM_SPEC {
     type Ux = u32;

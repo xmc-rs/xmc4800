@@ -1158,7 +1158,7 @@ impl W {
         PCLSEL_W::new(self, 28)
     }
 }
-#[doc = "POSIF Interrupt Enable\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pflge::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pflge::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+#[doc = "POSIF Interrupt Enable\n\nYou can [`read`](crate::Reg::read) this register and get [`pflge::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pflge::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PFLGE_SPEC;
 impl crate::RegisterSpec for PFLGE_SPEC {
     type Ux = u32;
