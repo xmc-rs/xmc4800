@@ -279,13 +279,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Rectification Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rfen(&mut self) -> RFEN_W<RECTCFG_SPEC> {
         RFEN_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Sign Source"]
     #[inline(always)]
-    #[must_use]
     pub fn ssrc(&mut self) -> SSRC_W<RECTCFG_SPEC> {
         SSRC_W::new(self, 4)
     }

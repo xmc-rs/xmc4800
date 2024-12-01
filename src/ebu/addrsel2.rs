@@ -181,19 +181,16 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Memory Region Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn regenab(&mut self) -> REGENAB_W<ADDRSEL2_SPEC> {
         REGENAB_W::new(self, 0)
     }
     #[doc = "Bit 1 - Alternate Region Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn altenab(&mut self) -> ALTENAB_W<ADDRSEL2_SPEC> {
         ALTENAB_W::new(self, 1)
     }
     #[doc = "Bit 2 - Memory Region Write Protect"]
     #[inline(always)]
-    #[must_use]
     pub fn wprot(&mut self) -> WPROT_W<ADDRSEL2_SPEC> {
         WPROT_W::new(self, 2)
     }

@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Request Source for Line 8"]
     #[inline(always)]
-    #[must_use]
     pub fn rs8(&mut self) -> RS8_W<SRSEL1_SPEC> {
         RS8_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Request Source for Line 9"]
     #[inline(always)]
-    #[must_use]
     pub fn rs9(&mut self) -> RS9_W<SRSEL1_SPEC> {
         RS9_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - Request Source for Line 10"]
     #[inline(always)]
-    #[must_use]
     pub fn rs10(&mut self) -> RS10_W<SRSEL1_SPEC> {
         RS10_W::new(self, 8)
     }
     #[doc = "Bits 12:15 - Request Source for Line 11"]
     #[inline(always)]
-    #[must_use]
     pub fn rs11(&mut self) -> RS11_W<SRSEL1_SPEC> {
         RS11_W::new(self, 12)
     }

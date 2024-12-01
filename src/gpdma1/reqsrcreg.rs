@@ -167,49 +167,41 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Source request for channel 0"]
     #[inline(always)]
-    #[must_use]
     pub fn ch0(&mut self) -> CH0_W<REQSRCREG_SPEC> {
         CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Source request for channel 1"]
     #[inline(always)]
-    #[must_use]
     pub fn ch1(&mut self) -> CH1_W<REQSRCREG_SPEC> {
         CH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Source request for channel 2"]
     #[inline(always)]
-    #[must_use]
     pub fn ch2(&mut self) -> CH2_W<REQSRCREG_SPEC> {
         CH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Source request for channel 3"]
     #[inline(always)]
-    #[must_use]
     pub fn ch3(&mut self) -> CH3_W<REQSRCREG_SPEC> {
         CH3_W::new(self, 3)
     }
     #[doc = "Bit 8 - Source request write enable for channel 0"]
     #[inline(always)]
-    #[must_use]
     pub fn we_ch0(&mut self) -> WE_CH0_W<REQSRCREG_SPEC> {
         WE_CH0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Source request write enable for channel 1"]
     #[inline(always)]
-    #[must_use]
     pub fn we_ch1(&mut self) -> WE_CH1_W<REQSRCREG_SPEC> {
         WE_CH1_W::new(self, 9)
     }
     #[doc = "Bit 10 - Source request write enable for channel 2"]
     #[inline(always)]
-    #[must_use]
     pub fn we_ch2(&mut self) -> WE_CH2_W<REQSRCREG_SPEC> {
         WE_CH2_W::new(self, 10)
     }
     #[doc = "Bit 11 - Source request write enable for channel 3"]
     #[inline(always)]
-    #[must_use]
     pub fn we_ch3(&mut self) -> WE_CH3_W<REQSRCREG_SPEC> {
         WE_CH3_W::new(self, 11)
     }

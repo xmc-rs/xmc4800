@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Lower Boundary Value for Limit Checking"]
     #[inline(always)]
-    #[must_use]
     pub fn boundaryl(&mut self) -> BOUNDARYL_W<BOUNDSEL_SPEC> {
         BOUNDARYL_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - Upper Boundary Value for Limit Checking"]
     #[inline(always)]
-    #[must_use]
     pub fn boundaryu(&mut self) -> BOUNDARYU_W<BOUNDSEL_SPEC> {
         BOUNDARYU_W::new(self, 16)
     }

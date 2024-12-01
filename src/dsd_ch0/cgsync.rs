@@ -39,13 +39,11 @@ impl R {
 impl W {
     #[doc = "Bits 16:23 - Sign Delay Value for Positive Halfwave"]
     #[inline(always)]
-    #[must_use]
     pub fn sdpos(&mut self) -> SDPOS_W<CGSYNC_SPEC> {
         SDPOS_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Sign Delay Value for Negative Halfwave"]
     #[inline(always)]
-    #[must_use]
     pub fn sdneg(&mut self) -> SDNEG_W<CGSYNC_SPEC> {
         SDNEG_W::new(self, 24)
     }

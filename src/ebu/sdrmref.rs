@@ -102,55 +102,46 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Refresh counter period"]
     #[inline(always)]
-    #[must_use]
     pub fn refreshc(&mut self) -> REFRESHC_W<SDRMREF_SPEC> {
         REFRESHC_W::new(self, 0)
     }
     #[doc = "Bits 6:8 - Number of refresh commands"]
     #[inline(always)]
-    #[must_use]
     pub fn refreshr(&mut self) -> REFRESHR_W<SDRMREF_SPEC> {
         REFRESHR_W::new(self, 6)
     }
     #[doc = "Bit 10 - Self Refresh Exit (Power Up)."]
     #[inline(always)]
-    #[must_use]
     pub fn selfrex(&mut self) -> SELFREX_W<SDRMREF_SPEC> {
         SELFREX_W::new(self, 10)
     }
     #[doc = "Bit 12 - Self Refresh Entry"]
     #[inline(always)]
-    #[must_use]
     pub fn selfren(&mut self) -> SELFREN_W<SDRMREF_SPEC> {
         SELFREN_W::new(self, 12)
     }
     #[doc = "Bit 13 - Automatic Self Refresh"]
     #[inline(always)]
-    #[must_use]
     pub fn autoselfr(&mut self) -> AUTOSELFR_W<SDRMREF_SPEC> {
         AUTOSELFR_W::new(self, 13)
     }
     #[doc = "Bits 14:15 - Extended Refresh Counter Period"]
     #[inline(always)]
-    #[must_use]
     pub fn erfshc(&mut self) -> ERFSHC_W<SDRMREF_SPEC> {
         ERFSHC_W::new(self, 14)
     }
     #[doc = "Bits 16:23 - Self Refresh Exit Delay"]
     #[inline(always)]
-    #[must_use]
     pub fn selfrex_dly(&mut self) -> SELFREX_DLY_W<SDRMREF_SPEC> {
         SELFREX_DLY_W::new(self, 16)
     }
     #[doc = "Bit 24 - Auto Refresh on Self refresh Exit"]
     #[inline(always)]
-    #[must_use]
     pub fn arfsh(&mut self) -> ARFSH_W<SDRMREF_SPEC> {
         ARFSH_W::new(self, 24)
     }
     #[doc = "Bits 25:27 - Delay on Power Down Exit"]
     #[inline(always)]
-    #[must_use]
     pub fn res_dly(&mut self) -> RES_DLY_W<SDRMREF_SPEC> {
         RES_DLY_W::new(self, 25)
     }

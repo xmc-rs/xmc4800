@@ -458,25 +458,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - EBU Disable Request Bit"]
     #[inline(always)]
-    #[must_use]
     pub fn disr(&mut self) -> DISR_W<CLC_SPEC> {
         DISR_W::new(self, 0)
     }
     #[doc = "Bit 16 - EBU Clocking Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn sync(&mut self) -> SYNC_W<CLC_SPEC> {
         SYNC_W::new(self, 16)
     }
     #[doc = "Bit 17 - DIV2 Clocking Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn div2(&mut self) -> DIV2_W<CLC_SPEC> {
         DIV2_W::new(self, 17)
     }
     #[doc = "Bits 18:19 - EBU Clock Divide Ratio"]
     #[inline(always)]
-    #[must_use]
     pub fn ebudiv(&mut self) -> EBUDIV_W<CLC_SPEC> {
         EBUDIV_W::new(self, 18)
     }

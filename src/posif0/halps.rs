@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Shadow Hall Current Pattern"]
     #[inline(always)]
-    #[must_use]
     pub fn hcps(&mut self) -> HCPS_W<HALPS_SPEC> {
         HCPS_W::new(self, 0)
     }
     #[doc = "Bits 3:5 - Shadow Hall expected Pattern"]
     #[inline(always)]
-    #[must_use]
     pub fn heps(&mut self) -> HEPS_W<HALPS_SPEC> {
         HEPS_W::new(self, 3)
     }

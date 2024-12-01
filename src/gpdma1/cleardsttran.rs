@@ -127,25 +127,21 @@ where
 impl W {
     #[doc = "Bit 0 - Clear Interrupt Status and Raw Status for channel 0"]
     #[inline(always)]
-    #[must_use]
     pub fn ch0(&mut self) -> CH0_W<CLEARDSTTRAN_SPEC> {
         CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Interrupt Status and Raw Status for channel 1"]
     #[inline(always)]
-    #[must_use]
     pub fn ch1(&mut self) -> CH1_W<CLEARDSTTRAN_SPEC> {
         CH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Clear Interrupt Status and Raw Status for channel 2"]
     #[inline(always)]
-    #[must_use]
     pub fn ch2(&mut self) -> CH2_W<CLEARDSTTRAN_SPEC> {
         CH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Clear Interrupt Status and Raw Status for channel 3"]
     #[inline(always)]
-    #[must_use]
     pub fn ch3(&mut self) -> CH3_W<CLEARDSTTRAN_SPEC> {
         CH3_W::new(self, 3)
     }

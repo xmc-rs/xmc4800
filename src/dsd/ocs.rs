@@ -154,13 +154,11 @@ impl R {
 impl W {
     #[doc = "Bits 24:27 - OCDS Suspend Control"]
     #[inline(always)]
-    #[must_use]
     pub fn sus(&mut self) -> SUS_W<OCS_SPEC> {
         SUS_W::new(self, 24)
     }
     #[doc = "Bit 28 - SUS Write Protection"]
     #[inline(always)]
-    #[must_use]
     pub fn sus_p(&mut self) -> SUS_P_W<OCS_SPEC> {
         SUS_P_W::new(self, 28)
     }

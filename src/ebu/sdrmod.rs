@@ -294,43 +294,36 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Burst length"]
     #[inline(always)]
-    #[must_use]
     pub fn burstl(&mut self) -> BURSTL_W<SDRMOD_SPEC> {
         BURSTL_W::new(self, 0)
     }
     #[doc = "Bit 3 - Burst type"]
     #[inline(always)]
-    #[must_use]
     pub fn btyp(&mut self) -> BTYP_W<SDRMOD_SPEC> {
         BTYP_W::new(self, 3)
     }
     #[doc = "Bits 4:6 - CAS latency"]
     #[inline(always)]
-    #[must_use]
     pub fn caslat(&mut self) -> CASLAT_W<SDRMOD_SPEC> {
         CASLAT_W::new(self, 4)
     }
     #[doc = "Bits 7:13 - Operation Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn opmode(&mut self) -> OPMODE_W<SDRMOD_SPEC> {
         OPMODE_W::new(self, 7)
     }
     #[doc = "Bit 15 - SDRAM coldstart"]
     #[inline(always)]
-    #[must_use]
     pub fn coldstart(&mut self) -> COLDSTART_W<SDRMOD_SPEC> {
         COLDSTART_W::new(self, 15)
     }
     #[doc = "Bits 16:27 - Extended Operation Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn xopm(&mut self) -> XOPM_W<SDRMOD_SPEC> {
         XOPM_W::new(self, 16)
     }
     #[doc = "Bits 28:31 - Extended Operation Bank Select"]
     #[inline(always)]
-    #[must_use]
     pub fn xba(&mut self) -> XBA_W<SDRMOD_SPEC> {
         XBA_W::new(self, 28)
     }

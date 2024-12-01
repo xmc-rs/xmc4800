@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Raw Interrupt Status for channel 0"]
     #[inline(always)]
-    #[must_use]
     pub fn ch0(&mut self) -> CH0_W<RAWBLOCK_SPEC> {
         CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Raw Interrupt Status for channel 1"]
     #[inline(always)]
-    #[must_use]
     pub fn ch1(&mut self) -> CH1_W<RAWBLOCK_SPEC> {
         CH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Raw Interrupt Status for channel 2"]
     #[inline(always)]
-    #[must_use]
     pub fn ch2(&mut self) -> CH2_W<RAWBLOCK_SPEC> {
         CH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Raw Interrupt Status for channel 3"]
     #[inline(always)]
-    #[must_use]
     pub fn ch3(&mut self) -> CH3_W<RAWBLOCK_SPEC> {
         CH3_W::new(self, 3)
     }

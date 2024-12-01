@@ -616,55 +616,46 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Input Data Source Select"]
     #[inline(always)]
-    #[must_use]
     pub fn dsrc(&mut self) -> DSRC_W<DICFG_SPEC> {
         DSRC_W::new(self, 0)
     }
     #[doc = "Bit 7 - Write Control for Data Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn dswc(&mut self) -> DSWC_W<DICFG_SPEC> {
         DSWC_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Integrator Trigger Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn itrmode(&mut self) -> ITRMODE_W<DICFG_SPEC> {
         ITRMODE_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Timestamp Trigger Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn tstrmode(&mut self) -> TSTRMODE_W<DICFG_SPEC> {
         TSTRMODE_W::new(self, 10)
     }
     #[doc = "Bits 12:14 - Trigger Select"]
     #[inline(always)]
-    #[must_use]
     pub fn trsel(&mut self) -> TRSEL_W<DICFG_SPEC> {
         TRSEL_W::new(self, 12)
     }
     #[doc = "Bit 15 - Write Control for Trigger Parameters"]
     #[inline(always)]
-    #[must_use]
     pub fn trwc(&mut self) -> TRWC_W<DICFG_SPEC> {
         TRWC_W::new(self, 15)
     }
     #[doc = "Bits 16:19 - Sample Clock Source Select"]
     #[inline(always)]
-    #[must_use]
     pub fn csrc(&mut self) -> CSRC_W<DICFG_SPEC> {
         CSRC_W::new(self, 16)
     }
     #[doc = "Bits 20:23 - Data Strobe Generatoion Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn strobe(&mut self) -> STROBE_W<DICFG_SPEC> {
         STROBE_W::new(self, 20)
     }
     #[doc = "Bit 31 - Write Control for Strobe/Clock Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn scwc(&mut self) -> SCWC_W<DICFG_SPEC> {
         SCWC_W::new(self, 31)
     }

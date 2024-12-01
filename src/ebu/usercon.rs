@@ -139,19 +139,16 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Disable Internal Pipelining"]
     #[inline(always)]
-    #[must_use]
     pub fn dip(&mut self) -> DIP_W<USERCON_SPEC> {
         DIP_W::new(self, 0)
     }
     #[doc = "Bits 16:24 - Address Pins to GPIO Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn addio(&mut self) -> ADDIO_W<USERCON_SPEC> {
         ADDIO_W::new(self, 16)
     }
     #[doc = "Bit 25 - ADV Pin to GPIO Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn advio(&mut self) -> ADVIO_W<USERCON_SPEC> {
         ADVIO_W::new(self, 25)
     }

@@ -9,19 +9,16 @@ pub type STMR_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Multi-Channel Pattern Update Enable Set"]
     #[inline(always)]
-    #[must_use]
     pub fn mnps(&mut self) -> MNPS_W<MCMS_SPEC> {
         MNPS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Hall Pattern Shadow Transfer Request"]
     #[inline(always)]
-    #[must_use]
     pub fn sthr(&mut self) -> STHR_W<MCMS_SPEC> {
         STHR_W::new(self, 1)
     }
     #[doc = "Bit 2 - Multi-Channel Shadow Transfer Request"]
     #[inline(always)]
-    #[must_use]
     pub fn stmr(&mut self) -> STMR_W<MCMS_SPEC> {
         STMR_W::new(self, 2)
     }

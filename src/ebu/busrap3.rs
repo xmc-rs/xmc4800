@@ -757,55 +757,46 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Recovery Cycles between Different Regions"]
     #[inline(always)]
-    #[must_use]
     pub fn rddtacs(&mut self) -> RDDTACS_W<BUSRAP3_SPEC> {
         RDDTACS_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Recovery Cycles after Read Accesses"]
     #[inline(always)]
-    #[must_use]
     pub fn rdrecovc(&mut self) -> RDRECOVC_W<BUSRAP3_SPEC> {
         RDRECOVC_W::new(self, 4)
     }
     #[doc = "Bits 7:11 - Programmed Wait States for read accesses"]
     #[inline(always)]
-    #[must_use]
     pub fn waitrdc(&mut self) -> WAITRDC_W<BUSRAP3_SPEC> {
         WAITRDC_W::new(self, 7)
     }
     #[doc = "Bits 12:15 - Data Hold Cycles for Read Accesses"]
     #[inline(always)]
-    #[must_use]
     pub fn datac(&mut self) -> DATAC_W<BUSRAP3_SPEC> {
         DATAC_W::new(self, 12)
     }
     #[doc = "Bits 16:17 - Frequency of external clock at pin BFCLKO"]
     #[inline(always)]
-    #[must_use]
     pub fn extclock(&mut self) -> EXTCLOCK_W<BUSRAP3_SPEC> {
         EXTCLOCK_W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Extended data"]
     #[inline(always)]
-    #[must_use]
     pub fn extdata(&mut self) -> EXTDATA_W<BUSRAP3_SPEC> {
         EXTDATA_W::new(self, 18)
     }
     #[doc = "Bits 20:23 - Command Delay Cycles"]
     #[inline(always)]
-    #[must_use]
     pub fn cmddelay(&mut self) -> CMDDELAY_W<BUSRAP3_SPEC> {
         CMDDELAY_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Address Hold Cycles"]
     #[inline(always)]
-    #[must_use]
     pub fn aholdc(&mut self) -> AHOLDC_W<BUSRAP3_SPEC> {
         AHOLDC_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Address Cycles"]
     #[inline(always)]
-    #[must_use]
     pub fn addrc(&mut self) -> ADDRC_W<BUSRAP3_SPEC> {
         ADDRC_W::new(self, 28)
     }

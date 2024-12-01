@@ -300,25 +300,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Phase A Level selector"]
     #[inline(always)]
-    #[must_use]
     pub fn pals(&mut self) -> PALS_W<QDC_SPEC> {
         PALS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Phase B Level selector"]
     #[inline(always)]
-    #[must_use]
     pub fn pbls(&mut self) -> PBLS_W<QDC_SPEC> {
         PBLS_W::new(self, 1)
     }
     #[doc = "Bit 2 - Phase signals swap"]
     #[inline(always)]
-    #[must_use]
     pub fn phs(&mut self) -> PHS_W<QDC_SPEC> {
         PHS_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Index Marker generations control"]
     #[inline(always)]
-    #[must_use]
     pub fn icm(&mut self) -> ICM_W<QDC_SPEC> {
         ICM_W::new(self, 4)
     }

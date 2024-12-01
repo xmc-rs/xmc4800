@@ -189,13 +189,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Quadrature Mode Suspend Config"]
     #[inline(always)]
-    #[must_use]
     pub fn qsus(&mut self) -> QSUS_W<PSUS_SPEC> {
         QSUS_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Multi-Channel Mode Suspend Config"]
     #[inline(always)]
-    #[must_use]
     pub fn msus(&mut self) -> MSUS_W<PSUS_SPEC> {
         MSUS_W::new(self, 2)
     }
