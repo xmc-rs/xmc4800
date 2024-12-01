@@ -34,7 +34,6 @@ where
 impl W {
     #[doc = "Bit 2 - EBU Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ebu(&mut self) -> EBU_W<CGATCLR3_SPEC> {
         EBU_W::new(self, 2)
     }

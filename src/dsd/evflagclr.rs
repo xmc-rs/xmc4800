@@ -251,49 +251,41 @@ where
 impl W {
     #[doc = "Bit 0 - Result Event Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn resec0(&mut self) -> RESEC0_W<EVFLAGCLR_SPEC> {
         RESEC0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Result Event Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn resec1(&mut self) -> RESEC1_W<EVFLAGCLR_SPEC> {
         RESEC1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Result Event Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn resec2(&mut self) -> RESEC2_W<EVFLAGCLR_SPEC> {
         RESEC2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Result Event Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn resec3(&mut self) -> RESEC3_W<EVFLAGCLR_SPEC> {
         RESEC3_W::new(self, 3)
     }
     #[doc = "Bit 16 - Alarm Event Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn alec0(&mut self) -> ALEC0_W<EVFLAGCLR_SPEC> {
         ALEC0_W::new(self, 16)
     }
     #[doc = "Bit 17 - Alarm Event Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn alec1(&mut self) -> ALEC1_W<EVFLAGCLR_SPEC> {
         ALEC1_W::new(self, 17)
     }
     #[doc = "Bit 18 - Alarm Event Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn alec2(&mut self) -> ALEC2_W<EVFLAGCLR_SPEC> {
         ALEC2_W::new(self, 18)
     }
     #[doc = "Bit 19 - Alarm Event Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn alec3(&mut self) -> ALEC3_W<EVFLAGCLR_SPEC> {
         ALEC3_W::new(self, 19)
     }

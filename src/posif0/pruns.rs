@@ -5,7 +5,6 @@ pub type SRB_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Set Run bit"]
     #[inline(always)]
-    #[must_use]
     pub fn srb(&mut self) -> SRB_W<PRUNS_SPEC> {
         SRB_W::new(self, 0)
     }

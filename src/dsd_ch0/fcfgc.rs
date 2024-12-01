@@ -246,31 +246,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - CIC Filter (Main Chain) Decimation Factor"]
     #[inline(always)]
-    #[must_use]
     pub fn cfmdf(&mut self) -> CFMDF_W<FCFGC_SPEC> {
         CFMDF_W::new(self, 0)
     }
     #[doc = "Bits 8:9 - CIC Filter (Main Chain) Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn cfmc(&mut self) -> CFMC_W<FCFGC_SPEC> {
         CFMC_W::new(self, 8)
     }
     #[doc = "Bit 10 - CIC Filter Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn cfen(&mut self) -> CFEN_W<FCFGC_SPEC> {
         CFEN_W::new(self, 10)
     }
     #[doc = "Bits 14:15 - Service Request Generation Main Chain"]
     #[inline(always)]
-    #[must_use]
     pub fn srgm(&mut self) -> SRGM_W<FCFGC_SPEC> {
         SRGM_W::new(self, 14)
     }
     #[doc = "Bits 16:23 - CIC Filter (Main Chain) Start Value"]
     #[inline(always)]
-    #[must_use]
     pub fn cfmsv(&mut self) -> CFMSV_W<FCFGC_SPEC> {
         CFMSV_W::new(self, 16)
     }

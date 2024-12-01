@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Offset Value"]
     #[inline(always)]
-    #[must_use]
     pub fn offset(&mut self) -> OFFSET_W<OFFM_SPEC> {
         OFFSET_W::new(self, 0)
     }

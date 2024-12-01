@@ -239,25 +239,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Channel 0 Run Control"]
     #[inline(always)]
-    #[must_use]
     pub fn ch0run(&mut self) -> CH0RUN_W<GLOBRC_SPEC> {
         CH0RUN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel 1 Run Control"]
     #[inline(always)]
-    #[must_use]
     pub fn ch1run(&mut self) -> CH1RUN_W<GLOBRC_SPEC> {
         CH1RUN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channel 2 Run Control"]
     #[inline(always)]
-    #[must_use]
     pub fn ch2run(&mut self) -> CH2RUN_W<GLOBRC_SPEC> {
         CH2RUN_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channel 3 Run Control"]
     #[inline(always)]
-    #[must_use]
     pub fn ch3run(&mut self) -> CH3RUN_W<GLOBRC_SPEC> {
         CH3RUN_W::new(self, 3)
     }

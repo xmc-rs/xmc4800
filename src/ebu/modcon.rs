@@ -456,55 +456,46 @@ impl R {
 impl W {
     #[doc = "Bit 2 - SDRAM Tristate"]
     #[inline(always)]
-    #[must_use]
     pub fn sdtri(&mut self) -> SDTRI_W<MODCON_SPEC> {
         SDTRI_W::new(self, 2)
     }
     #[doc = "Bit 4 - External Bus Lock Control"]
     #[inline(always)]
-    #[must_use]
     pub fn extlock(&mut self) -> EXTLOCK_W<MODCON_SPEC> {
         EXTLOCK_W::new(self, 4)
     }
     #[doc = "Bit 5 - Arbitration Signal Synchronization Control"]
     #[inline(always)]
-    #[must_use]
     pub fn arbsync(&mut self) -> ARBSYNC_W<MODCON_SPEC> {
         ARBSYNC_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Arbitration Mode Selection"]
     #[inline(always)]
-    #[must_use]
     pub fn arbmode(&mut self) -> ARBMODE_W<MODCON_SPEC> {
         ARBMODE_W::new(self, 6)
     }
     #[doc = "Bits 8:15 - Bus Time-out Control"]
     #[inline(always)]
-    #[must_use]
     pub fn timeoutc(&mut self) -> TIMEOUTC_W<MODCON_SPEC> {
         TIMEOUTC_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Lock Timeout Counter Preload"]
     #[inline(always)]
-    #[must_use]
     pub fn locktimeout(&mut self) -> LOCKTIMEOUT_W<MODCON_SPEC> {
         LOCKTIMEOUT_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - Global Chip Select Enable"]
     #[inline(always)]
-    #[must_use]
     pub fn globalcs(&mut self) -> GLOBALCS_W<MODCON_SPEC> {
         GLOBALCS_W::new(self, 24)
     }
     #[doc = "Bit 28 - Access Inhibit request"]
     #[inline(always)]
-    #[must_use]
     pub fn accsinh(&mut self) -> ACCSINH_W<MODCON_SPEC> {
         ACCSINH_W::new(self, 28)
     }
     #[doc = "Bit 31 - ALE Mode"]
     #[inline(always)]
-    #[must_use]
     pub fn ale(&mut self) -> ALE_W<MODCON_SPEC> {
         ALE_W::new(self, 31)
     }

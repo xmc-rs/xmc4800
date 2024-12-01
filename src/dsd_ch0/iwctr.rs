@@ -147,25 +147,21 @@ impl R {
 impl W {
     #[doc = "Bits 12:15 - Number of Integration Cycles"]
     #[inline(always)]
-    #[must_use]
     pub fn repval(&mut self) -> REPVAL_W<IWCTR_SPEC> {
         REPVAL_W::new(self, 12)
     }
     #[doc = "Bits 16:21 - Number of Values Discarded"]
     #[inline(always)]
-    #[must_use]
     pub fn nvaldis(&mut self) -> NVALDIS_W<IWCTR_SPEC> {
         NVALDIS_W::new(self, 16)
     }
     #[doc = "Bit 23 - Integration Window SIze"]
     #[inline(always)]
-    #[must_use]
     pub fn iws(&mut self) -> IWS_W<IWCTR_SPEC> {
         IWS_W::new(self, 23)
     }
     #[doc = "Bits 24:29 - Number of Values Integrated"]
     #[inline(always)]
-    #[must_use]
     pub fn nvalint(&mut self) -> NVALINT_W<IWCTR_SPEC> {
         NVALINT_W::new(self, 24)
     }

@@ -7,13 +7,11 @@ pub type CSM_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Clear Run bit"]
     #[inline(always)]
-    #[must_use]
     pub fn crb(&mut self) -> CRB_W<PRUNC_SPEC> {
         CRB_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Current internal status"]
     #[inline(always)]
-    #[must_use]
     pub fn csm(&mut self) -> CSM_W<PRUNC_SPEC> {
         CSM_W::new(self, 1)
     }

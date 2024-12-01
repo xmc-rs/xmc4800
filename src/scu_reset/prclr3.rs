@@ -34,7 +34,6 @@ where
 impl W {
     #[doc = "Bit 2 - EBU Reset Assert"]
     #[inline(always)]
-    #[must_use]
     pub fn eburs(&mut self) -> EBURS_W<PRCLR3_SPEC> {
         EBURS_W::new(self, 2)
     }

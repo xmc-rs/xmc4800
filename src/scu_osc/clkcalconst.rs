@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Clock Calibration Constant Value"]
     #[inline(always)]
-    #[must_use]
     pub fn calibconst(&mut self) -> CALIBCONST_W<CLKCALCONST_SPEC> {
         CALIBCONST_W::new(self, 0)
     }

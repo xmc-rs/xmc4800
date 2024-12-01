@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Shadow Multi-Channel Pattern"]
     #[inline(always)]
-    #[must_use]
     pub fn mcmps(&mut self) -> MCMPS_W<MCSM_SPEC> {
         MCMPS_W::new(self, 0)
     }

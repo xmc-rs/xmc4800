@@ -72,7 +72,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Modulator Clock Select"]
     #[inline(always)]
-    #[must_use]
     pub fn mcsel(&mut self) -> MCSEL_W<GLOBCFG_SPEC> {
         MCSEL_W::new(self, 0)
     }

@@ -839,55 +839,46 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Recovery Cycles between Different Regions"]
     #[inline(always)]
-    #[must_use]
     pub fn wrdtacs(&mut self) -> WRDTACS_W<BUSWAP2_SPEC> {
         WRDTACS_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Recovery Cycles after Write Accesses"]
     #[inline(always)]
-    #[must_use]
     pub fn wrrecovc(&mut self) -> WRRECOVC_W<BUSWAP2_SPEC> {
         WRRECOVC_W::new(self, 4)
     }
     #[doc = "Bits 7:11 - Programmed Wait States for write accesses"]
     #[inline(always)]
-    #[must_use]
     pub fn waitwrc(&mut self) -> WAITWRC_W<BUSWAP2_SPEC> {
         WAITWRC_W::new(self, 7)
     }
     #[doc = "Bits 12:15 - Data Hold Cycles for Write Accesses"]
     #[inline(always)]
-    #[must_use]
     pub fn datac(&mut self) -> DATAC_W<BUSWAP2_SPEC> {
         DATAC_W::new(self, 12)
     }
     #[doc = "Bits 16:17 - Frequency of external clock at pin BFCLKO"]
     #[inline(always)]
-    #[must_use]
     pub fn extclock(&mut self) -> EXTCLOCK_W<BUSWAP2_SPEC> {
         EXTCLOCK_W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Extended data"]
     #[inline(always)]
-    #[must_use]
     pub fn extdata(&mut self) -> EXTDATA_W<BUSWAP2_SPEC> {
         EXTDATA_W::new(self, 18)
     }
     #[doc = "Bits 20:23 - Command Delay Cycles"]
     #[inline(always)]
-    #[must_use]
     pub fn cmddelay(&mut self) -> CMDDELAY_W<BUSWAP2_SPEC> {
         CMDDELAY_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Address Hold Cycles"]
     #[inline(always)]
-    #[must_use]
     pub fn aholdc(&mut self) -> AHOLDC_W<BUSWAP2_SPEC> {
         AHOLDC_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Address Cycles"]
     #[inline(always)]
-    #[must_use]
     pub fn addrc(&mut self) -> ADDRC_W<BUSWAP2_SPEC> {
         ADDRC_W::new(self, 28)
     }

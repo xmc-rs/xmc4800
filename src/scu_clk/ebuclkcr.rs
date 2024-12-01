@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - EBU Clock Divider Value"]
     #[inline(always)]
-    #[must_use]
     pub fn ebudiv(&mut self) -> EBUDIV_W<EBUCLKCR_SPEC> {
         EBUDIV_W::new(self, 0)
     }

@@ -129,13 +129,11 @@ impl R {
 impl W {
     #[doc = "Bits 16:19 - Divider Factor for Modulator Clock"]
     #[inline(always)]
-    #[must_use]
     pub fn divm(&mut self) -> DIVM_W<MODCFG_SPEC> {
         DIVM_W::new(self, 16)
     }
     #[doc = "Bit 23 - Write Control for Divider Factor"]
     #[inline(always)]
-    #[must_use]
     pub fn dwc(&mut self) -> DWC_W<MODCFG_SPEC> {
         DWC_W::new(self, 23)
     }

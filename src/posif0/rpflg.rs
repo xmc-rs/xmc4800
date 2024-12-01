@@ -21,55 +21,46 @@ pub type RPCLK_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Correct Hall Event flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rche(&mut self) -> RCHE_W<RPFLG_SPEC> {
         RCHE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wrong Hall Event flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rwhe(&mut self) -> RWHE_W<RPFLG_SPEC> {
         RWHE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Hall Inputs Update Event flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rhie(&mut self) -> RHIE_W<RPFLG_SPEC> {
         RHIE_W::new(self, 2)
     }
     #[doc = "Bit 4 - Multi-Channel Pattern shadow transfer flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rmst(&mut self) -> RMST_W<RPFLG_SPEC> {
         RMST_W::new(self, 4)
     }
     #[doc = "Bit 8 - Quadrature Index flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rindx(&mut self) -> RINDX_W<RPFLG_SPEC> {
         RINDX_W::new(self, 8)
     }
     #[doc = "Bit 9 - Quadrature Phase Error flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rerr(&mut self) -> RERR_W<RPFLG_SPEC> {
         RERR_W::new(self, 9)
     }
     #[doc = "Bit 10 - Quadrature CLK flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rcnt(&mut self) -> RCNT_W<RPFLG_SPEC> {
         RCNT_W::new(self, 10)
     }
     #[doc = "Bit 11 - Quadrature Direction flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rdir(&mut self) -> RDIR_W<RPFLG_SPEC> {
         RDIR_W::new(self, 11)
     }
     #[doc = "Bit 12 - Quadrature period clock flag clear"]
     #[inline(always)]
-    #[must_use]
     pub fn rpclk(&mut self) -> RPCLK_W<RPFLG_SPEC> {
         RPCLK_W::new(self, 12)
     }

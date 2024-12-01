@@ -344,67 +344,56 @@ where
 impl W {
     #[doc = "Bit 0 - VADC Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn vadc(&mut self) -> VADC_W<CGATCLR0_SPEC> {
         VADC_W::new(self, 0)
     }
     #[doc = "Bit 1 - DSD Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn dsd(&mut self) -> DSD_W<CGATCLR0_SPEC> {
         DSD_W::new(self, 1)
     }
     #[doc = "Bit 2 - CCU40 Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ccu40(&mut self) -> CCU40_W<CGATCLR0_SPEC> {
         CCU40_W::new(self, 2)
     }
     #[doc = "Bit 3 - CCU41 Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ccu41(&mut self) -> CCU41_W<CGATCLR0_SPEC> {
         CCU41_W::new(self, 3)
     }
     #[doc = "Bit 4 - CCU42 Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ccu42(&mut self) -> CCU42_W<CGATCLR0_SPEC> {
         CCU42_W::new(self, 4)
     }
     #[doc = "Bit 7 - CCU80 Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ccu80(&mut self) -> CCU80_W<CGATCLR0_SPEC> {
         CCU80_W::new(self, 7)
     }
     #[doc = "Bit 8 - CCU81 Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn ccu81(&mut self) -> CCU81_W<CGATCLR0_SPEC> {
         CCU81_W::new(self, 8)
     }
     #[doc = "Bit 9 - POSIF0 Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn posif0(&mut self) -> POSIF0_W<CGATCLR0_SPEC> {
         POSIF0_W::new(self, 9)
     }
     #[doc = "Bit 10 - POSIF1 Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn posif1(&mut self) -> POSIF1_W<CGATCLR0_SPEC> {
         POSIF1_W::new(self, 10)
     }
     #[doc = "Bit 11 - USIC0 Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn usic0(&mut self) -> USIC0_W<CGATCLR0_SPEC> {
         USIC0_W::new(self, 11)
     }
     #[doc = "Bit 16 - ERU1 Gating Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn eru1(&mut self) -> ERU1_W<CGATCLR0_SPEC> {
         ERU1_W::new(self, 16)
     }

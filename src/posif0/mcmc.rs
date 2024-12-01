@@ -7,13 +7,11 @@ pub type MPC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Multi-Channel Pattern Update Enable Clear"]
     #[inline(always)]
-    #[must_use]
     pub fn mnpc(&mut self) -> MNPC_W<MCMC_SPEC> {
         MNPC_W::new(self, 0)
     }
     #[doc = "Bit 1 - Multi-Channel Pattern clear"]
     #[inline(always)]
-    #[must_use]
     pub fn mpc(&mut self) -> MPC_W<MCMC_SPEC> {
         MPC_W::new(self, 1)
     }

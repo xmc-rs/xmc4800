@@ -1260,97 +1260,81 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Function Selector"]
     #[inline(always)]
-    #[must_use]
     pub fn fsel(&mut self) -> FSEL_W<PCONF_SPEC> {
         FSEL_W::new(self, 0)
     }
     #[doc = "Bit 2 - Position Decoder Mode selection"]
     #[inline(always)]
-    #[must_use]
     pub fn qdcm(&mut self) -> QDCM_W<PCONF_SPEC> {
         QDCM_W::new(self, 2)
     }
     #[doc = "Bit 4 - Idle generation enable"]
     #[inline(always)]
-    #[must_use]
     pub fn hidg(&mut self) -> HIDG_W<PCONF_SPEC> {
         HIDG_W::new(self, 4)
     }
     #[doc = "Bit 5 - Multi-Channel Pattern SW update enable"]
     #[inline(always)]
-    #[must_use]
     pub fn mcue(&mut self) -> MCUE_W<PCONF_SPEC> {
         MCUE_W::new(self, 5)
     }
     #[doc = "Bits 8:9 - PhaseA/Hal input 1 selector"]
     #[inline(always)]
-    #[must_use]
     pub fn insel0(&mut self) -> INSEL0_W<PCONF_SPEC> {
         INSEL0_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - PhaseB/Hall input 2 selector"]
     #[inline(always)]
-    #[must_use]
     pub fn insel1(&mut self) -> INSEL1_W<PCONF_SPEC> {
         INSEL1_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Index/Hall input 3 selector"]
     #[inline(always)]
-    #[must_use]
     pub fn insel2(&mut self) -> INSEL2_W<PCONF_SPEC> {
         INSEL2_W::new(self, 12)
     }
     #[doc = "Bit 16 - Delay Pin selector"]
     #[inline(always)]
-    #[must_use]
     pub fn dsel(&mut self) -> DSEL_W<PCONF_SPEC> {
         DSEL_W::new(self, 16)
     }
     #[doc = "Bit 17 - Edge selector for the sampling trigger"]
     #[inline(always)]
-    #[must_use]
     pub fn spes(&mut self) -> SPES_W<PCONF_SPEC> {
         SPES_W::new(self, 17)
     }
     #[doc = "Bits 18:20 - Pattern update signal select"]
     #[inline(always)]
-    #[must_use]
     pub fn msets(&mut self) -> MSETS_W<PCONF_SPEC> {
         MSETS_W::new(self, 18)
     }
     #[doc = "Bit 21 - Multi-Channel pattern update trigger edge"]
     #[inline(always)]
-    #[must_use]
     pub fn mses(&mut self) -> MSES_W<PCONF_SPEC> {
         MSES_W::new(self, 21)
     }
     #[doc = "Bits 22:23 - PWM synchronization signal selector"]
     #[inline(always)]
-    #[must_use]
     pub fn msyns(&mut self) -> MSYNS_W<PCONF_SPEC> {
         MSYNS_W::new(self, 22)
     }
     #[doc = "Bits 24:25 - Wrong Hall Event selection"]
     #[inline(always)]
-    #[must_use]
     pub fn ewis(&mut self) -> EWIS_W<PCONF_SPEC> {
         EWIS_W::new(self, 24)
     }
     #[doc = "Bit 26 - External Wrong Hall Event enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ewie(&mut self) -> EWIE_W<PCONF_SPEC> {
         EWIE_W::new(self, 26)
     }
     #[doc = "Bit 27 - External Wrong Hall Event active level"]
     #[inline(always)]
-    #[must_use]
     pub fn ewil(&mut self) -> EWIL_W<PCONF_SPEC> {
         EWIL_W::new(self, 27)
     }
     #[doc = "Bits 28:30 - Low Pass Filters Configuration"]
     #[inline(always)]
-    #[must_use]
     pub fn lpc(&mut self) -> LPC_W<PCONF_SPEC> {
         LPC_W::new(self, 28)
     }
