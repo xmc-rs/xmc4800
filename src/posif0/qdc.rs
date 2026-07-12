@@ -300,22 +300,22 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Phase A Level selector"]
     #[inline(always)]
-    pub fn pals(&mut self) -> PALS_W<QDC_SPEC> {
+    pub fn pals(&mut self) -> PALS_W<'_, QDC_SPEC> {
         PALS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Phase B Level selector"]
     #[inline(always)]
-    pub fn pbls(&mut self) -> PBLS_W<QDC_SPEC> {
+    pub fn pbls(&mut self) -> PBLS_W<'_, QDC_SPEC> {
         PBLS_W::new(self, 1)
     }
     #[doc = "Bit 2 - Phase signals swap"]
     #[inline(always)]
-    pub fn phs(&mut self) -> PHS_W<QDC_SPEC> {
+    pub fn phs(&mut self) -> PHS_W<'_, QDC_SPEC> {
         PHS_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Index Marker generations control"]
     #[inline(always)]
-    pub fn icm(&mut self) -> ICM_W<QDC_SPEC> {
+    pub fn icm(&mut self) -> ICM_W<'_, QDC_SPEC> {
         ICM_W::new(self, 4)
     }
 }
@@ -329,10 +329,6 @@ impl crate::Readable for QDC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`qdc::W`](W) writer structure"]
 impl crate::Writable for QDC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets QDC to value 0"]
-impl crate::Resettable for QDC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for QDC_SPEC {}

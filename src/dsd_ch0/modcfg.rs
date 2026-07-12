@@ -129,12 +129,12 @@ impl R {
 impl W {
     #[doc = "Bits 16:19 - Divider Factor for Modulator Clock"]
     #[inline(always)]
-    pub fn divm(&mut self) -> DIVM_W<MODCFG_SPEC> {
+    pub fn divm(&mut self) -> DIVM_W<'_, MODCFG_SPEC> {
         DIVM_W::new(self, 16)
     }
     #[doc = "Bit 23 - Write Control for Divider Factor"]
     #[inline(always)]
-    pub fn dwc(&mut self) -> DWC_W<MODCFG_SPEC> {
+    pub fn dwc(&mut self) -> DWC_W<'_, MODCFG_SPEC> {
         DWC_W::new(self, 23)
     }
 }
@@ -148,10 +148,6 @@ impl crate::Readable for MODCFG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`modcfg::W`](W) writer structure"]
 impl crate::Writable for MODCFG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MODCFG to value 0"]
-impl crate::Resettable for MODCFG_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MODCFG_SPEC {}

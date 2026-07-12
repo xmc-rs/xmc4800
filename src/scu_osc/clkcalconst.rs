@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Clock Calibration Constant Value"]
     #[inline(always)]
-    pub fn calibconst(&mut self) -> CALIBCONST_W<CLKCALCONST_SPEC> {
+    pub fn calibconst(&mut self) -> CALIBCONST_W<'_, CLKCALCONST_SPEC> {
         CALIBCONST_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for CLKCALCONST_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`clkcalconst::W`](W) writer structure"]
 impl crate::Writable for CLKCALCONST_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CLKCALCONST to value 0"]
-impl crate::Resettable for CLKCALCONST_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CLKCALCONST_SPEC {}

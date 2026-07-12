@@ -43,22 +43,22 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Raw Interrupt Status for channel 0"]
     #[inline(always)]
-    pub fn ch0(&mut self) -> CH0_W<RAWTFR_SPEC> {
+    pub fn ch0(&mut self) -> CH0_W<'_, RAWTFR_SPEC> {
         CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Raw Interrupt Status for channel 1"]
     #[inline(always)]
-    pub fn ch1(&mut self) -> CH1_W<RAWTFR_SPEC> {
+    pub fn ch1(&mut self) -> CH1_W<'_, RAWTFR_SPEC> {
         CH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Raw Interrupt Status for channel 2"]
     #[inline(always)]
-    pub fn ch2(&mut self) -> CH2_W<RAWTFR_SPEC> {
+    pub fn ch2(&mut self) -> CH2_W<'_, RAWTFR_SPEC> {
         CH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Raw Interrupt Status for channel 3"]
     #[inline(always)]
-    pub fn ch3(&mut self) -> CH3_W<RAWTFR_SPEC> {
+    pub fn ch3(&mut self) -> CH3_W<'_, RAWTFR_SPEC> {
         CH3_W::new(self, 3)
     }
 }
@@ -72,10 +72,6 @@ impl crate::Readable for RAWTFR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`rawtfr::W`](W) writer structure"]
 impl crate::Writable for RAWTFR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RAWTFR to value 0"]
-impl crate::Resettable for RAWTFR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RAWTFR_SPEC {}

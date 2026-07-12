@@ -5,7 +5,7 @@ pub type SRB_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Set Run bit"]
     #[inline(always)]
-    pub fn srb(&mut self) -> SRB_W<PRUNS_SPEC> {
+    pub fn srb(&mut self) -> SRB_W<'_, PRUNS_SPEC> {
         SRB_W::new(self, 0)
     }
 }
@@ -17,10 +17,6 @@ impl crate::RegisterSpec for PRUNS_SPEC {
 #[doc = "`write(|w| ..)` method takes [`pruns::W`](W) writer structure"]
 impl crate::Writable for PRUNS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PRUNS to value 0"]
-impl crate::Resettable for PRUNS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PRUNS_SPEC {}

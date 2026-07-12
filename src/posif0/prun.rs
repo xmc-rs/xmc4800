@@ -51,6 +51,4 @@ impl crate::RegisterSpec for PRUN_SPEC {
 #[doc = "`read()` method returns [`prun::R`](R) reader structure"]
 impl crate::Readable for PRUN_SPEC {}
 #[doc = "`reset()` method sets PRUN to value 0"]
-impl crate::Resettable for PRUN_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PRUN_SPEC {}

@@ -344,57 +344,57 @@ where
 impl W {
     #[doc = "Bit 0 - VADC Reset Clear"]
     #[inline(always)]
-    pub fn vadcrs(&mut self) -> VADCRS_W<PRCLR0_SPEC> {
+    pub fn vadcrs(&mut self) -> VADCRS_W<'_, PRCLR0_SPEC> {
         VADCRS_W::new(self, 0)
     }
     #[doc = "Bit 1 - DSD Reset Clear"]
     #[inline(always)]
-    pub fn dsdrs(&mut self) -> DSDRS_W<PRCLR0_SPEC> {
+    pub fn dsdrs(&mut self) -> DSDRS_W<'_, PRCLR0_SPEC> {
         DSDRS_W::new(self, 1)
     }
     #[doc = "Bit 2 - CCU40 Reset Clear"]
     #[inline(always)]
-    pub fn ccu40rs(&mut self) -> CCU40RS_W<PRCLR0_SPEC> {
+    pub fn ccu40rs(&mut self) -> CCU40RS_W<'_, PRCLR0_SPEC> {
         CCU40RS_W::new(self, 2)
     }
     #[doc = "Bit 3 - CCU41 Reset Clear"]
     #[inline(always)]
-    pub fn ccu41rs(&mut self) -> CCU41RS_W<PRCLR0_SPEC> {
+    pub fn ccu41rs(&mut self) -> CCU41RS_W<'_, PRCLR0_SPEC> {
         CCU41RS_W::new(self, 3)
     }
     #[doc = "Bit 4 - CCU42 Reset Clear"]
     #[inline(always)]
-    pub fn ccu42rs(&mut self) -> CCU42RS_W<PRCLR0_SPEC> {
+    pub fn ccu42rs(&mut self) -> CCU42RS_W<'_, PRCLR0_SPEC> {
         CCU42RS_W::new(self, 4)
     }
     #[doc = "Bit 7 - CCU80 Reset Clear"]
     #[inline(always)]
-    pub fn ccu80rs(&mut self) -> CCU80RS_W<PRCLR0_SPEC> {
+    pub fn ccu80rs(&mut self) -> CCU80RS_W<'_, PRCLR0_SPEC> {
         CCU80RS_W::new(self, 7)
     }
     #[doc = "Bit 8 - CCU81 Reset Clear"]
     #[inline(always)]
-    pub fn ccu81rs(&mut self) -> CCU81RS_W<PRCLR0_SPEC> {
+    pub fn ccu81rs(&mut self) -> CCU81RS_W<'_, PRCLR0_SPEC> {
         CCU81RS_W::new(self, 8)
     }
     #[doc = "Bit 9 - POSIF0 Reset Clear"]
     #[inline(always)]
-    pub fn posif0rs(&mut self) -> POSIF0RS_W<PRCLR0_SPEC> {
+    pub fn posif0rs(&mut self) -> POSIF0RS_W<'_, PRCLR0_SPEC> {
         POSIF0RS_W::new(self, 9)
     }
     #[doc = "Bit 10 - POSIF1 Reset Clear"]
     #[inline(always)]
-    pub fn posif1rs(&mut self) -> POSIF1RS_W<PRCLR0_SPEC> {
+    pub fn posif1rs(&mut self) -> POSIF1RS_W<'_, PRCLR0_SPEC> {
         POSIF1RS_W::new(self, 10)
     }
     #[doc = "Bit 11 - USIC0 Reset Clear"]
     #[inline(always)]
-    pub fn usic0rs(&mut self) -> USIC0RS_W<PRCLR0_SPEC> {
+    pub fn usic0rs(&mut self) -> USIC0RS_W<'_, PRCLR0_SPEC> {
         USIC0RS_W::new(self, 11)
     }
     #[doc = "Bit 16 - ERU1 Reset Clear"]
     #[inline(always)]
-    pub fn eru1rs(&mut self) -> ERU1RS_W<PRCLR0_SPEC> {
+    pub fn eru1rs(&mut self) -> ERU1RS_W<'_, PRCLR0_SPEC> {
         ERU1RS_W::new(self, 16)
     }
 }
@@ -406,10 +406,6 @@ impl crate::RegisterSpec for PRCLR0_SPEC {
 #[doc = "`write(|w| ..)` method takes [`prclr0::W`](W) writer structure"]
 impl crate::Writable for PRCLR0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PRCLR0 to value 0"]
-impl crate::Resettable for PRCLR0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PRCLR0_SPEC {}

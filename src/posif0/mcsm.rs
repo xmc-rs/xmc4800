@@ -16,7 +16,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Shadow Multi-Channel Pattern"]
     #[inline(always)]
-    pub fn mcmps(&mut self) -> MCMPS_W<MCSM_SPEC> {
+    pub fn mcmps(&mut self) -> MCMPS_W<'_, MCSM_SPEC> {
         MCMPS_W::new(self, 0)
     }
 }
@@ -30,10 +30,6 @@ impl crate::Readable for MCSM_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mcsm::W`](W) writer structure"]
 impl crate::Writable for MCSM_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MCSM to value 0"]
-impl crate::Resettable for MCSM_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MCSM_SPEC {}
