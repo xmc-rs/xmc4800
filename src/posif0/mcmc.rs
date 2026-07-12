@@ -7,12 +7,12 @@ pub type MPC_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Multi-Channel Pattern Update Enable Clear"]
     #[inline(always)]
-    pub fn mnpc(&mut self) -> MNPC_W<MCMC_SPEC> {
+    pub fn mnpc(&mut self) -> MNPC_W<'_, MCMC_SPEC> {
         MNPC_W::new(self, 0)
     }
     #[doc = "Bit 1 - Multi-Channel Pattern clear"]
     #[inline(always)]
-    pub fn mpc(&mut self) -> MPC_W<MCMC_SPEC> {
+    pub fn mpc(&mut self) -> MPC_W<'_, MCMC_SPEC> {
         MPC_W::new(self, 1)
     }
 }
@@ -24,10 +24,6 @@ impl crate::RegisterSpec for MCMC_SPEC {
 #[doc = "`write(|w| ..)` method takes [`mcmc::W`](W) writer structure"]
 impl crate::Writable for MCMC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MCMC to value 0"]
-impl crate::Resettable for MCMC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MCMC_SPEC {}

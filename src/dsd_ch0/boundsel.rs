@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Lower Boundary Value for Limit Checking"]
     #[inline(always)]
-    pub fn boundaryl(&mut self) -> BOUNDARYL_W<BOUNDSEL_SPEC> {
+    pub fn boundaryl(&mut self) -> BOUNDARYL_W<'_, BOUNDSEL_SPEC> {
         BOUNDARYL_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - Upper Boundary Value for Limit Checking"]
     #[inline(always)]
-    pub fn boundaryu(&mut self) -> BOUNDARYU_W<BOUNDSEL_SPEC> {
+    pub fn boundaryu(&mut self) -> BOUNDARYU_W<'_, BOUNDSEL_SPEC> {
         BOUNDARYU_W::new(self, 16)
     }
 }
@@ -44,10 +44,6 @@ impl crate::Readable for BOUNDSEL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`boundsel::W`](W) writer structure"]
 impl crate::Writable for BOUNDSEL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BOUNDSEL to value 0"]
-impl crate::Resettable for BOUNDSEL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for BOUNDSEL_SPEC {}

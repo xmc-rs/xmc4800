@@ -9,17 +9,17 @@ pub type STMR_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Multi-Channel Pattern Update Enable Set"]
     #[inline(always)]
-    pub fn mnps(&mut self) -> MNPS_W<MCMS_SPEC> {
+    pub fn mnps(&mut self) -> MNPS_W<'_, MCMS_SPEC> {
         MNPS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Hall Pattern Shadow Transfer Request"]
     #[inline(always)]
-    pub fn sthr(&mut self) -> STHR_W<MCMS_SPEC> {
+    pub fn sthr(&mut self) -> STHR_W<'_, MCMS_SPEC> {
         STHR_W::new(self, 1)
     }
     #[doc = "Bit 2 - Multi-Channel Shadow Transfer Request"]
     #[inline(always)]
-    pub fn stmr(&mut self) -> STMR_W<MCMS_SPEC> {
+    pub fn stmr(&mut self) -> STMR_W<'_, MCMS_SPEC> {
         STMR_W::new(self, 2)
     }
 }
@@ -31,10 +31,6 @@ impl crate::RegisterSpec for MCMS_SPEC {
 #[doc = "`write(|w| ..)` method takes [`mcms::W`](W) writer structure"]
 impl crate::Writable for MCMS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MCMS to value 0"]
-impl crate::Resettable for MCMS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MCMS_SPEC {}

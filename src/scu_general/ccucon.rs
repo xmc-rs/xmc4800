@@ -355,32 +355,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Global Start Control CCU40"]
     #[inline(always)]
-    pub fn gsc40(&mut self) -> GSC40_W<CCUCON_SPEC> {
+    pub fn gsc40(&mut self) -> GSC40_W<'_, CCUCON_SPEC> {
         GSC40_W::new(self, 0)
     }
     #[doc = "Bit 1 - Global Start Control CCU41"]
     #[inline(always)]
-    pub fn gsc41(&mut self) -> GSC41_W<CCUCON_SPEC> {
+    pub fn gsc41(&mut self) -> GSC41_W<'_, CCUCON_SPEC> {
         GSC41_W::new(self, 1)
     }
     #[doc = "Bit 2 - Global Start Control CCU42"]
     #[inline(always)]
-    pub fn gsc42(&mut self) -> GSC42_W<CCUCON_SPEC> {
+    pub fn gsc42(&mut self) -> GSC42_W<'_, CCUCON_SPEC> {
         GSC42_W::new(self, 2)
     }
     #[doc = "Bit 3 - Global Start Control CCU43"]
     #[inline(always)]
-    pub fn gsc43(&mut self) -> GSC43_W<CCUCON_SPEC> {
+    pub fn gsc43(&mut self) -> GSC43_W<'_, CCUCON_SPEC> {
         GSC43_W::new(self, 3)
     }
     #[doc = "Bit 8 - Global Start Control CCU80"]
     #[inline(always)]
-    pub fn gsc80(&mut self) -> GSC80_W<CCUCON_SPEC> {
+    pub fn gsc80(&mut self) -> GSC80_W<'_, CCUCON_SPEC> {
         GSC80_W::new(self, 8)
     }
     #[doc = "Bit 9 - Global Start Control CCU81"]
     #[inline(always)]
-    pub fn gsc81(&mut self) -> GSC81_W<CCUCON_SPEC> {
+    pub fn gsc81(&mut self) -> GSC81_W<'_, CCUCON_SPEC> {
         GSC81_W::new(self, 9)
     }
 }
@@ -394,10 +394,6 @@ impl crate::Readable for CCUCON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ccucon::W`](W) writer structure"]
 impl crate::Writable for CCUCON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CCUCON to value 0"]
-impl crate::Resettable for CCUCON_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CCUCON_SPEC {}

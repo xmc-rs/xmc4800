@@ -757,47 +757,47 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Recovery Cycles between Different Regions"]
     #[inline(always)]
-    pub fn rddtacs(&mut self) -> RDDTACS_W<BUSRAP0_SPEC> {
+    pub fn rddtacs(&mut self) -> RDDTACS_W<'_, BUSRAP0_SPEC> {
         RDDTACS_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Recovery Cycles after Read Accesses"]
     #[inline(always)]
-    pub fn rdrecovc(&mut self) -> RDRECOVC_W<BUSRAP0_SPEC> {
+    pub fn rdrecovc(&mut self) -> RDRECOVC_W<'_, BUSRAP0_SPEC> {
         RDRECOVC_W::new(self, 4)
     }
     #[doc = "Bits 7:11 - Programmed Wait States for read accesses"]
     #[inline(always)]
-    pub fn waitrdc(&mut self) -> WAITRDC_W<BUSRAP0_SPEC> {
+    pub fn waitrdc(&mut self) -> WAITRDC_W<'_, BUSRAP0_SPEC> {
         WAITRDC_W::new(self, 7)
     }
     #[doc = "Bits 12:15 - Data Hold Cycles for Read Accesses"]
     #[inline(always)]
-    pub fn datac(&mut self) -> DATAC_W<BUSRAP0_SPEC> {
+    pub fn datac(&mut self) -> DATAC_W<'_, BUSRAP0_SPEC> {
         DATAC_W::new(self, 12)
     }
     #[doc = "Bits 16:17 - Frequency of external clock at pin BFCLKO"]
     #[inline(always)]
-    pub fn extclock(&mut self) -> EXTCLOCK_W<BUSRAP0_SPEC> {
+    pub fn extclock(&mut self) -> EXTCLOCK_W<'_, BUSRAP0_SPEC> {
         EXTCLOCK_W::new(self, 16)
     }
     #[doc = "Bits 18:19 - Extended data"]
     #[inline(always)]
-    pub fn extdata(&mut self) -> EXTDATA_W<BUSRAP0_SPEC> {
+    pub fn extdata(&mut self) -> EXTDATA_W<'_, BUSRAP0_SPEC> {
         EXTDATA_W::new(self, 18)
     }
     #[doc = "Bits 20:23 - Command Delay Cycles"]
     #[inline(always)]
-    pub fn cmddelay(&mut self) -> CMDDELAY_W<BUSRAP0_SPEC> {
+    pub fn cmddelay(&mut self) -> CMDDELAY_W<'_, BUSRAP0_SPEC> {
         CMDDELAY_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Address Hold Cycles"]
     #[inline(always)]
-    pub fn aholdc(&mut self) -> AHOLDC_W<BUSRAP0_SPEC> {
+    pub fn aholdc(&mut self) -> AHOLDC_W<'_, BUSRAP0_SPEC> {
         AHOLDC_W::new(self, 24)
     }
     #[doc = "Bits 28:31 - Address Cycles"]
     #[inline(always)]
-    pub fn addrc(&mut self) -> ADDRC_W<BUSRAP0_SPEC> {
+    pub fn addrc(&mut self) -> ADDRC_W<'_, BUSRAP0_SPEC> {
         ADDRC_W::new(self, 28)
     }
 }
@@ -811,8 +811,6 @@ impl crate::Readable for BUSRAP0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`busrap0::W`](W) writer structure"]
 impl crate::Writable for BUSRAP0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BUSRAP0 to value 0xffff_ffff"]
 impl crate::Resettable for BUSRAP0_SPEC {

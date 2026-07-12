@@ -25,12 +25,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Shadow Hall Current Pattern"]
     #[inline(always)]
-    pub fn hcps(&mut self) -> HCPS_W<HALPS_SPEC> {
+    pub fn hcps(&mut self) -> HCPS_W<'_, HALPS_SPEC> {
         HCPS_W::new(self, 0)
     }
     #[doc = "Bits 3:5 - Shadow Hall expected Pattern"]
     #[inline(always)]
-    pub fn heps(&mut self) -> HEPS_W<HALPS_SPEC> {
+    pub fn heps(&mut self) -> HEPS_W<'_, HALPS_SPEC> {
         HEPS_W::new(self, 3)
     }
 }
@@ -44,10 +44,6 @@ impl crate::Readable for HALPS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`halps::W`](W) writer structure"]
 impl crate::Writable for HALPS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HALPS to value 0"]
-impl crate::Resettable for HALPS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HALPS_SPEC {}

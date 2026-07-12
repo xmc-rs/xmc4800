@@ -51,6 +51,4 @@ impl crate::RegisterSpec for MCMF_SPEC {
 #[doc = "`read()` method returns [`mcmf::R`](R) reader structure"]
 impl crate::Readable for MCMF_SPEC {}
 #[doc = "`reset()` method sets MCMF to value 0"]
-impl crate::Resettable for MCMF_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MCMF_SPEC {}

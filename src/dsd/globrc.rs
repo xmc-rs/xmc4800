@@ -239,22 +239,22 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Channel 0 Run Control"]
     #[inline(always)]
-    pub fn ch0run(&mut self) -> CH0RUN_W<GLOBRC_SPEC> {
+    pub fn ch0run(&mut self) -> CH0RUN_W<'_, GLOBRC_SPEC> {
         CH0RUN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Channel 1 Run Control"]
     #[inline(always)]
-    pub fn ch1run(&mut self) -> CH1RUN_W<GLOBRC_SPEC> {
+    pub fn ch1run(&mut self) -> CH1RUN_W<'_, GLOBRC_SPEC> {
         CH1RUN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Channel 2 Run Control"]
     #[inline(always)]
-    pub fn ch2run(&mut self) -> CH2RUN_W<GLOBRC_SPEC> {
+    pub fn ch2run(&mut self) -> CH2RUN_W<'_, GLOBRC_SPEC> {
         CH2RUN_W::new(self, 2)
     }
     #[doc = "Bit 3 - Channel 3 Run Control"]
     #[inline(always)]
-    pub fn ch3run(&mut self) -> CH3RUN_W<GLOBRC_SPEC> {
+    pub fn ch3run(&mut self) -> CH3RUN_W<'_, GLOBRC_SPEC> {
         CH3RUN_W::new(self, 3)
     }
 }
@@ -268,10 +268,6 @@ impl crate::Readable for GLOBRC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`globrc::W`](W) writer structure"]
 impl crate::Writable for GLOBRC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GLOBRC to value 0"]
-impl crate::Resettable for GLOBRC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GLOBRC_SPEC {}

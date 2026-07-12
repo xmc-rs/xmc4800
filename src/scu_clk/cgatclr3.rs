@@ -34,7 +34,7 @@ where
 impl W {
     #[doc = "Bit 2 - EBU Gating Clear"]
     #[inline(always)]
-    pub fn ebu(&mut self) -> EBU_W<CGATCLR3_SPEC> {
+    pub fn ebu(&mut self) -> EBU_W<'_, CGATCLR3_SPEC> {
         EBU_W::new(self, 2)
     }
 }
@@ -46,10 +46,6 @@ impl crate::RegisterSpec for CGATCLR3_SPEC {
 #[doc = "`write(|w| ..)` method takes [`cgatclr3::W`](W) writer structure"]
 impl crate::Writable for CGATCLR3_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CGATCLR3 to value 0"]
-impl crate::Resettable for CGATCLR3_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CGATCLR3_SPEC {}

@@ -7,12 +7,12 @@ pub type CSM_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Clear Run bit"]
     #[inline(always)]
-    pub fn crb(&mut self) -> CRB_W<PRUNC_SPEC> {
+    pub fn crb(&mut self) -> CRB_W<'_, PRUNC_SPEC> {
         CRB_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clear Current internal status"]
     #[inline(always)]
-    pub fn csm(&mut self) -> CSM_W<PRUNC_SPEC> {
+    pub fn csm(&mut self) -> CSM_W<'_, PRUNC_SPEC> {
         CSM_W::new(self, 1)
     }
 }
@@ -24,10 +24,6 @@ impl crate::RegisterSpec for PRUNC_SPEC {
 #[doc = "`write(|w| ..)` method takes [`prunc::W`](W) writer structure"]
 impl crate::Writable for PRUNC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PRUNC to value 0"]
-impl crate::Resettable for PRUNC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PRUNC_SPEC {}

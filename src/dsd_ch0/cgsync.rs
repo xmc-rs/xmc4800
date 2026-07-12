@@ -39,12 +39,12 @@ impl R {
 impl W {
     #[doc = "Bits 16:23 - Sign Delay Value for Positive Halfwave"]
     #[inline(always)]
-    pub fn sdpos(&mut self) -> SDPOS_W<CGSYNC_SPEC> {
+    pub fn sdpos(&mut self) -> SDPOS_W<'_, CGSYNC_SPEC> {
         SDPOS_W::new(self, 16)
     }
     #[doc = "Bits 24:31 - Sign Delay Value for Negative Halfwave"]
     #[inline(always)]
-    pub fn sdneg(&mut self) -> SDNEG_W<CGSYNC_SPEC> {
+    pub fn sdneg(&mut self) -> SDNEG_W<'_, CGSYNC_SPEC> {
         SDNEG_W::new(self, 24)
     }
 }
@@ -58,10 +58,6 @@ impl crate::Readable for CGSYNC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`cgsync::W`](W) writer structure"]
 impl crate::Writable for CGSYNC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CGSYNC to value 0"]
-impl crate::Resettable for CGSYNC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CGSYNC_SPEC {}

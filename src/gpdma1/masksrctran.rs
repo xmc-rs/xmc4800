@@ -363,42 +363,42 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Mask bit for channel 0"]
     #[inline(always)]
-    pub fn ch0(&mut self) -> CH0_W<MASKSRCTRAN_SPEC> {
+    pub fn ch0(&mut self) -> CH0_W<'_, MASKSRCTRAN_SPEC> {
         CH0_W::new(self, 0)
     }
     #[doc = "Bit 1 - Mask bit for channel 1"]
     #[inline(always)]
-    pub fn ch1(&mut self) -> CH1_W<MASKSRCTRAN_SPEC> {
+    pub fn ch1(&mut self) -> CH1_W<'_, MASKSRCTRAN_SPEC> {
         CH1_W::new(self, 1)
     }
     #[doc = "Bit 2 - Mask bit for channel 2"]
     #[inline(always)]
-    pub fn ch2(&mut self) -> CH2_W<MASKSRCTRAN_SPEC> {
+    pub fn ch2(&mut self) -> CH2_W<'_, MASKSRCTRAN_SPEC> {
         CH2_W::new(self, 2)
     }
     #[doc = "Bit 3 - Mask bit for channel 3"]
     #[inline(always)]
-    pub fn ch3(&mut self) -> CH3_W<MASKSRCTRAN_SPEC> {
+    pub fn ch3(&mut self) -> CH3_W<'_, MASKSRCTRAN_SPEC> {
         CH3_W::new(self, 3)
     }
     #[doc = "Bit 8 - Write enable for mask bit of channel 0"]
     #[inline(always)]
-    pub fn we_ch0(&mut self) -> WE_CH0_W<MASKSRCTRAN_SPEC> {
+    pub fn we_ch0(&mut self) -> WE_CH0_W<'_, MASKSRCTRAN_SPEC> {
         WE_CH0_W::new(self, 8)
     }
     #[doc = "Bit 9 - Write enable for mask bit of channel 1"]
     #[inline(always)]
-    pub fn we_ch1(&mut self) -> WE_CH1_W<MASKSRCTRAN_SPEC> {
+    pub fn we_ch1(&mut self) -> WE_CH1_W<'_, MASKSRCTRAN_SPEC> {
         WE_CH1_W::new(self, 9)
     }
     #[doc = "Bit 10 - Write enable for mask bit of channel 2"]
     #[inline(always)]
-    pub fn we_ch2(&mut self) -> WE_CH2_W<MASKSRCTRAN_SPEC> {
+    pub fn we_ch2(&mut self) -> WE_CH2_W<'_, MASKSRCTRAN_SPEC> {
         WE_CH2_W::new(self, 10)
     }
     #[doc = "Bit 11 - Write enable for mask bit of channel 3"]
     #[inline(always)]
-    pub fn we_ch3(&mut self) -> WE_CH3_W<MASKSRCTRAN_SPEC> {
+    pub fn we_ch3(&mut self) -> WE_CH3_W<'_, MASKSRCTRAN_SPEC> {
         WE_CH3_W::new(self, 11)
     }
 }
@@ -412,10 +412,6 @@ impl crate::Readable for MASKSRCTRAN_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`masksrctran::W`](W) writer structure"]
 impl crate::Writable for MASKSRCTRAN_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MASKSRCTRAN to value 0"]
-impl crate::Resettable for MASKSRCTRAN_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MASKSRCTRAN_SPEC {}

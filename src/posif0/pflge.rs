@@ -1051,92 +1051,92 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Correct Hall Event Enable"]
     #[inline(always)]
-    pub fn eche(&mut self) -> ECHE_W<PFLGE_SPEC> {
+    pub fn eche(&mut self) -> ECHE_W<'_, PFLGE_SPEC> {
         ECHE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wrong Hall Event Enable"]
     #[inline(always)]
-    pub fn ewhe(&mut self) -> EWHE_W<PFLGE_SPEC> {
+    pub fn ewhe(&mut self) -> EWHE_W<'_, PFLGE_SPEC> {
         EWHE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Hall Input Update Enable"]
     #[inline(always)]
-    pub fn ehie(&mut self) -> EHIE_W<PFLGE_SPEC> {
+    pub fn ehie(&mut self) -> EHIE_W<'_, PFLGE_SPEC> {
         EHIE_W::new(self, 2)
     }
     #[doc = "Bit 4 - Multi-Channel pattern shadow transfer enable"]
     #[inline(always)]
-    pub fn emst(&mut self) -> EMST_W<PFLGE_SPEC> {
+    pub fn emst(&mut self) -> EMST_W<'_, PFLGE_SPEC> {
         EMST_W::new(self, 4)
     }
     #[doc = "Bit 8 - Quadrature Index Event Enable"]
     #[inline(always)]
-    pub fn eindx(&mut self) -> EINDX_W<PFLGE_SPEC> {
+    pub fn eindx(&mut self) -> EINDX_W<'_, PFLGE_SPEC> {
         EINDX_W::new(self, 8)
     }
     #[doc = "Bit 9 - Quadrature Phase Error Enable"]
     #[inline(always)]
-    pub fn eerr(&mut self) -> EERR_W<PFLGE_SPEC> {
+    pub fn eerr(&mut self) -> EERR_W<'_, PFLGE_SPEC> {
         EERR_W::new(self, 9)
     }
     #[doc = "Bit 10 - Quadrature CLK interrupt Enable"]
     #[inline(always)]
-    pub fn ecnt(&mut self) -> ECNT_W<PFLGE_SPEC> {
+    pub fn ecnt(&mut self) -> ECNT_W<'_, PFLGE_SPEC> {
         ECNT_W::new(self, 10)
     }
     #[doc = "Bit 11 - Quadrature direction change interrupt Enable"]
     #[inline(always)]
-    pub fn edir(&mut self) -> EDIR_W<PFLGE_SPEC> {
+    pub fn edir(&mut self) -> EDIR_W<'_, PFLGE_SPEC> {
         EDIR_W::new(self, 11)
     }
     #[doc = "Bit 12 - Quadrature Period CLK interrupt Enable"]
     #[inline(always)]
-    pub fn epclk(&mut self) -> EPCLK_W<PFLGE_SPEC> {
+    pub fn epclk(&mut self) -> EPCLK_W<'_, PFLGE_SPEC> {
         EPCLK_W::new(self, 12)
     }
     #[doc = "Bit 16 - Correct Hall Event Service Request Selector"]
     #[inline(always)]
-    pub fn chesel(&mut self) -> CHESEL_W<PFLGE_SPEC> {
+    pub fn chesel(&mut self) -> CHESEL_W<'_, PFLGE_SPEC> {
         CHESEL_W::new(self, 16)
     }
     #[doc = "Bit 17 - Wrong Hall Event Service Request Selector"]
     #[inline(always)]
-    pub fn whesel(&mut self) -> WHESEL_W<PFLGE_SPEC> {
+    pub fn whesel(&mut self) -> WHESEL_W<'_, PFLGE_SPEC> {
         WHESEL_W::new(self, 17)
     }
     #[doc = "Bit 18 - Hall Inputs Update Event Service Request Selector"]
     #[inline(always)]
-    pub fn hiesel(&mut self) -> HIESEL_W<PFLGE_SPEC> {
+    pub fn hiesel(&mut self) -> HIESEL_W<'_, PFLGE_SPEC> {
         HIESEL_W::new(self, 18)
     }
     #[doc = "Bit 20 - Multi-Channel pattern Update Event Service Request Selector"]
     #[inline(always)]
-    pub fn mstsel(&mut self) -> MSTSEL_W<PFLGE_SPEC> {
+    pub fn mstsel(&mut self) -> MSTSEL_W<'_, PFLGE_SPEC> {
         MSTSEL_W::new(self, 20)
     }
     #[doc = "Bit 24 - Quadrature Index Event Service Request Selector"]
     #[inline(always)]
-    pub fn indsel(&mut self) -> INDSEL_W<PFLGE_SPEC> {
+    pub fn indsel(&mut self) -> INDSEL_W<'_, PFLGE_SPEC> {
         INDSEL_W::new(self, 24)
     }
     #[doc = "Bit 25 - Quadrature Phase Error Event Service Request Selector"]
     #[inline(always)]
-    pub fn errsel(&mut self) -> ERRSEL_W<PFLGE_SPEC> {
+    pub fn errsel(&mut self) -> ERRSEL_W<'_, PFLGE_SPEC> {
         ERRSEL_W::new(self, 25)
     }
     #[doc = "Bit 26 - Quadrature Clock Event Service Request Selector"]
     #[inline(always)]
-    pub fn cntsel(&mut self) -> CNTSEL_W<PFLGE_SPEC> {
+    pub fn cntsel(&mut self) -> CNTSEL_W<'_, PFLGE_SPEC> {
         CNTSEL_W::new(self, 26)
     }
     #[doc = "Bit 27 - Quadrature Direction Update Event Service Request Selector"]
     #[inline(always)]
-    pub fn dirsel(&mut self) -> DIRSEL_W<PFLGE_SPEC> {
+    pub fn dirsel(&mut self) -> DIRSEL_W<'_, PFLGE_SPEC> {
         DIRSEL_W::new(self, 27)
     }
     #[doc = "Bit 28 - Quadrature Period clock Event Service Request Selector"]
     #[inline(always)]
-    pub fn pclsel(&mut self) -> PCLSEL_W<PFLGE_SPEC> {
+    pub fn pclsel(&mut self) -> PCLSEL_W<'_, PFLGE_SPEC> {
         PCLSEL_W::new(self, 28)
     }
 }
@@ -1150,10 +1150,6 @@ impl crate::Readable for PFLGE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pflge::W`](W) writer structure"]
 impl crate::Writable for PFLGE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PFLGE to value 0"]
-impl crate::Resettable for PFLGE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PFLGE_SPEC {}

@@ -556,52 +556,52 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Burst Length for Synchronous Burst"]
     #[inline(always)]
-    pub fn fetblen(&mut self) -> FETBLEN_W<BUSWCON2_SPEC> {
+    pub fn fetblen(&mut self) -> FETBLEN_W<'_, BUSWCON2_SPEC> {
         FETBLEN_W::new(self, 0)
     }
     #[doc = "Bit 3 - Synchronous burst buffer mode select"]
     #[inline(always)]
-    pub fn fbbmsel(&mut self) -> FBBMSEL_W<BUSWCON2_SPEC> {
+    pub fn fbbmsel(&mut self) -> FBBMSEL_W<'_, BUSWCON2_SPEC> {
         FBBMSEL_W::new(self, 3)
     }
     #[doc = "Bit 16 - Early Chip Select for Synchronous Burst"]
     #[inline(always)]
-    pub fn ecse(&mut self) -> ECSE_W<BUSWCON2_SPEC> {
+    pub fn ecse(&mut self) -> ECSE_W<'_, BUSWCON2_SPEC> {
         ECSE_W::new(self, 16)
     }
     #[doc = "Bit 17 - Early Burst Signal Enable for Synchronous Burst"]
     #[inline(always)]
-    pub fn ebse(&mut self) -> EBSE_W<BUSWCON2_SPEC> {
+    pub fn ebse(&mut self) -> EBSE_W<'_, BUSWCON2_SPEC> {
         EBSE_W::new(self, 17)
     }
     #[doc = "Bit 19 - Reversed polarity at WAIT"]
     #[inline(always)]
-    pub fn waitinv(&mut self) -> WAITINV_W<BUSWCON2_SPEC> {
+    pub fn waitinv(&mut self) -> WAITINV_W<'_, BUSWCON2_SPEC> {
         WAITINV_W::new(self, 19)
     }
     #[doc = "Bits 20:21 - Byte Control Signal Control"]
     #[inline(always)]
-    pub fn bcgen(&mut self) -> BCGEN_W<BUSWCON2_SPEC> {
+    pub fn bcgen(&mut self) -> BCGEN_W<'_, BUSWCON2_SPEC> {
         BCGEN_W::new(self, 20)
     }
     #[doc = "Bits 24:25 - External Wait Control: 0=OFF (default after reset)., 1=Asynchronous input at WAIT., 2=Synchronous input at WAIT., 3=reserved., 0=OFF (default after reset)., 1=Wait for page load (Early WAIT)., 2=Wait for page load (WAIT with data)., 3=Abort and retry access.,"]
     #[inline(always)]
-    pub fn wait(&mut self) -> WAIT_W<BUSWCON2_SPEC> {
+    pub fn wait(&mut self) -> WAIT_W<'_, BUSWCON2_SPEC> {
         WAIT_W::new(self, 24)
     }
     #[doc = "Bit 26 - Asynchronous Address phase:"]
     #[inline(always)]
-    pub fn aap(&mut self) -> AAP_W<BUSWCON2_SPEC> {
+    pub fn aap(&mut self) -> AAP_W<'_, BUSWCON2_SPEC> {
         AAP_W::new(self, 26)
     }
     #[doc = "Bit 27 - Lock Chip Select"]
     #[inline(always)]
-    pub fn lockcs(&mut self) -> LOCKCS_W<BUSWCON2_SPEC> {
+    pub fn lockcs(&mut self) -> LOCKCS_W<'_, BUSWCON2_SPEC> {
         LOCKCS_W::new(self, 27)
     }
     #[doc = "Bits 28:31 - Device Type for Region"]
     #[inline(always)]
-    pub fn agen(&mut self) -> AGEN_W<BUSWCON2_SPEC> {
+    pub fn agen(&mut self) -> AGEN_W<'_, BUSWCON2_SPEC> {
         AGEN_W::new(self, 28)
     }
 }
@@ -615,8 +615,6 @@ impl crate::Readable for BUSWCON2_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`buswcon2::W`](W) writer structure"]
 impl crate::Writable for BUSWCON2_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BUSWCON2 to value 0x00d3_0000"]
 impl crate::Resettable for BUSWCON2_SPEC {

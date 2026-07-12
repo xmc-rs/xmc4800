@@ -279,12 +279,12 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Rectification Enable"]
     #[inline(always)]
-    pub fn rfen(&mut self) -> RFEN_W<RECTCFG_SPEC> {
+    pub fn rfen(&mut self) -> RFEN_W<'_, RECTCFG_SPEC> {
         RFEN_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Sign Source"]
     #[inline(always)]
-    pub fn ssrc(&mut self) -> SSRC_W<RECTCFG_SPEC> {
+    pub fn ssrc(&mut self) -> SSRC_W<'_, RECTCFG_SPEC> {
         SSRC_W::new(self, 4)
     }
 }
@@ -298,8 +298,6 @@ impl crate::Readable for RECTCFG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`rectcfg::W`](W) writer structure"]
 impl crate::Writable for RECTCFG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RECTCFG to value 0x8000_0000"]
 impl crate::Resettable for RECTCFG_SPEC {

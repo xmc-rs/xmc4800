@@ -328,27 +328,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - CIC Filter (Auxiliary) Decimation Factor"]
     #[inline(always)]
-    pub fn cfadf(&mut self) -> CFADF_W<FCFGA_SPEC> {
+    pub fn cfadf(&mut self) -> CFADF_W<'_, FCFGA_SPEC> {
         CFADF_W::new(self, 0)
     }
     #[doc = "Bits 8:9 - CIC Filter (Auxiliary) Configuration"]
     #[inline(always)]
-    pub fn cfac(&mut self) -> CFAC_W<FCFGA_SPEC> {
+    pub fn cfac(&mut self) -> CFAC_W<'_, FCFGA_SPEC> {
         CFAC_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Service Request Generation Auxiliary Filter"]
     #[inline(always)]
-    pub fn srga(&mut self) -> SRGA_W<FCFGA_SPEC> {
+    pub fn srga(&mut self) -> SRGA_W<'_, FCFGA_SPEC> {
         SRGA_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Event Select"]
     #[inline(always)]
-    pub fn esel(&mut self) -> ESEL_W<FCFGA_SPEC> {
+    pub fn esel(&mut self) -> ESEL_W<'_, FCFGA_SPEC> {
         ESEL_W::new(self, 12)
     }
     #[doc = "Bit 14 - Event Gating"]
     #[inline(always)]
-    pub fn egt(&mut self) -> EGT_W<FCFGA_SPEC> {
+    pub fn egt(&mut self) -> EGT_W<'_, FCFGA_SPEC> {
         EGT_W::new(self, 14)
     }
 }
@@ -362,10 +362,6 @@ impl crate::Readable for FCFGA_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fcfga::W`](W) writer structure"]
 impl crate::Writable for FCFGA_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FCFGA to value 0"]
-impl crate::Resettable for FCFGA_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FCFGA_SPEC {}
