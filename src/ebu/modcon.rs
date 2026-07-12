@@ -456,47 +456,47 @@ impl R {
 impl W {
     #[doc = "Bit 2 - SDRAM Tristate"]
     #[inline(always)]
-    pub fn sdtri(&mut self) -> SDTRI_W<MODCON_SPEC> {
+    pub fn sdtri(&mut self) -> SDTRI_W<'_, MODCON_SPEC> {
         SDTRI_W::new(self, 2)
     }
     #[doc = "Bit 4 - External Bus Lock Control"]
     #[inline(always)]
-    pub fn extlock(&mut self) -> EXTLOCK_W<MODCON_SPEC> {
+    pub fn extlock(&mut self) -> EXTLOCK_W<'_, MODCON_SPEC> {
         EXTLOCK_W::new(self, 4)
     }
     #[doc = "Bit 5 - Arbitration Signal Synchronization Control"]
     #[inline(always)]
-    pub fn arbsync(&mut self) -> ARBSYNC_W<MODCON_SPEC> {
+    pub fn arbsync(&mut self) -> ARBSYNC_W<'_, MODCON_SPEC> {
         ARBSYNC_W::new(self, 5)
     }
     #[doc = "Bits 6:7 - Arbitration Mode Selection"]
     #[inline(always)]
-    pub fn arbmode(&mut self) -> ARBMODE_W<MODCON_SPEC> {
+    pub fn arbmode(&mut self) -> ARBMODE_W<'_, MODCON_SPEC> {
         ARBMODE_W::new(self, 6)
     }
     #[doc = "Bits 8:15 - Bus Time-out Control"]
     #[inline(always)]
-    pub fn timeoutc(&mut self) -> TIMEOUTC_W<MODCON_SPEC> {
+    pub fn timeoutc(&mut self) -> TIMEOUTC_W<'_, MODCON_SPEC> {
         TIMEOUTC_W::new(self, 8)
     }
     #[doc = "Bits 16:23 - Lock Timeout Counter Preload"]
     #[inline(always)]
-    pub fn locktimeout(&mut self) -> LOCKTIMEOUT_W<MODCON_SPEC> {
+    pub fn locktimeout(&mut self) -> LOCKTIMEOUT_W<'_, MODCON_SPEC> {
         LOCKTIMEOUT_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - Global Chip Select Enable"]
     #[inline(always)]
-    pub fn globalcs(&mut self) -> GLOBALCS_W<MODCON_SPEC> {
+    pub fn globalcs(&mut self) -> GLOBALCS_W<'_, MODCON_SPEC> {
         GLOBALCS_W::new(self, 24)
     }
     #[doc = "Bit 28 - Access Inhibit request"]
     #[inline(always)]
-    pub fn accsinh(&mut self) -> ACCSINH_W<MODCON_SPEC> {
+    pub fn accsinh(&mut self) -> ACCSINH_W<'_, MODCON_SPEC> {
         ACCSINH_W::new(self, 28)
     }
     #[doc = "Bit 31 - ALE Mode"]
     #[inline(always)]
-    pub fn ale(&mut self) -> ALE_W<MODCON_SPEC> {
+    pub fn ale(&mut self) -> ALE_W<'_, MODCON_SPEC> {
         ALE_W::new(self, 31)
     }
 }
@@ -510,8 +510,6 @@ impl crate::Readable for MODCON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`modcon::W`](W) writer structure"]
 impl crate::Writable for MODCON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MODCON to value 0x20"]
 impl crate::Resettable for MODCON_SPEC {

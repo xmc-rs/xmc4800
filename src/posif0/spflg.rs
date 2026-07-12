@@ -21,47 +21,47 @@ pub type SPCLK_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl W {
     #[doc = "Bit 0 - Correct Hall Event flag set"]
     #[inline(always)]
-    pub fn sche(&mut self) -> SCHE_W<SPFLG_SPEC> {
+    pub fn sche(&mut self) -> SCHE_W<'_, SPFLG_SPEC> {
         SCHE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Wrong Hall Event flag set"]
     #[inline(always)]
-    pub fn swhe(&mut self) -> SWHE_W<SPFLG_SPEC> {
+    pub fn swhe(&mut self) -> SWHE_W<'_, SPFLG_SPEC> {
         SWHE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Hall Inputs Update Event flag set"]
     #[inline(always)]
-    pub fn shie(&mut self) -> SHIE_W<SPFLG_SPEC> {
+    pub fn shie(&mut self) -> SHIE_W<'_, SPFLG_SPEC> {
         SHIE_W::new(self, 2)
     }
     #[doc = "Bit 4 - Multi-Channel Pattern shadow transfer flag set"]
     #[inline(always)]
-    pub fn smst(&mut self) -> SMST_W<SPFLG_SPEC> {
+    pub fn smst(&mut self) -> SMST_W<'_, SPFLG_SPEC> {
         SMST_W::new(self, 4)
     }
     #[doc = "Bit 8 - Quadrature Index flag set"]
     #[inline(always)]
-    pub fn sindx(&mut self) -> SINDX_W<SPFLG_SPEC> {
+    pub fn sindx(&mut self) -> SINDX_W<'_, SPFLG_SPEC> {
         SINDX_W::new(self, 8)
     }
     #[doc = "Bit 9 - Quadrature Phase Error flag set"]
     #[inline(always)]
-    pub fn serr(&mut self) -> SERR_W<SPFLG_SPEC> {
+    pub fn serr(&mut self) -> SERR_W<'_, SPFLG_SPEC> {
         SERR_W::new(self, 9)
     }
     #[doc = "Bit 10 - Quadrature CLK flag set"]
     #[inline(always)]
-    pub fn scnt(&mut self) -> SCNT_W<SPFLG_SPEC> {
+    pub fn scnt(&mut self) -> SCNT_W<'_, SPFLG_SPEC> {
         SCNT_W::new(self, 10)
     }
     #[doc = "Bit 11 - Quadrature Direction flag set"]
     #[inline(always)]
-    pub fn sdir(&mut self) -> SDIR_W<SPFLG_SPEC> {
+    pub fn sdir(&mut self) -> SDIR_W<'_, SPFLG_SPEC> {
         SDIR_W::new(self, 11)
     }
     #[doc = "Bit 12 - Quadrature period clock flag set"]
     #[inline(always)]
-    pub fn spclk(&mut self) -> SPCLK_W<SPFLG_SPEC> {
+    pub fn spclk(&mut self) -> SPCLK_W<'_, SPFLG_SPEC> {
         SPCLK_W::new(self, 12)
     }
 }
@@ -73,10 +73,6 @@ impl crate::RegisterSpec for SPFLG_SPEC {
 #[doc = "`write(|w| ..)` method takes [`spflg::W`](W) writer structure"]
 impl crate::Writable for SPFLG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SPFLG to value 0"]
-impl crate::Resettable for SPFLG_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SPFLG_SPEC {}

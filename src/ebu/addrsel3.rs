@@ -181,17 +181,17 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Memory Region Enable"]
     #[inline(always)]
-    pub fn regenab(&mut self) -> REGENAB_W<ADDRSEL3_SPEC> {
+    pub fn regenab(&mut self) -> REGENAB_W<'_, ADDRSEL3_SPEC> {
         REGENAB_W::new(self, 0)
     }
     #[doc = "Bit 1 - Alternate Region Enable"]
     #[inline(always)]
-    pub fn altenab(&mut self) -> ALTENAB_W<ADDRSEL3_SPEC> {
+    pub fn altenab(&mut self) -> ALTENAB_W<'_, ADDRSEL3_SPEC> {
         ALTENAB_W::new(self, 1)
     }
     #[doc = "Bit 2 - Memory Region Write Protect"]
     #[inline(always)]
-    pub fn wprot(&mut self) -> WPROT_W<ADDRSEL3_SPEC> {
+    pub fn wprot(&mut self) -> WPROT_W<'_, ADDRSEL3_SPEC> {
         WPROT_W::new(self, 2)
     }
 }
@@ -205,10 +205,6 @@ impl crate::Readable for ADDRSEL3_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`addrsel3::W`](W) writer structure"]
 impl crate::Writable for ADDRSEL3_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ADDRSEL3 to value 0"]
-impl crate::Resettable for ADDRSEL3_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ADDRSEL3_SPEC {}

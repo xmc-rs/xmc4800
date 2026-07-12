@@ -483,22 +483,22 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Carrier Generator Operating Mode"]
     #[inline(always)]
-    pub fn cgmod(&mut self) -> CGMOD_W<CGCFG_SPEC> {
+    pub fn cgmod(&mut self) -> CGMOD_W<'_, CGCFG_SPEC> {
         CGMOD_W::new(self, 0)
     }
     #[doc = "Bit 2 - Bit-Reverse PWM Generation"]
     #[inline(always)]
-    pub fn brev(&mut self) -> BREV_W<CGCFG_SPEC> {
+    pub fn brev(&mut self) -> BREV_W<'_, CGCFG_SPEC> {
         BREV_W::new(self, 2)
     }
     #[doc = "Bit 3 - Signal Polarity"]
     #[inline(always)]
-    pub fn sigpol(&mut self) -> SIGPOL_W<CGCFG_SPEC> {
+    pub fn sigpol(&mut self) -> SIGPOL_W<'_, CGCFG_SPEC> {
         SIGPOL_W::new(self, 3)
     }
     #[doc = "Bits 4:7 - Divider Factor for the PWM Pattern Signal Generator"]
     #[inline(always)]
-    pub fn divcg(&mut self) -> DIVCG_W<CGCFG_SPEC> {
+    pub fn divcg(&mut self) -> DIVCG_W<'_, CGCFG_SPEC> {
         DIVCG_W::new(self, 4)
     }
 }
@@ -512,8 +512,6 @@ impl crate::Readable for CGCFG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`cgcfg::W`](W) writer structure"]
 impl crate::Writable for CGCFG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CGCFG to value 0x0710_0000"]
 impl crate::Resettable for CGCFG_SPEC {

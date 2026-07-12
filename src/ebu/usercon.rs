@@ -139,17 +139,17 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Disable Internal Pipelining"]
     #[inline(always)]
-    pub fn dip(&mut self) -> DIP_W<USERCON_SPEC> {
+    pub fn dip(&mut self) -> DIP_W<'_, USERCON_SPEC> {
         DIP_W::new(self, 0)
     }
     #[doc = "Bits 16:24 - Address Pins to GPIO Mode"]
     #[inline(always)]
-    pub fn addio(&mut self) -> ADDIO_W<USERCON_SPEC> {
+    pub fn addio(&mut self) -> ADDIO_W<'_, USERCON_SPEC> {
         ADDIO_W::new(self, 16)
     }
     #[doc = "Bit 25 - ADV Pin to GPIO Mode"]
     #[inline(always)]
-    pub fn advio(&mut self) -> ADVIO_W<USERCON_SPEC> {
+    pub fn advio(&mut self) -> ADVIO_W<'_, USERCON_SPEC> {
         ADVIO_W::new(self, 25)
     }
 }
@@ -163,10 +163,6 @@ impl crate::Readable for USERCON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`usercon::W`](W) writer structure"]
 impl crate::Writable for USERCON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets USERCON to value 0"]
-impl crate::Resettable for USERCON_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for USERCON_SPEC {}

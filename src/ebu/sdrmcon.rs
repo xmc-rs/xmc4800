@@ -602,67 +602,67 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Row to precharge delay counter"]
     #[inline(always)]
-    pub fn cras(&mut self) -> CRAS_W<SDRMCON_SPEC> {
+    pub fn cras(&mut self) -> CRAS_W<'_, SDRMCON_SPEC> {
         CRAS_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - Initialization refresh commands counter"]
     #[inline(always)]
-    pub fn crfsh(&mut self) -> CRFSH_W<SDRMCON_SPEC> {
+    pub fn crfsh(&mut self) -> CRFSH_W<'_, SDRMCON_SPEC> {
         CRFSH_W::new(self, 4)
     }
     #[doc = "Bits 8:9 - Mode register set-up time"]
     #[inline(always)]
-    pub fn crsc(&mut self) -> CRSC_W<SDRMCON_SPEC> {
+    pub fn crsc(&mut self) -> CRSC_W<'_, SDRMCON_SPEC> {
         CRSC_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - Row precharge time counter"]
     #[inline(always)]
-    pub fn crp(&mut self) -> CRP_W<SDRMCON_SPEC> {
+    pub fn crp(&mut self) -> CRP_W<'_, SDRMCON_SPEC> {
         CRP_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Width of column address"]
     #[inline(always)]
-    pub fn awidth(&mut self) -> AWIDTH_W<SDRMCON_SPEC> {
+    pub fn awidth(&mut self) -> AWIDTH_W<'_, SDRMCON_SPEC> {
         AWIDTH_W::new(self, 12)
     }
     #[doc = "Bits 14:15 - Row to column delay counter"]
     #[inline(always)]
-    pub fn crcd(&mut self) -> CRCD_W<SDRMCON_SPEC> {
+    pub fn crcd(&mut self) -> CRCD_W<'_, SDRMCON_SPEC> {
         CRCD_W::new(self, 14)
     }
     #[doc = "Bits 16:18 - Row cycle time counter"]
     #[inline(always)]
-    pub fn crc(&mut self) -> CRC_W<SDRMCON_SPEC> {
+    pub fn crc(&mut self) -> CRC_W<'_, SDRMCON_SPEC> {
         CRC_W::new(self, 16)
     }
     #[doc = "Bits 19:21 - Mask for row tag"]
     #[inline(always)]
-    pub fn rowm(&mut self) -> ROWM_W<SDRMCON_SPEC> {
+    pub fn rowm(&mut self) -> ROWM_W<'_, SDRMCON_SPEC> {
         ROWM_W::new(self, 19)
     }
     #[doc = "Bits 22:24 - Mask for bank tag"]
     #[inline(always)]
-    pub fn bankm(&mut self) -> BANKM_W<SDRMCON_SPEC> {
+    pub fn bankm(&mut self) -> BANKM_W<'_, SDRMCON_SPEC> {
         BANKM_W::new(self, 22)
     }
     #[doc = "Bits 25:27 - Row cycle time counter extension"]
     #[inline(always)]
-    pub fn crce(&mut self) -> CRCE_W<SDRMCON_SPEC> {
+    pub fn crce(&mut self) -> CRCE_W<'_, SDRMCON_SPEC> {
         CRCE_W::new(self, 25)
     }
     #[doc = "Bit 28 - Disable SDRAM clock output"]
     #[inline(always)]
-    pub fn clkdis(&mut self) -> CLKDIS_W<SDRMCON_SPEC> {
+    pub fn clkdis(&mut self) -> CLKDIS_W<'_, SDRMCON_SPEC> {
         CLKDIS_W::new(self, 28)
     }
     #[doc = "Bits 29:30 - Power Save Mode used for gated clock mode"]
     #[inline(always)]
-    pub fn pwr_mode(&mut self) -> PWR_MODE_W<SDRMCON_SPEC> {
+    pub fn pwr_mode(&mut self) -> PWR_MODE_W<'_, SDRMCON_SPEC> {
         PWR_MODE_W::new(self, 29)
     }
     #[doc = "Bit 31 - SDRAM clock mode select"]
     #[inline(always)]
-    pub fn sdcmsel(&mut self) -> SDCMSEL_W<SDRMCON_SPEC> {
+    pub fn sdcmsel(&mut self) -> SDCMSEL_W<'_, SDRMCON_SPEC> {
         SDCMSEL_W::new(self, 31)
     }
 }
@@ -676,8 +676,6 @@ impl crate::Readable for SDRMCON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sdrmcon::W`](W) writer structure"]
 impl crate::Writable for SDRMCON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SDRMCON to value 0x8000_0000"]
 impl crate::Resettable for SDRMCON_SPEC {

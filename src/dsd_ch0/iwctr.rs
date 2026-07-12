@@ -147,22 +147,22 @@ impl R {
 impl W {
     #[doc = "Bits 12:15 - Number of Integration Cycles"]
     #[inline(always)]
-    pub fn repval(&mut self) -> REPVAL_W<IWCTR_SPEC> {
+    pub fn repval(&mut self) -> REPVAL_W<'_, IWCTR_SPEC> {
         REPVAL_W::new(self, 12)
     }
     #[doc = "Bits 16:21 - Number of Values Discarded"]
     #[inline(always)]
-    pub fn nvaldis(&mut self) -> NVALDIS_W<IWCTR_SPEC> {
+    pub fn nvaldis(&mut self) -> NVALDIS_W<'_, IWCTR_SPEC> {
         NVALDIS_W::new(self, 16)
     }
     #[doc = "Bit 23 - Integration Window SIze"]
     #[inline(always)]
-    pub fn iws(&mut self) -> IWS_W<IWCTR_SPEC> {
+    pub fn iws(&mut self) -> IWS_W<'_, IWCTR_SPEC> {
         IWS_W::new(self, 23)
     }
     #[doc = "Bits 24:29 - Number of Values Integrated"]
     #[inline(always)]
-    pub fn nvalint(&mut self) -> NVALINT_W<IWCTR_SPEC> {
+    pub fn nvalint(&mut self) -> NVALINT_W<'_, IWCTR_SPEC> {
         NVALINT_W::new(self, 24)
     }
 }
@@ -176,10 +176,6 @@ impl crate::Readable for IWCTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`iwctr::W`](W) writer structure"]
 impl crate::Writable for IWCTR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IWCTR to value 0"]
-impl crate::Resettable for IWCTR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IWCTR_SPEC {}

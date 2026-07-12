@@ -34,7 +34,7 @@ where
 impl W {
     #[doc = "Bit 2 - EBU Reset Assert"]
     #[inline(always)]
-    pub fn eburs(&mut self) -> EBURS_W<PRSET3_SPEC> {
+    pub fn eburs(&mut self) -> EBURS_W<'_, PRSET3_SPEC> {
         EBURS_W::new(self, 2)
     }
 }
@@ -46,10 +46,6 @@ impl crate::RegisterSpec for PRSET3_SPEC {
 #[doc = "`write(|w| ..)` method takes [`prset3::W`](W) writer structure"]
 impl crate::Writable for PRSET3_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PRSET3 to value 0"]
-impl crate::Resettable for PRSET3_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PRSET3_SPEC {}

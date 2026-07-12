@@ -981,11 +981,9 @@ where
 #[doc = "External Wrong Hall Event active level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EWIL_A {
-    #[doc = "0: POSIFx.EWHE\\[D...A\\]
-signal is active HIGH"]
+    #[doc = "0: POSIFx.EWHE\\[D...A\\] signal is active HIGH"]
     VALUE1 = 0,
-    #[doc = "1: POSIFx.EWHE\\[D...A\\]
-signal is active LOW"]
+    #[doc = "1: POSIFx.EWHE\\[D...A\\] signal is active LOW"]
     VALUE2 = 1,
 }
 impl From<EWIL_A> for bool {
@@ -1005,14 +1003,12 @@ impl EWIL_R {
             true => EWIL_A::VALUE2,
         }
     }
-    #[doc = "POSIFx.EWHE\\[D...A\\]
-signal is active HIGH"]
+    #[doc = "POSIFx.EWHE\\[D...A\\] signal is active HIGH"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == EWIL_A::VALUE1
     }
-    #[doc = "POSIFx.EWHE\\[D...A\\]
-signal is active LOW"]
+    #[doc = "POSIFx.EWHE\\[D...A\\] signal is active LOW"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
         *self == EWIL_A::VALUE2
@@ -1024,14 +1020,12 @@ impl<'a, REG> EWIL_W<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
-    #[doc = "POSIFx.EWHE\\[D...A\\]
-signal is active HIGH"]
+    #[doc = "POSIFx.EWHE\\[D...A\\] signal is active HIGH"]
     #[inline(always)]
     pub fn value1(self) -> &'a mut crate::W<REG> {
         self.variant(EWIL_A::VALUE1)
     }
-    #[doc = "POSIFx.EWHE\\[D...A\\]
-signal is active LOW"]
+    #[doc = "POSIFx.EWHE\\[D...A\\] signal is active LOW"]
     #[inline(always)]
     pub fn value2(self) -> &'a mut crate::W<REG> {
         self.variant(EWIL_A::VALUE2)
@@ -1260,82 +1254,82 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Function Selector"]
     #[inline(always)]
-    pub fn fsel(&mut self) -> FSEL_W<PCONF_SPEC> {
+    pub fn fsel(&mut self) -> FSEL_W<'_, PCONF_SPEC> {
         FSEL_W::new(self, 0)
     }
     #[doc = "Bit 2 - Position Decoder Mode selection"]
     #[inline(always)]
-    pub fn qdcm(&mut self) -> QDCM_W<PCONF_SPEC> {
+    pub fn qdcm(&mut self) -> QDCM_W<'_, PCONF_SPEC> {
         QDCM_W::new(self, 2)
     }
     #[doc = "Bit 4 - Idle generation enable"]
     #[inline(always)]
-    pub fn hidg(&mut self) -> HIDG_W<PCONF_SPEC> {
+    pub fn hidg(&mut self) -> HIDG_W<'_, PCONF_SPEC> {
         HIDG_W::new(self, 4)
     }
     #[doc = "Bit 5 - Multi-Channel Pattern SW update enable"]
     #[inline(always)]
-    pub fn mcue(&mut self) -> MCUE_W<PCONF_SPEC> {
+    pub fn mcue(&mut self) -> MCUE_W<'_, PCONF_SPEC> {
         MCUE_W::new(self, 5)
     }
     #[doc = "Bits 8:9 - PhaseA/Hal input 1 selector"]
     #[inline(always)]
-    pub fn insel0(&mut self) -> INSEL0_W<PCONF_SPEC> {
+    pub fn insel0(&mut self) -> INSEL0_W<'_, PCONF_SPEC> {
         INSEL0_W::new(self, 8)
     }
     #[doc = "Bits 10:11 - PhaseB/Hall input 2 selector"]
     #[inline(always)]
-    pub fn insel1(&mut self) -> INSEL1_W<PCONF_SPEC> {
+    pub fn insel1(&mut self) -> INSEL1_W<'_, PCONF_SPEC> {
         INSEL1_W::new(self, 10)
     }
     #[doc = "Bits 12:13 - Index/Hall input 3 selector"]
     #[inline(always)]
-    pub fn insel2(&mut self) -> INSEL2_W<PCONF_SPEC> {
+    pub fn insel2(&mut self) -> INSEL2_W<'_, PCONF_SPEC> {
         INSEL2_W::new(self, 12)
     }
     #[doc = "Bit 16 - Delay Pin selector"]
     #[inline(always)]
-    pub fn dsel(&mut self) -> DSEL_W<PCONF_SPEC> {
+    pub fn dsel(&mut self) -> DSEL_W<'_, PCONF_SPEC> {
         DSEL_W::new(self, 16)
     }
     #[doc = "Bit 17 - Edge selector for the sampling trigger"]
     #[inline(always)]
-    pub fn spes(&mut self) -> SPES_W<PCONF_SPEC> {
+    pub fn spes(&mut self) -> SPES_W<'_, PCONF_SPEC> {
         SPES_W::new(self, 17)
     }
     #[doc = "Bits 18:20 - Pattern update signal select"]
     #[inline(always)]
-    pub fn msets(&mut self) -> MSETS_W<PCONF_SPEC> {
+    pub fn msets(&mut self) -> MSETS_W<'_, PCONF_SPEC> {
         MSETS_W::new(self, 18)
     }
     #[doc = "Bit 21 - Multi-Channel pattern update trigger edge"]
     #[inline(always)]
-    pub fn mses(&mut self) -> MSES_W<PCONF_SPEC> {
+    pub fn mses(&mut self) -> MSES_W<'_, PCONF_SPEC> {
         MSES_W::new(self, 21)
     }
     #[doc = "Bits 22:23 - PWM synchronization signal selector"]
     #[inline(always)]
-    pub fn msyns(&mut self) -> MSYNS_W<PCONF_SPEC> {
+    pub fn msyns(&mut self) -> MSYNS_W<'_, PCONF_SPEC> {
         MSYNS_W::new(self, 22)
     }
     #[doc = "Bits 24:25 - Wrong Hall Event selection"]
     #[inline(always)]
-    pub fn ewis(&mut self) -> EWIS_W<PCONF_SPEC> {
+    pub fn ewis(&mut self) -> EWIS_W<'_, PCONF_SPEC> {
         EWIS_W::new(self, 24)
     }
     #[doc = "Bit 26 - External Wrong Hall Event enable"]
     #[inline(always)]
-    pub fn ewie(&mut self) -> EWIE_W<PCONF_SPEC> {
+    pub fn ewie(&mut self) -> EWIE_W<'_, PCONF_SPEC> {
         EWIE_W::new(self, 26)
     }
     #[doc = "Bit 27 - External Wrong Hall Event active level"]
     #[inline(always)]
-    pub fn ewil(&mut self) -> EWIL_W<PCONF_SPEC> {
+    pub fn ewil(&mut self) -> EWIL_W<'_, PCONF_SPEC> {
         EWIL_W::new(self, 27)
     }
     #[doc = "Bits 28:30 - Low Pass Filters Configuration"]
     #[inline(always)]
-    pub fn lpc(&mut self) -> LPC_W<PCONF_SPEC> {
+    pub fn lpc(&mut self) -> LPC_W<'_, PCONF_SPEC> {
         LPC_W::new(self, 28)
     }
 }
@@ -1349,10 +1343,6 @@ impl crate::Readable for PCONF_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pconf::W`](W) writer structure"]
 impl crate::Writable for PCONF_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PCONF to value 0"]
-impl crate::Resettable for PCONF_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PCONF_SPEC {}

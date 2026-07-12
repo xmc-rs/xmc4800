@@ -189,12 +189,12 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Quadrature Mode Suspend Config"]
     #[inline(always)]
-    pub fn qsus(&mut self) -> QSUS_W<PSUS_SPEC> {
+    pub fn qsus(&mut self) -> QSUS_W<'_, PSUS_SPEC> {
         QSUS_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - Multi-Channel Mode Suspend Config"]
     #[inline(always)]
-    pub fn msus(&mut self) -> MSUS_W<PSUS_SPEC> {
+    pub fn msus(&mut self) -> MSUS_W<'_, PSUS_SPEC> {
         MSUS_W::new(self, 2)
     }
 }
@@ -208,10 +208,6 @@ impl crate::Readable for PSUS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`psus::W`](W) writer structure"]
 impl crate::Writable for PSUS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PSUS to value 0"]
-impl crate::Resettable for PSUS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PSUS_SPEC {}
